@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "camera": {
+    "manufacturer": "Example Brand",
+    "model": "ExampleCam 2CH",
+    "channel_setup": "2CH: front and rear"
+  },
+  "evidence": {
+    "kind": "card-validated",
+    "sources": ["https://example.com/manual"],
+    "notes": "Synthetic example only. All names and counts are invented."
+  },
+  "card_layout": {
+    "folders": [
+      {
+        "path": "Normal",
+        "file_count": 240,
+        "extensions": { ".mp4": 240 },
+        "filename_patterns": [
+          {
+            "pattern": "REC_YYYYMMDD_HHMMSS_F.MP4",
+            "channel": "front",
+            "recording_mode": "continuous"
+          },
+          {
+            "pattern": "REC_YYYYMMDD_HHMMSS_R.MP4",
+            "channel": "rear",
+            "recording_mode": "continuous"
+          }
+        ],
+        "video_summary": {
+          "codec": "H.264",
+          "resolution": "1920x1080",
+          "frame_rate": 30,
+          "bitrate_range_mbps": [8, 12]
+        }
+      }
+    ],
+    "safe_model_markers": ["EXAMPLECAM2CH"]
+  },
+  "notes": "Do not include a card name, path, original filename, or media file."
+}
