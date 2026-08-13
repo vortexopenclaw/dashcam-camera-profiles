@@ -1,0 +1,85 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [],
+  "id": "escort-maxcam-360c",
+  "manufacturer": "Escort",
+  "model": "MAXcam 360c",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [
+          "Standard loop-recorded driving clips. GPS and G-sensor sidecar files stored alongside .MOV clips; sidecars absent before GPS lock acquisition."
+        ],
+        "path": "Normal/MAXcam360c",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "locked",
+        "notes": [
+          "G-sensor triggered and manually locked clips. Uses _SOS filename suffix."
+        ],
+        "path": "Event/MAXcam360c",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Escort Maxcam 360C research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/escort-maxcam-360c.md"
+    },
+    {
+      "kind": "research",
+      "label": "Escort Maxcam 360C research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/escort-maxcam-360c.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://cdn.shopify.com/s/files/1/1935/1881/files/ESCORT_MAXCAM_360c_WEB_MANUAL.pdf?v=1651263457"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "video \u203a extension",
+      "value": ".MOV"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "uppercase"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a codec_confirmed",
+      "value": "assumed"
+    },
+    {
+      "label": "video \u203a resolution_default",
+      "value": "1920x1080"
+    },
+    {
+      "label": "video \u203a fps_default",
+      "value": "30"
+    }
+  ],
+  "video_samples": []
+}

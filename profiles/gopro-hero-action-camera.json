@@ -1,0 +1,107 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": null,
+    "status": "generic"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "GH": "primary",
+        "GP": "primary",
+        "GX": "primary"
+      },
+      "default_channel": null,
+      "modes": {
+        "GH": "regular_recording",
+        "GP": "regular_recording",
+        "GX": "regular_recording"
+      },
+      "pattern": "^(G[HXP])(\\d{2})(\\d{4})\\.(MP4|MOV)$",
+      "timestamp_format": null
+    },
+    {
+      "applies_to": [],
+      "channels": {
+        "GH": "primary",
+        "GP": "primary",
+        "GX": "primary"
+      },
+      "default_channel": null,
+      "modes": {
+        "GH": "regular_recording",
+        "GP": "regular_recording",
+        "GX": "regular_recording"
+      },
+      "pattern": "^(G[HXP])([A-Z]{2})(\\d{4})\\.(MP4|MOV)$",
+      "timestamp_format": null
+    },
+    {
+      "applies_to": [],
+      "channels": {
+        "GPR": "primary",
+        "JPEG": "primary",
+        "JPG": "primary"
+      },
+      "default_channel": null,
+      "modes": {
+        "GPR": "photo_raw",
+        "JPEG": "photo",
+        "JPG": "photo"
+      },
+      "pattern": "^GOPR(\\d{4})\\.(JPG|JPEG|GPR)$",
+      "timestamp_format": null
+    },
+    {
+      "applies_to": [],
+      "channels": {
+        "GPR": "primary",
+        "JPEG": "primary",
+        "JPG": "primary"
+      },
+      "default_channel": null,
+      "modes": {
+        "GPR": "photo_raw_burst_or_timelapse",
+        "JPEG": "photo_burst_or_timelapse",
+        "JPG": "photo_burst_or_timelapse"
+      },
+      "pattern": "^G(\\d{3})(\\d{4})\\.(JPG|JPEG|GPR)$",
+      "timestamp_format": null
+    }
+  ],
+  "id": "gopro-hero-action-camera",
+  "manufacturer": "GoPro",
+  "model": "HERO / MAX Camera",
+  "notes": [
+    "Shared GoPro import profile for HERO and MAX-family cards that expose a safe model string in MISC/version.txt but do not yet have a dedicated model profile. Model identification must come from parsed safe fields, not the card volume name."
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "primary_media",
+        "notes": [],
+        "path": "DCIM/*GOPRO",
+        "validation": null
+      },
+      {
+        "importable": false,
+        "mode": "thumbnails_and_sidecars",
+        "notes": [],
+        "path": "MISC",
+        "validation": null
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [],
+  "video_samples": []
+}

@@ -1,0 +1,158 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(REC|EVT|MOT|PAK)_(\\d{8})_(\\d{6})_([FR])\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "thinkware-u3000",
+  "manufacturer": "Thinkware",
+  "model": "U3000",
+  "notes": [
+    "U3000 available as 1CH (F only) or 2CH (F/R), no interior cabin camera support",
+    "Distinguished from U3000 Pro by: no incabin_rec folder, ver.dat says 'U3000' not 'U3000PRO'",
+    "U3000 Pro supports 3CH variant with interior IR camera; U3000 does not",
+    "Firmware folder (u3000_0_<ver>/) only present after firmware update, not reliable for detection",
+    "Front channel has ~2.4x higher bitrate than rear channel (2CH variant)",
+    "Manual and SOS folders exist but were empty on sample card"
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "cont_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "driving_event",
+        "notes": [],
+        "path": "evt_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "manual",
+        "notes": [],
+        "path": "manual_rec",
+        "validation": "folder_exists_sample_missing"
+      },
+      {
+        "importable": true,
+        "mode": "sos",
+        "notes": [],
+        "path": "sos_rec",
+        "validation": "folder_exists_sample_missing"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_motion_or_timelapse",
+        "notes": [],
+        "path": "motion_timelapse_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [],
+        "path": "parking_rec",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking_event",
+      "parking_motion_or_timelapse"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Thinkware U3000 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/thinkware-u3000.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "firmware \u203a path_pattern",
+      "value": "u3000_0_*/"
+    },
+    {
+      "label": "firmware \u203a files",
+      "value": "U3000_boot.bin"
+    },
+    {
+      "label": "firmware \u203a files",
+      "value": "U3000_pkg.bin"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~30.0 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~10.0 Mbps",
+      "channel": "R (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~12.0 Mbps",
+      "channel": "F",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking (motion)",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~5.0-6.4 Mbps",
+      "channel": "R",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking (motion)",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~30.0 Mbps",
+      "channel": "F",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking (manual)",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    }
+  ]
+}

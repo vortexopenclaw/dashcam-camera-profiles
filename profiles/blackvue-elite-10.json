@@ -1,0 +1,73 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "remote_card_scan",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "high",
+    "level": "manual-backed",
+    "note": "Verified from a remote Learn Card submission with exact ELITE 10 config metadata and 1,290 BlackVue recording filenames. Codec, resolution, bitrate, and parking filename behavior remain unobserved.",
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "BlackVue/Record"
+      ],
+      "channels": {
+        "F": "front",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "I": "impact_event",
+        "N": "normal"
+      },
+      "pattern": "^(\\d{8})_(\\d{6})_([NI])([FR])\\.mp4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "blackvue-elite-10",
+  "manufacturer": "BlackVue",
+  "model": "Elite 10",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "mixed_recordings",
+        "notes": [],
+        "path": "BlackVue/Record",
+        "validation": null
+      },
+      {
+        "importable": false,
+        "mode": "model_and_settings",
+        "notes": [],
+        "path": "BlackVue/Config",
+        "validation": null
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Blackvue Elite 10 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/blackvue-elite-10.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": []
+}

@@ -1,0 +1,397 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "official_reference",
+      "variant": null
+    },
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "official_reference",
+      "variant": null
+    },
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "interior"
+      ],
+      "validation": "official_reference",
+      "variant": "IR"
+    },
+    {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "DCIM/Movie",
+        "DCIM/Movie/RO"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|I|R)\\.MP4$",
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    },
+    {
+      "applies_to": [
+        "DCIM/Movie/Parking",
+        "DCIM/Movie/RO"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(PF|PI|PR)\\.MP4$",
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    },
+    {
+      "applies_to": [
+        "DCIM/Photo"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|I|R|PF|PI|PR)\\.JPG$",
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    }
+  ],
+  "id": "viofo-a329s",
+  "manufacturer": "VIOFO",
+  "model": "A329S",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "DCIM/Movie",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "protected",
+        "notes": [
+          "Contains both normal and parking channel suffixes on the sampled card."
+        ],
+        "path": "DCIM/Movie/RO",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "still_image",
+        "notes": [],
+        "path": "DCIM/Photo",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "DCIM/Movie/Parking",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Viofo A329S research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-a329s.md"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.viofo.com/products/viofo-a329s-3ch-first-4k-front-2k-wide-210-fov-fisheye-cabin-2k-rear-dash-cam-with-starvis-2-sensor"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://www.viofo.com/pages/manual"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://support.viofo.com/support/solutions/folders/19000151665"
+    },
+    {
+      "kind": "research",
+      "label": "Viofo A329S research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a329s.md"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/introducing-viofo-a329s-3ch-with-2k-infrared-fisheye-cabin-camera-your-reliable-road-companion-is-here"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://www.viofo.com/pages/support-product-manual"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.youtube.com/watch?v=p5WVjVqX1xI"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "resolutions \u203a F",
+      "value": "3840x2160"
+    },
+    {
+      "label": "resolutions \u203a I",
+      "value": "2560x1440"
+    },
+    {
+      "label": "resolutions \u203a R",
+      "value": "2560x1440"
+    },
+    {
+      "label": "multiplexed_video \u203a support",
+      "value": "supported"
+    },
+    {
+      "label": "multiplexed_video \u203a validation",
+      "value": "official_reference"
+    },
+    {
+      "label": "multiplexed_video \u203a default_behavior",
+      "value": "separate_files"
+    },
+    {
+      "label": "multiplexed_video \u203a filename_validation",
+      "value": "pending_real_card_sample"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 1 \u203a id",
+      "value": "two_channel_front_rear_side_by_side"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 1 \u203a roles",
+      "value": "front"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 1 \u203a roles",
+      "value": "rear"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 1 \u203a applies_to_variants",
+      "value": "2CH"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 1 \u203a applies_to_variants",
+      "value": "3CH"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 1 \u203a output_resolution",
+      "value": "7680x2160"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 1 \u203a validation",
+      "value": "review_walkthrough"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 2 \u203a id",
+      "value": "two_channel_front_interior_side_by_side"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 2 \u203a roles",
+      "value": "front"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 2 \u203a roles",
+      "value": "interior"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 2 \u203a applies_to_variants",
+      "value": "2CH IR"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 2 \u203a applies_to_variants",
+      "value": "3CH"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 2 \u203a output_resolution",
+      "value": "7680x2160"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 2 \u203a validation",
+      "value": "review_walkthrough"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 3 \u203a id",
+      "value": "three_channel_front_interior_rear_stacked"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 3 \u203a roles",
+      "value": "front"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 3 \u203a roles",
+      "value": "interior"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 3 \u203a roles",
+      "value": "rear"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 3 \u203a applies_to_variants",
+      "value": "3CH"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 3 \u203a output_resolution",
+      "value": "3840x3240"
+    },
+    {
+      "label": "multiplexed_video \u203a layouts \u203a Sample 3 \u203a validation",
+      "value": "review_walkthrough"
+    },
+    {
+      "label": "multiplexed_video \u203a path_candidates",
+      "value": "DCIM/Movie"
+    },
+    {
+      "label": "multiplexed_video \u203a path_candidates",
+      "value": "DCIM/Movie/Parking"
+    },
+    {
+      "label": "multiplexed_video \u203a path_candidates",
+      "value": "DCIM/Movie/RO"
+    },
+    {
+      "label": "multiplexed_video \u203a excluded_export_paths",
+      "value": "DCIM/Movie/.dashcamexport/**"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "year"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "month_day"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "time"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a normal",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a normal",
+      "value": "I"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a normal",
+      "value": "R"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a parking",
+      "value": "PF"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a parking",
+      "value": "PI"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a parking",
+      "value": "PR"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~53-66 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~23.8 Mbps",
+      "channel": "R (rear)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~15.6 Mbps",
+      "channel": "I (interior)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~53.3 Mbps",
+      "channel": "PF",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~8.2 Mbps",
+      "channel": "PI",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~23.8 Mbps",
+      "channel": "PR",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [],
+  "id": "cansonic-ultradash-z3plus-standard",
+  "manufacturer": "Cansonic",
+  "model": "UltraDash Z3+ Standard Edition",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "recording",
+        "notes": [
+          "Folder structure not confirmed from a direct card scan. Based on Cansonic product documentation and typical dashcam conventions. All modes likely stored flat in DCIM or similar root. Locked/event files may be stored in a separate subfolder or distinguished by filename prefix \u2014 not yet confirmed."
+        ],
+        "path": "DCIM",
+        "validation": "inferred"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [
+    {
+      "label": "video \u203a extension",
+      "value": ".MP4"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "uppercase"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "unknown"
+    },
+    {
+      "label": "resolutions \u203a L",
+      "value": "2560x1440"
+    },
+    {
+      "label": "resolutions \u203a R",
+      "value": "2560x1440"
+    },
+    {
+      "label": "resolutions \u203a B",
+      "value": "2560x1440"
+    },
+    {
+      "label": "parking_mode \u203a supported",
+      "value": "Yes"
+    },
+    {
+      "label": "parking_mode \u203a requires_hardwire",
+      "value": "Yes"
+    },
+    {
+      "label": "parking_mode \u203a modes",
+      "value": "vibration_detection"
+    },
+    {
+      "label": "parking_mode \u203a modes",
+      "value": "time_lapse"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~14.3 Mbps",
+      "channel": "L (wide front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~14.3 Mbps",
+      "channel": "R (telephoto front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~11.9 Mbps",
+      "channel": "B (rear)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    }
+  ]
+}

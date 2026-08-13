@@ -1,0 +1,180 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(REC|EVT|MOT|PAK|PAS)_(\\d{8})_(\\d{6})_([A-Z]+(?:_[A-Z]+)?)\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "thinkware-u3000-pro",
+  "manufacturer": "Thinkware",
+  "model": "U3000 Pro",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "cont_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "driving_event",
+        "notes": [],
+        "path": "evt_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "manual",
+        "notes": [],
+        "path": "manual_rec",
+        "validation": "manual_confirmed_sample_missing"
+      },
+      {
+        "importable": true,
+        "mode": "sos",
+        "notes": [],
+        "path": "sos_rec",
+        "validation": "manual_confirmed_sample_missing"
+      },
+      {
+        "importable": true,
+        "mode": "in_cabin",
+        "notes": [
+          "Manual confirms this folder and the Interior IR camera requirement, but not the in-cabin filename suffix."
+        ],
+        "path": "incabin_rec",
+        "validation": "manual_confirmed_sample_missing"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_motion_or_timelapse",
+        "notes": [],
+        "path": "motion_timelapse_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [],
+        "path": "parking_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_event_secondary",
+        "notes": [],
+        "path": ".parking_rec_sec",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking_event",
+      "parking_event_secondary",
+      "parking_motion_or_timelapse"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Thinkware U3000 Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/thinkware-u3000-pro.md"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://thinkware.com/global/support/download/u3000-pro"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://download2.inavi.com/dashcam/U3000PRO/manual/u3000pro_manual_english_20250924.pdf"
+    },
+    {
+      "kind": "research",
+      "label": "Thinkware U3000 Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/thinkware-u3000-pro.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~30.0 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~10.0 Mbps",
+      "channel": "R (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~5.0 Mbps",
+      "channel": "F",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking (motion)",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~5.0-6.4 Mbps",
+      "channel": "R",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking (motion)",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~12.0 Mbps",
+      "channel": "F",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking (event)",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~30.0 Mbps",
+      "channel": "F",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "manual",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    }
+  ]
+}

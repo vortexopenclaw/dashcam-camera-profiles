@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Community-maintained technical reference for dashcam folders, filenames, recording modes, resolutions, bitrates, and manuals.">
+  <title>Dashcam Camera Profiles</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Dashcam Camera Profiles home">
+      <span class="brand-mark" aria-hidden="true">D</span>
+      <span><strong>Dashcam Camera Profiles</strong><small>Open technical reference</small></span>
+    </a>
+    <nav aria-label="Project links">
+      <a href="https://github.com/vortexopenclaw/dashcam-camera-profiles">GitHub</a>
+      <a href="https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/CONTRIBUTING.md">Contribute</a>
+      <a href="privacy.md">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">COMMUNITY DATASET</p>
+        <h1>How dashcams actually write footage.</h1>
+        <p class="hero-copy">Search real card layouts, filename conventions, driving and parking modes, measured video specifications, and official manuals. Unknown details stay unknown.</p>
+      </div>
+      <dl class="stats" aria-label="Repository coverage">
+        <div><dt id="camera-count">…</dt><dd>camera references</dd></div>
+        <div><dt id="measured-count">…</dt><dd>with measured video</dd></div>
+        <div><dt id="manual-count">…</dt><dd>with manual links</dd></div>
+      </dl>
+    </section>
+
+    <section class="browser" aria-label="Camera technical reference">
+      <aside class="catalog-panel">
+        <label class="search-label" for="search">Search the library</label>
+        <input id="search" type="search" placeholder="Brand, model, folder, codec…" autocomplete="off">
+        <div class="filters">
+          <label>Manufacturer<select id="brand-filter"><option value="">All manufacturers</option></select></label>
+          <label>Evidence<select id="evidence-filter"><option value="">All evidence</option></select></label>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+        <div id="camera-list" class="camera-list" role="listbox" aria-label="Cameras"></div>
+      </aside>
+
+      <article id="camera-detail" class="camera-detail" tabindex="-1">
+        <div class="empty-state">
+          <h2>Loading camera reference…</h2>
+          <p>The library is generated directly from the reviewed community profiles.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Public technical data licensed under CC BY 4.0. No footage, GPS trails, serial numbers, or personal card data.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,338 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "card-validated",
+    "note": null,
+    "status": "app_submission_sampled"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "VIDEO"
+      ],
+      "channels": {
+        "B": "rear",
+        "L": "front",
+        "R": "front_telephoto"
+      },
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{8})_(\\d{6})_([LRB])\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    },
+    {
+      "applies_to": [
+        "PROTECTED"
+      ],
+      "channels": {
+        "B": "rear",
+        "L": "front",
+        "R": "front_telephoto"
+      },
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^P(\\d{8})_(\\d{6})_([LRB])\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "cansonic-ultradash-z4-standard",
+  "manufacturer": "Cansonic",
+  "model": "UltraDash Z4 Standard Edition",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "VIDEO",
+        "validation": "app_submission_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [
+          "Sample cards use P-prefixed synchronized L/R/B clips for protected parking clips. User notes from the first sample say the card was configured for motion and impact detection parking mode. User notes from the second sample say the card was configured for timelapse parking mode. Do not assume all P-prefixed PROTECTED clips are impacts; infer from timing and size when config evidence is absent."
+        ],
+        "path": "PROTECTED",
+        "validation": "app_submission_sampled"
+      }
+    ],
+    "parking_modes": [
+      "impact_detection",
+      "motion_detection",
+      "parking_event",
+      "timelapse"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a channel",
+      "value": "L"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a folder",
+      "value": "VIDEO"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a resolution",
+      "value": "3840x2160"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a bitrate_mbps",
+      "value": "31.1"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a durations_seconds \u203a observed",
+      "value": "6.4"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a durations_seconds \u203a observed",
+      "value": "9.7"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a durations_seconds \u203a observed",
+      "value": "29.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a durations_seconds \u203a observed",
+      "value": "60.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a channel",
+      "value": "L"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a folder",
+      "value": "VIDEO"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a resolution",
+      "value": "3840x2160"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a bitrate_mbps",
+      "value": "31.0-41.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a durations_seconds \u203a observed",
+      "value": "3.1"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a L \u203a durations_seconds \u203a observed",
+      "value": "60.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a channel",
+      "value": "R"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a folder",
+      "value": "VIDEO"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a resolution",
+      "value": "3840x2160"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a bitrate_mbps",
+      "value": "31.1"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a durations_seconds \u203a observed",
+      "value": "6.4"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a durations_seconds \u203a observed",
+      "value": "9.7"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a durations_seconds \u203a observed",
+      "value": "29.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a durations_seconds \u203a observed",
+      "value": "60.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a channel",
+      "value": "R"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a folder",
+      "value": "VIDEO"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a resolution",
+      "value": "3840x2160"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a bitrate_mbps",
+      "value": "31.1-41.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a durations_seconds \u203a observed",
+      "value": "3.1"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a R \u203a durations_seconds \u203a observed",
+      "value": "60.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a channel",
+      "value": "B"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a folder",
+      "value": "VIDEO"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a resolution",
+      "value": "2560x1440"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a bitrate_mbps",
+      "value": "11.7-11.9"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a durations_seconds \u203a observed",
+      "value": "4.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a durations_seconds \u203a observed",
+      "value": "9.7"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a durations_seconds \u203a observed",
+      "value": "29.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a B \u203a durations_seconds \u203a observed",
+      "value": "60.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a folder",
+      "value": "PROTECTED"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a parking_mode",
+      "value": "timelapse"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a channels",
+      "value": "L"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a channels",
+      "value": "R"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a channels",
+      "value": "B"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a resolution \u203a L",
+      "value": "3840x2160"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a resolution \u203a R",
+      "value": "3840x2160"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a resolution \u203a B",
+      "value": "2560x1440"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a bitrate_mbps \u203a L",
+      "value": "31.1-41.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a bitrate_mbps \u203a R",
+      "value": "31.1-41.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a bitrate_mbps \u203a B",
+      "value": "11.7-11.9"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a durations_seconds \u203a observed",
+      "value": "33.2"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a durations_seconds \u203a observed",
+      "value": "41.0"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a PROTECTED \u203a durations_seconds \u203a observed",
+      "value": "60.0"
+    },
+    {
+      "label": "parking_mode \u203a observed",
+      "value": "motion_detection"
+    },
+    {
+      "label": "parking_mode \u203a observed",
+      "value": "impact_detection"
+    },
+    {
+      "label": "parking_mode \u203a observed",
+      "value": "timelapse"
+    }
+  ],
+  "video_samples": []
+}

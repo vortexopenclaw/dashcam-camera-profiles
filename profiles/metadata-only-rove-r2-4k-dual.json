@@ -1,0 +1,52 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "measured sample",
+    "level": "technical-sample",
+    "note": "Measured video metadata is available, but a complete card folder and filename profile has not been added yet.",
+    "status": "reference_only"
+  },
+  "filename_patterns": [],
+  "id": "metadata-only-rove-r2-4k-dual",
+  "manufacturer": "Rove",
+  "model": "R2-4K Dual",
+  "notes": [],
+  "recording": {
+    "driving_folders": [],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Video metadata reference",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~20.0 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~20.1 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "protected / parking event",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    }
+  ]
+}

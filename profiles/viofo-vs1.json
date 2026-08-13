@@ -1,0 +1,60 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "high",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {},
+      "default_channel": null,
+      "modes": {
+        "P": "parking"
+      },
+      "pattern": "^(\\d{4})(\\d{2})(\\d{2})(\\d{6})_(\\d+)(P?)\\.MP4$",
+      "timestamp_format": "YYYYMMDDHHMMSS"
+    }
+  ],
+  "id": "viofo-vs1",
+  "manufacturer": "VIOFO",
+  "model": "VS1",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "DCIM/Movie",
+        "validation": "inferred"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "DCIM/Parking",
+        "validation": "inferred"
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": []
+}

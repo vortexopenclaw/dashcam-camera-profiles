@@ -1,0 +1,151 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    },
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "card-validated",
+    "note": null,
+    "status": "validated"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "BlackVue/Record"
+      ],
+      "channels": {
+        "F": "front",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "E": "event",
+        "M": "manual",
+        "N": "normal",
+        "P": "parking"
+      },
+      "pattern": "^(\\d{8})_(\\d{6})_([NEMP])([FR])\\.mp4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "blackvue-dr970x-lte-plus",
+  "manufacturer": "BlackVue",
+  "model": "DR970X LTE Plus",
+  "notes": [
+    "Real 2CH cards were sampled before and after the firmware 2 update.",
+    "Detection uses exact model metadata and intentionally ignores firmware version and user-changeable network names.",
+    "Network, cloud, Bluetooth, and LTE modem identifiers are private and excluded."
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "mixed_recordings",
+        "notes": [],
+        "path": "BlackVue/Record",
+        "validation": null
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Blackvue Dr970X Lte Plus research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/blackvue-dr970x-lte-plus.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "observed_media \u203a front \u203a codec",
+      "value": "HEVC"
+    },
+    {
+      "label": "observed_media \u203a front \u203a resolution",
+      "value": "3840x2160"
+    },
+    {
+      "label": "observed_media \u203a front \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "observed_media \u203a front \u203a bitrate",
+      "value": "approximately 61 Mbps"
+    },
+    {
+      "label": "observed_media \u203a rear \u203a codec",
+      "value": "HEVC"
+    },
+    {
+      "label": "observed_media \u203a rear \u203a resolution",
+      "value": "1920x1080"
+    },
+    {
+      "label": "observed_media \u203a rear \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "observed_media \u203a rear \u203a bitrate",
+      "value": "approximately 11 Mbps"
+    },
+    {
+      "label": "firmware \u203a observed_version",
+      "value": "2.007"
+    },
+    {
+      "label": "firmware \u203a observed_revision",
+      "value": "1584"
+    },
+    {
+      "label": "firmware \u203a micom_version",
+      "value": "2.00"
+    },
+    {
+      "label": "firmware \u203a config_path",
+      "value": "BlackVue/Config/version.bin"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "date"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "time"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "mode"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a two_channel",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a two_channel",
+      "value": "R"
+    }
+  ],
+  "video_samples": []
+}

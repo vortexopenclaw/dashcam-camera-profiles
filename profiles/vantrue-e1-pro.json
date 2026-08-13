@@ -1,0 +1,154 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "high",
+    "level": "manual-backed",
+    "note": "Real card contained model-specific GPS/E1PRO_Settings.ini plus Vantrue folder and filename structure.",
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "A": "front"
+      },
+      "default_channel": null,
+      "modes": {
+        "E": "event",
+        "N": "normal",
+        "P": "parking",
+        "T": "timelapse"
+      },
+      "pattern": "^(\\\\d{8})_(\\\\d{6})_(\\\\d{5})_([NPET])_([A])\\\\.(MP4|JPG)$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "vantrue-e1-pro",
+  "manufacturer": "Vantrue",
+  "model": "E1 Pro",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "normal",
+        "notes": [],
+        "path": "Normal",
+        "validation": "real_card_sampled_for_N_manual_confirmed_for_T"
+      },
+      {
+        "importable": true,
+        "mode": "event",
+        "notes": [
+          "Folder existed on sampled card but was empty. Do not require event files here."
+        ],
+        "path": "Event",
+        "validation": "real_card_sampled_empty"
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "photo",
+        "notes": [],
+        "path": "Photo",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "settings",
+        "notes": [
+          "Contains E1PRO_Settings.ini on sampled card; do not publish real GPS trail data."
+        ],
+        "path": "GPS",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [
+          "Sampled card stored parking motion clips and parking emergency clips here."
+        ],
+        "path": "Parking",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://vantrue-app.vantruecam.com/files/manuals/Vantrue-E1Pro-User-Manual-Japanese.pdf"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "sampled_recording_settings \u203a video \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "sampled_recording_settings \u203a video \u203a resolution",
+      "value": "3840x2160"
+    },
+    {
+      "label": "sampled_recording_settings \u203a video \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "sampled_recording_settings \u203a normal_segment_duration_seconds",
+      "value": "60"
+    },
+    {
+      "label": "sampled_recording_settings \u203a parking_segment_duration_seconds",
+      "value": "45"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~31.9 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving / event",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~31.9 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking timelapse",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~4.9-5.0 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "15",
+      "mode": "parking motion",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}

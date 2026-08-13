@@ -1,0 +1,91 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": "One real 2-channel card-learning submission. Driving and G-sensor emergency clips are sampled; manual-event and parking behavior remain unverified.",
+    "status": "experimental"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {},
+      "default_channel": "front",
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{2})_(\\d{2})_(\\d{6})_(\\d{2})\\.TS$",
+      "timestamp_format": "YYYY_MM_DD_HHMMSS"
+    },
+    {
+      "applies_to": [],
+      "channels": {
+        "b": "rear"
+      },
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{2})_(\\d{2})_(\\d{6})_(\\d{2})_b\\.TS$",
+      "timestamp_format": "YYYY_MM_DD_HHMMSS"
+    }
+  ],
+  "id": "ottocast-ottosafe-cam",
+  "manufacturer": "Ottocast",
+  "model": "OttoSafe Cam",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "norm",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "back_norm",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "event",
+        "notes": [],
+        "path": "emr",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "event",
+        "notes": [],
+        "path": "back_emr",
+        "validation": null
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "photo",
+        "notes": [],
+        "path": "Photo",
+        "validation": null
+      }
+    ],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [],
+  "video_samples": []
+}

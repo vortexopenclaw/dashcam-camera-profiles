@@ -1,0 +1,121 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": "Identified by folder/filename pattern matching to N4 series; no explicit model metadata file present. Labeled based on user-provided volume label.",
+    "status": "seeded"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "A": "front",
+        "B": "interior",
+        "C": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "E": "event",
+        "N": "normal",
+        "P": "parking"
+      },
+      "pattern": "^(\\d{8})_(\\d{6})_(\\d{5})_([NEP])_([ABC])\\.(MP4|JPG)$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "vantrue-n4-s",
+  "manufacturer": "Vantrue",
+  "model": "N4 S",
+  "notes": [
+    "N4 S identified by folder/filename pattern matching to N4 series",
+    "No explicit model metadata file found on sample card",
+    "User-configurable 1CH/2CH/3CH modes; front channel (A) always active",
+    "Balanced file sizes (~109-111 MB/min) suggest uniform resolution setting",
+    "Cannot definitively distinguish from N4 Pro S without explicit model metadata",
+    "Firmware files (VT-N4S.bin, VT-RC09.bin, VT-RC18.bin) manually added for update",
+    "Same folder structure and filename pattern as N4 Pro S, N4, N4 Pro"
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "normal",
+        "notes": [],
+        "path": "Normal",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "event",
+        "notes": [],
+        "path": "Event",
+        "validation": null
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "photo",
+        "notes": [],
+        "path": "Photo",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "gps",
+        "notes": [],
+        "path": "GPS",
+        "validation": null
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "Parking",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~14.3 Mbps",
+      "channel": "A (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~14.3 Mbps",
+      "channel": "B (interior)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~14.3 Mbps",
+      "channel": "C (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    }
+  ]
+}

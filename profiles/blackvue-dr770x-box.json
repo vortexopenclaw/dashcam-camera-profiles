@@ -1,0 +1,148 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "validation": "private_archive_sampled",
+      "variant": null
+    },
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "app_submission_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "BlackVue/Record"
+      ],
+      "channels": {
+        "F": "front",
+        "O": "interior",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "I": "impact_event",
+        "M": "manual_or_marked_driving",
+        "N": "normal",
+        "P": "parking"
+      },
+      "pattern": "^(\\d{8})_(\\d{6})_([MNPI])([FOR])\\.mp4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "blackvue-dr770x-box",
+  "manufacturer": "BlackVue",
+  "model": "DR770X Box",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "mixed_recordings",
+        "notes": [],
+        "path": "BlackVue/Record",
+        "validation": "app_submission_sampled"
+      },
+      {
+        "importable": false,
+        "mode": "model_and_settings",
+        "notes": [],
+        "path": "BlackVue/Config",
+        "validation": "app_submission_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Blackvue Dr770X Box research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/blackvue-dr770x-box.md"
+    },
+    {
+      "kind": "research",
+      "label": "Blackvue Dr770X Box research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/blackvue-dr770x-box.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "grouping \u203a keys",
+      "value": "date"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "time"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "mode"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a three_channel",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a three_channel",
+      "value": "O"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a three_channel",
+      "value": "R"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~16.0 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "60 / 59.94",
+      "mode": "driving / parking / impact",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~10.0 Mbps",
+      "channel": "O (interior)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30 / 29.97",
+      "mode": "driving / parking / impact",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~10.0 Mbps",
+      "channel": "R (rear)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30 / 29.97",
+      "mode": "driving / parking / impact",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}

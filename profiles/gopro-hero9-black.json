@@ -1,0 +1,164 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "GH": "primary",
+        "GX": "primary"
+      },
+      "default_channel": null,
+      "modes": {
+        "GH": "regular_recording",
+        "GX": "regular_recording"
+      },
+      "pattern": "^(G[HX])(\\d{2})(\\d{4})\\.(MP4|MOV)$",
+      "timestamp_format": null
+    },
+    {
+      "applies_to": [],
+      "channels": {
+        "GH": "primary",
+        "GX": "primary"
+      },
+      "default_channel": null,
+      "modes": {
+        "GH": "regular_recording",
+        "GX": "regular_recording"
+      },
+      "pattern": "^(G[HX])([A-Z]{2})(\\d{4})\\.(MP4|MOV)$",
+      "timestamp_format": null
+    },
+    {
+      "applies_to": [],
+      "channels": {
+        "GPR": "primary",
+        "JPEG": "primary",
+        "JPG": "primary"
+      },
+      "default_channel": null,
+      "modes": {
+        "GPR": "photo_raw",
+        "JPEG": "photo",
+        "JPG": "photo"
+      },
+      "pattern": "^GOPR(\\d{4})\\.(JPG|JPEG|GPR)$",
+      "timestamp_format": null
+    },
+    {
+      "applies_to": [],
+      "channels": {
+        "GPR": "primary",
+        "JPEG": "primary",
+        "JPG": "primary"
+      },
+      "default_channel": null,
+      "modes": {
+        "GPR": "photo_raw_burst_or_timelapse",
+        "JPEG": "photo_burst_or_timelapse",
+        "JPG": "photo_burst_or_timelapse"
+      },
+      "pattern": "^G(\\d{3})(\\d{4})\\.(JPG|JPEG|GPR)$",
+      "timestamp_format": null
+    }
+  ],
+  "id": "gopro-hero9-black",
+  "manufacturer": "GoPro",
+  "model": "HERO9 Black",
+  "notes": [
+    "HERO9 Black support is seeded from official GoPro support/manual behavior. The two sampled HERO9 cards were labeled U3000PRO/U3000PRO 1 from previous use, proving volume label should not be used as model proof. MISC/version.txt gave explicit HERO9 Black model and firmware evidence, but also contained private serial/Wi-Fi identifiers. GoPro media can span DCIM/100GOPRO, DCIM/101GOPRO, and later numbered GOPRO folders; scan every matching numbered media folder. Filename alone is not enough to distinguish normal video from time-lapse video because GoPro reuses the same GH/GX MP4 naming family."
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "primary_media",
+        "notes": [],
+        "path": "DCIM/*GOPRO",
+        "validation": null
+      },
+      {
+        "importable": false,
+        "mode": "thumbnails_and_sidecars",
+        "notes": [],
+        "path": "MISC",
+        "validation": null
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [
+    {
+      "label": "video \u203a extension",
+      "value": ".MP4"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "uppercase"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "h264_or_h265"
+    },
+    {
+      "label": "video \u203a resolution_common",
+      "value": "5120x2880@30fps"
+    },
+    {
+      "label": "video \u203a resolution_common",
+      "value": "3840x2160@30fps"
+    },
+    {
+      "label": "video \u203a resolution_common",
+      "value": "3840x2160@60fps"
+    },
+    {
+      "label": "video \u203a max_bitrate_mbps",
+      "value": "100"
+    },
+    {
+      "label": "video \u203a chaptering \u203a continuous",
+      "value": "approx. 4GB chapters; 5K30 High Bit Rate is approx. five minutes"
+    },
+    {
+      "label": "video \u203a chaptering \u203a looping_5_min",
+      "value": "one-minute chapters"
+    },
+    {
+      "label": "video \u203a chaptering \u203a looping_20_min_or_longer",
+      "value": "five-minute chapters"
+    },
+    {
+      "label": "video \u203a mode_inference \u203a continuous",
+      "value": "default for chaptered GH/GX MP4 files unless stronger loop/time-lapse metadata wins"
+    },
+    {
+      "label": "video \u203a mode_inference \u203a looping",
+      "value": "inferred from short adjacent one-minute MP4 runs when real media duration is available"
+    },
+    {
+      "label": "video \u203a mode_inference \u203a time_lapse_or_timewarp",
+      "value": "inferred when GoPro video has no audio track but no reliable TimeWarp tag"
+    },
+    {
+      "label": "video \u203a mode_inference \u203a time_warp",
+      "value": "inferred only when safe sampled metadata exposes TimeWarp text"
+    },
+    {
+      "label": "video \u203a mode_inference \u203a time_lapse",
+      "value": "inferred only when safe sampled metadata exposes Time Lapse text"
+    }
+  ],
+  "video_samples": []
+}

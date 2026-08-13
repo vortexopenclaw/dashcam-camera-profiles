@@ -1,0 +1,94 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seeded"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "F": "front",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "E": "event",
+        "I": "event_impact",
+        "N": "normal",
+        "P": "parking"
+      },
+      "pattern": "^(\\d{8})_(\\d{6})_([NEIP])([FR])\\.mp4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "blackvue-dr970x-plus",
+  "manufacturer": "BlackVue",
+  "model": "DR970X Plus",
+  "notes": [
+    "Single Record/ folder for all modes (vs separate folders per mode)",
+    "Mode codes: N=normal, E=event, I=event/impact, P=parking",
+    "E vs I prefix distinction unclear (manual vs G-sensor?)",
+    "Front channel bitrate ~5.6\u00d7 higher than rear",
+    "Config files contain privacy-sensitive WiFi/cloud credentials - exclude from analysis",
+    "AP SSID in config is user-configurable WiFi hotspot name, not model identifier",
+    "Sample card was 2CH (F+R) variant"
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "all_recordings",
+        "notes": [],
+        "path": "BlackVue/Record",
+        "validation": null
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Blackvue Dr970X Plus research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/blackvue-dr970x-plus.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "firmware \u203a observed_version",
+      "value": "2.008"
+    },
+    {
+      "label": "firmware \u203a observed_revision",
+      "value": "1568"
+    },
+    {
+      "label": "firmware \u203a micom_version",
+      "value": "2.01"
+    },
+    {
+      "label": "firmware \u203a config_path",
+      "value": "BlackVue/Config/version.bin"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~60.0 Mbps",
+      "channel": "MF (main/front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "F": "front",
+        "PF": "parking_front",
+        "PR": "parking_rear",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "PF": "parking",
+        "PR": "parking"
+      },
+      "pattern": "^(\\d{8})_(\\d{6})(F|R|PF|PR)\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    },
+    {
+      "applies_to": [],
+      "channels": {
+        "PF": "parking_front",
+        "PR": "parking_rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "PF": "parking",
+        "PR": "parking"
+      },
+      "pattern": "^(\\d{8})_(\\d{6})_(\\d+)(PF|PR)\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "viofo-a129-pro",
+  "manufacturer": "VIOFO",
+  "model": "A129 Pro",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "DCIM/Movie",
+        "validation": "inferred"
+      },
+      {
+        "importable": true,
+        "mode": "protected",
+        "notes": [],
+        "path": "DCIM/Movie/RO",
+        "validation": "inferred"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "DCIM/Movie/Parking",
+        "validation": "inferred"
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~51.2 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~13.9 Mbps",
+      "channel": "R (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~8.4-26.6 Mbps",
+      "channel": "PF",
+      "codec": "H.264 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "app_submission_and_real_card_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "N": "front"
+      },
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{8})_(\\d{6})_([A-Z]+)_([A-Z])\\.mp4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "vueroid-h1",
+  "manufacturer": "Vueroid",
+  "model": "H1",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "INF",
+        "validation": "app_submission_and_real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "driving_event",
+        "notes": [],
+        "path": "EVENT",
+        "validation": "app_submission_and_real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "manual",
+        "notes": [],
+        "path": "USER",
+        "validation": "app_submission_and_real_card_sampled"
+      },
+      {
+        "importable": false,
+        "mode": "bookmark_image",
+        "notes": [],
+        "path": "BOOKMARK",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "PARK",
+        "validation": "app_submission_and_real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [],
+        "path": "PEVENT",
+        "validation": "app_submission_and_real_card_sampled"
+      }
+    ],
+    "parking_modes": [
+      "parking",
+      "parking_event"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Vueroid H1 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vueroid-h1.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "grouping \u203a keys",
+      "value": "date"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "time"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "prefix"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 1ch \u203a channels",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 1ch \u203a validation",
+      "value": "app_submission_and_real_card_sampled"
+    }
+  ],
+  "video_samples": []
+}

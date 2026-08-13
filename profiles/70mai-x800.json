@@ -1,0 +1,156 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "high",
+    "level": "card-validated",
+    "note": null,
+    "status": "sampled"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "F": "front",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "EV": "event",
+        "False": "continuous",
+        "LA": "parking_timelapse",
+        "PA": "parking_motion_or_impact"
+      },
+      "pattern": "^(NO|PA|LA|EV)(\\d{8})-(\\d{6})-(\\d+)(F|R)\\.MP4$",
+      "timestamp_format": "YYYYMMDD-HHMMSS"
+    }
+  ],
+  "id": "70mai-x800",
+  "manufacturer": "70mai",
+  "model": "4K Omni X800",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Normal/Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Normal/Rear",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Normal/.s_Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "event",
+        "notes": [],
+        "path": "Event",
+        "validation": null
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "photo",
+        "notes": [],
+        "path": "Photo",
+        "validation": null
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_motion_or_impact",
+        "notes": [],
+        "path": "Parking/Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_motion_or_impact",
+        "notes": [],
+        "path": "Parking/Rear",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_motion_or_impact",
+        "notes": [],
+        "path": "Parking/.s_Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [],
+        "path": "Lapse/Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [],
+        "path": "Lapse/Rear",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [],
+        "path": "Lapse/.s_Front",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking_motion_or_impact",
+      "parking_timelapse"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~31.9-60.3 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving / parking",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~10.9 Mbps",
+      "channel": "R (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~3.9-4.1 Mbps",
+      "channel": "PI / PR",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "1920x1080 / 2560x1440",
+      "source": "ffprobe"
+    }
+  ]
+}

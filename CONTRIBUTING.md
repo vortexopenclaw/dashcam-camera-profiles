@@ -14,6 +14,24 @@ Thank you. A small structural scan can make a camera work better for everyone.
 If you have no technical experience, open an issue with the camera model,
 channel layout, and manual link. A maintainer can help turn that into a scan.
 
+## Editing a camera profile
+
+Reviewed reference data lives in `profiles/`, with one JSON document per
+camera following `schemas/profile.schema.json`. Keep observations tied to an
+evidence level and preserve unknown fields as empty arrays instead of copying
+behavior from a similar model.
+
+After editing a profile, run:
+
+```sh
+python3 scripts/build-index.py
+python3 scripts/verify.py
+bash scripts/privacy-audit.sh
+node --check docs/assets/app.js
+```
+
+Commit both the profile and the regenerated `docs/data/cameras.json` index.
+
 ## Keep the distinction clear
 
 Separate what the card actually showed from what the manual says. A manual can

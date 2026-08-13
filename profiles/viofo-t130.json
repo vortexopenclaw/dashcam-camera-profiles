@@ -1,0 +1,100 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "high",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "F": "front",
+        "I": "interior",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_([FIR])\\.MP4$",
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    }
+  ],
+  "id": "viofo-t130",
+  "manufacturer": "VIOFO",
+  "model": "T130",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "DCIM/Movie",
+        "validation": "inferred"
+      },
+      {
+        "importable": true,
+        "mode": "protected",
+        "notes": [],
+        "path": "DCIM/Movie/RO",
+        "validation": "inferred"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "DCIM/Movie/Parking",
+        "validation": "inferred"
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~27.7 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~9.0 Mbps",
+      "channel": "I (interior)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~12.3-12.4 Mbps",
+      "channel": "R (rear)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}

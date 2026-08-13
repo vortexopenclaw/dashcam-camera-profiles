@@ -1,0 +1,79 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": null,
+    "status": "generic"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "back": "rear",
+        "front": "front",
+        "left_pillar": "left_pillar",
+        "left_repeater": "left_repeater",
+        "rear": "rear",
+        "rear_view": "rear",
+        "right_pillar": "right_pillar",
+        "right_repeater": "right_repeater"
+      },
+      "default_channel": null,
+      "modes": {
+        "back": "recording",
+        "front": "recording",
+        "left_pillar": "recording",
+        "left_repeater": "recording",
+        "rear": "recording",
+        "rear_view": "recording",
+        "right_pillar": "recording",
+        "right_repeater": "recording"
+      },
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}_\\d{2}-\\d{2}-\\d{2}-(front|back|rear|rear_view|left_repeater|right_repeater|left_pillar|right_pillar)\\.(MP4|mp4)$",
+      "timestamp_format": null
+    }
+  ],
+  "id": "tesla-dashcam",
+  "manufacturer": "Tesla",
+  "model": "TeslaCam",
+  "notes": [
+    "TeslaCam cards are recognized from the root TeslaCam folder and RecentClips, SavedClips, and SentryClips subfolders. RecentClips is the rolling buffer, SavedClips is manually saved dashcam/event footage, and SentryClips is parking/sentry footage. Newer vehicles/cards can include left/right pillar camera clips in addition to front, rear/back, and left/right repeaters."
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "TeslaCam/RecentClips",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "driving_event",
+        "notes": [],
+        "path": "TeslaCam/SavedClips",
+        "validation": null
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [],
+        "path": "TeslaCam/SentryClips",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking_event"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [],
+  "video_samples": []
+}

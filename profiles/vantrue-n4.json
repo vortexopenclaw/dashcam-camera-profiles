@@ -1,0 +1,122 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "A": "front",
+        "B": "interior",
+        "C": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "E": "event",
+        "N": "normal",
+        "P": "parking"
+      },
+      "pattern": "^(\\d{4})_(\\d{2})_(\\d{2})_(\\d{6})_([NEP])_([ABC])\\.(MP4|JPG)$",
+      "timestamp_format": null
+    }
+  ],
+  "id": "vantrue-n4",
+  "manufacturer": "Vantrue",
+  "model": "N4",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "normal",
+        "notes": [],
+        "path": "Normal",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "event",
+        "notes": [],
+        "path": "Event",
+        "validation": null
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "photo",
+        "notes": [],
+        "path": "Photo",
+        "validation": null
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "Parking",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~10.6-15.6 Mbps",
+      "channel": "A (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving / event",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~3.2-8.1 Mbps",
+      "channel": "B (interior)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving / event",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~3.7-11.7 Mbps",
+      "channel": "C (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "event",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~0.7-1.3 Mbps",
+      "channel": "A / B",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "1280x720",
+      "source": "ffprobe"
+    }
+  ]
+}

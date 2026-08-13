@@ -1,0 +1,138 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": "Real card sampled. No explicit model metadata file was found, so exact automatic selection should rely on strong supporting evidence such as volume/model label plus N4-series filename and video-spec evidence.",
+    "status": "seeded"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "A": "front",
+        "B": "interior",
+        "C": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "E": "event",
+        "N": "normal",
+        "P": "parking"
+      },
+      "pattern": "^(\\d{8})_(\\d{6})_(\\d{5})_([NEP])_([ABC])\\.(MP4|JPG)$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "vantrue-n4-pro-s",
+  "manufacturer": "Vantrue",
+  "model": "N4 Pro S",
+  "notes": [
+    "All three channels (A, B, C) record simultaneously for each timestamp",
+    "Channel A (Front) has highest bitrate, B and C are medium bitrate",
+    "GPS logs are daily CSV files with trajectory data",
+    "Parking mode clips may have incomplete channel coverage depending on motion trigger"
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "normal",
+        "notes": [],
+        "path": "Normal",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "event",
+        "notes": [],
+        "path": "Event",
+        "validation": null
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "photo",
+        "notes": [],
+        "path": "Photo",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "gps",
+        "notes": [],
+        "path": "GPS",
+        "validation": null
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "Parking",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~31.9 Mbps",
+      "channel": "A (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~9.8 Mbps",
+      "channel": "B (interior)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~14.3 Mbps",
+      "channel": "C (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~31.9 Mbps",
+      "channel": "A",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~9.8 Mbps",
+      "channel": "B",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}

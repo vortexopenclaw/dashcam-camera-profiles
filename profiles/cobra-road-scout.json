@@ -1,0 +1,110 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [],
+  "id": "cobra-road-scout",
+  "manufacturer": "Cobra",
+  "model": "Road Scout",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "all_recordings",
+        "notes": [
+          "All recording modes (continuous loop, G-sensor impact locked, emergency manual lock) use this single folder. No separate locked/event subfolder was observed. Locked clips appear to remain in place but are protected from loop overwrite."
+        ],
+        "path": "DCIM/RoadScout",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Cobra Road Scout research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/cobra-road-scout.md"
+    },
+    {
+      "kind": "research",
+      "label": "Cobra Road Scout research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/cobra-road-scout.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "video \u203a extension",
+      "value": ".MOV"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "uppercase"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a codec_confirmed",
+      "value": "No"
+    },
+    {
+      "label": "video \u203a resolution_default",
+      "value": "1920x1080"
+    },
+    {
+      "label": "video \u203a resolution_confirmed",
+      "value": "No"
+    },
+    {
+      "label": "video \u203a fps_default",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a fps_confirmed",
+      "value": "No"
+    },
+    {
+      "label": "video \u203a clip_duration_minutes_options",
+      "value": "1"
+    },
+    {
+      "label": "video \u203a clip_duration_minutes_options",
+      "value": "3"
+    },
+    {
+      "label": "video \u203a clip_duration_minutes_options",
+      "value": "5"
+    },
+    {
+      "label": "video \u203a clip_duration_default",
+      "value": "3"
+    },
+    {
+      "label": "parking_mode \u203a supported",
+      "value": "No"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~14.3-14.4 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MOV",
+      "fps": "30",
+      "mode": "driving / SOS",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}

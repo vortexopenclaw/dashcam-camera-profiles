@@ -1,0 +1,21 @@
+name: Validate camera reference
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Validate canonical data and generated frontend index
+        run: python3 scripts/verify.py
+      - name: Audit public content for private data
+        run: bash scripts/privacy-audit.sh
+      - name: Check frontend JavaScript
+        run: node --check docs/assets/app.js

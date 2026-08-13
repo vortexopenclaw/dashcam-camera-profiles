@@ -1,0 +1,52 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "measured sample",
+    "level": "technical-sample",
+    "note": "Measured video metadata is available, but a complete card folder and filename profile has not been added yet.",
+    "status": "reference_only"
+  },
+  "filename_patterns": [],
+  "id": "metadata-only-blackvue-dr750x-2ch-plus",
+  "manufacturer": "BlackVue",
+  "model": "DR750X-2CH Plus",
+  "notes": [],
+  "recording": {
+    "driving_folders": [],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Video metadata reference",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~25.1 Mbps at 60 fps",
+      "channel": "NF / MF (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30 / 60",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~10.4 Mbps",
+      "channel": "NR (rear)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}

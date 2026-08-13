@@ -1,0 +1,154 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "BlackVue/Record"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{8})_(\\d{6})_([NPI])([FR])\\.mp4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "blackvue-elite-9",
+  "manufacturer": "BlackVue",
+  "model": "Elite 9",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "mixed_recordings",
+        "notes": [],
+        "path": "BlackVue/Record",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": false,
+        "mode": "model_and_settings",
+        "notes": [],
+        "path": "BlackVue/Config",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Blackvue Elite 9 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/blackvue-elite-9.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://manual.blackvue.com/docs/elite-9-series/"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://manual.blackvue.com/docs/elite-9-series/getting-started/overview-6/"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://manual.blackvue.com/docs/elite-9-series/getting-started/key-features-6/"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://blackvue.com/blogs/update/firmware-update-elite-8-9-10-updates-1190778"
+    },
+    {
+      "kind": "research",
+      "label": "Blackvue Elite 9 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/blackvue-elite-9.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "grouping \u203a keys",
+      "value": "date"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "time"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "mode"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a two_channel",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a two_channel",
+      "value": "R"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~60.0 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~25.0 Mbps",
+      "channel": "R (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~56-60 Mbps",
+      "channel": "PF / IF",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~25.0 Mbps",
+      "channel": "PR",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    }
+  ]
+}

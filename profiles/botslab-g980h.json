@@ -1,0 +1,189 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "card-validated",
+    "note": null,
+    "status": "app_submission_sampled"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "AA": "front",
+        "AB": "rear",
+        "AC": "left",
+        "AD": "right"
+      },
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{8})(\\d{6})_(\\d{6})(A[A-D])\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "botslab-g980h",
+  "manufacturer": "Botslab",
+  "model": "G980H",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "360CARDVR/REC",
+        "validation": "app_submission_sampled"
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": false,
+        "mode": "gps",
+        "notes": [],
+        "path": "360CARDVR/GPS",
+        "validation": "app_submission_sampled"
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [
+          "User notes identify the sample as sentry-mode parking footage with motion and impact events. Generic parking-pattern inference should split continuous/low-bitrate and motion/event-style parking when the timing and size patterns support it."
+        ],
+        "path": "360CARDVR/PARKING",
+        "validation": "app_submission_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [
+          "Observed on the 3CH follow-up card after switching from sentry parking to timelapse mode. Clips were written at longer regular intervals in channel folders under SECVIDEO."
+        ],
+        "path": "360CARDVR/SECVIDEO",
+        "validation": "app_submission_sampled"
+      }
+    ],
+    "parking_modes": [
+      "continuous_low_bitrate",
+      "parking_event",
+      "parking_timelapse",
+      "sentry_motion_or_impact",
+      "timelapse"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [
+    {
+      "label": "video \u203a observed_samples \u203a front \u203a folder",
+      "value": "360CARDVR/REC"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a front \u203a channel",
+      "value": "AA"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a front \u203a position",
+      "value": "front"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a front \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a front \u203a resolution",
+      "value": "2880x1620"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a front \u203a fps",
+      "value": "25"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a rear \u203a folder",
+      "value": "360CARDVR/REC"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a rear \u203a channel",
+      "value": "AB"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a rear \u203a position",
+      "value": "rear"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a rear \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a rear \u203a resolution",
+      "value": "1920x1080"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a rear \u203a fps",
+      "value": "25"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a left \u203a folder",
+      "value": "360CARDVR/REC"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a left \u203a channel",
+      "value": "AC"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a left \u203a position",
+      "value": "left"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a left \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a left \u203a resolution",
+      "value": "1920x1080"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a left \u203a fps",
+      "value": "25"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a right \u203a folder",
+      "value": "360CARDVR/REC"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a right \u203a channel",
+      "value": "AD"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a right \u203a position",
+      "value": "right"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a right \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a right \u203a resolution",
+      "value": "1920x1080"
+    },
+    {
+      "label": "video \u203a observed_samples \u203a right \u203a fps",
+      "value": "25"
+    },
+    {
+      "label": "parking_mode \u203a observed",
+      "value": "sentry_motion_or_impact"
+    },
+    {
+      "label": "parking_mode \u203a observed",
+      "value": "continuous_low_bitrate"
+    },
+    {
+      "label": "parking_mode \u203a observed",
+      "value": "timelapse"
+    }
+  ],
+  "video_samples": []
+}

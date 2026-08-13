@@ -1,0 +1,170 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    },
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    },
+    {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{8})_(\\d{6})_([A-Z]+)_([FIR])_([A-Z])\\.mp4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "vueroid-s1-4k-infinite",
+  "manufacturer": "Vueroid",
+  "model": "S1 4K Infinite",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "INF",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "driving_event",
+        "notes": [
+          "No visible MP4 files on either sampled card."
+        ],
+        "path": "EVENT",
+        "validation": "manual_confirmed"
+      },
+      {
+        "importable": true,
+        "mode": "manual",
+        "notes": [],
+        "path": "USER",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "bookmark_image",
+        "notes": [
+          "No visible files on either sampled card."
+        ],
+        "path": "BOOKMARK",
+        "validation": "manual_confirmed"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [],
+        "path": "PARK",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [
+          "Impact/G-sensor events during parking. Saved separately regardless of whether the main parking mode is motion detection or time-lapse."
+        ],
+        "path": "PEVENT",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "parking_modes": [
+      "parking",
+      "parking_event"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Vueroid S1 4K Infinite research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vueroid-s1-4k-infinite.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "grouping \u203a keys",
+      "value": "date"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "time"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "prefix"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 3ch \u203a channels",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 3ch \u203a channels",
+      "value": "I"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 3ch \u203a channels",
+      "value": "R"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 3ch \u203a validation",
+      "value": "real_card_sampled"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 2ch \u203a channels",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 2ch \u203a channels",
+      "value": "R"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 2ch \u203a validation",
+      "value": "real_card_sampled"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 1ch \u203a channels",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a channel_sets \u203a 1ch \u203a validation",
+      "value": "real_card_sampled"
+    }
+  ],
+  "video_samples": []
+}

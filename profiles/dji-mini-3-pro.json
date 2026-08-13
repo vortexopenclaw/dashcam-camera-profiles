@@ -1,0 +1,177 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [],
+  "id": "dji-mini-3-pro",
+  "manufacturer": "DJI",
+  "model": "Mini 3 Pro",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "primary_media",
+        "notes": [
+          "All video, photo, and SRT files. When capacity reached (999 files), camera creates DCIM/101MEDIA and continues."
+        ],
+        "path": "DCIM/100MEDIA",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "thumbnails",
+        "notes": [
+          ".THM thumbnails and .SCR preview screenshots. Not needed for offload."
+        ],
+        "path": "MISC/THM/100",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Dji Mini 3 Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/dji-mini-3-pro.md"
+    },
+    {
+      "kind": "research",
+      "label": "Dji Mini 3 Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/dji-mini-3-pro.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://dl.djicdn.com/downloads/DJI_Mini_3_Pro/UM/20240105/2/DJI_Mini_3_Pro_User_Manual_v1.6_EN.pdf"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "video \u203a extension",
+      "value": ".MP4"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "uppercase"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "h264_or_h265"
+    },
+    {
+      "label": "video \u203a codec_confirmed",
+      "value": "assumed"
+    },
+    {
+      "label": "video \u203a resolution_default",
+      "value": "3840x2160"
+    },
+    {
+      "label": "video \u203a fps_default",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@24fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@25fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@30fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@48fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@50fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@60fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "2720x1530@24fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "2720x1530@25fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "2720x1530@30fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "2720x1530@48fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "2720x1530@50fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "2720x1530@60fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@24fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@25fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@30fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@48fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@50fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@60fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@120fps"
+    },
+    {
+      "label": "video \u203a max_bitrate_mbps",
+      "value": "150"
+    },
+    {
+      "label": "video \u203a color_profiles",
+      "value": "Normal"
+    },
+    {
+      "label": "video \u203a color_profiles",
+      "value": "D-Cinelike"
+    },
+    {
+      "label": "parking_mode \u203a supported",
+      "value": "No"
+    }
+  ],
+  "video_samples": []
+}

@@ -1,0 +1,185 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [],
+  "id": "sony-a7-iii",
+  "manufacturer": "Sony",
+  "model": "A7 III",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "video",
+        "notes": [
+          "Primary video storage. Present even on freshly formatted video-only cards."
+        ],
+        "path": "PRIVATE/M4ROOT/CLIP",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": false,
+        "mode": "thumbnails",
+        "notes": [
+          "JPEG thumbnails for each clip (C0001T01.JPG etc.)."
+        ],
+        "path": "PRIVATE/M4ROOT/THMBNL",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "manifest",
+        "notes": [
+          "Sony media manifest listing all clips with codec, fps, resolution, and systemKind. Present on all cards with at least one clip."
+        ],
+        "path": "PRIVATE/M4ROOT/MEDIAPRO.XML",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "photos",
+        "notes": [
+          "Still photos in ARW and/or JPEG. Absent on video-only cards \u2014 only created after photos are taken."
+        ],
+        "path": "DCIM/100MSDCF",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "legacy_avchd",
+        "notes": [
+          "AVCHD recording skeleton. Present even when AVCHD mode is not used."
+        ],
+        "path": "PRIVATE/AVCHD",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Sony A7 Iii research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/sony-a7-iii.md"
+    },
+    {
+      "kind": "research",
+      "label": "Sony A7 Iii research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/sony-a7-iii.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://www.sony.com/electronics/support/res/manuals/5074/9c2e7c425d271c4406096edb2267b53a/50740222M.pdf"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "http://xmlns.sony.net/pro/metadata/mediaprofile"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "video \u203a extension",
+      "value": ".MP4"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "uppercase"
+    },
+    {
+      "label": "video \u203a container",
+      "value": "xavc_s"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a codec_confirmed",
+      "value": "Yes"
+    },
+    {
+      "label": "video \u203a codec_detail",
+      "value": "AVC_3840_2160_HP@L51"
+    },
+    {
+      "label": "video \u203a resolution_default",
+      "value": "3840x2160"
+    },
+    {
+      "label": "video \u203a fps_default",
+      "value": "29.97"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@23.98fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@25fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "3840x2160@29.97fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@23.98fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@25fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@29.97fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@50fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@59.94fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@119.88fps"
+    },
+    {
+      "label": "video \u203a audio",
+      "value": "LPCM16"
+    },
+    {
+      "label": "video \u203a color_profiles",
+      "value": "rec709"
+    },
+    {
+      "label": "video \u203a color_profiles",
+      "value": "rec709-xvycc"
+    },
+    {
+      "label": "video \u203a color_profiles",
+      "value": "S-Log2"
+    },
+    {
+      "label": "video \u203a color_profiles",
+      "value": "S-Log3"
+    },
+    {
+      "label": "parking_mode \u203a supported",
+      "value": "No"
+    }
+  ],
+  "video_samples": []
+}

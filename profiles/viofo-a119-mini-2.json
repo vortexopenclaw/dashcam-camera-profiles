@@ -1,0 +1,161 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "DCIM/Movie",
+        "DCIM/Movie/RO",
+        "DCIM/Parking",
+        "DCIM/Parking/RO"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})(\\d{2})(\\d{2})(\\d{6})_(\\d+)\\.MP4$",
+      "timestamp_format": "YYYYMMDDHHMMSS"
+    },
+    {
+      "applies_to": [
+        "DCIM/Photo"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})(\\d{2})(\\d{2})(\\d{6})_(\\d+)\\.JPG$",
+      "timestamp_format": "YYYYMMDDHHMMSS"
+    }
+  ],
+  "id": "viofo-a119-mini-2",
+  "manufacturer": "VIOFO",
+  "model": "A119 Mini 2",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [
+          "Loop recording files. Confirmed on real card."
+        ],
+        "path": "DCIM/Movie",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "protected",
+        "notes": [
+          "Locked/emergency recordings. Confirmed by official manual V25.12.18."
+        ],
+        "path": "DCIM/Movie/RO",
+        "validation": "official_reference"
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "still_image",
+        "notes": [
+          "Snapshots. Confirmed by official manual V25.12.18."
+        ],
+        "path": "DCIM/Photo",
+        "validation": "official_reference"
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [
+          "Parking recordings (auto event detection, time-lapse, low bitrate). Confirmed by official manual V25.12.18. Note: top-level DCIM/Parking, NOT DCIM/Movie/Parking as used by the A229/A329 lineup."
+        ],
+        "path": "DCIM/Parking",
+        "validation": "official_reference"
+      },
+      {
+        "importable": true,
+        "mode": "parking_protected",
+        "notes": [
+          "Locked parking recordings. Confirmed by official manual V25.12.18."
+        ],
+        "path": "DCIM/Parking/RO",
+        "validation": "official_reference"
+      }
+    ],
+    "parking_modes": [
+      "parking",
+      "parking_protected"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Viofo A119 Mini 2 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-a119-mini-2.md"
+    },
+    {
+      "kind": "research",
+      "label": "Viofo A119 Mini 2 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a119-mini-2.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://viofotech.com/download/manual/MINI2/A119MINI2EnglishManual.pdf"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.viofo.com/collections/dash-cam"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "resolutions \u203a F",
+      "value": "2560x1440"
+    },
+    {
+      "label": "resolutions \u203a validation",
+      "value": "real_card_sampled"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~26.6-28.8 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30 / 60",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~30.3 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking timelapse",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~3.8 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking motion",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    }
+  ]
+}

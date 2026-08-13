@@ -1,0 +1,81 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "app_submission_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": "Real app-submitted Learn Card package confirmed Video/ folder and filename pattern; Rove docs confirm MP4/H.264 or H.265 recording.",
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\\\d{4})_(\\\\d{4})_(\\\\d{6})_(\\\\d+)\\\\.(MP4)$",
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    }
+  ],
+  "id": "rove-r2-4k-pro",
+  "manufacturer": "Rove",
+  "model": "R2-4K Pro",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "normal",
+        "notes": [
+          "Submitted card contained 25 downloadable MP4 clips here. Parking/event/photo folders were not present in this submitted scan."
+        ],
+        "path": "Video",
+        "validation": "app_submission_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [
+    {
+      "label": "sampled_recording_settings \u203a video \u203a codec",
+      "value": "h265"
+    },
+    {
+      "label": "sampled_recording_settings \u203a video \u203a resolution",
+      "value": "3840x2160"
+    },
+    {
+      "label": "sampled_recording_settings \u203a video \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "sampled_recording_settings \u203a video \u203a bitrate",
+      "value": "~36.9 Mbps"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~36.9 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    }
+  ]
+}

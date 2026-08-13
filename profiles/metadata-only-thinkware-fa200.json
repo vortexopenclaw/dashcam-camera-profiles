@@ -1,0 +1,52 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "measured sample",
+    "level": "technical-sample",
+    "note": "Measured video metadata is available, but a complete card folder and filename profile has not been added yet.",
+    "status": "reference_only"
+  },
+  "filename_patterns": [],
+  "id": "metadata-only-thinkware-fa200",
+  "manufacturer": "Thinkware",
+  "model": "FA200",
+  "notes": [],
+  "recording": {
+    "driving_folders": [],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Video metadata reference",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~3.3 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "~10",
+      "mode": "parking timelapse",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~3.0 Mbps",
+      "channel": "R (rear)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "~15",
+      "mode": "parking motion",
+      "resolution": "1280x720",
+      "source": "ffprobe"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "DCIM/Movie"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})(\\d{2})(\\d{2})(\\d{6})_(\\d+)\\.MP4$",
+      "timestamp_format": "YYYYMMDDHHMMSS"
+    }
+  ],
+  "id": "viofo-a119m-pro",
+  "manufacturer": "VIOFO",
+  "model": "A119M Pro",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [
+          "Inferred. Card structure not directly scanned; parking subfolder presence unknown."
+        ],
+        "path": "DCIM/Movie",
+        "validation": "inferred"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Viofo A119M Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-a119m-pro.md"
+    },
+    {
+      "kind": "research",
+      "label": "Viofo A119M Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a119m-pro.md"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.viofo.com/collections/dash-cam"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "resolutions \u203a F",
+      "value": "3840x2160"
+    },
+    {
+      "label": "resolutions \u203a validation",
+      "value": "footage_sampled"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~36.9 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~3.8-8.4 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    }
+  ]
+}

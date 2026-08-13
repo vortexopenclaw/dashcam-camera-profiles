@@ -6,6 +6,22 @@ conventions, and privacy-preserving card scans.
 This repository is useful whether or not you use Dashcam Offloader. Its goal
 is to make real, documented camera evidence reusable by any open tool.
 
+## Browse the reference
+
+The static browser in `docs/` makes the technical data readable without
+installing an app. It includes searchable camera pages for folder structures,
+filename rules, driving and parking behavior, measured codec/resolution/FPS/
+bitrate data, manuals, evidence levels, and known gaps.
+
+To preview it locally:
+
+```sh
+python3 -m http.server 8000 --directory docs
+```
+
+Then open `http://localhost:8000`. The browser has no account system,
+analytics, cookies, or runtime dependencies.
+
 ## Contribute a card scan
 
 You do **not** need to own or install Dashcam Offloader to contribute.
@@ -53,13 +69,20 @@ unobserved behavior simply because a similar model has it.
 
 - `schemas/` - stable public formats for scan and profile data.
 - `examples/` - synthetic examples safe to copy and modify.
-- `profiles/` - reviewed, reusable camera profiles.
-- `docs/` - privacy and contribution guidance.
+- `profiles/` - the canonical, reviewable technical profile for each camera.
+- `docs/` - the generated data index, searchable frontend, and privacy guide.
+- `scripts/` - deterministic import, validation, privacy, and index tooling.
 
 ## Status
 
-The public schema and contribution path are being established now. Profiles
-will be added after their evidence is reviewed and sanitized for publication.
+The repository currently contains 67 camera references: 55 camera profiles
+with card, manual, or catalog evidence, plus 12 references built from measured
+video metadata where the card layout is not yet known. Missing information is
+shown as missing rather than inferred from a related model.
+
+Run `python3 scripts/verify.py` before submitting a profile change. It checks
+the canonical profiles, regenerated browser index, representative driving and
+parking data, filenames, folder layouts, manuals, and privacy boundaries.
 
 ## License
 

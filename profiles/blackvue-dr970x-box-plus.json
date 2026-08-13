@@ -1,0 +1,57 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schema_version": "1.0",
+  "id": "blackvue-dr970x-box-plus",
+  "manufacturer": "BlackVue",
+  "model": "DR970X Box-2CH Plus",
+  "evidence": {
+    "level": "catalog-hint",
+    "status": "official-model-confirmed",
+    "confidence": "model identity only",
+    "note": "The model and two-channel front/rear configuration are confirmed by official BlackVue material. No sanitized card scan is currently available, so folder, filename, driving/parking, and measured bitrate details remain intentionally empty."
+  },
+  "channel_variants": [
+    {
+      "channels": 2,
+      "variant": "Box Plus",
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "official-manual"
+    }
+  ],
+  "recording": {
+    "driving_folders": [],
+    "parking_folders": [],
+    "other_folders": [],
+    "parking_modes": []
+  },
+  "filename_patterns": [],
+  "video_samples": [],
+  "technical_facts": [
+    {
+      "label": "camera configuration",
+      "value": "2-channel front and rear system with a separate recording box"
+    },
+    {
+      "label": "front camera class",
+      "value": "4K"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BlackVue DR970X Box-2CH Plus manual",
+      "url": "https://manual.blackvue.com/docs/overview/overview/in-the-box-dr970x-box-2ch-plus-series/",
+      "kind": "manual"
+    },
+    {
+      "label": "BlackVue firmware download center",
+      "url": "https://media.blackvue.com/firmware-download/",
+      "kind": "source"
+    }
+  ],
+  "notes": [
+    "Do not reuse DR970X Plus or DR970X LTE Plus card rules until this Box model is validated from its own sanitized card scan."
+  ]
+}

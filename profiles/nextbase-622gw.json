@@ -1,0 +1,58 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "FH": "front",
+        "RH": "rear"
+      },
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{6})_(\\d{6})_(\\d{3})_(FH|RH)\\.MP4$",
+      "timestamp_format": null
+    }
+  ],
+  "id": "nextbase-622gw",
+  "manufacturer": "Nextbase",
+  "model": "622GW",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Videos",
+        "validation": "inferred"
+      },
+      {
+        "importable": true,
+        "mode": "protected",
+        "notes": [],
+        "path": "Protected",
+        "validation": "inferred"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": []
+}

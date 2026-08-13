@@ -1,0 +1,168 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "high",
+    "level": "card-validated",
+    "note": null,
+    "status": "sampled"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "C": "interior",
+        "F": "front",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "EV": "event",
+        "False": "continuous",
+        "LA": "parking_timelapse",
+        "PA": "parking_motion_or_impact"
+      },
+      "pattern": "^(NO|PA|LA|EV)(\\d{8})-(\\d{6})-(\\d+)(F|R|C)\\.MP4$",
+      "timestamp_format": "YYYYMMDD-HHMMSS"
+    }
+  ],
+  "id": "70mai-t800",
+  "manufacturer": "70mai",
+  "model": "T800",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Normal/Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Normal/Rear",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Normal/Cabin",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Normal/.s_Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "Normal/.s_Rear",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "event",
+        "notes": [],
+        "path": "Event",
+        "validation": null
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "photo",
+        "notes": [],
+        "path": "Photo",
+        "validation": null
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_motion_or_impact",
+        "notes": [],
+        "path": "Parking/Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_motion_or_impact",
+        "notes": [],
+        "path": "Parking/Rear",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_motion_or_impact",
+        "notes": [],
+        "path": "Parking/Cabin",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_motion_or_impact",
+        "notes": [],
+        "path": "Parking/.s_Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_motion_or_impact",
+        "notes": [],
+        "path": "Parking/.s_Rear",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [],
+        "path": "Lapse/Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [],
+        "path": "Lapse/Rear",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [],
+        "path": "Lapse/Cabin",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [],
+        "path": "Lapse/.s_Front",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_timelapse",
+        "notes": [],
+        "path": "Lapse/.s_Rear",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking_motion_or_impact",
+      "parking_timelapse"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [],
+  "video_samples": []
+}

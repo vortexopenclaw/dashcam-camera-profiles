@@ -1,0 +1,130 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "medium",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "F": "front",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "EVT": "driving_event",
+        "MAN": "manual",
+        "MOT": "parking_motion_or_timelapse",
+        "PAK": "parking_event",
+        "REC": "continuous"
+      },
+      "pattern": "^(REC|EVT|MOT|PAK|MAN)_(\\d{8})_(\\d{6})_([FR])\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "thinkware-u1000-plus",
+  "manufacturer": "Thinkware",
+  "model": "U1000 Plus",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "cont_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "driving_event",
+        "notes": [],
+        "path": "evt_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "manual",
+        "notes": [],
+        "path": "manual_rec",
+        "validation": null
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_motion_or_timelapse",
+        "notes": [],
+        "path": "motion_timelapse_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [],
+        "path": "parking_rec",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking_event",
+      "parking_motion_or_timelapse"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": [
+    {
+      "bitrate": "~24.0 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving / manual",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~6.0 Mbps",
+      "channel": "R (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving / manual",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~10.0-12.1 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking motion / event",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~3.0 Mbps",
+      "channel": "R (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking motion",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}

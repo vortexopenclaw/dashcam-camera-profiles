@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/schemas/profile.schema.json",
+  "title": "Dashcam Technical Profile",
+  "description": "A reviewed, privacy-safe technical reference for one camera model.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "manufacturer", "model", "evidence", "recording", "filename_patterns", "video_samples", "sources"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": "1.0" },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "manufacturer": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "model": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "status", "confidence"],
+      "properties": {
+        "level": { "enum": ["card-validated", "manual-backed", "technical-sample", "catalog-hint"] },
+        "status": { "type": "string", "maxLength": 100 },
+        "confidence": { "type": "string", "maxLength": 100 },
+        "note": { "type": ["string", "null"], "maxLength": 2000 }
+      }
+    },
+    "channel_variants": { "type": "array", "items": { "$ref": "#/$defs/channel_variant" } },
+    "recording": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["driving_folders", "parking_folders", "other_folders", "parking_modes"],
+      "properties": {
+        "driving_folders": { "type": "array", "items": { "$ref": "#/$defs/folder" } },
+        "parking_folders": { "type": "array", "items": { "$ref": "#/$defs/folder" } },
+        "other_folders": { "type": "array", "items": { "$ref": "#/$defs/folder" } },
+        "parking_modes": { "type": "array", "items": { "type": "string", "maxLength": 120 } }
+      }
+    },
+    "filename_patterns": { "type": "array", "items": { "$ref": "#/$defs/filename_pattern" } },
+    "video_samples": { "type": "array", "items": { "$ref": "#/$defs/video_sample" } },
+    "technical_facts": { "type": "array", "items": { "$ref": "#/$defs/fact" } },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+    "notes": { "type": "array", "items": { "type": "string", "maxLength": 2000 } }
+  },
+  "$defs": {
+    "channel_variant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["roles"],
+      "properties": {
+        "channels": { "type": ["integer", "null"], "minimum": 1, "maximum": 12 },
+        "variant": { "type": ["string", "null"], "maxLength": 100 },
+        "roles": { "type": "array", "items": { "type": "string", "maxLength": 80 } },
+        "validation": { "type": ["string", "null"], "maxLength": 100 }
+      }
+    },
+    "folder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "mode", "importable", "notes"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "mode": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "importable": { "type": "boolean" },
+        "validation": { "type": ["string", "null"], "maxLength": 100 },
+        "notes": { "type": "array", "items": { "type": "string", "maxLength": 1000 } }
+      }
+    },
+    "filename_pattern": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pattern", "applies_to", "modes", "channels"],
+      "properties": {
+        "pattern": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "applies_to": { "type": "array", "items": { "type": "string", "maxLength": 240 } },
+        "modes": { "type": "object", "additionalProperties": { "type": "string", "maxLength": 120 } },
+        "channels": { "type": "object", "additionalProperties": { "type": "string", "maxLength": 80 } },
+        "default_channel": { "type": ["string", "null"], "maxLength": 80 },
+        "timestamp_format": { "type": ["string", "null"], "maxLength": 100 }
+      }
+    },
+    "video_sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel", "mode", "codec", "resolution", "fps", "bitrate", "container", "source"],
+      "properties": {
+        "channel": { "type": "string", "maxLength": 100 },
+        "mode": { "type": "string", "maxLength": 120 },
+        "codec": { "type": "string", "maxLength": 100 },
+        "resolution": { "type": "string", "maxLength": 100 },
+        "fps": { "type": "string", "maxLength": 100 },
+        "bitrate": { "type": "string", "maxLength": 100 },
+        "container": { "type": "string", "maxLength": 40 },
+        "source": { "type": "string", "maxLength": 100 }
+      }
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "value"],
+      "properties": {
+        "label": { "type": "string", "maxLength": 240 },
+        "value": { "type": "string", "maxLength": 1000 }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "url", "kind"],
+      "properties": {
+        "label": { "type": "string", "maxLength": 200 },
+        "url": { "type": "string", "format": "uri", "maxLength": 1000 },
+        "kind": { "enum": ["manual", "research", "source"] }
+      }
+    }
+  }
+}

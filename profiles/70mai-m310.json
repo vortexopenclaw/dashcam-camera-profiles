@@ -1,0 +1,120 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [],
+  "id": "70mai-m310",
+  "manufacturer": "70mai",
+  "model": "M310",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "recording",
+        "notes": [
+          "Confirmed on real card scan. Contains NO-prefix files at 60-second segments. Hidden .sstar.format file also present in this folder."
+        ],
+        "path": "Normal",
+        "validation": "confirmed"
+      },
+      {
+        "importable": true,
+        "mode": "recording",
+        "notes": [
+          "Confirmed folder exists on card. Stores LA-prefix files from time-lapse parking mode. LA = Lapse. Hidden .sstar.format file present."
+        ],
+        "path": "Lapse",
+        "validation": "confirmed"
+      },
+      {
+        "importable": true,
+        "mode": "recording",
+        "notes": [
+          "Confirmed folder exists on card. Manual confirms \"Lock the video\" voice command saves to the emergency/event directory. Exact filename prefix for event clips (EV? EM?) not confirmed from footage \u2014 no event clips available in sample. Hidden .sstar.format file present."
+        ],
+        "path": "Event",
+        "validation": "confirmed"
+      },
+      {
+        "importable": true,
+        "mode": "recording",
+        "notes": [
+          "Confirmed folder exists on card. Manual confirms \"Take photo\" voice command saves a photo. Hidden .sstar.format file present."
+        ],
+        "path": "Photo",
+        "validation": "confirmed"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "recording",
+        "notes": [
+          "Confirmed folder exists on card. Stores NO-prefix files recorded during normal parking mode (not time-lapse). Distinct from the Lapse/ folder. Hidden .sstar.format file present."
+        ],
+        "path": "Parking",
+        "validation": "confirmed"
+      }
+    ],
+    "parking_modes": [
+      "recording"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [],
+  "technical_facts": [
+    {
+      "label": "video \u203a segment_duration_seconds",
+      "value": "60"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "hevc"
+    },
+    {
+      "label": "video \u203a fps",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a extension",
+      "value": ".mp4"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "lowercase"
+    },
+    {
+      "label": "resolutions \u203a front",
+      "value": "2304x1296"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~12.0 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "mp4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2304x1296",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~12.0 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "mp4",
+      "fps": "30",
+      "mode": "parking / lapse",
+      "resolution": "2304x1296",
+      "source": "ffprobe"
+    }
+  ]
+}

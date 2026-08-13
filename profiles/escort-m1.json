@@ -1,0 +1,125 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [],
+  "id": "escort-m1",
+  "manufacturer": "Escort",
+  "model": "M1",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [
+          "Normal loop-recorded driving clips."
+        ],
+        "path": "Escort_M1/MOVIE",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "locked",
+        "notes": [
+          "G-sensor triggered and manually locked clips (Power/Emergency button). Adjacent clips are also locked if the impact occurs within 30 seconds of a file boundary. Clips here are not overwritten by loop recording."
+        ],
+        "path": "Escort_M1/LockedVideo",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Escort M1 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/escort-m1.md"
+    },
+    {
+      "kind": "research",
+      "label": "Escort M1 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/escort-m1.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "video \u203a extension",
+      "value": ".MOV"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "uppercase"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "h264"
+    },
+    {
+      "label": "video \u203a resolution_default",
+      "value": "1920x1080"
+    },
+    {
+      "label": "video \u203a fps_default",
+      "value": "30"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1920x1080@30fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1280x720@60fps"
+    },
+    {
+      "label": "video \u203a resolutions_available",
+      "value": "1280x720@30fps"
+    },
+    {
+      "label": "video \u203a clip_duration_minutes_options",
+      "value": "1"
+    },
+    {
+      "label": "video \u203a clip_duration_minutes_options",
+      "value": "3"
+    },
+    {
+      "label": "video \u203a clip_duration_minutes_options",
+      "value": "5"
+    },
+    {
+      "label": "parking_mode \u203a supported",
+      "value": "No"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~11.9 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MOV",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~16.4 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MOV",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}

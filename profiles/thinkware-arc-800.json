@@ -1,0 +1,136 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "official_reference",
+      "variant": null
+    },
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "real_card_sampled",
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "high",
+    "level": "card-validated",
+    "note": "Verified from an app-submitted 2-channel card scan, safe ARC800 model metadata, OSD OCR, and the official ARC 800 manual.",
+    "status": "validated"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [],
+      "channels": {
+        "F": "front",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "modes": {
+        "EVT": "driving_event",
+        "MAN": "manual",
+        "MOT": "parking_motion_or_timelapse",
+        "PAK": "parking_event",
+        "PAS": "parking_event_secondary",
+        "REC": "continuous"
+      },
+      "pattern": "^(REC|EVT|MOT|PAK|PAS|MAN)_(\\d{8})_(\\d{6})_([FR])\\.MP4$",
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "id": "thinkware-arc-800",
+  "manufacturer": "Thinkware",
+  "model": "ARC 800",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "cont_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "driving_event",
+        "notes": [],
+        "path": "evt_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "manual",
+        "notes": [],
+        "path": "manual_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "saved",
+        "notes": [],
+        "path": "Safety_Box",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "sos",
+        "notes": [],
+        "path": "sos_rec",
+        "validation": null
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking_motion_or_timelapse",
+        "notes": [],
+        "path": "motion_timelapse_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_event",
+        "notes": [],
+        "path": "parking_rec",
+        "validation": null
+      },
+      {
+        "importable": true,
+        "mode": "parking_secondary",
+        "notes": [],
+        "path": ".parking_rec_sec",
+        "validation": null
+      }
+    ],
+    "parking_modes": [
+      "parking_event",
+      "parking_event_secondary",
+      "parking_motion_or_timelapse",
+      "parking_secondary"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Thinkware Arc 800 research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/thinkware-arc-800.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://download2.inavi.com/dashcam/ARC800/manual/arc800_manual_english_20260623.pdf"
+    }
+  ],
+  "technical_facts": [],
+  "video_samples": []
+}

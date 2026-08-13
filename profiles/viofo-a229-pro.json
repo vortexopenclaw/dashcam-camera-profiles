@@ -1,0 +1,242 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "DCIM/Movie",
+        "DCIM/Movie/RO",
+        "DCIM/Movie/Parking"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|I|R|PF|PI|PR)\\.MP4$",
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    },
+    {
+      "applies_to": [
+        "DCIM/Photo"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|I|R|PF|PI|PR)\\.JPG$",
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    }
+  ],
+  "id": "viofo-a229-pro",
+  "manufacturer": "VIOFO",
+  "model": "A229 Pro",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [],
+        "path": "DCIM/Movie",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "protected",
+        "notes": [
+          "Contains locked emergency recordings. Only normal-channel locked clips (F/I/R) were observed on the sample card. Whether parking-channel locked clips (PF/PI/PR) also appear here is unconfirmed."
+        ],
+        "path": "DCIM/Movie/RO",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [
+      {
+        "importable": true,
+        "mode": "still_image",
+        "notes": [],
+        "path": "DCIM/Photo",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "parking_folders": [
+      {
+        "importable": true,
+        "mode": "parking",
+        "notes": [
+          "Manual-defined parking folder for auto event detection, time-lapse, and low bitrate. The latest sampled card's PF/PI/PR clips were user-confirmed auto event detection triggered by motion/impact, not time-lapse or low-bitrate samples."
+        ],
+        "path": "DCIM/Movie/Parking",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "parking_modes": [
+      "parking"
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Viofo A229 Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-a229-pro.md"
+    },
+    {
+      "kind": "research",
+      "label": "Viofo A229 Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a229-pro.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://viofotech.com/download/manual/A229P/A229ProEnglishManual.pdf"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/firmware-updates-viofo-a229-pro-a229-plus-version-v13"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/viofo-firmware-update-guide-step-by-step"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.blackboxmycar.com/pages/best-settings-for-viofo-a229-series-dash-cam"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "resolutions \u203a F",
+      "value": "3840x2160"
+    },
+    {
+      "label": "resolutions \u203a I",
+      "value": "1920x1080"
+    },
+    {
+      "label": "resolutions \u203a R",
+      "value": "2560x1440"
+    },
+    {
+      "label": "resolutions \u203a PF",
+      "value": "3840x2160"
+    },
+    {
+      "label": "resolutions \u203a PI",
+      "value": "1920x1080"
+    },
+    {
+      "label": "resolutions \u203a PR",
+      "value": "2560x1440"
+    },
+    {
+      "label": "resolutions \u203a validation",
+      "value": "real_card_sampled"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "year"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "month_day"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "time"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a normal",
+      "value": "F"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a normal",
+      "value": "I"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a normal",
+      "value": "R"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a parking",
+      "value": "PF"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a parking",
+      "value": "PI"
+    },
+    {
+      "label": "grouping \u203a expected_sets \u203a parking",
+      "value": "PR"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~36.0 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~15.6 Mbps",
+      "channel": "I (interior)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~24.0 Mbps",
+      "channel": "R (rear)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~4.1 Mbps",
+      "channel": "PF",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~3.9 Mbps",
+      "channel": "PI",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~4.1 Mbps",
+      "channel": "PR",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    }
+  ]
+}

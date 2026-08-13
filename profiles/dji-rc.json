@@ -1,0 +1,117 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [],
+      "validation": null,
+      "variant": null
+    }
+  ],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [],
+  "id": "dji-rc",
+  "manufacturer": "DJI",
+  "model": "RC",
+  "notes": [
+    "This is a microSD from a DJI RC remote controller (RM330), not a drone or camera card. Primary content is live-view OcuSync transmission caches recorded during flight. Full-resolution drone footage stays on the drone's own microSD \u2014 see the dji-mini-3-pro profile for that card."
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "live_view_cache",
+        "notes": [
+          "Live-view OcuSync transmission caches recorded during drone flight. These are low-quality previews (~480p), not full-resolution drone footage. One MP4 file per continuous live-view session."
+        ],
+        "path": "Android/data/dji.go.v5/files/MediaCaches",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "transferred_drone_video",
+        "notes": [
+          "Drone footage transferred from the drone to the RC via the DJI Fly app. Empty on the sampled card \u2014 transfer must be explicitly triggered by the user in-app. When populated, files should match the DJI_NNNN.MP4 pattern from the drone card."
+        ],
+        "path": "Android/data/dji.go.v5/files/OriginalFiles/Video",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "transferred_drone_photo",
+        "notes": [
+          "Empty on sampled card. Would contain photos transferred from drone."
+        ],
+        "path": "Android/data/dji.go.v5/files/OriginalFiles/Photo",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "transferred_drone_panorama",
+        "notes": [
+          "Empty on sampled card. Would contain panorama shots transferred from drone."
+        ],
+        "path": "Android/data/dji.go.v5/files/OriginalFiles/PanoPhoto",
+        "validation": "real_card_sampled"
+      },
+      {
+        "importable": true,
+        "mode": "thumbnails",
+        "notes": [
+          "Thumbnail cache for drone footage. Contains JPG thumbnails referencing DJI_NNNN filenames from the drone card. Not needed for offload."
+        ],
+        "path": "Android/data/dji.go.v5/files/ImageCaches",
+        "validation": "real_card_sampled"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Dji Rc research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/dji-rc.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official manual",
+      "url": "https://dl.djicdn.com/downloads/DJI_RC/UM/2023/DJI_RC_User_Manual_v1.0_en.pdf"
+    },
+    {
+      "kind": "research",
+      "label": "Dji Rc research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/dji-rc.md"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "video \u203a extension",
+      "value": ".mp4"
+    },
+    {
+      "label": "video \u203a extension_case",
+      "value": "lowercase"
+    },
+    {
+      "label": "video \u203a codec",
+      "value": "unknown"
+    },
+    {
+      "label": "video \u203a codec_confirmed",
+      "value": "assumed"
+    },
+    {
+      "label": "video \u203a content_type",
+      "value": "live_view_cache"
+    }
+  ],
+  "video_samples": []
+}

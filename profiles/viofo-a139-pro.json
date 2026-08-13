@@ -1,0 +1,152 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "channel_variants": [],
+  "evidence": {
+    "confidence": "not stated",
+    "level": "manual-backed",
+    "note": null,
+    "status": "seed"
+  },
+  "filename_patterns": [
+    {
+      "applies_to": [
+        "DCIM/Movie"
+      ],
+      "channels": {},
+      "default_channel": null,
+      "modes": {},
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(F|I|R|T)\\.MP4$",
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    }
+  ],
+  "id": "viofo-a139-pro",
+  "manufacturer": "VIOFO",
+  "model": "A139 Pro",
+  "notes": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "importable": true,
+        "mode": "continuous",
+        "notes": [
+          "Inferred from VIOFO platform conventions. Card structure not directly scanned; parking and photo subfolder presence is unknown."
+        ],
+        "path": "DCIM/Movie",
+        "validation": "inferred"
+      }
+    ],
+    "other_folders": [],
+    "parking_folders": [],
+    "parking_modes": []
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "kind": "research",
+      "label": "Viofo A139 Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-a139-pro.md"
+    },
+    {
+      "kind": "research",
+      "label": "Viofo A139 Pro research notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a139-pro.md"
+    },
+    {
+      "kind": "source",
+      "label": "Reference source",
+      "url": "https://www.viofo.com/collections/dash-cam"
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "resolutions \u203a F",
+      "value": "3840x2160"
+    },
+    {
+      "label": "resolutions \u203a I",
+      "value": "1920x1080"
+    },
+    {
+      "label": "resolutions \u203a R",
+      "value": "1920x1080"
+    },
+    {
+      "label": "resolutions \u203a validation",
+      "value": "footage_sampled"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "year"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "month_day"
+    },
+    {
+      "label": "grouping \u203a keys",
+      "value": "time"
+    }
+  ],
+  "video_samples": [
+    {
+      "bitrate": "~53.3 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~16.4 Mbps",
+      "channel": "R (rear)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~13.5-16.4 Mbps",
+      "channel": "I (interior)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~9.9-14.8 Mbps",
+      "channel": "PF",
+      "codec": "H.264 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "2560x1440",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~6.6-8.2 Mbps",
+      "channel": "PR",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    },
+    {
+      "bitrate": "~6.6-8.2 Mbps",
+      "channel": "PI",
+      "codec": "H.264 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "1920x1080",
+      "source": "ffprobe"
+    }
+  ]
+}
