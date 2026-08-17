@@ -340,7 +340,9 @@
       "container": "MP4",
       "fps": "30",
       "mode": "driving",
+      "recording_configuration": "3-channel: front, interior, rear",
       "resolution": "3840x2160",
+      "settings_note": "The card did not record the in-camera Video Quality level. On the A329S, that setting changes front-camera bitrate, so this range is not one fixed specification.",
       "source": "ffprobe"
     },
     {
@@ -350,7 +352,9 @@
       "container": "MP4",
       "fps": "30",
       "mode": "driving",
+      "recording_configuration": "3-channel: front, interior, rear",
       "resolution": "2560x1440",
+      "settings_note": null,
       "source": "ffprobe"
     },
     {
@@ -360,7 +364,9 @@
       "container": "MP4",
       "fps": "30",
       "mode": "driving",
+      "recording_configuration": "3-channel: front, interior, rear",
       "resolution": "1920x1080",
+      "settings_note": null,
       "source": "ffprobe"
     },
     {

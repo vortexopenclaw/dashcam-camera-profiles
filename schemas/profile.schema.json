@@ -90,7 +90,9 @@
         "fps": { "type": "string", "maxLength": 100 },
         "bitrate": { "type": "string", "maxLength": 100 },
         "container": { "type": "string", "maxLength": 40 },
-        "source": { "type": "string", "maxLength": 100 }
+        "source": { "type": "string", "maxLength": 100 },
+        "recording_configuration": { "type": ["string", "null"], "maxLength": 240 },
+        "settings_note": { "type": ["string", "null"], "maxLength": 1000 }
       }
     },
     "fact": {

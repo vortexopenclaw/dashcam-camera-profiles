@@ -22,6 +22,22 @@ python3 -m http.server 8000 --directory docs
 Then open `http://localhost:8000`. The browser has no account system,
 analytics, cookies, or runtime dependencies.
 
+## Methodology and evidence
+
+Each profile keeps its evidence boundary visible. A `card-validated` claim is
+confirmed by a sanitized scan of a real card. A `manual-backed` claim comes
+from official documentation and still awaits card confirmation. A
+`technical-sample` records measured video facts without claiming that the
+card's folder or filename behavior is known. A `catalog-hint` identifies a
+model while making no layout-specific claim.
+
+Measured data describes one recorded configuration, not a universal product
+specification. Resolution, frame rate, HDR, quality mode, firmware, region,
+and connected cameras can change a result. A product name alone is never
+enough to infer folder behavior or measured bitrate. The browser shows a
+recorded configuration and settings note when the evidence supplies them, and
+leaves those details unknown when it does not.
+
 ## Contribute a card scan
 
 You do **not** need to own or install Dashcam Offloader to contribute.
@@ -44,6 +60,12 @@ participate in this repository.
 - Corrections to folder names, filename patterns, channels, recording modes,
   codecs, resolutions, and parking behavior.
 
+Useful contributions include a generalized filename pattern such as
+`REC_YYYYMMDD_HHMMSS_F.MP4`, the exact case of an observed folder name, a
+manual link that documents a parking mode, or a local video summary that says
+which cameras were connected and which quality setting was selected. A video
+file itself is never needed.
+
 ## What must never be submitted
 
 - Video, photo, thumbnail, audio, GPS, or route data.
@@ -59,6 +81,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the review process.
 - `card-validated`: a sanitized real-card scan has confirmed the behavior.
 - `manual-backed`: official documentation supports it, but a card has not yet
   validated it.
+- `technical-sample`: measured video facts are available, but folder or
+  filename behavior remains unknown.
 - `catalog-hint`: a model is known to exist, but layout-specific support is
   not claimed.
 

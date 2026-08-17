@@ -1,6 +1,6 @@
 "use strict";
 
-const state = { cameras: [], selectedId: null, query: "", brand: "", evidence: "" };
+const state = { cameras: [], selectedId: null, query: "", brand: "", evidence: "", qualityChannel: "front", qualityResolution: "", qualityFps: "", qualityCompanionChannel: "", qualityCompanionResolution: "", qualityCompanionFps: "" };
 const elements = {};
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -10,7 +10,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     search: document.querySelector("#search"),
     brand: document.querySelector("#brand-filter"),
     evidence: document.querySelector("#evidence-filter"),
-    resultCount: document.querySelector("#result-count")
+    resultCount: document.querySelector("#result-count"),
+    qualityChannel: document.querySelector("#quality-channel"),
+    qualityResolution: document.querySelector("#quality-resolution"),
+    qualityFps: document.querySelector("#quality-fps"),
+    qualityCompanionChannel: document.querySelector("#quality-companion-channel"),
+    qualityCompanionResolution: document.querySelector("#quality-companion-resolution"),
+    qualityCompanionFps: document.querySelector("#quality-companion-fps"),
+    qualityResultCount: document.querySelector("#quality-result-count"),
+    qualityResults: document.querySelector("#quality-results")
   });
 
   try {
@@ -21,6 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     populateStats(data);
     populateFilters();
     bindControls();
+    populateQualityFilters();
     const hashId = decodeURIComponent(location.hash.replace(/^#camera=/, ""));
     state.selectedId = state.cameras.some(camera => camera.id === hashId) ? hashId : state.cameras[0]?.id;
     render();
@@ -46,6 +55,12 @@ function bindControls() {
   elements.search.addEventListener("input", event => { state.query = event.target.value.toLowerCase().trim(); render(); });
   elements.brand.addEventListener("change", event => { state.brand = event.target.value; render(); });
   elements.evidence.addEventListener("change", event => { state.evidence = event.target.value; render(); });
+  elements.qualityChannel.addEventListener("change", event => { state.qualityChannel = event.target.value; populateQualityFilters(); renderQualityExplorer(); });
+  elements.qualityResolution.addEventListener("change", event => { state.qualityResolution = event.target.value; renderQualityExplorer(); });
+  elements.qualityFps.addEventListener("change", event => { state.qualityFps = event.target.value; renderQualityExplorer(); });
+  elements.qualityCompanionChannel.addEventListener("change", event => { state.qualityCompanionChannel = event.target.value; populateQualityFilters(); renderQualityExplorer(); });
+  elements.qualityCompanionResolution.addEventListener("change", event => { state.qualityCompanionResolution = event.target.value; renderQualityExplorer(); });
+  elements.qualityCompanionFps.addEventListener("change", event => { state.qualityCompanionFps = event.target.value; renderQualityExplorer(); });
   window.addEventListener("hashchange", () => {
     const id = decodeURIComponent(location.hash.replace(/^#camera=/, ""));
     if (state.cameras.some(camera => camera.id === id)) { state.selectedId = id; render(); }
@@ -85,7 +100,96 @@ function render() {
     state.selectedId = selected?.id || null;
   }
   elements.detail.innerHTML = selected ? renderDetail(selected) : `<div class="empty-state"><h2>No cameras match</h2><p>Try a different search or filter.</p></div>`;
+  renderQualityExplorer();
 }
+
+function drivingSamples() {
+  return state.cameras.flatMap(camera => camera.video_samples
+    .filter(sample => sample.mode === "driving")
+    .map(sample => ({ camera, sample, role: cameraRole(sample.channel) }))
+    .filter(item => item.role));
+}
+
+function cameraRole(channel) {
+  const value = channel.toLowerCase();
+  if (value.includes("telephoto")) return "front_telephoto";
+  if (value.includes("interior")) return "interior";
+  if (value.includes("rear") || /^r\b|^b \(rear\)|^c \(rear\)|^nr\b/.test(value)) return "rear";
+  if (value.includes("front") || /^f\b|^a \(front\)|^mf\b|^nf\b/.test(value)) return "front";
+  return null;
+}
+
+function populateQualityFilters() {
+  const allSamples = drivingSamples();
+  const roles = [...new Set(allSamples.map(item => item.role))].sort(roleCompare);
+  updateSelectOptions(elements.qualityChannel, roles, state.qualityChannel, "No measured camera positions");
+  state.qualityChannel = elements.qualityChannel.value || roles[0] || "";
+  const samples = allSamples.filter(item => item.role === state.qualityChannel);
+  const resolutions = [...new Set(samples.map(item => item.sample.resolution))].sort(resolutionCompare);
+  const fps = [...new Set(samples.flatMap(item => fpsValues(item.sample.fps)))].sort(fpsCompare);
+  updateSelectOptions(elements.qualityResolution, resolutions, state.qualityResolution, "Any resolution");
+  updateSelectOptions(elements.qualityFps, fps, state.qualityFps, "Any frame rate");
+  state.qualityResolution = elements.qualityResolution.value;
+  state.qualityFps = elements.qualityFps.value;
+  const companionRoles = roles.filter(role => role !== state.qualityChannel);
+  updateSelectOptions(elements.qualityCompanionChannel, companionRoles, state.qualityCompanionChannel, "No additional camera requirement");
+  state.qualityCompanionChannel = elements.qualityCompanionChannel.value;
+  const companionSamples = allSamples.filter(item => item.role === state.qualityCompanionChannel);
+  const companionEnabled = Boolean(state.qualityCompanionChannel);
+  elements.qualityCompanionResolution.disabled = !companionEnabled;
+  elements.qualityCompanionFps.disabled = !companionEnabled;
+  updateSelectOptions(elements.qualityCompanionResolution, [...new Set(companionSamples.map(item => item.sample.resolution))].sort(resolutionCompare), state.qualityCompanionResolution, "Any resolution");
+  updateSelectOptions(elements.qualityCompanionFps, [...new Set(companionSamples.flatMap(item => fpsValues(item.sample.fps)))].sort(fpsCompare), state.qualityCompanionFps, "Any frame rate");
+  state.qualityCompanionResolution = companionEnabled ? elements.qualityCompanionResolution.value : "";
+  state.qualityCompanionFps = companionEnabled ? elements.qualityCompanionFps.value : "";
+}
+
+function updateSelectOptions(element, values, selected, defaultLabel) {
+  element.innerHTML = `<option value="">${escapeHtml(defaultLabel)}</option>${values.map(value => `<option value="${escapeHtml(value)}" ${value === selected ? "selected" : ""}>${escapeHtml(selectLabel(element, value))}</option>`).join("")}`;
+}
+
+function renderQualityExplorer() {
+  const matches = drivingSamples()
+    .filter(item => item.role === state.qualityChannel)
+    .filter(item => !state.qualityResolution || item.sample.resolution === state.qualityResolution)
+    .filter(item => !state.qualityFps || fpsValues(item.sample.fps).includes(state.qualityFps))
+    .filter(item => !state.qualityCompanionChannel || configurationCompanions(item).some(companion => cameraRole(companion.channel) === state.qualityCompanionChannel
+      && (!state.qualityCompanionResolution || companion.resolution === state.qualityCompanionResolution)
+      && (!state.qualityCompanionFps || fpsValues(companion.fps).includes(state.qualityCompanionFps))))
+    .sort((a, b) => bitrateMaximum(b.sample.bitrate) - bitrateMaximum(a.sample.bitrate) || naturalCompare(a.camera.model, b.camera.model));
+  elements.qualityResultCount.textContent = `${matches.length} measured ${state.qualityChannel} driving sample${matches.length === 1 ? "" : "s"}`;
+  elements.qualityResults.innerHTML = matches.length ? matches.map(({ camera, sample }) => {
+    const item = { camera, sample, role: cameraRole(sample.channel) };
+    const companions = configurationCompanions(item);
+    const configuration = sample.recording_configuration || "Configuration not recorded";
+    const setting = sample.settings_note ? `<small class="quality-setting">${escapeHtml(sample.settings_note)}</small>` : "";
+    return `<button class="quality-result" data-id="${escapeHtml(camera.id)}"><span class="quality-camera"><strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>${escapeHtml(sample.channel)} · ${escapeHtml(sample.codec)}</small></span><span class="quality-spec">${escapeHtml(sample.resolution)}<small>${escapeHtml(sample.fps)} FPS</small></span><span class="bitrate-bar"><i style="width:${bitrateWidth(sample.bitrate)}%"></i><strong>${escapeHtml(sample.bitrate)}</strong></span><span class="quality-companions"><strong>${escapeHtml(configuration)}</strong><small>${companions.length ? companions.map(companion => `${roleLabel(cameraRole(companion.channel))} ${companion.resolution} ${companion.fps}fps`).join(" · ") : "No additional same-configuration channel recorded"}</small>${setting}</span></button>`;
+  }).join("") : `<div class="quality-empty">No measured driving samples match those filters.</div>`;
+  elements.qualityResults.querySelectorAll("button").forEach(button => button.addEventListener("click", () => selectCamera(button.dataset.id)));
+}
+
+function configurationCompanions({ camera, sample }) {
+  if (!sample.recording_configuration) return [];
+  return camera.video_samples.filter(item => item.mode === "driving" && item !== sample && item.recording_configuration === sample.recording_configuration);
+}
+
+function bitrateMaximum(value) {
+  const values = String(value).match(/\d+(?:\.\d+)?/g) || [];
+  return Math.max(0, ...values.map(Number));
+}
+
+function bitrateWidth(value) { return Math.max(8, Math.min(100, bitrateMaximum(value) / 70 * 100)); }
+function fpsValues(value) { return [...new Set((String(value).match(/\d+(?:\.\d+)?/g) || []))]; }
+function roleLabel(value) { return ({ front: "Front", front_telephoto: "Telephoto front", rear: "Rear", interior: "Interior" })[value] || "Unknown"; }
+function roleCompare(a, b) { return ["front", "front_telephoto", "rear", "interior"].indexOf(a) - ["front", "front_telephoto", "rear", "interior"].indexOf(b); }
+function selectLabel(element, value) {
+  if (element === elements.qualityChannel || element === elements.qualityCompanionChannel) return roleLabel(value);
+  if (element === elements.qualityFps || element === elements.qualityCompanionFps) return `${value} FPS`;
+  return value;
+}
+function resolutionCompare(a, b) { return pixelCount(b) - pixelCount(a) || naturalCompare(a, b); }
+function pixelCount(value) { const match = String(value).match(/(\d+)x(\d+)/); return match ? Number(match[1]) * Number(match[2]) : 0; }
+function fpsCompare(a, b) { return bitrateMaximum(b) - bitrateMaximum(a) || naturalCompare(a, b); }
 
 function selectCamera(id) {
   state.selectedId = id;
@@ -165,8 +269,10 @@ function renderVideoSamples(samples) {
   if (!samples.length) return "";
   return section("Measured video samples", `<div class="sample-grid">${samples.map(sample => `
     <div class="card"><div class="card-head"><strong>${escapeHtml(sample.channel)}</strong><span class="mode">${escapeHtml(label(sample.mode))}</span></div>
-    <div class="meta">${escapeHtml([sample.codec, sample.resolution, `${sample.fps} FPS`, sample.bitrate].filter(value => value && value !== "—").join(" · "))}</div>
-    <div class="meta">${escapeHtml(`${sample.container} · ${sample.source}`)}</div></div>`).join("")}</div>`);
+    <div class="meta">${escapeHtml([sample.codec, sample.resolution, `${sample.fps} FPS`, sample.bitrate].filter(value => value && value !== "Unknown").join(" · "))}</div>
+    <div class="meta">${escapeHtml(`${sample.container} · ${sample.source}`)}</div>
+    ${sample.recording_configuration ? `<div class="meta"><strong>Recorded configuration:</strong> ${escapeHtml(sample.recording_configuration)}</div>` : ""}
+    ${sample.settings_note ? `<div class="meta"><strong>Settings note:</strong> ${escapeHtml(sample.settings_note)}</div>` : ""}</div>`).join("")}</div>`);
 }
 
 function renderFacts(facts) {

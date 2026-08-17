@@ -17,6 +17,7 @@
     <nav aria-label="Project links">
       <a href="https://github.com/vortexopenclaw/dashcam-camera-profiles">GitHub</a>
       <a href="https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/CONTRIBUTING.md">Contribute</a>
+      <a href="#methodology">Methodology</a>
       <a href="privacy.md">Privacy</a>
     </nav>
   </header>
@@ -25,7 +26,7 @@
     <section class="hero">
       <div>
         <p class="eyebrow">COMMUNITY DATASET</p>
-        <h1>How dashcams actually write footage.</h1>
+        <h1>How dashcams write footage.</h1>
         <p class="hero-copy">Search real card layouts, filename conventions, driving and parking modes, measured video specifications, and official manuals. Unknown details stay unknown.</p>
       </div>
       <dl class="stats" aria-label="Repository coverage">
@@ -33,6 +34,57 @@
         <div><dt id="measured-count">…</dt><dd>with measured video</dd></div>
         <div><dt id="manual-count">…</dt><dd>with manual links</dd></div>
       </dl>
+    </section>
+
+    <section id="methodology" class="methodology" aria-labelledby="methodology-title">
+      <div class="explorer-heading">
+        <p class="eyebrow">HOW TO READ THIS REFERENCE</p>
+        <h2 id="methodology-title">Every claim keeps its evidence boundary.</h2>
+        <p>Profiles combine sanitized card observations, official documentation, and measured technical samples. They preserve what each source establishes instead of filling gaps from a related product.</p>
+      </div>
+      <div class="methodology-grid">
+        <article class="method-card method-warning">
+          <h3>A product name is not a configuration</h3>
+          <p>Resolution, frame rate, HDR, quality mode, firmware, and which cameras were connected can change how a dashcam records. A measured row describes that captured setup only. It does not predict every setting or revision of the same model.</p>
+        </article>
+        <article class="method-card">
+          <h3>Card-validated</h3>
+          <p>A privacy-safe scan of a real card confirmed the listed storage behavior.</p>
+        </article>
+        <article class="method-card">
+          <h3>Manual-backed</h3>
+          <p>Official documentation supports the claim, but a real card has not confirmed it yet.</p>
+        </article>
+        <article class="method-card">
+          <h3>Technical sample</h3>
+          <p>A measured video fact is available, while the camera’s folder and filename behavior remains incomplete.</p>
+        </article>
+        <article class="method-card">
+          <h3>Catalog hint</h3>
+          <p>The model is identified, but this reference does not claim its storage layout or recording behavior.</p>
+        </article>
+      </div>
+      <p class="methodology-note">Evidence level is a scope label, not a product rating. Empty sections mean the project has not established that fact.</p>
+    </section>
+
+    <section class="quality-explorer" aria-labelledby="quality-explorer-title">
+      <div class="explorer-heading">
+        <p class="eyebrow">MEASURED DRIVING VIDEO</p>
+        <h2 id="quality-explorer-title">Compare video quality</h2>
+        <p>Filter measured driving clips by channel, resolution, and frame rate. Results are ordered by the highest observed bitrate. Parking samples are excluded because their encoding is not comparable to normal driving recording.</p>
+      </div>
+      <div class="quality-controls">
+        <label>Camera position<select id="quality-channel"></select></label>
+        <label>Resolution<select id="quality-resolution"><option value="">Any resolution</option></select></label>
+        <label>Frame rate<select id="quality-fps"><option value="">Any frame rate</option></select></label>
+        <label>Additional camera<select id="quality-companion-channel"></select></label>
+        <label>Required resolution<select id="quality-companion-resolution" disabled><option value="">Any resolution</option></select></label>
+        <label>Required frame rate<select id="quality-companion-fps" disabled><option value="">Any frame rate</option></select></label>
+      </div>
+      <p id="quality-result-count" class="result-count" aria-live="polite"></p>
+      <div class="quality-legend"><span>Camera</span><span>Resolution / FPS</span><span>Measured bitrate</span><span>Recorded configuration</span></div>
+      <div id="quality-results" class="quality-results"></div>
+      <p class="quality-note">Bitrate is an observed range from a specific card and configuration, not a universal manufacturer specification. Additional-camera filters use only samples with the same recorded configuration. Settings are shown only when the evidence records them.</p>
     </section>
 
     <section class="browser" aria-label="Camera technical reference">

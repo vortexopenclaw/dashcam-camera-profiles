@@ -45,6 +45,18 @@ driving and parking structure, filename patterns and token maps, measured video
 rows, technical facts, caveats, and source links. Its content comes only from
 the generated index.
 
+The browser also provides a driving-video comparison view. It filters only
+measured driving samples by camera role, resolution, and individual frame-rate
+values, with an optional additional-camera requirement, then sorts the matches
+by the highest observed bitrate. Companion matching is restricted to samples
+with the same recorded configuration, so measurements from unrelated 1CH, 2CH,
+or 3CH captures are never combined. A second front-facing camera is a distinct
+role, such as telephoto front, and cannot be selected as a duplicate of the
+primary front camera. Parking samples remain excluded deliberately because
+their bitrate is not comparable to normal driving recording. Settings such as
+HDR or quality mode are shown only when the evidence records them; the frontend
+never infers their effect.
+
 ## Acceptance checks
 
 - Every canonical profile passes structural and privacy validation.
@@ -54,3 +66,28 @@ the generated index.
   measured bitrate data, and manual links.
 - Frontend JavaScript parses and the static site serves without missing assets.
 - No public deployment occurs until explicitly approved.
+
+## Public deployment decision (2026-08-17)
+
+GitHub Pages publishes `main` from `/docs` as the first public deployment.
+GitHub remains the canonical source for reviewed profiles, browser code, issue
+discussion, and contributions. The public site is static and has no server,
+account system, analytics, or ongoing hosting layer. A custom Vortex URL may
+be considered later, but is outside this launch.
+
+## Temporary tailnet preview (2026-08-15)
+
+**Objective:** Make the unpublished static browser available to its authorized
+tailnet viewer without exposing it to the public internet or disturbing the existing
+Tailscale service on port 8443.
+
+**Approach:** A dedicated loopback-only static server listens on port 8006.
+Tailscale Serve maps only `/dashcam-camera-profiles` on the existing tailnet-only HTTPS
+endpoint to that server.
+
+**Success checks:** The local server returns the comparison UI, and the
+tailnet URL returns that same UI while the root 8443 route remains configured.
+
+**Risk and rollback:** This is internal tailnet access, not a public deploy.
+Remove only the `/dashcam-camera-profiles` handler and unload the dedicated launch agent to
+roll it back; do not reset the shared Tailscale Serve configuration.
