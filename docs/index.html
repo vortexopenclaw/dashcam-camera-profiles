@@ -71,7 +71,7 @@
       <div class="explorer-heading">
         <p class="eyebrow">MEASURED DRIVING VIDEO</p>
         <h2 id="quality-explorer-title">Compare video quality</h2>
-        <p>Filter measured driving clips by channel, resolution, and frame rate. Results are ordered by the highest observed bitrate. Parking samples are excluded because their encoding is not comparable to normal driving recording.</p>
+        <p>Filter measured driving clips by channel, resolution, and frame rate. Results are ordered by the upper end of the observed bitrate range. Parking samples are excluded because their encoding is not comparable to normal driving recording.</p>
       </div>
       <div class="quality-controls">
         <label>Camera position<select id="quality-channel"></select></label>
@@ -84,7 +84,7 @@
       <p id="quality-result-count" class="result-count" aria-live="polite"></p>
       <div class="quality-legend"><span>Camera</span><span>Resolution / FPS</span><span>Measured bitrate</span><span>Recorded configuration</span></div>
       <div id="quality-results" class="quality-results"></div>
-      <p class="quality-note">Bitrate is an observed range from a specific card and configuration, not a universal manufacturer specification. Additional-camera filters use only samples with the same recorded configuration. Settings are shown only when the evidence records them.</p>
+      <p class="quality-note">Bitrate is an observed range from a specific card and configuration, not a universal manufacturer specification. The data does not label a row as “high” or “maximum” unless that setting is captured. Additional-camera filters use only samples with the same recorded configuration.</p>
     </section>
 
     <section class="browser" aria-label="Camera technical reference">

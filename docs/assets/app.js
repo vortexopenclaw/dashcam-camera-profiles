@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     bindControls();
     populateQualityFilters();
     const hashId = decodeURIComponent(location.hash.replace(/^#camera=/, ""));
-    state.selectedId = state.cameras.some(camera => camera.id === hashId) ? hashId : state.cameras[0]?.id;
+    state.selectedId = state.cameras.some(camera => camera.id === hashId) ? hashId : null;
     render();
   } catch (error) {
     elements.detail.innerHTML = `<div class="empty-state"><h2>Reference unavailable</h2><p>${escapeHtml(error.message)}</p></div>`;
@@ -94,13 +94,15 @@ function render() {
     </button>`).join("");
   elements.list.querySelectorAll("button").forEach(button => button.addEventListener("click", () => selectCamera(button.dataset.id)));
 
-  let selected = state.cameras.find(camera => camera.id === state.selectedId);
-  if (!selected || !cameras.includes(selected)) {
-    selected = cameras[0];
-    state.selectedId = selected?.id || null;
+  const selected = state.cameras.find(camera => camera.id === state.selectedId);
+  if (selected && cameras.includes(selected)) {
+    elements.detail.innerHTML = renderDetail(selected);
+  } else {
+    state.selectedId = null;
+    elements.detail.innerHTML = cameras.length ? renderOverview(qualityMatches()) : `<div class="empty-state"><h2>No cameras match</h2><p>Try a different search or filter.</p></div>`;
   }
-  elements.detail.innerHTML = selected ? renderDetail(selected) : `<div class="empty-state"><h2>No cameras match</h2><p>Try a different search or filter.</p></div>`;
   renderQualityExplorer();
+  bindChartClicks();
 }
 
 function drivingSamples() {
@@ -148,8 +150,8 @@ function updateSelectOptions(element, values, selected, defaultLabel) {
   element.innerHTML = `<option value="">${escapeHtml(defaultLabel)}</option>${values.map(value => `<option value="${escapeHtml(value)}" ${value === selected ? "selected" : ""}>${escapeHtml(selectLabel(element, value))}</option>`).join("")}`;
 }
 
-function renderQualityExplorer() {
-  const matches = drivingSamples()
+function qualityMatches() {
+  return drivingSamples()
     .filter(item => item.role === state.qualityChannel)
     .filter(item => !state.qualityResolution || item.sample.resolution === state.qualityResolution)
     .filter(item => !state.qualityFps || fpsValues(item.sample.fps).includes(state.qualityFps))
@@ -157,6 +159,10 @@ function renderQualityExplorer() {
       && (!state.qualityCompanionResolution || companion.resolution === state.qualityCompanionResolution)
       && (!state.qualityCompanionFps || fpsValues(companion.fps).includes(state.qualityCompanionFps))))
     .sort((a, b) => bitrateMaximum(b.sample.bitrate) - bitrateMaximum(a.sample.bitrate) || naturalCompare(a.camera.model, b.camera.model));
+}
+
+function renderQualityExplorer() {
+  const matches = qualityMatches();
   elements.qualityResultCount.textContent = `${matches.length} measured ${state.qualityChannel} driving sample${matches.length === 1 ? "" : "s"}`;
   elements.qualityResults.innerHTML = matches.length ? matches.map(({ camera, sample }) => {
     const item = { camera, sample, role: cameraRole(sample.channel) };
@@ -166,6 +172,14 @@ function renderQualityExplorer() {
     return `<button class="quality-result" data-id="${escapeHtml(camera.id)}"><span class="quality-camera"><strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>${escapeHtml(sample.channel)} · ${escapeHtml(sample.codec)}</small></span><span class="quality-spec">${escapeHtml(sample.resolution)}<small>${escapeHtml(sample.fps)} FPS</small></span><span class="bitrate-bar"><i style="width:${bitrateWidth(sample.bitrate)}%"></i><strong>${escapeHtml(sample.bitrate)}</strong></span><span class="quality-companions"><strong>${escapeHtml(configuration)}</strong><small>${companions.length ? companions.map(companion => `${roleLabel(cameraRole(companion.channel))} ${companion.resolution} ${companion.fps}fps`).join(" · ") : "No additional same-configuration channel recorded"}</small>${setting}</span></button>`;
   }).join("") : `<div class="quality-empty">No measured driving samples match those filters.</div>`;
   elements.qualityResults.querySelectorAll("button").forEach(button => button.addEventListener("click", () => selectCamera(button.dataset.id)));
+  if (!state.selectedId) {
+    elements.detail.innerHTML = renderOverview(matches);
+    bindChartClicks();
+  }
+}
+
+function bindChartClicks() {
+  elements.detail.querySelectorAll(".bitrate-chart-row").forEach(button => button.addEventListener("click", () => selectCamera(button.dataset.id)));
 }
 
 function configurationCompanions({ camera, sample }) {
@@ -196,6 +210,28 @@ function selectCamera(id) {
   history.replaceState(null, "", `#camera=${encodeURIComponent(id)}`);
   render();
   if (window.matchMedia("(max-width: 900px)").matches) elements.detail.scrollIntoView({ behavior: "smooth" });
+}
+
+function renderOverview(matches) {
+  return `<header>
+    <p class="detail-kicker">LIBRARY OVERVIEW</p>
+    <h1 class="detail-title">Measured driving bitrate</h1>
+    <p class="section-intro">Select a camera on the left for its full storage reference. Until then, this chart follows the comparison filters above.</p>
+  </header>
+  ${renderBitrateChart(matches)}`;
+}
+
+function renderBitrateChart(matches) {
+  if (!matches.length) return `<div class="empty-state"><h2>No measured samples match</h2><p>Adjust the driving-video filters above.</p></div>`;
+  const maximum = Math.max(...matches.map(item => bitrateMaximum(item.sample.bitrate)));
+  return `<section class="section bitrate-chart-section"><h2>Observed bitrate by camera</h2>
+    <p class="section-intro">Bars scale to the upper end of each recorded range. That is a charting value, not a manufacturer maximum or a high-quality setting.</p>
+    <div class="bitrate-chart">${matches.map(({ camera, sample }) => `<button class="bitrate-chart-row" data-id="${escapeHtml(camera.id)}">
+      <span class="chart-label"><strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>${escapeHtml(sample.channel)} · ${escapeHtml(sample.resolution)} · ${escapeHtml(sample.fps)} FPS</small></span>
+      <span class="chart-track"><i style="width:${Math.max(3, bitrateMaximum(sample.bitrate) / maximum * 100)}%"></i><strong>${escapeHtml(sample.bitrate)}</strong></span>
+      <small class="chart-configuration">${escapeHtml(sample.recording_configuration || "Configuration not recorded")}</small>
+    </button>`).join("")}</div>
+  </section>`;
 }
 
 function renderDetail(camera) {
