@@ -1,0 +1,245 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schema_version": "1.0",
+  "id": "vueroid-s1-qhd-infinite",
+  "manufacturer": "Vueroid",
+  "model": "S1 QHD Infinite",
+  "evidence": {
+    "level": "card-validated",
+    "status": "supported",
+    "confidence": "high",
+    "note": "Four privacy-sanitized app submissions on firmware 1.0.4 confirm exact model metadata, 30 fps three-channel recording, 60 fps front-only recording, time-lapse parking, and parking-impact behavior."
+  },
+  "channel_variants": [
+    {
+      "channels": 1,
+      "variant": "60 fps front-only recording",
+      "roles": ["front"],
+      "validation": "app_submission"
+    },
+    {
+      "channels": 2,
+      "variant": "front/rear product configuration",
+      "roles": ["front", "rear"],
+      "validation": "profile_supported_not_directly_sampled"
+    },
+    {
+      "channels": 3,
+      "variant": "30 fps front/interior/rear recording",
+      "roles": ["front", "interior", "rear"],
+      "validation": "app_submission"
+    }
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "path": "INF",
+        "mode": "continuous",
+        "importable": true,
+        "validation": "app_submission",
+        "notes": []
+      },
+      {
+        "path": "EVENT",
+        "mode": "driving_event",
+        "importable": true,
+        "validation": "app_submission",
+        "notes": []
+      },
+      {
+        "path": "USER",
+        "mode": "manual",
+        "importable": true,
+        "validation": "app_submission",
+        "notes": []
+      },
+      {
+        "path": "BOOKMARK",
+        "mode": "bookmark_image",
+        "importable": false,
+        "validation": "app_submission",
+        "notes": []
+      }
+    ],
+    "parking_folders": [
+      {
+        "path": "PARK",
+        "mode": "parking",
+        "importable": true,
+        "validation": "app_submission",
+        "notes": ["A three-channel submission confirmed 5 fps time-lapse footage in 20-second files."]
+      },
+      {
+        "path": "PEVENT",
+        "mode": "parking_event",
+        "importable": true,
+        "validation": "app_submission",
+        "notes": ["Three-channel 30 fps impact footage was observed in 30-second files."]
+      }
+    ],
+    "other_folders": [
+      {
+        "path": "CONFIG",
+        "mode": "support_metadata",
+        "importable": false,
+        "validation": "app_submission",
+        "notes": ["Contains the exact safe model marker S1-QHD-INFINITE. A 2CH setting value is not authoritative for the active recorded channel set."]
+      }
+    ],
+    "parking_modes": ["motion detection", "time-lapse", "impact detection", "extreme low power"]
+  },
+  "filename_patterns": [
+    {
+      "pattern": "^(\\d{8})_(\\d{6})_([A-Z]+)_([FIR])_([A-Z])\\.mp4$",
+      "applies_to": ["INF", "EVENT", "PARK", "PEVENT", "USER"],
+      "modes": {},
+      "channels": {
+        "F": "front",
+        "I": "interior",
+        "R": "rear"
+      },
+      "default_channel": null,
+      "timestamp_format": "YYYYMMDD_HHMMSS"
+    }
+  ],
+  "video_samples": [
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "~22.0 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate, firmware 1.0.4",
+      "settings_note": "One-minute files; front/interior/rear active."
+    },
+    {
+      "channel": "interior",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "~15.0 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate, firmware 1.0.4",
+      "settings_note": "One-minute files; front/interior/rear active."
+    },
+    {
+      "channel": "rear",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "~22.0 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate, firmware 1.0.4",
+      "settings_note": "One-minute files; front/interior/rear active."
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "60",
+      "bitrate": "~24.0 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "60 fps front-only recording, firmware 1.0.4",
+      "settings_note": "The submitted 3CH setup recorded only the front channel; the user reported that 60 fps disables the interior camera and HDR."
+    },
+    {
+      "channel": "front",
+      "mode": "parking time-lapse",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "5",
+      "bitrate": "~13.8-16.3 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate time-lapse parking, firmware 1.0.4",
+      "settings_note": "20-second files."
+    },
+    {
+      "channel": "interior",
+      "mode": "parking time-lapse",
+      "codec": "H.264",
+      "resolution": "1920x1080",
+      "fps": "5",
+      "bitrate": "~7.8-8.5 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate time-lapse parking, firmware 1.0.4",
+      "settings_note": "20-second files."
+    },
+    {
+      "channel": "rear",
+      "mode": "parking time-lapse",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "5",
+      "bitrate": "~9.8-10.9 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate time-lapse parking, firmware 1.0.4",
+      "settings_note": "20-second files."
+    },
+    {
+      "channel": "front",
+      "mode": "parking impact",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "~22.0 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate impact parking, firmware 1.0.4",
+      "settings_note": "30-second files."
+    },
+    {
+      "channel": "interior",
+      "mode": "parking impact",
+      "codec": "H.264",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "~15.0 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate impact parking, firmware 1.0.4",
+      "settings_note": "30-second files."
+    },
+    {
+      "channel": "rear",
+      "mode": "parking impact",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "~22.0 Mbps",
+      "container": "MP4",
+      "source": "app submission",
+      "recording_configuration": "3CH high bitrate impact parking, firmware 1.0.4",
+      "settings_note": "30-second files."
+    }
+  ],
+  "technical_facts": [
+    {"label": "Exact safe model marker", "value": "S1-QHD-INFINITE in CONFIG/config.bin"},
+    {"label": "Observed firmware", "value": "1.0.4 across four submissions"},
+    {"label": "Channel tokens", "value": "F front, I interior, R rear"},
+    {"label": "Grouping keys", "value": "date, time, and prefix"},
+    {"label": "Config caveat", "value": "The card can report 2CH while a complete 3CH front/interior/rear set is active."}
+  ],
+  "sources": [
+    {
+      "label": "Dashcam Offloader S1 QHD card profile notes",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vueroid-s1-qhd-infinite.md",
+      "kind": "research"
+    }
+  ],
+  "notes": [
+    "Measured data describes the submitted high-bitrate firmware 1.0.4 configurations and is not a universal bitrate guarantee.",
+    "The front/rear 2CH product variant is supported by the app profile but still needs a dedicated privacy-safe card sample."
+  ]
+}

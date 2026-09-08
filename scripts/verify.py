@@ -44,6 +44,11 @@ def main() -> None:
     assert any(folder["path"] == "cont_rec" for folder in arc900["recording"]["driving_folders"])
     assert any(folder["path"] == "parking_rec" for folder in arc900["recording"]["parking_folders"])
     assert any(source["kind"] == "manual" for source in arc900["sources"])
+
+    s1_qhd = next(camera for camera in cameras if camera["id"] == "vueroid-s1-qhd-infinite")
+    assert s1_qhd["evidence"]["level"] == "card-validated"
+    assert any(sample["channel"] == "rear" and sample["resolution"] == "2560x1440" for sample in s1_qhd["video_samples"])
+    assert any(sample["mode"] == "parking time-lapse" and sample["fps"] == "5" for sample in s1_qhd["video_samples"])
     print("Verification passed: canonical profiles, privacy, mode-specific video, folders, filenames, and manuals")
 
 

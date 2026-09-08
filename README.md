@@ -99,7 +99,7 @@ unobserved behavior simply because a similar model has it.
 
 ## Status
 
-The repository currently contains 67 camera references: 55 camera profiles
+The repository currently contains 68 camera references: 56 camera profiles
 with card, manual, or catalog evidence, plus 12 references built from measured
 video metadata where the card layout is not yet known. Missing information is
 shown as missing rather than inferred from a related model.
