@@ -442,7 +442,12 @@
       },
       "schema_version": "1.0",
       "sources": [],
-      "technical_facts": [],
+      "technical_facts": [
+        {
+          "label": "Paired driving-file measurement archive",
+          "value": "46 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
+        }
+      ],
       "video_samples": []
     },
     {
@@ -1689,6 +1694,26 @@
         {
           "label": "parking_mode \u203a observed",
           "value": "timelapse"
+        },
+        {
+          "label": "Complete-file driving storage front",
+          "value": "2880x1620 at 25 fps: 12.378814-20.063853 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Complete-file driving storage left",
+          "value": "1920x1080 at 25 fps: 7.403821-8.819706 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Complete-file driving storage right",
+          "value": "1920x1080 at 25 fps: 7.824602-8.938873 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Complete-file driving storage rear",
+          "value": "1920x1080 at 25 fps: 1.077413-4.489339 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Paired driving-file measurement archive",
+          "value": "33 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
         }
       ],
       "video_samples": []
@@ -2140,6 +2165,10 @@
         {
           "label": "parking_mode \u203a observed",
           "value": "timelapse"
+        },
+        {
+          "label": "Paired driving-file measurement archive",
+          "value": "21 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
         }
       ],
       "video_samples": []
@@ -3321,7 +3350,20 @@
       },
       "schema_version": "1.0",
       "sources": [],
-      "technical_facts": [],
+      "technical_facts": [
+        {
+          "label": "Complete-file driving storage front",
+          "value": "2560x1440 at 29.97 fps: 16.983840-17.187423 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Complete-file driving storage rear",
+          "value": "1920x1080 at 25 fps: 9.098449-9.203283 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Paired driving-file measurement archive",
+          "value": "10 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
+        }
+      ],
       "video_samples": []
     },
     {
@@ -4002,7 +4044,16 @@
           "url": "https://download2.inavi.com/dashcam/ARC800/manual/arc800_manual_english_20260623.pdf"
         }
       ],
-      "technical_facts": [],
+      "technical_facts": [
+        {
+          "label": "Complete-file driving storage front",
+          "value": "3840x2160 at 30 fps: 33.694242-33.694242 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Complete-file driving storage rear",
+          "value": "1920x1080 at 30 fps: 8.528418-8.528418 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        }
+      ],
       "video_samples": []
     },
     {
@@ -4190,7 +4241,20 @@
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
         }
       ],
-      "technical_facts": [],
+      "technical_facts": [
+        {
+          "label": "Complete-file driving storage front",
+          "value": "1920x1080 at 29.97 fps: 11.173637-11.173637 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Complete-file driving storage rear",
+          "value": "1280x720 at 29.97 fps: 11.173637-11.173637 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+        },
+        {
+          "label": "Paired driving-file measurement archive",
+          "value": "14 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
+        }
+      ],
       "video_samples": [
         {
           "bitrate": "~3.3 Mbps",
@@ -5267,7 +5331,12 @@
       },
       "schema_version": "1.0",
       "sources": [],
-      "technical_facts": [],
+      "technical_facts": [
+        {
+          "label": "Paired driving-file measurement archive",
+          "value": "4 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
+        }
+      ],
       "video_samples": [
         {
           "bitrate": "~31.9 Mbps",
@@ -6802,6 +6871,10 @@
         {
           "label": "grouping \u203a expected_sets \u203a parking",
           "value": "PR"
+        },
+        {
+          "label": "Paired driving-file measurement archive",
+          "value": "13 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
         }
       ],
       "video_samples": [
@@ -8338,6 +8411,10 @@
         {
           "label": "grouping \u203a channel_sets \u203a 1ch \u203a validation",
           "value": "real_card_sampled"
+        },
+        {
+          "label": "Paired driving-file measurement archive",
+          "value": "6 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
         }
       ],
       "video_samples": []

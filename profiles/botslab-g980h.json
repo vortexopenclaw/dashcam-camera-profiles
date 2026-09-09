@@ -183,6 +183,26 @@
     {
       "label": "parking_mode \u203a observed",
       "value": "timelapse"
+    },
+    {
+      "label": "Complete-file driving storage front",
+      "value": "2880x1620 at 25 fps: 12.378814-20.063853 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Complete-file driving storage left",
+      "value": "1920x1080 at 25 fps: 7.403821-8.819706 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Complete-file driving storage right",
+      "value": "1920x1080 at 25 fps: 7.824602-8.938873 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Complete-file driving storage rear",
+      "value": "1920x1080 at 25 fps: 1.077413-4.489339 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Paired driving-file measurement archive",
+      "value": "33 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
     }
   ],
   "video_samples": []

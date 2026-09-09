@@ -332,6 +332,10 @@
     {
       "label": "parking_mode \u203a observed",
       "value": "timelapse"
+    },
+    {
+      "label": "Paired driving-file measurement archive",
+      "value": "21 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
     }
   ],
   "video_samples": []

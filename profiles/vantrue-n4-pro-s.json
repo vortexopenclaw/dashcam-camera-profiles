@@ -82,7 +82,12 @@
   },
   "schema_version": "1.0",
   "sources": [],
-  "technical_facts": [],
+  "technical_facts": [
+    {
+      "label": "Paired driving-file measurement archive",
+      "value": "4 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
+    }
+  ],
   "video_samples": [
     {
       "bitrate": "~31.9 Mbps",

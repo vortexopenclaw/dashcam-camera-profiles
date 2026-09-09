@@ -131,6 +131,15 @@
       "url": "https://download2.inavi.com/dashcam/ARC800/manual/arc800_manual_english_20260623.pdf"
     }
   ],
-  "technical_facts": [],
+  "technical_facts": [
+    {
+      "label": "Complete-file driving storage front",
+      "value": "3840x2160 at 30 fps: 33.694242-33.694242 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Complete-file driving storage rear",
+      "value": "1920x1080 at 30 fps: 8.528418-8.528418 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    }
+  ],
   "video_samples": []
 }

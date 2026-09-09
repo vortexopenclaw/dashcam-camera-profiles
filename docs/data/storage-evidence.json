@@ -1,0 +1,5752 @@
+{
+  "reviewedOn": "2026-09-08",
+  "policy": "Anonymous technical evidence. Each pair includes complete file size. Do not combine configurations or infer quality labels. Unknown channels are not calculator-ready. Short preallocated clips remain evidence but are excluded from sustained full-loop estimates.",
+  "pairedSamples": [
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "af320da24ee20f978db7e08608bf7b1c56715c0af5828225da804edb51d3d162",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 56623104,
+      "durationSeconds": 37.96666666666667,
+      "estimatedBitrate": 11617800
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "af320da24ee20f978db7e08608bf7b1c56715c0af5828225da804edb51d3d162",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 197132288,
+      "durationSeconds": 37.96666666666667,
+      "estimatedBitrate": 40950724
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "af320da24ee20f978db7e08608bf7b1c56715c0af5828225da804edb51d3d162",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 197132288,
+      "durationSeconds": 37.96666666666667,
+      "estimatedBitrate": 40964788
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "af320da24ee20f978db7e08608bf7b1c56715c0af5828225da804edb51d3d162",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 46137344,
+      "durationSeconds": 29.866666666666667,
+      "estimatedBitrate": 11885583
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 31926215,
+      "durationSeconds": 60,
+      "estimatedBitrate": 4172304
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 32082131,
+      "durationSeconds": 60,
+      "estimatedBitrate": 4193710
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 9213914,
+      "durationSeconds": 17.366,
+      "estimatedBitrate": 4113882
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 32093234,
+      "durationSeconds": 60,
+      "estimatedBitrate": 4194662
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 175588,
+      "durationSeconds": 0.233,
+      "estimatedBitrate": 1515497
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 240648747,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31883654
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 240585418,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31875828
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 69829766,
+      "durationSeconds": 17.333,
+      "estimatedBitrate": 31980020
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 1562748,
+      "durationSeconds": 0.233,
+      "estimatedBitrate": 48956948
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 95037250,
+      "durationSeconds": 60,
+      "estimatedBitrate": 12587177
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 94988116,
+      "durationSeconds": 60,
+      "estimatedBitrate": 12581242
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 27476917,
+      "durationSeconds": 17.333,
+      "estimatedBitrate": 12550872
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 399177,
+      "durationSeconds": 0.133,
+      "estimatedBitrate": 16082940
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 19054913,
+      "durationSeconds": 60,
+      "estimatedBitrate": 2455882
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 19019949,
+      "durationSeconds": 60,
+      "estimatedBitrate": 2456232
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 5469929,
+      "durationSeconds": 16.9,
+      "estimatedBitrate": 2456829
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 19055841,
+      "durationSeconds": 60,
+      "estimatedBitrate": 2456413
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 2021946,
+      "durationSeconds": 6,
+      "estimatedBitrate": 2460343
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 215651499,
+      "durationSeconds": 60,
+      "estimatedBitrate": 28669082
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 215614237,
+      "durationSeconds": 60,
+      "estimatedBitrate": 28669136
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 62433384,
+      "durationSeconds": 17.3,
+      "estimatedBitrate": 28740702
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 215661578,
+      "durationSeconds": 60,
+      "estimatedBitrate": 28670952
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 23190328,
+      "durationSeconds": 6.4,
+      "estimatedBitrate": 28764710
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 31926215,
+      "durationSeconds": 60,
+      "estimatedBitrate": 4172304
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 3533858,
+      "durationSeconds": 6.333,
+      "estimatedBitrate": 4237663
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 9445454,
+      "durationSeconds": 18.1,
+      "estimatedBitrate": 4046519
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 32093234,
+      "durationSeconds": 60,
+      "estimatedBitrate": 4194662
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 175588,
+      "durationSeconds": 0.233,
+      "estimatedBitrate": 1515497
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 240648747,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31883654
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 25756285,
+      "durationSeconds": 6.333,
+      "estimatedBitrate": 32189776
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 72924697,
+      "durationSeconds": 18.066,
+      "estimatedBitrate": 32044556
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 1562748,
+      "durationSeconds": 0.233,
+      "estimatedBitrate": 48956948
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 95037250,
+      "durationSeconds": 60,
+      "estimatedBitrate": 12587177
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 10382553,
+      "durationSeconds": 6.433,
+      "estimatedBitrate": 12687120
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 28821251,
+      "durationSeconds": 18.066,
+      "estimatedBitrate": 12633674
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 399177,
+      "durationSeconds": 0.133,
+      "estimatedBitrate": 16082940
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 19054913,
+      "durationSeconds": 60,
+      "estimatedBitrate": 2455882
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 19048620,
+      "durationSeconds": 60,
+      "estimatedBitrate": 2456008
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 5862543,
+      "durationSeconds": 18.1,
+      "estimatedBitrate": 2462912
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 19055841,
+      "durationSeconds": 60,
+      "estimatedBitrate": 2456413
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 848,
+      "height": 480,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 2021946,
+      "durationSeconds": 6,
+      "estimatedBitrate": 2460343
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 215651499,
+      "durationSeconds": 60,
+      "estimatedBitrate": 28669082
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 215656018,
+      "durationSeconds": 60,
+      "estimatedBitrate": 28670300
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 64792432,
+      "durationSeconds": 18,
+      "estimatedBitrate": 28667662
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 215661578,
+      "durationSeconds": 60,
+      "estimatedBitrate": 28670952
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 23190328,
+      "durationSeconds": 6.4,
+      "estimatedBitrate": 28764710
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2880,
+      "height": 1620,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 92841104,
+      "durationSeconds": 60,
+      "estimatedBitrate": 11610379
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2880,
+      "height": 1620,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 14033320,
+      "durationSeconds": 5,
+      "estimatedBitrate": 16069914
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 12892076,
+      "durationSeconds": 12.16,
+      "estimatedBitrate": 5546929
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2880,
+      "height": 1620,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 150131168,
+      "durationSeconds": 60,
+      "estimatedBitrate": 19250716
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2880,
+      "height": 1620,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 7196008,
+      "durationSeconds": 2.92,
+      "estimatedBitrate": 8390175
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "left",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 55528656,
+      "durationSeconds": 60,
+      "estimatedBitrate": 6885678
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "left",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 54601708,
+      "durationSeconds": 54.2,
+      "estimatedBitrate": 7524230
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "left",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 15390164,
+      "durationSeconds": 12.92,
+      "estimatedBitrate": 8046589
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "left",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 66147796,
+      "durationSeconds": 60,
+      "estimatedBitrate": 8308414
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20037404,
+      "durationSeconds": 60,
+      "estimatedBitrate": 2145856
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 3354584,
+      "durationSeconds": 2.36,
+      "estimatedBitrate": 4521997
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 6114632,
+      "durationSeconds": 12.2,
+      "estimatedBitrate": 2412807
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 33670040,
+      "durationSeconds": 60,
+      "estimatedBitrate": 3960348
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "right",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 58684512,
+      "durationSeconds": 60,
+      "estimatedBitrate": 7308387
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "right",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 66753980,
+      "durationSeconds": 60,
+      "estimatedBitrate": 8386785
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "right",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 59890452,
+      "durationSeconds": 53.6,
+      "estimatedBitrate": 8396727
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "right",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 66795300,
+      "durationSeconds": 60,
+      "estimatedBitrate": 8389953
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 121634816,
+      "durationSeconds": 60,
+      "estimatedBitrate": 15944278
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 494927872,
+      "durationSeconds": 60,
+      "estimatedBitrate": 65531228
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 327155712,
+      "durationSeconds": 39.6,
+      "estimatedBitrate": 65557692
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 494927872,
+      "durationSeconds": 60,
+      "estimatedBitrate": 65534236
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 54657024,
+      "durationSeconds": 6.366666666666666,
+      "estimatedBitrate": 66192828
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 469005746,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60035272
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468958293,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60026156
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.025188446044922,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468952689,
+      "durationSeconds": 39.7,
+      "estimatedBitrate": 60064892
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.01673126220703,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 470148538,
+      "durationSeconds": 60.966,
+      "estimatedBitrate": 60038340
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.01673126220703,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468761090,
+      "durationSeconds": 60.966,
+      "estimatedBitrate": 60022096
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 469027349,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60032620
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 257949696,
+      "durationSeconds": 60,
+      "estimatedBitrate": 30022378
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 257949696,
+      "durationSeconds": 60,
+      "estimatedBitrate": 29974710
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 257949696,
+      "durationSeconds": 38.03333333333333,
+      "estimatedBitrate": 30108534
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 121634816,
+      "durationSeconds": 60,
+      "estimatedBitrate": 15944278
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 494927872,
+      "durationSeconds": 60,
+      "estimatedBitrate": 65531228
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 327155712,
+      "durationSeconds": 39.6,
+      "estimatedBitrate": 65557692
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 494927872,
+      "durationSeconds": 60,
+      "estimatedBitrate": 65534236
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 54657024,
+      "durationSeconds": 6.366666666666666,
+      "estimatedBitrate": 66192828
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 469005746,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60035272
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468958293,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60026156
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.025188446044922,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468952689,
+      "durationSeconds": 39.7,
+      "estimatedBitrate": 60064892
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.01673126220703,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 470148538,
+      "durationSeconds": 60.966,
+      "estimatedBitrate": 60038340
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.01673126220703,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468761090,
+      "durationSeconds": 60.966,
+      "estimatedBitrate": 60022096
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 469027349,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60032620
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 257949696,
+      "durationSeconds": 60,
+      "estimatedBitrate": 30015126
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 257949696,
+      "durationSeconds": 38.03333333333333,
+      "estimatedBitrate": 30108534
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 494927872,
+      "durationSeconds": 60,
+      "estimatedBitrate": 65535176
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 494927872,
+      "durationSeconds": 60,
+      "estimatedBitrate": 65534376
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 117440512,
+      "durationSeconds": 17.266666666666666,
+      "estimatedBitrate": 53274484
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 14811136,
+      "durationSeconds": 1.6,
+      "estimatedBitrate": 67303608
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.01673126220703,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 469002406,
+      "durationSeconds": 60.966,
+      "estimatedBitrate": 60032972
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468952089,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60033480
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.021739959716797,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468974463,
+      "durationSeconds": 46,
+      "estimatedBitrate": 60099100
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 469068723,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60044500
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.016239166259766,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 468921401,
+      "durationSeconds": 60.967,
+      "estimatedBitrate": 60029328
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 257949696,
+      "durationSeconds": 60,
+      "estimatedBitrate": 29997026
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 257949696,
+      "durationSeconds": 60,
+      "estimatedBitrate": 30028018
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 257949696,
+      "durationSeconds": 25.033333333333335,
+      "estimatedBitrate": 30181404
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 205520896,
+      "durationSeconds": 60,
+      "estimatedBitrate": 27033264
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 205520896,
+      "durationSeconds": 60,
+      "estimatedBitrate": 27033246
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 52428800,
+      "durationSeconds": 17.266666666666666,
+      "estimatedBitrate": 23884232
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 6422528,
+      "durationSeconds": 1.6,
+      "estimatedBitrate": 26874956
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 24,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 177016668,
+      "durationSeconds": 56.166666666666664,
+      "estimatedBitrate": 24575580
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 108293536,
+      "durationSeconds": 60,
+      "estimatedBitrate": 13810309
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 72845752,
+      "durationSeconds": 60,
+      "estimatedBitrate": 9064555
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 122105308,
+      "durationSeconds": 60,
+      "estimatedBitrate": 15632827
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 24,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 189343568,
+      "durationSeconds": 60,
+      "estimatedBitrate": 24576098
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 46137344,
+      "durationSeconds": 10.066666666666666,
+      "estimatedBitrate": 23288250
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 128320884,
+      "durationSeconds": 60,
+      "estimatedBitrate": 16463750
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 24,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 189356740,
+      "durationSeconds": 60,
+      "estimatedBitrate": 24576886
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 134607776,
+      "durationSeconds": 60,
+      "estimatedBitrate": 17302012
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 24,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 189420372,
+      "durationSeconds": 60,
+      "estimatedBitrate": 24576698
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 132222140,
+      "durationSeconds": 60,
+      "estimatedBitrate": 16985630
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 24,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 189388816,
+      "durationSeconds": 60,
+      "estimatedBitrate": 24576928
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 135469276,
+      "durationSeconds": 60,
+      "estimatedBitrate": 17417156
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 24,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 189370760,
+      "durationSeconds": 60,
+      "estimatedBitrate": 24574022
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 65060504,
+      "durationSeconds": 26.366666666666667,
+      "estimatedBitrate": 18396850
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 24,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 86397624,
+      "durationSeconds": 26.666666666666668,
+      "estimatedBitrate": 24571972
+    },
+    {
+      "manufacturer": "Vantrue",
+      "model": "N4 Pro S",
+      "sourceDigest": "27eca9c9cbc16cfd794969becc9209a40677a10f2e0b6da2db4e49c071f40738",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 243269632,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31946842
+    },
+    {
+      "manufacturer": "Vantrue",
+      "model": "N4 Pro S",
+      "sourceDigest": "27eca9c9cbc16cfd794969becc9209a40677a10f2e0b6da2db4e49c071f40738",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 111149056,
+      "durationSeconds": 60,
+      "estimatedBitrate": 14335762
+    },
+    {
+      "manufacturer": "Vantrue",
+      "model": "N4 Pro S",
+      "sourceDigest": "27eca9c9cbc16cfd794969becc9209a40677a10f2e0b6da2db4e49c071f40738",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 54525952,
+      "durationSeconds": 41.63333333333333,
+      "estimatedBitrate": 9836021
+    },
+    {
+      "manufacturer": "Vantrue",
+      "model": "N4 Pro S",
+      "sourceDigest": "27eca9c9cbc16cfd794969becc9209a40677a10f2e0b6da2db4e49c071f40738",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 4006756,
+      "durationSeconds": 2.1333333333333333,
+      "estimatedBitrate": 14533474
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 32099589,
+      "durationSeconds": 60,
+      "estimatedBitrate": 4194561
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 4703151,
+      "durationSeconds": 8.466,
+      "estimatedBitrate": 4247211
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 10703678,
+      "durationSeconds": 19.5,
+      "estimatedBitrate": 4216101
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 32235703,
+      "durationSeconds": 60.028,
+      "estimatedBitrate": 4194385
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 240613574,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31878168
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 34292082,
+      "durationSeconds": 8.433,
+      "estimatedBitrate": 32214770
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 78820045,
+      "durationSeconds": 19.5,
+      "estimatedBitrate": 32042958
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 240753089,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31879156
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 82423383,
+      "durationSeconds": 60,
+      "estimatedBitrate": 10904531
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 11776002,
+      "durationSeconds": 8.466,
+      "estimatedBitrate": 10930758
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 27469175,
+      "durationSeconds": 19.833,
+      "estimatedBitrate": 10906674
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 82564367,
+      "durationSeconds": 60,
+      "estimatedBitrate": 10904951
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2880,
+      "height": 1620,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 92841104,
+      "durationSeconds": 60,
+      "estimatedBitrate": 11610379
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2880,
+      "height": 1620,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 150067112,
+      "durationSeconds": 60,
+      "estimatedBitrate": 19250830
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2880,
+      "height": 1620,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 132220788,
+      "durationSeconds": 52.72,
+      "estimatedBitrate": 19240816
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2880,
+      "height": 1620,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 150131168,
+      "durationSeconds": 60,
+      "estimatedBitrate": 19250716
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20037404,
+      "durationSeconds": 60,
+      "estimatedBitrate": 2145856
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 10284556,
+      "durationSeconds": 60,
+      "estimatedBitrate": 838852
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 11281888,
+      "durationSeconds": 53.88,
+      "estimatedBitrate": 1115499
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 8080600,
+      "durationSeconds": 60,
+      "estimatedBitrate": 543298
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 55528656,
+      "durationSeconds": 60,
+      "estimatedBitrate": 6885678
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 65392608,
+      "durationSeconds": 60,
+      "estimatedBitrate": 8207269
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 54601708,
+      "durationSeconds": 54.2,
+      "estimatedBitrate": 7524230
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 66147796,
+      "durationSeconds": 60,
+      "estimatedBitrate": 8308414
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 58684512,
+      "durationSeconds": 60,
+      "estimatedBitrate": 7308387
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 66753980,
+      "durationSeconds": 60,
+      "estimatedBitrate": 8386785
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 59890452,
+      "durationSeconds": 53.6,
+      "estimatedBitrate": 8396727
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 66795300,
+      "durationSeconds": 60,
+      "estimatedBitrate": 8389953
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 236978176,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31127068
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 310378496,
+      "durationSeconds": 60,
+      "estimatedBitrate": 40955988
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 8454144,
+      "durationSeconds": 1.2333333333333334,
+      "estimatedBitrate": 41563660
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 236978176,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31126250
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 310378496,
+      "durationSeconds": 60,
+      "estimatedBitrate": 40957612
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 8454144,
+      "durationSeconds": 1.2333333333333334,
+      "estimatedBitrate": 40770624
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 92274688,
+      "durationSeconds": 60,
+      "estimatedBitrate": 11877273
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 92274688,
+      "durationSeconds": 60,
+      "estimatedBitrate": 11878409
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 2162688,
+      "durationSeconds": 1.2333333333333334,
+      "estimatedBitrate": 12089319
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K Infinite",
+      "sourceDigest": "d5b3fdc13e9335cf7177c4aa8f0613456b9f6c0a459dc2d4f18a0922c576eb67",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 412876800,
+      "durationSeconds": 60,
+      "estimatedBitrate": 39480180
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K Infinite",
+      "sourceDigest": "d5b3fdc13e9335cf7177c4aa8f0613456b9f6c0a459dc2d4f18a0922c576eb67",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 412876800,
+      "durationSeconds": 60,
+      "estimatedBitrate": 48003448
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K Infinite",
+      "sourceDigest": "d5b3fdc13e9335cf7177c4aa8f0613456b9f6c0a459dc2d4f18a0922c576eb67",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 412876800,
+      "durationSeconds": 46.833333333333336,
+      "estimatedBitrate": 29196000
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K Infinite",
+      "sourceDigest": "d5b3fdc13e9335cf7177c4aa8f0613456b9f6c0a459dc2d4f18a0922c576eb67",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 189267968,
+      "durationSeconds": 60,
+      "estimatedBitrate": 21984768
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K Infinite",
+      "sourceDigest": "d5b3fdc13e9335cf7177c4aa8f0613456b9f6c0a459dc2d4f18a0922c576eb67",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 189267968,
+      "durationSeconds": 60,
+      "estimatedBitrate": 22002686
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K Infinite",
+      "sourceDigest": "d5b3fdc13e9335cf7177c4aa8f0613456b9f6c0a459dc2d4f18a0922c576eb67",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 189267968,
+      "durationSeconds": 46.8,
+      "estimatedBitrate": 22007072
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.998624801635742,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 251658240,
+      "durationSeconds": 60.00275,
+      "estimatedBitrate": 31207910
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 29.99617576599121,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 104857600,
+      "durationSeconds": 60.00765,
+      "estimatedBitrate": 13718948
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.998624801635742,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 251658240,
+      "durationSeconds": 60.00275,
+      "estimatedBitrate": 31339058
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.001712799072266,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 104857600,
+      "durationSeconds": 59.996575,
+      "estimatedBitrate": 13703017
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.998624801635742,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 251658240,
+      "durationSeconds": 60.00275,
+      "estimatedBitrate": 31396454
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.003904342651367,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 104857600,
+      "durationSeconds": 59.99219166666666,
+      "estimatedBitrate": 13725755
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.00107765197754,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 21.099241666666668,
+      "estimatedBitrate": 31484116
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.02214813232422,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 20.351641666666666,
+      "estimatedBitrate": 13601248
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.899538040161133,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 20.0672,
+      "estimatedBitrate": 30432116
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.069509506225586,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 18.490491666666667,
+      "estimatedBitrate": 13828379
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.899538040161133,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 20.0672,
+      "estimatedBitrate": 30368574
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.048797607421875,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 19.468333333333334,
+      "estimatedBitrate": 12725785
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.848085403442383,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 20.101791666666667,
+      "estimatedBitrate": 30548326
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.065616607666016,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 19.823308333333333,
+      "estimatedBitrate": 14011570
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.99920082092285,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 20.000533333333333,
+      "estimatedBitrate": 30559036
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.036231994628906,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 19.60965,
+      "estimatedBitrate": 12841646
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.846452713012695,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 20.102891666666668,
+      "estimatedBitrate": 30269782
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.056148529052734,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 18.731608333333334,
+      "estimatedBitrate": 12005120
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 6.266666666666667,
+      "estimatedBitrate": 31782620
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.181325912475586,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20971520,
+      "durationSeconds": 6.295283333333333,
+      "estimatedBitrate": 14307521
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.994293212890625,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20971520,
+      "durationSeconds": 5.301008333333334,
+      "estimatedBitrate": 30990568
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.047927856445312,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20971520,
+      "durationSeconds": 4.725783333333333,
+      "estimatedBitrate": 12239400
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.998075485229492,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 20.001283333333333,
+      "estimatedBitrate": 30604206
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.075519561767578,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 19.650533333333332,
+      "estimatedBitrate": 15571871
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 29.849929809570312,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 20.10055,
+      "estimatedBitrate": 30819318
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.067283630371094,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 19.722433333333335,
+      "estimatedBitrate": 14231882
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30.00750160217285,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20971520,
+      "durationSeconds": 1.299675,
+      "estimatedBitrate": 31802430
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.163862228393555,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20971520,
+      "durationSeconds": 1.2266333333333332,
+      "estimatedBitrate": 15246114
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 9.4,
+      "estimatedBitrate": 31315716
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.160125732421875,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20971520,
+      "durationSeconds": 9.38325,
+      "estimatedBitrate": 13628741
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 251658240,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31194364
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.000137329101562,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 104857600,
+      "durationSeconds": 59.999725,
+      "estimatedBitrate": 12279806
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 251658240,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31328190
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.008949279785156,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 104857600,
+      "durationSeconds": 59.982108333333336,
+      "estimatedBitrate": 12248360
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 209715200,
+      "durationSeconds": 50.3,
+      "estimatedBitrate": 31434008
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.001420974731445,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 49.59765,
+      "estimatedBitrate": 12323844
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 251658240,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31206532
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.003463745117188,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 104857600,
+      "durationSeconds": 59.993075,
+      "estimatedBitrate": 12360578
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 20.566666666666666,
+      "estimatedBitrate": 31369566
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.01226234436035,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 20.225066666666667,
+      "estimatedBitrate": 12452474
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 167772160,
+      "durationSeconds": 38.6,
+      "estimatedBitrate": 31166674
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.00445556640625,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 62914560,
+      "durationSeconds": 38.094341666666665,
+      "estimatedBitrate": 12391465
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 41943040,
+      "durationSeconds": 9.233333333333333,
+      "estimatedBitrate": 31148074
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30.02181053161621,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 20971520,
+      "durationSeconds": 8.860225,
+      "estimatedBitrate": 13154907
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 167772160,
+      "durationSeconds": 39.7,
+      "estimatedBitrate": 29412134
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 29.99930763244629,
+      "codec": "H.265 / HEVC",
+      "fileSizeBytes": 209715200,
+      "durationSeconds": 39.66758333333333,
+      "estimatedBitrate": 40304320
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 272629760,
+      "durationSeconds": 60,
+      "estimatedBitrate": 36044120
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 272629760,
+      "durationSeconds": 60,
+      "estimatedBitrate": 36044328
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 12648448,
+      "durationSeconds": 2.7333333333333334,
+      "estimatedBitrate": 36599552
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 8454144,
+      "durationSeconds": 1.6,
+      "estimatedBitrate": 37576352
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 119537664,
+      "durationSeconds": 60,
+      "estimatedBitrate": 15564079
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 119537664,
+      "durationSeconds": 60,
+      "estimatedBitrate": 15564175
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 6356992,
+      "durationSeconds": 2.9,
+      "estimatedBitrate": 15555542
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "interior",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 4259840,
+      "durationSeconds": 1.7,
+      "estimatedBitrate": 15803252
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 180355072,
+      "durationSeconds": 60,
+      "estimatedBitrate": 23756540
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 180355072,
+      "durationSeconds": 60,
+      "estimatedBitrate": 23756508
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 8454144,
+      "durationSeconds": 2.9,
+      "estimatedBitrate": 18105650
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 182452224,
+      "durationSeconds": 60,
+      "estimatedBitrate": 23953624
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 4259840,
+      "durationSeconds": 1.7,
+      "estimatedBitrate": 17773962
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 236978176,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31127068
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 310378496,
+      "durationSeconds": 60,
+      "estimatedBitrate": 40955988
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 12648448,
+      "durationSeconds": 3.1,
+      "estimatedBitrate": 31079342
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 236978176,
+      "durationSeconds": 60,
+      "estimatedBitrate": 31126250
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 310378496,
+      "durationSeconds": 60,
+      "estimatedBitrate": 40957612
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 12648448,
+      "durationSeconds": 3.1,
+      "estimatedBitrate": 31016966
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 92274688,
+      "durationSeconds": 60,
+      "estimatedBitrate": 11877273
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 6356992,
+      "durationSeconds": 3.1,
+      "estimatedBitrate": 11967956
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 129149232,
+      "durationSeconds": 60.113367,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 128935288,
+      "durationSeconds": 60.113367,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 11206656,
+      "durationSeconds": 5.140367,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 127619476,
+      "durationSeconds": 60.113367,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 9109504,
+      "durationSeconds": 21.161367,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25.0,
+      "codec": "h264",
+      "fileSizeBytes": 69070636,
+      "durationSeconds": 60.04,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25.0,
+      "codec": "h264",
+      "fileSizeBytes": 68938848,
+      "durationSeconds": 60.04,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25.0,
+      "codec": "h264",
+      "fileSizeBytes": 7086660,
+      "durationSeconds": 6.04,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25.0,
+      "codec": "h264",
+      "fileSizeBytes": 68283856,
+      "durationSeconds": 60.04,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 25.0,
+      "codec": "h264",
+      "fileSizeBytes": 5439488,
+      "durationSeconds": 22.68,
+      "estimatedBitrate": null
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "driving_event",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 10003905.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "driving_event",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 5997147.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 9843928.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 5999172.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 9999941.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 5997023.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 9996812.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 5995732.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 10003006.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 5996785.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 9997068.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 60.06,
+      "estimatedBitrate": 6000727.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "front",
+      "mode": "continuous",
+      "width": 1920,
+      "height": 1080,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 32.032,
+      "estimatedBitrate": 10013994.0
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "FA200",
+      "sourceDigest": "300fe70d8e3590c3d66ed95360586c231fef92f02ef63cd78746b1397794df8d",
+      "channel": "rear",
+      "mode": "continuous",
+      "width": 1280,
+      "height": 720,
+      "nominalFrameRate": 29.97002997002997,
+      "codec": "h264",
+      "fileSizeBytes": 83886080,
+      "durationSeconds": 32.032,
+      "estimatedBitrate": 6000607.0
+    }
+  ],
+  "summaryGroups": [
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "af320da24ee20f978db7e08608bf7b1c56715c0af5828225da804edb51d3d162",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 40964788,
+      "sampleBitrateMax": 40964788,
+      "sampleDurationMin": 37.96666666666667,
+      "sampleDurationMax": 37.96666666666667,
+      "minFileSizeBytes": 197132288,
+      "maxFileSizeBytes": 197132288
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "af320da24ee20f978db7e08608bf7b1c56715c0af5828225da804edb51d3d162",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 40950724,
+      "sampleBitrateMax": 40950724,
+      "sampleDurationMin": 37.96666666666667,
+      "sampleDurationMax": 37.96666666666667,
+      "minFileSizeBytes": 197132288,
+      "maxFileSizeBytes": 197132288
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "af320da24ee20f978db7e08608bf7b1c56715c0af5828225da804edb51d3d162",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 11617800,
+      "sampleBitrateMax": 11885583,
+      "sampleDurationMin": 29.866666666666667,
+      "sampleDurationMax": 37.96666666666667,
+      "minFileSizeBytes": 46137344,
+      "maxFileSizeBytes": 56623104
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "848x480"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 1515497,
+      "sampleBitrateMax": 4194662,
+      "sampleDurationMin": 0.233,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 175588,
+      "maxFileSizeBytes": 32093234
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "848x480"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 2455882,
+      "sampleBitrateMax": 2460343,
+      "sampleDurationMin": 6,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 2021946,
+      "maxFileSizeBytes": 19055841
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "interior",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 12550872,
+      "sampleBitrateMax": 16082940,
+      "sampleDurationMin": 0.133,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 399177,
+      "maxFileSizeBytes": 95037250
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 31875828,
+      "sampleBitrateMax": 48956948,
+      "sampleDurationMin": 0.233,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 1562748,
+      "maxFileSizeBytes": 240648747
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "c95dcc9bb7070499410e2d8797f6788a749bf83c6f4ed2bc83d75690b58fe6bd",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 28669082,
+      "sampleBitrateMax": 28764710,
+      "sampleDurationMin": 6.4,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 23190328,
+      "maxFileSizeBytes": 215661578
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "848x480"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 1515497,
+      "sampleBitrateMax": 4237663,
+      "sampleDurationMin": 0.233,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 175588,
+      "maxFileSizeBytes": 32093234
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "848x480"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 2455882,
+      "sampleBitrateMax": 2462912,
+      "sampleDurationMin": 6,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 2021946,
+      "maxFileSizeBytes": 19055841
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "interior",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 12587177,
+      "sampleBitrateMax": 16082940,
+      "sampleDurationMin": 0.133,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 399177,
+      "maxFileSizeBytes": 95037250
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 31883654,
+      "sampleBitrateMax": 48956948,
+      "sampleDurationMin": 0.233,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 1562748,
+      "maxFileSizeBytes": 240648747
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "T800",
+      "sourceDigest": "fe9978bcd221f9f7cfe6cbbafe53df904bb995834a868836a4f0ec98b80258a4",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 28667662,
+      "sampleBitrateMax": 28764710,
+      "sampleDurationMin": 6.4,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 23190328,
+      "maxFileSizeBytes": 215661578
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 QHD Infinite",
+      "sourceDigest": "3bf4a80a45833f8be58fcc0a44636e20e8df78c42d3151bfd31a8c8257e1dffa",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 21999738,
+      "sampleBitrateMax": 22026558,
+      "sampleDurationMin": 9.333333333333334,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 189267968,
+      "maxFileSizeBytes": 189267968
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 QHD Infinite",
+      "sourceDigest": "3bf4a80a45833f8be58fcc0a44636e20e8df78c42d3151bfd31a8c8257e1dffa",
+      "channel": "interior",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 14988034,
+      "sampleBitrateMax": 15106071,
+      "sampleDurationMin": 9.3,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 129040384,
+      "maxFileSizeBytes": 129040384
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 QHD Infinite",
+      "sourceDigest": "3bf4a80a45833f8be58fcc0a44636e20e8df78c42d3151bfd31a8c8257e1dffa",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 21966282,
+      "sampleBitrateMax": 22007208,
+      "sampleDurationMin": 9.333333333333334,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 189267968,
+      "maxFileSizeBytes": 189267968
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 QHD",
+      "sourceDigest": "a2b9f6965ad79a0f40d650c94d0eef054c894a157784e0e5f6931fe8d13a18c9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        60
+      ],
+      "sampleBitrateMin": 23999612,
+      "sampleBitrateMax": 24059684,
+      "sampleDurationMin": 11.583333333333334,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 206438400,
+      "maxFileSizeBytes": 206438400
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "2880x1620",
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        25
+      ],
+      "sampleBitrateMin": 5546929,
+      "sampleBitrateMax": 19250716,
+      "sampleDurationMin": 2.92,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 7196008,
+      "maxFileSizeBytes": 150131168
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "left",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        25
+      ],
+      "sampleBitrateMin": 6885678,
+      "sampleBitrateMax": 8308414,
+      "sampleDurationMin": 12.92,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 15390164,
+      "maxFileSizeBytes": 66147796
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        25
+      ],
+      "sampleBitrateMin": 2145856,
+      "sampleBitrateMax": 4521997,
+      "sampleDurationMin": 2.36,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 3354584,
+      "maxFileSizeBytes": 33670040
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "3d63ceebc12f26e149af5922c4c446cfe0f9d748ee6abd28c884126afc547802",
+      "channel": "right",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        25
+      ],
+      "sampleBitrateMin": 7308387,
+      "sampleBitrateMax": 8396727,
+      "sampleDurationMin": 53.6,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 58684512,
+      "maxFileSizeBytes": 66795300
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 403137771,
+      "maxFileSizeBytes": 403137771
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 15944278,
+      "sampleBitrateMax": 66192828,
+      "sampleDurationMin": 6.366666666666666,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 54657024,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 53253448,
+      "sampleBitrateMax": 65534152,
+      "sampleDurationMin": 27.866666666666667,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 186646528,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 65525888,
+      "sampleBitrateMax": 65536264,
+      "sampleDurationMin": 60,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 494927872,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30.016239166259766,
+        30.01673126220703,
+        30.025188446044922
+      ],
+      "sampleBitrateMin": 60022096,
+      "sampleBitrateMax": 60064892,
+      "sampleDurationMin": 39.7,
+      "sampleDurationMax": 60.967,
+      "minFileSizeBytes": 468761090,
+      "maxFileSizeBytes": 470148538
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30.016239166259766,
+        30.01673126220703
+      ],
+      "sampleBitrateMin": 60027364,
+      "sampleBitrateMax": 60034436,
+      "sampleDurationMin": 60.966,
+      "sampleDurationMax": 60.967,
+      "minFileSizeBytes": 468930961,
+      "maxFileSizeBytes": 469196854
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 468897904,
+      "maxFileSizeBytes": 469088622
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 412876800,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 29974710,
+      "sampleBitrateMax": 30181404,
+      "sampleDurationMin": 25.033333333333335,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 257949696,
+      "maxFileSizeBytes": 257949696
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 15944278,
+      "sampleBitrateMax": 66192828,
+      "sampleDurationMin": 6.366666666666666,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 54657024,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 53253448,
+      "sampleBitrateMax": 65534152,
+      "sampleDurationMin": 27.866666666666667,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 186646528,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 65525888,
+      "sampleBitrateMax": 65536264,
+      "sampleDurationMin": 60,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 494927872,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30.016239166259766,
+        30.01673126220703,
+        30.025188446044922
+      ],
+      "sampleBitrateMin": 60022096,
+      "sampleBitrateMax": 60064892,
+      "sampleDurationMin": 39.7,
+      "sampleDurationMax": 60.967,
+      "minFileSizeBytes": 468761090,
+      "maxFileSizeBytes": 470148538
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30.016239166259766,
+        30.01673126220703
+      ],
+      "sampleBitrateMin": 60027364,
+      "sampleBitrateMax": 60034436,
+      "sampleDurationMin": 60.966,
+      "sampleDurationMax": 60.967,
+      "minFileSizeBytes": 468930961,
+      "maxFileSizeBytes": 469196854
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 468897904,
+      "maxFileSizeBytes": 469088622
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 47998504,
+      "sampleBitrateMax": 48000968,
+      "sampleDurationMin": 60,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 412876800,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 412876800,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 412876800,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 29997026,
+      "sampleBitrateMax": 30181404,
+      "sampleDurationMin": 25.033333333333335,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 257949696,
+      "maxFileSizeBytes": 257949696
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 257949696,
+      "maxFileSizeBytes": 257949696
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 53274484,
+      "sampleBitrateMax": 67303608,
+      "sampleDurationMin": 1.6,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 14811136,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "interior",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 23884232,
+      "sampleBitrateMax": 27033264,
+      "sampleDurationMin": 1.6,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 6422528,
+      "maxFileSizeBytes": 205520896
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 6422528,
+      "maxFileSizeBytes": 205520896
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30.01673126220703,
+        30.016239166259766,
+        30.021739959716797
+      ],
+      "sampleBitrateMin": 60029328,
+      "sampleBitrateMax": 60099100,
+      "sampleDurationMin": 46,
+      "sampleDurationMax": 60.967,
+      "minFileSizeBytes": 468921401,
+      "maxFileSizeBytes": 469068723
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 201975349,
+      "maxFileSizeBytes": 202319573
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 129040384,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 29997026,
+      "sampleBitrateMax": 30181404,
+      "sampleDurationMin": 25.033333333333335,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 257949696,
+      "maxFileSizeBytes": 257949696
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 106954752,
+      "maxFileSizeBytes": 106954752
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 64552960,
+      "maxFileSizeBytes": 206438400
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 412876800,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 412876800,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K",
+      "sourceDigest": "45090ef75053e95d06da52187a98a780fb6e37a2a6521ce86814deca138a9306",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 206438400,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Miofive",
+      "model": "S1 Ultra",
+      "sourceDigest": "6b3ad5cecfa8318c71362898aeafd8bba2a926faf0203bf442952463147831f9",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30,
+        24
+      ],
+      "sampleBitrateMin": 9064555,
+      "sampleBitrateMax": 24576928,
+      "sampleDurationMin": 10.066666666666666,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 46137344,
+      "maxFileSizeBytes": 189420372
+    },
+    {
+      "manufacturer": "Vantrue",
+      "model": "N4 Pro S",
+      "sourceDigest": "27eca9c9cbc16cfd794969becc9209a40677a10f2e0b6da2db4e49c071f40738",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160",
+        "2560x1440",
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 9836021,
+      "sampleBitrateMax": 31946842,
+      "sampleDurationMin": 2.1333333333333333,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 4006756,
+      "maxFileSizeBytes": 243269632
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "ARC 800",
+      "sourceDigest": "9b60228c6e5df6af28f08ff3565c28b867e6f5f48e1df998885250b846c18402",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 31899430,
+      "sampleBitrateMax": 31933762,
+      "sampleDurationMin": 20.088,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 252706816,
+      "maxFileSizeBytes": 252706816
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "ARC 800",
+      "sourceDigest": "9b60228c6e5df6af28f08ff3565c28b867e6f5f48e1df998885250b846c18402",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30.000165939331055,
+        30.000333786010742,
+        30
+      ],
+      "sampleBitrateMin": 7999859,
+      "sampleBitrateMax": 8000474,
+      "sampleDurationMin": 59.99933333333333,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 63963136,
+      "maxFileSizeBytes": 63963136
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "1280x720"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 4194385,
+      "sampleBitrateMax": 4247211,
+      "sampleDurationMin": 8.466,
+      "sampleDurationMax": 60.028,
+      "minFileSizeBytes": 4703151,
+      "maxFileSizeBytes": 32235703
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 31878168,
+      "sampleBitrateMax": 32214770,
+      "sampleDurationMin": 8.433,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 34292082,
+      "maxFileSizeBytes": 240753089
+    },
+    {
+      "manufacturer": "70mai",
+      "model": "X800",
+      "sourceDigest": "7486f16afde980cb737e8a902c12ef55fb356410eb1f3fb11a96ac75772f33b7",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 10904531,
+      "sampleBitrateMax": 10930758,
+      "sampleDurationMin": 8.466,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 11776002,
+      "maxFileSizeBytes": 82564367
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "2880x1620"
+      ],
+      "sampleFrameRates": [
+        25
+      ],
+      "sampleBitrateMin": 11610379,
+      "sampleBitrateMax": 19250830,
+      "sampleDurationMin": 52.72,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 92841104,
+      "maxFileSizeBytes": 150131168
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        25
+      ],
+      "sampleBitrateMin": 6885678,
+      "sampleBitrateMax": 8308414,
+      "sampleDurationMin": 54.2,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 54601708,
+      "maxFileSizeBytes": 66147796
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        25
+      ],
+      "sampleBitrateMin": 543298,
+      "sampleBitrateMax": 2145856,
+      "sampleDurationMin": 53.88,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 8080600,
+      "maxFileSizeBytes": 20037404
+    },
+    {
+      "manufacturer": "Botslab",
+      "model": "G980H",
+      "sourceDigest": "a9e03a56b04a1d2bef633c5e5048182cfa12ca6e08051499ccafed3690e8ccb2",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        25
+      ],
+      "sampleBitrateMin": 7308387,
+      "sampleBitrateMax": 8396727,
+      "sampleDurationMin": 53.6,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 58684512,
+      "maxFileSizeBytes": 66795300
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 QHD Infinite",
+      "sourceDigest": "cbd0d27b64cf8d76ca701f0024201b5b4d6c52d08182582e341e7a0177fcc6a7",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 21999512,
+      "sampleBitrateMax": 22014590,
+      "sampleDurationMin": 26.166666666666668,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 189267968,
+      "maxFileSizeBytes": 189267968
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 QHD Infinite",
+      "sourceDigest": "cbd0d27b64cf8d76ca701f0024201b5b4d6c52d08182582e341e7a0177fcc6a7",
+      "channel": "interior",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 14988034,
+      "sampleBitrateMax": 15018219,
+      "sampleDurationMin": 26.166666666666668,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 129040384,
+      "maxFileSizeBytes": 129040384
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 QHD Infinite",
+      "sourceDigest": "cbd0d27b64cf8d76ca701f0024201b5b4d6c52d08182582e341e7a0177fcc6a7",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 21999916,
+      "sampleBitrateMax": 22007208,
+      "sampleDurationMin": 26.166666666666668,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 189267968,
+      "maxFileSizeBytes": 189267968
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 31127068,
+      "sampleBitrateMax": 41563660,
+      "sampleDurationMin": 1.2333333333333334,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 8454144,
+      "maxFileSizeBytes": 310378496
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 31126250,
+      "sampleBitrateMax": 40957612,
+      "sampleDurationMin": 1.2333333333333334,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 8454144,
+      "maxFileSizeBytes": 310378496
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "f822796353696a7e4d75be3b529e5555fdacb8c6c77fad78e9ad629874537805",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 11877273,
+      "sampleBitrateMax": 12089319,
+      "sampleDurationMin": 1.2333333333333334,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 2162688,
+      "maxFileSizeBytes": 92274688
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "ARC 800",
+      "sourceDigest": "872905c8a4183e1fa93c8cda2a3fe178253c7a1267983376528c10776f8047bc",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160",
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30,
+        29.94991683959961,
+        29.702970504760742,
+        29.64824104309082,
+        29.785051345825195,
+        29.451078414916992
+      ],
+      "sampleBitrateMin": 16008800,
+      "sampleBitrateMax": 31926480,
+      "sampleDurationMin": 14.955,
+      "sampleDurationMax": 60.6,
+      "minFileSizeBytes": 252706816,
+      "maxFileSizeBytes": 252706816
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "ARC 800",
+      "sourceDigest": "872905c8a4183e1fa93c8cda2a3fe178253c7a1267983376528c10776f8047bc",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30,
+        27.24170684814453,
+        29.919570922851562,
+        30.000165939331055,
+        30.00055694580078
+      ],
+      "sampleBitrateMin": 7263728,
+      "sampleBitrateMax": 8004912,
+      "sampleDurationMin": 14.955,
+      "sampleDurationMax": 59.99966666666667,
+      "minFileSizeBytes": 63963136,
+      "maxFileSizeBytes": 63963136
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K Infinite",
+      "sourceDigest": "d5b3fdc13e9335cf7177c4aa8f0613456b9f6c0a459dc2d4f18a0922c576eb67",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 29196000,
+      "sampleBitrateMax": 48003448,
+      "sampleDurationMin": 46.833333333333336,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 412876800,
+      "maxFileSizeBytes": 412876800
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 4K Infinite",
+      "sourceDigest": "d5b3fdc13e9335cf7177c4aa8f0613456b9f6c0a459dc2d4f18a0922c576eb67",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 21984768,
+      "sampleBitrateMax": 22007072,
+      "sampleDurationMin": 46.8,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 189267968,
+      "maxFileSizeBytes": 189267968
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        29.899538040161133,
+        29.848085403442383,
+        29.99920082092285,
+        29.846452713012695,
+        29.998075485229492,
+        29.849929809570312
+      ],
+      "sampleBitrateMin": 30269782,
+      "sampleBitrateMax": 30819318,
+      "sampleDurationMin": 20.000533333333333,
+      "sampleDurationMax": 20.102891666666668,
+      "minFileSizeBytes": 83886080,
+      "maxFileSizeBytes": 83886080
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        29.998624801635742,
+        30.00107765197754,
+        30,
+        29.994293212890625,
+        30.00750160217285
+      ],
+      "sampleBitrateMin": 29412134,
+      "sampleBitrateMax": 31802430,
+      "sampleDurationMin": 1.299675,
+      "sampleDurationMax": 60.00275,
+      "minFileSizeBytes": 20971520,
+      "maxFileSizeBytes": 251658240
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30.069509506225586,
+        30.048797607421875,
+        30.065616607666016,
+        30.036231994628906,
+        30.056148529052734,
+        30.075519561767578
+      ],
+      "sampleBitrateMin": 12005120,
+      "sampleBitrateMax": 15571871,
+      "sampleDurationMin": 18.490491666666667,
+      "sampleDurationMax": 19.823308333333333,
+      "minFileSizeBytes": 41943040,
+      "maxFileSizeBytes": 41943040
+    },
+    {
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "sourceDigest": "0c3c89ab5fbcb04d84f3ebdcc559fb683bde10d3052312b874a8571c2fb92b93",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.265 / HEVC"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        29.99617576599121,
+        30.001712799072266,
+        30.003904342651367,
+        30.02214813232422,
+        30.181325912475586,
+        30.047927856445312
+      ],
+      "sampleBitrateMin": 12239400,
+      "sampleBitrateMax": 40304320,
+      "sampleDurationMin": 1.2266333333333332,
+      "sampleDurationMax": 60.00765,
+      "minFileSizeBytes": 20971520,
+      "maxFileSizeBytes": 209715200
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 36044120,
+      "sampleBitrateMax": 37576352,
+      "sampleDurationMin": 1.6,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 8454144,
+      "maxFileSizeBytes": 272629760
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "interior",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 15555542,
+      "sampleBitrateMax": 15803252,
+      "sampleDurationMin": 1.7,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 4259840,
+      "maxFileSizeBytes": 119537664
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A229 Pro",
+      "sourceDigest": "7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 17773962,
+      "sampleBitrateMax": 23953624,
+      "sampleDurationMin": 1.7,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 4259840,
+      "maxFileSizeBytes": 182452224
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "e7106e1e04b7e512c26da2441c7390dd0e23de14a942f0c5670caf220cfe27b0",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 63132844,
+      "maxFileSizeBytes": 63132844
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "e7106e1e04b7e512c26da2441c7390dd0e23de14a942f0c5670caf220cfe27b0",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 3489280,
+      "maxFileSizeBytes": 70157464
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "e7106e1e04b7e512c26da2441c7390dd0e23de14a942f0c5670caf220cfe27b0",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 114432592,
+      "maxFileSizeBytes": 114432592
+    },
+    {
+      "manufacturer": "Ottocast",
+      "model": "OttoSafe Cam",
+      "sourceDigest": "e7106e1e04b7e512c26da2441c7390dd0e23de14a942f0c5670caf220cfe27b0",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [],
+      "sampleResolutions": [],
+      "sampleFrameRates": [],
+      "sampleBitrateMin": null,
+      "sampleBitrateMax": null,
+      "sampleDurationMin": null,
+      "sampleDurationMax": null,
+      "minFileSizeBytes": 5942868,
+      "maxFileSizeBytes": 145675184
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "front_telephoto",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 31079342,
+      "sampleBitrateMax": 40955988,
+      "sampleDurationMin": 3.1,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 12648448,
+      "maxFileSizeBytes": 310378496
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 31016966,
+      "sampleBitrateMax": 40957612,
+      "sampleDurationMin": 3.1,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 12648448,
+      "maxFileSizeBytes": 310378496
+    },
+    {
+      "manufacturer": "Cansonic",
+      "model": "UltraDash Z4 Standard Edition",
+      "sourceDigest": "dbcd82d28656db187b9835190ec16afbac7e1e2aef9a8ec7d8b5830b92366469",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 11877273,
+      "sampleBitrateMax": 11967956,
+      "sampleDurationMin": 3.1,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 6356992,
+      "maxFileSizeBytes": 92274688
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A329S",
+      "sourceDigest": "ec7857c9e35cf37765a3363d1bc3b950801b72c6a38904e6ce8b5cbce448afe6",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 65512848,
+      "sampleBitrateMax": 65534424,
+      "sampleDurationMin": 1.6666666666666667,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 14811136,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A329S",
+      "sourceDigest": "ec7857c9e35cf37765a3363d1bc3b950801b72c6a38904e6ce8b5cbce448afe6",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 27033388,
+      "sampleBitrateMax": 27306940,
+      "sampleDurationMin": 1.6666666666666667,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 6422528,
+      "maxFileSizeBytes": 205520896
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A329T",
+      "sourceDigest": "176b11f994d66bb210b93fcae6d6f89cbf2b8b73d83d862b5b55590a4ae4b50c",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 65540940,
+      "sampleBitrateMax": 65889292,
+      "sampleDurationMin": 3.566666666666667,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 31588352,
+      "maxFileSizeBytes": 494927872
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A329T",
+      "sourceDigest": "176b11f994d66bb210b93fcae6d6f89cbf2b8b73d83d862b5b55590a4ae4b50c",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 27030870,
+      "sampleBitrateMax": 27355584,
+      "sampleDurationMin": 3.566666666666667,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 12713984,
+      "maxFileSizeBytes": 205520896
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A329T",
+      "sourceDigest": "176b11f994d66bb210b93fcae6d6f89cbf2b8b73d83d862b5b55590a4ae4b50c",
+      "channel": "telephoto",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 27031650,
+      "sampleBitrateMax": 27095752,
+      "sampleDurationMin": 3.566666666666667,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 12713984,
+      "maxFileSizeBytes": 205520896
+    },
+    {
+      "manufacturer": "Vueroid",
+      "model": "S1 QHD Infinite",
+      "sourceDigest": "a496ccac135fdf5e39bd3553d42b9f27c12304e8a14261b79e81918f5238d934",
+      "channel": "unknown",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440",
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 14981039,
+      "sampleBitrateMax": 21999742,
+      "sampleDurationMin": 60,
+      "sampleDurationMax": 60,
+      "minFileSizeBytes": 129040384,
+      "maxFileSizeBytes": 189267968
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "ARC 800",
+      "sourceDigest": "34b065cba9471ba64b1a98d1d68051257e85926e2ca035410d9bc82ec22c2cd1",
+      "channel": "front",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160",
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        29.763778686523438,
+        59.98333740234375,
+        59.73451232910156,
+        60
+      ],
+      "sampleBitrateMin": 31851624,
+      "sampleBitrateMax": 31935530,
+      "sampleDurationMin": 13.930833333333334,
+      "sampleDurationMax": 60.266666666666666,
+      "minFileSizeBytes": 252706816,
+      "maxFileSizeBytes": 252706816
+    },
+    {
+      "manufacturer": "Thinkware",
+      "model": "ARC 800",
+      "sourceDigest": "34b065cba9471ba64b1a98d1d68051257e85926e2ca035410d9bc82ec22c2cd1",
+      "channel": "rear",
+      "mode": "continuous",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "1920x1080"
+      ],
+      "sampleFrameRates": [
+        29.92165184020996,
+        30.000165939331055,
+        30
+      ],
+      "sampleBitrateMin": 7993440,
+      "sampleBitrateMax": 8008092,
+      "sampleDurationMin": 14.811666666666667,
+      "sampleDurationMax": 60.333333333333336,
+      "minFileSizeBytes": 63963136,
+      "maxFileSizeBytes": 63963136
+    }
+  ]
+}

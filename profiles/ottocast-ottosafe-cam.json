@@ -86,6 +86,19 @@
   },
   "schema_version": "1.0",
   "sources": [],
-  "technical_facts": [],
+  "technical_facts": [
+    {
+      "label": "Complete-file driving storage front",
+      "value": "2560x1440 at 29.97 fps: 16.983840-17.187423 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Complete-file driving storage rear",
+      "value": "1920x1080 at 25 fps: 9.098449-9.203283 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Paired driving-file measurement archive",
+      "value": "10 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
+    }
+  ],
   "video_samples": []
 }

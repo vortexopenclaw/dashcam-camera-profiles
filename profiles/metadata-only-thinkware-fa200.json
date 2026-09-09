@@ -26,7 +26,20 @@
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
     }
   ],
-  "technical_facts": [],
+  "technical_facts": [
+    {
+      "label": "Complete-file driving storage front",
+      "value": "1920x1080 at 29.97 fps: 11.173637-11.173637 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Complete-file driving storage rear",
+      "value": "1280x720 at 29.97 fps: 11.173637-11.173637 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
+    },
+    {
+      "label": "Paired driving-file measurement archive",
+      "value": "14 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
+    }
+  ],
   "video_samples": [
     {
       "bitrate": "~3.3 Mbps",
