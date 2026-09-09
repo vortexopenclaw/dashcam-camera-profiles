@@ -14,19 +14,28 @@
     {
       "channels": 1,
       "variant": "60 fps front-only recording",
-      "roles": ["front"],
+      "roles": [
+        "front"
+      ],
       "validation": "app_submission"
     },
     {
       "channels": 2,
       "variant": "front/rear product configuration",
-      "roles": ["front", "rear"],
+      "roles": [
+        "front",
+        "rear"
+      ],
       "validation": "profile_supported_not_directly_sampled"
     },
     {
       "channels": 3,
       "variant": "30 fps front/interior/rear recording",
-      "roles": ["front", "interior", "rear"],
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
       "validation": "app_submission"
     }
   ],
@@ -67,14 +76,18 @@
         "mode": "parking",
         "importable": true,
         "validation": "app_submission",
-        "notes": ["A three-channel submission confirmed 5 fps time-lapse footage in 20-second files."]
+        "notes": [
+          "A three-channel submission confirmed 5 fps time-lapse footage in 20-second files."
+        ]
       },
       {
         "path": "PEVENT",
         "mode": "parking_event",
         "importable": true,
         "validation": "app_submission",
-        "notes": ["Three-channel 30 fps impact footage was observed in 30-second files."]
+        "notes": [
+          "Three-channel 30 fps impact footage was observed in 30-second files."
+        ]
       }
     ],
     "other_folders": [
@@ -83,15 +96,28 @@
         "mode": "support_metadata",
         "importable": false,
         "validation": "app_submission",
-        "notes": ["Contains the exact safe model marker S1-QHD-INFINITE. A 2CH setting value is not authoritative for the active recorded channel set."]
+        "notes": [
+          "Contains the exact safe model marker S1-QHD-INFINITE. A 2CH setting value is not authoritative for the active recorded channel set."
+        ]
       }
     ],
-    "parking_modes": ["motion detection", "time-lapse", "impact detection", "extreme low power"]
+    "parking_modes": [
+      "motion detection",
+      "time-lapse",
+      "impact detection",
+      "extreme low power"
+    ]
   },
   "filename_patterns": [
     {
       "pattern": "^(\\d{8})_(\\d{6})_([A-Z]+)_([FIR])_([A-Z])\\.mp4$",
-      "applies_to": ["INF", "EVENT", "PARK", "PEVENT", "USER"],
+      "applies_to": [
+        "INF",
+        "EVENT",
+        "PARK",
+        "PEVENT",
+        "USER"
+      ],
       "modes": {},
       "channels": {
         "F": "front",
@@ -225,11 +251,38 @@
     }
   ],
   "technical_facts": [
-    {"label": "Exact safe model marker", "value": "S1-QHD-INFINITE in CONFIG/config.bin"},
-    {"label": "Observed firmware", "value": "1.0.4 across four submissions"},
-    {"label": "Channel tokens", "value": "F front, I interior, R rear"},
-    {"label": "Grouping keys", "value": "date, time, and prefix"},
-    {"label": "Config caveat", "value": "The card can report 2CH while a complete 3CH front/interior/rear set is active."}
+    {
+      "label": "Exact safe model marker",
+      "value": "S1-QHD-INFINITE in CONFIG/config.bin"
+    },
+    {
+      "label": "Observed firmware",
+      "value": "1.0.4 across four submissions"
+    },
+    {
+      "label": "Channel tokens",
+      "value": "F front, I interior, R rear"
+    },
+    {
+      "label": "Grouping keys",
+      "value": "date, time, and prefix"
+    },
+    {
+      "label": "Config caveat",
+      "value": "The card can report 2CH while a complete 3CH front/interior/rear set is active."
+    },
+    {
+      "label": "Complete-file driving storage Front and Rear 1440p30",
+      "value": "189267968 allocated bytes per full 60-second loop: 25.235729 Mbps including padding, audio and metadata. Derived from constant-size submitted channel groups with observed 60-second duration. Interrupted files consume more storage per recorded minute. See docs/data/storage-evidence.json."
+    },
+    {
+      "label": "Complete-file driving storage Cabin 1080p30",
+      "value": "129040384 allocated bytes per full 60-second loop: 17.205385 Mbps including padding, audio and metadata. Derived from constant-size submitted channel groups with observed 60-second duration. Interrupted files consume more storage per recorded minute. See docs/data/storage-evidence.json."
+    },
+    {
+      "label": "Complete-file driving storage Front-only 1440p60",
+      "value": "206438400 allocated bytes per full 60-second loop: 27.525120 Mbps including padding, audio and metadata. Derived from constant-size submitted channel groups with observed 60-second duration. Interrupted files consume more storage per recorded minute. See docs/data/storage-evidence.json."
+    }
   ],
   "sources": [
     {

@@ -8580,6 +8580,18 @@
         {
           "label": "Config caveat",
           "value": "The card can report 2CH while a complete 3CH front/interior/rear set is active."
+        },
+        {
+          "label": "Complete-file driving storage Front and Rear 1440p30",
+          "value": "189267968 allocated bytes per full 60-second loop: 25.235729 Mbps including padding, audio and metadata. Derived from constant-size submitted channel groups with observed 60-second duration. Interrupted files consume more storage per recorded minute. See docs/data/storage-evidence.json."
+        },
+        {
+          "label": "Complete-file driving storage Cabin 1080p30",
+          "value": "129040384 allocated bytes per full 60-second loop: 17.205385 Mbps including padding, audio and metadata. Derived from constant-size submitted channel groups with observed 60-second duration. Interrupted files consume more storage per recorded minute. See docs/data/storage-evidence.json."
+        },
+        {
+          "label": "Complete-file driving storage Front-only 1440p60",
+          "value": "206438400 allocated bytes per full 60-second loop: 27.525120 Mbps including padding, audio and metadata. Derived from constant-size submitted channel groups with observed 60-second duration. Interrupted files consume more storage per recorded minute. See docs/data/storage-evidence.json."
         }
       ],
       "video_samples": [
