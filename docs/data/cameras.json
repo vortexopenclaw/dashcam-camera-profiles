@@ -1369,19 +1369,26 @@
         }
       ],
       "evidence": {
-        "confidence": "not stated",
-        "level": "manual-backed",
-        "note": null,
-        "status": "seed"
+        "confidence": "high",
+        "level": "card-validated",
+        "note": "A firmware 1.010 two-channel card confirmed exact model metadata and measured driving, parking-motion, parking-time-lapse, and parking-impact video. Motion and time-lapse overlap in bitrate, resolution, and encoded frame rate.",
+        "status": "reviewed"
       },
       "filename_patterns": [
         {
           "applies_to": [
             "BlackVue/Record"
           ],
-          "channels": {},
+          "channels": {
+            "F": "front",
+            "R": "rear"
+          },
           "default_channel": null,
-          "modes": {},
+          "modes": {
+            "I": "parking_impact_detection",
+            "N": "driving",
+            "P": "parking_motion_or_timelapse"
+          },
           "pattern": "^(\\d{8})_(\\d{6})_([NPI])([FR])\\.mp4$",
           "timestamp_format": "YYYYMMDD_HHMMSS"
         }
@@ -1409,7 +1416,11 @@
         ],
         "other_folders": [],
         "parking_folders": [],
-        "parking_modes": []
+        "parking_modes": [
+          "parking_motion_detection",
+          "parking_timelapse",
+          "parking_impact_detection"
+        ]
       },
       "schema_version": "1.0",
       "sources": [
@@ -1446,6 +1457,14 @@
       ],
       "technical_facts": [
         {
+          "label": "Observed firmware",
+          "value": "1.010 (rev830) on a two-channel card"
+        },
+        {
+          "label": "Parking-mode bitrate caveat",
+          "value": "Motion and time-lapse samples overlap at about 60 Mbps front and 25 Mbps rear. Bitrate, resolution, nominal encoded frame rate, duration, and file size do not distinguish those modes on this card."
+        },
+        {
           "label": "grouping \u203a keys",
           "value": "date"
         },
@@ -1474,8 +1493,10 @@
           "container": "MP4",
           "fps": "30",
           "mode": "driving",
+          "recording_configuration": "2CH front/rear \u00b7 firmware 1.010",
           "resolution": "3840x2160",
-          "source": "ffprobe"
+          "settings_note": "Observed range 46.4-60.1 Mbps across 538 files; shorter interrupted clips account for the low end.",
+          "source": "privacy-safe card scan summary"
         },
         {
           "bitrate": "~25.0 Mbps",
@@ -1484,28 +1505,58 @@
           "container": "MP4",
           "fps": "30",
           "mode": "driving",
+          "recording_configuration": "2CH front/rear \u00b7 firmware 1.010",
           "resolution": "2560x1440",
-          "source": "ffprobe"
+          "settings_note": "Observed range 20.6-25.0 Mbps across 538 files; shorter interrupted clips account for the low end.",
+          "source": "privacy-safe card scan summary"
         },
         {
           "bitrate": "~56-60 Mbps",
-          "channel": "PF / IF",
+          "channel": "PF (front)",
           "codec": "HEVC",
           "container": "MP4",
           "fps": "30",
-          "mode": "parking",
+          "mode": "parking motion or time-lapse",
+          "recording_configuration": "2CH front/rear \u00b7 firmware 1.010",
           "resolution": "3840x2160",
-          "source": "ffprobe"
+          "settings_note": "Motion and time-lapse both measured about 60 Mbps; sequence cadence and audio-track presence are needed to distinguish them.",
+          "source": "privacy-safe card scan summary"
         },
         {
           "bitrate": "~25.0 Mbps",
-          "channel": "PR",
+          "channel": "PR (rear)",
           "codec": "HEVC",
           "container": "MP4",
           "fps": "30",
-          "mode": "parking",
+          "mode": "parking motion or time-lapse",
+          "recording_configuration": "2CH front/rear \u00b7 firmware 1.010",
           "resolution": "2560x1440",
-          "source": "ffprobe"
+          "settings_note": "Motion and time-lapse both measured about 25 Mbps; sequence cadence and audio-track presence are needed to distinguish them.",
+          "source": "privacy-safe card scan summary"
+        },
+        {
+          "bitrate": "60.02-60.20 Mbps",
+          "channel": "IF (front)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking impact detection",
+          "recording_configuration": "2CH front/rear \u00b7 firmware 1.010",
+          "resolution": "3840x2160",
+          "settings_note": "Observed across 61 parking-impact files.",
+          "source": "privacy-safe card scan summary"
+        },
+        {
+          "bitrate": "25.01-25.03 Mbps",
+          "channel": "IR (rear)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking impact detection",
+          "recording_configuration": "2CH front/rear \u00b7 firmware 1.010",
+          "resolution": "2560x1440",
+          "settings_note": "Observed across 61 parking-impact files.",
+          "source": "privacy-safe card scan summary"
         }
       ]
     },
@@ -4699,12 +4750,30 @@
     },
     {
       "$schema": "../schemas/profile.schema.json",
-      "channel_variants": [],
+      "channel_variants": [
+        {
+          "channels": 1,
+          "roles": [
+            "front"
+          ],
+          "validation": "app_submission",
+          "variant": "front-only"
+        },
+        {
+          "channels": 2,
+          "roles": [
+            "front",
+            "rear"
+          ],
+          "validation": "real_card_sampled",
+          "variant": "front/rear"
+        }
+      ],
       "evidence": {
-        "confidence": "not stated",
-        "level": "manual-backed",
-        "note": null,
-        "status": "seed"
+        "confidence": "high",
+        "level": "card-validated",
+        "note": "A front-only firmware 1.00.06 card confirmed 4K30 driving and 4K15 parking behavior; an earlier mounted card confirmed front/rear storage structure.",
+        "status": "reviewed"
       },
       "filename_patterns": [
         {
@@ -4727,7 +4796,7 @@
             "mode": "continuous",
             "notes": [],
             "path": "cont_rec",
-            "validation": null
+            "validation": "app_submission"
           },
           {
             "importable": true,
@@ -4767,14 +4836,14 @@
             "mode": "parking_motion_or_timelapse",
             "notes": [],
             "path": "motion_timelapse_rec",
-            "validation": null
+            "validation": "app_submission"
           },
           {
             "importable": true,
             "mode": "parking_event",
             "notes": [],
             "path": "parking_rec",
-            "validation": null
+            "validation": "app_submission"
           },
           {
             "importable": true,
@@ -4813,17 +4882,28 @@
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/thinkware-u3000-pro.md"
         }
       ],
-      "technical_facts": [],
+      "technical_facts": [
+        {
+          "label": "Observed firmware",
+          "value": "1.00.06 on a front-only card"
+        },
+        {
+          "label": "Front-only file counts",
+          "value": "129 driving files, 152 parking-motion files, and 22 parking motion-or-impact files in the privacy-safe summary"
+        }
+      ],
       "video_samples": [
         {
-          "bitrate": "~30.0 Mbps",
+          "bitrate": "29.99-30.11 Mbps",
           "channel": "F (front)",
           "codec": "HEVC",
           "container": "MP4",
           "fps": "30",
           "mode": "driving",
+          "recording_configuration": "1CH front-only \u00b7 firmware 1.00.06",
           "resolution": "3840x2160",
-          "source": "ffprobe"
+          "settings_note": "Observed across 129 driving files.",
+          "source": "privacy-safe card scan summary"
         },
         {
           "bitrate": "~10.0 Mbps",
@@ -4864,6 +4944,30 @@
           "mode": "parking (event)",
           "resolution": "3840x2160",
           "source": "ffprobe"
+        },
+        {
+          "bitrate": "11.85-12.46 Mbps",
+          "channel": "F (front)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "15",
+          "mode": "parking motion detection",
+          "recording_configuration": "1CH front-only \u00b7 firmware 1.00.06",
+          "resolution": "3840x2160",
+          "settings_note": "Observed across 152 files of approximately 20 seconds each.",
+          "source": "privacy-safe card scan summary"
+        },
+        {
+          "bitrate": "11.88-12.00 Mbps",
+          "channel": "F (front)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "15",
+          "mode": "parking motion or impact",
+          "recording_configuration": "1CH front-only \u00b7 firmware 1.00.06",
+          "resolution": "3840x2160",
+          "settings_note": "Observed across 22 files of 20 seconds each.",
+          "source": "privacy-safe card scan summary"
         },
         {
           "bitrate": "~30.0 Mbps",

@@ -49,6 +49,19 @@ def main() -> None:
     assert s1_qhd["evidence"]["level"] == "card-validated"
     assert any(sample["channel"] == "rear" and sample["resolution"] == "2560x1440" for sample in s1_qhd["video_samples"])
     assert any(sample["mode"] == "parking time-lapse" and sample["fps"] == "5" for sample in s1_qhd["video_samples"])
+
+    elite_9 = next(camera for camera in cameras if camera["id"] == "blackvue-elite-9")
+    assert elite_9["evidence"]["level"] == "card-validated"
+    assert any("overlap" in fact["value"] for fact in elite_9["technical_facts"])
+    assert any(sample["mode"] == "parking impact detection" for sample in elite_9["video_samples"])
+
+    u3000_pro = next(camera for camera in cameras if camera["id"] == "thinkware-u3000-pro")
+    assert u3000_pro["evidence"]["level"] == "card-validated"
+    assert any(sample["mode"] == "parking motion detection" and sample["fps"] == "15" for sample in u3000_pro["video_samples"])
+
+    frontend = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+    assert 'id="quality-brand"' in frontend
+    assert 'id="quality-sort"' in frontend
     print("Verification passed: canonical profiles, privacy, mode-specific video, folders, filenames, and manuals")
 
 

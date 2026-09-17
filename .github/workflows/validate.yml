@@ -18,4 +18,6 @@ jobs:
       - name: Audit public content for private data
         run: bash scripts/privacy-audit.sh
       - name: Check frontend JavaScript
-        run: node --check docs/assets/app.js
+        run: |
+          node --check docs/assets/app.js
+          node scripts/verify-frontend.js

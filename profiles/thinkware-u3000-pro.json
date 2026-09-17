@@ -1,11 +1,29 @@
 {
   "$schema": "../schemas/profile.schema.json",
-  "channel_variants": [],
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "validation": "app_submission",
+      "variant": "front-only"
+    },
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "validation": "real_card_sampled",
+      "variant": "front/rear"
+    }
+  ],
   "evidence": {
-    "confidence": "not stated",
-    "level": "manual-backed",
-    "note": null,
-    "status": "seed"
+    "confidence": "high",
+    "level": "card-validated",
+    "note": "A front-only firmware 1.00.06 card confirmed 4K30 driving and 4K15 parking behavior; an earlier mounted card confirmed front/rear storage structure.",
+    "status": "reviewed"
   },
   "filename_patterns": [
     {
@@ -28,7 +46,7 @@
         "mode": "continuous",
         "notes": [],
         "path": "cont_rec",
-        "validation": null
+        "validation": "app_submission"
       },
       {
         "importable": true,
@@ -68,14 +86,14 @@
         "mode": "parking_motion_or_timelapse",
         "notes": [],
         "path": "motion_timelapse_rec",
-        "validation": null
+        "validation": "app_submission"
       },
       {
         "importable": true,
         "mode": "parking_event",
         "notes": [],
         "path": "parking_rec",
-        "validation": null
+        "validation": "app_submission"
       },
       {
         "importable": true,
@@ -114,17 +132,28 @@
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/thinkware-u3000-pro.md"
     }
   ],
-  "technical_facts": [],
+  "technical_facts": [
+    {
+      "label": "Observed firmware",
+      "value": "1.00.06 on a front-only card"
+    },
+    {
+      "label": "Front-only file counts",
+      "value": "129 driving files, 152 parking-motion files, and 22 parking motion-or-impact files in the privacy-safe summary"
+    }
+  ],
   "video_samples": [
     {
-      "bitrate": "~30.0 Mbps",
+      "bitrate": "29.99-30.11 Mbps",
       "channel": "F (front)",
       "codec": "HEVC",
       "container": "MP4",
       "fps": "30",
       "mode": "driving",
       "resolution": "3840x2160",
-      "source": "ffprobe"
+      "source": "privacy-safe card scan summary",
+      "recording_configuration": "1CH front-only · firmware 1.00.06",
+      "settings_note": "Observed across 129 driving files."
     },
     {
       "bitrate": "~10.0 Mbps",
@@ -165,6 +194,30 @@
       "mode": "parking (event)",
       "resolution": "3840x2160",
       "source": "ffprobe"
+    },
+    {
+      "bitrate": "11.85-12.46 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "15",
+      "mode": "parking motion detection",
+      "resolution": "3840x2160",
+      "source": "privacy-safe card scan summary",
+      "recording_configuration": "1CH front-only · firmware 1.00.06",
+      "settings_note": "Observed across 152 files of approximately 20 seconds each."
+    },
+    {
+      "bitrate": "11.88-12.00 Mbps",
+      "channel": "F (front)",
+      "codec": "HEVC",
+      "container": "MP4",
+      "fps": "15",
+      "mode": "parking motion or impact",
+      "resolution": "3840x2160",
+      "source": "privacy-safe card scan summary",
+      "recording_configuration": "1CH front-only · firmware 1.00.06",
+      "settings_note": "Observed across 22 files of 20 seconds each."
     },
     {
       "bitrate": "~30.0 Mbps",
