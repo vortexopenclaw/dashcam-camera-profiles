@@ -7696,7 +7696,9 @@
       "id": "viofo-a329t",
       "manufacturer": "VIOFO",
       "model": "A329T",
-      "notes": [],
+      "notes": [
+        "A later owner-confirmed A329T 3CH auto-event card uses T/PT for telephoto. Its Parking-folder clips are motion-triggered and its RO-folder parking clips are impact-triggered; low bitrate alone must not be interpreted as continuous parking recording. Parking subtype depends on the camera setting and cannot always be determined from timing alone."
+      ],
       "recording": {
         "driving_folders": [
           {
@@ -7730,7 +7732,7 @@
             "importable": true,
             "mode": "parking",
             "notes": [
-              "Contains parking clips that may include low-bitrate continuous recording and motion-triggered auto-event recording. The app infers subtypes from timing and video specs when folder names do not distinguish them."
+              "Contains parking clips. On the owner's auto-event-detection card these were motion-triggered, not continuous/low-bitrate recording. Timing and bitrate alone cannot reliably identify the configured parking subtype; other settings may differ."
             ],
             "path": "DCIM/Movie/Parking",
             "validation": "app_submission_sampled"
