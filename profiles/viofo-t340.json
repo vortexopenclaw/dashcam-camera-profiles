@@ -1,0 +1,54 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schema_version": "1.0",
+  "id": "viofo-t340",
+  "manufacturer": "VIOFO",
+  "model": "T340",
+  "evidence": {
+    "level": "technical-sample",
+    "status": "experimental",
+    "confidence": "four-channel scan; filenames redacted",
+    "note": "Private in-app training submission confirms T340 4CH with front, rear, interior and telephoto, but sanitization removed filenames and folders; patterns below are inferred from a matched VIOFO sibling, not card-verified."
+  },
+  "channel_variants": [
+    {
+      "channels": 4,
+      "roles": ["front", "rear", "interior", "telephoto"],
+      "validation": "app_submission_sampled"
+    }
+  ],
+  "recording": {
+    "driving_folders": [
+      {"path": "DCIM/Movie", "mode": "continuous", "importable": true, "validation": "inferred", "notes": []},
+      {"path": "DCIM/Movie/RO", "mode": "protected", "importable": true, "validation": "inferred", "notes": []}
+    ],
+    "parking_folders": [
+      {"path": "DCIM/Movie/Parking", "mode": "parking", "importable": true, "validation": "inferred", "notes": ["Camera parking setting not provided; low measured bitrate alone does not establish continuous recording."]}
+    ],
+    "other_folders": [
+      {"path": "DCIM/Photo", "mode": "still_image", "importable": true, "validation": "inferred", "notes": []}
+    ],
+    "parking_modes": ["parking"]
+  },
+  "filename_patterns": [
+    {
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|R|I|T|PF|PR|PI|PT)\\.MP4$",
+      "applies_to": ["DCIM/Movie", "DCIM/Movie/RO", "DCIM/Movie/Parking"],
+      "modes": {}, "channels": {"F": "front", "R": "rear", "I": "interior", "T": "telephoto", "PF": "parking_front", "PR": "parking_rear", "PI": "parking_interior", "PT": "parking_telephoto"},
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    },
+    {
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|R|I|T|PF|PR|PI|PT)\\.JPG$",
+      "applies_to": ["DCIM/Photo"],
+      "modes": {}, "channels": {"F": "front", "R": "rear", "I": "interior", "T": "telephoto", "PF": "parking_front", "PR": "parking_rear", "PI": "parking_interior", "PT": "parking_telephoto"},
+      "timestamp_format": "YYYY_MMDD_HHMMSS"
+    }
+  ],
+  "video_samples": [],
+  "technical_facts": [],
+  "sources": [
+    {"kind": "research", "label": "T340 sanitized card evidence", "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-t340.md"},
+    {"kind": "source", "label": "Official VIOFO T340 series", "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/meet-the-new-viofo-lineup-t340-series-t330-series-a149-pro-duo-bp60"}
+  ],
+  "notes": ["Private submission contained 387 media items; telephoto was Unknown under generic fallback. Exact filenames and folder paths require a read-only card scan for confirmation. No parking setting was supplied."]
+}

@@ -1,5 +1,5 @@
 {
-  "camera_count": 68,
+  "camera_count": 69,
   "cameras": [
     {
       "$schema": "../schemas/profile.schema.json",
@@ -8114,6 +8114,129 @@
     },
     {
       "$schema": "../schemas/profile.schema.json",
+      "channel_variants": [
+        {
+          "channels": 4,
+          "roles": [
+            "front",
+            "rear",
+            "interior",
+            "telephoto"
+          ],
+          "validation": "app_submission_sampled"
+        }
+      ],
+      "evidence": {
+        "confidence": "four-channel scan; filenames redacted",
+        "level": "technical-sample",
+        "note": "Private in-app training submission confirms T340 4CH with front, rear, interior and telephoto, but sanitization removed filenames and folders; patterns below are inferred from a matched VIOFO sibling, not card-verified.",
+        "status": "experimental"
+      },
+      "filename_patterns": [
+        {
+          "applies_to": [
+            "DCIM/Movie",
+            "DCIM/Movie/RO",
+            "DCIM/Movie/Parking"
+          ],
+          "channels": {
+            "F": "front",
+            "I": "interior",
+            "PF": "parking_front",
+            "PI": "parking_interior",
+            "PR": "parking_rear",
+            "PT": "parking_telephoto",
+            "R": "rear",
+            "T": "telephoto"
+          },
+          "modes": {},
+          "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|R|I|T|PF|PR|PI|PT)\\.MP4$",
+          "timestamp_format": "YYYY_MMDD_HHMMSS"
+        },
+        {
+          "applies_to": [
+            "DCIM/Photo"
+          ],
+          "channels": {
+            "F": "front",
+            "I": "interior",
+            "PF": "parking_front",
+            "PI": "parking_interior",
+            "PR": "parking_rear",
+            "PT": "parking_telephoto",
+            "R": "rear",
+            "T": "telephoto"
+          },
+          "modes": {},
+          "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|R|I|T|PF|PR|PI|PT)\\.JPG$",
+          "timestamp_format": "YYYY_MMDD_HHMMSS"
+        }
+      ],
+      "id": "viofo-t340",
+      "manufacturer": "VIOFO",
+      "model": "T340",
+      "notes": [
+        "Private submission contained 387 media items; telephoto was Unknown under generic fallback. Exact filenames and folder paths require a read-only card scan for confirmation. No parking setting was supplied."
+      ],
+      "recording": {
+        "driving_folders": [
+          {
+            "importable": true,
+            "mode": "continuous",
+            "notes": [],
+            "path": "DCIM/Movie",
+            "validation": "inferred"
+          },
+          {
+            "importable": true,
+            "mode": "protected",
+            "notes": [],
+            "path": "DCIM/Movie/RO",
+            "validation": "inferred"
+          }
+        ],
+        "other_folders": [
+          {
+            "importable": true,
+            "mode": "still_image",
+            "notes": [],
+            "path": "DCIM/Photo",
+            "validation": "inferred"
+          }
+        ],
+        "parking_folders": [
+          {
+            "importable": true,
+            "mode": "parking",
+            "notes": [
+              "Camera parking setting not provided; low measured bitrate alone does not establish continuous recording."
+            ],
+            "path": "DCIM/Movie/Parking",
+            "validation": "inferred"
+          }
+        ],
+        "parking_modes": [
+          "parking"
+        ]
+      },
+      "schema_version": "1.0",
+      "sources": [
+        {
+          "kind": "research",
+          "label": "T340 sanitized card evidence",
+          "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-t340.md"
+        },
+        {
+          "kind": "source",
+          "label": "Official VIOFO T340 series",
+          "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/meet-the-new-viofo-lineup-t340-series-t330-series-a149-pro-duo-bp60"
+        }
+      ],
+      "technical_facts": [],
+      "video_samples": []
+    },
+    {
+      "$schema": "../schemas/profile.schema.json",
       "channel_variants": [],
       "evidence": {
         "confidence": "high",
@@ -8825,7 +8948,7 @@
     }
   ],
   "generated_from": "profiles/*.json",
-  "profile_count": 56,
+  "profile_count": 57,
   "schema_version": "1.0",
   "technical_sample_only_count": 12
 }
