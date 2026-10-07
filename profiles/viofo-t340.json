@@ -13,42 +13,223 @@
   "channel_variants": [
     {
       "channels": 4,
-      "roles": ["front", "rear", "interior", "telephoto"],
+      "roles": [
+        "front",
+        "rear",
+        "interior",
+        "telephoto"
+      ],
       "validation": "app_submission_sampled"
     }
   ],
   "recording": {
     "driving_folders": [
-      {"path": "DCIM/Movie", "mode": "continuous", "importable": true, "validation": "inferred", "notes": []},
-      {"path": "DCIM/Movie/RO", "mode": "protected", "importable": true, "validation": "inferred", "notes": []}
+      {
+        "path": "DCIM/Movie",
+        "mode": "continuous",
+        "importable": true,
+        "validation": "inferred",
+        "notes": []
+      },
+      {
+        "path": "DCIM/Movie/RO",
+        "mode": "protected",
+        "importable": true,
+        "validation": "inferred",
+        "notes": []
+      }
     ],
     "parking_folders": [
-      {"path": "DCIM/Movie/Parking", "mode": "parking", "importable": true, "validation": "inferred", "notes": ["Camera parking setting not provided; low measured bitrate alone does not establish continuous recording."]}
+      {
+        "path": "DCIM/Movie/Parking",
+        "mode": "parking",
+        "importable": true,
+        "validation": "inferred",
+        "notes": [
+          "Owner confirms Low Power parking for the newer Normal-bitrate sample; trigger subtype and folder layout remain unverified."
+        ]
+      }
     ],
     "other_folders": [
-      {"path": "DCIM/Photo", "mode": "still_image", "importable": true, "validation": "inferred", "notes": []}
+      {
+        "path": "DCIM/Photo",
+        "mode": "still_image",
+        "importable": true,
+        "validation": "inferred",
+        "notes": []
+      }
     ],
-    "parking_modes": ["parking"]
+    "parking_modes": [
+      "parking",
+      "low power (owner-confirmed setting)"
+    ]
   },
   "filename_patterns": [
     {
       "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|R|I|T|PF|PR|PI|PT)\\.MP4$",
-      "applies_to": ["DCIM/Movie", "DCIM/Movie/RO", "DCIM/Movie/Parking"],
-      "modes": {}, "channels": {"F": "front", "R": "rear", "I": "interior", "T": "telephoto", "PF": "parking_front", "PR": "parking_rear", "PI": "parking_interior", "PT": "parking_telephoto"},
+      "applies_to": [
+        "DCIM/Movie",
+        "DCIM/Movie/RO",
+        "DCIM/Movie/Parking"
+      ],
+      "modes": {},
+      "channels": {
+        "F": "front",
+        "R": "rear",
+        "I": "interior",
+        "T": "telephoto",
+        "PF": "parking_front",
+        "PR": "parking_rear",
+        "PI": "parking_interior",
+        "PT": "parking_telephoto"
+      },
       "timestamp_format": "YYYY_MMDD_HHMMSS"
     },
     {
       "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|R|I|T|PF|PR|PI|PT)\\.JPG$",
-      "applies_to": ["DCIM/Photo"],
-      "modes": {}, "channels": {"F": "front", "R": "rear", "I": "interior", "T": "telephoto", "PF": "parking_front", "PR": "parking_rear", "PI": "parking_interior", "PT": "parking_telephoto"},
+      "applies_to": [
+        "DCIM/Photo"
+      ],
+      "modes": {},
+      "channels": {
+        "F": "front",
+        "R": "rear",
+        "I": "interior",
+        "T": "telephoto",
+        "PF": "parking_front",
+        "PR": "parking_rear",
+        "PI": "parking_interior",
+        "PT": "parking_telephoto"
+      },
       "timestamp_format": "YYYY_MMDD_HHMMSS"
     }
   ],
-  "video_samples": [],
-  "technical_facts": [],
-  "sources": [
-    {"kind": "research", "label": "T340 sanitized card evidence", "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-t340.md"},
-    {"kind": "source", "label": "Official VIOFO T340 series", "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/meet-the-new-viofo-lineup-t340-series-t330-series-a149-pro-duo-bp60"}
+  "video_samples": [
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "31.940932-31.953844 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner-confirmed Normal driving bitrate; HDR on for this camera. Settings supplied by owner; not a controlled HDR toggle comparison."
+    },
+    {
+      "channel": "front",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "4.094852-4.096339 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner-confirmed Low Power parking; HDR on for this camera. Settings supplied by owner; trigger subtype not independently verified."
+    },
+    {
+      "channel": "interior",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "14.329020-14.336068 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner-confirmed Normal driving bitrate; HDR on for this camera. Settings supplied by owner; not a controlled HDR toggle comparison."
+    },
+    {
+      "channel": "interior",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "4.094864-4.097066 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner-confirmed Low Power parking; HDR on for this camera. Settings supplied by owner; trigger subtype not independently verified."
+    },
+    {
+      "channel": "rear",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "14.333394-14.335724 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner-confirmed Normal driving bitrate; HDR off for this camera. Settings supplied by owner; not a controlled HDR toggle comparison."
+    },
+    {
+      "channel": "rear",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "4.094978-4.095841 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner-confirmed Low Power parking; HDR off for this camera. Settings supplied by owner; trigger subtype not independently verified."
+    },
+    {
+      "channel": "telephoto",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "14.332282-14.335972 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner-confirmed Normal driving bitrate; HDR off for this camera. Settings supplied by owner; not a controlled HDR toggle comparison."
+    },
+    {
+      "channel": "telephoto",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "4.095185-4.096227 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner-confirmed Low Power parking; HDR off for this camera. Settings supplied by owner; trigger subtype not independently verified."
+    }
   ],
-  "notes": ["Private submission contained 387 media items; telephoto was Unknown under generic fallback. Exact filenames and folder paths require a read-only card scan for confirmation. No parking setting was supplied."]
+  "technical_facts": [
+    {
+      "label": "Reviewed Normal / Low Power sample",
+      "value": "256 MP4 files: 29 driving and 35 parking per camera. All four cameras measured H.264 at 30 fps. Owner confirms HDR on front and interior, off rear and telephoto."
+    },
+    {
+      "label": "HDR and 2K bitrate",
+      "value": "All three 2K cameras measured about 14.33 Mbps driving and 4.095 Mbps parking despite different HDR settings. This configuration shows no meaningful bitrate difference; it does not establish that toggling HDR never changes bitrate."
+    },
+    {
+      "label": "Storage evidence boundary",
+      "value": "Measured values are encoded-video bitrate, not complete-file storage rates. No paired file-size/duration measurements were supplied; file padding, audio and container overhead remain unmeasured."
+    }
+  ],
+  "sources": [
+    {
+      "kind": "research",
+      "label": "T340 sanitized card evidence",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-t340.md"
+    },
+    {
+      "kind": "source",
+      "label": "Official VIOFO T340 series",
+      "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/meet-the-new-viofo-lineup-t340-series-t330-series-a149-pro-duo-bp60"
+    }
+  ],
+  "notes": [
+    "The older Max-setting submission contained 387 media items; telephoto was Unknown under generic fallback and its parking setting was not supplied. Keep those mixed historical ranges separate from the newer Normal-setting sample.",
+    "The newer four-channel Normal / Low Power sample contains 256 MP4 files and eight mode/channel groups. HDR settings are owner-confirmed, not extracted from media. Exact filenames and folder paths remain unverified."
+  ]
 }

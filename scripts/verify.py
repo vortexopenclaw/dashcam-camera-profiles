@@ -41,6 +41,24 @@ def main() -> None:
     assert any(sample["mode"] == "parking" and "4.1 Mbps" in sample["bitrate"] for sample in a229["video_samples"])
 
     arc900 = next(camera for camera in cameras if camera["id"] == "thinkware-arc-900")
+    t340 = next(camera for camera in cameras if camera["id"] == "viofo-t340")
+    assert t340["evidence"]["level"] == "technical-sample"
+    assert len(t340["video_samples"]) == 8
+    for mode in ("driving", "parking"):
+        samples = [sample for sample in t340["video_samples"] if sample["mode"] == mode]
+        assert {sample["channel"] for sample in samples} == {"front", "rear", "interior", "telephoto"}
+        for sample in samples:
+            assert sample["source"] == "app_submission"
+            assert sample["recording_configuration"] == "4-channel: front, rear, interior, telephoto"
+            assert sample["codec"] == "H.264" and sample["fps"] == "30"
+            assert sample["resolution"] == ("3840x2160" if sample["channel"] == "front" else "2560x1440")
+            hdr = "on" if sample["channel"] in {"front", "interior"} else "off"
+            assert f"HDR {hdr}" in sample["settings_note"]
+            low, high = map(float, sample["bitrate"].removesuffix(" Mbps").split("-"))
+            expected = 4.095 if mode == "parking" else 31.95 if sample["channel"] == "front" else 14.33
+            assert abs(low - expected) < 0.02 and abs(high - expected) < 0.02
+    assert any("No paired file-size/duration" in fact["value"] for fact in t340["technical_facts"])
+
     assert any(folder["path"] == "cont_rec" for folder in arc900["recording"]["driving_folders"])
     assert any(folder["path"] == "parking_rec" for folder in arc900["recording"]["parking_folders"])
     assert any(source["kind"] == "manual" for source in arc900["sources"])

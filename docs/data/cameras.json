@@ -8176,7 +8176,8 @@
       "manufacturer": "VIOFO",
       "model": "T340",
       "notes": [
-        "Private submission contained 387 media items; telephoto was Unknown under generic fallback. Exact filenames and folder paths require a read-only card scan for confirmation. No parking setting was supplied."
+        "The older Max-setting submission contained 387 media items; telephoto was Unknown under generic fallback and its parking setting was not supplied. Keep those mixed historical ranges separate from the newer Normal-setting sample.",
+        "The newer four-channel Normal / Low Power sample contains 256 MP4 files and eight mode/channel groups. HDR settings are owner-confirmed, not extracted from media. Exact filenames and folder paths remain unverified."
       ],
       "recording": {
         "driving_folders": [
@@ -8209,14 +8210,15 @@
             "importable": true,
             "mode": "parking",
             "notes": [
-              "Camera parking setting not provided; low measured bitrate alone does not establish continuous recording."
+              "Owner confirms Low Power parking for the newer Normal-bitrate sample; trigger subtype and folder layout remain unverified."
             ],
             "path": "DCIM/Movie/Parking",
             "validation": "inferred"
           }
         ],
         "parking_modes": [
-          "parking"
+          "parking",
+          "low power (owner-confirmed setting)"
         ]
       },
       "schema_version": "1.0",
@@ -8232,8 +8234,118 @@
           "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/meet-the-new-viofo-lineup-t340-series-t330-series-a149-pro-duo-bp60"
         }
       ],
-      "technical_facts": [],
-      "video_samples": []
+      "technical_facts": [
+        {
+          "label": "Reviewed Normal / Low Power sample",
+          "value": "256 MP4 files: 29 driving and 35 parking per camera. All four cameras measured H.264 at 30 fps. Owner confirms HDR on front and interior, off rear and telephoto."
+        },
+        {
+          "label": "HDR and 2K bitrate",
+          "value": "All three 2K cameras measured about 14.33 Mbps driving and 4.095 Mbps parking despite different HDR settings. This configuration shows no meaningful bitrate difference; it does not establish that toggling HDR never changes bitrate."
+        },
+        {
+          "label": "Storage evidence boundary",
+          "value": "Measured values are encoded-video bitrate, not complete-file storage rates. No paired file-size/duration measurements were supplied; file padding, audio and container overhead remain unmeasured."
+        }
+      ],
+      "video_samples": [
+        {
+          "bitrate": "31.940932-31.953844 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed Normal driving bitrate; HDR on for this camera. Settings supplied by owner; not a controlled HDR toggle comparison.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094852-4.096339 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed Low Power parking; HDR on for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "14.329020-14.336068 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Normal driving bitrate; HDR on for this camera. Settings supplied by owner; not a controlled HDR toggle comparison.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094864-4.097066 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Low Power parking; HDR on for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "14.333394-14.335724 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Normal driving bitrate; HDR off for this camera. Settings supplied by owner; not a controlled HDR toggle comparison.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094978-4.095841 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Low Power parking; HDR off for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "14.332282-14.335972 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Normal driving bitrate; HDR off for this camera. Settings supplied by owner; not a controlled HDR toggle comparison.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095185-4.096227 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Low Power parking; HDR off for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "source": "app_submission"
+        }
+      ]
     },
     {
       "$schema": "../schemas/profile.schema.json",
