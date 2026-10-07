@@ -8127,9 +8127,9 @@
         }
       ],
       "evidence": {
-        "confidence": "four-channel scan; filenames redacted",
+        "confidence": "four-channel scans; sampled basename family verified; folders redacted",
         "level": "technical-sample",
-        "note": "Private in-app training submission confirms T340 4CH with front, rear, interior and telephoto, but sanitization removed filenames and folders; patterns below are inferred from a matched VIOFO sibling, not card-verified.",
+        "note": "Sanitized T340 4CH submissions support measured video rates and sampled F/R/I/T plus PF/PR/PI/PT MP4 suffixes. Folder paths remain inferred; sampled filenames are not linked to recording categories.",
         "status": "experimental"
       },
       "filename_patterns": [
@@ -8177,7 +8177,7 @@
       "model": "T340",
       "notes": [
         "The older Max-setting submission contained 387 media items; telephoto was Unknown under generic fallback and its parking setting was not supplied. Keep those mixed historical ranges separate from the newer Normal-setting sample.",
-        "The newer four-channel Normal / Low Power sample contains 256 MP4 files and eight mode/channel groups. HDR settings are owner-confirmed, not extracted from media. Exact filenames and folder paths remain unverified."
+        "The Normal / Low Power scan has 256 MP4 and eight mode/channel groups. HDR settings are owner-confirmed for that scan only. The High / Low Bitrate scan additionally validates sampled filename families; all folder paths remain unverified."
       ],
       "recording": {
         "driving_folders": [
@@ -8218,7 +8218,8 @@
         ],
         "parking_modes": [
           "parking",
-          "low power (owner-confirmed setting)"
+          "low power (owner-confirmed setting)",
+          "low bitrate (owner-confirmed setting)"
         ]
       },
       "schema_version": "1.0",
@@ -8246,6 +8247,22 @@
         {
           "label": "Storage evidence boundary",
           "value": "Measured values are encoded-video bitrate, not complete-file storage rates. No paired file-size/duration measurements were supplied; file padding, audio and container overhead remain unmeasured."
+        },
+        {
+          "label": "Reviewed High / Low Bitrate sample",
+          "value": "100 items: 40 driving MP4, 20 Protected MP4, 28 parking MP4 and 12 JPG. Each camera has 10 driving, five protected, seven parking videos and three photos. Owner reports manual emergency events; HDR and firmware not recorded."
+        },
+        {
+          "label": "Parking-rate comparison",
+          "value": "High-driving Low Bitrate parking measures about 4.095 Mbps per camera, matching the earlier Normal-driving sample labeled Low Power. Parking setting names differ; matching rates do not prove mode equivalence or controlled independence from driving quality. Low and Max tests remain outstanding."
+        },
+        {
+          "label": "Sampled filename family",
+          "value": "MP4: YYYY_MMDD_HHMMSS_SEQUENCE[F/R/I/T/PF/PR/PI/PT].MP4; JPG: YYYY_MMDD_HHMMSS_SEQUENCE[F/R/I/T].JPG. No separator between sequence and suffix. Bounded sample contains 72 MP4 and eight JPG names; no emergency-specific marker appears, but per-name categories and folder paths are absent."
+        },
+        {
+          "label": "Protected recording boundary",
+          "value": "20 Protected videos retain approximately High driving rates: front 36.8-36.9 Mbps, each 2K camera about 21.3 Mbps. Duration range 8.533333-60 seconds does not prove event-window length, buffering, event-to-clip grouping or synchronized four-camera protection."
         }
       ],
       "video_samples": [
@@ -8343,6 +8360,150 @@
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
           "settings_note": "Owner-confirmed Low Power parking; HDR off for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094099-4.099248 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094853-4.099727 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094983-4.098455 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095149-4.096421 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "36.800028-36.872988 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission. Owner reports manual emergency button events; per-file event linkage and folder paths absent.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "21.297322-21.302340 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission. Owner reports manual emergency button events; per-file event linkage and folder paths absent.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "21.288770-21.299056 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission. Owner reports manual emergency button events; per-file event linkage and folder paths absent.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "21.289786-21.298966 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission. Owner reports manual emergency button events; per-file event linkage and folder paths absent.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "36.847188-36.867416 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "21.297184-21.324242 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "21.297310-21.314644 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "21.297458-21.317968 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
           "source": "app_submission"
         }
       ]

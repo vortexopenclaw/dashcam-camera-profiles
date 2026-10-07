@@ -43,9 +43,9 @@ def main() -> None:
     arc900 = next(camera for camera in cameras if camera["id"] == "thinkware-arc-900")
     t340 = next(camera for camera in cameras if camera["id"] == "viofo-t340")
     assert t340["evidence"]["level"] == "technical-sample"
-    assert len(t340["video_samples"]) == 8
+    assert len(t340["video_samples"]) == 20
     for mode in ("driving", "parking"):
-        samples = [sample for sample in t340["video_samples"] if sample["mode"] == mode]
+        samples = [sample for sample in t340["video_samples"][:8] if sample["mode"] == mode]
         assert {sample["channel"] for sample in samples} == {"front", "rear", "interior", "telephoto"}
         for sample in samples:
             assert sample["source"] == "app_submission"
@@ -58,6 +58,20 @@ def main() -> None:
             expected = 4.095 if mode == "parking" else 31.95 if sample["channel"] == "front" else 14.33
             assert abs(low - expected) < 0.02 and abs(high - expected) < 0.02
     assert any("No paired file-size/duration" in fact["value"] for fact in t340["technical_facts"])
+    newer = t340["video_samples"][8:]
+    for mode in ("driving", "protected", "parking"):
+        samples = [sample for sample in newer if sample["mode"] == mode]
+        assert len(samples) == 4
+        assert {sample["channel"] for sample in samples} == {"front", "rear", "interior", "telephoto"}
+        for sample in samples:
+            assert sample["source"] == "app_submission"
+            assert sample["codec"] == "H.264" and sample["fps"] == "30"
+            assert "HDR and firmware not recorded" in sample["settings_note"]
+            low, high = map(float, sample["bitrate"].removesuffix(" Mbps").split("-"))
+            expected = 4.095 if mode == "parking" else 36.85 if sample["channel"] == "front" else 21.30
+            assert abs(low - expected) < 0.06 and abs(high - expected) < 0.06
+    assert all(folder["validation"] == "inferred" for folder in t340["recording"]["driving_folders"])
+    assert "folder paths remain unverified" in t340["notes"][-1]
 
     assert any(folder["path"] == "cont_rec" for folder in arc900["recording"]["driving_folders"])
     assert any(folder["path"] == "parking_rec" for folder in arc900["recording"]["parking_folders"])
