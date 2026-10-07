@@ -8263,6 +8263,10 @@
         {
           "label": "Protected recording boundary",
           "value": "20 Protected videos retain approximately High driving rates: front 36.8-36.9 Mbps, each 2K camera about 21.3 Mbps. Duration range 8.533333-60 seconds does not prove event-window length, buffering, event-to-clip grouping or synchronized four-camera protection."
+        },
+        {
+          "label": "Driving bitrate settings",
+          "value": "Owner confirms four settings: Low, Normal, High, Maximum. Low Bitrate continuous parking is distinct from Low Power Impact Detection. Impact-triggered Low Power bitrate still needs a controlled measurement; do not assume the earlier 4.095 Mbps sample identifies the mode."
         }
       ],
       "video_samples": [
