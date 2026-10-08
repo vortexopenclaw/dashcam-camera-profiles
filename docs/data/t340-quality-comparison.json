@@ -1,12 +1,12 @@
 {
   "reviewed": "2026-10-08",
   "units": "Decimal MB and GB; Mbps is encoded video. File-rate columns include whole-file overhead.",
-  "method": "Driving file bars use measured full 60-second files, separated by quality setting. Normal uses two consecutive full-minute sets read directly from the card. Auto Event Detection bars use observed 45-second files converted to one recording minute. Individual camera rates are not averaged together.",
+  "method": "Driving file bars use measured 60-second files, separated by quality setting. Auto Event Detection bars use 45-second files converted to one recording minute. Individual camera rates are not averaged together.",
   "limitations": [
     "256 GB driving hours assume all nominal capacity is available; formatting, protected files and reserved space reduce usable capacity.",
     "One other Auto Event Detection telephoto file measured 6.013237 Mbps and 35.65 MB for 45 seconds; the chart shows it as a separate open marker.",
     "The Auto Event bars describe the measured 45-second files, not every motion or impact recording.",
-    "Firmware 1.0_260911 is owner-confirmed for the current card. HDR and multiplexing were not controlled across all quality scans."
+    "Firmware: 1.0_260911. HDR and multiplexing were not controlled across all quality scans."
   ],
   "rows": [
     {
@@ -316,5 +316,5 @@
       "nominal256GBRecordedHours": 15.412918244949495
     }
   ],
-  "firmware": "1.0_260911 (owner-confirmed)"
+  "firmware": "1.0_260911"
 }
