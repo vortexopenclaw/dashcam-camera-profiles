@@ -1,14 +1,12 @@
 {
   "reviewed": "2026-10-08",
-  "units": "Decimal MB and GB; Mbps is encoded video. File-rate columns include whole-file overhead except Normal.",
-  "method": "Representative full 60-second paired files; Auto Event uses typical paired 45-second files normalized to one active recording minute. Normal uses midpoint of encoded-video summary range and excludes audio/container/padding. Maximum card contains mixed rates: select the measured full-minute Maximum-sized files, not a card-wide average.",
+  "units": "Decimal MB and GB; Mbps is encoded video. File-rate columns include whole-file overhead.",
+  "method": "Driving file bars use measured full 60-second files, separated by quality setting. Normal uses two consecutive full-minute sets read directly from the card. Auto Event Detection bars use observed 45-second files converted to one recording minute. Individual camera rates are not averaged together.",
   "limitations": [
-    "256 GB runtime assumes all nominal capacity available; actual retention is lower with formatting, protected clips and reserved space.",
-    "Auto Event rates describe active recording, not elapsed parked time; duty cycle is unknown.",
-    "Auto Event telephoto includes one 45-second sample at 6.013237 Mbps and 35651584 bytes, below the typical 8.19 Mbps/48234496-byte samples.",
-    "Auto Event impact-labelled clips have variable rates and durations; no single impact bitrate is established.",
-    "Normal parking label conflict remains; the Low Bitrate parking comparison row uses the explicitly labeled High/Low Bitrate submission.",
-    "Low, Normal, High and Maximum are separate submissions; HDR, firmware and multiplexing are not controlled across all scans."
+    "256 GB driving hours assume all nominal capacity is available; formatting, protected files and reserved space reduce usable capacity.",
+    "One other Auto Event Detection telephoto file measured 6.013237 Mbps and 35.65 MB for 45 seconds; the chart shows it as a separate open marker.",
+    "The Auto Event bars describe the measured 45-second files, not every motion or impact recording.",
+    "Firmware 1.0_260911 is owner-confirmed for the current card. HDR and multiplexing were not controlled across all quality scans."
   ],
   "rows": [
     {
@@ -62,36 +60,44 @@
       "channels": [
         {
           "channel": "front",
-          "videoMbps": 31.947388,
-          "MBPerMinute": 239.60541,
-          "basis": "video-only estimate",
-          "sampleCount": 0
+          "videoMbps": 31.950723,
+          "MBPerMinute": 243.269632,
+          "basis": "paired whole-file measurement; direct card metadata",
+          "sampleCount": 2,
+          "clipSizeBytes": 243269632,
+          "clipDurationSeconds": 60
         },
         {
           "channel": "rear",
-          "videoMbps": 14.334559,
-          "MBPerMinute": 107.5091925,
-          "basis": "video-only estimate",
-          "sampleCount": 0
+          "videoMbps": 14.33545,
+          "MBPerMinute": 111.149056,
+          "basis": "paired whole-file measurement; direct card metadata",
+          "sampleCount": 2,
+          "clipSizeBytes": 111149056,
+          "clipDurationSeconds": 60
         },
         {
           "channel": "interior",
-          "videoMbps": 14.332544,
-          "MBPerMinute": 107.49408,
-          "basis": "video-only estimate",
-          "sampleCount": 0
+          "videoMbps": 14.335308,
+          "MBPerMinute": 111.149056,
+          "basis": "paired whole-file measurement; direct card metadata",
+          "sampleCount": 2,
+          "clipSizeBytes": 111149056,
+          "clipDurationSeconds": 60
         },
         {
           "channel": "telephoto",
-          "videoMbps": 14.334127,
-          "MBPerMinute": 107.5059525,
-          "basis": "video-only estimate",
-          "sampleCount": 0
+          "videoMbps": 14.3351915,
+          "MBPerMinute": 111.149056,
+          "basis": "paired whole-file measurement; direct card metadata",
+          "sampleCount": 2,
+          "clipSizeBytes": 111149056,
+          "clipDurationSeconds": 60
         }
       ],
-      "combinedMBPerMinute": 562.114635,
-      "combinedGBPerHour": 33.7268781,
-      "nominal256GBRecordedHours": 7.590385307556824
+      "combinedMBPerMinute": 576.7168,
+      "combinedGBPerHour": 34.603008,
+      "nominal256GBRecordedHours": 7.398200757575757
     },
     {
       "setting": "High",
@@ -265,7 +271,7 @@
       "nominal256GBRecordedHours": 5.243570124570447
     },
     {
-      "setting": "Auto Event parking",
+      "setting": "Auto Event Detection parking",
       "channelCount": 4,
       "channels": [
         {
@@ -309,5 +315,6 @@
       "combinedGBPerHour": 16.60944384,
       "nominal256GBRecordedHours": 15.412918244949495
     }
-  ]
+  ],
+  "firmware": "1.0_260911 (owner-confirmed)"
 }

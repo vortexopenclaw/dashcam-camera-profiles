@@ -933,11 +933,15 @@
     },
     {
       "label": "Auto Event Detection parking representative samples",
-      "value": "Typical paired 45-second samples are 62914560 bytes front at about 10.65 Mbps and 48234496 bytes per add-on at about 8.19 Mbps; normalized active recording about 16.61 GB/hour across four channels. One telephoto sample is lower (6.013237 Mbps, 35651584 bytes/45s). Impact-labelled groups vary considerably; event duty cycle and actual parked retention unknown."
+      "value": "The plotted paired 45-second samples are 62914560 bytes front at about 10.65 Mbps and 48234496 bytes per add-on at about 8.19 Mbps; normalized recording consumption is about 16.61 GB/hour across four channels. Another telephoto sample measures 6.013237 Mbps and 35651584 bytes/45s, shown separately. These are measurements of specific files, not one rate for every motion or impact recording."
     },
     {
       "label": "Quality and storage charts",
-      "value": "Front, add-on and combined charts retain four driving quality levels and separately labelled Low Bitrate parking. Normal storage is video-only estimate because paired measurements are absent; other main rows use paired full-minute files. See the linked chart report for source selection and capacity assumptions."
+      "value": "Front, add-on and combined charts retain four driving quality levels and separately labelled Low Bitrate parking. All driving storage rows now use paired full-minute files. Normal was checked directly on the card: 243269632 bytes front and 111149056 bytes each add-on, 34.603 GB/hour combined and 7.40 hours on nominal 256 GB. Add-on cameras are plotted individually; their driving rates differ by less than 0.01 Mbps and measured full-minute sizes match."
+    },
+    {
+      "label": "Firmware for current owner test card",
+      "value": "1.0_260911, confirmed by the owner on 2026-10-08. Normal full-minute footage was checked directly from this card. Retain firmware provenance for future comparisons; do not assume an unreported older scan's firmware from this value."
     }
   ],
   "sources": [
