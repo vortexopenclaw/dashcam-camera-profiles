@@ -93,10 +93,9 @@ fig.text(.22,.085,'Capacity is hours of recorded footage across all connected ca
 fig.text(.22,.045,'Firmware: '+DATA['firmware']+' • Auto Event Detection: 45-second files converted to MB/minute.',fontsize=10)
 finish(fig,'combined')
 
-fig,axes=plt.subplots(1,2,figsize=(13,6.6))
-fig.subplots_adjust(left=.14,right=.96,top=.79,bottom=.26,wspace=.4)
-fig.suptitle('VIOFO T340 • Parking modes while recording',fontsize=20,fontweight='bold',y=.95)
-fig.text(.5,.87,f"256 GB • 4CH footage: Low Bitrate {recorded_time(ROWS[4]['nominal256GBRecordedHours'])} / Auto Event Detection {recorded_time(ROWS[6]['nominal256GBRecordedHours'])}",ha='center',fontsize=12)
+fig,axes=plt.subplots(1,2,figsize=(13,7.5))
+fig.subplots_adjust(left=.14,right=.96,top=.84,bottom=.39,wspace=.4)
+fig.suptitle('VIOFO T340 • Parking modes',fontsize=20,fontweight='bold',y=.95)
 for axis,field,unit in zip(axes,['videoMbps','MBPerMinute'],['Encoded video bitrate (Mbps)','Whole file size (MB/min)']):
     for i,(role,label,color) in enumerate([('front','Front','#277c9c'),('rear','Rear / interior / telephoto','#399772')]):
         vals=[next(c[field] for c in r['channels'] if c['channel']==role) for r in [ROWS[4],ROWS[6]]]
@@ -104,6 +103,9 @@ for axis,field,unit in zip(axes,['videoMbps','MBPerMinute'],['Encoded video bitr
         for j,v in enumerate(vals):axis.text(j+(i-.5)*.27,v+.3 if field=='videoMbps' else v+2,f'{v:.2f}',ha='center',fontsize=11)
     axis.set_xticks([0,1],['Low Bitrate','Auto Event Detection']);axis.set_ylabel(unit);axis.grid(axis='y',alpha=.16);axis.set_ylim(0,14 if field=='videoMbps' else 100);axis.legend(frameon=False,fontsize=9)
     axis.set_title('Encoded video bitrate' if field=='videoMbps' else 'File consumption while recording',fontsize=14,fontweight='bold',pad=13)
+fig.text(.14,.275,'256 GB recorded footage capacity • 4CH',fontsize=11,color='#536173')
+fig.text(.14,.23,f"Low Bitrate: {recorded_time(ROWS[4]['nominal256GBRecordedHours'])}",fontsize=13,fontweight='bold')
+fig.text(.57,.23,f"Auto Event Detection: {recorded_time(ROWS[6]['nominal256GBRecordedHours'])}",fontsize=13,fontweight='bold')
 fig.text(.14,.15,'Auto Event Detection clips are 45 seconds long: front 62.91 MB / add-ons 48.23 MB each.',fontsize=10)
 fig.text(.14,.105,'Whole-file sizes are extrapolated to MB/minute: 45-second file size × 60/45.',fontsize=10)
 fig.text(.14,.065,'Capacity is recorded footage, not elapsed parked time. Formatting and other files reduce capacity.',fontsize=10)
