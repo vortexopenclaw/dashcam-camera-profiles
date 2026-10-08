@@ -19,9 +19,14 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
     camera = json.loads(path.read_text())
     if camera['id'] == 'viofo-t340':
         continue
-    if any(f['label'] == 'Front capture classification' and f['value'] == 'upscaled_4k' for f in camera['technical_facts']):
+    if any(f['label'] == 'Front capture classification' and f['value'] in {'upscaled_4k', 'native_4k_unverified'} for f in camera['technical_facts']):
         continue
     samples = camera['video_samples']
+    archived = [s for s in samples if s['source'] == 'reviewed archive metadata']
+    if any(s['mode'] == 'driving' and s['channel'] == 'front' and s['resolution'] == '3840x2160' and s['fps'] == '30' for s in archived):
+        # Use the reviewed archive cohort once, retaining older cohorts in the
+        # canonical profile rather than drawing duplicate unnamed-quality rows.
+        samples = archived
     if camera['id'] == 'viofo-a329s':
         # Prefer the confirmed Maximum 2CH scan for this comparison; retain
         # the older unknown-setting 3CH evidence in the canonical profile.

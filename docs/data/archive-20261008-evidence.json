@@ -1,0 +1,6860 @@
+{
+  "reviewDate": "2026-10-08",
+  "attribution": "Owner-provided camera archive; filenames and paths omitted. Non-original and mismatched camera clips excluded. Single-second fragments excluded from profile aggregation.",
+  "samples": [
+    {
+      "camera": "SG9665GC",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "181.000000",
+        "bit_rate": "14738723"
+      },
+      "file": {
+        "duration": "181.000000",
+        "size": "360333094"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "SG9665GC",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "181.000000",
+        "bit_rate": "14743872"
+      },
+      "file": {
+        "duration": "181.000000",
+        "size": "360595238"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "SG9665GC",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "181.000000",
+        "bit_rate": "14742475"
+      },
+      "file": {
+        "duration": "181.000000",
+        "size": "360398630"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Thinkware F800 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9993122"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware F800 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9996369"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware F800 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "10000503"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "60.060000",
+        "bit_rate": "10003905"
+      },
+      "file": {
+        "duration": "60.060000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "60.060000",
+        "bit_rate": "9996812"
+      },
+      "file": {
+        "duration": "60.060000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "32.032000",
+        "bit_rate": "10013994"
+      },
+      "file": {
+        "duration": "32.032000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "60.060000",
+        "bit_rate": "5997147"
+      },
+      "file": {
+        "duration": "60.060000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "60.060000",
+        "bit_rate": "5995732"
+      },
+      "file": {
+        "duration": "60.060000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "32.032000",
+        "bit_rate": "6000607"
+      },
+      "file": {
+        "duration": "32.032000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15000/1001",
+        "avg_frame_rate": "15000/1001",
+        "duration": "20.020000",
+        "bit_rate": "5016065"
+      },
+      "file": {
+        "duration": "20.020000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15000/1001",
+        "avg_frame_rate": "15000/1001",
+        "duration": "20.020000",
+        "bit_rate": "4985810"
+      },
+      "file": {
+        "duration": "20.020000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15000/1001",
+        "avg_frame_rate": "15000/1001",
+        "duration": "20.020000",
+        "bit_rate": "4990503"
+      },
+      "file": {
+        "duration": "20.020000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15000/1001",
+        "avg_frame_rate": "15000/1001",
+        "duration": "20.020000",
+        "bit_rate": "3003447"
+      },
+      "file": {
+        "duration": "20.020000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15000/1001",
+        "avg_frame_rate": "15000/1001",
+        "duration": "20.020000",
+        "bit_rate": "2998831"
+      },
+      "file": {
+        "duration": "20.020000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15000/1001",
+        "avg_frame_rate": "15000/1001",
+        "duration": "20.020000",
+        "bit_rate": "3000378"
+      },
+      "file": {
+        "duration": "20.020000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "10000/1001",
+        "avg_frame_rate": "10000/1001",
+        "duration": "43.243200",
+        "bit_rate": "3334993"
+      },
+      "file": {
+        "duration": "43.243200",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "10000/1001",
+        "avg_frame_rate": "10000/1001",
+        "duration": "36.036000",
+        "bit_rate": "3384057"
+      },
+      "file": {
+        "duration": "36.036000",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "10000/1001",
+        "avg_frame_rate": "10000/1001",
+        "duration": "51.251200",
+        "bit_rate": "3360319"
+      },
+      "file": {
+        "duration": "51.251200",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "10000/1001",
+        "avg_frame_rate": "10000/1001",
+        "duration": "43.243200",
+        "bit_rate": "2020219"
+      },
+      "file": {
+        "duration": "43.243200",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "10000/1001",
+        "avg_frame_rate": "10000/1001",
+        "duration": "36.036000",
+        "bit_rate": "2021573"
+      },
+      "file": {
+        "duration": "36.036000",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware FA200",
+      "mode": "parking time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "10000/1001",
+        "avg_frame_rate": "10000/1001",
+        "duration": "51.251200",
+        "bit_rate": "2013751"
+      },
+      "file": {
+        "duration": "51.251200",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware Q800 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16004770"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "146800640"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware Q800 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "15996492"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "146800640"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware Q800 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16008337"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "146800640"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "11983423"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "69206016"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "24006246"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "46.000000",
+        "bit_rate": "24000301"
+      },
+      "file": {
+        "duration": "46.000000",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "23989156"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11998414"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "12006347"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "12006241"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11994271"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "35651584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11985805"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "35651584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12002569"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "35651584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5993932"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5981692"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "6000184"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12070627"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "35651584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12017186"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "35651584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11944042"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "35651584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "6001642"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5993828"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5968676"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "75/7",
+        "avg_frame_rate": "75/7",
+        "duration": "15.400000",
+        "bit_rate": "10706363"
+      },
+      "file": {
+        "duration": "15.400000",
+        "size": "163577856"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "parking time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "75/7",
+        "avg_frame_rate": "75/7",
+        "duration": "15.400000",
+        "bit_rate": "5342519"
+      },
+      "file": {
+        "duration": "15.400000",
+        "size": "81788928"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "24012740"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "69206016"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "23986826"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "69206016"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "6003678"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "24014061"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "24013136"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "23997770"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "6000677"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "5997736"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11998914"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "23986826"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "69206016"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking event",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "6003678"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "23971181"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "23996835"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "58.333333",
+        "bit_rate": "24020423"
+      },
+      "file": {
+        "duration": "58.333333",
+        "size": "207618048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "6002280"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "5998505"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "58.266667",
+        "bit_rate": "6003797"
+      },
+      "file": {
+        "duration": "58.266667",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11989327"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12001990"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12001496"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "2998329"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "10485760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "2994332"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "10485760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "2998234"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "10485760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12176906"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12003200"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12057832"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "35651584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "10/1",
+        "avg_frame_rate": "10/1",
+        "duration": "9.900000",
+        "bit_rate": "2518675"
+      },
+      "file": {
+        "duration": "9.900000",
+        "size": "10485760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "2998458"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "10485760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "3003098"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "10485760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "10/1",
+        "avg_frame_rate": "10/1",
+        "duration": "120.000000",
+        "bit_rate": "10003686"
+      },
+      "file": {
+        "duration": "120.000000",
+        "size": "163577856"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000 Plus",
+      "mode": "parking time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "10/1",
+        "avg_frame_rate": "10/1",
+        "duration": "120.000000",
+        "bit_rate": "2497215"
+      },
+      "file": {
+        "duration": "120.000000",
+        "size": "41943040"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "30052103"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "85983232"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "29998979"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "85983232"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "29927484"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "85983232"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "29985413"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "257949696"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "30042103"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "257949696"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "30000695"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "257949696"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9997467"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9996442"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "10004503"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12029042"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12005964"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12978172"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "6362136"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5010171"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5350992"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12038103"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11940567"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "12039774"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "4999666"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "17.066667",
+        "bit_rate": "5113207"
+      },
+      "file": {
+        "duration": "17.066667",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5034330"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "30001482"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "257949696"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "30015732"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "257949696"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "29960577"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "257949696"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9995981"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9999692"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "10002911"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11978281"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11987535"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking motion or time-lapse",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "4994902"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5000366"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "4999158"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking motion or time-lapse",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "4998114"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11998202"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "11887995"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking impact detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "4997668"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "38797312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "5009548"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U3000 Pro",
+      "mode": "parking impact detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "10.133333",
+        "bit_rate": "5143349"
+      },
+      "file": {
+        "duration": "10.133333",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31947778"
+      },
+      "file": {
+        "duration": "60.031938",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31947456"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31947542"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31948379"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31948172"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31947974"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "31947765"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "182452224"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "45.000000",
+        "bit_rate": "4914952"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "29360128"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "31948453"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "182452224"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "45.000000",
+        "bit_rate": "4914719"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "29360128"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "30.200000",
+        "bit_rate": "4982410"
+      },
+      "file": {
+        "duration": "30.200000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E1 Pro",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "32.300000",
+        "bit_rate": "32009077"
+      },
+      "file": {
+        "duration": "32.300000",
+        "size": "132120576"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E360",
+      "mode": "protected / unknown event context",
+      "channel": "panoramic composite (view unassigned)",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 5184,
+        "height": 1944,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "28663249"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "217944944"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E360",
+      "mode": "protected / unknown event context",
+      "channel": "C (view unassigned)",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14425030"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111271472"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E360",
+      "mode": "driving",
+      "channel": "panoramic composite (view unassigned)",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 5184,
+        "height": 1944,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "28674880"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "218774768"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E360",
+      "mode": "driving",
+      "channel": "panoramic composite (view unassigned)",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 5184,
+        "height": 1944,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "28673706"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "218367672"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue E360",
+      "mode": "driving",
+      "channel": "panoramic composite (view unassigned)",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 5184,
+        "height": 1944,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "28670685"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "218651500"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14010145"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "125829120"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "5.400000",
+        "bit_rate": "8357768"
+      },
+      "file": {
+        "duration": "5.400000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "15335319"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "125829120"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "49.600000",
+        "bit_rate": "15574881"
+      },
+      "file": {
+        "duration": "49.600000",
+        "size": "104857600"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "49.666667",
+        "bit_rate": "8121846"
+      },
+      "file": {
+        "duration": "49.666667",
+        "size": "62914560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "8013881"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "62914560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "4593602"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "41943040"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "3821389"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "41943040"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "73.000000",
+        "bit_rate": "10935651"
+      },
+      "file": {
+        "duration": "73.000000",
+        "size": "104857600"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "28.000000",
+        "bit_rate": "15401639"
+      },
+      "file": {
+        "duration": "28.000000",
+        "size": "62914560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "69.000000",
+        "bit_rate": "15436029"
+      },
+      "file": {
+        "duration": "69.013333",
+        "size": "146800640"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "73.000000",
+        "bit_rate": "6114335"
+      },
+      "file": {
+        "duration": "73.045333",
+        "size": "62914560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "28.000000",
+        "bit_rate": "9869732"
+      },
+      "file": {
+        "duration": "28.000000",
+        "size": "41943040"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "69.000000",
+        "bit_rate": "10118770"
+      },
+      "file": {
+        "duration": "69.013333",
+        "size": "104857600"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "33.000000",
+        "bit_rate": "3666226"
+      },
+      "file": {
+        "duration": "33.000000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "28.000000",
+        "bit_rate": "11684280"
+      },
+      "file": {
+        "duration": "28.010667",
+        "size": "41943040"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "69.000000",
+        "bit_rate": "11752137"
+      },
+      "file": {
+        "duration": "69.000000",
+        "size": "104857600"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "17.400000",
+        "bit_rate": "1036655"
+      },
+      "file": {
+        "duration": "17.400000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "60.000000",
+        "bit_rate": "1266020"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "60.000000",
+        "bit_rate": "1285790"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "17.466667",
+        "bit_rate": "719449"
+      },
+      "file": {
+        "duration": "17.466667",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "60.000000",
+        "bit_rate": "768907"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31948818"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31951958"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31948359"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "243269632"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830257"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830559"
+      },
+      "file": {
+        "duration": "60.031938",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9828338"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14336109"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111149056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14335998"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111149056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14336328"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111149056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "27.366667",
+        "bit_rate": "31953019"
+      },
+      "file": {
+        "duration": "27.366667",
+        "size": "111149056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "89.600000",
+        "bit_rate": "4920368"
+      },
+      "file": {
+        "duration": "89.600000",
+        "size": "58720256"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "180.000000",
+        "bit_rate": "4913757"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "117440512"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "40.000000",
+        "bit_rate": "31949407"
+      },
+      "file": {
+        "duration": "40.000000",
+        "size": "161480704"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "40.000000",
+        "bit_rate": "31949189"
+      },
+      "file": {
+        "duration": "40.000000",
+        "size": "161480704"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "180.000000",
+        "bit_rate": "4915207"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "117440512"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "40.000000",
+        "bit_rate": "9830365"
+      },
+      "file": {
+        "duration": "40.000000",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "40.000000",
+        "bit_rate": "9830250"
+      },
+      "file": {
+        "duration": "40.000000",
+        "size": "52428800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "180.000000",
+        "bit_rate": "4914969"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "117440512"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "40.000000",
+        "bit_rate": "14334651"
+      },
+      "file": {
+        "duration": "40.000000",
+        "size": "73400320"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "40.000000",
+        "bit_rate": "14334635"
+      },
+      "file": {
+        "duration": "40.000000",
+        "size": "73400320"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking event",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "89.733333",
+        "bit_rate": "4918615"
+      },
+      "file": {
+        "duration": "89.733333",
+        "size": "58720256"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N4 Pro S",
+      "mode": "parking event",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "89.733333",
+        "bit_rate": "4920237"
+      },
+      "file": {
+        "duration": "89.733333",
+        "size": "58720256"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14335899"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111149056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14336025"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111149056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2592,
+        "height": 1944,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "15974729"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "123731968"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "front interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830548"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "front interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830349"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "front interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830130"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "rear interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830551"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "rear interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9831055"
+      },
+      "file": {
+        "duration": "60.031938",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "rear interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "12.233333",
+        "bit_rate": "9883154"
+      },
+      "file": {
+        "duration": "12.233333",
+        "size": "15215728"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830539"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9831537"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830182"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14335080"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111149056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14335054"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111149056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "26.266667",
+        "bit_rate": "14379466"
+      },
+      "file": {
+        "duration": "26.266667",
+        "size": "48234496"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "front interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9829501"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "front interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9830027"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "front interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "26.266667",
+        "bit_rate": "9855510"
+      },
+      "file": {
+        "duration": "26.266667",
+        "size": "33554432"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "rear interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9828408"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "rear interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9828892"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "rear interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "26.266667",
+        "bit_rate": "9851465"
+      },
+      "file": {
+        "duration": "26.266667",
+        "size": "33554432"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9832226"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9831595"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "77594624"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue N5",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "26.266667",
+        "bit_rate": "9873115"
+      },
+      "file": {
+        "duration": "26.266667",
+        "size": "33554432"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "137.000000",
+        "bit_rate": "11872953"
+      },
+      "file": {
+        "duration": "137.000000",
+        "size": "223482251"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "185.000000",
+        "bit_rate": "11878105"
+      },
+      "file": {
+        "duration": "185.000000",
+        "size": "302138123"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "233.000000",
+        "bit_rate": "11878955"
+      },
+      "file": {
+        "duration": "233.000000",
+        "size": "380597387"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "71.000000",
+        "bit_rate": "11877360"
+      },
+      "file": {
+        "duration": "71.000000",
+        "size": "115953019"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "error": "metadata probe failed",
+      "container": "MOV"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "142.000000",
+        "bit_rate": "11882841"
+      },
+      "file": {
+        "duration": "142.000000",
+        "size": "231904947"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "11877440"
+      },
+      "file": {
+        "duration": "301.000000",
+        "size": "491338411"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "11878805"
+      },
+      "file": {
+        "duration": "301.000000",
+        "size": "491633323"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "G1W-C",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "61.000000",
+        "bit_rate": "11875121"
+      },
+      "file": {
+        "duration": "61.000000",
+        "size": "99664683"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Rexing V1 4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "24575720"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "189482568"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rexing V1 4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "24577708"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "189496492"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rexing V1 4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "24578035"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "189495928"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "300.466667",
+        "bit_rate": "1628726"
+      },
+      "file": {
+        "duration": "300.466667",
+        "size": "63988225"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "21.166667",
+        "bit_rate": "1444493"
+      },
+      "file": {
+        "duration": "21.166667",
+        "size": "4015857"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.266667",
+        "bit_rate": "1614835"
+      },
+      "file": {
+        "duration": "20.266667",
+        "size": "4280947"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.866667",
+        "bit_rate": "7645384"
+      },
+      "file": {
+        "duration": "20.866667",
+        "size": "20133414"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.700000",
+        "bit_rate": "7320668"
+      },
+      "file": {
+        "duration": "20.700000",
+        "size": "19121491"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "21.200000",
+        "bit_rate": "12479808"
+      },
+      "file": {
+        "duration": "21.200000",
+        "size": "33270052"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.066667",
+        "bit_rate": "3110436"
+      },
+      "file": {
+        "duration": "20.066667",
+        "size": "7978905"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "12.433333",
+        "bit_rate": "12407608"
+      },
+      "file": {
+        "duration": "12.433333",
+        "size": "19395360"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "4049920/134999",
+        "duration": "25.111654",
+        "bit_rate": "3214175"
+      },
+      "file": {
+        "duration": "25.111654",
+        "size": "10813108"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.066667",
+        "bit_rate": "1585236"
+      },
+      "file": {
+        "duration": "20.066667",
+        "size": "4151735"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.133333",
+        "bit_rate": "1689095"
+      },
+      "file": {
+        "duration": "20.133333",
+        "size": "4422538"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Ring Car Cam",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "607000/20149",
+        "duration": "20.116000",
+        "bit_rate": "1148911"
+      },
+      "file": {
+        "duration": "20.116000",
+        "size": "3540589"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Roav C1 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "181.000000",
+        "bit_rate": "18428146"
+      },
+      "file": {
+        "duration": "181.000000",
+        "size": "421123021"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Roav C1 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "30.000000",
+        "bit_rate": "18395211"
+      },
+      "file": {
+        "duration": "30.112000",
+        "size": "69890333"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Roav C1 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "120.000000",
+        "bit_rate": "18438177"
+      },
+      "file": {
+        "duration": "120.000000",
+        "size": "279433705"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.066667",
+        "bit_rate": "20072164"
+      },
+      "file": {
+        "duration": "60.066667",
+        "size": "188743680"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.033333",
+        "bit_rate": "20008931"
+      },
+      "file": {
+        "duration": "60.224122",
+        "size": "188743680"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.033333",
+        "bit_rate": "20037685"
+      },
+      "file": {
+        "duration": "60.054267",
+        "size": "188743680"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.033333",
+        "bit_rate": "20014796"
+      },
+      "file": {
+        "duration": "60.340789",
+        "size": "188743680"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "59.966667",
+        "bit_rate": "6663544"
+      },
+      "file": {
+        "duration": "60.340789",
+        "size": "83886080"
+      },
+      "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.033333",
+        "bit_rate": "6482513"
+      },
+      "file": {
+        "duration": "60.358789",
+        "size": "83886080"
+      },
+      "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "12.066667",
+        "bit_rate": "8100982"
+      },
+      "file": {
+        "duration": "12.066667",
+        "size": "41943040"
+      },
+      "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.066667",
+        "bit_rate": "7998695"
+      },
+      "file": {
+        "duration": "60.066667",
+        "size": "104857600"
+      },
+      "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.066667",
+        "bit_rate": "8013195"
+      },
+      "file": {
+        "duration": "60.066667",
+        "size": "104857600"
+      },
+      "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "12.066667",
+        "bit_rate": "24235460"
+      },
+      "file": {
+        "duration": "12.066667",
+        "size": "62914560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.033333",
+        "bit_rate": "18012803"
+      },
+      "file": {
+        "duration": "60.033333",
+        "size": "167772160"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.033333",
+        "bit_rate": "18047712"
+      },
+      "file": {
+        "duration": "60.033333",
+        "size": "188743680"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "10806000/360239",
+        "duration": "60.039833",
+        "bit_rate": "25998548"
+      },
+      "file": {
+        "duration": "60.039833",
+        "size": "230686720"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "54030000/1801423",
+        "duration": "60.047433",
+        "bit_rate": "26007993"
+      },
+      "file": {
+        "duration": "60.047433",
+        "size": "230686720"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "18010000/600423",
+        "duration": "60.042300",
+        "bit_rate": "26042632"
+      },
+      "file": {
+        "duration": "60.200033",
+        "size": "230686720"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36865297"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "283177240"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36865316"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "283177608"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36785236"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "282576448"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "56.000000",
+        "bit_rate": "31621513"
+      },
+      "file": {
+        "duration": "56.000000",
+        "size": "230686720"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "20453159"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "167772160"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "19365518"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "146800640"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "58.433333",
+        "bit_rate": "16851436"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "125829120"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "15758407"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "125829120"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16158418"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "125829120"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "17040029"
+      },
+      "file": {
+        "duration": "21.034667",
+        "size": "62914560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "25/1",
+        "avg_frame_rate": "25/1",
+        "duration": "4.960000",
+        "bit_rate": "26288312"
+      },
+      "file": {
+        "duration": "4.960000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "20.000000",
+        "bit_rate": "4995176"
+      },
+      "file": {
+        "duration": "20.000000",
+        "size": "18874368"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "20.000000",
+        "bit_rate": "8938763"
+      },
+      "file": {
+        "duration": "20.565333",
+        "size": "41943040"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "0.500000",
+        "bit_rate": "14092144"
+      },
+      "file": {
+        "duration": "0.500000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nexigo D90 Gen 3",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1",
+        "avg_frame_rate": "25/1",
+        "duration": "5.400000",
+        "bit_rate": "11550722"
+      },
+      "file": {
+        "duration": "5.400000",
+        "size": "20971520"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Neoline 9300s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16777214"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "385473281"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Neoline 9300s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16781305"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "385563581"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Neoline 9300s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16777187"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "385475481"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Neoline 9300s",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "30.000000",
+        "bit_rate": "8192074"
+      },
+      "file": {
+        "duration": "30.000000",
+        "size": "31900229"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Neoline 9300s",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "30.000000",
+        "bit_rate": "8191021"
+      },
+      "file": {
+        "duration": "30.000091",
+        "size": "31896853"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Neoline 9300s",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "30.000000",
+        "bit_rate": "8194206"
+      },
+      "file": {
+        "duration": "30.000000",
+        "size": "31908249"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Miofive S1 Ultra",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "29489652"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "226960228"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Miofive S1 Ultra",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "29491566"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "227016776"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Miofive S1 Ultra",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "29490948"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "227036648"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Miofive S1 Ultra",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "duration": "60.000000",
+        "bit_rate": "24576701"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "190270176"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Miofive S1 Ultra",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "duration": "60.000000",
+        "bit_rate": "24576520"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "190323504"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Miofive S1 Ultra",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "duration": "60.000000",
+        "bit_rate": "24576626"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "190347160"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 200",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "97.000000",
+        "bit_rate": "11876170"
+      },
+      "file": {
+        "duration": "97.000000",
+        "size": "158558340"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Papago GoSafe 200",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "8.300000",
+        "bit_rate": "12691697"
+      },
+      "file": {
+        "duration": "8.300000",
+        "size": "13634271"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Papago GoSafe 200",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "11877473"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "294043164"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Papago GoSafe 200",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "2.800000",
+        "bit_rate": "11808468"
+      },
+      "file": {
+        "duration": "2.800000",
+        "size": "4457867"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "20070858"
+      },
+      "file": {
+        "duration": "301.000000",
+        "size": "762879228"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "296.266667",
+        "bit_rate": "14745249"
+      },
+      "file": {
+        "duration": "296.384000",
+        "size": "553672968"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "85.166667",
+        "bit_rate": "11877938"
+      },
+      "file": {
+        "duration": "85.280000",
+        "size": "128824908"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "11878609"
+      },
+      "file": {
+        "duration": "301.000000",
+        "size": "454646048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "11879125"
+      },
+      "file": {
+        "duration": "301.000000",
+        "size": "454665631"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "6552771"
+      },
+      "file": {
+        "duration": "301.088000",
+        "size": "254263475"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "45.045000",
+        "bit_rate": "47611805"
+      },
+      "file": {
+        "duration": "45.045000",
+        "size": "272629760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "60.060000",
+        "bit_rate": "53566810"
+      },
+      "file": {
+        "duration": "60.060000",
+        "size": "419430400"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "60.060000",
+        "bit_rate": "49459361"
+      },
+      "file": {
+        "duration": "60.060000",
+        "size": "377487360"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "45.045000",
+        "bit_rate": "11990819"
+      },
+      "file": {
+        "duration": "45.045000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "60.060000",
+        "bit_rate": "11997896"
+      },
+      "file": {
+        "duration": "60.060000",
+        "size": "104857600"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "60.060000",
+        "bit_rate": "11972552"
+      },
+      "file": {
+        "duration": "60.060000",
+        "size": "104857600"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "12.879533",
+        "bit_rate": "54126383"
+      },
+      "file": {
+        "duration": "12.879533",
+        "size": "104857600"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "45.045000",
+        "bit_rate": "53279615"
+      },
+      "file": {
+        "duration": "45.045000",
+        "size": "314572800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "26.826800",
+        "bit_rate": "51073168"
+      },
+      "file": {
+        "duration": "26.826800",
+        "size": "188743680"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Nextbase 622GW",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "45.045000",
+        "bit_rate": "11987716"
+      },
+      "file": {
+        "duration": "45.045000",
+        "size": "83886080"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "KDLinks X1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "140.000000",
+        "bit_rate": "11871503"
+      },
+      "file": {
+        "duration": "140.000000",
+        "size": "228758744"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "KDLinks X1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "7.000000",
+        "bit_rate": "11779552"
+      },
+      "file": {
+        "duration": "7.000000",
+        "size": "11602864"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "KDLinks X1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "43.000000",
+        "bit_rate": "11874025"
+      },
+      "file": {
+        "duration": "43.000000",
+        "size": "70365392"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "KDLinks X1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "101.000000",
+        "bit_rate": "11873216"
+      },
+      "file": {
+        "duration": "101.000000",
+        "size": "165178528"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "KDLinks X1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "15.000000",
+        "bit_rate": "11837649"
+      },
+      "file": {
+        "duration": "15.000000",
+        "size": "24646640"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "KDLinks X1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "81.000000",
+        "bit_rate": "11870615"
+      },
+      "file": {
+        "duration": "81.000000",
+        "size": "132634624"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "ITB-100HD",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "duration": "60.083333",
+        "bit_rate": "5601198"
+      },
+      "file": {
+        "duration": "60.083333",
+        "size": "42577982"
+      },
+      "container": "AVI"
+    },
+    {
+      "camera": "ITB-100HD",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "duration": "60.083333",
+        "bit_rate": "5604627"
+      },
+      "file": {
+        "duration": "60.083333",
+        "size": "42603718"
+      },
+      "container": "AVI"
+    },
+    {
+      "camera": "ITB-100HD",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "duration": "59.083333",
+        "bit_rate": "5603258"
+      },
+      "file": {
+        "duration": "59.083333",
+        "size": "41891428"
+      },
+      "container": "AVI"
+    },
+    {
+      "camera": "Escort M1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "181.000000",
+        "bit_rate": "11879367"
+      },
+      "file": {
+        "duration": "181.000000",
+        "size": "310361897"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Escort M1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "181.000000",
+        "bit_rate": "11877356"
+      },
+      "file": {
+        "duration": "181.000000",
+        "size": "295714601"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Escort M1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "200.700000",
+        "bit_rate": "9968698"
+      },
+      "file": {
+        "duration": "200.700000",
+        "size": "258616269"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "DOD LS500W",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "71.700000",
+        "bit_rate": "14754978"
+      },
+      "file": {
+        "duration": "71.700000",
+        "size": "136309068"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "DOD LS500W",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "122.400000",
+        "bit_rate": "20191353"
+      },
+      "file": {
+        "duration": "122.400000",
+        "size": "314749480"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "DOD LS500W",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "180.000000",
+        "bit_rate": "20760005"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "476991080"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "DOD LS500W",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "14737662"
+      },
+      "file": {
+        "duration": "180.096000",
+        "size": "341444867"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "DOD RC500S",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14741060"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "113987556"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "DOD RC500S",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "43.100000",
+        "bit_rate": "14764184"
+      },
+      "file": {
+        "duration": "43.100000",
+        "size": "82105315"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "DOD RC500S",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14743446"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "114005391"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blueskysea B4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "134.966667",
+        "bit_rate": "26219133"
+      },
+      "file": {
+        "duration": "134.976000",
+        "size": "456751452"
+      },
+      "bitrateMethod": "video packet bytes divided by summed video packet durations",
+      "container": "MPEG-TS"
+    },
+    {
+      "camera": "Blueskysea B4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000"
+      },
+      "file": {
+        "duration": "180.001333",
+        "size": "609133348"
+      },
+      "error": "metadata probe failed",
+      "container": "MPEG-TS"
+    },
+    {
+      "camera": "Blueskysea B4K",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000"
+      },
+      "file": {
+        "duration": "180.001333",
+        "size": "609131468"
+      },
+      "error": "metadata probe failed",
+      "container": "MPEG-TS"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "12033990"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "100888705"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "30.000000",
+        "bit_rate": "12128266"
+      },
+      "file": {
+        "duration": "30.000000",
+        "size": "50796283"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "12049273"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "101003323"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9985316"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "85523647"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "30.000000",
+        "bit_rate": "10187460"
+      },
+      "file": {
+        "duration": "30.000000",
+        "size": "43518261"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "10013651"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "85736157"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "5184802"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "49515379"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9660941"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "83090837"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "5226697"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "49834001"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9977394"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "85464229"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9985387"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "85524177"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3 Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9914768"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "84994539"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11879809"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92704288"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11879421"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92699440"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "19073138"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "147553844"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "day",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14337111"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111444800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "day",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14337784"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111447716"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "day",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "19072604"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "147550648"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11880820"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92710720"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11880204"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92708216"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11878694"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92692932"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11879106"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92700276"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14337509"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111444712"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14337588"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111444792"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14337441"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111443680"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14337094"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111440756"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "telephoto front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14337695"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "111443864"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11879093"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92698952"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11878406"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92688656"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Cansonic UltraDash Z3+ Standard Edition",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11878585"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "92694104"
+      },
+      "container": "MP4"
+    }
+  ]
+}

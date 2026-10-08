@@ -11,7 +11,9 @@
   "id": "metadata-only-rove-r2-4k",
   "manufacturer": "Rove",
   "model": "R2-4K",
-  "notes": [],
+  "notes": [
+    "Measured 3840x2160 files establish output dimensions, not native sensor resolution for this archived hardware revision. Excluded from the native-4K chart pending verification; no sibling-model sensor specification is borrowed."
+  ],
   "recording": {
     "driving_folders": [],
     "other_folders": [],
@@ -24,9 +26,23 @@
       "kind": "research",
       "label": "Video metadata reference",
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
+    },
+    {
+      "kind": "source",
+      "label": "Privacy-safe archive video metadata",
+      "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/archive-20261008-evidence.json"
     }
   ],
-  "technical_facts": [],
+  "technical_facts": [
+    {
+      "label": "Front capture classification",
+      "value": "native_4k_unverified"
+    },
+    {
+      "label": "2026-10-08 archive review",
+      "value": "3 clips sampled; 0 metadata probes incomplete. Successful measurements retained separately from incomplete probes. Archive folders are not claimed as original card folders."
+    }
+  ],
   "video_samples": [
     {
       "bitrate": "~24.6 Mbps",
@@ -37,6 +53,17 @@
       "mode": "parking impact",
       "resolution": "2880x2160",
       "source": "ffprobe"
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.265",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "~26.0 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 25.998548-26.042632 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
     }
   ]
 }

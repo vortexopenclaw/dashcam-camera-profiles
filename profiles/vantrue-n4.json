@@ -28,7 +28,9 @@
   "id": "vantrue-n4",
   "manufacturer": "Vantrue",
   "model": "N4",
-  "notes": [],
+  "notes": [
+    "Measured 3840x2160 files establish output dimensions, not native sensor resolution for this archived hardware revision. Excluded from the native-4K chart pending verification; no sibling-model sensor specification is borrowed."
+  ],
   "recording": {
     "driving_folders": [
       {
@@ -79,9 +81,23 @@
       "kind": "manual",
       "label": "Official model manual and firmware downloads",
       "url": "https://www.vantrue.com/pages/n4-manual-firmware"
+    },
+    {
+      "kind": "source",
+      "label": "Privacy-safe archive video metadata",
+      "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/archive-20261008-evidence.json"
     }
   ],
-  "technical_facts": [],
+  "technical_facts": [
+    {
+      "label": "Front capture classification",
+      "value": "native_4k_unverified"
+    },
+    {
+      "label": "2026-10-08 archive review",
+      "value": "22 clips sampled; 0 metadata probes incomplete. Successful measurements retained separately from incomplete probes. Archive folders are not claimed as original card folders."
+    }
+  ],
   "video_samples": [
     {
       "bitrate": "~10.6-15.6 Mbps",
@@ -122,6 +138,94 @@
       "mode": "parking",
       "resolution": "1280x720",
       "source": "ffprobe"
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.265",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.4-14.0 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 2 usable sampled clips, exact video-track rates 8.357768-14.010145 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.265",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "~15.3 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 1 usable sampled clips, exact video-track rates 15.335319-15.335319 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "front",
+      "mode": "protected / unknown event context",
+      "codec": "H.265",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "10.9-15.6 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 4 usable sampled clips, exact video-track rates 10.935651-15.574881 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "interior",
+      "mode": "protected / unknown event context",
+      "codec": "H.265",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "6.1-10.1 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 4 usable sampled clips, exact video-track rates 6.114335-10.118770 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "interior",
+      "mode": "driving",
+      "codec": "H.265",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "3.8-8.0 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 3.821389-8.013881 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "rear",
+      "mode": "protected / unknown event context",
+      "codec": "H.265",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "3.7-11.8 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 3.666226-11.752137 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "front",
+      "mode": "parking",
+      "codec": "H.265",
+      "resolution": "1280x720",
+      "fps": "15",
+      "bitrate": "1.0-1.3 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 1.036655-1.285790 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "interior",
+      "mode": "parking",
+      "codec": "H.265",
+      "resolution": "1280x720",
+      "fps": "15",
+      "bitrate": "0.7-0.8 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 2 usable sampled clips, exact video-track rates 0.719449-0.768907 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
     }
   ]
 }

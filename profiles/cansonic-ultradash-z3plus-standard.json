@@ -29,7 +29,13 @@
     "parking_modes": []
   },
   "schema_version": "1.0",
-  "sources": [],
+  "sources": [
+    {
+      "kind": "source",
+      "label": "Privacy-safe archive video metadata",
+      "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/archive-20261008-evidence.json"
+    }
+  ],
   "technical_facts": [
     {
       "label": "video \u203a extension",
@@ -70,6 +76,10 @@
     {
       "label": "parking_mode \u203a modes",
       "value": "time_lapse"
+    },
+    {
+      "label": "2026-10-08 archive review",
+      "value": "18 clips sampled; 0 metadata probes incomplete. Successful measurements retained separately from incomplete probes. Archive folders are not claimed as original card folders."
     }
   ],
   "video_samples": [
@@ -108,6 +118,39 @@
       "resolution": "2560x1440",
       "settings_note": null,
       "source": "ffprobe"
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.265",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "11.9-19.1 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 6 usable sampled clips, exact video-track rates 11.879106-19.073138 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "telephoto front",
+      "mode": "driving",
+      "codec": "H.265",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "14.3-19.1 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 6 usable sampled clips, exact video-track rates 14.337094-19.072604 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "rear",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "~11.9 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 6 usable sampled clips, exact video-track rates 11.878406-11.880820 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
     }
   ]
 }

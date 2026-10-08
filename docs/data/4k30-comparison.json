@@ -50,6 +50,16 @@
     "source": "privacy-safe card scan summary"
   },
   {
+    "id": "nextbase-622gw",
+    "camera": "Nextbase 622GW",
+    "lowMbps": 47.6,
+    "highMbps": 53.6,
+    "codec": "H.264",
+    "configuration": "Not recorded",
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 47.611805-53.566810 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
+  },
+  {
     "id": "viofo-a139-pro",
     "camera": "VIOFO A139 Pro",
     "lowMbps": 53.3,
@@ -102,12 +112,12 @@
   {
     "id": "rove-r2-4k-pro",
     "camera": "Rove R2-4K Pro",
-    "lowMbps": 36.9,
+    "lowMbps": 36.8,
     "highMbps": 36.9,
-    "codec": "HEVC",
+    "codec": "H.265",
     "configuration": "Not recorded",
-    "settings": "Quality setting not recorded",
-    "source": "ffprobe"
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 36.785236-36.865316 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
   },
   {
     "id": "viofo-a119m-pro",
@@ -148,6 +158,16 @@
     "configuration": "Not recorded",
     "settings": "Quality setting not recorded",
     "source": "ffprobe"
+  },
+  {
+    "id": "vantrue-n4-pro-s",
+    "camera": "Vantrue N4 Pro S",
+    "lowMbps": 31.9,
+    "highMbps": 32.0,
+    "codec": "H.265",
+    "configuration": "Not recorded",
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 31.948359-31.951958 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
   },
   {
     "id": "viofo-t340",
@@ -196,18 +216,18 @@
     "highMbps": 31.9,
     "codec": "H.264",
     "configuration": "Not recorded",
-    "settings": "Quality setting not recorded",
-    "source": "ffprobe"
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 31.947456-31.947778 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
   },
   {
-    "id": "vantrue-n4-pro-s",
-    "camera": "Vantrue N4 Pro S",
-    "lowMbps": 31.9,
-    "highMbps": 31.9,
-    "codec": "HEVC",
+    "id": "nexigo-d90-gen3",
+    "camera": "NexiGo D90 Gen 3",
+    "lowMbps": 19.4,
+    "highMbps": 31.6,
+    "codec": "H.265",
     "configuration": "Not recorded",
-    "settings": "Quality setting not recorded",
-    "source": "ffprobe"
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 19.365518-31.621513 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
   },
   {
     "id": "metadata-only-wolfbox-g900-pro",
@@ -220,24 +240,34 @@
     "source": "privacy-safe card scan summary"
   },
   {
-    "id": "thinkware-u3000-pro",
-    "camera": "Thinkware U3000 Pro",
-    "lowMbps": 29.99,
-    "highMbps": 30.11,
-    "codec": "HEVC",
-    "configuration": "1CH front-only \u00b7 firmware 1.00.06",
-    "settings": "Observed across 129 driving files.",
-    "source": "privacy-safe card scan summary"
-  },
-  {
     "id": "thinkware-u3000",
     "camera": "Thinkware U3000",
     "lowMbps": 30.0,
     "highMbps": 30.0,
-    "codec": "HEVC",
+    "codec": "H.265",
     "configuration": "Not recorded",
-    "settings": "Quality setting not recorded",
-    "source": "ffprobe"
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 29.985413-30.042103 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
+  },
+  {
+    "id": "thinkware-u3000-pro",
+    "camera": "Thinkware U3000 Pro",
+    "lowMbps": 30.0,
+    "highMbps": 30.0,
+    "codec": "H.265",
+    "configuration": "Not recorded",
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 29.960577-30.015732 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
+  },
+  {
+    "id": "miofive-s1-ultra",
+    "camera": "Miofive S1 Ultra",
+    "lowMbps": 29.5,
+    "highMbps": 29.5,
+    "codec": "H.265",
+    "configuration": "Not recorded",
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 29.489652-29.491566 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
   },
   {
     "id": "viofo-t340",
@@ -250,6 +280,16 @@
     "source": "Reviewed T340 front-camera measurements"
   },
   {
+    "id": "blueskysea-b4k",
+    "camera": "Blueskysea B4K",
+    "lowMbps": 26.2,
+    "highMbps": 26.2,
+    "codec": "H.265",
+    "configuration": "Not recorded",
+    "settings": "Archive review 2026-10-08: 1 usable sampled clips, exact video-track rates 26.219133-26.219133 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
+  },
+  {
     "id": "metadata-only-blackvue-dr900s-2ch",
     "camera": "BlackVue DR900S-2CH",
     "lowMbps": 25.2,
@@ -260,13 +300,23 @@
     "source": "ffprobe"
   },
   {
+    "id": "thinkware-u1000",
+    "camera": "Thinkware U1000",
+    "lowMbps": 24.0,
+    "highMbps": 24.0,
+    "codec": "H.265",
+    "configuration": "Not recorded",
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 23.989156-24.006246 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
+  },
+  {
     "id": "thinkware-u1000-plus",
     "camera": "Thinkware U1000 Plus",
     "lowMbps": 24.0,
     "highMbps": 24.0,
-    "codec": "HEVC",
+    "codec": "H.265",
     "configuration": "Not recorded",
-    "settings": "Quality setting not recorded",
-    "source": "ffprobe"
+    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 23.997770-24.014061 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "source": "reviewed archive metadata"
   }
 ]
