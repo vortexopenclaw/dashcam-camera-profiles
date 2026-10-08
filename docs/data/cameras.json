@@ -810,7 +810,9 @@
       "id": "metadata-only-blackvue-dr900s-2ch",
       "manufacturer": "BlackVue",
       "model": "DR900S-2CH",
-      "notes": [],
+      "notes": [
+        "Archive folder names do not establish recording mode: the driving archive also contains P-token parking clips. Only N normal and M manual recordings are used for the driving measurement. E event clips are not assumed to be driving. Firmware and quality settings were not retained."
+      ],
       "recording": {
         "driving_folders": [],
         "other_folders": [],
@@ -825,8 +827,59 @@
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
         }
       ],
-      "technical_facts": [],
+      "technical_facts": [
+        {
+          "label": "Additional 4K codec observation",
+          "value": "A 52.376-second normal front clip measures 25.182903 Mbps H.264 at 3840x2160 and approximately 30 fps. It is retained in the evidence but excluded from the full-length comparison."
+        }
+      ],
       "video_samples": [
+        {
+          "bitrate": "~25.2 Mbps",
+          "channel": "F (front)",
+          "codec": "H.265",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving / manual",
+          "recording_configuration": "2-channel: front, rear",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-provided archive checked 2026-10-08. Four normal/manual front clips of at least 55 seconds measure 25.096657-25.255170 Mbps at approximately 30 fps. P parking and E unknown-context events excluded, regardless of archive folder. Firmware and quality setting unknown. See docs/data/dr900s-archive-evidence.json.",
+          "source": "ffprobe"
+        },
+        {
+          "bitrate": "~10.5 Mbps",
+          "channel": "R (rear)",
+          "codec": "H.265",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving / manual",
+          "recording_configuration": "2-channel: front, rear",
+          "resolution": "1920x1080",
+          "settings_note": "Three normal/manual rear clips of at least 55 seconds measure 10.467818-10.495018 Mbps. Firmware and quality setting unknown. See docs/data/dr900s-archive-evidence.json.",
+          "source": "ffprobe"
+        },
+        {
+          "bitrate": "24.2-25.2 Mbps",
+          "channel": "F (front)",
+          "codec": "H.265",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "resolution": "3840x2160",
+          "settings_note": "Six P-token front clips from both owner-provided archive folders measure 24.231093-25.206396 Mbps over approximately 61 seconds. Parking-only evidence, not included in the driving chart. Firmware and quality setting unknown.",
+          "source": "ffprobe"
+        },
+        {
+          "bitrate": "~10.4-10.5 Mbps",
+          "channel": "R (rear)",
+          "codec": "H.265",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "resolution": "1920x1080",
+          "settings_note": "Four successfully probed P-token rear clips measure 10.436816-10.511964 Mbps over approximately 60-61 seconds. One additional probe failed and is not treated as measured. Firmware and quality setting unknown.",
+          "source": "ffprobe"
+        },
         {
           "bitrate": "~14.7 Mbps",
           "channel": "F (front)",
@@ -1201,9 +1254,9 @@
       ],
       "evidence": {
         "confidence": "high",
-        "level": "manual-backed",
-        "note": "Verified from a remote Learn Card submission with exact ELITE 10 config metadata and 1,290 BlackVue recording filenames. Codec, resolution, bitrate, and parking filename behavior remain unobserved.",
-        "status": "seed"
+        "level": "card-validated",
+        "note": "The 2026-10-08 privacy-safe 2-channel card scan confirms ELITE 10 firmware 1.009, 4K30 front and rear measurements, normal driving, parking impact and parking motion groups. Codec was not captured. Mixed recordings are excluded from the driving comparison.",
+        "status": "validated"
       },
       "filename_patterns": [
         {
@@ -1256,8 +1309,90 @@
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/blackvue-elite-10.md"
         }
       ],
-      "technical_facts": [],
-      "video_samples": []
+      "technical_facts": [
+        {
+          "label": "Measured firmware",
+          "value": "1.009, confirmed by safe card configuration metadata and owner."
+        },
+        {
+          "label": "Raw recording settings",
+          "value": "VideoQuality=0; VCodecType=0. Numeric mappings to named quality presets and codecs are not verified."
+        }
+      ],
+      "video_samples": [
+        {
+          "bitrate": "~60.0 Mbps",
+          "channel": "front",
+          "codec": "Not captured",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "2-channel: front, rear; firmware 1.009",
+          "resolution": "3840x2160",
+          "settings_note": "Seven normal-driving samples of at least 55 seconds measure 60.026696-60.059968 Mbps. Short and mixed-recording samples excluded. VideoQuality=0 is recorded but its named preset is unverified. See docs/data/elite10-1.009-evidence.json.",
+          "source": "privacy-safe card scan summary"
+        },
+        {
+          "bitrate": "30.0-32.9 Mbps",
+          "channel": "rear",
+          "codec": "Not captured",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "2-channel: front, rear; firmware 1.009",
+          "resolution": "3840x2160",
+          "settings_note": "Seven normal-driving samples of at least 55 seconds measure 30.009470-32.886314 Mbps. The higher rear measurement is retained, not silently discarded; its cause is unknown. Short and mixed recordings excluded. See docs/data/elite10-1.009-evidence.json.",
+          "source": "privacy-safe card scan summary"
+        },
+        {
+          "bitrate": "~60.0-60.1 Mbps",
+          "channel": "front",
+          "codec": "Not captured",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking impact detection",
+          "recording_configuration": "2-channel: front, rear; firmware 1.009",
+          "resolution": "3840x2160",
+          "settings_note": "Seven samples of at least 55 seconds measure 60.020884-60.122660 Mbps. Parking clips are separate from the driving comparison.",
+          "source": "privacy-safe card scan summary"
+        },
+        {
+          "bitrate": "~30.0-30.1 Mbps",
+          "channel": "rear",
+          "codec": "Not captured",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking impact detection",
+          "recording_configuration": "2-channel: front, rear; firmware 1.009",
+          "resolution": "3840x2160",
+          "settings_note": "Seven samples of at least 55 seconds measure 30.012364-30.061960 Mbps. Parking clips are separate from the driving comparison.",
+          "source": "privacy-safe card scan summary"
+        },
+        {
+          "bitrate": "~60.0 Mbps",
+          "channel": "front",
+          "codec": "Not captured",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking motion detection",
+          "recording_configuration": "2-channel: front, rear; firmware 1.009",
+          "resolution": "3840x2160",
+          "settings_note": "Five samples of at least 55 seconds measure 60.027700-60.041364 Mbps. Parking clips are separate from the driving comparison.",
+          "source": "privacy-safe card scan summary"
+        },
+        {
+          "bitrate": "~30.0-30.1 Mbps",
+          "channel": "rear",
+          "codec": "Not captured",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking motion detection",
+          "recording_configuration": "2-channel: front, rear; firmware 1.009",
+          "resolution": "3840x2160",
+          "settings_note": "Six samples of at least 55 seconds measure 30.016754-30.088904 Mbps. Parking clips are separate from the driving comparison.",
+          "source": "privacy-safe card scan summary"
+        }
+      ]
     },
     {
       "$schema": "../schemas/profile.schema.json",

@@ -2,6 +2,7 @@ id,camera,lowMbps,highMbps,codec,configuration,settings,source
 viofo-a329s,VIOFO A329S,65.5,65.5,H.264,"2-channel: front, rear; firmware 2.2_260815","Maximum bitrate, 2CH and firmware owner-confirmed. Three sampled 60-second driving files measure 65.535008-65.537908 Mbps; complete file size 494.93 MB each. 0.1-second clips excluded from comparison. Earlier 3CH measurements had unknown quality settings and do not establish a controlled channel-count effect.",privacy-safe card scan summary
 viofo-a329t,VIOFO A329T,65.5,65.5,H.264,"3-channel: front, telephoto front, rear",Quality setting not recorded,ffprobe
 blackvue-dr970x-plus,BlackVue DR970X Plus,60.0,60.0,HEVC,Not recorded,Quality setting not recorded,ffprobe
+blackvue-elite-10,BlackVue Elite 10,60.0,60.0,Not captured,"2-channel: front, rear; firmware 1.009",Seven normal-driving samples of at least 55 seconds measure 60.026696-60.059968 Mbps. Short and mixed-recording samples excluded. VideoQuality=0 is recorded but its named preset is unverified. See docs/data/elite10-1.009-evidence.json.,privacy-safe card scan summary
 blackvue-elite-9,BlackVue Elite 9,60.0,60.0,HEVC,2CH front/rear · firmware 1.010,Observed range 46.4-60.1 Mbps across 538 files; shorter interrupted clips account for the low end.,privacy-safe card scan summary
 viofo-a139-pro,VIOFO A139 Pro,53.3,53.3,HEVC,Not recorded,Quality setting not recorded,ffprobe
 viofo-t340,VIOFO T340 • Maximum,53.249696,53.249696,H.264,4 cameras; firmware 1.0_260911,Maximum,Reviewed T340 front-camera measurements
@@ -23,4 +24,5 @@ metadata-only-wolfbox-g900-pro,Wolfbox G900 Pro,31.3,31.3,HEVC,Not recorded,"Six
 thinkware-u3000-pro,Thinkware U3000 Pro,29.99,30.11,HEVC,1CH front-only · firmware 1.00.06,Observed across 129 driving files.,privacy-safe card scan summary
 thinkware-u3000,Thinkware U3000,30.0,30.0,HEVC,Not recorded,Quality setting not recorded,ffprobe
 viofo-t340,VIOFO T340 • Low,27.034015,27.034015,H.264,4 cameras; firmware 1.0_260911,Low,Reviewed T340 front-camera measurements
+metadata-only-blackvue-dr900s-2ch,BlackVue DR900S-2CH,25.2,25.2,H.265,"2-channel: front, rear","Owner-provided archive checked 2026-10-08. Four normal/manual front clips of at least 55 seconds measure 25.096657-25.255170 Mbps at approximately 30 fps. P parking and E unknown-context events excluded, regardless of archive folder. Firmware and quality setting unknown. See docs/data/dr900s-archive-evidence.json.",ffprobe
 thinkware-u1000-plus,Thinkware U1000 Plus,24.0,24.0,HEVC,Not recorded,Quality setting not recorded,ffprobe

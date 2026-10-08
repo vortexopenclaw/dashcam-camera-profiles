@@ -1,0 +1,463 @@
+{
+  "camera": "BlackVue Elite 10",
+  "firmware": "1.009",
+  "channels": [
+    "front",
+    "rear"
+  ],
+  "qualityCode": "0",
+  "codecCode": "0",
+  "codecMapping": "unverified",
+  "groups": [
+    {
+      "mode": "normal",
+      "channel": "front",
+      "fileCount": 177,
+      "resolution": [
+        "3840x2160"
+      ],
+      "samples": [
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 468973111,
+          "height": 2160,
+          "nominalFrameRate": 30.01673126220703,
+          "videoBitrate": 60036460,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 58.752,
+          "fileSizeBytes": 469395135,
+          "height": 2160,
+          "nominalFrameRate": 30.017547607421875,
+          "videoBitrate": 60059968,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.966,
+          "fileSizeBytes": 468887784,
+          "height": 2160,
+          "nominalFrameRate": 30.01673126220703,
+          "videoBitrate": 60033624,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 469096891,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60029480,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 469003673,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60026696,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.985,
+          "fileSizeBytes": 468953760,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60033476,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 61.056,
+          "fileSizeBytes": 468960620,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60039008,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 15.234,
+          "fileSizeBytes": 469054354,
+          "height": 2160,
+          "nominalFrameRate": 30.064329147338867,
+          "videoBitrate": 60140852,
+          "width": 3840
+        }
+      ],
+      "comparisonMinimumDurationSeconds": 55
+    },
+    {
+      "mode": "normal",
+      "channel": "rear",
+      "fileCount": 177,
+      "resolution": [
+        "3840x2160"
+      ],
+      "samples": [
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 253042979,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 30014640,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.934,
+          "fileSizeBytes": 239931958,
+          "height": 2160,
+          "nominalFrameRate": 30.016082763671875,
+          "videoBitrate": 30015426,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 61.056,
+          "fileSizeBytes": 240323301,
+          "height": 2160,
+          "nominalFrameRate": 30.015745162963867,
+          "videoBitrate": 30016606,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.934,
+          "fileSizeBytes": 264313243,
+          "height": 2160,
+          "nominalFrameRate": 30.016082763671875,
+          "videoBitrate": 32886314,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 59.976,
+          "fileSizeBytes": 240112820,
+          "height": 2160,
+          "nominalFrameRate": 30.016510009765625,
+          "videoBitrate": 30009470,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 61.967,
+          "fileSizeBytes": 244158911,
+          "height": 2160,
+          "nominalFrameRate": 30.015975952148438,
+          "videoBitrate": 30018966,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 252035527,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 30017048,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 14.328,
+          "fileSizeBytes": 253555619,
+          "height": 2160,
+          "nominalFrameRate": 30.07149887084961,
+          "videoBitrate": 30293764,
+          "width": 3840
+        }
+      ],
+      "comparisonMinimumDurationSeconds": 55
+    },
+    {
+      "mode": "parking_impact_detection",
+      "channel": "front",
+      "fileCount": 24,
+      "resolution": [
+        "3840x2160"
+      ],
+      "samples": [
+        {
+          "durationSeconds": 61.056,
+          "fileSizeBytes": 468990145,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60037464,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.967,
+          "fileSizeBytes": 468878590,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60035028,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 61.056,
+          "fileSizeBytes": 468940043,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60027268,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 61.056,
+          "fileSizeBytes": 469632209,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60122660,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.985,
+          "fileSizeBytes": 468991720,
+          "height": 2160,
+          "nominalFrameRate": 30.01673126220703,
+          "videoBitrate": 60020884,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 61.056,
+          "fileSizeBytes": 469009813,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60025972,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 468907053,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60026536,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 15.599,
+          "fileSizeBytes": 468970957,
+          "height": 2160,
+          "nominalFrameRate": 30.066030502319336,
+          "videoBitrate": 60155312,
+          "width": 3840
+        }
+      ],
+      "comparisonMinimumDurationSeconds": 55
+    },
+    {
+      "mode": "parking_impact_detection",
+      "channel": "rear",
+      "fileCount": 24,
+      "resolution": [
+        "3840x2160"
+      ],
+      "samples": [
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 249333226,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 30012364,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 240306935,
+          "height": 2160,
+          "nominalFrameRate": 30.015745162963867,
+          "videoBitrate": 30013522,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.48,
+          "fileSizeBytes": 240131890,
+          "height": 2160,
+          "nominalFrameRate": 30.01587677001953,
+          "videoBitrate": 30029314,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.034,
+          "fileSizeBytes": 255897556,
+          "height": 2160,
+          "nominalFrameRate": 30.016324996948242,
+          "videoBitrate": 30061960,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.067,
+          "fileSizeBytes": 245407716,
+          "height": 2160,
+          "nominalFrameRate": 30.016481399536133,
+          "videoBitrate": 30055128,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.968,
+          "fileSizeBytes": 240317597,
+          "height": 2160,
+          "nominalFrameRate": 30.015745162963867,
+          "videoBitrate": 30015360,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.967,
+          "fileSizeBytes": 240597596,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 30017010,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 15.466,
+          "fileSizeBytes": 240145980,
+          "height": 2160,
+          "nominalFrameRate": 30.065950393676758,
+          "videoBitrate": 30212920,
+          "width": 3840
+        }
+      ],
+      "comparisonMinimumDurationSeconds": 55
+    },
+    {
+      "mode": "parking_motion_detection",
+      "channel": "front",
+      "fileCount": 147,
+      "resolution": [
+        "3840x2160"
+      ],
+      "samples": [
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 468948472,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60027960,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 61.056,
+          "fileSizeBytes": 469404432,
+          "height": 2160,
+          "nominalFrameRate": 30.01673126220703,
+          "videoBitrate": 60041364,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 27.288,
+          "fileSizeBytes": 468880586,
+          "height": 2160,
+          "nominalFrameRate": 30.035205841064453,
+          "videoBitrate": 60193508,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 468926352,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 60027700,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.984,
+          "fileSizeBytes": 468933539,
+          "height": 2160,
+          "nominalFrameRate": 30.01673126220703,
+          "videoBitrate": 60028484,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 61.056,
+          "fileSizeBytes": 468965803,
+          "height": 2160,
+          "nominalFrameRate": 30.01673126220703,
+          "videoBitrate": 60038948,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 24.336,
+          "fileSizeBytes": 468974613,
+          "height": 2160,
+          "nominalFrameRate": 30.040273666381836,
+          "videoBitrate": 60162832,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 17.136,
+          "fileSizeBytes": 469042913,
+          "height": 2160,
+          "nominalFrameRate": 30.060237884521484,
+          "videoBitrate": 60241332,
+          "width": 3840
+        }
+      ],
+      "comparisonMinimumDurationSeconds": 55
+    },
+    {
+      "mode": "parking_motion_detection",
+      "channel": "rear",
+      "fileCount": 147,
+      "resolution": [
+        "3840x2160"
+      ],
+      "samples": [
+        {
+          "durationSeconds": 60.048,
+          "fileSizeBytes": 240517083,
+          "height": 2160,
+          "nominalFrameRate": 30.016324996948242,
+          "videoBitrate": 30088904,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.048,
+          "fileSizeBytes": 268958789,
+          "height": 2160,
+          "nominalFrameRate": 30.016324996948242,
+          "videoBitrate": 30076114,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.84,
+          "fileSizeBytes": 240146321,
+          "height": 2160,
+          "nominalFrameRate": 30.016109466552734,
+          "videoBitrate": 30023424,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.034,
+          "fileSizeBytes": 239783861,
+          "height": 2160,
+          "nominalFrameRate": 30.016324996948242,
+          "videoBitrate": 30070234,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.967,
+          "fileSizeBytes": 253905180,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 30017564,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60.967,
+          "fileSizeBytes": 253103588,
+          "height": 2160,
+          "nominalFrameRate": 30.016239166259766,
+          "videoBitrate": 30016754,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 24.267,
+          "fileSizeBytes": 240238611,
+          "height": 2160,
+          "nominalFrameRate": 30.040796279907227,
+          "videoBitrate": 30146404,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 16.992,
+          "fileSizeBytes": 243643242,
+          "height": 2160,
+          "nominalFrameRate": 30.06011962890625,
+          "videoBitrate": 30057724,
+          "width": 3840
+        }
+      ],
+      "comparisonMinimumDurationSeconds": 55
+    }
+  ]
+}

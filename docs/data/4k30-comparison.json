@@ -30,6 +30,16 @@
     "source": "ffprobe"
   },
   {
+    "id": "blackvue-elite-10",
+    "camera": "BlackVue Elite 10",
+    "lowMbps": 60.0,
+    "highMbps": 60.0,
+    "codec": "Not captured",
+    "configuration": "2-channel: front, rear; firmware 1.009",
+    "settings": "Seven normal-driving samples of at least 55 seconds measure 60.026696-60.059968 Mbps. Short and mixed-recording samples excluded. VideoQuality=0 is recorded but its named preset is unverified. See docs/data/elite10-1.009-evidence.json.",
+    "source": "privacy-safe card scan summary"
+  },
+  {
     "id": "blackvue-elite-9",
     "camera": "BlackVue Elite 9",
     "lowMbps": 60.0,
@@ -238,6 +248,16 @@
     "configuration": "4 cameras; firmware 1.0_260911",
     "settings": "Low",
     "source": "Reviewed T340 front-camera measurements"
+  },
+  {
+    "id": "metadata-only-blackvue-dr900s-2ch",
+    "camera": "BlackVue DR900S-2CH",
+    "lowMbps": 25.2,
+    "highMbps": 25.2,
+    "codec": "H.265",
+    "configuration": "2-channel: front, rear",
+    "settings": "Owner-provided archive checked 2026-10-08. Four normal/manual front clips of at least 55 seconds measure 25.096657-25.255170 Mbps at approximately 30 fps. P parking and E unknown-context events excluded, regardless of archive folder. Firmware and quality setting unknown. See docs/data/dr900s-archive-evidence.json.",
+    "source": "ffprobe"
   },
   {
     "id": "thinkware-u1000-plus",

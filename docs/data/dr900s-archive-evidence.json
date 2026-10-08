@@ -1,0 +1,496 @@
+[
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "E",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "1830000/61009",
+        "duration": "60.975000",
+        "bit_rate": "24814149"
+      }
+    ],
+    "file": {
+      "duration": "60.975000",
+      "size": "196911273"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "E",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "458000/15269",
+        "duration": "45.774000",
+        "bit_rate": "25272639"
+      }
+    ],
+    "file": {
+      "duration": "45.774000",
+      "size": "196749510"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "E",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "106875/3761",
+        "duration": "60.110000",
+        "bit_rate": "25152030"
+      }
+    ],
+    "file": {
+      "duration": "60.110000",
+      "size": "196714449"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "E",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "1823000/60819",
+        "duration": "60.786000",
+        "bit_rate": "10486842"
+      }
+    ],
+    "file": {
+      "duration": "60.786000",
+      "size": "84771123"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "E",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "1807000/60321",
+        "duration": "60.287000",
+        "bit_rate": "10516650"
+      }
+    ],
+    "file": {
+      "duration": "60.287000",
+      "size": "84795230"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "E",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "424000/14821",
+        "duration": "59.218000",
+        "bit_rate": "10478886"
+      }
+    ],
+    "file": {
+      "duration": "59.218000",
+      "size": "84554115"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "M",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "183000/6101",
+        "duration": "60.977000",
+        "bit_rate": "25161797"
+      }
+    ],
+    "file": {
+      "duration": "60.977000",
+      "size": "196895740"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "M",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "38125/1271",
+        "duration": "60.975000",
+        "bit_rate": "25255170"
+      }
+    ],
+    "file": {
+      "duration": "60.975000",
+      "size": "197559020"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "M",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "183000/6101",
+        "duration": "60.977000",
+        "bit_rate": "25096657"
+      }
+    ],
+    "file": {
+      "duration": "60.977000",
+      "size": "196379788"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "M",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "300000/10009",
+        "duration": "60.020000",
+        "bit_rate": "10488839"
+      }
+    ],
+    "file": {
+      "duration": "60.020000",
+      "size": "84896627"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "N",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "389000/12969",
+        "duration": "25.904000",
+        "bit_rate": "25210612"
+      }
+    ],
+    "file": {
+      "duration": "25.904000",
+      "size": "197189988"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "N",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "1830000/61009",
+        "duration": "60.976000",
+        "bit_rate": "25148898"
+      }
+    ],
+    "file": {
+      "duration": "60.976000",
+      "size": "196787287"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "N",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "52400/1747",
+        "duration": "52.376000",
+        "bit_rate": "25182903"
+      }
+    ],
+    "file": {
+      "duration": "52.376000",
+      "size": "169312818"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "N",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "75800/2529",
+        "duration": "25.256000",
+        "bit_rate": "10451238"
+      }
+    ],
+    "file": {
+      "duration": "25.256000",
+      "size": "84776601"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "N",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "91150/3041",
+        "duration": "60.787000",
+        "bit_rate": "10467818"
+      }
+    ],
+    "file": {
+      "duration": "60.787000",
+      "size": "84589877"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "N",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "1817000/60619",
+        "duration": "60.586000",
+        "bit_rate": "10495018"
+      }
+    ],
+    "file": {
+      "duration": "60.586000",
+      "size": "84490850"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "P",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "183000/6101",
+        "duration": "60.977000",
+        "bit_rate": "24887502"
+      }
+    ],
+    "file": {
+      "duration": "60.977000",
+      "size": "194719889"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "P",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "457500/15253",
+        "duration": "60.979000",
+        "bit_rate": "24231093"
+      }
+    ],
+    "file": {
+      "duration": "60.992000",
+      "size": "189739801"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "P",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "183000/6101",
+        "duration": "60.977000",
+        "bit_rate": "24245730"
+      }
+    ],
+    "file": {
+      "duration": "60.977000",
+      "size": "190297075"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "P",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "1815000/60553",
+        "duration": "60.520000",
+        "bit_rate": "10489409"
+      }
+    ],
+    "file": {
+      "duration": "60.520000",
+      "size": "84397328"
+    }
+  },
+  {
+    "archiveFolder": "Driving Clips",
+    "modeToken": "P",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "100500/3353",
+        "duration": "60.320000",
+        "bit_rate": "10506086"
+      }
+    ],
+    "file": {
+      "duration": "60.352000",
+      "size": "84254123"
+    }
+  },
+  {
+    "archiveFolder": "Parking Clips",
+    "modeToken": "P",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "183000/6101",
+        "duration": "60.977000",
+        "bit_rate": "25206396"
+      }
+    ],
+    "file": {
+      "duration": "60.977000",
+      "size": "197768263"
+    }
+  },
+  {
+    "archiveFolder": "Parking Clips",
+    "modeToken": "P",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "457500/15253",
+        "duration": "60.979000",
+        "bit_rate": "25155162"
+      }
+    ],
+    "file": {
+      "duration": "60.990000",
+      "size": "197380088"
+    }
+  },
+  {
+    "archiveFolder": "Parking Clips",
+    "modeToken": "P",
+    "channel": "F",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "avg_frame_rate": "610000/20337",
+        "duration": "60.977000",
+        "bit_rate": "25161770"
+      }
+    ],
+    "file": {
+      "duration": "60.977000",
+      "size": "197872607"
+    }
+  },
+  {
+    "archiveFolder": "Parking Clips",
+    "modeToken": "P",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "113625/3791",
+        "duration": "60.622000",
+        "bit_rate": "10436816"
+      }
+    ],
+    "file": {
+      "duration": "60.622000",
+      "size": "85058946"
+    }
+  },
+  {
+    "archiveFolder": "Parking Clips",
+    "modeToken": "P",
+    "channel": "R",
+    "video": [
+      {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "914000/30493",
+        "duration": "60.953000",
+        "bit_rate": "10511964"
+      }
+    ],
+    "file": {
+      "duration": "60.953000",
+      "size": "85153558"
+    }
+  }
+]

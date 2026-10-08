@@ -11,7 +11,7 @@
   "id": "metadata-only-blackvue-dr900s-2ch",
   "manufacturer": "BlackVue",
   "model": "DR900S-2CH",
-  "notes": [],
+  "notes": ["Archive folder names do not establish recording mode: the driving archive also contains P-token parking clips. Only N normal and M manual recordings are used for the driving measurement. E event clips are not assumed to be driving. Firmware and quality settings were not retained."],
   "recording": {
     "driving_folders": [],
     "other_folders": [],
@@ -26,8 +26,26 @@
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
     }
   ],
-  "technical_facts": [],
+  "technical_facts": [{"label": "Additional 4K codec observation", "value": "A 52.376-second normal front clip measures 25.182903 Mbps H.264 at 3840x2160 and approximately 30 fps. It is retained in the evidence but excluded from the full-length comparison."}],
   "video_samples": [
+    {
+      "channel": "F (front)", "mode": "driving / manual", "codec": "H.265", "resolution": "3840x2160", "fps": "30", "bitrate": "~25.2 Mbps", "container": "MP4", "source": "ffprobe",
+      "recording_configuration": "2-channel: front, rear",
+      "settings_note": "Owner-provided archive checked 2026-10-08. Four normal/manual front clips of at least 55 seconds measure 25.096657-25.255170 Mbps at approximately 30 fps. P parking and E unknown-context events excluded, regardless of archive folder. Firmware and quality setting unknown. See docs/data/dr900s-archive-evidence.json."
+    },
+    {
+      "channel": "R (rear)", "mode": "driving / manual", "codec": "H.265", "resolution": "1920x1080", "fps": "30", "bitrate": "~10.5 Mbps", "container": "MP4", "source": "ffprobe",
+      "recording_configuration": "2-channel: front, rear",
+      "settings_note": "Three normal/manual rear clips of at least 55 seconds measure 10.467818-10.495018 Mbps. Firmware and quality setting unknown. See docs/data/dr900s-archive-evidence.json."
+    },
+    {
+      "channel": "F (front)", "mode": "parking", "codec": "H.265", "resolution": "3840x2160", "fps": "30", "bitrate": "24.2-25.2 Mbps", "container": "MP4", "source": "ffprobe",
+      "settings_note": "Six P-token front clips from both owner-provided archive folders measure 24.231093-25.206396 Mbps over approximately 61 seconds. Parking-only evidence, not included in the driving chart. Firmware and quality setting unknown."
+    },
+    {
+      "channel": "R (rear)", "mode": "parking", "codec": "H.265", "resolution": "1920x1080", "fps": "30", "bitrate": "~10.4-10.5 Mbps", "container": "MP4", "source": "ffprobe",
+      "settings_note": "Four successfully probed P-token rear clips measure 10.436816-10.511964 Mbps over approximately 60-61 seconds. One additional probe failed and is not treated as measured. Firmware and quality setting unknown."
+    },
     {
       "bitrate": "~14.7 Mbps",
       "channel": "F (front)",
