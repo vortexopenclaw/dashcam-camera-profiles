@@ -62,18 +62,19 @@ def per_camera(front):
 
 per_camera(True)
 per_camera(False)
+combined_rows = [*ROWS[:4], ROWS[5], ROWS[6], ROWS[4]]
 fig,axis=plt.subplots(figsize=(13,8.3))
 fig.subplots_adjust(left=.22,right=.74,top=.82,bottom=.23)
 fig.suptitle('VIOFO T340 • Combined recording storage',fontsize=21,fontweight='bold',y=.95)
 fig.text(.22,.87,'Measured whole-file storage',fontsize=11)
-labels=[('Maximum (3CH)' if r['setting']=='Maximum 3CH' else 'Auto Event Detection\nparking (4CH)' if r['setting']=='Auto Event Detection parking' else r['setting']+' (4CH)') for r in ROWS]
-offset=np.zeros(len(ROWS))
+labels=[('Maximum (3CH)' if r['setting']=='Maximum 3CH' else 'Auto Event Detection\nparking (4CH)' if r['setting']=='Auto Event Detection parking' else r['setting']+' (4CH)') for r in combined_rows]
+offset=np.zeros(len(combined_rows))
 for role,color in [('front','#277c9c'),('rear','#689cbe'),('interior','#88bda9'),('telephoto','#b3cf95')]:
-    values=[sum(c['MBPerMinute'] or 0 for c in r['channels'] if c['channel']==role) for r in ROWS]
-    bars=axis.barh(range(len(ROWS)),values,left=offset,color=color,label=role.title(),height=.6)
+    values=[sum(c['MBPerMinute'] or 0 for c in r['channels'] if c['channel']==role) for r in combined_rows]
+    bars=axis.barh(range(len(combined_rows)),values,left=offset,color=color,label=role.title(),height=.6)
     offset+=values
-axis.set_yticks(range(len(ROWS)),labels);axis.invert_yaxis();axis.set_xlim(0,1100);axis.set_xlabel('Combined MB per active recording minute');axis.grid(axis='x',alpha=.16)
-for i,row in enumerate(ROWS):
+axis.set_yticks(range(len(combined_rows)),labels);axis.invert_yaxis();axis.set_xlim(0,1100);axis.set_xlabel('Combined MB per active recording minute');axis.grid(axis='x',alpha=.16)
+for i,row in enumerate(combined_rows):
     if row['combinedMBPerMinute'] is None:
         axis.text(15,i,'Normal full-minute files: pending',va='center',fontsize=10)
         continue
@@ -114,7 +115,7 @@ with (OUT/'measurements.csv').open('w',newline='') as f:
 images=''.join(f'<section><h2>{title}</h2><a href="assets/t340/{name}.png"><img src="assets/t340/{name}.png" alt="{title}" loading="lazy"></a><p><a href="assets/t340/{name}.svg">SVG</a> · <a href="assets/t340/{name}.png">PNG</a></p></section>' for name,title in [('front','Front camera'),('add-ons','Rear, interior and telephoto'),('combined','Combined storage and capacity'),('parking','Parking mode comparison')])
 def display(value):
     return f'{value:.2f}' if value is not None else 'Pending'
-table=''.join('<tr>'+''.join(f'<td>{v}</td>' for v in [html.escape(r['setting']),r['channelCount'],display(r['combinedMBPerMinute']),display(r['combinedGBPerHour']),display(r['nominal256GBRecordedHours']),'Measured files'])+'</tr>' for r in ROWS)
+table=''.join('<tr>'+''.join(f'<td>{v}</td>' for v in [html.escape(r['setting']),r['channelCount'],display(r['combinedMBPerMinute']),display(r['combinedGBPerHour']),display(r['nominal256GBRecordedHours']),'Measured files'])+'</tr>' for r in combined_rows)
 notes=''.join('<li>'+html.escape(n)+'</li>' for n in DATA['limitations'])
 page='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>T340 bitrate and storage charts</title><style>body{font:16px system-ui;margin:32px auto;max-width:1100px;padding:0 18px;color:#182733;line-height:1.6}img{width:100%;height:auto}section{margin:32px 0}a{color:#146c93}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:10px;border-bottom:1px solid #ddd}.scroll{overflow:auto}</style><a href="./">Camera reference</a><h1>VIOFO T340: bitrate, file size and recording capacity</h1><p>Measured metadata reviewed 2026-10-08. Four-channel driving, three-channel Maximum, and distinct parking settings.</p><p><strong>Firmware: '+html.escape(DATA['firmware'])+'.</strong> Bitrate panels measure encoded video; file panels measure whole files. Rear, interior and telephoto are shown separately: their sampled driving rates differ by less than 0.01 Mbps and their measured full-minute file sizes match.</p><p>Normal: 243.27 MB per minute front and 111.15 MB per minute for each add-on. All storage bars use measured files, with no video-only estimates.</p>'+images+'<h2>Combined measurements</h2><div class="scroll"><table><tr><th>Setting</th><th>Cameras</th><th>MB/min</th><th>GB/hour</th><th>256 GB recorded hours</th><th>Storage evidence</th></tr>'+table+'</table></div><h2>Measurement notes</h2><p>'+html.escape(DATA['method'])+'</p><ul>'+notes+'</ul><p><a href="assets/t340/measurements.csv">Download CSV</a> · <a href="data/t340-quality-comparison.json">Reviewed data JSON</a> · <a href="https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-t340.md">Evidence notes</a></p></html>'
 (ROOT/'docs/t340-comparison.html').write_text(page+'\n')
