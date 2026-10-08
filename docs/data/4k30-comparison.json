@@ -51,21 +51,11 @@
   },
   {
     "id": "viofo-t340",
-    "camera": "VIOFO T340 \u2022 Maximum 4CH",
+    "camera": "VIOFO T340 \u2022 Maximum",
     "lowMbps": 53.249696,
     "highMbps": 53.249696,
     "codec": "H.264",
     "configuration": "4 cameras; firmware 1.0_260911",
-    "settings": "Maximum",
-    "source": "Reviewed T340 front-camera measurements"
-  },
-  {
-    "id": "viofo-t340",
-    "camera": "VIOFO T340 \u2022 Maximum 3CH",
-    "lowMbps": 53.2424,
-    "highMbps": 53.2424,
-    "codec": "H.264",
-    "configuration": "3 cameras; firmware 1.0_260911",
     "settings": "Maximum",
     "source": "Reviewed T340 front-camera measurements"
   },
@@ -111,7 +101,7 @@
   },
   {
     "id": "viofo-t340",
-    "camera": "VIOFO T340 \u2022 High 4CH",
+    "camera": "VIOFO T340 \u2022 High",
     "lowMbps": 36.861637333333334,
     "highMbps": 36.861637333333334,
     "codec": "H.264",
@@ -141,7 +131,7 @@
   },
   {
     "id": "viofo-t340",
-    "camera": "VIOFO T340 \u2022 Normal 4CH",
+    "camera": "VIOFO T340 \u2022 Normal",
     "lowMbps": 31.950723,
     "highMbps": 31.950723,
     "codec": "H.264",
@@ -181,7 +171,7 @@
   },
   {
     "id": "viofo-t340",
-    "camera": "VIOFO T340 \u2022 Low 4CH",
+    "camera": "VIOFO T340 \u2022 Low",
     "lowMbps": 27.034015,
     "highMbps": 27.034015,
     "codec": "H.264",

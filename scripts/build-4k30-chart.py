@@ -41,11 +41,11 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
 
 data = json.loads((ROOT / 'docs/data/t340-quality-comparison.json').read_text())
 for row in data['rows']:
-    if row['setting'] not in ['Low', 'Normal', 'High', 'Maximum', 'Maximum 3CH']:
+    if row['setting'] not in ['Low', 'Normal', 'High', 'Maximum']:
         continue
     value = next(c['videoMbps'] for c in row['channels'] if c['channel'] == 'front')
     setting = row['setting'].replace(' 3CH', '')
-    rows.append(dict(id='viofo-t340', camera=f"VIOFO T340 • {setting} {row['channelCount']}CH", lowMbps=value, highMbps=value, codec='H.264', configuration=f"{row['channelCount']} cameras; firmware {data['firmware']}", settings=setting, source='Reviewed T340 front-camera measurements'))
+    rows.append(dict(id='viofo-t340', camera=f"VIOFO T340 • {setting}", lowMbps=value, highMbps=value, codec='H.264', configuration=f"{row['channelCount']} cameras; firmware {data['firmware']}", settings=setting, source='Reviewed T340 front-camera measurements'))
 
 rows.sort(key=lambda r: (-r['highMbps'], r['camera']))
 assert rows, 'No measured 4K30 front-camera data'
