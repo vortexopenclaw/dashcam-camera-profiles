@@ -84,7 +84,13 @@
     ]
   },
   "schema_version": "1.0",
-  "sources": [],
+  "sources": [
+    {
+      "kind": "manual",
+      "label": "Official model manual and firmware downloads",
+      "url": "https://www.vantrue.com/pages/n4s-manual-firmware"
+    }
+  ],
   "technical_facts": [],
   "video_samples": [
     {

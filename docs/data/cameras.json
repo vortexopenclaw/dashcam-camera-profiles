@@ -297,8 +297,8 @@
           "default_channel": null,
           "modes": {
             "EV": "event",
-            "False": "continuous",
             "LA": "parking_timelapse",
+            "NO": "continuous",
             "PA": "parking_motion_or_impact"
           },
           "pattern": "^(NO|PA|LA|EV)(\\d{8})-(\\d{6})-(\\d+)(F|R|C)\\.MP4$",
@@ -2678,6 +2678,11 @@
           "kind": "research",
           "label": "Escort M1 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/escort-m1.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official M1 manual and quick-start downloads",
+          "url": "https://support.escortradar.com/support/solutions/articles/47001279164-escort-camera-and-accessories-legacy-archive"
         }
       ],
       "technical_facts": [
@@ -2875,16 +2880,6 @@
           "fps": "30",
           "mode": "driving",
           "resolution": "1920x1080",
-          "source": "ffprobe"
-        },
-        {
-          "bitrate": "~60.0 Mbps",
-          "channel": "F (front)",
-          "codec": "HEVC",
-          "container": "MP4",
-          "fps": "30",
-          "mode": "parking",
-          "resolution": "3840x2160",
           "source": "ffprobe"
         },
         {
@@ -5203,6 +5198,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official model manual and firmware downloads",
+          "url": "https://www.vantrue.com/pages/e360-manual-firmware"
         }
       ],
       "technical_facts": [],
@@ -5305,6 +5305,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official model manual and firmware downloads",
+          "url": "https://www.vantrue.com/pages/n4-manual-firmware"
         }
       ],
       "technical_facts": [],
@@ -5434,7 +5439,13 @@
         ]
       },
       "schema_version": "1.0",
-      "sources": [],
+      "sources": [
+        {
+          "kind": "manual",
+          "label": "Official model manual and firmware downloads",
+          "url": "https://www.vantrue.com/pages/n4pros-manual-firmware"
+        }
+      ],
       "technical_facts": [
         {
           "label": "Paired driving-file measurement archive",
@@ -5580,7 +5591,13 @@
         ]
       },
       "schema_version": "1.0",
-      "sources": [],
+      "sources": [
+        {
+          "kind": "manual",
+          "label": "Official model manual and firmware downloads",
+          "url": "https://www.vantrue.com/pages/n4s-manual-firmware"
+        }
+      ],
       "technical_facts": [],
       "video_samples": [
         {
@@ -5692,6 +5709,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official model manual and firmware downloads",
+          "url": "https://www.vantrue.com/pages/n5-manual-firmware"
         }
       ],
       "technical_facts": [],
@@ -5868,14 +5890,14 @@
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a119-mini-2.md"
         },
         {
-          "kind": "manual",
-          "label": "Official manual",
-          "url": "https://viofotech.com/download/manual/MINI2/A119MINI2EnglishManual.pdf"
-        },
-        {
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.viofo.com/collections/dash-cam"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/MINI2/A119MINI2EnglishManual.pdf"
         }
       ],
       "technical_facts": [
@@ -6030,6 +6052,11 @@
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.viofo.com/collections/dash-cam"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/A119MPRO/A119MProEnglishManual.pdf"
         }
       ],
       "technical_facts": [
@@ -6133,6 +6160,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://cdn.shopify.com/s/files/1/0569/8905/7087/files/A129_Duo_English_Manual.pdf?v=1718182920"
         }
       ],
       "technical_facts": [],
@@ -6241,6 +6273,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/A129S/A129PlusEnglishManual.pdf"
         }
       ],
       "technical_facts": [],
@@ -6359,6 +6396,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/A129P/A129ProEnglishManual.pdf"
         }
       ],
       "technical_facts": [],
@@ -6514,6 +6556,11 @@
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.viofo.com/collections/dash-cam"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/A139PRO/A139ProEnglishmanual.pdf"
         }
       ],
       "technical_facts": [
@@ -6709,6 +6756,11 @@
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.viofo.com/collections/dash-cam"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/A229S/A229PlusEnglishManual.pdf"
         }
       ],
       "technical_facts": [
@@ -6891,11 +6943,6 @@
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a229-pro.md"
         },
         {
-          "kind": "manual",
-          "label": "Official manual",
-          "url": "https://viofotech.com/download/manual/A229P/A229ProEnglishManual.pdf"
-        },
-        {
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/firmware-updates-viofo-a229-pro-a229-plus-version-v13"
@@ -6909,6 +6956,11 @@
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.blackboxmycar.com/pages/best-settings-for-viofo-a229-series-dash-cam"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/A229P/A229ProEnglishManual.pdf"
         }
       ],
       "technical_facts": [
@@ -7138,6 +7190,11 @@
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.viofo.com/collections/dash-cam"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/A229Ultra/A229UltraEnglishManual.pdf"
         }
       ],
       "technical_facts": [
@@ -7375,16 +7432,6 @@
           "url": "https://www.viofo.com/products/viofo-a329s-3ch-first-4k-front-2k-wide-210-fov-fisheye-cabin-2k-rear-dash-cam-with-starvis-2-sensor"
         },
         {
-          "kind": "manual",
-          "label": "Official manual",
-          "url": "https://www.viofo.com/pages/manual"
-        },
-        {
-          "kind": "manual",
-          "label": "Official manual",
-          "url": "https://support.viofo.com/support/solutions/folders/19000151665"
-        },
-        {
           "kind": "research",
           "label": "Viofo A329S research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a329s.md"
@@ -7395,14 +7442,14 @@
           "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/introducing-viofo-a329s-3ch-with-2k-infrared-fisheye-cabin-camera-your-reliable-road-companion-is-here"
         },
         {
-          "kind": "manual",
-          "label": "Official manual",
-          "url": "https://www.viofo.com/pages/support-product-manual"
-        },
-        {
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.youtube.com/watch?v=p5WVjVqX1xI"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/A329S/A329SEnglishManual.pdf"
         }
       ],
       "technical_facts": [
@@ -8076,6 +8123,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://cdn.shopify.com/s/files/1/0569/8905/7087/files/T130_English_Manual.pdf?v=1718170477"
         }
       ],
       "technical_facts": [],
@@ -8194,18 +8246,14 @@
           {
             "importable": true,
             "mode": "continuous",
-            "notes": [
-              "Observed in the Low 4CH structural submission reviewed 2026-10-08."
-            ],
+            "notes": [],
             "path": "DCIM/Movie",
             "validation": "app_submission_sampled"
           },
           {
             "importable": true,
             "mode": "protected",
-            "notes": [
-              "Observed in the Low 4CH structural submission reviewed 2026-10-08."
-            ],
+            "notes": [],
             "path": "DCIM/Movie/RO",
             "validation": "app_submission_sampled"
           }
@@ -8214,9 +8262,7 @@
           {
             "importable": true,
             "mode": "still_image",
-            "notes": [
-              "Observed in the Low 4CH structural submission reviewed 2026-10-08."
-            ],
+            "notes": [],
             "path": "DCIM/Photo",
             "validation": "app_submission_sampled"
           }
@@ -8225,17 +8271,15 @@
           {
             "importable": true,
             "mode": "parking",
-            "notes": [
-              "Observed in the Low 4CH structural submission reviewed 2026-10-08."
-            ],
+            "notes": [],
             "path": "DCIM/Movie/Parking",
             "validation": "app_submission_sampled"
           }
         ],
         "parking_modes": [
-          "parking",
-          "low power (owner-confirmed setting)",
-          "low bitrate (owner-confirmed setting)"
+          "Low Bitrate",
+          "Auto Event Detection",
+          "Low Power Impact Detection"
         ]
       },
       "schema_version": "1.0",
@@ -8254,6 +8298,11 @@
           "kind": "research",
           "label": "T340 bitrate and storage comparison charts",
           "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/t340-comparison.html"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/T340/T340EnglishManual.pdf"
         }
       ],
       "technical_facts": [
@@ -8287,7 +8336,7 @@
         },
         {
           "label": "Driving bitrate settings",
-          "value": "Owner confirms four settings: Low, Normal, High, Maximum. Low Bitrate continuous parking is distinct from Low Power Impact Detection. Impact-triggered Low Power bitrate still needs a controlled measurement; do not assume the earlier 4.095 Mbps sample identifies the mode."
+          "value": "Low, Normal, High, Maximum. Parking modes: Low Bitrate, Auto Event Detection, Low Power Impact Detection."
         },
         {
           "label": "Reviewed Low structural sample",
@@ -8356,7 +8405,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner-confirmed Normal driving bitrate; HDR on for this camera. Settings supplied by owner; not a controlled HDR toggle comparison.",
+          "settings_note": "Normal; HDR on",
           "source": "app_submission"
         },
         {
@@ -8368,7 +8417,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner-confirmed Low Power parking; HDR on for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "settings_note": "Parking; HDR on",
           "source": "app_submission"
         },
         {
@@ -8380,7 +8429,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed Normal driving bitrate; HDR on for this camera. Settings supplied by owner; not a controlled HDR toggle comparison.",
+          "settings_note": "Normal; HDR on",
           "source": "app_submission"
         },
         {
@@ -8392,7 +8441,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed Low Power parking; HDR on for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "settings_note": "Parking; HDR on",
           "source": "app_submission"
         },
         {
@@ -8404,7 +8453,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed Normal driving bitrate; HDR off for this camera. Settings supplied by owner; not a controlled HDR toggle comparison.",
+          "settings_note": "Normal; HDR off",
           "source": "app_submission"
         },
         {
@@ -8416,7 +8465,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed Low Power parking; HDR off for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "settings_note": "Parking; HDR off",
           "source": "app_submission"
         },
         {
@@ -8428,7 +8477,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed Normal driving bitrate; HDR off for this camera. Settings supplied by owner; not a controlled HDR toggle comparison.",
+          "settings_note": "Normal; HDR off",
           "source": "app_submission"
         },
         {
@@ -8440,7 +8489,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed Low Power parking; HDR off for this camera. Settings supplied by owner; trigger subtype not independently verified.",
+          "settings_note": "Parking; HDR off",
           "source": "app_submission"
         },
         {
@@ -8452,7 +8501,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "settings_note": "Low Bitrate parking",
           "source": "app_submission"
         },
         {
@@ -8464,7 +8513,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "settings_note": "Low Bitrate parking",
           "source": "app_submission"
         },
         {
@@ -8476,7 +8525,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "settings_note": "Low Bitrate parking",
           "source": "app_submission"
         },
         {
@@ -8488,7 +8537,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "settings_note": "Low Bitrate parking",
           "source": "app_submission"
         },
         {
@@ -8500,7 +8549,7 @@
           "mode": "protected",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission. Owner reports manual emergency button events; per-file event linkage and folder paths absent.",
+          "settings_note": "High",
           "source": "app_submission"
         },
         {
@@ -8512,7 +8561,7 @@
           "mode": "protected",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission. Owner reports manual emergency button events; per-file event linkage and folder paths absent.",
+          "settings_note": "High",
           "source": "app_submission"
         },
         {
@@ -8524,7 +8573,7 @@
           "mode": "protected",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission. Owner reports manual emergency button events; per-file event linkage and folder paths absent.",
+          "settings_note": "High",
           "source": "app_submission"
         },
         {
@@ -8536,7 +8585,7 @@
           "mode": "protected",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission. Owner reports manual emergency button events; per-file event linkage and folder paths absent.",
+          "settings_note": "High",
           "source": "app_submission"
         },
         {
@@ -8548,7 +8597,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "settings_note": "High",
           "source": "app_submission"
         },
         {
@@ -8560,7 +8609,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "settings_note": "High",
           "source": "app_submission"
         },
         {
@@ -8572,7 +8621,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "settings_note": "High",
           "source": "app_submission"
         },
         {
@@ -8584,7 +8633,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "settings_note": "High",
           "source": "app_submission"
         },
         {
@@ -8596,7 +8645,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8608,7 +8657,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8620,7 +8669,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8632,7 +8681,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8644,7 +8693,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8656,7 +8705,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8668,7 +8717,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8680,7 +8729,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8692,7 +8741,7 @@
           "mode": "protected",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Low",
           "source": "app_submission"
         },
         {
@@ -8704,7 +8753,7 @@
           "mode": "protected",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Low",
           "source": "app_submission"
         },
         {
@@ -8716,7 +8765,7 @@
           "mode": "protected",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Low",
           "source": "app_submission"
         },
         {
@@ -8728,7 +8777,7 @@
           "mode": "protected",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Low",
           "source": "app_submission"
         },
         {
@@ -8740,7 +8789,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Low",
           "source": "app_submission"
         },
         {
@@ -8752,7 +8801,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Low",
           "source": "app_submission"
         },
         {
@@ -8764,7 +8813,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Low",
           "source": "app_submission"
         },
         {
@@ -8776,7 +8825,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "settings_note": "Low",
           "source": "app_submission"
         },
         {
@@ -8788,7 +8837,7 @@
           "mode": "parking",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "3840x2160",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8800,7 +8849,7 @@
           "mode": "parking",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8812,7 +8861,7 @@
           "mode": "parking",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8824,7 +8873,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "3840x2160",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8836,7 +8885,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8848,7 +8897,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Parking",
           "source": "app_submission"
         },
         {
@@ -8860,7 +8909,7 @@
           "mode": "driving",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "3840x2160",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Maximum",
           "source": "app_submission"
         },
         {
@@ -8872,7 +8921,7 @@
           "mode": "driving",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Maximum",
           "source": "app_submission"
         },
         {
@@ -8884,7 +8933,7 @@
           "mode": "driving",
           "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
           "resolution": "2560x1440",
-          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "settings_note": "Maximum",
           "source": "app_submission"
         },
         {
@@ -8896,7 +8945,7 @@
           "mode": "parking_motion_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -8908,7 +8957,7 @@
           "mode": "parking_motion_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -8920,7 +8969,7 @@
           "mode": "parking_motion_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -8932,7 +8981,7 @@
           "mode": "parking_motion_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -8944,7 +8993,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -8956,7 +9005,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -8968,7 +9017,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -8980,7 +9029,7 @@
           "mode": "parking",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -8992,7 +9041,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -9004,7 +9053,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -9016,7 +9065,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -9028,7 +9077,7 @@
           "mode": "parking_impact_detection",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Auto Event Detection",
           "source": "app_submission"
         },
         {
@@ -9040,7 +9089,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "3840x2160",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Mixed driving quality settings",
           "source": "app_submission"
         },
         {
@@ -9052,7 +9101,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Mixed driving quality settings",
           "source": "app_submission"
         },
         {
@@ -9064,7 +9113,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Mixed driving quality settings",
           "source": "app_submission"
         },
         {
@@ -9076,7 +9125,7 @@
           "mode": "driving",
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
-          "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred.",
+          "settings_note": "Mixed driving quality settings",
           "source": "app_submission"
         }
       ]
@@ -9136,6 +9185,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://viofotech.com/download/manual/VS1/VS1EnglishManual.pdf"
         }
       ],
       "technical_facts": [],
@@ -9196,6 +9250,11 @@
           "kind": "research",
           "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official English user manual (PDF)",
+          "url": "https://www.viofotech.com/download/manual/WM1/WM1%20English%20manual.pdf"
         }
       ],
       "technical_facts": [],
@@ -9317,6 +9376,11 @@
           "kind": "research",
           "label": "Vueroid S1 4K Infinite research notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vueroid-s1-4k-infinite.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official S1 4K Infinite manual download",
+          "url": "https://vueroid.com/product/s1-4k-infinite-1ch/?mod=document&uid=146#kboard-document"
         }
       ],
       "technical_facts": [
@@ -9373,7 +9437,41 @@
           "value": "6 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
         }
       ],
-      "video_samples": []
+      "video_samples": [
+        {
+          "bitrate": "~48 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "3-channel: front, rear, interior; firmware 1.6.0",
+          "resolution": "3840x2160",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "~22 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "3-channel: front, rear, interior; firmware 1.6.0",
+          "resolution": "2560x1440",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "~15 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "3-channel: front, rear, interior; firmware 1.6.0",
+          "resolution": "1920x1080",
+          "source": "app_submission"
+        }
+      ]
     },
     {
       "$schema": "../schemas/profile.schema.json",
@@ -9514,6 +9612,11 @@
           "kind": "research",
           "label": "Dashcam Offloader S1 QHD card profile notes",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vueroid-s1-qhd-infinite.md"
+        },
+        {
+          "kind": "manual",
+          "label": "Official S1 QHD manual download center",
+          "url": "https://vueroid.com/product/bundle-s1-qhd-infinite-2-channel/"
         }
       ],
       "technical_facts": [

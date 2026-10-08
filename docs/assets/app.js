@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   try {
-    const response = await fetch("data/cameras.json");
+    const response = await fetch("data/cameras.json", { cache: "no-cache" });
     if (!response.ok) throw new Error(`Reference request failed: ${response.status}`);
     const data = await response.json();
     state.cameras = data.cameras;
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const hashId = decodeURIComponent(location.hash.replace(/^#camera=/, ""));
     state.selectedId = state.cameras.some(camera => camera.id === hashId) ? hashId : null;
     render();
+    if (state.selectedId) elements.detail.scrollIntoView({ behavior: "instant", block: "start" });
   } catch (error) {
     elements.detail.innerHTML = `<div class="empty-state"><h2>Reference unavailable</h2><p>${escapeHtml(error.message)}</p></div>`;
   }
@@ -48,10 +49,9 @@ function populateStats(data) {
 
 function populateFilters() {
   const brands = [...new Set(state.cameras.map(camera => displayManufacturer(camera.manufacturer)))].sort(naturalCompare);
-  const measuredBrands = [...new Set(drivingSamples().map(item => displayManufacturer(item.camera.manufacturer)))].sort(naturalCompare);
   const levels = [...new Set(state.cameras.map(camera => camera.evidence.level))].sort(naturalCompare);
   elements.brand.insertAdjacentHTML("beforeend", brands.map(brand => `<option>${escapeHtml(brand)}</option>`).join(""));
-  elements.qualityBrand.insertAdjacentHTML("beforeend", measuredBrands.map(brand => `<option>${escapeHtml(brand)}</option>`).join(""));
+  elements.qualityBrand.insertAdjacentHTML("beforeend", brands.map(brand => `<option>${escapeHtml(brand)}</option>`).join(""));
   elements.evidence.insertAdjacentHTML("beforeend", levels.map(level => `<option value="${escapeHtml(level)}">${escapeHtml(label(level))}</option>`).join(""));
 }
 
@@ -69,7 +69,7 @@ function bindControls() {
   elements.qualityCompanionFps.addEventListener("change", event => { state.qualityCompanionFps = event.target.value; renderQualityExplorer(); });
   window.addEventListener("hashchange", () => {
     const id = decodeURIComponent(location.hash.replace(/^#camera=/, ""));
-    if (state.cameras.some(camera => camera.id === id)) { state.selectedId = id; render(); }
+    if (state.cameras.some(camera => camera.id === id)) selectCamera(id);
   });
 }
 
@@ -112,10 +112,26 @@ function render() {
 }
 
 function drivingSamples() {
-  return state.cameras.flatMap(camera => camera.video_samples
+  const rows = state.cameras.flatMap(camera => camera.video_samples
     .filter(sample => sample.mode === "driving")
     .map(sample => ({ camera, sample, role: cameraRole(sample.channel) }))
     .filter(item => item.role));
+  const grouped = new Map();
+  for (const item of rows) {
+    const key = JSON.stringify([item.camera.id, item.role, item.sample.codec, item.sample.resolution, item.sample.fps, item.sample.recording_configuration, item.sample.settings_note]);
+    const previous = grouped.get(key);
+    if (!previous) grouped.set(key, item);
+    else {
+      const rates = [...bitrateValues(previous.sample.bitrate), ...bitrateValues(item.sample.bitrate)];
+      if (rates.length) grouped.set(key, { ...previous, sample: { ...previous.sample, bitrate: `${Math.min(...rates)}–${Math.max(...rates)} Mbps` } });
+    }
+  }
+  return [...grouped.values()];
+}
+
+function unmeasuredCameras() {
+  const measured = new Set(drivingSamples().filter(item => !state.qualityChannel || item.role === state.qualityChannel).map(item => item.camera.id));
+  return state.cameras.filter(camera => !measured.has(camera.id) && (!state.qualityBrand || displayManufacturer(camera.manufacturer) === state.qualityBrand));
 }
 
 function cameraRole(channel) {
@@ -183,11 +199,13 @@ function renderQualityExplorer() {
   elements.qualityResults.innerHTML = matches.length ? matches.map(({ camera, sample }, index) => {
     const item = { camera, sample, role: cameraRole(sample.channel) };
     const companions = configurationCompanions(item);
-    const configuration = sample.recording_configuration || "Configuration not recorded";
-    const setting = sample.settings_note ? `<small class="quality-setting">${escapeHtml(sample.settings_note)}</small>` : "";
+    const configuration = sample.recording_configuration || "";
+    const setting = sample.settings_note && sample.settings_note.length < 80 ? `<small class="quality-setting">${escapeHtml(sample.settings_note)}</small>` : "";
     const rank = state.qualitySort === "brand" ? "" : `<span class="quality-rank" aria-label="Observed bitrate rank ${index + 1}">#${index + 1}</span>`;
-    return `<button class="quality-result" data-id="${escapeHtml(camera.id)}"><span class="quality-camera">${rank}<strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>${escapeHtml(sample.channel)} · ${escapeHtml(sample.codec)}</small></span><span class="quality-spec">${escapeHtml(sample.resolution)}<small>${escapeHtml(sample.fps)} FPS</small></span><span class="bitrate-bar"><i style="width:${bitrateWidth(sample.bitrate)}%"></i><strong>${escapeHtml(sample.bitrate)}</strong></span><span class="quality-companions"><strong>${escapeHtml(configuration)}</strong><small>${companions.length ? companions.map(companion => `${roleLabel(cameraRole(companion.channel))} ${companion.resolution} ${companion.fps}fps`).join(" · ") : "No additional same-configuration channel recorded"}</small>${setting}</span></button>`;
+    return `<button class="quality-result" data-id="${escapeHtml(camera.id)}"><span class="quality-camera">${rank}<strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>${escapeHtml(sample.channel)} · ${escapeHtml(sample.codec)}</small></span><span class="quality-spec">${escapeHtml(sample.resolution)}<small>${escapeHtml(sample.fps)} FPS</small></span><span class="bitrate-bar"><i style="width:${bitrateWidth(sample.bitrate)}%"></i><strong>${escapeHtml(formatBitrate(sample.bitrate))}</strong></span><span class="quality-companions"><strong>${escapeHtml(configuration)}</strong><small>${companions.map(companion => `${roleLabel(cameraRole(companion.channel))} ${companion.resolution} ${companion.fps}fps`).join(" · ")}</small>${setting}</span></button>`;
   }).join("") : `<div class="quality-empty">No measured driving samples match those filters.</div>`;
+  const pending = unmeasuredCameras();
+  if (pending.length) elements.qualityResults.innerHTML += `<section class="section"><h3>Awaiting driving measurements</h3><p>No separate ${escapeHtml(roleLabel(state.qualityChannel).toLowerCase())} driving measurement is available for these cameras. Select one to see its other data.</p><div class="cards">${pending.map(camera => `<button class="camera-button" data-id="${escapeHtml(camera.id)}"><strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>View camera reference</small></button>`).join("")}</div></section>`;
   elements.qualityResults.querySelectorAll("button").forEach(button => button.addEventListener("click", () => selectCamera(button.dataset.id)));
   if (!state.selectedId) {
     elements.detail.innerHTML = renderOverview(matches);
@@ -201,7 +219,16 @@ function bindChartClicks() {
 
 function configurationCompanions({ camera, sample }) {
   if (!sample.recording_configuration) return [];
-  return camera.video_samples.filter(item => item.mode === "driving" && item !== sample && item.recording_configuration === sample.recording_configuration);
+  return camera.video_samples.filter(item => item.mode === "driving" && cameraRole(item.channel) !== cameraRole(sample.channel) && item.recording_configuration === sample.recording_configuration && item.settings_note === sample.settings_note);
+}
+
+function bitrateValues(value) {
+  const beforeUnit = String(value).split(/Mbps/i)[0];
+  return /Mbps/i.test(value) ? (beforeUnit.match(/\d+(?:\.\d+)?/g) || []).map(Number) : [];
+}
+function formatBitrate(value, digits = 1) {
+  if (!/Mbps/i.test(value)) return value;
+  return String(value).replace(/\d+(?:\.\d+)?/g, number => String(Number(Number(number).toFixed(digits))));
 }
 
 function bitrateMaximum(value) {
@@ -224,9 +251,15 @@ function fpsCompare(a, b) { return bitrateMaximum(b) - bitrateMaximum(a) || natu
 
 function selectCamera(id) {
   state.selectedId = id;
+  state.query = "";
+  state.brand = "";
+  state.evidence = "";
+  elements.search.value = "";
+  elements.brand.value = "";
+  elements.evidence.value = "";
   history.replaceState(null, "", `#camera=${encodeURIComponent(id)}`);
   render();
-  if (window.matchMedia("(max-width: 900px)").matches) elements.detail.scrollIntoView({ behavior: "smooth" });
+  elements.detail.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function renderOverview(matches) {
@@ -242,11 +275,11 @@ function renderBitrateChart(matches) {
   if (!matches.length) return `<div class="empty-state"><h2>No measured samples match</h2><p>Adjust the driving-video filters above.</p></div>`;
   const maximum = Math.max(...matches.map(item => bitrateMaximum(item.sample.bitrate)));
   return `<section class="section bitrate-chart-section"><h2>Observed bitrate by camera</h2>
-    <p class="section-intro">Bars scale to the upper end of each recorded range. That is a charting value, not a manufacturer maximum or a high-quality setting.</p>
+    <p class="section-intro">For a measured range, the bar shows its upper end.</p>
     <div class="bitrate-chart">${matches.map(({ camera, sample }) => `<button class="bitrate-chart-row" data-id="${escapeHtml(camera.id)}">
       <span class="chart-label"><strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>${escapeHtml(sample.channel)} · ${escapeHtml(sample.resolution)} · ${escapeHtml(sample.fps)} FPS</small></span>
-      <span class="chart-track"><i style="width:${Math.max(3, bitrateMaximum(sample.bitrate) / maximum * 100)}%"></i><strong>${escapeHtml(sample.bitrate)}</strong></span>
-      <small class="chart-configuration">${escapeHtml(sample.recording_configuration || "Configuration not recorded")}</small>
+      <span class="chart-track"><i style="width:${Math.max(3, bitrateMaximum(sample.bitrate) / maximum * 100)}%"></i><strong>${escapeHtml(formatBitrate(sample.bitrate, 0))}</strong></span>
+      <small class="chart-configuration">${escapeHtml(sample.recording_configuration || "")}</small>
     </button>`).join("")}</div>
   </section>`;
 }
@@ -260,7 +293,6 @@ function renderDetail(camera) {
       <h1 class="detail-title">${escapeHtml(camera.model)}</h1>
       <div class="badges">
         <span class="badge evidence">${escapeHtml(label(camera.evidence.level))}</span>
-        <span class="badge">Confidence: ${escapeHtml(label(camera.evidence.confidence))}</span>
         ${manual ? '<span class="badge">Manual linked</span>' : ""}
       </div>
       <div class="coverage">
@@ -269,7 +301,6 @@ function renderDetail(camera) {
         ${coverage("Measured video", camera.video_samples.length > 0)}
         ${coverage("Manual", manual)}
       </div>
-      ${camera.evidence.note ? `<p class="callout">${escapeHtml(camera.evidence.note)}</p>` : ""}
     </header>
     ${renderVariants(camera.channel_variants)}
     ${renderFolderSection("Driving recordings", folders.driving_folders)}
@@ -277,8 +308,8 @@ function renderDetail(camera) {
     ${renderFolderSection("Photos, GPS, and support folders", folders.other_folders)}
     ${renderPatterns(camera.filename_patterns)}
     ${renderVideoSamples(camera.video_samples)}
-    ${renderFacts(camera.technical_facts)}
-    ${renderNotes(camera.notes)}
+    ${renderFacts(camera.id === "viofo-t340" ? camera.technical_facts.filter(fact => ["Sampled filename family", "Driving bitrate settings", "Quality and storage charts"].includes(fact.label)) : camera.technical_facts)}
+    ${camera.id === "viofo-t340" ? '<p><a href="t340-comparison.html">T340 bitrate, file size and recording capacity charts</a></p>' : renderNotes(camera.notes)}
     ${renderSources(camera.sources)}
     <p class="section-intro">Only documented or observed details are shown. Firmware, settings, region, and connected-camera configuration can change the files a dashcam records.</p>`;
 }
@@ -322,7 +353,7 @@ function renderVideoSamples(samples) {
   if (!samples.length) return "";
   return section("Measured video samples", `<div class="sample-grid">${samples.map(sample => `
     <div class="card"><div class="card-head"><strong>${escapeHtml(sample.channel)}</strong><span class="mode">${escapeHtml(label(sample.mode))}</span></div>
-    <div class="meta">${escapeHtml([sample.codec, sample.resolution, `${sample.fps} FPS`, sample.bitrate].filter(value => value && value !== "Unknown").join(" · "))}</div>
+    <div class="meta">${escapeHtml([sample.codec, sample.resolution, `${sample.fps} FPS`, formatBitrate(sample.bitrate)].filter(value => value && value !== "Unknown").join(" · "))}</div>
     <div class="meta">${escapeHtml(`${sample.container} · ${sample.source}`)}</div>
     ${sample.recording_configuration ? `<div class="meta"><strong>Recorded configuration:</strong> ${escapeHtml(sample.recording_configuration)}</div>` : ""}
     ${sample.settings_note ? `<div class="meta"><strong>Settings note:</strong> ${escapeHtml(sample.settings_note)}</div>` : ""}</div>`).join("")}</div>`);
@@ -347,6 +378,6 @@ function row(term, description) { return `<dt>${escapeHtml(term)}</dt><dd>${esca
 function mapText(map) { return Object.keys(map).sort(naturalCompare).map(key => `${key} = ${label(map[key])}`).join(", "); }
 function allFolders(camera) { return [...camera.recording.driving_folders, ...camera.recording.parking_folders, ...camera.recording.other_folders]; }
 function displayManufacturer(value) { return ({ blackvue: "BlackVue", viofo: "VIOFO", gopro: "GoPro", dji: "DJI" })[value.toLowerCase()] || value; }
-function label(value) { return String(value ?? "").replaceAll("_", " ").replace(/\b\w/g, character => character.toUpperCase()); }
+function label(value) { if (value === "real_card_sampled") return "Card sampled"; return String(value ?? "").replaceAll("_", " ").replace(/\b\w/g, character => character.toUpperCase()); }
 function naturalCompare(a, b) { return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }); }
 function escapeHtml(value) { return String(value ?? "").replace(/[&<>"]/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[character]); }

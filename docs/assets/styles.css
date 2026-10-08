@@ -102,7 +102,7 @@ input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1p
 .camera-button small { color: var(--muted); margin-top: 3px; }
 .camera-button .mini-badge { display: inline-block; margin-top: 6px; color: var(--green); font-size: 10px; font-weight: 700; }
 
-.camera-detail { min-width: 0; padding: clamp(24px, 4vw, 48px); overflow: auto; }
+.camera-detail { min-width: 0; padding: clamp(24px, 4vw, 48px); overflow: auto; scroll-margin-top: 110px; }
 .detail-kicker { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
 .detail-title { margin: 7px 0 12px; font-size: clamp(32px, 4vw, 52px); letter-spacing: -.035em; }
 .badges, .coverage { display: flex; flex-wrap: wrap; gap: 8px; }

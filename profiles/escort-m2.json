@@ -123,16 +123,6 @@
       "source": "ffprobe"
     },
     {
-      "bitrate": "~60.0 Mbps",
-      "channel": "F (front)",
-      "codec": "HEVC",
-      "container": "MP4",
-      "fps": "30",
-      "mode": "parking",
-      "resolution": "3840x2160",
-      "source": "ffprobe"
-    },
-    {
       "bitrate": "~8.2 Mbps",
       "channel": "F (front)",
       "codec": "H.264",

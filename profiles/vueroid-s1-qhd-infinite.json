@@ -289,6 +289,11 @@
       "label": "Dashcam Offloader S1 QHD card profile notes",
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vueroid-s1-qhd-infinite.md",
       "kind": "research"
+    },
+    {
+      "kind": "manual",
+      "url": "https://vueroid.com/product/bundle-s1-qhd-infinite-2-channel/",
+      "label": "Official S1 QHD manual download center"
     }
   ],
   "notes": [

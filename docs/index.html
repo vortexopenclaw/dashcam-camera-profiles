@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Community-maintained technical reference for dashcam folders, filenames, recording modes, resolutions, bitrates, and manuals.">
   <title>Dashcam Camera Profiles</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <script src="assets/app.js" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20261008">
+  <script src="assets/app.js?v=20261008" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -17,7 +17,7 @@
     <nav aria-label="Project links">
       <a href="https://github.com/vortexopenclaw/dashcam-camera-profiles">GitHub</a>
       <a href="https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/CONTRIBUTING.md">Contribute</a>
-      <a href="#methodology">Methodology</a>
+      <a href="#methodology">Configurations</a>
       <a href="privacy.md">Privacy</a>
     </nav>
   </header>
@@ -26,52 +26,28 @@
     <section class="hero">
       <div>
         <p class="eyebrow">COMMUNITY DATASET</p>
-        <h1>How dashcams write footage.</h1>
-        <p class="hero-copy">Search real card layouts, filename conventions, driving and parking modes, measured video specifications, and official manuals. Unknown details stay unknown.</p>
+        <h1>Dashcam bitrates, file sizes, and recording settings.</h1>
+        <p class="hero-copy">Compare measured video specifications and explore camera configurations, driving and parking modes, card layouts, and official manuals.</p>
       </div>
       <dl class="stats" aria-label="Repository coverage">
         <div><dt id="camera-count">…</dt><dd>camera references</dd></div>
         <div><dt id="measured-count">…</dt><dd>with measured video</dd></div>
-        <div><dt id="manual-count">…</dt><dd>with manual links</dd></div>
+        <div><dt id="manual-count">…</dt><dd>cameras with manuals</dd></div>
       </dl>
     </section>
 
     <section id="methodology" class="methodology" aria-labelledby="methodology-title">
       <div class="explorer-heading">
-        <p class="eyebrow">HOW TO READ THIS REFERENCE</p>
-        <h2 id="methodology-title">Every claim keeps its evidence boundary.</h2>
-        <p>Profiles combine sanitized card observations, official documentation, and measured technical samples. They preserve what each source establishes instead of filling gaps from a related product.</p>
+        <h2 id="methodology-title">Recording configurations</h2>
+        <p>A camera can record at different resolutions, frame rates, quality levels, and channel counts. We list the configuration alongside measurements when it is available. Select a camera for its recording modes, file details, and manual links.</p>
       </div>
-      <div class="methodology-grid">
-        <article class="method-card method-warning">
-          <h3>A product name is not a configuration</h3>
-          <p>Resolution, frame rate, HDR, quality mode, firmware, and which cameras were connected can change how a dashcam records. A measured row describes that captured setup only. It does not predict every setting or revision of the same model.</p>
-        </article>
-        <article class="method-card">
-          <h3>Card-validated</h3>
-          <p>A privacy-safe scan of a real card confirmed the listed storage behavior.</p>
-        </article>
-        <article class="method-card">
-          <h3>Manual-backed</h3>
-          <p>Official documentation supports the claim, but a real card has not confirmed it yet.</p>
-        </article>
-        <article class="method-card">
-          <h3>Technical sample</h3>
-          <p>A measured video fact is available, while the camera’s folder and filename behavior remains incomplete.</p>
-        </article>
-        <article class="method-card">
-          <h3>Catalog hint</h3>
-          <p>The model is identified, but this reference does not claim its storage layout or recording behavior.</p>
-        </article>
-      </div>
-      <p class="methodology-note">Evidence level is a scope label, not a product rating. Empty sections mean the project has not established that fact.</p>
     </section>
 
     <section class="quality-explorer" aria-labelledby="quality-explorer-title">
       <div class="explorer-heading">
         <p class="eyebrow">MEASURED DRIVING VIDEO</p>
         <h2 id="quality-explorer-title">Compare measured video</h2>
-        <p>Filter real driving samples, then order them by observed bitrate or by brand. Parking samples are excluded because their encoding is not comparable to normal driving recording.</p>
+        <p>Compare driving recordings by camera position, resolution, frame rate, or bitrate. Cameras awaiting driving measurements are listed separately below the measured results.</p>
       </div>
       <div class="quality-controls">
         <label>Manufacturer<select id="quality-brand"><option value="">All manufacturers</option></select></label>
@@ -86,7 +62,7 @@
       <p id="quality-result-count" class="result-count" aria-live="polite"></p>
       <div class="quality-legend"><span>Camera</span><span>Resolution / FPS</span><span>Measured bitrate</span><span>Recorded configuration</span></div>
       <div id="quality-results" class="quality-results"></div>
-      <p class="quality-note">A bitrate rank compares only the rows visible under the current filters. Bitrate is an observed range from a specific card and configuration—not a universal manufacturer specification or a complete image-quality score. Additional-camera filters use only samples with the same recorded configuration.</p>
+      <p class="quality-note">Bitrate is one part of image quality. Additional-camera filters match channels from the same recorded configuration.</p>
     </section>
 
     <section class="browser" aria-label="Camera technical reference">

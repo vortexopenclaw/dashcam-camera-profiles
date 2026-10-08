@@ -80,6 +80,11 @@
       "kind": "research",
       "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official English user manual (PDF)",
+      "url": "https://viofotech.com/download/manual/A129P/A129ProEnglishManual.pdf"
     }
   ],
   "technical_facts": [],

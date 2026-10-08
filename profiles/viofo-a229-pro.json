@@ -91,11 +91,6 @@
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a229-pro.md"
     },
     {
-      "kind": "manual",
-      "label": "Official manual",
-      "url": "https://viofotech.com/download/manual/A229P/A229ProEnglishManual.pdf"
-    },
-    {
       "kind": "source",
       "label": "Reference source",
       "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/firmware-updates-viofo-a229-pro-a229-plus-version-v13"
@@ -109,6 +104,11 @@
       "kind": "source",
       "label": "Reference source",
       "url": "https://www.blackboxmycar.com/pages/best-settings-for-viofo-a229-series-dash-cam"
+    },
+    {
+      "kind": "manual",
+      "label": "Official English user manual (PDF)",
+      "url": "https://viofotech.com/download/manual/A229P/A229ProEnglishManual.pdf"
     }
   ],
   "technical_facts": [

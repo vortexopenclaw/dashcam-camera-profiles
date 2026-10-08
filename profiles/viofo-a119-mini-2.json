@@ -106,14 +106,14 @@
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a119-mini-2.md"
     },
     {
-      "kind": "manual",
-      "label": "Official manual",
-      "url": "https://viofotech.com/download/manual/MINI2/A119MINI2EnglishManual.pdf"
-    },
-    {
       "kind": "source",
       "label": "Reference source",
       "url": "https://www.viofo.com/collections/dash-cam"
+    },
+    {
+      "kind": "manual",
+      "label": "Official English user manual (PDF)",
+      "url": "https://viofotech.com/download/manual/MINI2/A119MINI2EnglishManual.pdf"
     }
   ],
   "technical_facts": [

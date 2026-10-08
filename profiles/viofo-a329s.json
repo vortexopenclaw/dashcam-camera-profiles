@@ -136,16 +136,6 @@
       "url": "https://www.viofo.com/products/viofo-a329s-3ch-first-4k-front-2k-wide-210-fov-fisheye-cabin-2k-rear-dash-cam-with-starvis-2-sensor"
     },
     {
-      "kind": "manual",
-      "label": "Official manual",
-      "url": "https://www.viofo.com/pages/manual"
-    },
-    {
-      "kind": "manual",
-      "label": "Official manual",
-      "url": "https://support.viofo.com/support/solutions/folders/19000151665"
-    },
-    {
       "kind": "research",
       "label": "Viofo A329S research notes",
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/viofo-a329s.md"
@@ -156,14 +146,14 @@
       "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/introducing-viofo-a329s-3ch-with-2k-infrared-fisheye-cabin-camera-your-reliable-road-companion-is-here"
     },
     {
-      "kind": "manual",
-      "label": "Official manual",
-      "url": "https://www.viofo.com/pages/support-product-manual"
-    },
-    {
       "kind": "source",
       "label": "Reference source",
       "url": "https://www.youtube.com/watch?v=p5WVjVqX1xI"
+    },
+    {
+      "kind": "manual",
+      "label": "Official English user manual (PDF)",
+      "url": "https://viofotech.com/download/manual/A329S/A329SEnglishManual.pdf"
     }
   ],
   "technical_facts": [

@@ -18,9 +18,9 @@
       "default_channel": null,
       "modes": {
         "EV": "event",
-        "False": "continuous",
         "LA": "parking_timelapse",
-        "PA": "parking_motion_or_impact"
+        "PA": "parking_motion_or_impact",
+        "NO": "continuous"
       },
       "pattern": "^(NO|PA|LA|EV)(\\d{8})-(\\d{6})-(\\d+)(F|R|C)\\.MP4$",
       "timestamp_format": "YYYYMMDD-HHMMSS"

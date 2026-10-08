@@ -48,6 +48,11 @@
       "kind": "research",
       "label": "Escort M1 research notes",
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/escort-m1.md"
+    },
+    {
+      "kind": "manual",
+      "url": "https://support.escortradar.com/support/solutions/articles/47001279164-escort-camera-and-accessories-legacy-archive",
+      "label": "Official M1 manual and quick-start downloads"
     }
   ],
   "technical_facts": [

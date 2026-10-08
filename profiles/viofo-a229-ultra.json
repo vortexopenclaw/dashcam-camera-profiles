@@ -92,6 +92,11 @@
       "kind": "source",
       "label": "Reference source",
       "url": "https://www.viofo.com/collections/dash-cam"
+    },
+    {
+      "kind": "manual",
+      "label": "Official English user manual (PDF)",
+      "url": "https://viofotech.com/download/manual/A229Ultra/A229UltraEnglishManual.pdf"
     }
   ],
   "technical_facts": [

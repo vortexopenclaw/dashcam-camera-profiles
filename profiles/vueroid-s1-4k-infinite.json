@@ -114,6 +114,11 @@
       "kind": "research",
       "label": "Vueroid S1 4K Infinite research notes",
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vueroid-s1-4k-infinite.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official S1 4K Infinite manual download",
+      "url": "https://vueroid.com/product/s1-4k-infinite-1ch/?mod=document&uid=146#kboard-document"
     }
   ],
   "technical_facts": [
@@ -170,5 +175,39 @@
       "value": "6 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
     }
   ],
-  "video_samples": []
+  "video_samples": [
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "~48 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "3-channel: front, rear, interior; firmware 1.6.0"
+    },
+    {
+      "channel": "rear",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "~22 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "3-channel: front, rear, interior; firmware 1.6.0"
+    },
+    {
+      "channel": "interior",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "~15 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "3-channel: front, rear, interior; firmware 1.6.0"
+    }
+  ]
 }

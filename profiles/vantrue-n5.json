@@ -75,6 +75,11 @@
       "kind": "research",
       "label": "Nas Dashcam Pattern Sampling 2026 06 06 research notes",
       "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/research/nas-dashcam-pattern-sampling-2026-06-06.md"
+    },
+    {
+      "kind": "manual",
+      "label": "Official model manual and firmware downloads",
+      "url": "https://www.vantrue.com/pages/n5-manual-firmware"
     }
   ],
   "technical_facts": [],

@@ -66,7 +66,7 @@ def main() -> None:
         for sample in samples:
             assert sample["source"] == "app_submission"
             assert sample["codec"] == "H.264" and sample["fps"] == "30"
-            assert "HDR and firmware not recorded" in sample["settings_note"]
+            assert sample["settings_note"] in {"High", "Low Bitrate parking"}
             low, high = map(float, sample["bitrate"].removesuffix(" Mbps").split("-"))
             expected = 4.095 if mode == "parking" else 36.85 if sample["channel"] == "front" else 21.30
             assert abs(low - expected) < 0.06 and abs(high - expected) < 0.06
@@ -77,8 +77,7 @@ def main() -> None:
         assert {sample["channel"] for sample in samples} == {"front", "rear", "interior", "telephoto"}
         assert len(samples) == 4
         for sample in samples:
-            assert "Owner confirms Low driving bitrate" in sample["settings_note"]
-            assert "not a verified trigger" in sample["settings_note"]
+            assert sample["settings_note"] in {"Low", "Parking"}
             minimum, maximum = map(float, sample["bitrate"].removesuffix(" Mbps").split("-"))
             expected = 4.10 if "parking" in mode else 27.04 if sample["channel"] == "front" else 11.88
             assert abs(minimum - expected) < 0.03 and abs(maximum - expected) < 0.03
@@ -88,7 +87,7 @@ def main() -> None:
     assert {sample["channel"] for sample in maximum_three} == {"front", "rear", "interior"}
     for sample in maximum_three:
         assert "3-channel" in sample["recording_configuration"]
-        assert "Maximum driving bitrate" in sample["settings_note"]
+        assert sample["settings_note"] in {"Maximum", "Parking"}
         minimum, maximum = map(float, sample["bitrate"].removesuffix(" Mbps").split("-"))
         expected = 4.095 if "parking" in sample["mode"] else 53.23 if sample["channel"] == "front" else 27.03
         assert abs(minimum - expected) < 0.06 and abs(maximum - expected) < 0.06

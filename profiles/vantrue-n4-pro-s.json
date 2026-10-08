@@ -81,7 +81,13 @@
     ]
   },
   "schema_version": "1.0",
-  "sources": [],
+  "sources": [
+    {
+      "kind": "manual",
+      "label": "Official model manual and firmware downloads",
+      "url": "https://www.vantrue.com/pages/n4pros-manual-firmware"
+    }
+  ],
   "technical_facts": [
     {
       "label": "Paired driving-file measurement archive",
