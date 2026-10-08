@@ -1,0 +1,202 @@
+[
+  {
+    "id": "viofo-a329s",
+    "camera": "VIOFO A329S",
+    "lowMbps": 53.0,
+    "highMbps": 66.0,
+    "codec": "H.264",
+    "configuration": "3-channel: front, interior, rear",
+    "settings": "The card did not record the in-camera Video Quality level. On the A329S, that setting changes front-camera bitrate, so this range is not one fixed specification.",
+    "source": "ffprobe"
+  },
+  {
+    "id": "viofo-a329t",
+    "camera": "VIOFO A329T",
+    "lowMbps": 65.5,
+    "highMbps": 65.5,
+    "codec": "H.264",
+    "configuration": "3-channel: front, telephoto front, rear",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "blackvue-dr970x-plus",
+    "camera": "BlackVue DR970X Plus",
+    "lowMbps": 60.0,
+    "highMbps": 60.0,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "blackvue-elite-9",
+    "camera": "BlackVue Elite 9",
+    "lowMbps": 60.0,
+    "highMbps": 60.0,
+    "codec": "HEVC",
+    "configuration": "2CH front/rear \u00b7 firmware 1.010",
+    "settings": "Observed range 46.4-60.1 Mbps across 538 files; shorter interrupted clips account for the low end.",
+    "source": "privacy-safe card scan summary"
+  },
+  {
+    "id": "viofo-a139-pro",
+    "camera": "VIOFO A139 Pro",
+    "lowMbps": 53.3,
+    "highMbps": 53.3,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "viofo-t340",
+    "camera": "VIOFO T340 \u2022 Maximum 4CH",
+    "lowMbps": 53.249696,
+    "highMbps": 53.249696,
+    "codec": "H.264",
+    "configuration": "4 cameras; firmware 1.0_260911",
+    "settings": "Maximum",
+    "source": "Reviewed T340 front-camera measurements"
+  },
+  {
+    "id": "viofo-t340",
+    "camera": "VIOFO T340 \u2022 Maximum 3CH",
+    "lowMbps": 53.2424,
+    "highMbps": 53.2424,
+    "codec": "H.264",
+    "configuration": "3 cameras; firmware 1.0_260911",
+    "settings": "Maximum",
+    "source": "Reviewed T340 front-camera measurements"
+  },
+  {
+    "id": "viofo-a129-pro",
+    "camera": "VIOFO A129 Pro",
+    "lowMbps": 51.2,
+    "highMbps": 51.2,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "vueroid-s1-4k-infinite",
+    "camera": "Vueroid S1 4K Infinite",
+    "lowMbps": 48.0,
+    "highMbps": 48.0,
+    "codec": "H.264",
+    "configuration": "3-channel: front, rear, interior; firmware 1.6.0",
+    "settings": "Quality setting not recorded",
+    "source": "app_submission"
+  },
+  {
+    "id": "rove-r2-4k-pro",
+    "camera": "Rove R2-4K Pro",
+    "lowMbps": 36.9,
+    "highMbps": 36.9,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "viofo-a119m-pro",
+    "camera": "VIOFO A119M Pro",
+    "lowMbps": 36.9,
+    "highMbps": 36.9,
+    "codec": "H.264",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "viofo-t340",
+    "camera": "VIOFO T340 \u2022 High 4CH",
+    "lowMbps": 36.861637333333334,
+    "highMbps": 36.861637333333334,
+    "codec": "H.264",
+    "configuration": "4 cameras; firmware 1.0_260911",
+    "settings": "High",
+    "source": "Reviewed T340 front-camera measurements"
+  },
+  {
+    "id": "viofo-a229-pro",
+    "camera": "VIOFO A229 Pro",
+    "lowMbps": 36.0,
+    "highMbps": 36.0,
+    "codec": "H.264",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "viofo-a229-ultra",
+    "camera": "VIOFO A229 Ultra",
+    "lowMbps": 36.0,
+    "highMbps": 36.0,
+    "codec": "H.264",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "viofo-t340",
+    "camera": "VIOFO T340 \u2022 Normal 4CH",
+    "lowMbps": 31.950723,
+    "highMbps": 31.950723,
+    "codec": "H.264",
+    "configuration": "4 cameras; firmware 1.0_260911",
+    "settings": "Normal",
+    "source": "Reviewed T340 front-camera measurements"
+  },
+  {
+    "id": "vantrue-n4-pro-s",
+    "camera": "Vantrue N4 Pro S",
+    "lowMbps": 31.9,
+    "highMbps": 31.9,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "thinkware-u3000-pro",
+    "camera": "Thinkware U3000 Pro",
+    "lowMbps": 29.99,
+    "highMbps": 30.11,
+    "codec": "HEVC",
+    "configuration": "1CH front-only \u00b7 firmware 1.00.06",
+    "settings": "Observed across 129 driving files.",
+    "source": "privacy-safe card scan summary"
+  },
+  {
+    "id": "thinkware-u3000",
+    "camera": "Thinkware U3000",
+    "lowMbps": 30.0,
+    "highMbps": 30.0,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
+    "id": "viofo-t340",
+    "camera": "VIOFO T340 \u2022 Low 4CH",
+    "lowMbps": 27.034015,
+    "highMbps": 27.034015,
+    "codec": "H.264",
+    "configuration": "4 cameras; firmware 1.0_260911",
+    "settings": "Low",
+    "source": "Reviewed T340 front-camera measurements"
+  },
+  {
+    "id": "metadata-only-rove-r2-4k-dual",
+    "camera": "Rove R2-4K Dual",
+    "lowMbps": 20.0,
+    "highMbps": 20.0,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  }
+]

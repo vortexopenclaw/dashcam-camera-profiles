@@ -4,6 +4,7 @@ import csv
 import html
 import hashlib
 import json
+import runpy
 from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
@@ -71,7 +72,7 @@ per_camera(True)
 per_camera(False)
 combined_rows = [*ROWS[:4], ROWS[5], ROWS[6], ROWS[4]]
 fig,axis=plt.subplots(figsize=(13,8.3))
-fig.subplots_adjust(left=.22,right=.74,top=.82,bottom=.23)
+fig.subplots_adjust(left=.22,right=.70,top=.82,bottom=.23)
 fig.suptitle('VIOFO T340 • Combined recording storage',fontsize=21,fontweight='bold',y=.95)
 labels=[('Maximum (3CH)' if r['setting']=='Maximum 3CH' else 'Auto Event Detection\nparking (4CH)' if r['setting']=='Auto Event Detection parking' else r['setting']+' (4CH)') for r in combined_rows]
 offset=np.zeros(len(combined_rows))
@@ -79,15 +80,17 @@ for role,color in [('front','#277c9c'),('rear','#689cbe'),('interior','#88bda9')
     values=[sum(c['MBPerMinute'] or 0 for c in r['channels'] if c['channel']==role) for r in combined_rows]
     bars=axis.barh(range(len(combined_rows)),values,left=offset,color=color,label=role.title(),height=.6)
     offset+=values
-axis.set_yticks(range(len(combined_rows)),labels);axis.invert_yaxis();axis.set_xlim(0,1100);axis.set_xlabel('Combined MB per active recording minute');axis.grid(axis='x',alpha=.16)
+axis.set_yticks(range(len(combined_rows)),labels);axis.invert_yaxis();axis.set_xlim(0,1100);axis.set_xlabel('Storage used (MB/min)');axis.grid(axis='x',alpha=.16)
 for i,row in enumerate(combined_rows):
     if row['combinedMBPerMinute'] is None:
         axis.text(15,i,'Normal full-minute files: pending',va='center',fontsize=10)
         continue
     axis.text(row['combinedMBPerMinute']+15,i,f"{row['combinedMBPerMinute']:,.1f}",va='center',fontsize=10)
     capacity=recorded_time(row['nominal256GBRecordedHours'])
-    axis.text(1.09,i,f"{row['combinedGBPerHour']:.2f} GB/h     {capacity}",transform=axis.get_yaxis_transform(),va='center',fontsize=11,fontweight='bold')
-axis.text(1.09,1.045,'Storage rate     256 GB capacity',transform=axis.transAxes,fontsize=10)
+    axis.text(1.05,i,f"{row['combinedGBPerHour']:.2f} GB/h",transform=axis.get_yaxis_transform(),va='center',ha='left',fontsize=11,fontweight='bold')
+    axis.text(1.34,i,capacity,transform=axis.get_yaxis_transform(),va='center',ha='left',fontsize=11,fontweight='bold')
+axis.text(1.05,1.045,'Storage rate',transform=axis.transAxes,ha='left',fontsize=10)
+axis.text(1.34,1.045,'256 GB capacity',transform=axis.transAxes,ha='left',fontsize=10)
 fig.legend(loc='lower left',bbox_to_anchor=(.22,.82),ncol=4,frameon=False,fontsize=10)
 fig.text(.22,.125,'256 GB capacity = nominal capacity / rate. No formatting, reserved space or protected-file allowance.',fontsize=10)
 fig.text(.22,.085,'Capacity is hours of recorded footage across all connected cameras, not elapsed parked time.',fontsize=10)
@@ -126,6 +129,7 @@ def asset_url(name, extension):
     return f'assets/t340/{name}.{extension}?v={version}'
 
 images=''.join(f'<section><h2>{title}</h2><a href="{asset_url(name, "png")}"><img src="{asset_url(name, "png")}" alt="{title}" loading="lazy"></a><p><a href="{asset_url(name, "svg")}">SVG</a> · <a href="{asset_url(name, "png")}">PNG</a></p></section>' for name,title in [('front','Front camera'),('add-ons','Rear, interior and telephoto'),('combined','Combined storage and capacity'),('parking','Parking mode comparison')])
+images = runpy.run_path(str(ROOT / 'scripts/build-4k30-chart.py'))['SECTION'] + images
 def display(value):
     return f'{value:.2f}' if value is not None else 'Pending'
 table=''.join('<tr>'+''.join(f'<td>{v}</td>' for v in [html.escape(r['setting']),r['channelCount'],display(r['combinedMBPerMinute']),display(r['combinedGBPerHour']),recorded_time(r['nominal256GBRecordedHours']),'Measured files'])+'</tr>' for r in combined_rows)

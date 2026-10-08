@@ -1,0 +1,21 @@
+id,camera,lowMbps,highMbps,codec,configuration,settings,source
+viofo-a329s,VIOFO A329S,53.0,66.0,H.264,"3-channel: front, interior, rear","The card did not record the in-camera Video Quality level. On the A329S, that setting changes front-camera bitrate, so this range is not one fixed specification.",ffprobe
+viofo-a329t,VIOFO A329T,65.5,65.5,H.264,"3-channel: front, telephoto front, rear",Quality setting not recorded,ffprobe
+blackvue-dr970x-plus,BlackVue DR970X Plus,60.0,60.0,HEVC,Not recorded,Quality setting not recorded,ffprobe
+blackvue-elite-9,BlackVue Elite 9,60.0,60.0,HEVC,2CH front/rear · firmware 1.010,Observed range 46.4-60.1 Mbps across 538 files; shorter interrupted clips account for the low end.,privacy-safe card scan summary
+viofo-a139-pro,VIOFO A139 Pro,53.3,53.3,HEVC,Not recorded,Quality setting not recorded,ffprobe
+viofo-t340,VIOFO T340 • Maximum 4CH,53.249696,53.249696,H.264,4 cameras; firmware 1.0_260911,Maximum,Reviewed T340 front-camera measurements
+viofo-t340,VIOFO T340 • Maximum 3CH,53.2424,53.2424,H.264,3 cameras; firmware 1.0_260911,Maximum,Reviewed T340 front-camera measurements
+viofo-a129-pro,VIOFO A129 Pro,51.2,51.2,HEVC,Not recorded,Quality setting not recorded,ffprobe
+vueroid-s1-4k-infinite,Vueroid S1 4K Infinite,48.0,48.0,H.264,"3-channel: front, rear, interior; firmware 1.6.0",Quality setting not recorded,app_submission
+rove-r2-4k-pro,Rove R2-4K Pro,36.9,36.9,HEVC,Not recorded,Quality setting not recorded,ffprobe
+viofo-a119m-pro,VIOFO A119M Pro,36.9,36.9,H.264,Not recorded,Quality setting not recorded,ffprobe
+viofo-t340,VIOFO T340 • High 4CH,36.861637333333334,36.861637333333334,H.264,4 cameras; firmware 1.0_260911,High,Reviewed T340 front-camera measurements
+viofo-a229-pro,VIOFO A229 Pro,36.0,36.0,H.264,Not recorded,Quality setting not recorded,ffprobe
+viofo-a229-ultra,VIOFO A229 Ultra,36.0,36.0,H.264,Not recorded,Quality setting not recorded,ffprobe
+viofo-t340,VIOFO T340 • Normal 4CH,31.950723,31.950723,H.264,4 cameras; firmware 1.0_260911,Normal,Reviewed T340 front-camera measurements
+vantrue-n4-pro-s,Vantrue N4 Pro S,31.9,31.9,HEVC,Not recorded,Quality setting not recorded,ffprobe
+thinkware-u3000-pro,Thinkware U3000 Pro,29.99,30.11,HEVC,1CH front-only · firmware 1.00.06,Observed across 129 driving files.,privacy-safe card scan summary
+thinkware-u3000,Thinkware U3000,30.0,30.0,HEVC,Not recorded,Quality setting not recorded,ffprobe
+viofo-t340,VIOFO T340 • Low 4CH,27.034015,27.034015,H.264,4 cameras; firmware 1.0_260911,Low,Reviewed T340 front-camera measurements
+metadata-only-rove-r2-4k-dual,Rove R2-4K Dual,20.0,20.0,HEVC,Not recorded,Quality setting not recorded,ffprobe
