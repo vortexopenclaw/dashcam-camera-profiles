@@ -8127,9 +8127,9 @@
         }
       ],
       "evidence": {
-        "confidence": "four-channel scans; sampled basename family verified; folders redacted",
+        "confidence": "four-channel app submissions; sampled folders, basename linkage and lock flags verified",
         "level": "technical-sample",
-        "note": "Sanitized T340 4CH submissions support measured video rates and sampled F/R/I/T plus PF/PR/PI/PT MP4 suffixes. Folder paths remain inferred; sampled filenames are not linked to recording categories.",
+        "note": "The Low 4CH submission preserves camera-relative directories and 120 per-file folder/mode/channel/protection samples. Trigger causes and three-channel/multiplexing behavior remain unmeasured.",
         "status": "experimental"
       },
       "filename_patterns": [
@@ -8177,32 +8177,39 @@
       "model": "T340",
       "notes": [
         "The older Max-setting submission contained 387 media items; telephoto was Unknown under generic fallback and its parking setting was not supplied. Keep those mixed historical ranges separate from the newer Normal-setting sample.",
-        "The Normal / Low Power scan has 256 MP4 and eight mode/channel groups. HDR settings are owner-confirmed for that scan only. The High / Low Bitrate scan additionally validates sampled filename families; all folder paths remain unverified."
+        "The Normal / Low Power scan has 256 MP4 and eight mode/channel groups. HDR settings are owner-confirmed for that scan only. The High / Low Bitrate scan additionally validates sampled filename families; all folder paths remain unverified.",
+        "2026-10-08 Low scan validates previously inferred folder paths and sampled protection linkage. Preserve older evidence limitations as historical context. High resubmission repeats the prior 100-item media summaries, so it is not another quality-setting test; it adds paired storage samples."
       ],
       "recording": {
         "driving_folders": [
           {
             "importable": true,
             "mode": "continuous",
-            "notes": [],
+            "notes": [
+              "Observed in the Low 4CH structural submission reviewed 2026-10-08."
+            ],
             "path": "DCIM/Movie",
-            "validation": "inferred"
+            "validation": "app_submission_sampled"
           },
           {
             "importable": true,
             "mode": "protected",
-            "notes": [],
+            "notes": [
+              "Observed in the Low 4CH structural submission reviewed 2026-10-08."
+            ],
             "path": "DCIM/Movie/RO",
-            "validation": "inferred"
+            "validation": "app_submission_sampled"
           }
         ],
         "other_folders": [
           {
             "importable": true,
             "mode": "still_image",
-            "notes": [],
+            "notes": [
+              "Observed in the Low 4CH structural submission reviewed 2026-10-08."
+            ],
             "path": "DCIM/Photo",
-            "validation": "inferred"
+            "validation": "app_submission_sampled"
           }
         ],
         "parking_folders": [
@@ -8210,10 +8217,10 @@
             "importable": true,
             "mode": "parking",
             "notes": [
-              "Owner confirms Low Power parking for the newer Normal-bitrate sample; trigger subtype and folder layout remain unverified."
+              "Observed in the Low 4CH structural submission reviewed 2026-10-08."
             ],
             "path": "DCIM/Movie/Parking",
-            "validation": "inferred"
+            "validation": "app_submission_sampled"
           }
         ],
         "parking_modes": [
@@ -8246,7 +8253,7 @@
         },
         {
           "label": "Storage evidence boundary",
-          "value": "Measured values are encoded-video bitrate, not complete-file storage rates. No paired file-size/duration measurements were supplied; file padding, audio and container overhead remain unmeasured."
+          "value": "Older original scans lack paired file-size/duration measurements. The newer High resubmission and Low structural scan provide paired whole-file measurements; keep quality configurations separate. Low four-channel full 60-second driving clips occupy 28.94 decimal GB/hour combined, versus about 28.20 GB/hour from encoded video alone. This includes file padding, audio and container overhead."
         },
         {
           "label": "Reviewed High / Low Bitrate sample",
@@ -8254,7 +8261,7 @@
         },
         {
           "label": "Parking-rate comparison",
-          "value": "High-driving Low Bitrate parking measures about 4.095 Mbps per camera, matching the earlier Normal-driving sample labeled Low Power. Parking setting names differ; matching rates do not prove mode equivalence or controlled independence from driving quality. Low and Max tests remain outstanding."
+          "value": "Observed parking video is about 4.095 Mbps per camera in Low, Normal and High scans. The Low scan parking setting was not supplied; Normal has conflicting labels (submission says Low Bitrate, earlier chat says Low Power). Matching rates do not prove mode equivalence. Controlled Maximum and matched-mode tests remain outstanding."
         },
         {
           "label": "Sampled filename family",
@@ -8267,6 +8274,26 @@
         {
           "label": "Driving bitrate settings",
           "value": "Owner confirms four settings: Low, Normal, High, Maximum. Low Bitrate continuous parking is distinct from Low Power Impact Detection. Impact-triggered Low Power bitrate still needs a controlled measurement; do not assume the earlier 4.095 Mbps sample identifies the mode."
+        },
+        {
+          "label": "Reviewed Low structural sample",
+          "value": "2104 items: 2032 driving MP4 (508 per camera), 36 parking MP4, 20 RO MP4 (16 driving and four parking), and 16 JPG. Low driving video is about 27.04 Mbps front and 11.88 Mbps each interior/rear/telephoto. All video groups are H.264/30 fps."
+        },
+        {
+          "label": "Protected folder and lock evidence",
+          "value": "All 20 sampled RO clips report userImmutable=true; other sampled media report false. All 120 sampled files have POSIX 0700, filesystemReadOnly=false, systemImmutable=false and volumeReadOnly=false. Lock flags, not absent POSIX write bits, distinguish these protected files on this mount."
+        },
+        {
+          "label": "Structural filename linkage",
+          "value": "Movie driving and RO driving use F/R/I/T MP4 suffixes; Parking and RO parking use PF/PR/PI/PT MP4 suffixes. Photo contains JPG with both suffix families. Protected samples form four driving timestamp sets and one parking timestamp set, each spanning four channels. No extra emergency suffix appears; trigger causality, exact frame sync and event-window policy remain unverified."
+        },
+        {
+          "label": "Configuration comparisons pending",
+          "value": "Owner plans three-channel and multiplexing scans. Record exact connected camera roles, driving bitrate, parking mode, resolution/fps, HDR, firmware and multiplexing setting separately. No three-channel front-bitrate increase or multiplexing effect has yet been measured."
+        },
+        {
+          "label": "Normal parking label conflict",
+          "value": "The original Normal submission notes say low bitrate parking mode, while the earlier Discord description says low power parking. Retain this conflict; neither bitrate nor filenames alone resolves the selected mode."
         }
       ],
       "video_samples": [
@@ -8508,6 +8535,198 @@
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
           "settings_note": "Owner-confirmed High driving bitrate and Low Bitrate parking; HDR and firmware not recorded for this submission.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095301-4.095867 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094853-4.095778 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095137-4.095935 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095119-4.095836 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.117371-4.117371 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking_impact_detection",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.096414-4.096414 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking_impact_detection",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095149-4.095149 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking_impact_detection",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095510-4.095510 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking_impact_detection",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.030366-27.044604 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.878194-11.878413 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.878027-11.878515 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.877543-11.878365 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.033812-27.064794 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "3840x2160",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.876286-11.878153 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.875882-11.878477 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.878389-11.879034 Mbps",
+          "channel": "telephoto",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "4-channel: front, rear, interior, telephoto",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
           "source": "app_submission"
         }
       ]
