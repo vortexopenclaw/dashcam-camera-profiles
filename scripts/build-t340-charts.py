@@ -46,7 +46,7 @@ def per_camera(front):
                 axis.barh(np.arange(5)+(j-1)*.21,[v or 0 for v in channel_vals],height=.19,color=color,label=role.title())
             for i,v in enumerate(vals):
                 camera_vals=[c[field] for c in ROWS[i]['channels'] if c['channel']!='front' and c[field] is not None]
-                label=(f'{min(camera_vals):.3f}–{max(camera_vals):.3f}' if field=='videoMbps' and f'{min(camera_vals):.3f}' != f'{max(camera_vals):.3f}' else f'{v:.2f} each') if v is not None else 'Full-minute sample pending'
+                label=(f'{min(camera_vals):.2f}–{max(camera_vals):.2f}' if field=='videoMbps' and f'{min(camera_vals):.2f}' != f'{max(camera_vals):.2f}' else f'{v:.2f} each') if v is not None else 'Full-minute sample pending'
                 axis.text((max(camera_vals) if camera_vals else 0)+max(valid)*.025,i,label,va='center',fontsize=9)
             axis.legend(frameon=False,fontsize=9,loc='lower right')
         axis.set_yticks(range(5),[r['setting'] for r in ROWS[:5]])
