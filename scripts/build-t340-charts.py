@@ -15,7 +15,7 @@ OUT = ROOT / 'docs/assets/t340'
 OUT.mkdir(parents=True, exist_ok=True)
 ROWS = DATA['rows']
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':12,'axes.spines.top':False,'axes.spines.right':False,'axes.spines.left':False,'axes.axisbelow':True,'svg.fonttype':'none'})
-COLORS = ['#277c9c','#277c9c','#277c9c','#277c9c','#399772']
+COLORS = ['#277c9c','#277c9c','#277c9c','#277c9c','#399772','#399772']
 
 def finish(fig, name):
     fig.savefig(OUT / (name + '.png'), dpi=160, facecolor='white')
@@ -25,36 +25,39 @@ def finish(fig, name):
     plt.close(fig)
 
 def per_camera(front):
+    rows = [*ROWS[:5], ROWS[6]]
     fig, axes = plt.subplots(1,2,figsize=(13,6.6))
     fig.subplots_adjust(left=.16,right=.96,top=.79,bottom=.23,wspace=.37)
     title = 'Front camera' if front else 'Add-on cameras: rear / interior / telephoto'
     fig.suptitle('VIOFO T340 • ' + title,fontsize=20,fontweight='bold',y=.95)
-    fig.text(.5,.86,'4CH • 4K front / 1440p add-ons • H.264, 30 fps',ha='center',fontsize=10,color='#536173')
+    fig.text(.5,.86,'4CH • 4K front / 2K add-ons • H.264, 30 fps',ha='center',fontsize=10,color='#536173')
     for axis, field, unit in zip(axes,['videoMbps','MBPerMinute'],['Encoded video bitrate (Mbps)','File consumption (MB/minute)']):
         vals=[]
-        for row in ROWS[:5]:
+        for row in rows:
             clips=[c for c in row['channels'] if (c['channel']=='front')==front]
             vals.append(clips[0][field])
         valid=[v for v in vals if v is not None]
         if front:
-            axis.barh(range(5),[v or 0 for v in vals],color=COLORS,height=.63)
+            axis.barh(range(len(rows)),[v or 0 for v in vals],color=COLORS,height=.63)
             for i,v in enumerate(vals):
                 axis.text((v or 0)+max(valid)*.025,i,f'{v:.2f}' if v is not None else 'Full-minute sample pending',va='center',fontweight='bold',fontsize=10)
         else:
             for j,(role,color) in enumerate([('rear','#689cbe'),('interior','#88bda9'),('telephoto','#b3cf95')]):
-                channel_vals=[next(c[field] for c in r['channels'] if c['channel']==role) for r in ROWS[:5]]
-                axis.barh(np.arange(5)+(j-1)*.21,[v or 0 for v in channel_vals],height=.19,color=color,label=role.title())
+                channel_vals=[next(c[field] for c in r['channels'] if c['channel']==role) for r in rows]
+                axis.barh(np.arange(len(rows))+(j-1)*.21,[v or 0 for v in channel_vals],height=.19,color=color,label=role.title())
             for i,v in enumerate(vals):
-                camera_vals=[c[field] for c in ROWS[i]['channels'] if c['channel']!='front' and c[field] is not None]
+                camera_vals=[c[field] for c in rows[i]['channels'] if c['channel']!='front' and c[field] is not None]
                 label=(f'{min(camera_vals):.2f}–{max(camera_vals):.2f}' if field=='videoMbps' and f'{min(camera_vals):.2f}' != f'{max(camera_vals):.2f}' else f'{v:.2f} each') if v is not None else 'Full-minute sample pending'
                 axis.text((max(camera_vals) if camera_vals else 0)+max(valid)*.025,i,label,va='center',fontsize=9)
-            axis.legend(frameon=False,fontsize=9,loc='lower right')
-        axis.set_yticks(range(5),[r['setting'] for r in ROWS[:5]])
+        axis.set_yticks(range(len(rows)),['Auto Event Detection\nparking' if r['setting']=='Auto Event Detection parking' else r['setting'] for r in rows])
         axis.invert_yaxis();axis.set_xlim(0,max(valid)*1.42);axis.set_xlabel(unit);axis.grid(axis='x',alpha=.16)
         axis.set_title('Encoded video bitrate' if field=='videoMbps' else 'File size per recording minute',fontsize=14,fontweight='bold',pad=13)
     fig.text(.16,.125,'Firmware: '+DATA['firmware'],fontsize=10,color='#536173')
-    fig.text(.16,.085,'File-size bars represent one minute of recording.',fontsize=10)
-    fig.text(.16,.045,'Add-on camera driving rates differ by less than 0.01 Mbps. Their full-minute file sizes match.',fontsize=10)
+    if not front:
+        handles, labels = axes[0].get_legend_handles_labels()
+        fig.legend(handles, labels, frameon=False, fontsize=9, ncol=3, loc='lower center', bbox_to_anchor=(.7,.115))
+    fig.text(.16,.085,'Auto Event clips: 45 seconds, front 62.91 MB / each add-on 48.23 MB. Bars use file size × 60/45.',fontsize=10)
+    fig.text(.16,.045,'Driving / Low Bitrate bars use one-minute files. Auto Event bars show MB per recorded minute.',fontsize=10)
     finish(fig,'front' if front else 'add-ons')
 
 per_camera(True)
