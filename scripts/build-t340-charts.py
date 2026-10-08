@@ -66,7 +66,6 @@ combined_rows = [*ROWS[:4], ROWS[5], ROWS[6], ROWS[4]]
 fig,axis=plt.subplots(figsize=(13,8.3))
 fig.subplots_adjust(left=.22,right=.74,top=.82,bottom=.23)
 fig.suptitle('VIOFO T340 • Combined recording storage',fontsize=21,fontweight='bold',y=.95)
-fig.text(.22,.87,'Measured whole-file storage',fontsize=11)
 labels=[('Maximum (3CH)' if r['setting']=='Maximum 3CH' else 'Auto Event Detection\nparking (4CH)' if r['setting']=='Auto Event Detection parking' else r['setting']+' (4CH)') for r in combined_rows]
 offset=np.zeros(len(combined_rows))
 for role,color in [('front','#277c9c'),('rear','#689cbe'),('interior','#88bda9'),('telephoto','#b3cf95')]:
