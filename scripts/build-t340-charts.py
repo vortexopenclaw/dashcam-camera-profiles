@@ -92,7 +92,7 @@ fig,axes=plt.subplots(1,2,figsize=(13,6.6))
 fig.subplots_adjust(left=.14,right=.96,top=.79,bottom=.26,wspace=.4)
 fig.suptitle('VIOFO T340 • Parking modes while recording',fontsize=20,fontweight='bold',y=.95)
 fig.text(.5,.87,f"256 GB • 4CH footage: Low Bitrate {ROWS[4]['nominal256GBRecordedHours']:.2f} h / Auto Event Detection {ROWS[6]['nominal256GBRecordedHours']:.2f} h",ha='center',fontsize=12)
-for axis,field,unit in zip(axes,['videoMbps','MBPerMinute'],['Encoded video bitrate (Mbps)','Whole file size (megabytes per minute)']):
+for axis,field,unit in zip(axes,['videoMbps','MBPerMinute'],['Encoded video bitrate (Mbps)','Whole file size (MB/min)']):
     for i,(role,label,color) in enumerate([('front','Front','#277c9c'),('rear','Rear / interior / telephoto','#399772')]):
         vals=[next(c[field] for c in r['channels'] if c['channel']==role) for r in [ROWS[4],ROWS[6]]]
         axis.bar(np.arange(2)+(i-.5)*.27,vals,width=.27,label=label,color=color)
