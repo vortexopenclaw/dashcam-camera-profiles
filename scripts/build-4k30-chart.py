@@ -56,8 +56,9 @@ rows.sort(key=lambda r: (-r['highMbps'], r['camera']))
 assert rows, 'No measured 4K30 front-camera data'
 assert all(a['highMbps'] >= b['highMbps'] for a, b in zip(rows, rows[1:]))
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 12, 'svg.fonttype': 'none'})
-fig, axis = plt.subplots(figsize=(13, max(12, len(rows) * .5 + 2)))
-fig.subplots_adjust(left=.31, right=.91, top=.87, bottom=.15)
+figure_height = max(12, len(rows) * .5 + 2)
+fig, axis = plt.subplots(figsize=(13, figure_height))
+fig.subplots_adjust(left=.31, right=.91, top=1 - .85 / figure_height, bottom=.15)
 for i, row in enumerate(rows):
     highlight = row['id'] == 'viofo-t340'
     axis.barh(i, row['highMbps'], height=.65, color='#dc7732' if highlight else '#277c9c')
@@ -66,7 +67,7 @@ for i, row in enumerate(rows):
     label = f"{row['highMbps']:.2f}" if highlight else f"{row['lowMbps']:g}–{row['highMbps']:g}" if row['lowMbps'] != row['highMbps'] else f"≈{row['highMbps']:g}"
     axis.text(row['highMbps'] + .8, i, label, va='center', fontsize=11, fontweight='bold' if highlight else 'normal')
 axis.set_yticks(range(len(rows)), [r['camera'] for r in rows])
-axis.invert_yaxis()
+axis.set_ylim(len(rows) - .5, -.5)
 axis.set_xlim(0, 78)
 axis.set_xlabel('Video bitrate (Mbps)', labelpad=12)
 axis.grid(axis='x', alpha=.15)
@@ -76,8 +77,7 @@ for spine in axis.spines.values():
 for label, row in zip(axis.get_yticklabels(), rows):
     if row['id'] == 'viofo-t340':
         label.set_fontweight('bold')
-fig.suptitle('4K30 front-camera bitrate comparison', fontsize=22, fontweight='bold', y=.97)
-fig.text(.5, .923, 'Measured driving video • Highest observed bitrate first • T340 highlighted', ha='center', fontsize=12)
+fig.suptitle('4K30 front-camera bitrate comparison', fontsize=22, fontweight='bold', y=1 - .3 / figure_height)
 fig.text(.06, .092, f'{len({r["id"] for r in rows})} cameras with measured front 4K30 data • Known upscaled models excluded • Audio excluded.', fontsize=11)
 fig.text(.06, .064, 'Ranges use the upper end for ordering; dark marks show the range. Unknown quality settings are not “Maximum.”', fontsize=11)
 fig.text(.06, .036, 'Codecs, HDR, scenes and camera configurations differ. Higher bitrate alone does not establish better image quality.', fontsize=11)
