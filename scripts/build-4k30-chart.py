@@ -42,6 +42,9 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
         if not rates:
             continue
         name = f"{camera['manufacturer']} {camera['model']}"
+        if camera['manufacturer'].lower() == 'blackvue':
+            name = re.sub(r'-?\b\d+CH\b', '', name, flags=re.I).replace(' Plus', '+')
+            name = re.sub(r'\s+', ' ', name).strip()
         rows.append(dict(id=camera['id'], camera=name, lowMbps=min(rates), highMbps=max(rates), codec=sample['codec'], configuration=sample.get('recording_configuration') or 'Not recorded', settings=sample.get('settings_note') or 'Quality setting not recorded', source=sample['source']))
 
 data = json.loads((ROOT / 'docs/data/t340-quality-comparison.json').read_text())

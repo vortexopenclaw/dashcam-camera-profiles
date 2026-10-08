@@ -21,7 +21,7 @@
   },
   {
     "id": "blackvue-dr970x-box-plus",
-    "camera": "BlackVue DR970X Box-2CH Plus",
+    "camera": "BlackVue DR970X Box+",
     "lowMbps": 60.0,
     "highMbps": 60.0,
     "codec": "H.265",
@@ -31,7 +31,7 @@
   },
   {
     "id": "blackvue-dr970x-plus",
-    "camera": "BlackVue DR970X Plus",
+    "camera": "BlackVue DR970X+",
     "lowMbps": 60.0,
     "highMbps": 60.0,
     "codec": "HEVC",
@@ -301,7 +301,7 @@
   },
   {
     "id": "metadata-only-blackvue-dr900s-2ch",
-    "camera": "BlackVue DR900S-2CH",
+    "camera": "BlackVue DR900S",
     "lowMbps": 25.2,
     "highMbps": 25.2,
     "codec": "H.265",
@@ -311,7 +311,7 @@
   },
   {
     "id": "blackvue-dr900x-2ch",
-    "camera": "BlackVue DR900X-2CH",
+    "camera": "BlackVue DR900X",
     "lowMbps": 25.2,
     "highMbps": 25.2,
     "codec": "H.265",
@@ -321,7 +321,7 @@
   },
   {
     "id": "blackvue-dr970x-2ch",
-    "camera": "BlackVue DR970X-2CH",
+    "camera": "BlackVue DR970X",
     "lowMbps": 25.0,
     "highMbps": 25.1,
     "codec": "H.264",
@@ -331,7 +331,7 @@
   },
   {
     "id": "blackvue-dr900x-2ch-plus",
-    "camera": "BlackVue DR900X-2CH Plus",
+    "camera": "BlackVue DR900X+",
     "lowMbps": 24.3,
     "highMbps": 24.8,
     "codec": "H.264",
