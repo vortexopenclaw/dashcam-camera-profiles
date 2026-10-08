@@ -35,5 +35,10 @@ assert(unmeasuredCameras().some(camera => camera.id === "70mai-t800"));
 assert(unmeasuredCameras().some(camera => camera.id === "70mai-x800"));
 assert(!cameras.find(camera => camera.id === "escort-m2").video_samples.some(sample => sample.resolution === "3840x2160"));
 assert.equal(label("real_card_sampled"), "Card sampled");`);
+eval(`${source}
+state.cameras = cameras;
+const normalFront = drivingSamples().find(item => item.camera.id === "viofo-t340" && item.role === "front" && configurationSetting(item.sample) === "Normal");
+assert.deepEqual(configurationCompanions(normalFront).map(sample => cameraRole(sample.channel)).sort(), ["front_telephoto", "interior", "rear"]);
+assert(configurationCompanions(normalFront).every(sample => configurationSetting(sample) === "Normal"));`);
 
 console.log("Frontend verification passed: bitrate parsing ignores resolution and frame-rate numbers");

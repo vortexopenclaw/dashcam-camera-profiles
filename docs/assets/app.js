@@ -219,8 +219,10 @@ function bindChartClicks() {
 
 function configurationCompanions({ camera, sample }) {
   if (!sample.recording_configuration) return [];
-  return camera.video_samples.filter(item => item.mode === "driving" && cameraRole(item.channel) !== cameraRole(sample.channel) && item.recording_configuration === sample.recording_configuration && item.settings_note === sample.settings_note);
+  return camera.video_samples.filter(item => item.mode === "driving" && cameraRole(item.channel) !== cameraRole(sample.channel) && item.recording_configuration === sample.recording_configuration && configurationSetting(item) === configurationSetting(sample));
 }
+
+function configurationSetting(sample) { return (sample.settings_note || "").split(";")[0].trim(); }
 
 function bitrateValues(value) {
   const beforeUnit = String(value).split(/Mbps/i)[0];
