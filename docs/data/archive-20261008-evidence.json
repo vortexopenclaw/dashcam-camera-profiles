@@ -3,6 +3,6571 @@
   "attribution": "Owner-provided camera archive; filenames and paths omitted. Non-original and mismatched camera clips excluded. Single-second fragments excluded from profile aggregation.",
   "samples": [
     {
+      "camera": "Cobra Road Scout",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "62.295567",
+        "bit_rate": "14430538"
+      },
+      "file": {
+        "duration": "62.295567",
+        "size": "125831335"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cobra Road Scout",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "180.180000",
+        "bit_rate": "14388554"
+      },
+      "file": {
+        "duration": "180.180000",
+        "size": "335550665"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Cobra Road Scout",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "180.180000",
+        "bit_rate": "14388068"
+      },
+      "file": {
+        "duration": "180.180000",
+        "size": "335550700"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1761000/58699",
+        "duration": "58.666000",
+        "bit_rate": "10498626"
+      },
+      "file": {
+        "duration": "58.666000",
+        "size": "77481352"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.967000",
+        "bit_rate": "10488380"
+      },
+      "file": {
+        "duration": "180.999000",
+        "size": "238770011"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1856000/61867",
+        "duration": "61.833000",
+        "bit_rate": "10491999"
+      },
+      "file": {
+        "duration": "61.924000",
+        "size": "81613041"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "437500/14583",
+        "duration": "58.299000",
+        "bit_rate": "5256230"
+      },
+      "file": {
+        "duration": "58.299000",
+        "size": "38793729"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1080400/36013",
+        "duration": "180.032000",
+        "bit_rate": "5247361"
+      },
+      "file": {
+        "duration": "180.036000",
+        "size": "119592887"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.966000",
+        "bit_rate": "5247395"
+      },
+      "file": {
+        "duration": "60.976000",
+        "size": "40500364"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "35500/1183",
+        "duration": "2.333000",
+        "bit_rate": "10974251"
+      },
+      "file": {
+        "duration": "2.333000",
+        "size": "3221176"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "60.934000",
+        "bit_rate": "10499359"
+      },
+      "file": {
+        "duration": "60.951000",
+        "size": "80433375"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "711000/47401",
+        "duration": "47.334000",
+        "bit_rate": "10506142"
+      },
+      "file": {
+        "duration": "47.334000",
+        "size": "62521468"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "1.967000",
+        "bit_rate": "5348380"
+      },
+      "file": {
+        "duration": "1.967000",
+        "size": "1333132"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "225500/15033",
+        "duration": "60.066000",
+        "bit_rate": "5265345"
+      },
+      "file": {
+        "duration": "60.066000",
+        "size": "39989410"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "348500/23233",
+        "duration": "46.400000",
+        "bit_rate": "985479"
+      },
+      "file": {
+        "duration": "46.411000",
+        "size": "6068229"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "80000/4029",
+        "duration": "60.368000",
+        "bit_rate": "10494652"
+      },
+      "file": {
+        "duration": "60.392000",
+        "size": "79666295"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "487500/30233",
+        "duration": "60.400000",
+        "bit_rate": "10487032"
+      },
+      "file": {
+        "duration": "60.448000",
+        "size": "79639554"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "592500/30049",
+        "duration": "60.032000",
+        "bit_rate": "10503678"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "79289868"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "1186000/59467",
+        "duration": "59.400000",
+        "bit_rate": "5260278"
+      },
+      "file": {
+        "duration": "59.422000",
+        "size": "39523955"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "961000/59499",
+        "duration": "59.433000",
+        "bit_rate": "5251250"
+      },
+      "file": {
+        "duration": "59.454000",
+        "size": "39467001"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "1172000/59231",
+        "duration": "59.165000",
+        "bit_rate": "3408501"
+      },
+      "file": {
+        "duration": "59.165000",
+        "size": "25671537"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1810000/60333",
+        "duration": "180.966000",
+        "bit_rate": "10488813"
+      },
+      "file": {
+        "duration": "180.966000",
+        "size": "238778760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "235000/7833",
+        "duration": "23.466000",
+        "bit_rate": "10517437"
+      },
+      "file": {
+        "duration": "23.488000",
+        "size": "31047800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "353875/11796",
+        "duration": "94.334000",
+        "bit_rate": "10495600"
+      },
+      "file": {
+        "duration": "94.364000",
+        "size": "124551327"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1084600/36153",
+        "duration": "180.731000",
+        "bit_rate": "5207214"
+      },
+      "file": {
+        "duration": "180.731000",
+        "size": "119150062"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "349000/11633",
+        "duration": "23.233000",
+        "bit_rate": "5260686"
+      },
+      "file": {
+        "duration": "23.238000",
+        "size": "15473559"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "703000/23433",
+        "duration": "93.699000",
+        "bit_rate": "5075616"
+      },
+      "file": {
+        "duration": "93.716000",
+        "size": "60232194"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "977000/60601",
+        "duration": "60.567000",
+        "bit_rate": "10509169"
+      },
+      "file": {
+        "duration": "60.616000",
+        "size": "80026950"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "60.933000",
+        "bit_rate": "10496619"
+      },
+      "file": {
+        "duration": "60.982000",
+        "size": "80411086"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1755000/60133",
+        "duration": "60.066000",
+        "bit_rate": "10494815"
+      },
+      "file": {
+        "duration": "60.066000",
+        "size": "79298793"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "194000/12073",
+        "duration": "60.332000",
+        "bit_rate": "5253386"
+      },
+      "file": {
+        "duration": "60.365000",
+        "size": "40079667"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "455000/30333",
+        "duration": "60.599000",
+        "bit_rate": "5250889"
+      },
+      "file": {
+        "duration": "60.633000",
+        "size": "40234779"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR650S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1751000/59799",
+        "duration": "59.732000",
+        "bit_rate": "5251449"
+      },
+      "file": {
+        "duration": "59.732000",
+        "size": "39708627"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR590X",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "164000/5467",
+        "duration": "10.900000",
+        "bit_rate": "12618318"
+      },
+      "file": {
+        "duration": "10.900000",
+        "size": "17560629"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR590X",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "10.867000",
+        "bit_rate": "10520652"
+      },
+      "file": {
+        "duration": "10.867000",
+        "size": "14658961"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR590X",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1830000/61001",
+        "duration": "60.967000",
+        "bit_rate": "12589920"
+      },
+      "file": {
+        "duration": "60.967000",
+        "size": "96588427"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR590X",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1830000/61001",
+        "duration": "60.967000",
+        "bit_rate": "12589867"
+      },
+      "file": {
+        "duration": "60.967000",
+        "size": "96588053"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR590X",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "914500/30483",
+        "duration": "60.933000",
+        "bit_rate": "10492332"
+      },
+      "file": {
+        "duration": "60.933000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR590X",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.967000",
+        "bit_rate": "10492430"
+      },
+      "file": {
+        "duration": "60.967000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR590X",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "12589700"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "96585147"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR590X",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "12589700"
+      },
+      "file": {
+        "duration": "60.988000",
+        "size": "96585474"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "900000/15013",
+        "duration": "60.036000",
+        "bit_rate": "25188748"
+      },
+      "file": {
+        "duration": "60.036000",
+        "size": "193912732"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "25147881"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "193594355"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "25144977"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "193565005"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "1789000/59687",
+        "duration": "59.653000",
+        "bit_rate": "10481898"
+      },
+      "file": {
+        "duration": "59.653000",
+        "size": "82855003"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1779000/59299",
+        "duration": "59.266000",
+        "bit_rate": "10490930"
+      },
+      "file": {
+        "duration": "59.266000",
+        "size": "82415485"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "44750/1493",
+        "duration": "59.686000",
+        "bit_rate": "10486854"
+      },
+      "file": {
+        "duration": "59.686000",
+        "size": "82961028"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "900000/15013",
+        "duration": "60.036000",
+        "bit_rate": "25135739"
+      },
+      "file": {
+        "duration": "60.036000",
+        "size": "193478959"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "488500/8149",
+        "duration": "48.877000",
+        "bit_rate": "25186033"
+      },
+      "file": {
+        "duration": "48.877000",
+        "size": "158041734"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "25124469"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "193444687"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "900000/15013",
+        "duration": "60.036000",
+        "bit_rate": "25188807"
+      },
+      "file": {
+        "duration": "60.036000",
+        "size": "193918199"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "181375/6051",
+        "duration": "48.375000",
+        "bit_rate": "10523979"
+      },
+      "file": {
+        "duration": "48.375000",
+        "size": "67668773"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "25129023"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "193474666"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750-2CH LTE",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "357800/11937",
+        "duration": "59.652000",
+        "bit_rate": "10493086"
+      },
+      "file": {
+        "duration": "59.652000",
+        "size": "82979492"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "150400/2509",
+        "duration": "50.162000",
+        "bit_rate": "12557930"
+      },
+      "file": {
+        "duration": "50.162000",
+        "size": "96668353"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "12578790"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "12587758"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "373750/12469",
+        "duration": "49.843000",
+        "bit_rate": "10468083"
+      },
+      "file": {
+        "duration": "49.843000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "257800/8601",
+        "duration": "42.971000",
+        "bit_rate": "10468539"
+      },
+      "file": {
+        "duration": "42.971000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "89650/2991",
+        "duration": "59.786000",
+        "bit_rate": "10496750"
+      },
+      "file": {
+        "duration": "59.786000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "12564310"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "5875/196",
+        "duration": "59.551000",
+        "bit_rate": "10468495"
+      },
+      "file": {
+        "duration": "59.551000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "12585442"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "887000/29593",
+        "duration": "59.152000",
+        "bit_rate": "10494654"
+      },
+      "file": {
+        "duration": "59.152000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "619000/10327",
+        "duration": "10.310000",
+        "bit_rate": "12572609"
+      },
+      "file": {
+        "duration": "10.310000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "720000/12011",
+        "duration": "60.037000",
+        "bit_rate": "12570890"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "74250/2477",
+        "duration": "9.875000",
+        "bit_rate": "10537689"
+      },
+      "file": {
+        "duration": "9.875000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "1798000/59987",
+        "duration": "59.953000",
+        "bit_rate": "10485161"
+      },
+      "file": {
+        "duration": "59.953000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "900000/15013",
+        "duration": "60.036000",
+        "bit_rate": "12559375"
+      },
+      "file": {
+        "duration": "60.036000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "12579595"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "136750/2281",
+        "duration": "9.108000",
+        "bit_rate": "12602281"
+      },
+      "file": {
+        "duration": "9.108000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "892000/29733",
+        "duration": "59.432000",
+        "bit_rate": "10481840"
+      },
+      "file": {
+        "duration": "59.432000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1793000/59769",
+        "duration": "59.735000",
+        "bit_rate": "10505297"
+      },
+      "file": {
+        "duration": "59.735000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "136000/4537",
+        "duration": "9.041000",
+        "bit_rate": "10533954"
+      },
+      "file": {
+        "duration": "9.041000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "12575021"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "900000/15013",
+        "duration": "60.036000",
+        "bit_rate": "12555988"
+      },
+      "file": {
+        "duration": "60.036000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "1723500/28751",
+        "duration": "57.485000",
+        "bit_rate": "12597122"
+      },
+      "file": {
+        "duration": "57.485000",
+        "size": "95744000"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "898000/29933",
+        "duration": "59.832000",
+        "bit_rate": "10474492"
+      },
+      "file": {
+        "duration": "59.832000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "449500/14983",
+        "duration": "59.899000",
+        "bit_rate": "10499204"
+      },
+      "file": {
+        "duration": "59.899000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750S-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "430250/14349",
+        "duration": "57.363000",
+        "bit_rate": "10484637"
+      },
+      "file": {
+        "duration": "57.363000",
+        "size": "80834560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "25146078"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "193886352"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "900000/15013",
+        "duration": "60.036000",
+        "bit_rate": "25128188"
+      },
+      "file": {
+        "duration": "60.036000",
+        "size": "193744578"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "25153423"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "193979942"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "24813475"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "192042043"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "152800/2549",
+        "duration": "38.218000",
+        "bit_rate": "25062675"
+      },
+      "file": {
+        "duration": "38.218000",
+        "size": "123758411"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "394500/6581",
+        "duration": "39.469000",
+        "bit_rate": "25093924"
+      },
+      "file": {
+        "duration": "39.469000",
+        "size": "128452888"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "600000/10009",
+        "duration": "60.037000",
+        "bit_rate": "25195363"
+      },
+      "file": {
+        "duration": "60.037000",
+        "size": "195959138"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "900000/15013",
+        "duration": "60.036000",
+        "bit_rate": "25153179"
+      },
+      "file": {
+        "duration": "60.036000",
+        "size": "195742063"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60000/1001",
+        "avg_frame_rate": "900000/15013",
+        "duration": "60.036000",
+        "bit_rate": "25207724"
+      },
+      "file": {
+        "duration": "60.036000",
+        "size": "196291519"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "112875/3736",
+        "duration": "59.743000",
+        "bit_rate": "10401826"
+      },
+      "file": {
+        "duration": "59.743000",
+        "size": "84189312"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1152000/38129",
+        "duration": "38.096000",
+        "bit_rate": "10537750"
+      },
+      "file": {
+        "duration": "38.096000",
+        "size": "54669446"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1169000/38693",
+        "duration": "38.659000",
+        "bit_rate": "10615663"
+      },
+      "file": {
+        "duration": "38.659000",
+        "size": "56073946"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "600000/19859",
+        "duration": "59.544000",
+        "bit_rate": "10585100"
+      },
+      "file": {
+        "duration": "59.544000",
+        "size": "85731340"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "24080/797",
+        "duration": "59.742000",
+        "bit_rate": "10588483"
+      },
+      "file": {
+        "duration": "59.742000",
+        "size": "86065515"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR750X-2CH Plus",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1788000/59179",
+        "duration": "59.146000",
+        "bit_rate": "10572733"
+      },
+      "file": {
+        "duration": "59.146000",
+        "size": "85240963"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "595500/19853",
+        "duration": "39.673000",
+        "bit_rate": "25225058"
+      },
+      "file": {
+        "duration": "39.680000",
+        "size": "128580285"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "1344000/44809",
+        "duration": "44.775000",
+        "bit_rate": "25217750"
+      },
+      "file": {
+        "duration": "44.775000",
+        "size": "144948927"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1686000/56209",
+        "duration": "56.176000",
+        "bit_rate": "25200007"
+      },
+      "file": {
+        "duration": "56.176000",
+        "size": "181537638"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "1811000/60421",
+        "duration": "60.387000",
+        "bit_rate": "10481110"
+      },
+      "file": {
+        "duration": "60.387000",
+        "size": "83872591"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "907500/30277",
+        "duration": "60.520000",
+        "bit_rate": "10481601"
+      },
+      "file": {
+        "duration": "60.520000",
+        "size": "84040075"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "904000/30159",
+        "duration": "60.285000",
+        "bit_rate": "10489834"
+      },
+      "file": {
+        "duration": "60.288000",
+        "size": "83797950"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "183000/6101",
+        "duration": "60.977000",
+        "bit_rate": "25187956"
+      },
+      "file": {
+        "duration": "60.977000",
+        "size": "196824461"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "183000/6101",
+        "duration": "60.977000",
+        "bit_rate": "25203776"
+      },
+      "file": {
+        "duration": "60.977000",
+        "size": "197006751"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "protected / unknown event context",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "457500/15253",
+        "duration": "60.978000",
+        "bit_rate": "25183357"
+      },
+      "file": {
+        "duration": "60.978000",
+        "size": "196851799"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "183000/6101",
+        "duration": "60.977000",
+        "bit_rate": "25182470"
+      },
+      "file": {
+        "duration": "60.977000",
+        "size": "196824456"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "parking event",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1830000/61013",
+        "duration": "60.980000",
+        "bit_rate": "25142534"
+      },
+      "file": {
+        "duration": "60.980000",
+        "size": "196526890"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "43100/1437",
+        "duration": "14.336000",
+        "bit_rate": "25393636"
+      },
+      "file": {
+        "duration": "14.336000",
+        "size": "47457654"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1712000/58541",
+        "duration": "58.474000",
+        "bit_rate": "25089336"
+      },
+      "file": {
+        "duration": "58.474000",
+        "size": "188111622"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "841000/30139",
+        "duration": "60.244000",
+        "bit_rate": "24952818"
+      },
+      "file": {
+        "duration": "60.244000",
+        "size": "192767649"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH Plus",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "180000/6007",
+        "duration": "60.036000",
+        "bit_rate": "24974485"
+      },
+      "file": {
+        "duration": "60.120000",
+        "size": "192803345"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "665000/22191",
+        "duration": "22.158000",
+        "bit_rate": "24662904"
+      },
+      "file": {
+        "duration": "22.158000",
+        "size": "71336456"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "406000/13549",
+        "duration": "40.613000",
+        "bit_rate": "24260897"
+      },
+      "file": {
+        "duration": "40.613000",
+        "size": "128012896"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "600000/20023",
+        "duration": "60.035000",
+        "bit_rate": "24828378"
+      },
+      "file": {
+        "duration": "60.035000",
+        "size": "193520784"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "643000/21453",
+        "duration": "21.419000",
+        "bit_rate": "10308515"
+      },
+      "file": {
+        "duration": "21.419000",
+        "size": "30375791"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "370500/12361",
+        "duration": "49.410000",
+        "bit_rate": "10395791"
+      },
+      "file": {
+        "duration": "49.410000",
+        "size": "70272289"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR900X-2CH Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "1217000/40601",
+        "duration": "40.568000",
+        "bit_rate": "10110204"
+      },
+      "file": {
+        "duration": "40.568000",
+        "size": "56178207"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "558500/18617",
+        "duration": "37.200000",
+        "bit_rate": "25083676"
+      },
+      "file": {
+        "duration": "37.200000",
+        "size": "121514024"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "25012337"
+      },
+      "file": {
+        "duration": "60.984000",
+        "size": "197966968"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "1548000/51599",
+        "duration": "51.566000",
+        "bit_rate": "25039220"
+      },
+      "file": {
+        "duration": "51.566000",
+        "size": "167731871"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "915000/30499",
+        "duration": "60.965000",
+        "bit_rate": "10005977"
+      },
+      "file": {
+        "duration": "60.984000",
+        "size": "83556863"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "457500/15277",
+        "duration": "61.074000",
+        "bit_rate": "9986963"
+      },
+      "file": {
+        "duration": "61.074000",
+        "size": "83573827"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "915000/30499",
+        "duration": "60.965000",
+        "bit_rate": "10006069"
+      },
+      "file": {
+        "duration": "60.965000",
+        "size": "83573661"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.966000",
+        "bit_rate": "25009871"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "197948885"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "25020185"
+      },
+      "file": {
+        "duration": "60.984000",
+        "size": "198035760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "126500/4217",
+        "duration": "16.834000",
+        "bit_rate": "25089274"
+      },
+      "file": {
+        "duration": "16.834000",
+        "size": "55574878"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "25011267"
+      },
+      "file": {
+        "duration": "60.984000",
+        "size": "197993393"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "25013889"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "197983259"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.966000",
+        "bit_rate": "25012627"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "197986894"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "1810000/60439",
+        "duration": "60.406000",
+        "bit_rate": "9992683"
+      },
+      "file": {
+        "duration": "60.408000",
+        "size": "82706976"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "364600/12153",
+        "duration": "60.732000",
+        "bit_rate": "10009918"
+      },
+      "file": {
+        "duration": "60.732000",
+        "size": "83291522"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "452500/15083",
+        "duration": "60.299000",
+        "bit_rate": "10023781"
+      },
+      "file": {
+        "duration": "60.299000",
+        "size": "82808164"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.966000",
+        "bit_rate": "60030954"
+      },
+      "file": {
+        "duration": "60.982000",
+        "size": "464871800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.966000",
+        "bit_rate": "59998936"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "464628126"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.966000",
+        "bit_rate": "60028064"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "464833701"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "10010027"
+      },
+      "file": {
+        "duration": "60.982000",
+        "size": "83589373"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.966000",
+        "bit_rate": "10006544"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "83564190"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.966000",
+        "bit_rate": "10007414"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "83555755"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "148625/4954",
+        "duration": "39.599000",
+        "bit_rate": "60177149"
+      },
+      "file": {
+        "duration": "39.599000",
+        "size": "302967265"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "60041385"
+      },
+      "file": {
+        "duration": "60.966000",
+        "size": "464941584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "parking motion detection",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "610000/20333",
+        "duration": "60.966000",
+        "bit_rate": "59927235"
+      },
+      "file": {
+        "duration": "60.983000",
+        "size": "464048666"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "590500/19683",
+        "duration": "39.333000",
+        "bit_rate": "10063429"
+      },
+      "file": {
+        "duration": "39.333000",
+        "size": "54561151"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "911000/30367",
+        "duration": "60.700000",
+        "bit_rate": "10006647"
+      },
+      "file": {
+        "duration": "60.700000",
+        "size": "83205640"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Blackvue DR970X-2CH Box Plus",
+      "mode": "parking motion detection",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "455500/15183",
+        "duration": "60.699000",
+        "bit_rate": "10009933"
+      },
+      "file": {
+        "duration": "60.699000",
+        "size": "83250457"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "56370431"
+      },
+      "file": {
+        "duration": "60.096000",
+        "size": "424297338"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "31877904"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "240614695"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "27.666667",
+        "bit_rate": "31801219"
+      },
+      "file": {
+        "duration": "27.712000",
+        "size": "110750511"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "32119377"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "243305578"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "36334748"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "274921869"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "57.400000",
+        "bit_rate": "10916839"
+      },
+      "file": {
+        "duration": "57.408000",
+        "size": "78930495"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "10903665"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "82410396"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "12103635"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "91419542"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "16.133333",
+        "bit_rate": "32121539"
+      },
+      "file": {
+        "duration": "16.133333",
+        "size": "65041256"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "14.266667",
+        "bit_rate": "32186715"
+      },
+      "file": {
+        "duration": "14.266667",
+        "size": "57648615"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "30.000000",
+        "bit_rate": "31878356"
+      },
+      "file": {
+        "duration": "30.000000",
+        "size": "119926760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "30.000000",
+        "bit_rate": "4272402"
+      },
+      "file": {
+        "duration": "30.000000",
+        "size": "16408866"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "70mai 4K Omni",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "15/1",
+        "avg_frame_rate": "15/1",
+        "duration": "30.000000",
+        "bit_rate": "4273102"
+      },
+      "file": {
+        "duration": "30.000000",
+        "size": "16411048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "51203285"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "392924551"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "51202628"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "392958219"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13929584"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "108755831"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13927963"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "108742611"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8405291"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "49229791"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "45872523"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "352065609"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "59802893"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "458282705"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "45878708"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "352119369"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16385838"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "127234059"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16375125"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "127193215"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13514111"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "105332207"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16382738"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "127205201"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "duration": "60.000000",
+        "bit_rate": "13518175"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "105359103"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16385472"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "127228269"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 1600,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "25396497"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "195932510"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 1600,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "25395152"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "195923122"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 1600,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "25395792"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "195928238"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13516742"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "105353099"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13519548"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "105373187"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13517718"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "105358711"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13520111"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "105505543"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13516309"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "105406891"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "13518605"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "105363331"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "9833568"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "57143618"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14719725"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "114060640"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "4097327"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "33528978"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "46.000000",
+        "bit_rate": "8193357"
+      },
+      "file": {
+        "duration": "46.016000",
+        "size": "48975611"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8193577"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "47919219"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "46.000000",
+        "bit_rate": "8193100"
+      },
+      "file": {
+        "duration": "46.000000",
+        "size": "48973543"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "10.066667",
+        "bit_rate": "8328805"
+      },
+      "file": {
+        "duration": "10.066667",
+        "size": "10993325"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A139 Pro",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "3932998"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "32273405"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "34405898"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "260046848"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "34406568"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "260046848"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "34405934"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "260046848"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36044175"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "272629760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36045230"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "272629760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36044068"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "272629760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "15564009"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "119537664"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "15564247"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "119537664"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "15564088"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "119537664"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "6552618"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "39845888"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "6553131"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "39845888"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A229 Ultra",
+      "mode": "parking",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "6553081"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "39845888"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "48000947"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "412876800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "48000124"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "412876800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "42.700000",
+        "bit_rate": "44254961"
+      },
+      "file": {
+        "duration": "42.700000",
+        "size": "412876800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "14999932"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "129040384"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "11566727"
+      },
+      "file": {
+        "duration": "60.043000",
+        "size": "129040384"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "42.700000",
+        "bit_rate": "14506758"
+      },
+      "file": {
+        "duration": "42.700000",
+        "size": "129040384"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "22000012"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "189267968"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "21987368"
+      },
+      "file": {
+        "duration": "60.043000",
+        "size": "189267968"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "42.700000",
+        "bit_rate": "21980647"
+      },
+      "file": {
+        "duration": "42.700000",
+        "size": "189267968"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "46202390"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "412876800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "44847168"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "412876800"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "21557271"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "189267968"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vueroid S1-4K Infinite",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "21999278"
+      },
+      "file": {
+        "duration": "60.032000",
+        "size": "189267968"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vantrue OnDash R2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2304,
+        "height": 1296,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "30.163467",
+        "bit_rate": "17970560"
+      },
+      "file": {
+        "duration": "30.163467",
+        "size": "83918848"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Vantrue OnDash R2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2304,
+        "height": 1296,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "180.180000",
+        "bit_rate": "17986638"
+      },
+      "file": {
+        "duration": "180.180000",
+        "size": "419627008"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Vantrue OnDash R2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2304,
+        "height": 1296,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "23.223200",
+        "bit_rate": "18079169"
+      },
+      "file": {
+        "duration": "23.223200",
+        "size": "62947328"
+      },
+      "container": "MOV"
+    },
+    {
+      "camera": "Vicovation Opia1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "90.083333",
+        "bit_rate": "20072736"
+      },
+      "file": {
+        "duration": "90.176000",
+        "size": "229560533"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vicovation Opia1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "181.000000",
+        "bit_rate": "20069827"
+      },
+      "file": {
+        "duration": "181.000000",
+        "size": "460891393"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vicovation Opia1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "143.250000",
+        "bit_rate": "20067514"
+      },
+      "file": {
+        "duration": "143.328000",
+        "size": "364793213"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vicovation Opia2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "182.048533",
+        "bit_rate": "18880657"
+      },
+      "file": {
+        "duration": "182.048533",
+        "size": "440401920"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vicovation Opia2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "180.180000",
+        "bit_rate": "17982077"
+      },
+      "file": {
+        "duration": "180.180000",
+        "size": "419430400"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vicovation Opia2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "180.180000",
+        "bit_rate": "18898755"
+      },
+      "file": {
+        "duration": "180.180000",
+        "size": "440401920"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vicovation Opia2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2304,
+        "height": 1296,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "180.180000",
+        "bit_rate": "15735779"
+      },
+      "file": {
+        "duration": "180.180000",
+        "size": "377487360"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Vicovation Opia2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2304,
+        "height": 1296,
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "duration": "180.180000",
+        "bit_rate": "15733652"
+      },
+      "file": {
+        "duration": "180.180000",
+        "size": "377487360"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "127.300000",
+        "bit_rate": "23752318"
+      },
+      "file": {
+        "duration": "127.456000",
+        "size": "385017989"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "25353874"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "583298945"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "127.333333",
+        "bit_rate": "14734853"
+      },
+      "file": {
+        "duration": "127.333333",
+        "size": "241587205"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "23758728"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "547430129"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "85.600000",
+        "bit_rate": "23744349"
+      },
+      "file": {
+        "duration": "85.600000",
+        "size": "258880073"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "23758388"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "547427497"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "180.000000",
+        "bit_rate": "30724817"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "704436985"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "180.000000",
+        "bit_rate": "20298435"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "468915733"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "180.000000",
+        "bit_rate": "20070754"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "464063953"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "180.000000",
+        "bit_rate": "20072386"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "464110885"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "8.866667",
+        "bit_rate": "23693381"
+      },
+      "file": {
+        "duration": "8.866667",
+        "size": "26961661"
+      },
+      "container": "MP4",
+      "attributionStatus": "unresolved",
+      "attributionNote": "Filename labels this clip A119S, but its 1440p metadata conflicts with the manufacturer A119S specification. Retained as unresolved evidence, not assigned to another model or used in A119S measurements."
+    },
+    {
+      "camera": "Viofo A119s",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "180.000000",
+        "bit_rate": "20076386"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "464108309"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "23751241"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "547345869"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "23756274"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "547439753"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "23756644"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "547393097"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "97.866667",
+        "bit_rate": "23757912"
+      },
+      "file": {
+        "duration": "97.866667",
+        "size": "296098601"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "23755367"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "547448069"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "23760748"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "547486733"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "26623462"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "201979243"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "26624006"
+      },
+      "file": {
+        "duration": "60.031969",
+        "size": "201983679"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "29247641"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "664813271"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "27894029"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "634357011"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "28514648"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "648320691"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "26454059"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "601958115"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "3767733"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "30544095"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "3767698"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "91514627"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16165886"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "123282527"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "30067383"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "227543759"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "16395787"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "127302899"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "28844868"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "218374883"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "26598245"
+      },
+      "file": {
+        "duration": "60.031938",
+        "size": "201525723"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "26623301"
+      },
+      "file": {
+        "duration": "60.031938",
+        "size": "201730699"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "26623153"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "201729099"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "30295287"
+      },
+      "file": {
+        "duration": "60.031938",
+        "size": "229253527"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "30172727"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "228333851"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "3767703"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "22736795"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "3767797"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "22737451"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 Mini 2",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "25.733333",
+        "bit_rate": "11269904"
+      },
+      "file": {
+        "duration": "25.733333",
+        "size": "36956275"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "30310491"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "692870536"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "24577330"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "563038304"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "day",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "24577864"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "563074996"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8388713"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "49112232"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8388862"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "49112760"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8388511"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "49110808"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "180.000000",
+        "bit_rate": "26623926"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "609402620"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "169.083333",
+        "bit_rate": "26627284"
+      },
+      "file": {
+        "duration": "169.083333",
+        "size": "569375088"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "25804647"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "590815084"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "45.000000",
+        "bit_rate": "8388638"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "49125072"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8388487"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "49110576"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8388733"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "49112072"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1600,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "24579997"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "563052488"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1600,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "18.200000",
+        "bit_rate": "24983156"
+      },
+      "file": {
+        "duration": "18.464000",
+        "size": "57790540"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1600,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "24579849"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "563101084"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "15.933333",
+        "bit_rate": "25066020"
+      },
+      "file": {
+        "duration": "16.192000",
+        "size": "50774804"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "19.333333",
+        "bit_rate": "25065007"
+      },
+      "file": {
+        "duration": "19.584000",
+        "size": "61566276"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "24577149"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "563029236"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119 v3",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "66.700000",
+        "bit_rate": "25514124"
+      },
+      "file": {
+        "duration": "66.720000",
+        "size": "215487884"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119M Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36864136"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "279989928"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119M Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36861888"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "279939420"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119M Pro",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "36864024"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "279635948"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119M Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "3768304"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "23760584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119M Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "3767750"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "23683988"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A119M Pro",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8388256"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "49292392"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Duo",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16384151"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "380573391"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Duo",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16385048"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "380599999"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Duo",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16379844"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "380490971"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Duo",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16384294"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "380595999"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Duo",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16385160"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "380594383"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A129 Duo",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "180.000000",
+        "bit_rate": "16379662"
+      },
+      "file": {
+        "duration": "180.000000",
+        "size": "380513327"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "97481914"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "734003200"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "65527736"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "494927872"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "60.000000",
+        "bit_rate": "65536187"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "494927872"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "27027426"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "205520896"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "27034041"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "205520896"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "27035882"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "205520896"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "8.133333",
+        "bit_rate": "65274318"
+      },
+      "file": {
+        "duration": "8.133333",
+        "size": "67174400"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "4095315"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "33554432"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "12298815"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "71303168"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "8.133333",
+        "bit_rate": "27076297"
+      },
+      "file": {
+        "duration": "8.133333",
+        "size": "29425664"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "5.633333",
+        "bit_rate": "27023030"
+      },
+      "file": {
+        "duration": "5.633333",
+        "size": "21037056"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo A329",
+      "mode": "parking",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "45.000000",
+        "bit_rate": "8188928"
+      },
+      "file": {
+        "duration": "45.000000",
+        "size": "48234496"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "27687467"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "213197452"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "27689206"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "213220946"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "25396159"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "195740088"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "9010747"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "70789273"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "8602855"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "67690554"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "interior",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "8603458"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "67690200"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "12287431"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "95779127"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "12287720"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "95788307"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo T130",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "28.133333",
+        "bit_rate": "12355255"
+      },
+      "file": {
+        "duration": "28.287938",
+        "size": "44455839"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "25395499"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "192546132"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "25394471"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "192538560"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "25394570"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "192539188"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "6552811"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "51226048"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "6553225"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "51228576"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "6718234"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "52466584"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "6552624"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "51224492"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "6553022"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "51227660"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo VS1",
+      "mode": "parking",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "6552981"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "51227116"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo WM1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "27687411"
+      },
+      "file": {
+        "duration": "60.031938",
+        "size": "209694463"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo WM1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "27688073"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "209698915"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Viofo WM1",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 2560,
+        "height": 1440,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.000000",
+        "bit_rate": "29533561"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "223540043"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Waylens Secure360 WiFi",
+      "mode": "driving",
+      "channel": "360 composite (view unassigned)",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1952,
+        "height": 1952,
+        "r_frame_rate": "25/1",
+        "avg_frame_rate": "25/1",
+        "duration": "60.000000",
+        "bit_rate": "19901414"
+      },
+      "file": {
+        "duration": "60.000000",
+        "size": "153878528"
+      },
+      "bitrateMethod": "video packet bytes divided by summed video packet durations",
+      "container": "MPEG-TS"
+    },
+    {
+      "camera": "Waylens Secure360 WiFi",
+      "mode": "driving",
+      "channel": "360 composite (view unassigned)",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1952,
+        "height": 1952,
+        "r_frame_rate": "25/1",
+        "avg_frame_rate": "25/1",
+        "duration": "60.000000",
+        "bit_rate": "19949231"
+      },
+      "file": {
+        "duration": "60.010667",
+        "size": "154140672"
+      },
+      "bitrateMethod": "video packet bytes divided by summed video packet durations",
+      "container": "MPEG-TS"
+    },
+    {
+      "camera": "Waylens Secure360 WiFi",
+      "mode": "driving",
+      "channel": "360 composite (view unassigned)",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1952,
+        "height": 1952,
+        "r_frame_rate": "6/1",
+        "avg_frame_rate": "6/1",
+        "duration": "32.666667",
+        "bit_rate": "2160884"
+      },
+      "file": {
+        "duration": "32.666667",
+        "size": "9699328"
+      },
+      "bitrateMethod": "video packet bytes divided by summed video packet durations",
+      "container": "MPEG-TS"
+    },
+    {
       "camera": "SG9665GC",
       "mode": "driving",
       "channel": "front",
@@ -593,11 +7158,11 @@
         "height": 2160,
         "r_frame_rate": "30/1",
         "avg_frame_rate": "30/1",
-        "duration": "46.000000",
-        "bit_rate": "24000301"
+        "duration": "28.000000",
+        "bit_rate": "23983381"
       },
       "file": {
-        "duration": "46.000000",
+        "duration": "28.000000",
         "size": "207618048"
       },
       "container": "MP4"
@@ -679,6 +7244,26 @@
       "file": {
         "duration": "60.000000",
         "size": "106954752"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Thinkware U1000",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "17.833000",
+        "bit_rate": "24038827"
+      },
+      "file": {
+        "duration": "17.833000",
+        "size": "207618048"
       },
       "container": "MP4"
     },
@@ -4653,22 +11238,21 @@
     {
       "camera": "Rove R2-4K Dual",
       "mode": "driving",
-      "channel": "rear",
+      "channel": "front",
       "condition": "night",
       "video": {
         "codec_name": "hevc",
-        "width": 1920,
-        "height": 1080,
+        "width": 3840,
+        "height": 2160,
         "r_frame_rate": "30/1",
         "avg_frame_rate": "30/1",
-        "duration": "59.966667",
-        "bit_rate": "6663544"
+        "duration": "60.033333",
+        "bit_rate": "20029906"
       },
       "file": {
-        "duration": "60.340789",
-        "size": "83886080"
+        "duration": "60.033333",
+        "size": "188743680"
       },
-      "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
       "container": "MP4"
     },
     {
@@ -4687,6 +11271,68 @@
       },
       "file": {
         "duration": "60.358789",
+        "size": "83886080"
+      },
+      "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.033333",
+        "bit_rate": "20015601"
+      },
+      "file": {
+        "duration": "60.033333",
+        "size": "188743680"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "60.033333",
+        "bit_rate": "6498385"
+      },
+      "file": {
+        "duration": "60.057711",
+        "size": "83886080"
+      },
+      "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
+      "container": "MP4"
+    },
+    {
+      "camera": "Rove R2-4K Dual",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "night",
+      "video": {
+        "codec_name": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "59.966667",
+        "bit_rate": "6492008"
+      },
+      "file": {
+        "duration": "60.723111",
         "size": "83886080"
       },
       "channelEvidence": "FHD rear output in the documented 4K-output/FHD dual-channel model; not inferred from rear license-plate descriptions",
@@ -5613,6 +12259,102 @@
         "duration": "301.088000",
         "size": "254263475"
       },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "9.966667",
+        "bit_rate": "11774172"
+      },
+      "file": {
+        "duration": "9.966667",
+        "size": "14970944"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "11880481"
+      },
+      "file": {
+        "duration": "301.000000",
+        "size": "454716728"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "front",
+      "condition": "not specified",
+      "error": "metadata probe failed",
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "11877795"
+      },
+      "file": {
+        "duration": "301.000000",
+        "size": "454615511"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "duration": "301.000000",
+        "bit_rate": "11879844"
+      },
+      "file": {
+        "duration": "301.000000",
+        "size": "454692739"
+      },
+      "container": "MP4"
+    },
+    {
+      "camera": "Papago GoSafe 760",
+      "mode": "driving",
+      "channel": "rear",
+      "condition": "not specified",
+      "error": "metadata probe failed",
       "container": "MP4"
     },
     {
@@ -6856,5 +13598,14 @@
       },
       "container": "MP4"
     }
-  ]
+  ],
+  "screening": {
+    "sampling": "Up to three clips per owner-attributed folder, recording-mode/channel group and named resolution hint; not every archive clip.",
+    "identityChecks": "Owner folder context, native filename patterns, explicit other-model exclusions and representative decoded-frame inspection for each of 66 sampled models. No claim that every clip was watched in full.",
+    "sampledClips": 681,
+    "completeMetadataProbes": 676,
+    "incompleteMetadataProbes": 5,
+    "unresolvedAttributionsExcluded": 1,
+    "representativeFramesInspected": 66
+  }
 }

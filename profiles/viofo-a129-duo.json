@@ -71,9 +71,19 @@
       "kind": "manual",
       "label": "Official English user manual (PDF)",
       "url": "https://cdn.shopify.com/s/files/1/0569/8905/7087/files/A129_Duo_English_Manual.pdf?v=1718182920"
+    },
+    {
+      "kind": "source",
+      "label": "Privacy-safe archive video metadata",
+      "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/archive-20261008-evidence.json"
     }
   ],
-  "technical_facts": [],
+  "technical_facts": [
+    {
+      "label": "2026-10-08 archive review",
+      "value": "6 clips sampled; 0 metadata probes incomplete. Successful measurements retained separately from incomplete probes. Archive folders are not claimed as original card folders."
+    }
+  ],
   "video_samples": [
     {
       "bitrate": "~16.4 Mbps",
@@ -94,6 +104,28 @@
       "mode": "driving",
       "resolution": "1920x1080",
       "source": "ffprobe"
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "~16.4 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 16.379844-16.385048 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "rear",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "~16.4 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 16.379662-16.385160 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
     }
   ]
 }

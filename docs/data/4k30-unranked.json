@@ -5,19 +5,14 @@
     "source": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/profiles/blackvue-dr970x-lte-plus.json"
   },
   {
-    "camera": "BlackVue DR970X Box-2CH Plus",
-    "reason": "Official 4K model reference; no measured front 4K30 driving bitrate retained. Do not borrow a sibling model's rate.",
-    "source": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/profiles/blackvue-dr970x-box-plus.json"
-  },
-  {
     "camera": "Thinkware ARC 900",
     "reason": "Official manual documents 4K30; no measured front driving bitrate retained.",
     "source": "https://download2.inavi.com/dashcam/ARC900/manual/arc900_manual_english_20251031.pdf"
   },
   {
     "camera": "VIOFO A329",
-    "reason": "Existing research retains a 4K60 sample, not a comparable 4K30 video-track measurement. Do not reuse A329S or A329T rates.",
-    "source": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
+    "reason": "Reviewed archive driving samples are 4K60. Separate parking samples include 4K30, but cannot supply a driving bitrate. Needs a front 4K30 driving sample; do not reuse A329S or A329T rates.",
+    "source": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/profiles/viofo-a329.json"
   },
   {
     "camera": "Vantrue X4",

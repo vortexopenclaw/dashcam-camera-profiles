@@ -92,7 +92,7 @@
   "technical_facts": [
     {
       "label": "2026-10-08 archive review",
-      "value": "21 clips sampled; 0 metadata probes incomplete. Successful measurements retained separately from incomplete probes. Archive folders are not claimed as original card folders."
+      "value": "22 clips sampled; 0 metadata probes incomplete. Successful measurements retained separately from incomplete probes. Archive folders are not claimed as original card folders."
     }
   ],
   "video_samples": [
@@ -116,7 +116,7 @@
       "bitrate": "~24.0 Mbps",
       "container": "MP4",
       "source": "reviewed archive metadata",
-      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 23.989156-24.006246 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+      "settings_note": "Archive review 2026-10-08: 4 usable sampled clips, exact video-track rates 23.983381-24.038827 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
     },
     {
       "channel": "rear",

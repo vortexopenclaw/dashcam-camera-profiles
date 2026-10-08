@@ -1,0 +1,59 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schema_version": "1.0",
+  "id": "waylens-secure360-wifi",
+  "manufacturer": "Waylens",
+  "model": "Secure360 WiFi",
+  "evidence": {
+    "level": "technical-sample",
+    "status": "reference_only",
+    "confidence": "measured sample",
+    "note": "Measured owner-attributed archive clips, not a complete card scan. Original card folder layout remains unverified."
+  },
+  "channel_variants": [],
+  "recording": {
+    "driving_folders": [],
+    "parking_folders": [],
+    "other_folders": [],
+    "parking_modes": []
+  },
+  "filename_patterns": [],
+  "video_samples": [
+    {
+      "channel": "360 composite (view unassigned)",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "1952x1952",
+      "fps": "25",
+      "bitrate": "~19.9 Mbps",
+      "container": "MPEG-TS",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 2 usable sampled clips, exact video-track rates 19.901414-19.949231 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "360 composite (view unassigned)",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "1952x1952",
+      "fps": "6",
+      "bitrate": "~2.2 Mbps",
+      "container": "MPEG-TS",
+      "source": "reviewed archive metadata",
+      "settings_note": "Archive review 2026-10-08: 1 usable sampled clips, exact video-track rates 2.160884-2.160884 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "2026-10-08 archive review",
+      "value": "3 clips sampled; 0 metadata probes incomplete. Successful measurements retained separately from incomplete probes. Archive folders are not claimed as original card folders."
+    }
+  ],
+  "sources": [
+    {
+      "kind": "source",
+      "label": "Privacy-safe archive video metadata",
+      "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/archive-20261008-evidence.json"
+    }
+  ],
+  "notes": []
+}
