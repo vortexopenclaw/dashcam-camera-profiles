@@ -4,7 +4,7 @@
   "method": "Driving file bars use measured 60-second files, separated by quality setting. Auto Event Detection bars use 45-second files converted to one recording minute. Individual camera rates are not averaged together.",
   "limitations": [
     "256 GB driving hours assume all nominal capacity is available; formatting, protected files and reserved space reduce usable capacity.",
-    "One other Auto Event Detection telephoto file measured 6.013237 Mbps and 35.65 MB for 45 seconds; the chart shows it as a separate open marker.",
+    "One other 45-second Auto Event Detection telephoto file measured 6.013237 Mbps and 35.65 MB. It includes a near-black section where bitrate falls to about 0.95 Mbps, then returns to about 8.19 Mbps. This is within-clip rate variation, not a separate measured parking setting.",
     "The Auto Event bars describe the measured 45-second files, not every motion or impact recording.",
     "Firmware: 1.0_260911. HDR and multiplexing were not controlled across all quality scans."
   ],

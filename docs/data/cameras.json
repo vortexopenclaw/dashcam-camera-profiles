@@ -8335,7 +8335,7 @@
         },
         {
           "label": "Auto Event Detection parking representative samples",
-          "value": "The plotted paired 45-second samples are 62914560 bytes front at about 10.65 Mbps and 48234496 bytes per add-on at about 8.19 Mbps; normalized recording consumption is about 16.61 GB/hour across four channels. Another telephoto sample measures 6.013237 Mbps and 35651584 bytes/45s, shown separately. These are measurements of specific files, not one rate for every motion or impact recording."
+          "value": "The plotted paired 45-second samples are 62914560 bytes front at about 10.65 Mbps and 48234496 bytes per add-on at about 8.19 Mbps; normalized recording consumption is about 16.61 GB/hour across four channels. Another full 45-second telephoto sample measures 6.013237 Mbps and 35651584 bytes. Direct review shows a near-black section with about 0.95 Mbps followed by a return to about 8.19 Mbps; its lower average reflects within-clip rate variation, not a separate parking setting. These are measurements of specific files, not one rate for every motion or impact recording."
         },
         {
           "label": "Quality and storage charts",

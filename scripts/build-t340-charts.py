@@ -29,7 +29,7 @@ def per_camera(front):
     fig.subplots_adjust(left=.16,right=.96,top=.79,bottom=.23,wspace=.37)
     title = 'Front camera' if front else 'Add-on cameras: rear / interior / telephoto'
     fig.suptitle('VIOFO T340 • ' + title,fontsize=20,fontweight='bold',y=.95)
-    fig.text(.16,.86,'4CH • 4K front / 1440p add-ons • H.264, 30 fps',fontsize=10,color='#536173')
+    fig.text(.5,.86,'4CH • 4K front / 1440p add-ons • H.264, 30 fps',ha='center',fontsize=10,color='#536173')
     for axis, field, unit in zip(axes,['videoMbps','MBPerMinute'],['Encoded video bitrate (Mbps)','File consumption (MB/minute)']):
         vals=[]
         for row in ROWS[:5]:
@@ -53,7 +53,7 @@ def per_camera(front):
         axis.invert_yaxis();axis.set_xlim(0,max(valid)*1.42);axis.set_xlabel(unit);axis.grid(axis='x',alpha=.16)
         axis.set_title('Encoded video bitrate' if field=='videoMbps' else 'File size per recording minute',fontsize=14,fontweight='bold',pad=13)
     fig.text(.16,.125,'Firmware: '+DATA['firmware'],fontsize=10,color='#536173')
-    fig.text(.16,.085,'File bars use measured 60-second clips. MB is decimal; 1 MB = 1,000,000 bytes.',fontsize=10)
+    fig.text(.16,.085,'File-size bars represent one minute of recording.',fontsize=10)
     fig.text(.16,.045,'Add-on camera driving rates differ by less than 0.01 Mbps. Their full-minute file sizes match.',fontsize=10)
     finish(fig,'front' if front else 'add-ons')
 
@@ -87,17 +87,17 @@ finish(fig,'combined')
 fig,axes=plt.subplots(1,2,figsize=(13,6.6))
 fig.subplots_adjust(left=.14,right=.96,top=.79,bottom=.26,wspace=.4)
 fig.suptitle('VIOFO T340 • Parking modes while recording',fontsize=20,fontweight='bold',y=.95)
-for axis,field,unit in zip(axes,['videoMbps','MBPerMinute'],['Encoded video bitrate (Mbps)','Whole-file MB per active minute']):
+for axis,field,unit in zip(axes,['videoMbps','MBPerMinute'],['Encoded video bitrate (Mbps)','Whole file size (megabytes per minute)']):
     for i,(role,label,color) in enumerate([('front','Front','#277c9c'),('rear','Rear / interior / telephoto','#399772')]):
         vals=[next(c[field] for c in r['channels'] if c['channel']==role) for r in [ROWS[4],ROWS[6]]]
         axis.bar(np.arange(2)+(i-.5)*.27,vals,width=.27,label=label,color=color)
         for j,v in enumerate(vals):axis.text(j+(i-.5)*.27,v+.3 if field=='videoMbps' else v+2,f'{v:.2f}',ha='center',fontsize=11)
     axis.set_xticks([0,1],['Low Bitrate','Auto Event Detection']);axis.set_ylabel(unit);axis.grid(axis='y',alpha=.16);axis.set_ylim(0,14 if field=='videoMbps' else 100);axis.legend(frameon=False,fontsize=9)
     axis.set_title('Encoded video bitrate' if field=='videoMbps' else 'File consumption while recording',fontsize=14,fontweight='bold',pad=13)
-fig.text(.14,.15,'Auto Event bars: observed 45-second files, front 62.91 MB / add-ons 48.23 MB each.',fontsize=11)
-fig.text(.14,.105,'A separate telephoto sample recorded at 6.01 Mbps, using 35.65 MB in 45 seconds.',fontsize=10)
-fig.text(.14,.065,'Auto Event file rates vary. The bars describe these measured files, not every motion or impact event.',fontsize=10)
-fig.text(.14,.025,'Firmware: '+DATA['firmware']+' • MB/minute normalizes file size by recording duration.',fontsize=10)
+fig.text(.14,.15,'Auto Event Detection clips are 45 seconds long: front 62.91 MB / add-ons 48.23 MB each.',fontsize=10)
+fig.text(.14,.105,'Whole-file sizes are extrapolated to MB/minute: 45-second file size × 60/45.',fontsize=10)
+fig.text(.14,.065,'Auto Event file sizes vary with the recorded scene. Bars show representative samples.',fontsize=10)
+fig.text(.14,.025,'Firmware: '+DATA['firmware']+' • Auto Event scan: Maximum driving bitrate selected.',fontsize=10)
 finish(fig,'parking')
 
 fields=['setting','channelCount','channel','videoMbps','MBPerMinute','basis','clipSizeBytes','clipDurationSeconds','combinedGBPerHour','nominal256GBRecordedHours']
@@ -112,6 +112,6 @@ def display(value):
     return f'{value:.2f}' if value is not None else 'Pending'
 table=''.join('<tr>'+''.join(f'<td>{v}</td>' for v in [html.escape(r['setting']),r['channelCount'],display(r['combinedMBPerMinute']),display(r['combinedGBPerHour']),display(r['nominal256GBRecordedHours']) if 'parking' not in r['setting'].lower() else 'Not shown','Measured files'])+'</tr>' for r in ROWS)
 notes=''.join('<li>'+html.escape(n)+'</li>' for n in DATA['limitations'])
-page='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>T340 bitrate and storage charts</title><style>body{font:16px system-ui;margin:32px auto;max-width:1100px;padding:0 18px;color:#182733;line-height:1.6}img{width:100%;height:auto}section{margin:32px 0}a{color:#146c93}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:10px;border-bottom:1px solid #ddd}.scroll{overflow:auto}</style><a href="./">Camera reference</a><h1>VIOFO T340: bitrate, file size and recording capacity</h1><p>Measured metadata reviewed 2026-10-08. Four-channel driving, three-channel Maximum, and distinct parking settings.</p><p><strong>Firmware: '+html.escape(DATA['firmware'])+'.</strong> Bitrate panels measure encoded video; file panels measure whole files. Rear, interior and telephoto are shown separately: their sampled driving rates differ by less than 0.01 Mbps and their measured full-minute file sizes match.</p><p>Normal: 243.27 MB per minute front and 111.15 MB per minute for each add-on. All storage bars use measured files, with no video-only estimates. MB and GB are decimal.</p>'+images+'<h2>Combined measurements</h2><div class="scroll"><table><tr><th>Setting</th><th>Cameras</th><th>MB/min</th><th>GB/hour</th><th>256 GB driving hours</th><th>Storage evidence</th></tr>'+table+'</table></div><h2>Measurement notes</h2><p>'+html.escape(DATA['method'])+'</p><ul>'+notes+'</ul><p><a href="assets/t340/measurements.csv">Download CSV</a> · <a href="data/t340-quality-comparison.json">Reviewed data JSON</a> · <a href="https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-t340.md">Evidence notes</a></p></html>'
+page='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>T340 bitrate and storage charts</title><style>body{font:16px system-ui;margin:32px auto;max-width:1100px;padding:0 18px;color:#182733;line-height:1.6}img{width:100%;height:auto}section{margin:32px 0}a{color:#146c93}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:10px;border-bottom:1px solid #ddd}.scroll{overflow:auto}</style><a href="./">Camera reference</a><h1>VIOFO T340: bitrate, file size and recording capacity</h1><p>Measured metadata reviewed 2026-10-08. Four-channel driving, three-channel Maximum, and distinct parking settings.</p><p><strong>Firmware: '+html.escape(DATA['firmware'])+'.</strong> Bitrate panels measure encoded video; file panels measure whole files. Rear, interior and telephoto are shown separately: their sampled driving rates differ by less than 0.01 Mbps and their measured full-minute file sizes match.</p><p>Normal: 243.27 MB per minute front and 111.15 MB per minute for each add-on. All storage bars use measured files, with no video-only estimates.</p>'+images+'<h2>Combined measurements</h2><div class="scroll"><table><tr><th>Setting</th><th>Cameras</th><th>MB/min</th><th>GB/hour</th><th>256 GB driving hours</th><th>Storage evidence</th></tr>'+table+'</table></div><h2>Measurement notes</h2><p>'+html.escape(DATA['method'])+'</p><ul>'+notes+'</ul><p><a href="assets/t340/measurements.csv">Download CSV</a> · <a href="data/t340-quality-comparison.json">Reviewed data JSON</a> · <a href="https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-t340.md">Evidence notes</a></p></html>'
 (ROOT/'docs/t340-comparison.html').write_text(page+'\n')
 print('Rendered four PNG/SVG charts, CSV and report page')
