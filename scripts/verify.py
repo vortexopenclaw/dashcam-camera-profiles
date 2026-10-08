@@ -43,7 +43,7 @@ def main() -> None:
     arc900 = next(camera for camera in cameras if camera["id"] == "thinkware-arc-900")
     t340 = next(camera for camera in cameras if camera["id"] == "viofo-t340")
     assert t340["evidence"]["level"] == "technical-sample"
-    assert len(t340["video_samples"]) == 36
+    assert len(t340["video_samples"]) == 45
     for mode in ("driving", "parking"):
         samples = [sample for sample in t340["video_samples"][:8] if sample["mode"] == mode]
         assert {sample["channel"] for sample in samples} == {"front", "rear", "interior", "telephoto"}
@@ -71,7 +71,7 @@ def main() -> None:
             expected = 4.095 if mode == "parking" else 36.85 if sample["channel"] == "front" else 21.30
             assert abs(low - expected) < 0.06 and abs(high - expected) < 0.06
     assert all(folder["validation"] == "app_submission_sampled" for folder in t340["recording"]["driving_folders"])
-    low_samples = t340["video_samples"][20:]
+    low_samples = t340["video_samples"][20:36]
     for mode in ("driving", "protected", "parking", "parking_impact_detection"):
         samples = [sample for sample in low_samples if sample["mode"] == mode]
         assert {sample["channel"] for sample in samples} == {"front", "rear", "interior", "telephoto"}
@@ -83,6 +83,15 @@ def main() -> None:
             expected = 4.10 if "parking" in mode else 27.04 if sample["channel"] == "front" else 11.88
             assert abs(minimum - expected) < 0.03 and abs(maximum - expected) < 0.03
     assert any("userImmutable=true" in fact["value"] for fact in t340["technical_facts"])
+    maximum_three = t340["video_samples"][36:]
+    assert len(maximum_three) == 9
+    assert {sample["channel"] for sample in maximum_three} == {"front", "rear", "interior"}
+    for sample in maximum_three:
+        assert "3-channel" in sample["recording_configuration"]
+        assert "Maximum driving bitrate" in sample["settings_note"]
+        minimum, maximum = map(float, sample["bitrate"].removesuffix(" Mbps").split("-"))
+        expected = 4.095 if "parking" in sample["mode"] else 53.23 if sample["channel"] == "front" else 27.03
+        assert abs(minimum - expected) < 0.06 and abs(maximum - expected) < 0.06
 
     assert any(folder["path"] == "cont_rec" for folder in arc900["recording"]["driving_folders"])
     assert any(folder["path"] == "parking_rec" for folder in arc900["recording"]["parking_folders"])

@@ -8124,6 +8124,15 @@
             "telephoto"
           ],
           "validation": "app_submission_sampled"
+        },
+        {
+          "channels": 3,
+          "roles": [
+            "front",
+            "rear",
+            "interior"
+          ],
+          "validation": "app_submission_sampled"
         }
       ],
       "evidence": {
@@ -8289,11 +8298,31 @@
         },
         {
           "label": "Configuration comparisons pending",
-          "value": "Owner plans three-channel and multiplexing scans. Record exact connected camera roles, driving bitrate, parking mode, resolution/fps, HDR, firmware and multiplexing setting separately. No three-channel front-bitrate increase or multiplexing effect has yet been measured."
+          "value": "Three-channel Maximum front/rear/interior scan now measured; comparison with historical 4CH Maximum is provisional, with no clear front gain. A clean matched 4CH Maximum scan and owner-planned multiplexing configurations remain outstanding. Keep roles, bitrate, parking mode, HDR, resolution/fps and firmware distinct."
         },
         {
           "label": "Normal parking label conflict",
           "value": "The original Normal submission notes say low bitrate parking mode, while the earlier Discord description says low power parking. Retain this conflict; neither bitrate nor filenames alone resolves the selected mode."
+        },
+        {
+          "label": "Maximum three-channel measurement",
+          "value": "39 media: 21 driving MP4, six parking MP4, six protected parking MP4 and six JPG. Front driving 53.182404-53.252076 Mbps, interior 27.030822-27.033636, rear 27.030958-27.036422. H.264/30 fps; 4K front and 1440p rear/interior. Telephoto disconnected."
+        },
+        {
+          "label": "Three-channel Maximum paired storage",
+          "value": "Full-minute driving files are 402653184 bytes front and 205520896 bytes each rear/interior: 48.82 decimal GB/hour combined. Parking full-minute files are 33554432 bytes each, about 6.04 GB/hour across three channels."
+        },
+        {
+          "label": "Provisional Maximum 3CH versus 4CH comparison",
+          "value": "Historical owner-labeled Maximum four-channel driving-event groups are about 53.26 Mbps front and 27.03 Mbps per 2K channel, closely matching new three-channel Maximum. No clear front-bitrate gain observed. Historical continuous groups mix settings, fourth channel is app-unknown, and old size/duration extrema are unpaired. Historical event maximum file sizes match new full-minute sizes, but exact old whole-file rates remain unverified."
+        },
+        {
+          "label": "Maximum 4CH storage projection boundary",
+          "value": "If a clean four-channel Maximum sample repeats 402653184 bytes/min front and 205520896 per 2K camera, combined storage would be 61.15 decimal GB/hour. This is conditional, not a measured four-channel Maximum total."
+        },
+        {
+          "label": "Three-channel recognition boundary",
+          "value": "App generic fallback ranked A229 Plus first. T340 four-channel discriminator is absent with telephoto disconnected. Owner-confirmed identity is retained without forcing automatic T340 recognition from sibling-shared structure."
         }
       ],
       "video_samples": [
@@ -8727,6 +8756,114 @@
           "recording_configuration": "4-channel: front, rear, interior, telephoto",
           "resolution": "2560x1440",
           "settings_note": "Owner confirms Low driving bitrate for the latest scan. HDR, firmware, multiplexing setting and exact parking setting not recorded. Parking impact detection is an app inference, not a verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094633-4.095877 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "3840x2160",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094807-4.095906 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095342-4.096332 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.088826-4.096462 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking_impact_detection",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "3840x2160",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095915-4.096392 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking_impact_detection",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.087324-4.095270 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking_impact_detection",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "53.182404-53.252076 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "3840x2160",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.030822-27.033636 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.030958-27.036422 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
+          "resolution": "2560x1440",
+          "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger.",
           "source": "app_submission"
         }
       ]
