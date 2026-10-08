@@ -324,6 +324,30 @@
   ],
   "video_samples": [
     {
+      "bitrate": "~65.5 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "recording_configuration": "2-channel: front, rear; firmware 2.2_260815",
+      "resolution": "3840x2160",
+      "settings_note": "Maximum bitrate, 2CH and firmware owner-confirmed. Three sampled 60-second driving files measure 65.535008-65.537908 Mbps; complete file size 494.93 MB each. 0.1-second clips excluded from comparison. Earlier 3CH measurements had unknown quality settings and do not establish a controlled channel-count effect.",
+      "source": "privacy-safe card scan summary"
+    },
+    {
+      "bitrate": "~27.03 Mbps",
+      "channel": "R (rear)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "recording_configuration": "2-channel: front, rear; firmware 2.2_260815",
+      "resolution": "2560x1440",
+      "settings_note": "Maximum bitrate owner-confirmed. Two sampled 60-second driving files measure 27.032684-27.033100 Mbps; complete file size 205.52 MB each. 0.1-second clips excluded from comparison.",
+      "source": "privacy-safe card scan summary"
+    },
+    {
       "bitrate": "~53-66 Mbps",
       "channel": "F (front)",
       "codec": "H.264",

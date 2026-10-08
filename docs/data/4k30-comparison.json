@@ -1,13 +1,13 @@
 [
   {
     "id": "viofo-a329s",
-    "camera": "VIOFO A329S",
-    "lowMbps": 53.0,
-    "highMbps": 66.0,
+    "camera": "VIOFO A329S \u2022 Maximum 2CH",
+    "lowMbps": 65.5,
+    "highMbps": 65.5,
     "codec": "H.264",
-    "configuration": "3-channel: front, interior, rear",
-    "settings": "The card did not record the in-camera Video Quality level. On the A329S, that setting changes front-camera bitrate, so this range is not one fixed specification.",
-    "source": "ffprobe"
+    "configuration": "2-channel: front, rear; firmware 2.2_260815",
+    "settings": "Maximum bitrate, 2CH and firmware owner-confirmed. Three sampled 60-second driving files measure 65.535008-65.537908 Mbps; complete file size 494.93 MB each. 0.1-second clips excluded from comparison. Earlier 3CH measurements had unknown quality settings and do not establish a controlled channel-count effect.",
+    "source": "privacy-safe card scan summary"
   },
   {
     "id": "viofo-a329t",

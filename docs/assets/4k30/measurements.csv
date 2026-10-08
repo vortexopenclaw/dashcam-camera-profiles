@@ -1,5 +1,5 @@
 id,camera,lowMbps,highMbps,codec,configuration,settings,source
-viofo-a329s,VIOFO A329S,53.0,66.0,H.264,"3-channel: front, interior, rear","The card did not record the in-camera Video Quality level. On the A329S, that setting changes front-camera bitrate, so this range is not one fixed specification.",ffprobe
+viofo-a329s,VIOFO A329S • Maximum 2CH,65.5,65.5,H.264,"2-channel: front, rear; firmware 2.2_260815","Maximum bitrate, 2CH and firmware owner-confirmed. Three sampled 60-second driving files measure 65.535008-65.537908 Mbps; complete file size 494.93 MB each. 0.1-second clips excluded from comparison. Earlier 3CH measurements had unknown quality settings and do not establish a controlled channel-count effect.",privacy-safe card scan summary
 viofo-a329t,VIOFO A329T,65.5,65.5,H.264,"3-channel: front, telephoto front, rear",Quality setting not recorded,ffprobe
 blackvue-dr970x-plus,BlackVue DR970X Plus,60.0,60.0,HEVC,Not recorded,Quality setting not recorded,ffprobe
 blackvue-elite-9,BlackVue Elite 9,60.0,60.0,HEVC,2CH front/rear · firmware 1.010,Observed range 46.4-60.1 Mbps across 538 files; shorter interrupted clips account for the low end.,privacy-safe card scan summary

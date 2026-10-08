@@ -19,7 +19,12 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
     camera = json.loads(path.read_text())
     if camera['id'] == 'viofo-t340':
         continue
-    for sample in camera['video_samples']:
+    samples = camera['video_samples']
+    if camera['id'] == 'viofo-a329s':
+        # Prefer the confirmed Maximum 2CH scan for this comparison; retain
+        # the older unknown-setting 3CH evidence in the canonical profile.
+        samples = [s for s in samples if (s.get('settings_note') or '').startswith('Maximum bitrate')]
+    for sample in samples:
         channel = sample['channel'].lower()
         primary_front = 'telephoto' not in channel and ('front' in channel or re.match(r'^(f|mf|nf)\b', channel))
         if not (sample['mode'] == 'driving' and primary_front and sample['resolution'] == '3840x2160' and '30' in re.findall(r'\d+(?:\.\d+)?', sample['fps'])):
@@ -27,7 +32,10 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
         rates = [float(v) for v in re.findall(r'\d+(?:\.\d+)?', sample['bitrate'])]
         if not rates:
             continue
-        rows.append(dict(id=camera['id'], camera=f"{camera['manufacturer']} {camera['model']}", lowMbps=min(rates), highMbps=max(rates), codec=sample['codec'], configuration=sample.get('recording_configuration') or 'Not recorded', settings=sample.get('settings_note') or 'Quality setting not recorded', source=sample['source']))
+        name = f"{camera['manufacturer']} {camera['model']}"
+        if camera['id'] == 'viofo-a329s':
+            name += ' • Maximum 2CH'
+        rows.append(dict(id=camera['id'], camera=name, lowMbps=min(rates), highMbps=max(rates), codec=sample['codec'], configuration=sample.get('recording_configuration') or 'Not recorded', settings=sample.get('settings_note') or 'Quality setting not recorded', source=sample['source']))
 
 data = json.loads((ROOT / 'docs/data/t340-quality-comparison.json').read_text())
 for row in data['rows']:
