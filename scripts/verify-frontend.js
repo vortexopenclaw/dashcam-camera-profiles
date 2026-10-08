@@ -8,6 +8,13 @@ global.document = { addEventListener() {} };
 const source = fs.readFileSync(path.join(__dirname, "..", "docs", "assets", "app.js"), "utf8");
 const cameras = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "docs", "data", "cameras.json"), "utf8")).cameras;
 eval(`${source}
+assert.equal(formatConfiguration("2CH front/rear · firmware 1.010"), "2CH · Front / Rear · Firmware 1.010");
+assert.equal(formatConfiguration("2-channel: front, rear; firmware 1.009"), "2CH · Front / Rear · Firmware 1.009");
+assert.equal(formatConfiguration("3CH high bitrate, firmware 1.0.4"), "3CH · High bitrate · Firmware 1.0.4");
+assert.equal(formatConfiguration("2-channel: front, rear; firmware 2.2_260815"), "2CH · Front / Rear · Firmware 2.2_260815");
+assert.equal(formatConfiguration("3-channel: front, rear, interior; telephoto disconnected"), "3CH · Front / Rear / Interior · Telephoto disconnected");
+assert.equal(formatConfiguration(undefined), "");
+assert(renderVideoSamples([{ channel: "front", mode: "driving", codec: "H.264", resolution: "3840x2160", fps: "30", bitrate: "60 Mbps", container: "MP4", source: "app_submission", recording_configuration: "2-channel: front, rear; firmware 1.009" }]).includes("2CH · Front / Rear · Firmware 1.009"));
 assert.equal(bitrateMaximum("~25.1 Mbps at 60 fps"), 25.1);
 assert.equal(bitrateMaximum("~53-66 Mbps"), 66);
 assert.equal(bitrateMaximum("Unknown"), 0);

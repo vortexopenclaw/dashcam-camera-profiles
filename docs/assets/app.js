@@ -200,7 +200,7 @@ function renderQualityExplorer() {
   elements.qualityResults.innerHTML = matches.length ? matches.map(({ camera, sample }, index) => {
     const item = { camera, sample, role: cameraRole(sample.channel) };
     const companions = configurationCompanions(item);
-    const configuration = sample.recording_configuration || "";
+    const configuration = formatConfiguration(sample.recording_configuration);
     const setting = sample.settings_note && sample.settings_note.length < 80 ? `<small class="quality-setting">${escapeHtml(sample.settings_note)}</small>` : "";
     const rank = state.qualitySort === "brand" ? "" : `<span class="quality-rank" aria-label="Observed bitrate rank ${index + 1}">#${index + 1}</span>`;
     return `<button class="quality-result" data-id="${escapeHtml(camera.id)}"><span class="quality-camera">${rank}<strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>${escapeHtml(sample.channel)} · ${escapeHtml(sample.codec)}</small></span><span class="quality-spec">${escapeHtml(sample.resolution)}<small>${escapeHtml(sample.fps)} FPS</small></span><span class="bitrate-bar"><i style="width:${bitrateWidth(sample.bitrate)}%"></i><strong>${escapeHtml(formatBitrate(sample.bitrate))}</strong></span><span class="quality-companions"><strong>${escapeHtml(configuration)}</strong><small>${companions.map(companion => `${roleLabel(cameraRole(companion.channel))} ${companion.resolution} ${companion.fps}fps`).join(" · ")}</small>${setting}</span></button>`;
@@ -282,7 +282,7 @@ function renderBitrateChart(matches) {
     <div class="bitrate-chart">${matches.map(({ camera, sample }) => `<button class="bitrate-chart-row" data-id="${escapeHtml(camera.id)}">
       <span class="chart-label"><strong>${escapeHtml(displayManufacturer(camera.manufacturer))} ${escapeHtml(camera.model)}</strong><small>${escapeHtml(sample.channel)} · ${escapeHtml(sample.resolution)} · ${escapeHtml(sample.fps)} FPS</small></span>
       <span class="chart-track"><i style="width:${Math.max(3, bitrateMaximum(sample.bitrate) / maximum * 100)}%"></i><strong>${escapeHtml(formatBitrate(sample.bitrate, 0))}</strong></span>
-      <small class="chart-configuration">${escapeHtml(sample.recording_configuration || "")}</small>
+      <small class="chart-configuration">${escapeHtml(formatConfiguration(sample.recording_configuration))}</small>
     </button>`).join("")}</div>
   </section>`;
 }
@@ -319,11 +319,28 @@ function renderDetail(camera) {
 
 function coverage(name, available) { return `<span class="${available ? "yes" : ""}">${available ? "●" : "○"} ${escapeHtml(name)}</span>`; }
 
+function formatConfiguration(value) {
+  if (!value) return "";
+  return String(value).trim()
+    .replace(/\b(\d+)\s*(?:-channel|CH)\b\s*:?\s*/gi, "$1CH · ")
+    .replace(/[,;·]\s*firmware\s+/gi, " · Firmware ")
+    .split(/[;·]/)
+    .map(part => {
+      const text = part.trim();
+      if (/^firmware\b/i.test(text)) return text.replace(/^firmware/i, "Firmware");
+      if (/^(?:(?:wide |telephoto )?front(?:-only)?|rear|interior|telephoto)(?:\s*[,/]\s*(?:(?:wide |telephoto )?front|rear|interior|telephoto))*$/i.test(text)) {
+        return text.split(/\s*[,/]\s*/).map(role => label(role.replace(/-only$/i, " only"))).join(" / ");
+      }
+      return text.replace(/\bfps\b/gi, "FPS").replace(/^\w/, character => character.toUpperCase());
+    })
+    .filter(Boolean).join(" · ");
+}
+
 function renderVariants(variants) {
   if (!variants.length) return "";
   return section("Camera configurations", `<div class="cards">${variants.map(variant => `
-    <div class="card"><div class="card-head"><strong>${escapeHtml(variant.channels ? `${variant.channels}-channel` : "Channel count unknown")}${variant.variant ? ` · ${escapeHtml(variant.variant)}` : ""}</strong><span class="mode">${escapeHtml(label(variant.validation || "not stated"))}</span></div>
-    <div class="meta">${escapeHtml(variant.roles.length ? variant.roles.map(label).join(", ") : "Camera positions not recorded")}</div></div>`).join("")}</div>`);
+    <div class="card"><div class="card-head"><strong>${escapeHtml(variant.channels ? `${variant.channels}CH` : "Channel count unknown")}${variant.variant ? ` · ${escapeHtml(formatConfiguration(variant.variant))}` : ""}</strong><span class="mode">${escapeHtml(label(variant.validation || "not stated"))}</span></div>
+    <div class="meta">${escapeHtml(variant.roles.length ? variant.roles.map(label).join(" / ") : "Camera positions not recorded")}</div></div>`).join("")}</div>`);
 }
 
 function renderFolderSection(title, folders) {
@@ -358,7 +375,7 @@ function renderVideoSamples(samples) {
     <div class="card"><div class="card-head"><strong>${escapeHtml(sample.channel)}</strong><span class="mode">${escapeHtml(label(sample.mode))}</span></div>
     <div class="meta">${escapeHtml([sample.codec, sample.resolution, `${sample.fps} FPS`, formatBitrate(sample.bitrate)].filter(value => value && value !== "Unknown").join(" · "))}</div>
     <div class="meta">${escapeHtml(`${sample.container} · ${sample.source}`)}</div>
-    ${sample.recording_configuration ? `<div class="meta"><strong>Recorded configuration:</strong> ${escapeHtml(sample.recording_configuration)}</div>` : ""}
+    ${sample.recording_configuration ? `<div class="meta"><strong>Recorded configuration:</strong> ${escapeHtml(formatConfiguration(sample.recording_configuration))}</div>` : ""}
     ${sample.settings_note ? `<div class="meta"><strong>Settings note:</strong> ${escapeHtml(sample.settings_note)}</div>` : ""}</div>`).join("")}</div>`);
 }
 
