@@ -43,7 +43,7 @@ def main() -> None:
     arc900 = next(camera for camera in cameras if camera["id"] == "thinkware-arc-900")
     t340 = next(camera for camera in cameras if camera["id"] == "viofo-t340")
     assert t340["evidence"]["level"] == "technical-sample"
-    assert len(t340["video_samples"]) == 45
+    assert len(t340["video_samples"]) == 61
     for mode in ("driving", "parking"):
         samples = [sample for sample in t340["video_samples"][:8] if sample["mode"] == mode]
         assert {sample["channel"] for sample in samples} == {"front", "rear", "interior", "telephoto"}
@@ -83,7 +83,7 @@ def main() -> None:
             expected = 4.10 if "parking" in mode else 27.04 if sample["channel"] == "front" else 11.88
             assert abs(minimum - expected) < 0.03 and abs(maximum - expected) < 0.03
     assert any("userImmutable=true" in fact["value"] for fact in t340["technical_facts"])
-    maximum_three = t340["video_samples"][36:]
+    maximum_three = t340["video_samples"][36:45]
     assert len(maximum_three) == 9
     assert {sample["channel"] for sample in maximum_three} == {"front", "rear", "interior"}
     for sample in maximum_three:

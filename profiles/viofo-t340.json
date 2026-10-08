@@ -660,6 +660,198 @@
       "source": "app_submission",
       "recording_configuration": "3-channel: front, rear, interior; telephoto disconnected",
       "settings_note": "Owner confirms Maximum driving bitrate. HDR, firmware, multiplexing and parking setting not supplied. Parking impact labels are app inference, not verified trigger."
+    },
+    {
+      "channel": "front",
+      "mode": "parking_motion_detection",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "10.647625-10.649429 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "interior",
+      "mode": "parking_motion_detection",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.191810-8.192199 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "rear",
+      "mode": "parking_motion_detection",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.191417-8.191921 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "telephoto",
+      "mode": "parking_motion_detection",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "6.013237-8.191904 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "front",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "10.649273-10.682584 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "interior",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.191760-8.237086 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "rear",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.191112-8.290902 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "telephoto",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.191935-8.196191 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "front",
+      "mode": "parking_impact_detection",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "10.649465-33.054502 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "interior",
+      "mode": "parking_impact_detection",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.241152-14.430552 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "rear",
+      "mode": "parking_impact_detection",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.192116-14.352279 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "telephoto",
+      "mode": "parking_impact_detection",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "8.190579-14.336002 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "40.961480-53.622752 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "interior",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "23.756432-27.954510 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "rear",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "23.756304-27.543236 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
+    },
+    {
+      "channel": "telephoto",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "23.755944-27.250160 Mbps",
+      "container": "MP4",
+      "source": "app_submission",
+      "recording_configuration": "4-channel: front, rear, interior, telephoto",
+      "settings_note": "Owner reports Maximum driving and Auto Event Detection parking with impacts. Card contains mixed-rate driving and parking clips; summary ranges are not one homogeneous Maximum bitrate. Firmware/HDR/multiplexing not supplied. App trigger labels remain inferred."
     }
   ],
   "technical_facts": [
@@ -734,6 +926,18 @@
     {
       "label": "Three-channel recognition boundary",
       "value": "App generic fallback ranked A229 Plus first. T340 four-channel discriminator is absent with telephoto disconnected. Owner-confirmed identity is retained without forcing automatic T340 recognition from sibling-shared structure."
+    },
+    {
+      "label": "Paired 4CH Maximum representative storage",
+      "value": "New Maximum/Auto Event card has 4213 media and mixed video rates. Selected paired full 60-second Maximum-sized samples measure about 53.25 Mbps front and 27.03 per add-on, occupying 402653184 bytes front and 205520896 per add-on: 61.15 decimal GB/hour. These match the new 3CH Maximum shared-camera sizes; total is now measured from representative per-channel pairs, not a projection or card-wide average."
+    },
+    {
+      "label": "Auto Event Detection parking representative samples",
+      "value": "Typical paired 45-second samples are 62914560 bytes front at about 10.65 Mbps and 48234496 bytes per add-on at about 8.19 Mbps; normalized active recording about 16.61 GB/hour across four channels. One telephoto sample is lower (6.013237 Mbps, 35651584 bytes/45s). Impact-labelled groups vary considerably; event duty cycle and actual parked retention unknown."
+    },
+    {
+      "label": "Quality and storage charts",
+      "value": "Front, add-on and combined charts retain four driving quality levels and separately labelled Low Bitrate parking. Normal storage is video-only estimate because paired measurements are absent; other main rows use paired full-minute files. See the linked chart report for source selection and capacity assumptions."
     }
   ],
   "sources": [
@@ -746,6 +950,11 @@
       "kind": "source",
       "label": "Official VIOFO T340 series",
       "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/meet-the-new-viofo-lineup-t340-series-t330-series-a149-pro-duo-bp60"
+    },
+    {
+      "kind": "research",
+      "label": "T340 bitrate and storage comparison charts",
+      "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/t340-comparison.html"
     }
   ],
   "notes": [

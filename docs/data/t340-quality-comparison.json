@@ -1,0 +1,313 @@
+{
+  "reviewed": "2026-10-08",
+  "units": "Decimal MB and GB; Mbps is encoded video. File-rate columns include whole-file overhead except Normal.",
+  "method": "Representative full 60-second paired files; Auto Event uses typical paired 45-second files normalized to one active recording minute. Normal uses midpoint of encoded-video summary range and excludes audio/container/padding. Maximum card contains mixed rates: select the measured full-minute Maximum-sized files, not a card-wide average.",
+  "limitations": [
+    "256 GB runtime assumes all nominal capacity available; actual retention is lower with formatting, protected clips and reserved space.",
+    "Auto Event rates describe active recording, not elapsed parked time; duty cycle is unknown.",
+    "Auto Event telephoto includes one 45-second sample at 6.013237 Mbps and 35651584 bytes, below the typical 8.19 Mbps/48234496-byte samples.",
+    "Auto Event impact-labelled clips have variable rates and durations; no single impact bitrate is established.",
+    "Normal parking label conflict remains; the Low Bitrate parking comparison row uses the explicitly labeled High/Low Bitrate submission.",
+    "Low, Normal, High and Maximum are separate submissions; HDR, firmware and multiplexing are not controlled across all scans."
+  ],
+  "rows": [
+    {
+      "setting": "Low",
+      "channelCount": 4,
+      "channels": [
+        {
+          "channel": "front",
+          "videoMbps": 27.034015,
+          "MBPerMinute": 205.520896,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 205520896,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "rear",
+          "videoMbps": 11.8781915,
+          "MBPerMinute": 92.274688,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 92274688,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "interior",
+          "videoMbps": 11.8781335,
+          "MBPerMinute": 92.274688,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 92274688,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "telephoto",
+          "videoMbps": 11.8787115,
+          "MBPerMinute": 92.274688,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 92274688,
+          "clipDurationSeconds": 60
+        }
+      ],
+      "combinedMBPerMinute": 482.34496,
+      "combinedGBPerHour": 28.9406976,
+      "nominal256GBRecordedHours": 8.84567481884058
+    },
+    {
+      "setting": "Normal",
+      "channelCount": 4,
+      "channels": [
+        {
+          "channel": "front",
+          "videoMbps": 31.947388,
+          "MBPerMinute": 239.60541,
+          "basis": "video-only estimate",
+          "sampleCount": 0
+        },
+        {
+          "channel": "rear",
+          "videoMbps": 14.334559,
+          "MBPerMinute": 107.5091925,
+          "basis": "video-only estimate",
+          "sampleCount": 0
+        },
+        {
+          "channel": "interior",
+          "videoMbps": 14.332544,
+          "MBPerMinute": 107.49408,
+          "basis": "video-only estimate",
+          "sampleCount": 0
+        },
+        {
+          "channel": "telephoto",
+          "videoMbps": 14.334127,
+          "MBPerMinute": 107.5059525,
+          "basis": "video-only estimate",
+          "sampleCount": 0
+        }
+      ],
+      "combinedMBPerMinute": 562.114635,
+      "combinedGBPerHour": 33.7268781,
+      "nominal256GBRecordedHours": 7.590385307556824
+    },
+    {
+      "setting": "High",
+      "channelCount": 4,
+      "channels": [
+        {
+          "channel": "front",
+          "videoMbps": 36.861637333333334,
+          "MBPerMinute": 278.921216,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 3,
+          "clipSizeBytes": 278921216,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "rear",
+          "videoMbps": 21.298354,
+          "MBPerMinute": 161.480704,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 3,
+          "clipSizeBytes": 161480704,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "interior",
+          "videoMbps": 21.298496,
+          "MBPerMinute": 161.480704,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 3,
+          "clipSizeBytes": 161480704,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "telephoto",
+          "videoMbps": 21.298355333333333,
+          "MBPerMinute": 161.480704,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 3,
+          "clipSizeBytes": 161480704,
+          "clipDurationSeconds": 60
+        }
+      ],
+      "combinedMBPerMinute": 763.363328,
+      "combinedGBPerHour": 45.80179968,
+      "nominal256GBRecordedHours": 5.589300022893773
+    },
+    {
+      "setting": "Maximum",
+      "channelCount": 4,
+      "channels": [
+        {
+          "channel": "front",
+          "videoMbps": 53.249696,
+          "MBPerMinute": 402.653184,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 1,
+          "clipSizeBytes": 402653184,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "rear",
+          "videoMbps": 27.032856,
+          "MBPerMinute": 205.520896,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 1,
+          "clipSizeBytes": 205520896,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "interior",
+          "videoMbps": 27.032076,
+          "MBPerMinute": 205.520896,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 1,
+          "clipSizeBytes": 205520896,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "telephoto",
+          "videoMbps": 27.03142,
+          "MBPerMinute": 205.520896,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 1,
+          "clipSizeBytes": 205520896,
+          "clipDurationSeconds": 60
+        }
+      ],
+      "combinedMBPerMinute": 1019.215872,
+      "combinedGBPerHour": 61.15295232,
+      "nominal256GBRecordedHours": 4.186224708504802
+    },
+    {
+      "setting": "Low Bitrate parking",
+      "channelCount": 4,
+      "channels": [
+        {
+          "channel": "front",
+          "videoMbps": 4.0952075,
+          "MBPerMinute": 33.554432,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 33554432,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "rear",
+          "videoMbps": 4.09547,
+          "MBPerMinute": 33.554432,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 33554432,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "interior",
+          "videoMbps": 4.0954005,
+          "MBPerMinute": 33.554432,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 33554432,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "telephoto",
+          "videoMbps": 4.0956225,
+          "MBPerMinute": 33.554432,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 33554432,
+          "clipDurationSeconds": 60
+        }
+      ],
+      "combinedMBPerMinute": 134.217728,
+      "combinedGBPerHour": 8.05306368,
+      "nominal256GBRecordedHours": 31.789143880208336
+    },
+    {
+      "setting": "Maximum 3CH",
+      "channelCount": 3,
+      "channels": [
+        {
+          "channel": "front",
+          "videoMbps": 53.2424,
+          "MBPerMinute": 402.653184,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 402653184,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "rear",
+          "videoMbps": 27.032558,
+          "MBPerMinute": 205.520896,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 205520896,
+          "clipDurationSeconds": 60
+        },
+        {
+          "channel": "interior",
+          "videoMbps": 27.032063,
+          "MBPerMinute": 205.520896,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 2,
+          "clipSizeBytes": 205520896,
+          "clipDurationSeconds": 60
+        }
+      ],
+      "combinedMBPerMinute": 813.694976,
+      "combinedGBPerHour": 48.821698559999994,
+      "nominal256GBRecordedHours": 5.243570124570447
+    },
+    {
+      "setting": "Auto Event parking",
+      "channelCount": 4,
+      "channels": [
+        {
+          "channel": "front",
+          "videoMbps": 10.648759666666667,
+          "MBPerMinute": 83.88608,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 3,
+          "clipSizeBytes": 62914560,
+          "clipDurationSeconds": 45
+        },
+        {
+          "channel": "rear",
+          "videoMbps": 8.191727,
+          "MBPerMinute": 64.31266133333334,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 3,
+          "clipSizeBytes": 48234496,
+          "clipDurationSeconds": 45
+        },
+        {
+          "channel": "interior",
+          "videoMbps": 8.191959333333333,
+          "MBPerMinute": 64.31266133333334,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 3,
+          "clipSizeBytes": 48234496,
+          "clipDurationSeconds": 45
+        },
+        {
+          "channel": "telephoto",
+          "videoMbps": 8.19133,
+          "MBPerMinute": 64.31266133333334,
+          "basis": "paired whole-file measurement",
+          "sampleCount": 3,
+          "clipSizeBytes": 48234496,
+          "clipDurationSeconds": 45
+        }
+      ],
+      "combinedMBPerMinute": 276.824064,
+      "combinedGBPerHour": 16.60944384,
+      "nominal256GBRecordedHours": 15.412918244949495
+    }
+  ]
+}
