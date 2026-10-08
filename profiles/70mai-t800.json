@@ -169,5 +169,12 @@
       "value": "46 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
     }
   ],
-  "video_samples": []
+  "video_samples": [
+    {
+      "channel": "F (front)", "mode": "driving", "codec": "HEVC",
+      "resolution": "3840x2160", "fps": "30", "bitrate": "~31.9 Mbps",
+      "container": "MP4", "source": "privacy-safe card scan summary",
+      "settings_note": "Three retained 60-second driving samples in docs/data/storage-evidence.json measure 31.875828-31.883654 Mbps on the video track. Quality setting not recorded. Interrupted clips, including a 0.233-second outlier, are excluded from the representative bitrate."
+    }
+  ]
 }

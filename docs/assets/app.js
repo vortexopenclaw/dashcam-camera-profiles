@@ -113,7 +113,7 @@ function render() {
 
 function drivingSamples() {
   const rows = state.cameras.flatMap(camera => camera.video_samples
-    .filter(sample => sample.mode === "driving")
+    .filter(sample => sample.mode.toLowerCase().split(" / ").includes("driving") && !sample.mode.toLowerCase().includes("parking"))
     .map(sample => ({ camera, sample, role: cameraRole(sample.channel) }))
     .filter(item => item.role));
   const grouped = new Map();

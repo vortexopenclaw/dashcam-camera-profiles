@@ -80,6 +80,16 @@
     "source": "app_submission"
   },
   {
+    "id": "cansonic-ultradash-z4-standard",
+    "camera": "Cansonic UltraDash Z4 Standard Edition",
+    "lowMbps": 31.1,
+    "highMbps": 41.0,
+    "codec": "H.264",
+    "configuration": "Not recorded",
+    "settings": "Retained 60-second primary-front driving samples in docs/data/storage-evidence.json measure 31.126250 and 40.957612 Mbps across separate scans. Quality settings were not captured; the range is not one preset or a verified Maximum. Interrupted and parking clips are excluded.",
+    "source": "privacy-safe card scan summary"
+  },
+  {
     "id": "rove-r2-4k-pro",
     "camera": "Rove R2-4K Pro",
     "lowMbps": 36.9,
@@ -140,6 +150,26 @@
     "source": "Reviewed T340 front-camera measurements"
   },
   {
+    "id": "70mai-x800",
+    "camera": "70mai 4K Omni X800",
+    "lowMbps": 31.9,
+    "highMbps": 31.9,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Two retained 60-second driving samples in docs/data/storage-evidence.json measure 31.878168-31.879156 Mbps on the video track. Quality setting not recorded. The older 31.9-60.3 Mbps range combines driving and parking evidence and is excluded from the driving-only comparison.",
+    "source": "privacy-safe card scan summary"
+  },
+  {
+    "id": "70mai-t800",
+    "camera": "70mai T800",
+    "lowMbps": 31.9,
+    "highMbps": 31.9,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Three retained 60-second driving samples in docs/data/storage-evidence.json measure 31.875828-31.883654 Mbps on the video track. Quality setting not recorded. Interrupted clips, including a 0.233-second outlier, are excluded from the representative bitrate.",
+    "source": "privacy-safe card scan summary"
+  },
+  {
     "id": "thinkware-arc-800",
     "camera": "Thinkware ARC 800",
     "lowMbps": 31.9,
@@ -150,6 +180,16 @@
     "source": "privacy-safe card scan summary"
   },
   {
+    "id": "vantrue-e1-pro",
+    "camera": "Vantrue E1 Pro",
+    "lowMbps": 31.9,
+    "highMbps": 31.9,
+    "codec": "H.264",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
+  },
+  {
     "id": "vantrue-n4-pro-s",
     "camera": "Vantrue N4 Pro S",
     "lowMbps": 31.9,
@@ -158,6 +198,16 @@
     "configuration": "Not recorded",
     "settings": "Quality setting not recorded",
     "source": "ffprobe"
+  },
+  {
+    "id": "metadata-only-wolfbox-g900-pro",
+    "camera": "Wolfbox G900 Pro",
+    "lowMbps": 31.3,
+    "highMbps": 31.3,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Six approximately 60-second 4K30 front driving samples in docs/data/storage-evidence.json measure 31.194364-31.396454 Mbps on the video track, averaging about 31.28 Mbps. Quality setting not captured. Short interrupted clips are excluded.",
+    "source": "privacy-safe card scan summary"
   },
   {
     "id": "thinkware-u3000-pro",
@@ -188,5 +238,15 @@
     "configuration": "4 cameras; firmware 1.0_260911",
     "settings": "Low",
     "source": "Reviewed T340 front-camera measurements"
+  },
+  {
+    "id": "thinkware-u1000-plus",
+    "camera": "Thinkware U1000 Plus",
+    "lowMbps": 24.0,
+    "highMbps": 24.0,
+    "codec": "HEVC",
+    "configuration": "Not recorded",
+    "settings": "Quality setting not recorded",
+    "source": "ffprobe"
   }
 ]

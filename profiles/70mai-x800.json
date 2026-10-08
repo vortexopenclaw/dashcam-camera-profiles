@@ -123,6 +123,12 @@
   "technical_facts": [],
   "video_samples": [
     {
+      "channel": "F (front)", "mode": "driving", "codec": "HEVC",
+      "resolution": "3840x2160", "fps": "30", "bitrate": "~31.9 Mbps",
+      "container": "MP4", "source": "privacy-safe card scan summary",
+      "settings_note": "Two retained 60-second driving samples in docs/data/storage-evidence.json measure 31.878168-31.879156 Mbps on the video track. Quality setting not recorded. The older 31.9-60.3 Mbps range combines driving and parking evidence and is excluded from the driving-only comparison."
+    },
+    {
       "bitrate": "~31.9-60.3 Mbps",
       "channel": "F (front)",
       "codec": "HEVC",

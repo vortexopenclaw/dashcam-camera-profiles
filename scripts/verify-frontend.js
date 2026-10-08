@@ -31,8 +31,8 @@ assert.equal(formatBitrate("53.622752 Mbps"), "53.6 Mbps");
 assert.equal(formatBitrate("53.262752 Mbps", 0), "53 Mbps");
 for (const camera of cameras) assert(measured.some(item => item.camera.id === camera.id && item.role === "front") || unmeasuredCameras().some(item => item.id === camera.id));
 state.qualityBrand = "70mai";
-assert(unmeasuredCameras().some(camera => camera.id === "70mai-t800"));
-assert(unmeasuredCameras().some(camera => camera.id === "70mai-x800"));
+assert(measured.some(item => item.camera.id === "70mai-t800" && item.role === "front"));
+assert(measured.some(item => item.camera.id === "70mai-x800" && item.role === "front"));
 assert(!cameras.find(camera => camera.id === "escort-m2").video_samples.some(sample => sample.resolution === "3840x2160"));
 assert.equal(label("real_card_sampled"), "Card sampled");`);
 eval(`${source}
@@ -51,3 +51,12 @@ state.qualityFps = "30";
 assert(!qualityMatches().some(item => item.camera.id === "metadata-only-rove-r2-4k-dual"));
 assert(qualityMatches().some(item => item.camera.id === "rove-r2-4k-pro"));
 assert(drivingSamples().some(item => item.camera.id === "metadata-only-rove-r2-4k-dual"));`);
+eval(`${source}
+state.cameras = cameras;
+state.qualityResolution = "3840x2160";
+state.qualityFps = "30";
+for (const id of ["70mai-t800", "70mai-x800", "vantrue-e1-pro", "thinkware-u1000-plus", "thinkware-arc-800", "cansonic-ultradash-z4-standard", "metadata-only-wolfbox-g900-pro"]) {
+  assert(qualityMatches().some(item => item.camera.id === id), id);
+}
+assert(!drivingSamples().some(item => item.sample.mode.includes("parking")));
+assert(!qualityMatches().some(item => item.camera.id === "blackvue-dr970x-lte-plus"));`);

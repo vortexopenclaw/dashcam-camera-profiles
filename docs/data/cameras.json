@@ -1,5 +1,5 @@
 {
-  "camera_count": 68,
+  "camera_count": 69,
   "cameras": [
     {
       "$schema": "../schemas/profile.schema.json",
@@ -125,6 +125,17 @@
       "sources": [],
       "technical_facts": [],
       "video_samples": [
+        {
+          "bitrate": "~31.9 Mbps",
+          "channel": "F (front)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "resolution": "3840x2160",
+          "settings_note": "Two retained 60-second driving samples in docs/data/storage-evidence.json measure 31.878168-31.879156 Mbps on the video track. Quality setting not recorded. The older 31.9-60.3 Mbps range combines driving and parking evidence and is excluded from the driving-only comparison.",
+          "source": "privacy-safe card scan summary"
+        },
         {
           "bitrate": "~31.9-60.3 Mbps",
           "channel": "F (front)",
@@ -448,7 +459,19 @@
           "value": "46 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
         }
       ],
-      "video_samples": []
+      "video_samples": [
+        {
+          "bitrate": "~31.9 Mbps",
+          "channel": "F (front)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "resolution": "3840x2160",
+          "settings_note": "Three retained 60-second driving samples in docs/data/storage-evidence.json measure 31.875828-31.883654 Mbps on the video track. Quality setting not recorded. Interrupted clips, including a 0.233-second outlier, are excluded from the representative bitrate.",
+          "source": "privacy-safe card scan summary"
+        }
+      ]
     },
     {
       "$schema": "../schemas/profile.schema.json",
@@ -1042,7 +1065,32 @@
           "value": "R"
         }
       ],
-      "video_samples": []
+      "video_samples": [
+        {
+          "bitrate": "~61 Mbps",
+          "channel": "F (front)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "recording mode not retained",
+          "recording_configuration": "2-channel: front, rear; firmware 2.007",
+          "resolution": "3840x2160",
+          "settings_note": "Promoted from this profile's recorded front-channel observed_media facts. Quality setting not captured. This is the measured LTE Plus model, not a borrowed rate for the Box or non-LTE variants.",
+          "source": "reviewed card metadata"
+        },
+        {
+          "bitrate": "~11 Mbps",
+          "channel": "R (rear)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "recording mode not retained",
+          "recording_configuration": "2-channel: front, rear; firmware 2.007",
+          "resolution": "1920x1080",
+          "settings_note": "Promoted from this profile's recorded rear-channel observed_media facts. Quality setting not captured.",
+          "source": "reviewed card metadata"
+        }
+      ]
     },
     {
       "$schema": "../schemas/profile.schema.json",
@@ -2222,7 +2270,19 @@
           "value": "21 anonymous paired size/duration samples retained in docs/data/storage-evidence.json. Includes repeated scans and interrupted clips. Keep channel, format and recording-mode distinctions when deriving estimates."
         }
       ],
-      "video_samples": []
+      "video_samples": [
+        {
+          "bitrate": "31.1-41.0 Mbps",
+          "channel": "L (front)",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "resolution": "3840x2160",
+          "settings_note": "Retained 60-second primary-front driving samples in docs/data/storage-evidence.json measure 31.126250 and 40.957612 Mbps across separate scans. Quality settings were not captured; the range is not one preset or a verified Maximum. Interrupted and parking clips are excluded.",
+          "source": "privacy-safe card scan summary"
+        }
+      ]
     },
     {
       "$schema": "../schemas/profile.schema.json",
@@ -9846,10 +9906,58 @@
           "source": "app submission"
         }
       ]
+    },
+    {
+      "$schema": "../schemas/profile.schema.json",
+      "channel_variants": [],
+      "evidence": {
+        "confidence": "measured sample",
+        "level": "technical-sample",
+        "note": "Anonymous card measurements retained; complete folder and filename profile not yet reviewed.",
+        "status": "reference_only"
+      },
+      "filename_patterns": [],
+      "id": "metadata-only-wolfbox-g900-pro",
+      "manufacturer": "Wolfbox",
+      "model": "G900 Pro",
+      "notes": [],
+      "recording": {
+        "driving_folders": [],
+        "other_folders": [],
+        "parking_folders": [],
+        "parking_modes": []
+      },
+      "schema_version": "1.0",
+      "sources": [
+        {
+          "kind": "source",
+          "label": "Official G900 Pro product page",
+          "url": "https://wolfbox.com/products/wolfbox-2024-g900-pro-wifi-touch-screen-parking-monitoring-dash-cam-smart-mirror-with-starvis-678-sensor"
+        }
+      ],
+      "technical_facts": [
+        {
+          "label": "Front sensor",
+          "value": "Sony STARVIS 2 IMX678; manufacturer reference"
+        }
+      ],
+      "video_samples": [
+        {
+          "bitrate": "~31.3 Mbps",
+          "channel": "F (front)",
+          "codec": "HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "resolution": "3840x2160",
+          "settings_note": "Six approximately 60-second 4K30 front driving samples in docs/data/storage-evidence.json measure 31.194364-31.396454 Mbps on the video track, averaging about 31.28 Mbps. Quality setting not captured. Short interrupted clips are excluded.",
+          "source": "privacy-safe card scan summary"
+        }
+      ]
     }
   ],
   "generated_from": "profiles/*.json",
   "profile_count": 56,
   "schema_version": "1.0",
-  "technical_sample_only_count": 12
+  "technical_sample_only_count": 13
 }

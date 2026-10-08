@@ -29,7 +29,9 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
     for sample in samples:
         channel = sample['channel'].lower()
         primary_front = 'telephoto' not in channel and ('front' in channel or re.match(r'^(f|mf|nf)\b', channel))
-        if not (sample['mode'] == 'driving' and primary_front and sample['resolution'] == '3840x2160' and '30' in re.findall(r'\d+(?:\.\d+)?', sample['fps'])):
+        driving_only = 'driving' in sample['mode'].lower().split(' / ') and 'parking' not in sample['mode'].lower()
+        fps30 = any(abs(float(fps) - 30) < .15 for fps in re.findall(r'\d+(?:\.\d+)?', sample['fps']))
+        if not (driving_only and primary_front and sample['resolution'] == '3840x2160' and fps30):
             continue
         rates = [float(v) for v in re.findall(r'\d+(?:\.\d+)?', sample['bitrate'])]
         if not rates:
@@ -51,7 +53,7 @@ rows.sort(key=lambda r: (-r['highMbps'], r['camera']))
 assert rows, 'No measured 4K30 front-camera data'
 assert all(a['highMbps'] >= b['highMbps'] for a, b in zip(rows, rows[1:]))
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 12, 'svg.fonttype': 'none'})
-fig, axis = plt.subplots(figsize=(13, 12))
+fig, axis = plt.subplots(figsize=(13, max(12, len(rows) * .5 + 2)))
 fig.subplots_adjust(left=.31, right=.91, top=.87, bottom=.15)
 for i, row in enumerate(rows):
     highlight = row['id'] == 'viofo-t340'
@@ -91,6 +93,11 @@ def asset(extension):
     return f'assets/4k30/comparison.{extension}?v={digest}'
 
 SECTION = f'<section id="4k30-comparison"><h2>4K30 front-camera comparison</h2><a href="{asset("png")}"><img src="{asset("png")}" alt="Descending measured 4K30 front-camera video bitrates, highlighting T340 configurations" loading="lazy"></a><p>Measured driving video, not advertised maximums. Audio excluded. <a href="4k30-comparison.html">Settings, codecs and measurement notes</a> · <a href="{asset("png")}">PNG</a> · <a href="{asset("svg")}">SVG</a> · <a href="assets/4k30/measurements.csv">CSV</a></p></section>'
+unranked = json.loads((ROOT / 'docs/data/4k30-unranked.json').read_text())
+pending = '<section id="unranked"><h2>Additional 4K models not yet ranked</h2><p>These known models are not silently omitted or assigned borrowed values. They need a comparable front-camera, driving-only video bitrate at 4K30. This covers our reviewed library and research, not every dashcam on the market.</p><ul>' + ''.join(f'<li><strong>{html.escape(r["camera"])}</strong>: {html.escape(r["reason"])} <a href="{html.escape(r["source"])}">Evidence</a></li>' for r in unranked) + '</ul></section>'
+SECTION = SECTION.replace('</section>', '<p><a href="4k30-comparison.html#unranked">Additional 4K models still awaiting comparable measurements</a></p></section>')
 table = ''.join('<tr>' + ''.join(f'<td>{html.escape(str(value))}</td>' for value in [r['camera'], f"{r['lowMbps']:g}–{r['highMbps']:g}", r['codec'], r['configuration'], r['settings'], r['source']]) + '</tr>' for r in rows)
 (ROOT / 'docs/4k30-comparison.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>4K30 front-camera bitrate comparison</title><style>body{font:16px system-ui;max-width:1100px;margin:32px auto;padding:0 18px;line-height:1.6;color:#182733}img{width:100%;height:auto}.scroll{overflow:auto}table{border-collapse:collapse}td,th{padding:10px;text-align:left;border-bottom:1px solid #ddd}</style><a href="t340-comparison.html">T340 charts</a>' + SECTION + '<p>Includes cameras in the reviewed library with measured primary-front 3840×2160 at 30 fps driving bitrates, excluding known upscaled models such as the Rove R2-4K Dual. File dimensions alone do not prove native 4K capture. Models without those measurements and samples with an unidentified camera position are excluded. This is not a list of every 4K30 dashcam on the market.</p><p>Ranges are sorted by their upper observed endpoint, not a verified maximum-quality setting. T340 rows use the reviewed, configuration-specific front-camera measurements rather than mixed-quality scan ranges. Other quality settings remain unknown unless captured. Codecs, scenes, HDR and connected-camera counts differ; bitrate alone is not an image-quality ranking.</p><div class="scroll"><table><tr><th>Camera</th><th>Video Mbps</th><th>Codec</th><th>Configuration</th><th>Settings / notes</th><th>Measurement source</th></tr>' + table + '</table></div><p><a href="data/4k30-comparison.json">Reviewed data JSON</a> · <a href="./">Camera reference and sources</a></p></html>\n')
 print(f'Rendered 4K30 comparison: {len(rows)} rows, {len({r["id"] for r in rows})} cameras')
+page = ROOT / 'docs/4k30-comparison.html'
+page.write_text(page.read_text().replace('</html>', pending + '</html>'))

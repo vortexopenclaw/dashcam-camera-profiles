@@ -1,0 +1,20 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schema_version": "1.0",
+  "id": "metadata-only-wolfbox-g900-pro",
+  "manufacturer": "Wolfbox",
+  "model": "G900 Pro",
+  "evidence": {"level": "technical-sample", "status": "reference_only", "confidence": "measured sample", "note": "Anonymous card measurements retained; complete folder and filename profile not yet reviewed."},
+  "channel_variants": [],
+  "filename_patterns": [],
+  "notes": [],
+  "recording": {"driving_folders": [], "parking_folders": [], "other_folders": [], "parking_modes": []},
+  "technical_facts": [{"label": "Front sensor", "value": "Sony STARVIS 2 IMX678; manufacturer reference"}],
+  "sources": [{"kind": "source", "label": "Official G900 Pro product page", "url": "https://wolfbox.com/products/wolfbox-2024-g900-pro-wifi-touch-screen-parking-monitoring-dash-cam-smart-mirror-with-starvis-678-sensor"}],
+  "video_samples": [{
+    "channel": "F (front)", "mode": "driving", "codec": "HEVC",
+    "resolution": "3840x2160", "fps": "30", "bitrate": "~31.3 Mbps",
+    "container": "MP4", "source": "privacy-safe card scan summary",
+    "settings_note": "Six approximately 60-second 4K30 front driving samples in docs/data/storage-evidence.json measure 31.194364-31.396454 Mbps on the video track, averaging about 31.28 Mbps. Quality setting not captured. Short interrupted clips are excluded."
+  }]
+}

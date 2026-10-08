@@ -147,5 +147,20 @@
       "value": "R"
     }
   ],
-  "video_samples": []
+  "video_samples": [
+    {
+      "channel": "F (front)", "mode": "recording mode not retained", "codec": "HEVC",
+      "resolution": "3840x2160", "fps": "30", "bitrate": "~61 Mbps",
+      "container": "MP4", "source": "reviewed card metadata",
+      "recording_configuration": "2-channel: front, rear; firmware 2.007",
+      "settings_note": "Promoted from this profile's recorded front-channel observed_media facts. Quality setting not captured. This is the measured LTE Plus model, not a borrowed rate for the Box or non-LTE variants."
+    },
+    {
+      "channel": "R (rear)", "mode": "recording mode not retained", "codec": "HEVC",
+      "resolution": "1920x1080", "fps": "30", "bitrate": "~11 Mbps",
+      "container": "MP4", "source": "reviewed card metadata",
+      "recording_configuration": "2-channel: front, rear; firmware 2.007",
+      "settings_note": "Promoted from this profile's recorded rear-channel observed_media facts. Quality setting not captured."
+    }
+  ]
 }
