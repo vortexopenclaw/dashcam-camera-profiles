@@ -13,6 +13,7 @@ viofo-t340,VIOFO T340 • High,36.861637333333334,36.861637333333334,H.264,4 cam
 viofo-a229-pro,VIOFO A229 Pro,36.0,36.0,H.264,Not recorded,Quality setting not recorded,ffprobe
 viofo-a229-ultra,VIOFO A229 Ultra,36.0,36.0,H.264,Not recorded,Quality setting not recorded,ffprobe
 viofo-t340,VIOFO T340 • Normal,31.950723,31.950723,H.264,4 cameras; firmware 1.0_260911,Normal,Reviewed T340 front-camera measurements
+thinkware-arc-800,Thinkware ARC 800,31.9,31.9,H.264,"2-channel: front, rear","Quality setting and firmware not captured. The 2026-10-08 scan confirms nine 4K30 driving files, with sampled video bitrate 31.881750-31.959924 Mbps; two approximately full-minute samples measure 31.881750 and 31.901486 Mbps. The earlier 4K30-only group in docs/data/storage-evidence.json measured 31.899430-31.933762 Mbps. These video rates exclude padding, audio and metadata. Mixed-resolution/frame-rate and parking groups are excluded from the driving comparison.",privacy-safe card scan summary
 vantrue-n4-pro-s,Vantrue N4 Pro S,31.9,31.9,HEVC,Not recorded,Quality setting not recorded,ffprobe
 thinkware-u3000-pro,Thinkware U3000 Pro,29.99,30.11,HEVC,1CH front-only · firmware 1.00.06,Observed across 129 driving files.,privacy-safe card scan summary
 thinkware-u3000,Thinkware U3000,30.0,30.0,HEVC,Not recorded,Quality setting not recorded,ffprobe

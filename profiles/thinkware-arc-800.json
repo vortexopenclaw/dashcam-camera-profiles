@@ -141,5 +141,30 @@
       "value": "1920x1080 at 30 fps: 8.528418-8.528418 Mbps including padding, audio and metadata. Full-length driving clips only. See docs/data/storage-evidence.json. Quality setting unconfirmed."
     }
   ],
-  "video_samples": []
+  "video_samples": [
+    {
+      "channel": "F (front)",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "~31.9 Mbps",
+      "container": "MP4",
+      "source": "privacy-safe card scan summary",
+      "recording_configuration": "2-channel: front, rear",
+      "settings_note": "Quality setting and firmware not captured. The 2026-10-08 scan confirms nine 4K30 driving files, with sampled video bitrate 31.881750-31.959924 Mbps; two approximately full-minute samples measure 31.881750 and 31.901486 Mbps. The earlier 4K30-only group in docs/data/storage-evidence.json measured 31.899430-31.933762 Mbps. These video rates exclude padding, audio and metadata. Mixed-resolution/frame-rate and parking groups are excluded from the driving comparison."
+    },
+    {
+      "channel": "R (rear)",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "1920x1080",
+      "fps": "30",
+      "bitrate": "~8.0 Mbps",
+      "container": "MP4",
+      "source": "privacy-safe card scan summary",
+      "recording_configuration": "2-channel: front, rear",
+      "settings_note": "Quality setting and firmware not captured. The 2026-10-08 scan confirms nine 1080p30 rear driving files, with sampled video bitrate 7.998965-8.013681 Mbps and an approximately full-minute sample at 7.999991 Mbps. The earlier matching rear group in docs/data/storage-evidence.json measured 7.999859-8.000474 Mbps."
+    }
+  ]
 }

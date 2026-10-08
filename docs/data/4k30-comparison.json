@@ -140,6 +140,16 @@
     "source": "Reviewed T340 front-camera measurements"
   },
   {
+    "id": "thinkware-arc-800",
+    "camera": "Thinkware ARC 800",
+    "lowMbps": 31.9,
+    "highMbps": 31.9,
+    "codec": "H.264",
+    "configuration": "2-channel: front, rear",
+    "settings": "Quality setting and firmware not captured. The 2026-10-08 scan confirms nine 4K30 driving files, with sampled video bitrate 31.881750-31.959924 Mbps; two approximately full-minute samples measure 31.881750 and 31.901486 Mbps. The earlier 4K30-only group in docs/data/storage-evidence.json measured 31.899430-31.933762 Mbps. These video rates exclude padding, audio and metadata. Mixed-resolution/frame-rate and parking groups are excluded from the driving comparison.",
+    "source": "privacy-safe card scan summary"
+  },
+  {
     "id": "vantrue-n4-pro-s",
     "camera": "Vantrue N4 Pro S",
     "lowMbps": 31.9,
