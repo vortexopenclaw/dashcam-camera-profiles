@@ -188,15 +188,5 @@
     "configuration": "4 cameras; firmware 1.0_260911",
     "settings": "Low",
     "source": "Reviewed T340 front-camera measurements"
-  },
-  {
-    "id": "metadata-only-rove-r2-4k-dual",
-    "camera": "Rove R2-4K Dual",
-    "lowMbps": 20.0,
-    "highMbps": 20.0,
-    "codec": "HEVC",
-    "configuration": "Not recorded",
-    "settings": "Quality setting not recorded",
-    "source": "ffprobe"
   }
 ]

@@ -178,6 +178,7 @@ function qualityMatches() {
     .filter(item => !state.qualityBrand || displayManufacturer(item.camera.manufacturer) === state.qualityBrand)
     .filter(item => item.role === state.qualityChannel)
     .filter(item => !state.qualityResolution || item.sample.resolution === state.qualityResolution)
+    .filter(item => !(state.qualityResolution === "3840x2160" && item.role === "front" && item.camera.technical_facts.some(fact => fact.label === "Front capture classification" && fact.value === "upscaled_4k")))
     .filter(item => !state.qualityFps || fpsValues(item.sample.fps).includes(state.qualityFps))
     .filter(item => !state.qualityCompanionChannel || configurationCompanions(item).some(companion => cameraRole(companion.channel) === state.qualityCompanionChannel
       && (!state.qualityCompanionResolution || companion.resolution === state.qualityCompanionResolution)

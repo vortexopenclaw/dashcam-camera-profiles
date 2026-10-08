@@ -42,3 +42,12 @@ assert.deepEqual(configurationCompanions(normalFront).map(sample => cameraRole(s
 assert(configurationCompanions(normalFront).every(sample => configurationSetting(sample) === "Normal"));`);
 
 console.log("Frontend verification passed: bitrate parsing ignores resolution and frame-rate numbers");
+eval(`${source}
+state.cameras = cameras;
+state.qualityBrand = "";
+state.qualityChannel = "front";
+state.qualityResolution = "3840x2160";
+state.qualityFps = "30";
+assert(!qualityMatches().some(item => item.camera.id === "metadata-only-rove-r2-4k-dual"));
+assert(qualityMatches().some(item => item.camera.id === "rove-r2-4k-pro"));
+assert(drivingSamples().some(item => item.camera.id === "metadata-only-rove-r2-4k-dual"));`);

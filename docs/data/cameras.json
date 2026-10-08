@@ -3467,7 +3467,9 @@
       "id": "metadata-only-rove-r2-4k-dual",
       "manufacturer": "Rove",
       "model": "R2-4K Dual",
-      "notes": [],
+      "notes": [
+        "Not native 4K: the Sony STARVIS 2 IMX675 front sensor captures native 2.5K, upscaled to 3840x2160 output. ROVE confirms this on its product page. Excluded from native-4K comparisons; measured file dimensions are retained as output metadata, not optical capture capability. This is the R2-4K Dual, not the distinct R2-4K Dual Pro."
+      ],
       "recording": {
         "driving_folders": [],
         "other_folders": [],
@@ -3477,12 +3479,30 @@
       "schema_version": "1.0",
       "sources": [
         {
+          "kind": "source",
+          "label": "ROVE product page: IMX675 native 2.5K, upscaled 4K output",
+          "url": "https://www.rovedashcam.com/products/rove-r2-4k-dual-dash-cam-front-and-rear-starvis-2-sensor-free-128gb-card-included-5g-wifi-up-to-20mb-s-fastest-download-speed-with-app-4k-2160p-fhd-dash-camera-for-cars-3-ips-24h-parking-mode"
+        },
+        {
           "kind": "research",
           "label": "Video metadata reference",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/video-metadata-reference.md"
         }
       ],
-      "technical_facts": [],
+      "technical_facts": [
+        {
+          "label": "Front capture classification",
+          "value": "upscaled_4k"
+        },
+        {
+          "label": "Front sensor",
+          "value": "Sony STARVIS 2 IMX675"
+        },
+        {
+          "label": "Native front capture",
+          "value": "2.5K; 3840x2160 files are upscaled output, not native 4K"
+        }
+      ],
       "video_samples": [
         {
           "bitrate": "~20.0 Mbps",
@@ -3492,6 +3512,7 @@
           "fps": "30",
           "mode": "driving",
           "resolution": "3840x2160",
+          "settings_note": "Upscaled 4K output from native 2.5K IMX675 capture; not a native-4K dashcam.",
           "source": "ffprobe"
         },
         {
@@ -3502,6 +3523,7 @@
           "fps": "30",
           "mode": "protected / parking event",
           "resolution": "3840x2160",
+          "settings_note": "Upscaled 4K output from native 2.5K IMX675 capture; not a native-4K dashcam.",
           "source": "ffprobe"
         }
       ]
