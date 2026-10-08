@@ -2,6 +2,7 @@
 """Render reviewed, privacy-safe T340 measurements; requires matplotlib."""
 import csv
 import html
+import hashlib
 import json
 from pathlib import Path
 import matplotlib
@@ -30,7 +31,7 @@ def finish(fig, name):
     plt.close(fig)
 
 def per_camera(front):
-    rows = [*ROWS[:5], ROWS[6]]
+    rows = [*ROWS[:4], ROWS[6], ROWS[4]]
     fig, axes = plt.subplots(1,2,figsize=(13,6.6))
     fig.subplots_adjust(left=.16,right=.96,top=.79,bottom=.23,wspace=.37)
     title = 'Front camera' if front else 'Add-on cameras: rear / interior / telephoto'
@@ -116,7 +117,11 @@ with (OUT/'measurements.csv').open('w',newline='') as f:
         for c in r['channels']:
             writer.writerow({k:(c.get(k) if k in c else r.get(k)) for k in fields})
 
-images=''.join(f'<section><h2>{title}</h2><a href="assets/t340/{name}.png"><img src="assets/t340/{name}.png" alt="{title}" loading="lazy"></a><p><a href="assets/t340/{name}.svg">SVG</a> · <a href="assets/t340/{name}.png">PNG</a></p></section>' for name,title in [('front','Front camera'),('add-ons','Rear, interior and telephoto'),('combined','Combined storage and capacity'),('parking','Parking mode comparison')])
+def asset_url(name, extension):
+    version = hashlib.sha256((OUT / f'{name}.{extension}').read_bytes()).hexdigest()[:12]
+    return f'assets/t340/{name}.{extension}?v={version}'
+
+images=''.join(f'<section><h2>{title}</h2><a href="{asset_url(name, "png")}"><img src="{asset_url(name, "png")}" alt="{title}" loading="lazy"></a><p><a href="{asset_url(name, "svg")}">SVG</a> · <a href="{asset_url(name, "png")}">PNG</a></p></section>' for name,title in [('front','Front camera'),('add-ons','Rear, interior and telephoto'),('combined','Combined storage and capacity'),('parking','Parking mode comparison')])
 def display(value):
     return f'{value:.2f}' if value is not None else 'Pending'
 table=''.join('<tr>'+''.join(f'<td>{v}</td>' for v in [html.escape(r['setting']),r['channelCount'],display(r['combinedMBPerMinute']),display(r['combinedGBPerHour']),recorded_time(r['nominal256GBRecordedHours']),'Measured files'])+'</tr>' for r in combined_rows)
