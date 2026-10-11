@@ -12788,7 +12788,7 @@
       "technical_facts": [
         {
           "label": "63 paired size/duration and video-bitrate samples",
-          "value": "33 samples from the earlier Normal-driving/low-rate parking card scan and 30 from the later mixed High/Maximum/time-lapse/Auto Event scan; all retained in docs/data/storage-evidence.json with distinct setting labels and anonymous digests. Short interrupted clips remain evidence but are excluded from full-minute rates."
+          "value": "33 samples from the earlier Medium-driving (originally submitted as Normal; owner corrected)/low-rate parking card scan and 30 from the later mixed High/Maximum/time-lapse/Auto Event scan; all retained in docs/data/storage-evidence.json with distinct setting labels and anonymous digests. Short interrupted clips remain evidence but are excluded from full-minute rates."
         },
         {
           "label": "Parking current",
@@ -12949,7 +12949,7 @@
           "mode": "driving",
           "recording_configuration": "T330-family three-channel: front, interior, rear",
           "resolution": "3840x2160",
-          "settings_note": "normal driving; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "settings_note": "Medium driving (owner correction: originally submitted as Normal); 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
           "source": "app_submission"
         },
         {
@@ -12961,7 +12961,7 @@
           "mode": "driving",
           "recording_configuration": "T330-family three-channel: front, interior, rear",
           "resolution": "2560x1440",
-          "settings_note": "normal driving; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "settings_note": "Medium driving (owner correction: originally submitted as Normal); 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
           "source": "app_submission"
         },
         {
@@ -12973,7 +12973,7 @@
           "mode": "driving",
           "recording_configuration": "T330-family three-channel: front, interior, rear",
           "resolution": "2560x1440",
-          "settings_note": "normal driving; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "settings_note": "Medium driving (owner correction: originally submitted as Normal); 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
           "source": "app_submission"
         },
         {
