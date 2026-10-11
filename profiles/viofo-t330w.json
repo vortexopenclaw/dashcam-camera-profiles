@@ -361,11 +361,11 @@
       "codec": "H.264",
       "resolution": "3840x2160",
       "fps": "30",
-      "bitrate": "27.027896-27.032464 Mbps",
+      "bitrate": "27.027896-27.088368 Mbps",
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 3 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     },
     {
       "channel": "interior",
@@ -377,7 +377,7 @@
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 3 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     },
     {
       "channel": "rear",
@@ -385,11 +385,11 @@
       "codec": "H.264",
       "resolution": "2560x1440",
       "fps": "30",
-      "bitrate": "11.877744-11.881728 Mbps",
+      "bitrate": "11.877744-11.884869 Mbps",
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 3 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     },
     {
       "channel": "front",
@@ -397,11 +397,11 @@
       "codec": "H.264",
       "resolution": "3840x2160",
       "fps": "30",
-      "bitrate": "27.033052-27.036098 Mbps",
+      "bitrate": "27.032976-27.072760 Mbps",
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 3 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     },
     {
       "channel": "interior",
@@ -409,11 +409,11 @@
       "codec": "H.264",
       "resolution": "2560x1440",
       "fps": "30",
-      "bitrate": "11.878143-11.878327 Mbps",
+      "bitrate": "11.878143-11.888993 Mbps",
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 3 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     },
     {
       "channel": "rear",
@@ -421,11 +421,11 @@
       "codec": "H.264",
       "resolution": "2560x1440",
       "fps": "30",
-      "bitrate": "11.877573-11.877848 Mbps",
+      "bitrate": "11.877573-11.953873 Mbps",
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 3 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     },
     {
       "channel": "front",
@@ -433,11 +433,11 @@
       "codec": "H.264",
       "resolution": "3840x2160",
       "fps": "30",
-      "bitrate": "27.032052-27.079874 Mbps",
+      "bitrate": "27.030056-27.079874 Mbps",
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 2 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     },
     {
       "channel": "interior",
@@ -449,7 +449,7 @@
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 2 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     },
     {
       "channel": "rear",
@@ -457,17 +457,17 @@
       "codec": "H.264",
       "resolution": "2560x1440",
       "fps": "30",
-      "bitrate": "11.877646-12.100963 Mbps",
+      "bitrate": "11.876321-12.100963 Mbps",
       "container": "MP4",
       "source": "app_submission",
       "recording_configuration": "T330W three-channel: front, interior, rear",
-      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json."
+      "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json. Sustained 849-file rescan adds 2 distinct paired samples (earlier-file sampling is bounded); full-size loops unchanged. Parking Motion Detection is an app inference, not owner-confirmed capture mode."
     }
   ],
   "technical_facts": [
     {
-      "label": "84 paired size/duration and video-bitrate samples",
-      "value": "33 earlier Medium/low-rate, 30 mixed High/Maximum/1-fps/Auto Event, and 21 new Low-driving/10-fps time-lapse paired samples, retained separately by setting in docs/data/storage-evidence.json. Short clips remain evidence but are excluded from complete 60-second driving rates."
+      "label": "108 paired size/duration and video-bitrate samples",
+      "value": "33 earlier Medium/low-rate, 30 mixed High/Maximum/1-fps/Auto Event, 21 Low/10-fps first scan, and 24 additional distinct Low/10-fps samples from a longer 849-file scan. All retained by setting and anonymous source digest in docs/data/storage-evidence.json. Overlapping old videos can be re-sampled; counts are evidence records, not unique recorded clips."
     },
     {
       "label": "Parking current",
@@ -484,6 +484,7 @@
   "notes": [
     "All 36 files from the previous completed submission remain in the 60-file scan. The 24 added files are 18 driving MP4, three RO MP4 and three JPG. Do not combine multiple bitrate settings into one estimate.",
     "Reported absent audio on earlier time-lapse clips is owner observation, not a scan measurement.",
-    "The 108-file new scan retained all 60 files of the prior scan and added 48: 27 driving MP4, six Parking MP4, nine RO MP4, six JPG. Owner changed to Low driving and 10-fps time-lapse parking near 07:52. Two 60-second parking triplets in Parking and two in RO start three minutes apart; nominal playback 30 fps is consistent with 10-fps capture, but neither folder nor nominal fps proves capture cadence or RO trigger."
+    "The 108-file new scan retained all 60 files of the prior scan and added 48: 27 driving MP4, six Parking MP4, nine RO MP4, six JPG. Owner changed to Low driving and 10-fps time-lapse parking near 07:52. Two 60-second parking triplets in Parking and two in RO start three minutes apart; nominal playback 30 fps is consistent with 10-fps capture, but neither folder nor nominal fps proves capture cadence or RO trigger.",
+    "A later 849-file scan confirms sustained Low driving and 10-fps parking with three channels, sampled 30-fps playback, and impact-associated photos per owner. Its 120-file media-sample cap omits some old driving filenames, so full retention of the previous 108 cannot be proven by filename comparison. Parking Motion Detection is a generic app label and does not override the owner-selected time-lapse setting. RO trigger remains unknown."
   ]
 }
