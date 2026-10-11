@@ -12728,7 +12728,8 @@
       "model": "T330W",
       "notes": [
         "All 36 files from the previous completed submission remain in the 60-file scan. The 24 added files are 18 driving MP4, three RO MP4 and three JPG. Do not combine multiple bitrate settings into one estimate.",
-        "Reported absent audio on earlier time-lapse clips is owner observation, not a scan measurement."
+        "Reported absent audio on earlier time-lapse clips is owner observation, not a scan measurement.",
+        "The 108-file new scan retained all 60 files of the prior scan and added 48: 27 driving MP4, six Parking MP4, nine RO MP4, six JPG. Owner changed to Low driving and 10-fps time-lapse parking near 07:52. Two 60-second parking triplets in Parking and two in RO start three minutes apart; nominal playback 30 fps is consistent with 10-fps capture, but neither folder nor nominal fps proves capture cadence or RO trigger."
       ],
       "recording": {
         "driving_folders": [
@@ -12787,12 +12788,12 @@
       ],
       "technical_facts": [
         {
-          "label": "63 paired size/duration and video-bitrate samples",
-          "value": "33 samples from the earlier Medium-driving (originally submitted as Normal; owner corrected)/low-rate parking card scan and 30 from the later mixed High/Maximum/time-lapse/Auto Event scan; all retained in docs/data/storage-evidence.json with distinct setting labels and anonymous digests. Short interrupted clips remain evidence but are excluded from full-minute rates."
+          "label": "84 paired size/duration and video-bitrate samples",
+          "value": "33 earlier Medium/low-rate, 30 mixed High/Maximum/1-fps/Auto Event, and 21 new Low-driving/10-fps time-lapse paired samples, retained separately by setting in docs/data/storage-evidence.json. Short clips remain evidence but are excluded from complete 60-second driving rates."
         },
         {
           "label": "Parking current",
-          "value": "Owner reported 529 mA in low-bitrate parking, 588 mA average in 10-fps time-lapse parking (test started about 07:52 local on 2026-10-11), and 607 mA average in Auto Event Detection. These are distinct owner current observations, not scanner power measurements; video bitrate/file size for the 10-fps test has not yet been scanned. Supply voltage not provided; no wattage inferred."
+          "value": "Owner reported 529 mA in low-bitrate parking, 588 mA average in 10-fps time-lapse parking (test started about 07:52 local on 2026-10-11), and 607 mA average in Auto Event Detection. These are distinct owner current observations, not scanner power measurements. The later 108-file card scan sampled Low driving and 10-fps parking video bitrate/file sizes. Supply voltage not provided; no wattage inferred."
         }
       ],
       "video_samples": [
@@ -13046,6 +13047,114 @@
           "recording_configuration": "T330-family three-channel: front, interior, rear",
           "resolution": "2560x1440",
           "settings_note": "low rate ro unconfirmed; 3 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.027896-27.032464 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.878148-11.883181 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.877744-11.881728 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Low driving, new clips begin after 07:52; boundary clip excluded. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.033052-27.036098 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.878143-11.878327 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.877573-11.877848 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; this Parking-folder cohort is nominal 30-fps playback, not capture cadence. 2 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.032052-27.079874 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.877324-12.137834 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "11.877646-12.100963 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed 10-fps time-lapse parking setting; RO protected-folder subtype/trigger unconfirmed, short ending clips included. Nominal 30-fps playback. 3 paired size/duration/video-bitrate samples in docs/data/storage-evidence.json.",
           "source": "app_submission"
         }
       ]
