@@ -12792,7 +12792,7 @@
         },
         {
           "label": "Parking current",
-          "value": "Owner reported 529 mA low-bitrate parking and 607 mA average Auto Event Detection. Voltage not provided; no wattage inferred."
+          "value": "Owner reported 529 mA in low-bitrate parking, 588 mA average in 10-fps time-lapse parking (test started about 07:52 local on 2026-10-11), and 607 mA average in Auto Event Detection. These are distinct owner current observations, not scanner power measurements; video bitrate/file size for the 10-fps test has not yet been scanned. Supply voltage not provided; no wattage inferred."
         }
       ],
       "video_samples": [
