@@ -1,5 +1,5 @@
 {
-  "camera_count": 99,
+  "camera_count": 100,
   "cameras": [
     {
       "$schema": "../schemas/profile.schema.json",
@@ -12674,6 +12674,386 @@
       "$schema": "../schemas/profile.schema.json",
       "channel_variants": [
         {
+          "channels": 3,
+          "roles": [
+            "front",
+            "interior",
+            "rear"
+          ],
+          "validation": "app_submission_sampled",
+          "variant": "T330W rear configuration"
+        }
+      ],
+      "evidence": {
+        "confidence": "owner-labeled mixed-settings card scan; exact front OSD model stamp verified",
+        "level": "card-validated",
+        "note": "The user-configurable bottom-center VIOFO T330W OSD stamp identified actual-card footage. T330/T330W share a main-camera family; rear variants differ. Folders/filenames alone cannot disambiguate siblings.",
+        "status": "experimental"
+      },
+      "filename_patterns": [
+        {
+          "applies_to": [
+            "DCIM/Movie",
+            "DCIM/Movie/RO",
+            "DCIM/Movie/Parking"
+          ],
+          "channels": {
+            "F": "front",
+            "I": "interior",
+            "PF": "front",
+            "PI": "interior",
+            "PR": "rear",
+            "R": "rear"
+          },
+          "modes": {},
+          "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(F|I|R|PF|PI|PR)\\.MP4$",
+          "timestamp_format": "YYYY_MMDD_HHMMSS"
+        },
+        {
+          "applies_to": [
+            "DCIM/Photo"
+          ],
+          "channels": {
+            "PF": "front",
+            "PI": "interior",
+            "PR": "rear"
+          },
+          "modes": {},
+          "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)(PF|PI|PR)\\.JPG$",
+          "timestamp_format": "YYYY_MMDD_HHMMSS"
+        }
+      ],
+      "id": "viofo-t330w",
+      "manufacturer": "VIOFO",
+      "model": "T330W",
+      "notes": [
+        "All 36 files from the previous completed submission remain in the 60-file scan. The 24 added files are 18 driving MP4, three RO MP4 and three JPG. Do not combine multiple bitrate settings into one estimate.",
+        "Reported absent audio on earlier time-lapse clips is owner observation, not a scan measurement."
+      ],
+      "recording": {
+        "driving_folders": [
+          {
+            "importable": true,
+            "mode": "continuous",
+            "notes": [
+              "Both owner-reported High and Maximum bitrate cohorts coexist on this card."
+            ],
+            "path": "DCIM/Movie",
+            "validation": "card-validated"
+          }
+        ],
+        "other_folders": [
+          {
+            "importable": true,
+            "mode": "still_image",
+            "notes": [],
+            "path": "DCIM/Photo",
+            "validation": "card-validated"
+          }
+        ],
+        "parking_folders": [
+          {
+            "importable": true,
+            "mode": "protected",
+            "notes": [
+              "Contains owner-reported 1-fps Night Vision time-lapse and Auto Event Detection in separate time cohorts. RO alone does not establish either mode."
+            ],
+            "path": "DCIM/Movie/RO",
+            "validation": "card-validated"
+          },
+          {
+            "importable": true,
+            "mode": "parking",
+            "notes": [
+              "Observed in an earlier owner-labeled low-bitrate parking scan; not present in this mixed-settings scan."
+            ],
+            "path": "DCIM/Movie/Parking",
+            "validation": "card-validated"
+          }
+        ],
+        "parking_modes": [
+          "owner-reported 1-fps Night Vision time-lapse",
+          "owner-reported Auto Event Detection",
+          "owner-reported low-bitrate parking"
+        ]
+      },
+      "schema_version": "1.0",
+      "sources": [
+        {
+          "kind": "research",
+          "label": "Reviewed mixed-settings T330W card measurements",
+          "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-t330w.md"
+        }
+      ],
+      "technical_facts": [
+        {
+          "label": "63 paired size/duration and video-bitrate samples",
+          "value": "33 samples from the earlier Normal-driving/low-rate parking card scan and 30 from the later mixed High/Maximum/time-lapse/Auto Event scan; all retained in docs/data/storage-evidence.json with distinct setting labels and anonymous digests. Short interrupted clips remain evidence but are excluded from full-minute rates."
+        },
+        {
+          "label": "Parking current",
+          "value": "Owner reported 529 mA low-bitrate parking and 607 mA average Auto Event Detection. Voltage not provided; no wattage inferred."
+        }
+      ],
+      "video_samples": [
+        {
+          "bitrate": "36.780560-36.874132 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-reported High driving before approximately 19:25; mixed-card scan. 4 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "21.294788-21.300250 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-reported High driving before approximately 19:25; mixed-card scan. 4 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "21.293700-21.372390 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-reported High driving before approximately 19:25; mixed-card scan. 4 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "40.956664-40.966788 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-reported Maximum driving after approximately 19:25; mixed-card scan. 3 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "23.754904-23.788794 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-reported Maximum driving after approximately 19:25; mixed-card scan. 3 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "23.754254-23.822754 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-reported Maximum driving after approximately 19:25; mixed-card scan. 3 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "40.960332-40.961492 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-reported 1-fps Night Vision time-lapse parking before approximately 19:25; playback is 30 fps, not capture cadence. RO folder is generic Protected. 2 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "20.478652-20.478662 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-reported 1-fps Night Vision time-lapse parking before approximately 19:25; playback is 30 fps, not capture cadence. RO folder is generic Protected. 2 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "20.465122-20.477616 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-reported 1-fps Night Vision time-lapse parking before approximately 19:25; playback is 30 fps, not capture cadence. RO folder is generic Protected. 2 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "49.156032-49.156032 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-reported Auto Event Detection after approximately 19:25; one RO triplet. Folder and bitrate do not independently prove trigger. 1 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.031126-27.031126 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-reported Auto Event Detection after approximately 19:25; one RO triplet. Folder and bitrate do not independently prove trigger. 1 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "27.023146-27.023146 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330W three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-reported Auto Event Detection after approximately 19:25; one RO triplet. Folder and bitrate do not independently prove trigger. 1 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "31.947826-31.952090 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "normal driving; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "14.334801-14.356925 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "normal driving; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "14.334439-14.363250 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "normal driving; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094630-4.096767 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "low bitrate parking; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095199-4.095962 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "low bitrate parking; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.094958-4.096417 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "low bitrate parking; 4 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095839-4.096074 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "3840x2160",
+          "settings_note": "low rate ro unconfirmed; 3 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095721-4.095886 Mbps",
+          "channel": "interior",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "low rate ro unconfirmed; 3 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.095771-4.095891 Mbps",
+          "channel": "rear",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected",
+          "recording_configuration": "T330-family three-channel: front, interior, rear",
+          "resolution": "2560x1440",
+          "settings_note": "low rate ro unconfirmed; 3 paired size/duration samples in docs/data/storage-evidence.json. RO trigger unconfirmed; 30 fps is nominal playback.",
+          "source": "app_submission"
+        }
+      ]
+    },
+    {
+      "$schema": "../schemas/profile.schema.json",
+      "channel_variants": [
+        {
           "channels": 4,
           "roles": [
             "front",
@@ -14488,7 +14868,7 @@
     }
   ],
   "generated_from": "profiles/*.json",
-  "profile_count": 86,
+  "profile_count": 87,
   "schema_version": "1.0",
   "technical_sample_only_count": 13
 }
