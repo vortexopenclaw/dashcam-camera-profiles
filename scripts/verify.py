@@ -113,7 +113,8 @@ def main() -> None:
     frontend = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
     assert 'id="quality-brand"' in frontend
     assert 'id="quality-sort"' in frontend
-    print("Verification passed: canonical profiles, privacy, mode-specific video, folders, filenames, and manuals")
+    subprocess.run(["python3", str(ROOT / "scripts" / "verify-4k30-chart.py")], check=True)
+    print("Verification passed: canonical profiles, privacy, mode-specific video, folders, filenames, manuals, and T340 A/B comparison")
 
 
 if __name__ == "__main__":

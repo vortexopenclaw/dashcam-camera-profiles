@@ -91,13 +91,13 @@
   },
   {
     "id": "viofo-t340",
-    "camera": "VIOFO T340 \u2022 Maximum",
-    "lowMbps": 53.249696,
-    "highMbps": 53.249696,
+    "camera": "VIOFO T340 B \u2022 Maximum",
+    "lowMbps": 53.153592,
+    "highMbps": 53.253248,
     "codec": "H.264",
-    "configuration": "4 cameras; firmware 1.0_260911",
-    "settings": "Maximum",
-    "source": "Reviewed T340 front-camera measurements"
+    "configuration": "4 cameras; owner-installed unit; capture firmware not recorded",
+    "settings": "Maximum; separate physical-camera cohort",
+    "source": "Reviewed owner_installed_4ch 60-second driving/protected front samples, 2026-10-12"
   },
   {
     "id": "viofo-a129-pro",
@@ -128,6 +128,26 @@
     "configuration": "Not recorded",
     "settings": "Retained 60-second primary-front driving samples in docs/data/storage-evidence.json measure 31.126250 and 40.957612 Mbps across separate scans. Quality settings were not captured; the range is not one preset or a verified Maximum. Interrupted and parking clips are excluded.",
     "source": "privacy-safe card scan summary"
+  },
+  {
+    "id": "viofo-t330w",
+    "camera": "VIOFO T330W",
+    "lowMbps": 40.956664,
+    "highMbps": 40.966788,
+    "codec": "H.264",
+    "configuration": "T330W three-channel: front, interior, rear",
+    "settings": "Owner-reported Maximum driving after approximately 19:25; mixed-card scan. 3 paired sampled clips; sizes/durations in docs/data/storage-evidence.json.",
+    "source": "app_submission"
+  },
+  {
+    "id": "viofo-t340",
+    "camera": "VIOFO T340 A \u2022 Maximum",
+    "lowMbps": 40.958778,
+    "highMbps": 40.958778,
+    "codec": "H.264",
+    "configuration": "4 cameras; bench-tested unit; firmware 1.0_260911",
+    "settings": "Maximum; separate physical-camera cohort",
+    "source": "Reviewed bench_tested_4ch 60-second driving/protected front samples, 2026-10-12"
   },
   {
     "id": "rove-r2-4k-pro",
