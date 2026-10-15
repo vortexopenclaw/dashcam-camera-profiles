@@ -49,6 +49,24 @@ const dataPath = path.join(root, 'docs/data/parking-measurements.json');
 if (fs.existsSync(dataPath)) {
   const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
   assert.equal(data.version, 1);
+  assert.equal(data.measurements.length, 588);
+  const groups = ui.groupModels(data.measurements);
+  assert.equal(groups.flatMap(group => group.rows).length, 588);
+  assert.equal(new Set(groups.map(group => group.label)).size, groups.length);
+  for (const query of ['S1-QHD Infinite', 'S1-4K']) assert.equal(ui.groupModels(ui.filterRows(data.measurements, {...state, q: query})).length, 1);
+  for (const model of ['Elite 9', 'Elite 10']) {
+    const group = groups.find(group => group.label === `BlackVue ${model}`);
+    assert.equal(group.rows.length, 10);
+    assert.deepEqual(new Set(group.rows.map(row => row.connectivity)), new Set(['No LTE module', 'CM100G LTE connected']));
+    assert.ok(group.rows.every(row => !ui.cabinIR(row)));
+  }
+  for (const row of data.measurements) {
+    assert.ok(!/\b(PM|SM|AED|LBR|LFR|LPID|TLR|CD|MD)\b|H\.26|WiFi|\dCH|\bmonitoring\b|\bwaiting\b|\[|\]/i.test(ui.modeLabel(row)), ui.modeLabel(row));
+    if (row.installed_channels === 1 || (row.active_channels || []).every(view => ['front','rear'].includes(view))) assert.equal(ui.cabinIR(row), '');
+  }
+  assert.equal(ui.modeLabel({mode_name:'PM Collision Detection PS [monitoring]'}), 'Collision detection · Power Saving');
+  assert.equal(ui.modeLabel({mode_name:'PM Collision Detection QS [recording]'}), 'Collision detection · Quick Start');
+  assert.equal(ui.modeLabel({mode_name:'PM UNRESOLVED'}), 'Mode awaiting review');
   assert.ok(Array.isArray(data.measurements));
   assert.equal(new Set(data.measurements.map(row => row.id)).size, data.measurements.length, 'Stable measurement IDs must be unique');
   const visible = ui.filterRows(data.measurements, state);
@@ -86,6 +104,40 @@ with sync_playwright() as p:
     for width in [320,375,768,1440]:
         page.set_viewport_size({'width':width,'height':900})
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Actual page overflow at %s'%width
+    actual = json.load(open('docs/data/parking-measurements.json'))['measurements']
+    assert len(actual) == 588
+    for query in ['S1-QHD Infinite','S1-4K','S1-4K Infinite','Elite 9','Elite 10']:
+        page.locator('#filter-q').fill(query)
+        assert page.locator('.parking-model-entry').count() == 1, query
+        entry = page.locator('.parking-model-entry')
+        entry.locator('.parking-model-tests > summary').click()
+        text = entry.inner_text()
+        assert 'Hardware status unknown' not in text
+        assert 'IR: unknown' not in text
+        assert 'monitoring' not in text.lower()
+        assert not page.locator('#filter-tester').is_visible()
+        if query.startswith('Elite'):
+            assert 'No LTE module' in text and 'CM100G LTE connected' in text
+        names = page.locator('.parking-mode-name').all_text_contents()
+        assert all(not any(token in name for token in ['PM ', 'SM ', '[', 'WiFi', 'H.264', 'H.265']) for name in names)
+    page.goto(url+'?state=all&superseded=1&provisional=1')
+    page.wait_for_selector('.parking-model-entry')
+    assert page.locator('.parking-measurement').count() == 588
+    assert page.locator('.parking-model-entry').count() == 49
+    page.locator('.parking-model-tests').evaluate_all('(items) => items.forEach(item => item.open = true)')
+    for width in [320,375,768,1440]:
+        page.set_viewport_size({'width':width,'height':900})
+        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Expanded actual setup overflow at %s'%width
+    picked = next(row for row in actual if row['model']=='S1-QHD Infinite')
+    page.goto(url+'?q=NO+MATCH&compare='+picked['id'])
+    page.wait_for_selector('.comparison-card')
+    assert picked['id'] in page.url
+    assert 'Outside current filters' in page.locator('.comparison-card').inner_text()
+    page.reload()
+    page.wait_for_selector('.comparison-card')
+    assert 'Vueroid S1-QHD Infinite' in page.locator('.comparison-card').inner_text()
+    page.goto(url)
+    page.wait_for_selector('.parking-model-entry')
     # Force missing-data and malformed-data paths regardless of deployment state.
     page.route('**/data/parking-measurements.json', lambda route: route.fulfill(status=404,body='Not found'))
     page.reload()
@@ -100,7 +152,7 @@ with sync_playwright() as p:
     page.route('**/data/parking-measurements.json', lambda route: route.fulfill(json=data))
     for invalid_category in ['bad','toString','__proto__']:
         page.goto(url+'?category='+invalid_category+'&state=invalid&sort=invalid')
-        page.wait_for_selector('[data-id="fixture-0"]')
+        page.wait_for_selector('[data-id="fixture-0"]', state='attached')
         assert page.locator('#filter-category').input_value()==''
         assert page.locator('#filter-state').input_value()=='parked'
         assert page.locator('#filter-sort').input_value()=='watts'
@@ -111,13 +163,16 @@ with sync_playwright() as p:
     assert page.locator('#filter-brand').input_value()=='RetiredBrand'
     assert page.locator('#filter-channels').input_value()=='99'
     assert page.locator('#filter-tester').input_value()=='RetiredTester'
+    assert 'RetiredTester' in page.locator('#legacy-tester-note').inner_text()
+    assert not page.locator('#filter-tester').is_visible()
     page.reload()
     page.get_by_text('Measurement unavailable',exact=True).wait_for()
     page.locator('[data-remove="stale-id"]').click()
     assert page.locator('.comparison-card').count()==0
     page.goto(url)
-    page.wait_for_selector('[data-id="fixture-0"]')
+    page.wait_for_selector('[data-id="fixture-0"]', state='attached')
     assert page.locator('.parking-measurement').count()==8
+    page.locator('.parking-model-tests').evaluate_all('(items) => items.forEach(item => item.open = true)')
     assert not page.locator('[data-id="fixture-review"]').count()
     assert page.locator('.parking-track.unknown').count()==1
     assert page.locator('[data-id="fixture-unknown"] .parking-track span').count()==0
@@ -125,10 +180,11 @@ with sync_playwright() as p:
     assert '100–120 mA (range)' in page.locator('[data-id="fixture-unknown"] .parking-row').inner_text()
     assert page.locator('[data-id="fixture-1"] .parking-watts').inner_text()=='Approximately 1.23 W'
     assert page.locator('[data-id="fixture-2"] .parking-watts').inner_text()=='1.23456 W'
-    assert page.locator('.parking-measurement').last.get_attribute('data-id')=='fixture-unknown'
+    assert page.locator('.parking-model-entry').filter(has=page.locator('[data-id="fixture-unknown"]')).locator('.parking-measurement').last.get_attribute('data-id')=='fixture-unknown'
     page.locator('#filter-sort').select_option('wake')
     assert page.locator('.parking-measurement').first.get_attribute('data-id')=='fixture-3'
     page.locator('#filter-sort').select_option('watts')
+    page.locator('.parking-model-tests').evaluate_all('(items) => items.forEach(item => item.open = true)')
     summary = page.locator('[data-id="fixture-0"] .parking-row').inner_text()
     for text in ['CM100G LTE connected','Battery-side hardwire input','3–5 s (range) · rear camera']:
         assert text in summary, text
@@ -143,13 +199,15 @@ with sync_playwright() as p:
     assert page.locator('.comparison-card').count()==4
     assert 'compare=fixture-0' in page.url
     card = page.locator('.comparison-card').first
-    assert card.locator('details').count()==0
-    for label, value in [('Installed channels','2'),('Active views','front, rear'),('Firmware','test'),('Interior IR','off'),('Connectivity','CM100G LTE connected'),('Current at stated voltage','100 mA / 12.5 V'),('Power path / measured side','Battery-side hardwire input'),('Impact to first frame / camera scope','3–5 s (range) · rear camera'),('Impact pre-event buffer','5 s'),('Motion pre-event buffer','10 s'),('Tester / source date','Test only / Not reported')]:
+    assert card.locator('details').count()==1
+    card.locator('summary').click()
+    for label, value in [('Channels','2 channels'),('Active views','front, rear'),('Firmware','test'),('Connectivity','CM100G LTE connected'),('Current at stated voltage','100 mA / 12.5 V'),('Power adapter','Battery-side hardwire input'),('Impact to first frame / camera scope','3–5 s (range) · rear camera'),('Impact pre-event buffer','5 s'),('Motion pre-event buffer','10 s'),('Tester','Test only')]:
         fact = card.locator('.parking-facts > div').filter(has=page.get_by_text(label,exact=True))
         assert fact.locator('dd').is_visible() and fact.locator('dd').inner_text()==value, label
     assert 'END OF SOURCE NOTE' in card.inner_text()
     assert card.get_by_text('Pre-event buffer (source unqualified)',exact=True).count()==0
     generic = page.locator('.comparison-card').nth(1).locator('.parking-facts > div').filter(has=page.get_by_text('Pre-event buffer (source unqualified)',exact=True))
+    page.locator('.comparison-card').nth(1).locator('summary').click()
     assert generic.locator('dd').inner_text()=='10 s'
     page.locator('#filter-q').fill('NO MATCH')
     assert page.locator('.parking-measurement').count()==0
@@ -161,6 +219,7 @@ with sync_playwright() as p:
     assert page.locator('.comparison-card').count()==4
     page.locator('#filter-provisional').check()
     assert page.locator('[data-id="fixture-review"]').count()==1
+    page.locator('.parking-model-tests').evaluate_all('(items) => items.forEach(item => item.open = true)')
     assert 'Provisional' in page.locator('[data-id="fixture-review"]').inner_text()
     page.locator('#filter-state').select_option('event-recording')
     assert page.locator('.parking-measurement').count()==1
@@ -181,6 +240,7 @@ with sync_playwright() as p:
     assert exported['fixture-0']['wake_seconds']==''
     assert exported['fixture-0']['wake_seconds_min']=='3'
     page.set_viewport_size({'width':375,'height':900})
+    page.locator('.parking-model-tests').evaluate_all('(items) => items.forEach(item => item.open = true)')
     page.locator('.parking-measurement details').first.locator('summary').click()
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Expanded details overflow'
     for width in [320,375,768,1440]:

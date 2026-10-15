@@ -6,8 +6,8 @@
   <meta name="description" content="Compare sourced dashcam parking-mode power measurements by recording functionality, channels, tester, and configuration. Share a comparison without an account.">
   <title>Parking-mode power comparison | Dashcam Camera Profiles</title>
   <link rel="stylesheet" href="assets/styles.css?v=20261008">
-  <link rel="stylesheet" href="assets/parking.css?v=1">
-  <script src="assets/parking.js?v=1" defer></script>
+  <link rel="stylesheet" href="assets/parking.css?v=2-readability">
+  <script src="assets/parking.js?v=2-readability" defer></script>
 </head>
 <body class="parking-page">
   <a class="skip-link" href="#parking-filters">Skip to comparison filters</a>
@@ -17,39 +17,38 @@
   </header>
   <main>
     <section class="parking-hero">
-      <p class="eyebrow">PARKED, NOT ALL RECORDING THE SAME WAY</p>
-      <h1>Parking power.<br>Recording tradeoffs.</h1>
-      <p class="hero-copy">Compare measured power, then check what the camera actually captures. Choose matching functions and configurations, not just the shortest bar.</p>
+      <h1>Compare dashcam parking modes</h1>
+      <p class="hero-copy">Compare power draw and startup times for different cameras and parking modes.</p>
       <div class="parking-actions"><a class="parking-button primary" href="#parking-filters">Explore measurements ↓</a><a class="parking-button" href="#how-it-works">Understand the modes</a></div>
-      <p id="dataset-meta" class="parking-muted">Loading source-backed measurements…</p>
+      <p id="dataset-meta" class="parking-muted">Loading measurements…</p>
     </section>
 
     <section id="how-it-works" class="methodology" aria-labelledby="modes-title">
-      <div class="explorer-heading"><p class="eyebrow">FUNCTION, NOT MARKETING NAME</p><h2 id="modes-title">What stays awake matters.</h2><p>“Low power” and “parking mode” do not describe one recording behavior. The categories below describe functionality; each measurement retains the source’s mode name.</p></div>
+      <div class="explorer-heading"><h2 id="modes-title">Parking modes explained</h2><p>Some modes save video after an event. Others record continuously or wait in a low-power state until they're triggered.</p></div>
       <div class="parking-mode-grid">
-        <article><span class="mode-dot sleep"></span><h3>Impact-triggered sleep</h3><p>Wakes after an impact. No pre-event recording while asleep; wake delay can miss the incident. Low standby power is a different tradeoff, not a win over buffered recording.</p></article>
-        <article><span class="mode-dot event"></span><h3>Event detection</h3><p>Buffered event modes retain footage before a trigger. Unbuffered event modes start after detection. Monitoring and active event recording can draw different power.</p></article>
-        <article><span class="mode-dot continuous"></span><h3>Ongoing recording</h3><p>Time-lapse captures frames throughout the parked period. Low-bitrate modes record continuously at reduced bitrate. Neither is asleep waiting for an impact.</p></article>
+        <article><span class="mode-dot sleep"></span><h3>Non-buffered parking recording</h3><p>Recording starts after an event, so there's no video from before the trigger. In impact-detection modes, the G-sensor can wake the camera to start recording. These modes often use less power, but not always.</p></article>
+        <article><span class="mode-dot event"></span><h3>Buffered parking recording</h3><p>The camera continuously watches for motion or impacts and saves video from before and after the event. Modes can detect motion, impacts, or both.</p></article>
+        <article><span class="mode-dot continuous"></span><h3>Continuous recording</h3><p>Time-lapse creates sped-up video without audio. Low-bitrate recording saves continuous, normal-speed video with audio, sometimes at a reduced frame rate.</p></article>
       </div>
-      <p class="parking-muted">Radar can detect an approaching subject; hybrid behavior depends on the configuration. Check the source for buffering and trigger behavior. Unknowns stay unknown.</p>
+      <p class="parking-muted">Radar can wake recording when something approaches. Hybrid parking modes switch or combine recording modes.</p>
     </section>
 
     <section class="parking-explorer" aria-labelledby="measurements-title">
-      <div class="explorer-heading"><p class="eyebrow">SOURCE-BACKED OBSERVATIONS</p><h2 id="measurements-title">Compare a configuration.</h2><p>Watts are primary. Installed channels are not necessarily active views. Firmware, IR, adapters, and test conditions can change the result. This is not a best-camera ranking.</p></div>
+      <div class="explorer-heading"><h2 id="measurements-title">Choose cameras</h2><p>Choose cameras and a parking mode to compare their power draw and startup times.</p></div>
       <form id="parking-filters" class="parking-filters" aria-label="Filter measurements">
         <label class="search-field">Find a model<input id="filter-q" name="q" type="search" placeholder="Search brand or model" autocomplete="off"></label>
         <label>Brand<select id="filter-brand" name="brand"><option value="">All brands</option></select></label>
         <label>Function<select id="filter-category" name="category"><option value="">All functions (not a ranking)</option></select></label>
-        <label>Installed channels<select id="filter-channels" name="channels"><option value="">Any channel count</option></select></label>
+        <label>Channels<select id="filter-channels" name="channels"><option value="">Any channel count</option></select></label>
         <label>Tester<select id="filter-tester" name="tester"><option value="">All testers</option></select></label>
-        <label>Measurement state<select id="filter-state" name="state"><option value="parked">Parked, excluding event recording</option><option value="monitoring">Monitoring</option><option value="time-lapse">Time-lapse recording</option><option value="continuous">Continuous recording</option><option value="event-recording">Event recording only</option><option value="all">All states, including event recording</option></select></label>
+        <label>Power measurement<select id="filter-state" name="state"><option value="parked">Idle and continuous recording</option><option value="monitoring">Idle power draw</option><option value="time-lapse">Time-lapse recording</option><option value="continuous">Continuous recording</option><option value="event-recording">Recording an event</option><option value="all">All measurements</option></select></label>
         <label>Sort within each function<select id="filter-sort" name="sort"><option value="watts">Watts, low to high (unknown last)</option><option value="model">Brand and model</option><option value="wake">Wake to first frame (unknown last)</option></select></label>
         <div class="parking-toggles"><label><input id="filter-prototype" name="prototype" type="checkbox" checked> Include prototypes</label><label><input id="filter-superseded" name="superseded" type="checkbox"> Include superseded results</label></div>
         <div class="parking-actions"><button type="reset">Reset filters</button><button type="button" id="copy-link">Copy comparison link</button><button type="button" id="download-csv" disabled>Download filtered CSV</button></div>
       </form>
-      <p class="parking-muted"><strong>Power draw, not a protection ranking.</strong> Prefer same-function filters. Bars use one shared scale across visible results and are grouped by function, never ranked across functions. Unknown watts have no bar. Event recordings are hidden by default. No runtime extrapolation is made for sleeping cameras. Wake time means impact to first recorded frame only when the source establishes that method; startup or transition times without that method are not treated as equivalent. Read each source caveat.</p>
+      <p class="parking-muted">Compare the same parking mode and camera setup. Startup time means impact to the first recorded frame when the test documents that timing. Other startup measurements are labeled separately.</p>
       <p id="action-status" role="status"></p>
-      <section id="comparison" class="parking-comparison" aria-labelledby="comparison-title"><div class="parking-section-head"><h3 id="comparison-title">Your comparison <span id="selection-count">0 / 4</span></h3><button id="clear-comparison" type="button" disabled>Clear selection</button></div><p class="parking-muted">Select up to four measurements below. Selections remain when you change filters and travel with the shared link.</p><div id="comparison-cards" class="comparison-cards"></div></section>
+      <section id="comparison" class="parking-comparison" aria-labelledby="comparison-title"><div class="parking-section-head"><h3 id="comparison-title">Compare different models <span id="selection-count">0 / 4</span></h3><button id="clear-comparison" type="button" disabled>Clear selection</button></div><p class="parking-muted">Select up to four measurements below. Selections remain when you change filters and travel with the shared link.</p><div id="comparison-cards" class="comparison-cards"></div></section>
       <p id="result-count" role="status">Loading measurements…</p>
       <div id="parking-results" aria-busy="true"><p class="parking-empty">Loading measurements and source index…</p></div>
       <noscript><p class="parking-empty">Enable JavaScript to filter and compare measurements. You can also <a href="data/parking-measurements.json">open the source dataset</a>.</p></noscript>
