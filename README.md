@@ -22,6 +22,12 @@ python3 -m http.server 8000 --directory docs
 Then open `http://localhost:8000`. The browser has no account system,
 analytics, cookies, or runtime dependencies.
 
+## Parking-mode power comparison
+
+[Compare parking-mode power draw](https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html) across functional categories, not just brand-specific mode names. Filter by camera, configuration, tester, and operating state; share a filtered or selected comparison, and download JSON/CSV with source attribution.
+
+Measurements from Vortex Radar, rcg530, and manufacturer sources remain separate. See [the parking-data methodology](parking/README.md) for terminology, test boundaries, and the canonical data format. Indexed sources awaiting confident extraction are visible rather than treated as measurements.
+
 ## Methodology and evidence
 
 Each profile keeps its evidence boundary visible. A `card-validated` claim is

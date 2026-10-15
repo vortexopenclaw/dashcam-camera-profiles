@@ -1,0 +1,1079 @@
+[
+  {
+    "id": "rcg530-544787",
+    "post_id": "544787",
+    "title": "Blackvue DR900X-2CH + 4G LTE power draw",
+    "url": "https://dashcamtalk.com/forum/threads/blackvue-dr900x-2ch-4g-lte-power-draw.44507/#post-544787",
+    "tester": "rcg530",
+    "date": "2021-04-21",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/dr900x_cm100lte_parking-webp.56343/",
+      "https://dashcamtalk.com/forum/attachments/dr900x_cm100lte_power_monitoring-webp.56344/"
+    ],
+    "status": "extracted",
+    "notes": "Prose parking average/range extracted; original photos inspected. No measurement voltage assigned from separate cutoff/setup snapshots.",
+    "measurement_count": 1
+  },
+  {
+    "id": "rcg530-564682",
+    "post_id": "564682",
+    "title": "VIOFO T130 Review",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-t130-review.45945/#post-564682",
+    "tester": "rcg530",
+    "date": "2021-12-07",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/t130_power_draw_tests-webp.59237/",
+      "https://dashcamtalk.com/forum/attachments/hk4_low_voltage_cutoff_tests-webp.59238/"
+    ],
+    "status": "extracted",
+    "notes": "Original initial T130 spreadsheet verified: six parking configurations, each retained as min/max because no average or explicit measurement voltage. Following post identifies IR On and reruns tests; initial independent results retained, not silently replaced.",
+    "measurement_count": 6
+  },
+  {
+    "id": "rcg530-564861",
+    "post_id": "564861",
+    "title": "VIOFO T130 Review",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-t130-review.45945/page-2#post-564861",
+    "tester": "rcg530",
+    "date": "2021-12-08",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/t130_power_draw_tests_extended-webp.59255/"
+    ],
+    "status": "extracted",
+    "notes": "Original rerun spreadsheet verified: 10 parking mode/power-path combinations × IR Auto(effectively off)/On; min/max retained separately. IR-On column is tester-calculated Off+52mA. Voltage 12.6V explicit; watts absent, left null.",
+    "measurement_count": 20
+  },
+  {
+    "id": "rcg530-574460",
+    "post_id": "574460",
+    "title": "A119 Mini - Review / Testing",
+    "url": "https://dashcamtalk.com/forum/threads/a119-mini-review-testing.46969/#post-574460",
+    "tester": "rcg530",
+    "date": "2022-05-19",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_a119mini_power_consumption_20220519-webp.60567/"
+    ],
+    "status": "extracted",
+    "notes": "Preproduction A119 Mini V1.0 build20220516 original spreadsheet verified; four active parking configurations retained as min/max endpoints. Production series in 577541 is separate hardware/firmware, not an explicit correction.",
+    "measurement_count": 4
+  },
+  {
+    "id": "rcg530-577541",
+    "post_id": "577541",
+    "title": "A119 Mini - Review / Testing",
+    "url": "https://dashcamtalk.com/forum/threads/a119-mini-review-testing.46969/page-3#post-577541",
+    "tester": "rcg530",
+    "date": "2022-07-10",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/a119_mini_power_consumption_20220707-webp.60998/"
+    ],
+    "status": "extracted",
+    "notes": "OCR and original measurement spreadsheet verified; runtime estimates and normal/off/cutoff rows excluded.",
+    "measurement_count": 4
+  },
+  {
+    "id": "rcg530-578466",
+    "post_id": "578466",
+    "title": "Vantrue E1 / E1 Lite - Unboxing, Initial Testing",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-e1-e1-lite-unboxing-initial-testing.47359/#post-578466",
+    "tester": "rcg530",
+    "date": "2022-07-26",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1659595412264-webp.61279/",
+      "https://dashcamtalk.com/forum/attachments/1658886458842-webp.61203/",
+      "https://dashcamtalk.com/forum/attachments/1658268619319-png.61127/"
+    ],
+    "status": "extracted",
+    "notes": "OCR and original measurement spreadsheet verified; runtime estimates and normal/off/cutoff rows excluded.",
+    "measurement_count": 6
+  },
+  {
+    "id": "rcg530-579211",
+    "post_id": "579211",
+    "title": "Vantrue E1 / E1 Lite - Unboxing, Initial Testing",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-e1-e1-lite-unboxing-initial-testing.47359/page-2#post-579211",
+    "tester": "rcg530",
+    "date": "2022-08-11",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/vantrue_e1_power_consumption_ebh091-webp.61328/"
+    ],
+    "status": "extracted",
+    "notes": "OCR and original measurement spreadsheet verified; runtime estimates and normal/off/cutoff rows excluded.",
+    "measurement_count": 6
+  },
+  {
+    "id": "rcg530-583127",
+    "post_id": "583127",
+    "title": "VIOFO A139 Pro - Testing / Review Info",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a139-pro-testing-review-info.47912/#post-583127",
+    "tester": "rcg530",
+    "date": "2022-11-04",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_a139_pro_power_consumption_3ch_10_1105_20221105-webp.62535/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a139_pro_3ch_runtimes-webp.62290/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a139_pro_power_consumption_2ch_fi_10_1105_20221105-webp.62534/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a139_pro_2ch_fi_runtimes-webp.62292/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a139_pro_power_consumption_2ch_fr_10_1105_20221105-webp.62293/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a139_pro_2ch_fr_runtimes-webp.62294/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a139_pro_power_consumption_1ch_10_1105_20221105-webp.62298/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a139_pro_1ch_runtimes-webp.62299/",
+      "https://dashcamtalk.com/forum/attachments/1667634219685-webp.62282/"
+    ],
+    "status": "extracted",
+    "notes": "All four original configuration spreadsheets verified: 3CH F+I+R, 2CH F+I, 2CH F+R, 1CH F, four parking states each. Repeated runtime charts excluded. Original post updated with V1.0_1105; retains original post date.",
+    "measurement_count": 16
+  },
+  {
+    "id": "rcg530-585058",
+    "post_id": "585058",
+    "title": "Vantrue E1 / E1 Lite - Unboxing, Initial Testing",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-e1-e1-lite-unboxing-initial-testing.47359/page-4#post-585058",
+    "tester": "rcg530",
+    "date": "2022-12-05",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1670263895569-webp.62874/",
+      "https://dashcamtalk.com/forum/attachments/1670264538800-webp.62876/"
+    ],
+    "status": "extracted",
+    "notes": "OCR and original measurement spreadsheet verified; runtime estimates and normal/off/cutoff rows excluded.",
+    "measurement_count": 6
+  },
+  {
+    "id": "rcg530-585550",
+    "post_id": "585550",
+    "title": "VIOFO A139 Pro - Testing / Review Info",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a139-pro-testing-review-info.47912/page-11#post-585550",
+    "tester": "rcg530",
+    "date": "2022-12-12",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1670871480698-webp.63081/",
+      "https://dashcamtalk.com/forum/attachments/1670871518634-webp.63082/",
+      "https://dashcamtalk.com/forum/attachments/1670871892111-webp.63083/"
+    ],
+    "status": "duplicate",
+    "notes": "Repeats A139 Pro V1.0_1105 front/rear and front/interior charts from 583127; IR power comparison and combined runtime estimate add no new absolute measurements. Original full source retained.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-589065",
+    "post_id": "589065",
+    "title": "DR970X-2CH Testing & Review RCG",
+    "url": "https://dashcamtalk.com/forum/threads/dr970x-2ch-testing-review-rcg.48425/#post-589065",
+    "tester": "rcg530",
+    "date": "2023-02-10",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_power_consumption_20230308_1154-webp.64405/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_parking_time_estimates_20230308_1154-webp.64404/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_v1-004_power_consumption_20230311_1134-webp.64444/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_v1-004_parking_time_estimates_20230311_1134-webp.64443/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_cm100glte_na_power_consumption_20230309_1738-webp.64421/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_cm100glte_na_parking_time_estimates_20230309_1738-webp.64420/"
+    ],
+    "status": "extracted",
+    "notes": "OCR and original measurement spreadsheet verified; runtime estimates and normal/off/cutoff rows excluded.",
+    "measurement_count": 9
+  },
+  {
+    "id": "rcg530-590152",
+    "post_id": "590152",
+    "title": "VIOFO WM1 Test & Review RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-wm1-test-review-rcg.48545/#post-590152",
+    "tester": "rcg530",
+    "date": "2023-03-02",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_wm1_power_consumption_10_0421-webp.65064/",
+      "https://dashcamtalk.com/forum/attachments/viofo_wm1_parking_mode_times_10_0421-webp.65065/"
+    ],
+    "status": "extracted",
+    "notes": "Original post edited: attached spreadsheet is production WM1 with test firmware V1.0_0421 (10-May-2023 update), not original V1.0_0206. Date field retains post date. All four active parking rows verified.",
+    "measurement_count": 4
+  },
+  {
+    "id": "rcg530-590300",
+    "post_id": "590300",
+    "title": "FineVu GX1000 Test / Review RCG",
+    "url": "https://dashcamtalk.com/forum/threads/finevu-gx1000-test-review-rcg.48561/#post-590300",
+    "tester": "rcg530",
+    "date": "2023-03-06",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1717430325275-webp.72693/",
+      "https://dashcamtalk.com/forum/attachments/1717430493096-webp.72694/"
+    ],
+    "status": "extracted",
+    "notes": "12 PR parking rows verified in original spreadsheet, excluding DR driving rows. Firmware 1.00.002. Source says measurements added 03-Jun-2024 despite original post date 2023-03-06. Runtime estimates excluded.",
+    "measurement_count": 12
+  },
+  {
+    "id": "rcg530-592640",
+    "post_id": "592640",
+    "title": "VIOFO A139 Pro - Testing / Review Info",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a139-pro-testing-review-info.47912/page-21#post-592640",
+    "tester": "rcg530",
+    "date": "2023-04-25",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1682439697857-webp.64822/",
+      "https://dashcamtalk.com/forum/attachments/1682439721983-webp.64823/",
+      "https://dashcamtalk.com/forum/attachments/1682439733873-webp.64824/",
+      "https://dashcamtalk.com/forum/attachments/1682439755003-webp.64825/"
+    ],
+    "status": "extracted",
+    "notes": "Prose gives one-hour 3fps time-lapse min/max/avg; original instrument collage inspected, showing12.60V and instantaneous Fluke214–215mA. Min/max/avg remain attributed to prose, not inferred from photos; displayed prose2.70W preserved.",
+    "measurement_count": 1
+  },
+  {
+    "id": "rcg530-593859",
+    "post_id": "593859",
+    "title": "Vantrue N5 - 4CH Dash Camera Test & Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-n5-4ch-dash-camera-test-review-rcg.48930/#post-593859",
+    "tester": "rcg530",
+    "date": "2023-05-17",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1684377567999-webp.65261/",
+      "https://dashcamtalk.com/forum/attachments/1684377595274-webp.65262/"
+    ],
+    "status": "extracted",
+    "notes": "OCR and original measurement spreadsheet verified; runtime estimates and normal/off/cutoff rows excluded.",
+    "measurement_count": 6
+  },
+  {
+    "id": "rcg530-593936",
+    "post_id": "593936",
+    "title": "Vantrue N5 - 4CH Dash Camera Test & Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-n5-4ch-dash-camera-test-review-rcg.48930/page-2#post-593936",
+    "tester": "rcg530",
+    "date": "2023-05-19",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1684509440885-webp.65282/"
+    ],
+    "status": "duplicate",
+    "notes": "Prose explicitly repeats N5 measurements from 593859: 9.89W MD monitoring, 10.27W MD event, 0.19W CD standby, ~11s impact-to-recording. No additional measurements; 10s prebuffer/30s post and all 4-camera CD recording incorporated in original rows.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-594985",
+    "post_id": "594985",
+    "title": "VIOFO A119 Mini 2 - Test and Review RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a119-mini-2-test-and-review-rcg.48950/page-3#post-594985",
+    "tester": "rcg530",
+    "date": "2023-06-07",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1686152395704-webp.65551/"
+    ],
+    "status": "extracted",
+    "notes": "OCR and original measurement spreadsheet verified; runtime estimates and normal/off/cutoff rows excluded.",
+    "measurement_count": 4
+  },
+  {
+    "id": "rcg530-595611",
+    "post_id": "595611",
+    "title": "Thinkware U3000 - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/thinkware-u3000-testing-review-rcg.49111/#post-595611",
+    "tester": "rcg530",
+    "date": "2023-06-15",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1686875091141-webp.65840/",
+      "https://dashcamtalk.com/forum/attachments/1686875143591-webp.65841/",
+      "https://dashcamtalk.com/forum/attachments/1686875166323-webp.65842/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 7
+  },
+  {
+    "id": "rcg530-595849",
+    "post_id": "595849",
+    "title": "IROAD QX2 - Testing - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/iroad-qx2-testing-rcg.49149/#post-595849",
+    "tester": "rcg530",
+    "date": "2023-06-20",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1687306270552-webp.65907/",
+      "https://dashcamtalk.com/forum/attachments/1687306394490-webp.65908/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 3
+  },
+  {
+    "id": "rcg530-600858",
+    "post_id": "600858",
+    "title": "Vantrue N5 - 4CH Dash Camera Test & Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-n5-4ch-dash-camera-test-review-rcg.48930/page-6#post-600858",
+    "tester": "rcg530",
+    "date": "2023-08-31",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/n5_production_cd_quick_start_20230831_power_amounts_v2-webp.67185/",
+      "https://dashcamtalk.com/forum/attachments/n5_production_cd_quick_start_20230831_time_estimates-webp.67177/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-601355",
+    "post_id": "601355",
+    "title": "Vantrue Sonnet 1 (S1) Pro - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-sonnet-1-s1-pro-testing-review-rcg.49680/#post-601355",
+    "tester": "rcg530",
+    "date": "2023-09-08",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/vantrue_s1pro_power_consumption_results_20230907-webp.67325/",
+      "https://dashcamtalk.com/forum/attachments/vantrue_s1pro_power_consumption_time_estimates_20230907-webp.67324/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-601471",
+    "post_id": "601471",
+    "title": "Vantrue Sonnet 1 (S1) Pro - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-sonnet-1-s1-pro-testing-review-rcg.49680/#post-601471",
+    "tester": "rcg530",
+    "date": "2023-09-10",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/vantrue_s1_power_consumption_results_20230910-webp.67358/",
+      "https://dashcamtalk.com/forum/attachments/vantrue_s1_power_consumption_time_estimates_20230910-webp.67357/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 10
+  },
+  {
+    "id": "rcg530-601502",
+    "post_id": "601502",
+    "title": "Vantrue Sonnet 1 (S1) Pro - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-sonnet-1-s1-pro-testing-review-rcg.49680/#post-601502",
+    "tester": "rcg530",
+    "date": "2023-09-11",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/vantrue_s1_power_consumption_results_vts10j_v23_20230911-webp.67361/",
+      "https://dashcamtalk.com/forum/attachments/vantrue_s1_power_consumption_time_estimates_vts10j_v23_20230911-webp.67360/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 12
+  },
+  {
+    "id": "rcg530-602898",
+    "post_id": "602898",
+    "title": "VIOFO A229 Pro - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a229-pro-testing-review-rcg.49777/#post-602898",
+    "tester": "rcg530",
+    "date": "2023-09-26",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_power_3ch_fri_20231013-webp.68450/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_pm_times_3ch_fri_20230925-webp.67783/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_power_2ch_fr_20231013-webp.68449/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_pm_times_2ch_fr_20230925-webp.67785/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_power_2ch_fi_20231013-webp.68448/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_pm_times_2ch_fi_20230925-webp.67787/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_power_1ch_f_20231013-webp.68447/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_pm_times_1ch_f_20230925-webp.67789/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_pro_bitrates_20230925-webp.67791/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 16
+  },
+  {
+    "id": "rcg530-603235",
+    "post_id": "603235",
+    "title": "VIOFO A229 Plus - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a229-plus-testing-review-rcg.49790/#post-603235",
+    "tester": "rcg530",
+    "date": "2023-09-28",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/a229_plus_3ch_fri_power_consumption_20231121-webp.69300/",
+      "https://dashcamtalk.com/forum/attachments/a229_plus_3ch_fri_parking_times_20231121-webp.69296/",
+      "https://dashcamtalk.com/forum/attachments/a229_plus_2ch_fr_power_consumption_20231121-webp.69299/",
+      "https://dashcamtalk.com/forum/attachments/a229_plus_2ch_fr_parking_times_20231121-webp.69295/",
+      "https://dashcamtalk.com/forum/attachments/a229_plus_2ch_fi_power_consumption_20231121-webp.69298/",
+      "https://dashcamtalk.com/forum/attachments/a229_plus_2ch_fi_parking_times_20231121-webp.69294/",
+      "https://dashcamtalk.com/forum/attachments/a229_plus_1ch_f_power_consumption_20231121-webp.69297/",
+      "https://dashcamtalk.com/forum/attachments/a229_plus_1ch_f_parking_times_20231121-webp.69293/",
+      "https://dashcamtalk.com/forum/attachments/a229_plus_video_bitrates_20231121-webp.69292/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 16
+  },
+  {
+    "id": "rcg530-608878",
+    "post_id": "608878",
+    "title": "Thinkware U3000 - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/thinkware-u3000-testing-review-rcg.49111/page-3#post-608878",
+    "tester": "rcg530",
+    "date": "2023-11-29",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1701242577037-webp.69502/",
+      "https://dashcamtalk.com/forum/attachments/1701242887355-webp.69503/",
+      "https://dashcamtalk.com/forum/attachments/1701243219839-webp.69504/"
+    ],
+    "status": "no-parking-measurements",
+    "notes": "Manual excerpts and rear radar mounting photo; functional clarification only, no power numbers. Radar wake prose is radar-trigger timing, not impact-to-first-frame.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-612012",
+    "post_id": "612012",
+    "title": "DR970X Plus Series - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/dr970x-plus-series-testing-review-rcg.50124/page-3#post-612012",
+    "tester": "rcg530",
+    "date": "2024-01-23",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_plus_power_0913_20240123-webp.70437/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_plus_parking_times_0913_20240123-webp.70436/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_plus_cm100glte_power_0913_20240123-webp.70439/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_plus_cm100glte_parking_times_0913_20240123-webp.70438/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_lte_plus_power_0913_20240123-webp.70441/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_2ch_lte_plus_parking_times_0913_20240123-webp.70440/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 22
+  },
+  {
+    "id": "rcg530-612534",
+    "post_id": "612534",
+    "title": "VIOFO VS1 - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-vs1-testing-review-rcg.50417/#post-612534",
+    "tester": "rcg530",
+    "date": "2024-02-02",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_vs1_power_consumption_v10_240105_20240202-webp.70654/",
+      "https://dashcamtalk.com/forum/attachments/viofo_vs1_time_estimates_v10_240105_20240202-webp.70653/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-613186",
+    "post_id": "613186",
+    "title": "DR970X Plus Series - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/dr970x-plus-series-testing-review-rcg.50124/page-4#post-613186",
+    "tester": "rcg530",
+    "date": "2024-02-17",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_box_2ch_plus_gnss_1001_power_consumption_20240217-webp.70841/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_box_2ch_plus_gnss_1001_pm_time_estimates_20240217-webp.70840/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-613237",
+    "post_id": "613237",
+    "title": "DR970X Plus Series - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/dr970x-plus-series-testing-review-rcg.50124/page-4#post-613237",
+    "tester": "rcg530",
+    "date": "2024-02-19",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_box_2ch_plus_cm100glte_power_consumption_20240218-webp.70853/",
+      "https://dashcamtalk.com/forum/attachments/bv_dr970x_box_2ch_plus_cm100glte_pm_time_estimates_20240218-webp.70852/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-613886",
+    "post_id": "613886",
+    "title": "VIOFO A229 Plus - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a229-plus-testing-review-rcg.49790/page-3#post-613886",
+    "tester": "rcg530",
+    "date": "2024-03-04",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1709591516562-webp.71171/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded. Summary average watt values extracted, not battery runtime estimates; no current, voltage, or power path assumed from other tests.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-613891",
+    "post_id": "613891",
+    "title": "VIOFO A229 Pro - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a229-pro-testing-review-rcg.49777/page-9#post-613891",
+    "tester": "rcg530",
+    "date": "2024-03-04",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1709597302197-webp.71172/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded. Older v1.0_230912 comparison duplicates original post 602898 and is not re-extracted. Preserve image firmware token v1.2_2402227; prose says v1.2_240227. Summary average watt values extracted, not battery runtime estimates; no current, voltage, or power path assumed from other tests.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-615681",
+    "post_id": "615681",
+    "title": "70mai S500 Rear View Dash Camera Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-s500-rear-view-dash-camera-testing-review-rcg.50838/#post-615681",
+    "tester": "rcg530",
+    "date": "2024-03-27",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/70mai_s500_power_consumption_fw1017ww_20240420_1030-webp.71960/",
+      "https://dashcamtalk.com/forum/attachments/70mai_s500_parking_mode_times_fw1017ww-webp.71961/"
+    ],
+    "status": "extracted",
+    "notes": "OCR reviewed; original measurement spreadsheet(s) visually verified; runtime estimates and normal/off/adapter-only rows excluded. Updated V1.0.17ww attachment dated April 20 retained under March 27 post date.",
+    "measurement_count": 3
+  },
+  {
+    "id": "rcg530-619806",
+    "post_id": "619806",
+    "title": "FineVu GX1000 Test / Review RCG",
+    "url": "https://dashcamtalk.com/forum/threads/finevu-gx1000-test-review-rcg.48561/#post-619806",
+    "tester": "rcg530",
+    "date": "2024-06-03",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1717430668692-webp.72695/"
+    ],
+    "status": "duplicate",
+    "notes": "Explicit repeat of post 590300 (source index 12); original full spreadsheet preferred. Image-029 original visually verified: six average power entries match earlier original (4.37, 4.47, 4.42, 4.06, 4.16, 0.05 W). No duplicate rows emitted.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-619943",
+    "post_id": "619943",
+    "title": "Vantrue N4 Pro Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-n4-pro-testing-review-rcg.51243/#post-619943",
+    "tester": "rcg530",
+    "date": "2024-06-05",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/vantrue_n4pro_power_consumption_20240605-webp.72732/",
+      "https://dashcamtalk.com/forum/attachments/vantrue_n4pro_parking_time_estimates_20240605-webp.72731/"
+    ],
+    "status": "extracted",
+    "notes": "Power spreadsheet visually verified; runtime chart omitted; Quick Start wake conflict retained.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-620568",
+    "post_id": "620568",
+    "title": "Thinkware ARC - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/thinkware-arc-testing-review-rcg.51309/#post-620568",
+    "tester": "rcg530",
+    "date": "2024-06-19",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/thinkware_arc_power_consumption_20240619-webp.72920/",
+      "https://dashcamtalk.com/forum/attachments/thinkware_arc_pm_time_estimates_20240619-webp.72919/"
+    ],
+    "status": "extracted",
+    "notes": "Power spreadsheet visually verified; wake interval retained in notes, not converted to midpoint.",
+    "measurement_count": 5
+  },
+  {
+    "id": "rcg530-625524",
+    "post_id": "625524",
+    "title": "VIOFO A329 2CH - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a329-2ch-testing-review-rcg.51797/#post-625524",
+    "tester": "rcg530",
+    "date": "2024-09-26",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_a329_power_consumption_20240926-webp.74154/",
+      "https://dashcamtalk.com/forum/attachments/1727388759928-webp.74155/",
+      "https://dashcamtalk.com/forum/attachments/1727402385054-webp.74160/"
+    ],
+    "status": "extracted",
+    "notes": "Full power spreadsheet visually verified; repeated AED crop and runtime chart not duplicated.",
+    "measurement_count": 12
+  },
+  {
+    "id": "rcg530-625618",
+    "post_id": "625618",
+    "title": "VIOFO A329 2CH - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a329-2ch-testing-review-rcg.51797/page-2#post-625618",
+    "tester": "rcg530",
+    "date": "2024-09-26",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1727402385054-png.74160/"
+    ],
+    "status": "duplicate",
+    "notes": "AED SSD values and 60-second behavior already included in updated full post 625524.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-632212",
+    "post_id": "632212",
+    "title": "Vueroid D21-4K Dash Camera - Testing/Review RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vueroid-d21-4k-dash-camera-testing-review-rcg.52255/#post-632212",
+    "tester": "rcg530",
+    "date": "2025-01-02",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1736112836459-webp.76461/",
+      "https://dashcamtalk.com/forum/attachments/1736112892123-webp.76462/",
+      "https://dashcamtalk.com/forum/attachments/1736112946888-webp.76463/",
+      "https://dashcamtalk.com/forum/attachments/1736113034515-webp.76464/"
+    ],
+    "status": "extracted",
+    "notes": "All three Low/Mid/High power spreadsheets visually verified; runtime chart excluded.",
+    "measurement_count": 15
+  },
+  {
+    "id": "rcg530-635121",
+    "post_id": "635121",
+    "title": "70mai 4K Omni - Testing/Review RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-4k-omni-testing-review-rcg.52570/#post-635121",
+    "tester": "rcg530",
+    "date": "2025-02-11",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1739303777212-webp.77646/",
+      "https://dashcamtalk.com/forum/attachments/1739303800552-webp.77647/",
+      "https://dashcamtalk.com/forum/attachments/1739303832500-webp.77648/",
+      "https://dashcamtalk.com/forum/attachments/1739304379665-webp.77649/",
+      "https://dashcamtalk.com/forum/attachments/1739324916770-webp.77652/",
+      "https://dashcamtalk.com/forum/attachments/1739324936862-webp.77653/"
+    ],
+    "status": "extracted",
+    "notes": "All three unique power spreadsheets visually verified; normal, shutdown/LTE-only and runtime rows excluded.",
+    "measurement_count": 15
+  },
+  {
+    "id": "rcg530-639318",
+    "post_id": "639318",
+    "title": "70mai 4K Omni - Testing/Review RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-4k-omni-testing-review-rcg.52570/page-4#post-639318",
+    "tester": "rcg530",
+    "date": "2025-04-09",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1744241205601-webp.79394/"
+    ],
+    "status": "extracted",
+    "notes": "Combined-mode row visually verified; old rows explicitly not retested, retained under post 635121 only.",
+    "measurement_count": 1
+  },
+  {
+    "id": "rcg530-640820",
+    "post_id": "640820",
+    "title": "VIOFO A329S - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a329s-testing-review-rcg.53058/page-4#post-640820",
+    "tester": "rcg530",
+    "date": "2025-05-03",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1746303215615-webp.79939/",
+      "https://dashcamtalk.com/forum/attachments/1746304368022-webp.79942/",
+      "https://dashcamtalk.com/forum/attachments/1746742734487-webp.80064/",
+      "https://dashcamtalk.com/forum/attachments/1746560591337-webp.80028/",
+      "https://dashcamtalk.com/forum/attachments/1746304735495-webp.79943/"
+    ],
+    "status": "extracted",
+    "notes": "LPID power spreadsheet visually verified; settings images and repeated runtime chart omitted.",
+    "measurement_count": 4
+  },
+  {
+    "id": "rcg530-642951",
+    "post_id": "642951",
+    "title": "VIOFO A329S - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a329s-testing-review-rcg.53058/page-11#post-642951",
+    "tester": "rcg530",
+    "date": "2025-06-05",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1749166924712-webp.80827/",
+      "https://dashcamtalk.com/forum/attachments/1749166986888-webp.80828/",
+      "https://dashcamtalk.com/forum/attachments/1749167053446-webp.80829/",
+      "https://dashcamtalk.com/forum/attachments/1749167101766-webp.80830/",
+      "https://dashcamtalk.com/forum/attachments/1749167155319-webp.80831/",
+      "https://dashcamtalk.com/forum/attachments/1749167202145-webp.80832/"
+    ],
+    "status": "extracted",
+    "notes": "All six charts visually verified. Repeated LPID values (image-049) already extracted with current data under 640820; only measured Avg Watts extracted, no runtime-derived numbers.",
+    "measurement_count": 36
+  },
+  {
+    "id": "rcg530-643000",
+    "post_id": "643000",
+    "title": "VIOFO A329S - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a329s-testing-review-rcg.53058/page-11#post-643000",
+    "tester": "rcg530",
+    "date": "2025-06-06",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1749224811405-webp.80852/"
+    ],
+    "status": "no-parking-measurements",
+    "notes": "Methodology clarification; only screenshot contains shutdown/HK4-only rows. LPID retest firmware v1.0_250510 reports unchanged power and under-2s wake, no exact new absolute parking measurements; 3–5mA first-vs-later delta retained here. Other tests not retested.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-643453",
+    "post_id": "643453",
+    "title": "70mai T800 3CH 4K Front / 4K Rear / 1080p Cabin Dash Camera - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-t800-3ch-4k-front-4k-rear-1080p-cabin-dash-camera-testing-review-rcg.53323/#post-643453",
+    "tester": "rcg530",
+    "date": "2025-06-11",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1750314164778-webp.81522/",
+      "https://dashcamtalk.com/forum/attachments/1750314185671-webp.81523/",
+      "https://dashcamtalk.com/forum/attachments/1750314248572-webp.81524/",
+      "https://dashcamtalk.com/forum/attachments/1750314271043-webp.81525/"
+    ],
+    "status": "extracted",
+    "notes": "Both UP03 and UP05 power spreadsheets visually verified; runtime charts excluded.",
+    "measurement_count": 14
+  },
+  {
+    "id": "rcg530-643783",
+    "post_id": "643783",
+    "title": "70mai T800 3CH 4K Front / 4K Rear / 1080p Cabin Dash Camera - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-t800-3ch-4k-front-4k-rear-1080p-cabin-dash-camera-testing-review-rcg.53323/#post-643783",
+    "tester": "rcg530",
+    "date": "2025-06-17",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1750141376174-webp.81418/",
+      "https://dashcamtalk.com/forum/attachments/1750141466550-webp.81419/",
+      "https://dashcamtalk.com/forum/attachments/1750141507663-webp.81420/"
+    ],
+    "status": "duplicate",
+    "notes": "Front-only collision sentinel anomaly retested with explicit UP03 path in 643866: approximately 350mA initial wait, 260mA recording, 193mA subsequent wait at 12.6V. Firmware 1.0.118ww identified here; no duplicate rows.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-643866",
+    "post_id": "643866",
+    "title": "70mai T800 3CH 4K Front / 4K Rear / 1080p Cabin Dash Camera - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-t800-3ch-4k-front-4k-rear-1080p-cabin-dash-camera-testing-review-rcg.53323/#post-643866",
+    "tester": "rcg530",
+    "date": "2025-06-17",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1750205818136-webp.81468/",
+      "https://dashcamtalk.com/forum/attachments/1750205910939-webp.81469/",
+      "https://dashcamtalk.com/forum/attachments/1750205980672-webp.81470/"
+    ],
+    "status": "extracted",
+    "notes": "Three parking-state prose measurements preserved, including initial current range without inferred midpoint. Attachments are configuration screenshots, not spreadsheets.",
+    "measurement_count": 3
+  },
+  {
+    "id": "rcg530-650978",
+    "post_id": "650978",
+    "title": "Vueroid S1-4K Infinite - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vueroid-s1-4k-infinite-testing-review-rcg.54872/#post-650978",
+    "tester": "rcg530",
+    "date": "2025-09-06",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1764176371960-webp.88214/",
+      "https://dashcamtalk.com/forum/attachments/1764176309702-webp.88213/"
+    ],
+    "status": "duplicate",
+    "notes": "Both Avg Watts charts visually verified against detailed power spreadsheets in 650980; all 35 configuration/state values agree. Production-unit behavior and ELPM interior-off startup caveat carried into those measurements; no runtime estimates extracted.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-650980",
+    "post_id": "650980",
+    "title": "Vueroid S1-4K Infinite - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vueroid-s1-4k-infinite-testing-review-rcg.54872/#post-650980",
+    "tester": "rcg530",
+    "date": "2025-09-06",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1758295247808-webp.85422/",
+      "https://dashcamtalk.com/forum/attachments/1758295370979-webp.85423/",
+      "https://dashcamtalk.com/forum/attachments/1758295616299-webp.85424/",
+      "https://dashcamtalk.com/forum/attachments/1758296821442-webp.85427/"
+    ],
+    "status": "extracted",
+    "notes": "All three detailed parking spreadsheets visually verified, top=day and bottom=night pairs. Abbreviation/footer OCR supplies measurement conditions. ELPM wake scalar uses front first frame; rear/interior times preserved in notes. No assumed channels active while sleeping.",
+    "measurement_count": 35
+  },
+  {
+    "id": "rcg530-656418",
+    "post_id": "656418",
+    "title": "VIOFO A119M Pro - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a119m-pro-testing-review-rcg.57035/#post-656418",
+    "tester": "rcg530",
+    "date": "2025-10-20",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_a119m_pro_power_consumption_10_250926-webp.86695/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a119m_pro_pm_time_estimates_10_250926-webp.86696/"
+    ],
+    "status": "extracted",
+    "notes": "Power spreadsheet visually verified; runtime chart excluded; early prototype flagged.",
+    "measurement_count": 6
+  },
+  {
+    "id": "rcg530-660405",
+    "post_id": "660405",
+    "title": "VIOFO A229 Ultra 3CH [4K Front, 4K Rear, 1080p Interior] - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a229-ultra-3ch-4k-front-4k-rear-1080p-interior-testing-review-rcg.54127/page-3#post-660405",
+    "tester": "rcg530",
+    "date": "2025-11-25",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1764058407841-webp.88187/"
+    ],
+    "status": "extracted",
+    "notes": "Four Avg Watts values visually verified; no runtime-derived data. Front/rear firmware separate; unverified later IR fix not treated as correction.",
+    "measurement_count": 4
+  },
+  {
+    "id": "rcg530-660569",
+    "post_id": "660569",
+    "title": "Vantrue E1 Pro - Testing - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-e1-pro-testing-rcg.58935/#post-660569",
+    "tester": "rcg530",
+    "date": "2025-11-26",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1764487418393-webp.88326/",
+      "https://dashcamtalk.com/forum/attachments/1764187849836-webp.88229/"
+    ],
+    "status": "extracted",
+    "notes": "Verified image-074 original; runtime image-073 duplicates averages. Preserved early/late motion readings.",
+    "measurement_count": 10
+  },
+  {
+    "id": "rcg530-661083",
+    "post_id": "661083",
+    "title": "Vantrue N4 Pro S - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-n4-pro-s-testing-review-rcg.59120/#post-661083",
+    "tester": "rcg530",
+    "date": "2025-12-02",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/vantrue_n4pro_s_power_consumption_20251202-webp.88408/",
+      "https://dashcamtalk.com/forum/attachments/vantrue_n4pro_s_parking_mode_time_estimates_20251202-webp.88409/"
+    ],
+    "status": "extracted",
+    "notes": "Verified original image-145. Firmware header front VT-EEJ131 conflicts with runtime image-144 EEJ151; retained measurement-chart firmware. Low bitrate night 505 mA / 6.36 W.",
+    "measurement_count": 18
+  },
+  {
+    "id": "rcg530-661922",
+    "post_id": "661922",
+    "title": "70mai 4K M800 - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-4k-m800-testing-review-rcg.59276/#post-661922",
+    "tester": "rcg530",
+    "date": "2025-12-11",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1765438396515-webp.88664/",
+      "https://dashcamtalk.com/forum/attachments/1765438450674-webp.88665/"
+    ],
+    "status": "extracted",
+    "notes": "Verified original image-075; excluded runtime estimates.",
+    "measurement_count": 4
+  },
+  {
+    "id": "rcg530-662070",
+    "post_id": "662070",
+    "title": "BlackVue Elite 9 - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/blackvue-elite-9-testing-review-rcg.59275/#post-662070",
+    "tester": "rcg530",
+    "date": "2025-12-12",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1765740003645-webp.88760/",
+      "https://dashcamtalk.com/forum/attachments/1765740073142-webp.88761/"
+    ],
+    "status": "extracted",
+    "notes": "Verified original image-077; LTE pairs preserved, no duplicate runtime rows. Impact wake stated within 1 s retained as bound in notes, not exact wake_seconds.",
+    "measurement_count": 10
+  },
+  {
+    "id": "rcg530-662583",
+    "post_id": "662583",
+    "title": "70mai 4K A810S - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-4k-a810s-testing-review-rcg.59640/#post-662583",
+    "tester": "rcg530",
+    "date": "2025-12-20",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1766217660899-webp.88856/",
+      "https://dashcamtalk.com/forum/attachments/1766217717025-webp.88857/"
+    ],
+    "status": "extracted",
+    "notes": "Verified original image-079; collision monitoring 123 mA / 1.55 W. Motion buffering unspecified.",
+    "measurement_count": 7
+  },
+  {
+    "id": "rcg530-664217",
+    "post_id": "664217",
+    "title": "BlackVue Elite 10 Dual 4K - Test/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/blackvue-elite-10-dual-4k-test-review-rcg.60131/#post-664217",
+    "tester": "rcg530",
+    "date": "2026-01-13",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1768342038776-webp.89293/",
+      "https://dashcamtalk.com/forum/attachments/1768342176245-webp.89294/"
+    ],
+    "status": "extracted",
+    "notes": "Verified original image-081; LTE pairs preserved, no duplicate runtime rows. Impact wake stated within 1 s retained as bound in notes, not exact wake_seconds.",
+    "measurement_count": 10
+  },
+  {
+    "id": "rcg530-666875",
+    "post_id": "666875",
+    "title": "Thinkware U3000 Pro - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/thinkware-u3000-pro-testing-review-rcg.58998/page-2#post-666875",
+    "tester": "rcg530",
+    "date": "2026-03-18",
+    "images": [],
+    "status": "extracted",
+    "notes": "Prose-only source; current retained without assumed voltage or calculated watts. No normal recording rows.",
+    "measurement_count": 3
+  },
+  {
+    "id": "rcg530-669545",
+    "post_id": "669545",
+    "title": "70mai A810 Lite - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-a810-lite-testing-review-rcg.61230/#post-669545",
+    "tester": "rcg530",
+    "date": "2026-05-08",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1778286042905-webp.91437/",
+      "https://dashcamtalk.com/forum/attachments/1778286153925-webp.91439/",
+      "https://dashcamtalk.com/forum/attachments/1778286209334-webp.91440/",
+      "https://dashcamtalk.com/forum/attachments/1778286258648-webp.91441/"
+    ],
+    "status": "extracted",
+    "notes": "Verified originals image-083 and image-085; 1CH and 2CH kept separate; runtime charts excluded.",
+    "measurement_count": 10
+  },
+  {
+    "id": "rcg530-670578",
+    "post_id": "670578",
+    "title": "Vueroid S1-QHD Infinite - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vueroid-s1-qhd-infinite-testing-review-rcg.61357/#post-670578",
+    "tester": "rcg530",
+    "date": "2026-06-15",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1764176371960-webp.88214/",
+      "https://dashcamtalk.com/forum/attachments/1781541812184-webp.91936/",
+      "https://dashcamtalk.com/forum/attachments/1781541911015-webp.91937/",
+      "https://dashcamtalk.com/forum/attachments/1781542155356-webp.91938/"
+    ],
+    "status": "duplicate",
+    "notes": "S1-QHD runtime charts image-087/088/089 repeat measurements in full charts in post 670580 (index 60), preferred for metadata. Image-072 is unrelated S1-4K FW1.09 runtime chart, already attached to original post 650978 (index 47); not attributed to S1-QHD. Prose functionality applied to index 60.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-670580",
+    "post_id": "670580",
+    "title": "Vueroid S1-QHD Infinite - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vueroid-s1-qhd-infinite-testing-review-rcg.61357/#post-670580",
+    "tester": "rcg530",
+    "date": "2026-06-15",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1781543839699-webp.91942/",
+      "https://dashcamtalk.com/forum/attachments/1781543993722-webp.91943/",
+      "https://dashcamtalk.com/forum/attachments/1781544103104-webp.91944/",
+      "https://dashcamtalk.com/forum/attachments/1781544172940-webp.91945/"
+    ],
+    "status": "extracted",
+    "notes": "Verified originals image-090/091/092/093; all seven parking rows in each configuration, day/night kept separate. ELPM averages include elevated mixed operation; no invented separate powers for buffered/unbuffered events.",
+    "measurement_count": 42
+  },
+  {
+    "id": "rcg530-674505",
+    "post_id": "674505",
+    "title": "VIOFO A149 Pro 2CH - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a149-pro-2ch-testing-review-rcg.61730/#post-674505",
+    "tester": "rcg530",
+    "date": "2026-09-15",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1789492815787-webp.93978/",
+      "https://dashcamtalk.com/forum/attachments/1789492854188-webp.93979/"
+    ],
+    "status": "extracted",
+    "notes": "Verified original image-094; 15 parking rows, rear-off configurations separate; wake ranges retained in notes, not collapsed to inferred scalar.",
+    "measurement_count": 15
+  },
+  {
+    "id": "rcg530-674884",
+    "post_id": "674884",
+    "title": "VIOFO T330 2CH/3CH - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-t330-2ch-3ch-testing-review-rcg.61728/#post-674884",
+    "tester": "rcg530",
+    "date": "2026-09-21",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1790017812898-webp.94128/"
+    ],
+    "status": "superseded",
+    "notes": "Initial HK4 overhead assumption (3 mA) explicitly corrected by post 674887 (5 mA ACC-off). Retained only superseded initial camera-only estimate; total repeated at index 64.",
+    "measurement_count": 1
+  },
+  {
+    "id": "rcg530-674887",
+    "post_id": "674887",
+    "title": "VIOFO T330 2CH/3CH - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-t330-2ch-3ch-testing-review-rcg.61728/#post-674887",
+    "tester": "rcg530",
+    "date": "2026-09-21",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1790026263867-webp.94132/"
+    ],
+    "status": "extracted",
+    "notes": "Prose correction and separate BP100 adapter test; no standalone adapter/off rows. Voltage and firmware not restated, left null.",
+    "measurement_count": 2
+  },
+  {
+    "id": "rcg530-674889",
+    "post_id": "674889",
+    "title": "VIOFO T330 2CH/3CH - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-t330-2ch-3ch-testing-review-rcg.61728/#post-674889",
+    "tester": "rcg530",
+    "date": "2026-09-21",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1790028272577-webp.94134/"
+    ],
+    "status": "extracted",
+    "notes": "Verified original image-098 inline meter 5.147 V / 55 mA / 0.283 W. Prose supplies separate HK4 and BP100 12.6 V totals.",
+    "measurement_count": 3
+  },
+  {
+    "id": "rcg530-675782",
+    "post_id": "675782",
+    "title": "70mai A900 Ultra 2-Channel 4K UHD Front / 4K UHD Rear - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-a900-ultra-2-channel-4k-uhd-front-4k-uhd-rear-testing-review-rcg.61787/#post-675782",
+    "tester": "rcg530",
+    "date": "2026-10-13",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1791938046942-webp.94753/",
+      "https://dashcamtalk.com/forum/attachments/1791938222681-webp.94754/",
+      "https://dashcamtalk.com/forum/attachments/1791938704358-webp.94755/"
+    ],
+    "status": "duplicate",
+    "notes": "Verified original image-101 partial collision chart: same four collision powers and 1.84 s wake repeated in complete post 675874 / image-103. Prefer complete source index 66; frame-grab impact timing retained there. No duplicate measurement rows.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-675874",
+    "post_id": "675874",
+    "title": "70mai A900 Ultra 2-Channel 4K UHD Front / 4K UHD Rear - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-a900-ultra-2-channel-4k-uhd-front-4k-uhd-rear-testing-review-rcg.61787/#post-675874",
+    "tester": "rcg530",
+    "date": "2026-10-15",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/70mai_a900_ultra_2ch_power_consumption_20261015-webp.94821/",
+      "https://dashcamtalk.com/forum/attachments/70mai_a900_ultra_2ch_parking_mode_times_20261015-webp.94822/"
+    ],
+    "status": "extracted",
+    "notes": "Verified original image-103; all 13 parking measurement configurations; preserved chart 1.84 s impact wake vs prose 1.85 s, no normal/off/runtime rows.",
+    "measurement_count": 13
+  },
+  {
+    "id": "vortex-sheet",
+    "post_id": null,
+    "title": "Dashcam Low Power Parking Mode Testing",
+    "url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit",
+    "tester": "Vortex Radar",
+    "date": null,
+    "images": [],
+    "status": "extracted",
+    "notes": "Primary data block imported without repeated summary tables or blank measurement rows. One tester-flagged value remains provisional. Sheet was read only, not edited.",
+    "measurement_count": 22
+  },
+  {
+    "id": "viofo-support-674916",
+    "post_id": "674916",
+    "title": "Manufacturer T330 3CH / T340 4CH power charts",
+    "url": "https://dashcamtalk.com/forum/posts/674916/",
+    "tester": "VIOFO-Support",
+    "date": null,
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1790080683060-webp.94147/",
+      "https://dashcamtalk.com/forum/attachments/1790080716707-webp.94148/",
+      "https://dashcamtalk.com/forum/attachments/1790080799963-webp.94149/",
+      "https://dashcamtalk.com/forum/attachments/1790080849622-webp.94150/"
+    ],
+    "status": "extracted",
+    "notes": "Manufacturer-provided results at 13 V via HK6, not rcg530 data. Explicit standby, triggered, low-bitrate, and parking time-lapse rows extracted. Auto Event Detection chart does not specify monitoring versus recording state, so it is not promoted as an idle measurement. Generic non-parking time-lapse rows excluded.",
+    "measurement_count": 10
+  }
+]

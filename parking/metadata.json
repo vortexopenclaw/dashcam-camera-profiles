@@ -1,0 +1,11 @@
+{
+  "updated": "2026-10-15",
+  "coverage": {
+    "all_account_posts_exhaustive": false,
+    "scope_note": "All discovered pages in 51 rcg530-authored threads were traversed; account-wide history is access-limited. Source index includes unresolved and superseded material. Numerical transcription is separate from source discovery.",
+    "authored_threads_reviewed": 51,
+    "posts_indexed": 1313,
+    "candidate_posts": 67,
+    "source_attribution": "rcg530 data included with permission reported by Vortex Radar. Original source charts remain externally hosted."
+  }
+}

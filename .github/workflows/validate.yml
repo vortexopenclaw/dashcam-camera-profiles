@@ -15,6 +15,11 @@ jobs:
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - name: Validate canonical data and generated frontend index
         run: python3 scripts/verify.py
+      - name: Validate parking measurements and exports
+        run: |
+          python3 scripts/verify-parking.py
+          node --check docs/assets/parking.js
+          node scripts/verify-parking-frontend.js
       - name: Audit public content for private data
         run: bash scripts/privacy-audit.sh
       - name: Check frontend JavaScript
