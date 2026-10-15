@@ -10,9 +10,56 @@
     delay: { key: 'reported_startup_seconds', unit: 's', label: 'Recording delay after impact detection' },
     wake: { key: 'wake_seconds', unit: 's', label: 'Impact to first frame' }
   };
-  const seed = [4, 6, 9, 11, 12, 15, 17, 21].map(n => `vortex-sheet-row-${n}`);
+  const seed = [4, 6, 9, 11, 15, 17, 21].map(n => `vortex-sheet-row-${n}`);
   const titles = {current:'Parking-mode current draw',watts:'Parking-mode power draw',delay:'Recording delay after impact detection',wake:'Impact to first recorded frame'};
-  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', highlight: 'Viofo T340', details: false, title: titles[metric] });
+  const families = {
+    'low-power': 'Low-power parking', buffered: 'Buffered parking',
+    'buffered-motion': 'Buffered motion detection', 'buffered-impact': 'Buffered impact detection',
+    unbuffered: 'Non-buffered parking', radar: 'Radar parking',
+    'time-lapse': 'Time-lapse parking', 'low-bitrate': 'Low-bitrate parking',
+    hybrid: 'Hybrid parking', all: 'Selected parking modes'
+  };
+  // Categories establish behavior. Names identify triggers only, never buffering.
+  // The canonical schema has no trigger flags. Trigger-specific durations are
+  // stronger evidence than the documented MD, M&I and collision shorthand.
+  function matchesFamily(row, family) {
+    if (family === 'all') return true;
+    if (row.category === 'unknown') return false;
+    const raw = row.mode_name || '';
+    const positive = key => valid(row[key]) && row[key] > 0;
+    const hybridBuffered = row.category === 'hybrid' &&
+      (positive('prebuffer_s') || positive('prebuffer_motion_s') || positive('prebuffer_impact_s') || /^Pre-Recording On;/i.test(row.notes || ''));
+    const buffered = row.category === 'buffered-event' || hybridBuffered;
+    const motion = positive('prebuffer_motion_s') || /\bmotion\b|\bMD\b|\bM&I\b|\bAED\b|Auto Event Detection/i.test(raw);
+    const impact = positive('prebuffer_impact_s') || /\bimpact\b|\bcollision\b|\bCD\b|\bM&I\b/i.test(raw);
+    switch (family) {
+      case 'low-power': return ['impact-sleep', 'radar'].includes(row.category) ||
+        (row.category === 'hybrid' && row.state === 'monitoring' && /\b(?:settled sleeping standby|settled sleep measurement)\b/i.test(row.notes || ''));
+      case 'buffered': return buffered;
+      case 'buffered-motion': return buffered && motion;
+      case 'buffered-impact': return buffered && impact;
+      case 'unbuffered': return ['impact-sleep', 'unbuffered-event'].includes(row.category);
+      case 'radar': return row.category === 'radar';
+      default: return row.category === family;
+    }
+  }
+  const defaultCondition = family => family === 'time-lapse' ? 'time-lapse' : family === 'low-bitrate' ? 'continuous' : 'monitoring';
+  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', highlight: '', details: false, title: titles[metric], group: 'low-power', family: 'low-power', condition: 'monitoring' });
+  // Keep an existing compatible test. Otherwise use the highest documented
+  // channel count, then established status, source date and stable ID. Power
+  // never participates in this choice. Unknown dates do not imply recency.
+  function representative(items, ids = [], family = 'all', channels = null) {
+    let candidates = channels == null ? items : items.filter(row => row.installed_channels === channels);
+    const retained = candidates.filter(row => ids.includes(row.id));
+    if (retained.length) return retained.sort((a,b) => ids.indexOf(a.id) - ids.indexOf(b.id))[0];
+    if (!candidates.length) return null;
+    const highest = Math.max(0, ...candidates.map(row => Number.isInteger(row.installed_channels) ? row.installed_channels : 0));
+    if (highest) candidates = candidates.filter(row => row.installed_channels === highest);
+    if (family === 'low-power' && candidates.some(row => row.category === 'impact-sleep')) candidates = candidates.filter(row => row.category === 'impact-sleep');
+    const status = row => Number(!!row.superseded) + Number(UI.provisional(row)) + Number(row.test_status === 'prototype');
+    const date = row => /^\d{4}-\d{2}-\d{2}$/.test(row.date || '') ? row.date : '';
+    return candidates.slice().sort((a,b) => status(a)-status(b) || date(b).localeCompare(date(a)) || a.id.localeCompare(b.id))[0];
+  }
   function interval(row, metric) {
     if (!Object.hasOwn(metrics, metric)) return null;
     if (metric === 'delay' && row.reported_startup_method !== method) return null;
@@ -27,12 +74,12 @@
     const p = new URLSearchParams(search), fallback = preset('current');
     const known = new Set(rows.map(r => r.id)), models = new Set(rows.map(UI.modelLabel));
     const ids = p.has('selection') ? [...new Set(p.getAll('id').filter(id => known.has(id)))] : fallback.ids.filter(id => known.has(id));
-    return { ids, details: p.get('details') === '1', metric: Object.hasOwn(metrics, p.get('metric')) ? p.get('metric') : fallback.metric,
+    return { ids, group: Object.hasOwn(families, p.get('group')) ? p.get('group') : fallback.group, family: Object.hasOwn(families, p.get('family')) ? p.get('family') : (p.has('selection') ? 'all' : fallback.family), condition: ['', 'monitoring', 'event-recording', 'time-lapse', 'continuous'].includes(p.get('condition')) ? p.get('condition') : fallback.condition, details: p.get('details') === '1', metric: Object.hasOwn(metrics, p.get('metric')) ? p.get('metric') : fallback.metric,
       sort: p.get('sort') === 'asc' ? 'asc' : 'desc', highlight: p.has('highlight') ? (models.has(p.get('highlight')) ? p.get('highlight') : '') : fallback.highlight,
       title: p.has('title') ? p.get('title').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0, 180) : titles[Object.hasOwn(metrics,p.get('metric')) ? p.get('metric') : 'current'] };
   }
   function query(state) {
-    const p = new URLSearchParams({ selection: '1', metric: state.metric, sort: state.sort, highlight: state.highlight, title: state.title, details: state.details ? '1' : '0' });
+    const p = new URLSearchParams({ selection: '1', group: state.group || 'all', family: state.family || 'all', condition: state.condition ?? 'monitoring', metric: state.metric, sort: state.sort, highlight: state.highlight, title: state.title, details: state.details ? '1' : '0' });
     state.ids.forEach(id => p.append('id', id));
     return p.toString();
   }
@@ -50,13 +97,14 @@
     const text = value.range ? `${number(value.min, metric)}–${number(value.max, metric)}` : number(value.max, metric);
     return `${metric === 'watts' && row.power_is_derived ? '≈ ' : ''}${text} ${metrics[metric].unit}`;
   }
-  const api = { metrics, seed, preset, interval, readState, query, prepare, valueLabel };
+  const api = { metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof window === 'undefined') return;
   window.ParkingCharts = api;
   const $ = id => document.getElementById(id);
   const ns = 'http://www.w3.org/2000/svg';
   let rows = [], state, currentSVG, pendingPNG = false;
+  const modelChoices = new Map();
   const make = (tag, attributes = {}, text) => {
     const node = document.createElementNS(ns, tag);
     Object.entries(attributes).forEach(([key, value]) => node.setAttribute(key, String(value)));
@@ -101,11 +149,14 @@
     const axis = `${metric.label} (${metric.unit})${state.metric === 'current' ? ` at ${result.voltage} V` : ''}`;
     const variantKey = row => [UI.modelLabel(row),row.installed_channels,UI.modeLabel(row),row.state].join('|');
     const labels = plotted.map(({ row }, i) => {
+      const siblings = plotted.filter(item => UI.modelLabel(item.row) === UI.modelLabel(row));
       const repeated = plotted.filter(item => variantKey(item.row) === variantKey(row)).length > 1;
+      const modes = new Set(siblings.map(item => UI.modeLabel(item.row)));
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean);
-      return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}${state.details ? ` [${i + 1}]` : ''}`, second: `${UI.modeLabel(row)}${['current','watts'].includes(state.metric) ? ` · ${row.state === 'monitoring' ? 'Idle' : row.state === 'event-recording' ? 'Event recording' : row.state === 'time-lapse' ? 'Time-lapse' : 'Continuous'}` : ''}${repeated ? ` · ${UI.setup(row)}` : ''}${state.metric === 'wake' && row.wake_camera ? ` · ${row.wake_camera}` : ''}`};
+      return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}${state.details ? ` [${i + 1}]` : ''}`, second: [modes.size > 1 ? UI.modeLabel(row) : '', repeated ? `${UI.setup(row)} · ${row.id}` : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
     });
-    const left = Math.ceil(Math.max(340, ...labels.map(l => Math.max(textWidth(l.first, 16, true), textWidth(l.second, 14)))) + 24);
+    const left = 420;
+    labels.forEach(label => { label.firstLines = wrapped(label.first, left - 56, 16, true); label.secondLines = label.second ? wrapped(label.second, left - 56, 14) : []; label.height = Math.max(58, label.firstLines.length * 20 + label.secondLines.length * 18 + 18); });
     const right = Math.ceil(Math.max(110, ...plotted.map(({ row, value }) => textWidth(valueLabel(row, value, state.metric), 16, true))) + 35);
     const width = Math.max(1200, left + right + 490), plotWidth = width - left - right;
     const svg = make('svg', { xmlns: ns, width, role: 'img', 'aria-labelledby': 'export-chart-title export-chart-desc', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': 14, fill: '#263343' });
@@ -113,11 +164,11 @@
     const content = make('g');
     const text = (x, y, value, attrs = {}) => content.appendChild(make('text', { x, y, ...attrs }, value));
     let y = 45;
-    for (const line of wrapped(state.title || metric.label, width - 72, 28, true)) { text(36, y, line, { 'font-size': 28, 'font-weight': 700, fill: '#172337' }); y += 35; }
-    text(36, y + 8, axis, { 'font-size': 16, fill: '#516174' });
+    for (const line of wrapped(state.title || metric.label, width - 72, 28, true)) { text(width / 2, y, line, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 28, 'font-weight': 700, fill: '#172337' }); y += 35; }
+    text(width / 2, y + 8, `${families[state.family] || families.all} · ${axis}`, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 16, fill: '#516174' });
     const hasRanges = plotted.some(item => item.value.range);
-    text(36, y + 34, `Zero baseline · ${state.sort === 'asc' ? 'Low to high' : 'High to low'}${hasRanges ? ' · Ranges sorted by upper endpoint' : ''}${state.highlight && plotted.some(item => UI.modelLabel(item.row) === state.highlight) ? ` · Orange highlights ${state.highlight}` : ''}`, { 'font-size': 13, fill: '#637285' });
-    const top = y + 66, rowHeight = 58, bottom = top + plotted.length * rowHeight;
+    text(width / 2, y + 34, `Zero baseline · ${state.sort === 'asc' ? 'Low to high' : 'High to low'}${hasRanges ? ' · Ranges sorted by upper endpoint' : ''}`, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 13, fill: '#637285' });
+    const top = y + 66, bottom = top + labels.reduce((sum, label) => sum + label.height, 0);
     const maximum = Math.max(0, ...plotted.map(item => item.value.max));
     const rawStep = maximum > 0 ? maximum / 5 : 0.2;
     const magnitude = 10 ** Math.floor(Math.log10(rawStep));
@@ -129,11 +180,15 @@
       content.append(make('line', { x1: x, x2: x, y1: top - 12, y2: bottom, stroke: tick ? '#e3e8ee' : '#7e8996', 'stroke-width': tick ? 1 : 1.5 }));
       text(x, bottom + 26, String(Number(value.toPrecision(3))), { 'text-anchor': 'middle', 'font-size': 13, fill: '#627084' });
     }
+    let rowTop = top;
     plotted.forEach(({ row, value }, index) => {
-      const cy = top + index * rowHeight + 25, highlighted = UI.modelLabel(row) === state.highlight;
+      const label = labels[index];
+      const cy = rowTop + label.height / 2, highlighted = UI.modelLabel(row) === state.highlight;
+      rowTop += label.height;
       const group = make('g', { 'data-measurement': row.id, 'data-min': value.min, 'data-max': value.max, 'data-range': value.range, 'data-highlight': highlighted });
-      group.append(make('text', { x: left - 20, y: cy - 4, 'text-anchor': 'end', 'font-size': 16, 'font-weight': highlighted ? 700 : 600, fill: highlighted ? '#ac520e' : '#23354a' }, labels[index].first));
-      group.append(make('text', { x: left - 20, y: cy + 16, 'text-anchor': 'end', 'font-size': 14, fill: '#566477' }, labels[index].second));
+      let labelY = cy - (label.firstLines.length * 20 + label.secondLines.length * 18) / 2 + 15;
+      label.firstLines.forEach(line => { group.append(make('text', { x: left - 20, y: labelY, 'text-anchor': 'end', 'font-size': 16, 'font-weight': highlighted ? 700 : 600, fill: highlighted ? '#ac520e' : '#23354a' }, line)); labelY += 20; });
+      label.secondLines.forEach(line => { group.append(make('text', { x: left - 20, y: labelY, 'text-anchor': 'end', 'font-size': 14, fill: '#566477' }, line)); labelY += 18; });
       const color = highlighted ? '#ef8a2c' : '#559bd4';
       if (value.range) {
         group.append(make('line', { x1: scale(value.min), x2: scale(value.max), y1: cy, y2: cy, stroke: '#243a50', 'stroke-width': 3, 'data-kind': 'range' }));
@@ -146,7 +201,7 @@
     y = bottom + 65;
     content.append(make('line', { x1: 36, x2: width - 36, y1: y - 8, y2: y - 8, stroke: '#dae2eb' }));
     const notes = [
-      state.metric === 'watts' ? 'Source-reported W values. ≈ marks derived power. Adapter losses and measurement boundaries can differ.' : state.metric === 'current' ? `Measured current at ${result.voltage} V. Parking functions differ, so lower draw is not an overall protection ranking.` : state.metric === 'delay' ? 'Method: impact detection to start of recording, as reported by the source. Not physical-impact-to-first-saved-frame timing.' : 'Method: impact to the first recorded frame, for the stated camera scope. Unknown timing methods are excluded.',
+      state.metric === 'watts' && plotted.some(item=>item.row.power_is_derived) ? '≈ marks calculated power.' : '',
       hasRanges ? 'Ranges show measured endpoints, not averages. Firmware and setups remain separate.' : '',
       result.excluded ? `${result.excluded} selected measurements are unavailable for this metric and excluded, never plotted as zero.` : '',
       state.details ? 'Sources and configurations' : ''
@@ -175,7 +230,7 @@
       text(36, y, line, { 'font-size': 12, fill: '#69778a' }); y += 17;
     }
     const metadata = make('metadata');
-    metadata.textContent = JSON.stringify({metric:state.metric,measurements:safeRows(plotted.map(item=>item.row))});
+    metadata.textContent = JSON.stringify({metric:state.metric,family:state.family,group:state.group,measurements:safeRows(plotted.map(item=>item.row))});
     svg.append(metadata);
     const height = y + 30;
     svg.setAttribute('height', height); svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
@@ -207,7 +262,7 @@
     finally { URL.revokeObjectURL(url); pendingPNG = false; $('chart-png').disabled = !currentSVG; }
   }
   function syncControls() {
-    for (const key of ['title', 'metric', 'sort', 'highlight']) $(`chart-${key}`).value = state[key];
+    for (const key of ['title', 'metric', 'sort', 'highlight', 'group', 'condition']) $(`chart-${key}`).value = state[key];
     $('chart-details').checked = !!state.details;
   }
   function renderChart() {
@@ -223,12 +278,81 @@
     $('chart-svg').disabled = !currentSVG; $('chart-png').disabled = !currentSVG || pendingPNG;
     history.replaceState(null, '', `${location.pathname}?${query(state)}`);
   }
+  function primaryGroups() {
+    const q = $('chart-search').value.toLocaleLowerCase().trim();
+    const eligible = rows.filter(row => matchesFamily(row, state.group) && row.state === defaultCondition(state.group));
+    return UI.groupModels(eligible).filter(group => !q || group.rows.some(row => `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q))).sort((a,b) => a.label.localeCompare(b.label));
+  }
+  function chosenFor(group, channels = null) {
+    const remembered = modelChoices.get(group.label);
+    return representative(group.rows, remembered ? [remembered] : state.ids, state.group, channels);
+  }
+  function editModel(group, chosen, checked, focus = 'input[type=checkbox]') {
+    modelChoices.set(group.label, chosen.id);
+    // A normal model choice follows the requested group, without mixing old modes.
+    if (checked) state.ids=state.ids.filter(id=>{const row=rows.find(row=>row.id===id);return matchesFamily(row,state.group)&&row.state===defaultCondition(state.group);});
+    state.ids = state.ids.filter(id => UI.modelLabel(rows.find(row => row.id === id)) !== group.label);
+    if (checked) state.ids.push(chosen.id);
+    state.family = state.ids.every(id => matchesFamily(rows.find(row => row.id === id), state.group)) ? state.group : 'all';
+    const useWatts=state.metric==='current' && (prepare(rows,state).blocked || state.ids.some(id=>{const row=rows.find(row=>row.id===id);return !interval(row,'current')&&interval(row,'watts');}));
+    if(useWatts){if(Object.values(titles).includes(state.title))state.title=titles.watts;state.metric='watts';}
+    render();
+    if(useWatts)$('chart-action-status').textContent='Switched to W to compare the selected cameras without assuming a supply voltage.';
+    [...document.querySelectorAll('.chart-model-choice')].find(node=>node.dataset.model===group.label)?.querySelector(focus)?.focus({preventScroll:true});
+  }
+  function renderModels(groups) {
+    const open = new Set([...document.querySelectorAll('.chart-model-choice')].filter(node=>node.querySelector('details').open).map(node=>node.dataset.model));
+    const fragment = document.createDocumentFragment();
+    for (const group of groups) {
+      const chosen = chosenFor(group), selected = state.ids.some(id => group.rows.some(row => row.id === id));
+      const card = el('div','chart-model-choice'); card.dataset.model = group.label;
+      const label = el('label','chart-model-toggle'), input = document.createElement('input');
+      input.type='checkbox'; input.dataset.model=group.label; input.checked=selected;
+      input.setAttribute('aria-label',group.label); label.append(input,el('strong','',group.label));
+      if(chosen.installed_channels)label.append(el('small','chart-default-channels',`${chosen.installed_channels} ${chosen.installed_channels===1?'channel':'channels'}`));
+      input.addEventListener('change',() => editModel(group,chosen,input.checked));
+      card.append(label);
+      const details=el('details','chart-model-setup'), summary=el('summary','','Setup and test details');
+      details.append(summary); details.open = open.has(group.label);
+      const channelCounts = [...new Set(group.rows.map(row=>row.installed_channels).filter(n=>Number.isInteger(n)&&n>0))].sort((a,b)=>b-a);
+      if (channelCounts.length) {
+        const channelLabel=el('label','chart-model-channels','Channels'), select=document.createElement('select');
+        select.dataset.channels=group.label; select.setAttribute('aria-label',`Channels for ${group.label}`);
+        channelCounts.forEach(n=>{const option=el('option','',`${n} ${n===1?'channel':'channels'}`);option.value=n;select.append(option);});
+        select.value=chosen.installed_channels || '';
+        select.addEventListener('change',()=>editModel(group,chosenFor(group,Number(select.value)),selected,'select[data-channels]'));
+        channelLabel.append(select);details.append(channelLabel);
+      }
+      const setupLabel=el('label','','Test and mode'), setupSelect=document.createElement('select');
+      setupSelect.dataset.test = group.label;
+      setupSelect.setAttribute('aria-label',`Test and mode for ${group.label}`);
+      const variants=group.rows.filter(row=>row.installed_channels===chosen.installed_channels);
+      variants.forEach(row=>{const option=el('option','',`${UI.modeLabel(row)} · ${UI.setup(row)} · ${row.id}`);option.value=row.id;setupSelect.append(option);});
+      setupSelect.value=chosen.id;
+      setupSelect.addEventListener('change',()=>editModel(group,rows.find(row=>row.id===setupSelect.value),selected,'select[data-test]'));
+      setupLabel.append(setupSelect);details.append(setupLabel);
+      const value=interval(chosen,state.metric);
+      details.append(el('small','',`Selected test: ${chosen.id} · ${value?valueLabel(chosen,value,state.metric):'Not measured for this metric'}`),el('small','',`Original mode: ${chosen.mode_name}`),el('small','',`${UI.setup(chosen)} · ${chosen.tester || 'Contributor'}${chosen.date ? ` · ${chosen.date}` : ''}`));
+      const flags=[chosen.test_status==='prototype'?'Prototype':'',UI.provisional(chosen)?'Provisional':'',chosen.superseded?'Superseded':''].filter(Boolean);
+      if(flags.length)label.append(el('small','',flags.join(' · ')));
+      if(chosen.notes)details.append(el('small','',chosen.notes));
+      const multiple=state.ids.filter(id=>rows.some(row=>row.id===id&&UI.modelLabel(row)===group.label)).length;
+      if(multiple>1)details.append(el('small','',`${multiple} shared measurements retained. Editing this camera replaces only its selected tests.`));
+      card.append(details);fragment.append(card);
+    }
+    if(!groups.length)fragment.append(el('p','charts-muted','No matching camera models. Your chart has not changed.'));
+    $('chart-model-picker').replaceChildren(fragment);
+  }
   function renderPicker() {
     const open = new Set([...document.querySelectorAll('.chart-model[open]')].map(node => node.dataset.model));
     const selected = new Set(state.ids), q = $('chart-search').value.toLocaleLowerCase().trim(), condition = $('chart-condition').value;
     const visible = rows.filter(row => (!q || `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q)) && (!condition || row.state === condition) && (!$('chart-only-selected').checked || selected.has(row.id)));
     const groups = UI.groupModels(visible).sort((a, b) => a.label.localeCompare(b.label));
-    $('picker-count').textContent = `${visible.length} measurements · ${groups.length} models`;
+    $('picker-count').textContent = `${visible.length} matching measurements · ${groups.length} models`;
+    const models = primaryGroups(); renderModels(models);
+    $('chart-apply-group').textContent = `Compare shown models · ${models.length}`;
+    $('chart-apply-group').disabled = !models.length;
+    $('chart-group-count').textContent = `${families[state.group]} · ${models.length} models`;
     const fragment = document.createDocumentFragment();
     for (const group of groups) {
       const details = el('details', 'chart-model'); details.dataset.model = group.label;
@@ -273,16 +397,28 @@
         state[key]=value;renderChart();if(key==='metric')renderPicker();
       });
       $('chart-details').addEventListener('change', () => {state.details=$('chart-details').checked;renderChart();});
-      for (const metric of ['current', 'delay']) $(`preset-${metric}`).addEventListener('click', () => { state = preset(metric); render(); });
+      $('chart-group').addEventListener('change', () => { state.group = $('chart-group').value; modelChoices.clear(); state.condition = defaultCondition(state.group); $('chart-condition').value = state.condition; renderPicker(); history.replaceState(null, '', `${location.pathname}?${query(state)}`); });
+      $('chart-apply-group').addEventListener('click', () => {
+        state.ids = primaryGroups().map(group=>chosenFor(group).id);
+        state.family = state.group;
+        const blocked = prepare(rows, state).blocked;
+        if (blocked) { if (Object.values(titles).includes(state.title)) state.title = titles.watts; state.metric = 'watts'; }
+        render();
+        $('chart-action-status').textContent = `${state.ids.length} camera models selected.${blocked ? ' Switched to W because these tests have different or unknown supply voltages. No mA equivalents were invented.' : ''}`;
+      });
+      for (const metric of ['current', 'delay']) $(`preset-${metric}`).addEventListener('click', () => { state = preset(metric); modelChoices.clear(); render(); });
       $('chart-clear').addEventListener('click', () => { state.ids = []; render(); });
       $('chart-switch-watts').addEventListener('click', () => {if(Object.values(titles).includes(state.title))state.title=titles.watts;state.metric = 'watts'; render(); });
-      for (const key of ['chart-search', 'chart-condition', 'chart-only-selected']) $(key).addEventListener(key === 'chart-search' ? 'input' : 'change', renderPicker);
+      for (const key of ['chart-search', 'chart-condition', 'chart-only-selected']) $(key).addEventListener(key === 'chart-search' ? 'input' : 'change', () => { state.condition = $('chart-condition').value; renderPicker(); history.replaceState(null, '', `${location.pathname}?${query(state)}`); });
       $('chart-picker').addEventListener('change', event => {
         const { id } = event.target.dataset;
         if (!id || !rows.some(row => row.id === id)) return;
+        modelChoices.delete(UI.modelLabel(rows.find(row => row.id === id)));
+        if (event.target.checked && !matchesFamily(rows.find(row => row.id === id), state.family)) state.family = 'all';
         state.ids = event.target.checked ? [...new Set([...state.ids, id])] : state.ids.filter(value => value !== id);
         renderChart();
-        // Update counts without replacing a focused checkbox.
+        renderModels(primaryGroups());
+        // Update counts without replacing a focused advanced checkbox.
         document.querySelectorAll('.chart-model').forEach(details => {
           const inputs = [...details.querySelectorAll('input[data-id]')];
           details.querySelector('.chart-model-count').textContent = `${inputs.length} measurements · ${inputs.filter(input => input.checked).length} selected`;

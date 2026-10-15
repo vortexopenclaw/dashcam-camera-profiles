@@ -6,9 +6,9 @@
   <meta name="description" content="Build and export direct comparisons of sourced dashcam parking-mode measurements.">
   <title>Parking comparison chart builder | Dashcam Camera Profiles</title>
   <link rel="stylesheet" href="assets/styles.css?v=20261008">
-  <link rel="stylesheet" href="assets/parking-charts.css?v=1">
+  <link rel="stylesheet" href="assets/parking-charts.css?v=2-chevron-spacing">
   <script src="assets/parking.js?v=charts-api" defer></script>
-  <script src="assets/parking-charts.js?v=1" defer></script>
+  <script src="assets/parking-charts.js?v=2-functional-groups" defer></script>
 </head>
 <body class="charts-page">
   <a class="skip-link" href="#chart-settings">Skip to chart settings</a>
@@ -24,11 +24,11 @@
         <label class="chart-title-setting">Chart title<input id="chart-title" type="text" maxlength="180"></label>
         <label>Metric<select id="chart-metric"><option value="current">Measured current (mA)</option><option value="watts">Measured power (W)</option><option value="delay">Recording delay after impact detection (s)</option><option value="wake">Impact to first frame (s)</option></select></label>
         <label>Sort<select id="chart-sort"><option value="desc">High to low</option><option value="asc">Low to high</option></select></label>
-        <label>Highlight a model<select id="chart-highlight"><option value="">No highlight</option></select></label>
+        <label>Highlight a model (optional)<select id="chart-highlight"><option value="">No highlight</option></select></label>
       </div>
       <label class="chart-check"><input id="chart-details" type="checkbox"> Include detailed source notes in the chart</label>
       <p class="charts-muted">Ranges use their upper endpoint for sorting. No averaging across cameras, firmware, or settings.</p>
-      <div class="charts-actions"><button id="preset-current" type="button">Reset to idle current · 8 tests</button><button id="preset-delay" type="button">Recording delay · 7 tests</button><button id="chart-clear" type="button">Clear selection</button></div>
+      <div class="charts-actions"><button id="preset-current" type="button">Reset to low-power current · 7 cameras</button><button id="preset-delay" type="button">Recording delay · 7 tests</button><button id="chart-clear" type="button">Clear selection</button></div>
     </section>
     <section class="charts-panel chart-output" aria-labelledby="output-title">
       <div class="chart-output-heading"><h2 id="output-title">Chart preview</h2><span id="chart-count"></span></div>
@@ -39,12 +39,20 @@
       <p id="chart-action-status" role="status"></p>
     </section>
     <section class="charts-panel" aria-labelledby="picker-title">
-      <div class="chart-output-heading"><h2 id="picker-title">Choose exact measurements</h2><span id="picker-count"></span></div>
-      <p class="charts-muted">Expand a model to choose its mode and configuration. All source measurements are available, including prototypes and superseded tests. Selections stay when you search.</p>
-      <div class="chart-picker-filters"><label>Search models, aliases, firmware, or measurement IDs<input id="chart-search" type="search" placeholder="Model, firmware, or ID"></label><label>Power condition<select id="chart-condition"><option value="">All conditions</option><option value="monitoring">Idle power draw</option><option value="event-recording">Recording an event</option><option value="time-lapse">Time-lapse recording</option><option value="continuous">Continuous recording</option></select></label><label class="chart-check"><input id="chart-only-selected" type="checkbox"> Selected only</label></div>
+      <div class="chart-output-heading"><h2 id="picker-title">Choose your dashcams and parking modes</h2></div>
+      <p class="charts-muted">Choose a parking mode, then check your dashcams. We use the highest tested channel count unless you change it under Setup.</p>
+      <div class="chart-settings-grid"><label>Parking mode<select id="chart-group"><option value="low-power">Low-power parking</option><option value="buffered">Buffered parking</option><option value="buffered-motion">Buffered motion detection</option><option value="buffered-impact">Buffered impact detection</option><option value="unbuffered">Non-buffered parking</option><option value="radar">Radar parking</option><option value="time-lapse">Time-lapse parking</option><option value="low-bitrate">Low-bitrate parking</option><option value="hybrid">Hybrid parking</option><option value="all">All waiting modes</option></select></label></div>
+      <p id="chart-group-count" class="charts-muted" role="status"></p>
+      <div class="charts-actions"><button id="chart-apply-group" type="button" disabled>Compare shown models</button></div>
+      <label>Search dashcams<input id="chart-search" type="search" placeholder="Brand or model"></label>
+      <div id="chart-model-picker"></div>
+      <details id="chart-advanced"><summary>All measurements and advanced selection</summary><p id="picker-count" class="charts-muted"></p><p class="charts-muted">All 588 source measurements remain available. Advanced selection can keep multiple tests per model.</p>
+      <div class="chart-picker-filters"><label>Power condition<select id="chart-condition"><option value="">All conditions</option><option value="monitoring">Idle power draw</option><option value="event-recording">Recording an event</option><option value="time-lapse">Time-lapse recording</option><option value="continuous">Continuous recording</option></select></label><label class="chart-check"><input id="chart-only-selected" type="checkbox"> Selected only</label></div>
       <div id="chart-picker"></div>
+      <p class="charts-muted">Default test choice keeps a compatible selected test. Otherwise it uses the highest documented channel count, prefers established tests over provisional, superseded, or prototype tests, then uses the most recent known source date and a stable ID. For low-power parking, impact-sleep tests take priority over radar at the same channel count. Power draw does not determine the choice. Unknown dates are not evidence of a newer test.</p>
+      </details>
     </section>
-    <section class="charts-panel charts-methods" aria-labelledby="methods-title"><h2 id="methods-title">Read the comparison in context</h2><p>Current comparisons require one known measurement voltage. Watts can compare sources at different voltages, but adapter losses and the measurement boundary can differ.</p><p>Recording delay after impact detection and impact to the first recorded frame are separate methods. Unknown startup methods are not plotted as either metric. Missing data is excluded, never treated as zero.</p><p>A range shows only its measured endpoints, not an average. A zero measurement stays at the baseline. Source precision is retained, and power marked approximately was derived in the source dataset.</p><p><a href="parking-mode.html#sources">Source index and methodology</a> · <a href="data/parking-measurements.json">Public measurement data</a></p></section>
+    <section class="charts-panel charts-methods" aria-labelledby="methods-title"><h2 id="methods-title">Read the comparison in context</h2><p>Current comparisons use one known test voltage. Use watts when comparing tests at different voltages.</p><p>Recording delay after impact detection and impact to the first recorded frame are separate methods. Unknown startup methods are not plotted as either metric. Missing data is excluded, never treated as zero.</p><p>A range shows only its measured endpoints, not an average. A zero measurement stays at the baseline. Source precision is retained, and power marked approximately was derived in the source dataset.</p><p><a href="parking-mode.html#sources">Source index and methodology</a> · <a href="data/parking-measurements.json">Public measurement data</a></p></section>
     <noscript><p>Enable JavaScript to build a chart, or open the public measurement data linked above.</p></noscript>
   </main>
   <footer><p>Community technical reference. Measurements attributed to their original testers. <a href="parking-mode.html">Back to the measurement explorer</a>.</p></footer>

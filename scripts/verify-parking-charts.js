@@ -25,6 +25,36 @@ for (const file of ['docs/parking-charts.html', 'docs/assets/parking-charts.js',
   const content = fs.readFileSync(path.resolve(__dirname, '..', file), 'utf8');
   assert.ok(!/docs\.google\.com\/spreadsheets|sheets\.googleapis\.com|BEGIN PRIVATE KEY|client_email/.test(content), file);
 }
+assert.equal(chart.preset('current').highlight, '');
+for (const group of Object.keys(chart.families).filter(group => group !== 'all')) {
+  assert.equal(chart.matchesFamily({category:'unknown',mode_name:'Energy Saving M&I AED',prebuffer_motion_s:8},group),false);
+}
+assert.equal(chart.matchesFamily({category:'unknown',mode_name:'M&I'},'buffered-motion'),false);
+assert.equal(chart.matchesFamily({category:'unbuffered-event',mode_name:'M&I'},'buffered-motion'),false);
+assert.equal(chart.matchesFamily({category:'buffered-event',mode_name:'Energy Saving Parking Mode'},'low-power'),false);
+assert.equal(chart.matchesFamily({category:'buffered-event',mode_name:'Energy Saving Parking Mode'},'buffered-motion'),false);
+assert.equal(chart.matchesFamily({category:'buffered-event',mode_name:'PM M&I without Motion or Impact'},'buffered-motion'),true);
+assert.equal(chart.matchesFamily({category:'buffered-event',mode_name:'PM AED'},'buffered-motion'),true);
+assert.equal(chart.matchesFamily({category:'buffered-event',mode_name:'15 FPS'},'buffered-motion'),false);
+assert.equal(chart.matchesFamily({category:'hybrid',state:'monitoring',mode_name:'Extreme Low Power + Impact & Motion',notes:'Sleeps after 75s. Elevated operation.'},'low-power'),false);
+const familyCounts = Object.fromEntries(Object.keys(chart.families).map(group => [group, {all:rows.filter(row=>chart.matchesFamily(row,group)).length,waiting:rows.filter(row=>chart.matchesFamily(row,group)&&row.state===chart.defaultCondition(group)).length}]));
+console.log('Functional family counts: '+JSON.stringify(familyCounts));
+const modelCounts = Object.fromEntries(Object.keys(chart.families).map(group=>[group,UI.groupModels(rows.filter(row=>chart.matchesFamily(row,group)&&row.state===chart.defaultCondition(group))).length]));
+console.log('Primary model counts: '+JSON.stringify(modelCounts));
+for (const group of Object.keys(chart.families)) {
+  for (const model of UI.groupModels(rows.filter(row=>chart.matchesFamily(row,group)&&row.state===chart.defaultCondition(group)))) {
+    const chosen=chart.representative(model.rows,[],group);
+    const highest=Math.max(...model.rows.map(row=>row.installed_channels || 0));
+    if(highest>0)assert.equal(chosen.installed_channels,highest);
+    assert.equal(chart.representative(model.rows,[chosen.id],group).id,chosen.id);
+  }
+}
+const candidates=[{id:'a',installed_channels:3,power_w:8,date:'2025-01-01'},{id:'b',installed_channels:2,power_w:0.01,date:'2026-01-01'},{id:'c',installed_channels:3,power_w:2,date:'2026-01-01',superseded:true}];
+assert.equal(chart.representative(candidates).id,'a');
+assert.equal(chart.representative(candidates,['b']).id,'b');
+assert.equal(chart.representative(candidates,[],'all',2).id,'b');
+assert.deepEqual(chart.readState('?'+chart.query({...chart.preset('current'),group:'buffered-motion',family:'low-power',condition:'monitoring'}),rows),{...chart.preset('current'),group:'buffered-motion',family:'low-power',condition:'monitoring'});
+for(const token of ['__proto__','toString','not-a-family']) assert.equal(chart.readState('?group='+token+'&family='+token,rows).group,'low-power');
 if (!process.argv.includes('--browser')) {
   console.log('Parking chart numeric, selection, voltage, timing-method, and public-asset contracts passed.');
   process.exit(0);
@@ -43,8 +73,8 @@ out=pathlib.Path(os.environ.get('PARKING_CHART_ARTIFACTS') or tempfile.mkdtemp(p
 out.mkdir(parents=True,exist_ok=True)
 data=json.load(open('docs/data/parking-measurements.json'))
 rows=data['measurements']; byid={r['id']:r for r in rows}
-seed=['vortex-sheet-row-'+str(n) for n in [4,6,9,11,12,15,17,21]]
-current={'vortex-sheet-row-'+str(n):v for n,v in [(6,36),(4,35),(12,17),(21,15),(11,11),(15,5),(9,1),(17,1)]}
+seed=['vortex-sheet-row-'+str(n) for n in [4,6,9,11,15,17,21]]
+current={'vortex-sheet-row-'+str(n):v for n,v in [(6,36),(4,35),(21,15),(11,11),(15,5),(9,1),(17,1)]}
 delay={'vortex-sheet-row-'+str(n):v for n,v in [(21,'13.83'),(4,'2.10'),(6,'2.00'),(15,'1.80'),(11,'1.30'),(9,'1.00'),(17,'0.83')]}
 def ready(page):
     page.wait_for_function("() => document.querySelectorAll('#chart-picker input[data-id]').length > 0")
@@ -54,6 +84,7 @@ def params(ids,metric='watts',**kw):
     return urllib.parse.urlencode(p)
 def row(page,id): return page.locator('#chart-canvas [data-measurement="%s"]'%id)
 def fit_svg(page):
+    assert page.locator('#chart-canvas svg [data-role="chart-heading"]').evaluate_all("es=>es.length>=3&&es.every(e=>e.getAttribute('text-anchor')==='middle'&&Number(e.getAttribute('x'))===e.ownerSVGElement.viewBox.baseVal.width/2)"), 'Centered chart headings'
     assert page.locator('#chart-canvas svg').evaluate('''s => [...s.querySelectorAll('text')].every(t=>{const b=t.getBBox();return b.x>=0 && b.y>=0 && b.x+b.width<=s.viewBox.baseVal.width+1 && b.y+b.height<=s.viewBox.baseVal.height+1})'''), 'SVG text clipping'
 def download(page,button,name):
     with page.expect_download() as d: page.locator(button).click()
@@ -65,28 +96,50 @@ with sync_playwright() as p:
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.on('request',lambda r:requests.append(r.url))
     page.goto(url); ready(page)
-    assert page.locator('#chart-picker input[data-id]').count()==588
-    assert page.locator('.chart-model').count()==47
-    assert page.locator('#chart-canvas [data-measurement]').count()==8
+    assert page.locator('#chart-group').input_value()=='low-power'
+    assert page.locator('#chart-condition').input_value()=='monitoring'
+    assert page.locator('#chart-highlight').input_value()==''
+    assert page.locator('#chart-data-status').text_content()=='588 measurements · 47 models'
+    assert page.locator('#chart-canvas [data-measurement]').count()==7
     assert '12.4 V' in page.locator('#chart-canvas').text_content()
     for id,value in current.items():
         assert row(page,id).locator('[data-kind=value]').text_content()==str(value)+' mA'
         assert float(row(page,id).get_attribute('data-max'))==value
-    assert [float(v) for v in page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.max)')]==[36,35,17,15,11,5,1,1]
+    assert [float(v) for v in page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.max)')]==[36,35,15,11,5,1,1]
     # Exact linear widths, including 1 mA. No artificial minimum bar width.
     w36=float(row(page,'vortex-sheet-row-6').locator('rect').get_attribute('width'))
     w1=float(row(page,'vortex-sheet-row-9').locator('rect').get_attribute('width'))
     assert abs(w36/w1-36)<1e-8
-    assert row(page,'vortex-sheet-row-6').get_attribute('data-highlight')=='true'
-    assert row(page,'vortex-sheet-row-6').locator('rect').get_attribute('fill')=='#ef8a2c'
+    assert page.locator('#chart-canvas [data-highlight=true]').count()==0
+    assert row(page,'vortex-sheet-row-6').locator('rect').get_attribute('fill')=='#559bd4'
+    assert 'Idle' not in page.locator('#chart-canvas svg > g').text_content()
+    assert 'Orange highlights' not in page.locator('#chart-canvas svg > g').text_content()
+    assert row(page,'vortex-sheet-row-6').locator('text').count()==2
+    assert row(page,'vortex-sheet-row-12').count()==0
+    assert 'Energy saving' not in row(page,'vortex-sheet-row-11').text_content()
     fit_svg(page)
     for width in [320,375,768,1440]:
         page.set_viewport_size({'width':width,'height':1000})
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Page overflow '+str(width)
         assert page.locator('#chart-settings input:not([type=checkbox]), #chart-settings select, .charts-actions button, #chart-settings .chart-check').evaluate_all('es => es.every(e=>{const r=e.getBoundingClientRect();return r.left>=0 && r.right<=innerWidth+1 && r.height>=40})')
         fit_svg(page)
+        assert page.locator('.charts-page select').evaluate_all("es=>es.every(e=>{const s=getComputedStyle(e);return s.appearance==='none' && s.paddingRight==='44px' && s.backgroundPosition.includes('14px') && s.backgroundSize==='16px 16px'})"), 'Dropdown chevron inset'
         page.screenshot(path=str(out/('page-'+str(width)+'.png')),full_page=True)
+    page.emulate_media(forced_colors='active')
+    assert page.locator('#chart-metric').evaluate("e=>getComputedStyle(e).appearance==='auto' && getComputedStyle(e).backgroundImage==='none'")
+    page.emulate_media(forced_colors='none')
+    page.locator('#chart-sort').focus()
+    # macOS native select keyboard typeahead, then commit with Tab.
+    page.keyboard.press('l')
+    page.keyboard.press('Tab')
+    assert page.locator('#chart-sort').input_value()=='asc'
+    page.locator('#preset-current').click()
     # Real downloadable initial artifacts, not screenshot substitutes.
+    download(page,'#chart-svg','default-no-highlight.svg')
+    download(page,'#chart-png','default-no-highlight-2x.png')
+    page.locator('#chart-highlight').select_option('Viofo T340')
+    assert row(page,'vortex-sheet-row-6').get_attribute('data-highlight')=='true'
+    assert row(page,'vortex-sheet-row-6').locator('rect').get_attribute('fill')=='#ef8a2c'
     sv=download(page,'#chart-svg','idle-current.svg')
     png=download(page,'#chart-png','idle-current-2x.png')
     root=ET.parse(sv).getroot(); w=int(root.attrib['width']); h=int(root.attrib['height'])
@@ -119,11 +172,11 @@ with sync_playwright() as p:
     shared=page.url; page.locator('#chart-share').click()
     page.wait_for_function("() => document.querySelector('#chart-action-status').textContent.length>0")
     page.reload();ready(page)
-    assert page.url==shared and page.locator('#chart-sort').input_value()=='asc'
+    assert page.url==shared and page.locator('#chart-sort').input_value()=='asc', (page.url,shared,page.locator('#chart-sort').input_value())
     assert page.locator('#chart-highlight').input_value()=='Thinkware U3000'
     assert page.locator('#chart-title').input_value()=='My exact comparison & configurations'
     assert row(page,'vortex-sheet-row-11').get_attribute('data-highlight')=='true'
-    assert row(page,'vortex-sheet-row-12').get_attribute('data-highlight')=='true'
+    assert row(page,'vortex-sheet-row-12').count()==0
     assert float(page.locator('#chart-canvas [data-measurement]').first.get_attribute('data-max'))==1
     # Seven separate, method-qualified recording delays.
     page.locator('#preset-delay').click()
@@ -137,7 +190,11 @@ with sync_playwright() as p:
     assert '7 selected measurements' in page.locator('#chart-notice').text_content()
     assert page.locator('#chart-svg').is_disabled()
     page.locator('#preset-current').click()
-    assert page.locator('#chart-canvas [data-measurement]').count()==8
+    assert page.locator('#chart-canvas [data-measurement]').count()==7
+    page.locator('#chart-group').select_option('all')
+    page.locator('#chart-advanced > summary').click()
+    page.locator('#chart-condition').select_option('')
+    assert page.locator('#chart-picker input[data-id]').count()==588
     # Aliases match their one canonical group, and exact model variants remain distinct.
     for search,label in [('Nexus 5','Vantrue N5'),('N5','Vantrue N5'),('Sonnet 1 (S1) Pro','Vantrue S1 Pro'),('4K Omni [X800]','70mai 4K Omni'),('ARC800','Thinkware ARC 800'),('S1-QHD Infinite','Vueroid S1-QHD Infinite')]:
         page.locator('#chart-search').fill(search)
@@ -157,7 +214,7 @@ with sync_playwright() as p:
     page.locator('#chart-search').fill('')
     # Forty actual, separately plotted configurations, not a four-measurement cap.
     ids=[r['id'] for r in rows if isinstance(r.get('power_w'),(int,float)) and not r.get('power_w_min')][:40]
-    page.goto(url+'?'+params(ids));ready(page)
+    page.goto(url+'?'+params(ids,group='all',condition=''));ready(page)
     assert page.locator('#chart-canvas [data-measurement]').count()==40
     assert page.locator('#chart-picker input:checked').count()==40
     page.reload();ready(page); assert page.locator('#chart-canvas [data-measurement]').count()==40
@@ -227,12 +284,102 @@ with sync_playwright() as p:
     page.locator('#chart-metric').select_option('wake')
     assert page.locator('#chart-canvas svg').count()==0
     page.unroute('**/data/parking-measurements.json')
-    # Final page restored to the genuine eight-row initial dataset for review.
+    # One visible checkbox per model. Channel overrides choose real source IDs.
+    page.goto(url);ready(page)
+    assert not page.locator('#chart-advanced').evaluate('e=>e.open')
+    assert page.locator('#chart-condition').is_hidden()
+    assert page.locator('#picker-title').text_content()=='Choose your dashcams and parking modes'
+    assert page.locator('#chart-model-picker input[type=checkbox]').evaluate_all('es=>es.every(e=>e.getBoundingClientRect().height>0)')
+    omni=page.locator('.chart-model-choice[data-model="70mai 4K Omni"]')
+    assert omni.count()==1 and omni.locator('input[type=checkbox]').count()==1
+    assert not omni.locator('details').evaluate('e=>e.open')
+    omni_rows=[r for r in rows if r['brand']=='70mai' and 'Omni' in r['model'] and r['category'] in ['impact-sleep','radar'] and r['state']=='monitoring']
+    high=max(r['installed_channels'] for r in omni_rows if isinstance(r.get('installed_channels'),int))
+    assert omni.locator('select[data-channels]').input_value()==str(high)
+    omni.locator('input[type=checkbox]').focus()
+    page.keyboard.press('Space')
+    assert omni.locator('input[type=checkbox]').is_checked()
+    assert page.locator('#chart-metric').input_value()=='watts'
+    assert 'Switched to W' in page.locator('#chart-action-status').text_content()
+    assert page.locator('#chart-canvas svg').count()==1
+    assert omni.locator('input[type=checkbox]').evaluate('e=>e===document.activeElement')
+    selected=urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
+    omni_ids=[id for id in selected if byid[id] in omni_rows]
+    assert len(omni_ids)==1 and byid[omni_ids[0]]['installed_channels']==high
+    omni.locator('summary').click()
+    lower=min(r['installed_channels'] for r in omni_rows if isinstance(r.get('installed_channels'),int))
+    assert lower<high
+    omni.locator('select[data-channels]').select_option(str(lower))
+    changed=urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
+    omni_changed=[id for id in changed if byid[id] in omni_rows]
+    assert len(omni_changed)==1 and byid[omni_changed[0]]['installed_channels']==lower and omni_changed!=omni_ids
+    assert float(row(page,omni_changed[0]).get_attribute('data-max'))==byid[omni_changed[0]]['power_w']
+    page.reload();ready(page)
+    assert omni.locator('select[data-channels]').input_value()==str(lower)
+    page.locator('#chart-group').select_option('buffered')
+    box=page.locator('.chart-model-choice[data-model="BlackVue DR970X BOX-2CH Plus"]')
+    assert box.count()==1 and box.locator('input[type=checkbox]').count()==1
+    assert not box.locator('details').evaluate('e=>e.open')
+    box.locator('input[type=checkbox]').check()
+    box_selected=urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
+    assert len([id for id in box_selected if 'BOX' in byid[id]['model'] and 'DR970' in byid[id]['model']])==1
+    for family,condition in [('time-lapse','time-lapse'),('low-bitrate','continuous')]:
+        page.locator('#chart-group').select_option(family)
+        assert page.locator('#chart-model-picker input[type=checkbox]').count()>0
+        assert page.locator('#chart-condition').input_value()==condition
+    # Old explicit links retain multiple measurements until that model is edited.
+    legacy=['vortex-sheet-row-11','vortex-sheet-row-12']
+    page.goto(url+'?'+params(legacy,'current',group='low-power'));ready(page)
+    assert set(urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id'])==set(legacy)
+    assert page.locator('#chart-canvas [data-measurement]').count()==2
+    assert 'Radar impact detection' in row(page,'vortex-sheet-row-12').text_content()
+    assert 'Energy saving' in row(page,'vortex-sheet-row-11').text_content()
+    page.reload();ready(page)
+    assert page.locator('#chart-canvas [data-measurement]').count()==2
+    u=page.locator('.chart-model-choice[data-model="Thinkware U3000"]')
+    u.locator('input[type=checkbox]').uncheck()
+    assert 'id' not in urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)
+    # Functional quick groups are explicit, complete and waiting-state comparisons.
+    page.goto(url);ready(page)
+    before=page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')
+    page.locator('#chart-group').select_option('buffered-motion')
+    assert page.locator('#chart-condition').input_value()=='monitoring'
+    assert page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')==before
+    models=page.locator('#chart-model-picker input[type=checkbox]').evaluate_all('es=>es.map(e=>e.dataset.model)')
+    assert len(models)>7 and len(models)==len(set(models))
+    assert 'Compare shown models · '+str(len(models)) == page.locator('#chart-apply-group').text_content()
+    page.reload();ready(page)
+    assert page.locator('#chart-group').input_value()=='buffered-motion'
+    assert page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')==before
+    page.locator('#chart-apply-group').click()
+    assert page.locator('#chart-metric').input_value()=='watts'
+    assert 'Switched to W' in page.locator('#chart-action-status').text_content()
+    matching=urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
+    assert len(matching)==len(models)
+    assert all(byid[id]['state']=='monitoring' for id in matching)
+    assert len({(byid[id]['brand'],byid[id]['model']) for id in matching})==len(matching)
+    assert page.locator('#chart-model-picker input:checked').count()==len(models)
+    plotted=page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')
+    expected=[id for id in matching if isinstance(byid[id].get('power_w'),(int,float)) or byid[id].get('power_w_min') is not None]
+    assert set(plotted)==set(expected)
+    assert 'Buffered motion detection' in page.locator('#chart-canvas svg > g').text_content()
+    assert 'Idle' not in page.locator('#chart-canvas svg > g').text_content()
+    fit_svg(page)
+    download(page,'#chart-svg','buffered-motion.svg');download(page,'#chart-png','buffered-motion-2x.png')
+    download(page,'#chart-csv','buffered-motion.csv')
+    (out/'buffered-motion-selection.json').write_text(json.dumps({'selected_ids':matching,'plotted_ids':plotted,'share_query':urllib.parse.urlparse(page.url).query},indent=2))
+    page.reload();ready(page)
+    assert page.locator('#chart-group').input_value()=='buffered-motion'
+    assert page.locator('#chart-metric').input_value()=='watts'
+    assert set(page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)'))==set(plotted)
+    # Final page restored to the genuine seven-camera initial dataset for review.
     page.goto(url);ready(page)
     page.screenshot(path=str(out/'review-initial-page.png'),full_page=True)
+    page.locator('#picker-title').evaluate('e=>window.scrollTo(0,e.getBoundingClientRect().top+scrollY-100)')
+    page.screenshot(path=str(out/'primary-model-picker.png'))
     assert not errors,errors
     assert not any('docs.google.com' in r or 'sheets.googleapis.com' in r for r in requests)
-    (out/'verification.json').write_text(json.dumps({'measurements':588,'models':47,'viewports':[320,375,768,1440],'current_values':current,'delay_values':delay,'decoded_png':image,'page_errors':errors,'checks':['source-presets','same-voltage-block','method-separation','share-reload','aliases','40-configurations','true-zero-scale','range-endpoints','null-zero','escaped-svg','csv-injection','2x-png-white-canvas','text-bounds']},indent=2))
+    (out/'verification.json').write_text(json.dumps({'measurements':588,'models':47,'viewports':[320,375,768,1440],'current_values':current,'delay_values':delay,'decoded_png':image,'page_errors':errors,'selected_buffered_models':len(matching),'selected_buffered_ids':matching,'checks':['primary-one-checkbox','70mai-highest-channel-default','channel-override-exact-value','BlackVue-single-model-choice','functional-family-evidence','explicit-model-bulk','legacy-multiple-ID-preservation','native-keyboard-typeahead','forced-colors-native-select','source-presets','same-voltage-block','method-separation','share-reload','aliases','40-configurations','true-zero-scale','range-endpoints','null-zero','escaped-svg','csv-injection','2x-png-white-canvas','text-bounds']},indent=2))
     browser.close()
 server.shutdown()
 print('PASS: Node contracts and real Chrome acceptance at 320, 375, 768, and 1440 px')
