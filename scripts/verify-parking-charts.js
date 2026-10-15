@@ -292,6 +292,10 @@ with sync_playwright() as p:
     assert not page.locator('#chart-advanced').evaluate('e=>e.open')
     assert page.locator('#chart-condition').is_hidden()
     assert page.locator('#picker-title').text_content()=='Choose your dashcams and parking modes'
+    for selector in ['#chart-highlight option:not([value=""])','.chart-model-choice','.chart-model']:
+        assert page.locator(selector).evaluate_all("es=>{const names=es.map(e=>e.dataset.model||e.textContent);return names.every((name,i)=>i===0||names[i-1].localeCompare(name,undefined,{numeric:true,sensitivity:'base'})<=0)}"), 'Natural model-name ordering'
+    elite=[name for name in page.locator('#chart-highlight option').all_text_contents() if name.startswith('BlackVue Elite ')]
+    assert elite==['BlackVue Elite 8','BlackVue Elite 9','BlackVue Elite 10'], elite
     assert page.locator('#chart-model-picker input[type=checkbox]').evaluate_all('es=>es.every(e=>e.getBoundingClientRect().height>0)')
     omni=page.locator('.chart-model-choice[data-model="70mai 4K Omni"]')
     assert omni.count()==1 and omni.locator('input[type=checkbox]').count()==1

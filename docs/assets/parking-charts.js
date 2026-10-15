@@ -282,7 +282,7 @@
   function primaryGroups() {
     const q = $('chart-search').value.toLocaleLowerCase().trim();
     const eligible = rows.filter(row => matchesFamily(row, state.group) && row.state === defaultCondition(state.group));
-    return UI.groupModels(eligible).filter(group => !q || group.rows.some(row => `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q))).sort((a,b) => a.label.localeCompare(b.label));
+    return UI.groupModels(eligible).filter(group => !q || group.rows.some(row => `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q))).sort((a,b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
   }
   function chosenFor(group, channels = null) {
     const remembered = modelChoices.get(group.label);
@@ -348,7 +348,7 @@
     const open = new Set([...document.querySelectorAll('.chart-model[open]')].map(node => node.dataset.model));
     const selected = new Set(state.ids), q = $('chart-search').value.toLocaleLowerCase().trim(), condition = $('chart-condition').value;
     const visible = rows.filter(row => (!q || `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q)) && (!condition || row.state === condition) && (!$('chart-only-selected').checked || selected.has(row.id)));
-    const groups = UI.groupModels(visible).sort((a, b) => a.label.localeCompare(b.label));
+    const groups = UI.groupModels(visible).sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
     $('picker-count').textContent = `${visible.length} matching measurements · ${groups.length} models`;
     const models = primaryGroups(); renderModels(models);
     $('chart-apply-group').textContent = `Compare shown models · ${models.length}`;
@@ -391,7 +391,7 @@
       const data = await response.json(); rows = data.measurements;
       state = readState(location.search, rows);
       $('chart-data-status').textContent = `${rows.length} measurements · ${UI.groupModels(rows).length} models`;
-      UI.groupModels(rows).sort((a, b) => a.label.localeCompare(b.label)).forEach(group => { const option = el('option', '', group.label); option.value = group.label; $('chart-highlight').append(option); });
+      UI.groupModels(rows).sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' })).forEach(group => { const option = el('option', '', group.label); option.value = group.label; $('chart-highlight').append(option); });
       for (const key of ['title', 'metric', 'sort', 'highlight']) $(`chart-${key}`).addEventListener(key === 'title' ? 'input' : 'change', () => {
         const value=$(`chart-${key}`).value;
         if (key==='metric' && Object.values(titles).includes(state.title)) {state.title=titles[value];$('chart-title').value=state.title;}
