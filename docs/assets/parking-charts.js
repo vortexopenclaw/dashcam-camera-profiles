@@ -56,9 +56,10 @@
     const highest = Math.max(0, ...candidates.map(row => Number.isInteger(row.installed_channels) ? row.installed_channels : 0));
     if (highest) candidates = candidates.filter(row => row.installed_channels === highest);
     if (family === 'low-power' && candidates.some(row => row.category === 'impact-sleep')) candidates = candidates.filter(row => row.category === 'impact-sleep');
+    const lowPowerMode = row => /\bPS\b|Power Saving/i.test(row.mode_name || '') || /^Power Saving Mode\b/i.test(row.notes || '') ? 0 : /\bQS\b|Quick Start/i.test(row.mode_name || '') || /^Quick Start Mode\b/i.test(row.notes || '') ? 2 : 1;
     const status = row => Number(!!row.superseded) + Number(UI.provisional(row)) + Number(row.test_status === 'prototype');
     const date = row => /^\d{4}-\d{2}-\d{2}$/.test(row.date || '') ? row.date : '';
-    return candidates.slice().sort((a,b) => status(a)-status(b) || date(b).localeCompare(date(a)) || a.id.localeCompare(b.id))[0];
+    return candidates.slice().sort((a,b) => (family==='low-power' ? lowPowerMode(a)-lowPowerMode(b) : 0) || status(a)-status(b) || date(b).localeCompare(date(a)) || a.id.localeCompare(b.id))[0];
   }
   function interval(row, metric) {
     if (!Object.hasOwn(metrics, metric)) return null;

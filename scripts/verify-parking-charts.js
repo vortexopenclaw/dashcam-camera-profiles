@@ -11,6 +11,12 @@ const rows = require('../docs/data/parking-measurements.json').measurements;
 assert.equal(rows.length, 588);
 assert.equal(UI.groupModels(rows).length, 47);
 assert.equal(new Set(rows.map(r => r.id)).size, 588);
+const e1=rows.filter(r=>r.brand==='Vantrue'&&r.model==='E1 Pro'&&r.state==='monitoring'&&r.category==='impact-sleep');
+assert.equal(chart.representative(e1,[],'low-power').id,'rcg530-660569-2');
+assert.equal(chart.representative(e1,['rcg530-660569-1'],'low-power').id,'rcg530-660569-1');
+assert.match(UI.modeLabel(e1.find(r=>r.id==='rcg530-660569-1')),/Quick Start/);
+assert.match(UI.modeLabel(e1.find(r=>r.id==='rcg530-660569-2')),/Power Saving/);
+assert.equal(chart.representative(e1.map(r=>({...r,power_w:r.id.endsWith('-1')?0.001:9})),[],'low-power').id,'rcg530-660569-2');
 assert.deepEqual(chart.interval({ power_w: 0 }, 'watts'), { min: 0, max: 0, range: false });
 assert.deepEqual(chart.interval({ power_w: 2, power_w_min: 1, power_w_max: 3 }, 'watts'), { min: 1, max: 3, range: true });
 for (const row of [{}, { power_w: null }, { power_w: -1 }, { power_w: '1' }, { power_w: Infinity }, { power_w_min: 3, power_w_max: 1 }, { power_w: 1, power_w_min: 1 }, { power_w: 1, disabled: true }]) assert.equal(chart.interval(row, 'watts'), null);
@@ -169,6 +175,7 @@ with sync_playwright() as p:
     page.locator('#chart-sort').select_option('asc')
     page.locator('#chart-highlight').select_option('Thinkware U3000')
     page.locator('#chart-title').fill('My exact comparison & configurations')
+    page.wait_for_function("() => new URLSearchParams(location.search).get('title')==='My exact comparison & configurations'")
     shared=page.url; page.locator('#chart-share').click()
     page.wait_for_function("() => document.querySelector('#chart-action-status').textContent.length>0")
     page.reload();ready(page)

@@ -63,8 +63,8 @@
     if (has(/\bAED\b|Auto Event Detection/i)) return 'Auto event detection';
     if (has(/\bM&I\b|Motion\/Impact|Impact\s*[+&]\s*Motion/i)) return 'Motion and impact detection';
     if (has(/Collision|\bCD\b/i)) {
-      if (has(/\bPS\b|Power Saving/i)) return 'Collision detection · Power Saving';
-      if (has(/\bQS\b|Quick Start/i)) return 'Collision detection · Quick Start';
+      if (has(/\bPS\b|Power Saving/i) || (row.brand === 'Vantrue' && /^Power Saving Mode\b/i.test(row.notes || ''))) return 'Collision detection · Power Saving';
+      if (has(/\bQS\b|Quick Start/i) || (row.brand === 'Vantrue' && /^Quick Start Mode\b/i.test(row.notes || ''))) return 'Collision detection · Quick Start';
       if (has(/Always On Event/i)) return 'Collision detection · Always On Event';
       return 'Collision detection';
     }
