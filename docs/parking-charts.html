@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build and export direct comparisons of sourced dashcam parking-mode measurements.">
+  <title>Parking comparison chart builder | Dashcam Camera Profiles</title>
+  <link rel="stylesheet" href="assets/styles.css?v=20261008">
+  <link rel="stylesheet" href="assets/parking-charts.css?v=1">
+  <script src="assets/parking.js?v=charts-api" defer></script>
+  <script src="assets/parking-charts.js?v=1" defer></script>
+</head>
+<body class="charts-page">
+  <a class="skip-link" href="#chart-settings">Skip to chart settings</a>
+  <header class="site-header">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">D</span><span><strong>Dashcam Camera Profiles</strong><small>Open technical reference</small></span></a>
+    <nav aria-label="Page links"><a href="parking-mode.html">Camera comparison</a><a href="parking-preview.html">Layout preview</a></nav>
+  </header>
+  <main>
+    <section class="charts-intro"><p class="charts-eyebrow">Parking mode · Direct comparisons</p><h1>Build dashcam comparison charts</h1><p>Compare parking modes and download charts for reviews, videos, and posts.</p><p id="chart-data-status" role="status">Loading measurements…</p></section>
+    <section id="chart-settings" class="charts-panel" aria-labelledby="settings-title">
+      <h2 id="settings-title">Build your comparison</h2>
+      <div class="chart-settings-grid">
+        <label class="chart-title-setting">Chart title<input id="chart-title" type="text" maxlength="180"></label>
+        <label>Metric<select id="chart-metric"><option value="current">Measured current (mA)</option><option value="watts">Measured power (W)</option><option value="delay">Recording delay after impact detection (s)</option><option value="wake">Impact to first frame (s)</option></select></label>
+        <label>Sort<select id="chart-sort"><option value="desc">High to low</option><option value="asc">Low to high</option></select></label>
+        <label>Highlight a model<select id="chart-highlight"><option value="">No highlight</option></select></label>
+      </div>
+      <label class="chart-check"><input id="chart-details" type="checkbox"> Include detailed source notes in the chart</label>
+      <p class="charts-muted">Ranges use their upper endpoint for sorting. No averaging across cameras, firmware, or settings.</p>
+      <div class="charts-actions"><button id="preset-current" type="button">Reset to idle current · 8 tests</button><button id="preset-delay" type="button">Recording delay · 7 tests</button><button id="chart-clear" type="button">Clear selection</button></div>
+    </section>
+    <section class="charts-panel chart-output" aria-labelledby="output-title">
+      <div class="chart-output-heading"><h2 id="output-title">Chart preview</h2><span id="chart-count"></span></div>
+      <p id="chart-notice" role="status"></p><button id="chart-switch-watts" type="button" hidden>Switch to W</button>
+      <p class="charts-muted chart-scroll-hint">On a small screen, swipe across the chart to read every label. Downloads include the entire chart.</p>
+      <div id="chart-canvas" tabindex="0" role="region" aria-label="Scrollable comparison chart" aria-busy="true"></div>
+      <div class="charts-actions"><button id="chart-svg" type="button" disabled>Download SVG</button><button id="chart-png" type="button" disabled>Download PNG · 2×</button><button id="chart-share" type="button">Copy share link</button><button id="chart-csv" type="button" disabled>Download selected CSV</button></div>
+      <p id="chart-action-status" role="status"></p>
+    </section>
+    <section class="charts-panel" aria-labelledby="picker-title">
+      <div class="chart-output-heading"><h2 id="picker-title">Choose exact measurements</h2><span id="picker-count"></span></div>
+      <p class="charts-muted">Expand a model to choose its mode and configuration. All source measurements are available, including prototypes and superseded tests. Selections stay when you search.</p>
+      <div class="chart-picker-filters"><label>Search models, aliases, firmware, or measurement IDs<input id="chart-search" type="search" placeholder="Model, firmware, or ID"></label><label>Power condition<select id="chart-condition"><option value="">All conditions</option><option value="monitoring">Idle power draw</option><option value="event-recording">Recording an event</option><option value="time-lapse">Time-lapse recording</option><option value="continuous">Continuous recording</option></select></label><label class="chart-check"><input id="chart-only-selected" type="checkbox"> Selected only</label></div>
+      <div id="chart-picker"></div>
+    </section>
+    <section class="charts-panel charts-methods" aria-labelledby="methods-title"><h2 id="methods-title">Read the comparison in context</h2><p>Current comparisons require one known measurement voltage. Watts can compare sources at different voltages, but adapter losses and the measurement boundary can differ.</p><p>Recording delay after impact detection and impact to the first recorded frame are separate methods. Unknown startup methods are not plotted as either metric. Missing data is excluded, never treated as zero.</p><p>A range shows only its measured endpoints, not an average. A zero measurement stays at the baseline. Source precision is retained, and power marked approximately was derived in the source dataset.</p><p><a href="parking-mode.html#sources">Source index and methodology</a> · <a href="data/parking-measurements.json">Public measurement data</a></p></section>
+    <noscript><p>Enable JavaScript to build a chart, or open the public measurement data linked above.</p></noscript>
+  </main>
+  <footer><p>Community technical reference. Measurements attributed to their original testers. <a href="parking-mode.html">Back to the measurement explorer</a>.</p></footer>
+</body>
+</html>

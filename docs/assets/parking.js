@@ -156,7 +156,9 @@
   }
   const api = { readState, query, filterRows, sortRows, toCSV, csvCell, safeURL, provisional, rangeValue, watts, wake, modelName, modelLabel, modeLabel, condition, setup, cabinIR, groupModels };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
-  if (typeof document === 'undefined') return;
+  if (typeof window === 'undefined') return;
+  window.ParkingUI = api;
+  if (!document.getElementById('parking-filters')) return;
   const $ = id => document.getElementById(id);
   let rows = [], sources = [], state = defaults, selected = new Set(), ready = false;
   const parsed = readState(location.search);
@@ -187,7 +189,7 @@
       ['LTE module', connectivityLabel(row)],
       ['Current at stated voltage', `${rangeValue(row, 'current_ma', 'mA')} / ${valueWithUnit(row.voltage_v, 'V')}`],
       ['Measurement statistic', row.measurement_statistic],
-      ['Impact to first frame / camera scope', wake(row)], ['Reported startup (method unconfirmed)', valueWithUnit(row.reported_startup_seconds, 's')],
+      ['Impact to first frame / camera scope', wake(row)], [row.reported_startup_method === 'Impact detection to start of recording' ? 'Impact detection to recording' : 'Reported startup (method unconfirmed)', valueWithUnit(row.reported_startup_seconds, 's')], ['Timing method', row.reported_startup_method],
       ['Impact pre-event buffer', valueWithUnit(row.prebuffer_impact_s, 's')], ['Motion pre-event buffer', valueWithUnit(row.prebuffer_motion_s, 's')],
       ...(!numeric(row.prebuffer_impact_s) && !numeric(row.prebuffer_motion_s) ? [['Pre-event buffer (source unqualified)', valueWithUnit(row.prebuffer_s, 's')]] : []),
       ['Power adapter', row.power_path], ['Tester', row.tester], ['Source date', row.date], ['Measurement ID', row.id]

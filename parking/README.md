@@ -8,7 +8,7 @@ A row is one reported measurement for a specific camera, firmware, connected/act
 
 The comparison records source-reported watts and milliamps separately. It never overwrites a reported watt figure with a recomputation. If only current and an explicitly stated supply voltage are available, a derived watt figure is labeled in the notes. Unknown voltage is not assumed to be 12 V or 12.6 V. Current alone cannot establish which camera consumes less power when measurement voltages differ.
 
-Vortex Radar's sheet has a column named **Parking Voltage**. Its meaning as test-supply voltage versus a parking-related setting is not yet documented. Values are retained as `reported_parking_voltage_v` and in notes, not silently used for electrical conversions. Startup times from that sheet are retained in `reported_startup_seconds`, separately from impact-to-first-frame `wake_seconds`, because its exact timing methodology is not yet documented.
+Vortex Radar's sheet has a column named **Parking Voltage**. Its meaning as test-supply voltage versus a parking-related setting isn't established for every row. Values stay in `reported_parking_voltage_v` rather than being silently used for conversions. The user-provided idle-current comparison chart independently confirms **12.4 V** for eight matching low-power measurements, recorded in `voltage_v` with `voltage_source`. Its accompanying wakeup chart describes seven timings as **impact detection to start of recording**. Those retain `reported_startup_seconds`, with `reported_startup_method` and `reported_startup_source`. This wording doesn't establish physical-impact-to-first-saved-frame timing or camera scope, so those values aren't moved into `wake_seconds`. Other rows keep their original unknown voltage and timing context.
 
 Reported minimum/maximum values stay together as one range, with `current_ma_min`/`current_ma_max` or `power_w_min`/`power_w_max`. A range endpoint is not presented as an average; range-only results have no scalar power bar or invented midpoint.
 
@@ -38,7 +38,7 @@ Normal driving and powered-off figures are not included. A dormant interior IR e
 
 ## Evidence and revisions
 
-Every numeric row links to the source sheet/post and, when applicable, the original full-size chart. Images remain hosted by their original publisher; linking them does not relicense the images. Extracted factual measurements are shared under this repository's CC BY 4.0 terms with attribution. rcg530 data is included with permission reported by Vortex Radar.
+Every measurement retains its credited source. Public test posts and available full-size charts are linked. Vortex Radar's spreadsheet is private and is credited without publishing its URL. Original test charts remain hosted by their publisher. Preview product photos are manufacturer-owned editorial reference images, with origin URLs in `docs/assets/parking-preview/photos.json`. They aren't included in the measurement data's CC BY 4.0 license, and no image license grant is implied. Extracted factual measurements are shared under this repository's CC BY 4.0 terms with attribution. rcg530 data is included with permission reported by Vortex Radar.
 
 Historical/prototype results remain labeled. Explicit corrections are retained as superseded or explained in source-review notes. Tentative values flagged by the tester remain provisional, excluded from the default comparison. A chart or source that could not be transcribed confidently remains in the source index instead of being filled with guessed data.
 

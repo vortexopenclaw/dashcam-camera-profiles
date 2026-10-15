@@ -52,7 +52,7 @@
     "state": "monitoring",
     "power_w": 0.43,
     "current_ma": 35.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -60,7 +60,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Vortex Radar's chart describes this timing as impact detection to start of recording. First-frame measurement and camera scope aren't specified. 12.4 V confirmed by Vortex Radar's comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -79,7 +79,10 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar idle-current comparison chart",
+    "reported_startup_method": "Impact detection to start of recording",
+    "reported_startup_source": "Vortex Radar low-power parking wakeup chart"
   },
   {
     "id": "vortex-sheet-row-5",
@@ -134,7 +137,7 @@
     "state": "monitoring",
     "power_w": 0.45,
     "current_ma": 36.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": 13.2,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -142,7 +145,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Sheet reports Parking Voltage 13.2 V; its meaning as supply voltage versus another setting is unconfirmed, so it is not used for conversions. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Sheet reports Parking Voltage 13.2 V; its meaning as supply voltage versus another setting is unconfirmed, so it is not used for conversions. Vortex Radar's chart describes this timing as impact detection to start of recording. First-frame measurement and camera scope aren't specified. 12.4 V confirmed by Vortex Radar's comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -161,7 +164,10 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar idle-current comparison chart",
+    "reported_startup_method": "Impact detection to start of recording",
+    "reported_startup_source": "Vortex Radar low-power parking wakeup chart"
   },
   {
     "id": "vortex-sheet-row-7",
@@ -257,7 +263,7 @@
     "state": "monitoring",
     "power_w": 0.01,
     "current_ma": 1.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -265,7 +271,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Vortex Radar's chart describes this timing as impact detection to start of recording. First-frame measurement and camera scope aren't specified. 12.4 V confirmed by Vortex Radar's comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -284,7 +290,10 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar idle-current comparison chart",
+    "reported_startup_method": "Impact detection to start of recording",
+    "reported_startup_source": "Vortex Radar low-power parking wakeup chart"
   },
   {
     "id": "vortex-sheet-row-10",
@@ -339,7 +348,7 @@
     "state": "monitoring",
     "power_w": 0.14,
     "current_ma": 11.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -347,7 +356,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Vortex Radar's chart describes this timing as impact detection to start of recording. First-frame measurement and camera scope aren't specified. 12.4 V confirmed by Vortex Radar's comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -366,7 +375,10 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar idle-current comparison chart",
+    "reported_startup_method": "Impact detection to start of recording",
+    "reported_startup_source": "Vortex Radar low-power parking wakeup chart"
   },
   {
     "id": "vortex-sheet-row-12",
@@ -380,7 +392,7 @@
     "state": "monitoring",
     "power_w": 0.21,
     "current_ma": 17.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -388,7 +400,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. 12.4 V confirmed by Vortex Radar's comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -407,7 +419,8 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar idle-current comparison chart"
   },
   {
     "id": "vortex-sheet-row-13",
@@ -503,7 +516,7 @@
     "state": "monitoring",
     "power_w": 0.06,
     "current_ma": 5.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -511,7 +524,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Vortex Radar's chart describes this timing as impact detection to start of recording. First-frame measurement and camera scope aren't specified. 12.4 V confirmed by Vortex Radar's comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -530,7 +543,10 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar idle-current comparison chart",
+    "reported_startup_method": "Impact detection to start of recording",
+    "reported_startup_source": "Vortex Radar low-power parking wakeup chart"
   },
   {
     "id": "vortex-sheet-row-16",
@@ -585,7 +601,7 @@
     "state": "monitoring",
     "power_w": 0.01,
     "current_ma": 1.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -593,7 +609,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Vortex Radar's chart describes this timing as impact detection to start of recording. First-frame measurement and camera scope aren't specified. 12.4 V confirmed by Vortex Radar's comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -612,7 +628,10 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar idle-current comparison chart",
+    "reported_startup_method": "Impact detection to start of recording",
+    "reported_startup_source": "Vortex Radar low-power parking wakeup chart"
   },
   {
     "id": "vortex-sheet-row-19",
@@ -708,7 +727,7 @@
     "state": "monitoring",
     "power_w": 0.19,
     "current_ma": 15.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -716,7 +735,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Vortex Radar's chart describes this timing as impact detection to start of recording. First-frame measurement and camera scope aren't specified. 12.4 V confirmed by Vortex Radar's comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -735,7 +754,10 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar idle-current comparison chart",
+    "reported_startup_method": "Impact detection to start of recording",
+    "reported_startup_source": "Vortex Radar low-power parking wakeup chart"
   },
   {
     "id": "vortex-sheet-row-22",

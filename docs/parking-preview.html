@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Parking comparison preview | Dashcam Camera Profiles</title>
+  <link rel="stylesheet" href="assets/styles.css?v=20261008">
+  <link rel="stylesheet" href="assets/parking.css?v=2-readability">
+  <link rel="stylesheet" href="assets/parking-preview.css">
+  <!-- Enhancement loads first to seed the URL before the existing app reads it. -->
+  <script src="assets/parking-preview.js" defer></script>
+  <script src="assets/parking.js?v=4-chart-api-and-context" defer></script>
+</head>
+<body class="parking-page parking-preview" data-view="charts">
+  <a class="skip-link" href="#parking-filters">Skip to comparison filters</a>
+  <header class="site-header">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">D</span><span><strong>Dashcam Camera Profiles</strong><small>Parking comparison preview</small></span></a>
+    <nav aria-label="Page links"><a href="parking-mode.html">Current comparison</a><a href="parking-charts.html">Build comparison charts</a><a href="#sources">Sources</a></nav>
+  </header>
+  <main>
+    <section class="parking-hero">
+      <p class="preview-eyebrow">Layout preview · Real measurements</p>
+      <h1>Compare dashcam parking modes</h1>
+      <p class="hero-copy">Compare power draw and recording delays. Keep the camera setup and parking mode in view.</p>
+      <p id="dataset-meta" class="parking-muted">Loading measurements…</p>
+    </section>
+    <section class="parking-explorer" aria-labelledby="measurements-title">
+      <div class="explorer-heading"><h2 id="measurements-title">Choose cameras</h2><p>Expand a model and select up to four camera setups.</p></div>
+      <form id="parking-filters" class="parking-filters" aria-label="Filter measurements">
+        <label class="search-field">Find a model<input id="filter-q" name="q" type="search" placeholder="Search brand or model" autocomplete="off"></label>
+        <label>Brand<select id="filter-brand" name="brand"><option value="">All brands</option></select></label>
+        <label>Function<select id="filter-category" name="category"><option value="">All functions (not a ranking)</option></select></label>
+        <label>Channels<select id="filter-channels" name="channels"><option value="">Any channel count</option></select></label>
+        <label>Tester<select id="filter-tester" name="tester"><option value="">All testers</option></select></label>
+        <label>Power measurement<select id="filter-state" name="state"><option value="parked">Idle and continuous recording</option><option value="monitoring">Idle power draw</option><option value="time-lapse">Time-lapse recording</option><option value="continuous">Continuous recording</option><option value="event-recording">Recording an event</option><option value="all">All measurements</option></select></label>
+        <label>Sort within each function<select id="filter-sort" name="sort"><option value="watts">Watts, low to high (unknown last)</option><option value="model">Brand and model</option><option value="wake">Wake to first frame (unknown last)</option></select></label>
+        <div class="parking-toggles"><label><input id="filter-prototype" name="prototype" type="checkbox" checked> Include prototypes</label><label><input id="filter-superseded" name="superseded" type="checkbox"> Include superseded results</label></div>
+        <div class="parking-actions"><button type="reset">Reset filters</button><button type="button" id="copy-link">Copy comparison link</button><button type="button" id="download-csv" disabled>Download filtered CSV</button></div>
+      </form>
+      <p id="action-status" role="status"></p>
+      <section id="comparison" class="parking-comparison" aria-labelledby="comparison-title">
+        <div class="parking-section-head"><h3 id="comparison-title">Compare different models <span id="selection-count">0 / 4</span></h3><button id="clear-comparison" type="button" disabled>Clear selection</button></div>
+        <p id="starting-comparison" class="parking-muted" hidden>Starting comparison: three measured low-power setups. Change any selection to explore other cameras.</p>
+        <div class="preview-view-controls" role="group" aria-label="Comparison layout"><button type="button" data-view-choice="charts" aria-pressed="true">Charts first</button><button type="button" data-view-choice="cameras" aria-pressed="false">Cameras first</button></div>
+        <p class="parking-muted">Selections stay with your shared link, even outside the current filters. Compare like-for-like modes and setups, not just the lowest number.</p>
+        <div class="preview-comparison-content">
+          <div id="preview-charts" aria-live="polite"><p class="parking-muted">Loading comparison charts…</p></div>
+          <div id="comparison-cards" class="comparison-cards"></div>
+        </div>
+      </section>
+
+      <p id="result-count" role="status">Loading measurements…</p>
+      <div id="parking-results" aria-busy="true"><p class="parking-empty">Loading measurements and source index…</p></div>
+      <noscript><p class="parking-empty">Enable JavaScript to compare measurements, or <a href="data/parking-measurements.json">open the dataset</a>.</p></noscript>
+    </section>
+    <section id="how-it-works" class="methodology" aria-labelledby="modes-title">
+      <div class="explorer-heading"><h2 id="modes-title">Parking modes explained</h2></div>
+      <div class="parking-mode-grid">
+        <article><span class="mode-dot sleep"></span><h3>Non-buffered recording</h3><p>Recording starts after an event. There's no video from before the trigger. Low-power impact modes can sleep until an impact wakes the camera.</p></article>
+        <article><span class="mode-dot event"></span><h3>Buffered recording</h3><p>The camera watches for supported triggers and retains video from before and after the event.</p></article>
+        <article><span class="mode-dot continuous"></span><h3>Continuous recording</h3><p>Time-lapse captures spaced frames. Low-bitrate recording saves continuous video at a reduced bitrate.</p></article>
+      </div>
+      <p class="parking-muted">Reported startup with an unconfirmed method isn't the same measurement as documented impact-to-first-frame timing. Missing values aren't zero. Ranges aren't averages.</p>
+    </section>
+    <section id="sources" class="methodology" aria-labelledby="sources-title"><div class="explorer-heading"><h2 id="sources-title">Original testing data</h2><p>Follow original tests for methods and limitations.</p></div><div id="coverage-notes" class="parking-muted"></div><p id="vortex-radar-testing" class="parking-muted">Vortex Radar's measurements were provided privately. The original spreadsheet isn't public.</p><ul id="source-index" class="parking-source-index"><li>Loading source index…</li></ul><p class="parking-muted"><a href="data/parking-measurements.json">JSON dataset</a> · <a href="data/parking-measurements.csv">Full CSV</a> · <a href="https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/parking/README.md">Methodology</a></p></section>
+  </main>
+  <footer><p>Visual preview. The <a href="parking-mode.html">current comparison page</a> hasn't changed.</p></footer>
+</body>
+</html>

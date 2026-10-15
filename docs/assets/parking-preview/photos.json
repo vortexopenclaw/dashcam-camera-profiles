@@ -1,0 +1,35 @@
+[
+  {
+    "brand": "Viofo",
+    "model": "A329S",
+    "channels": 3,
+    "file": "assets/parking-preview/a329s.png",
+    "source_page": "https://www.viofo.com/products/viofo-a329s-3ch-first-4k-front-2k-wide-210-fov-fisheye-cabin-2k-rear-dash-cam-with-starvis-2-sensor",
+    "source_image": "https://www.viofo.com/cdn/shop/files/A329S_3CH.jpg?v=1764318268",
+    "purpose": "Editorial layout preview. Manufacturer imagery, no license grant implied.",
+    "width": 800,
+    "height": 480
+  },
+  {
+    "brand": "Vueroid",
+    "model": "S1-4K Infinite",
+    "channels": 3,
+    "file": "assets/parking-preview/s1-4k.png",
+    "source_page": "https://vueroid.com/product/s1-4k-infinite-3ch/",
+    "source_image": "https://vueroid.com/wp-content/uploads/2026/04/s1_4k_3ch.jpg",
+    "purpose": "Editorial layout preview. Manufacturer imagery, no license grant implied.",
+    "width": 800,
+    "height": 480
+  },
+  {
+    "brand": "BlackVue",
+    "model": "Elite 8",
+    "channels": 2,
+    "file": "assets/parking-preview/elite8.png",
+    "source_page": "https://blackvue.com/products/elite-8-2ch",
+    "source_image": "https://blackvue.com/cdn/shop/files/elite-8-2ch-front-shop.webp?v=1776749283",
+    "purpose": "Editorial layout preview. Manufacturer imagery, no license grant implied.",
+    "width": 800,
+    "height": 480
+  }
+]

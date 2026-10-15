@@ -1,0 +1,63 @@
+/* Preview composition only. Shared explorer styles and behavior stay unchanged. */
+.parking-preview { --preview-blue: #75d5f6; --preview-lime: #b8e69c; }
+.parking-preview main { max-width: 1320px; }
+.parking-preview .parking-hero { max-width: 880px; padding: 44px 0 26px; }
+.parking-preview .parking-hero h1 { font-size: clamp(34px, 5vw, 64px); letter-spacing: -.035em; }
+.preview-eyebrow { color: var(--preview-blue); text-transform: uppercase; letter-spacing: .12em; font-size: 11px; font-weight: 700; }
+.parking-preview .parking-explorer { background: #0d1923; padding: clamp(14px, 3vw, 32px); }
+.parking-preview .parking-filters { gap: 12px 16px; }
+.parking-preview .search-field input { font-size: 16px; }
+.parking-preview .parking-comparison { margin: 26px 0 40px; padding: clamp(12px, 2.4vw, 28px); background: #08131c; border-radius: 16px; }
+.preview-view-controls { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 10px; }
+.preview-view-controls button { flex: 0 1 auto; }
+.preview-view-controls button[aria-pressed="true"] { background: var(--preview-blue); color: #071923; border-color: var(--preview-blue); }
+.preview-comparison-content { display: flex; flex-direction: column; gap: 24px; }
+.parking-preview[data-view="cameras"] #comparison-cards { order: -1; }
+#preview-charts { display: grid; gap: 22px; min-width: 0; }
+.preview-chart { padding: clamp(12px, 2vw, 24px); background: #101f2b; border: 1px solid #2a4051; border-radius: 12px; }
+.preview-chart h4 { font-size: clamp(18px, 2vw, 23px); margin: 0 0 6px; text-wrap: balance; }
+.preview-chart > .parking-muted { margin: 0 0 20px; max-width: 80ch; }
+.preview-axis { display: flex; justify-content: space-between; margin-left: 38%; font-size: 11px; color: #b0c6d5; padding-bottom: 8px; font-variant-numeric: tabular-nums; }
+.preview-chart-rows { display: grid; gap: 0; }
+.preview-chart-row { display: grid; grid-template-columns: minmax(0, .58fr) minmax(0, 1fr); gap: 24px; align-items: center; padding: 18px 0; border-top: 1px solid #2a4051; overflow-wrap: anywhere; }
+.preview-chart-label { display: grid; gap: 5px; }
+.preview-chart-label strong { font-size: 16px; }
+.preview-chart-label span { font-size: 13px; color: #d4e2ed; }
+.preview-chart-label small { font-size: 12px; color: #a5bdcf; line-height: 1.6; }
+.preview-reading { min-width: 0; }
+.preview-value { display: block; font-size: clamp(20px, 2.3vw, 28px); font-variant-numeric: tabular-nums; line-height: 1.4; margin-bottom: 8px; }
+.preview-bar-track { height: 27px; position: relative; border-radius: 4px; background: #071520; background-image: linear-gradient(90deg, transparent calc(50% - 1px), #2b4254 50%, transparent calc(50% + 1px)); }
+.preview-bar { position: absolute; top: 0; bottom: 0; background: var(--preview-blue); border-radius: 3px; }
+.preview-bar.is-range { background: repeating-linear-gradient(135deg, #75d5f6 0 4px, #2f7995 4px 8px); border-left: 2px solid #dcf5ff; border-right: 2px solid #dcf5ff; }
+.preview-chart[data-metric="reported_startup_seconds"] .preview-bar { background: var(--preview-lime); }
+.preview-chart[data-metric="wake_seconds"] .preview-bar { background: #e9bd7d; }
+.preview-no-value { font-size: 12px; color: #a5bdcf; }
+.parking-preview .comparison-cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr)); gap: 16px; }
+.parking-preview .comparison-card { border-radius: 12px; padding: 18px; background: #101f2b; }
+.parking-preview .comparison-card h4 { font-size: 20px; text-wrap: balance; }
+.preview-photo { aspect-ratio: 800 / 480; width: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+.preview-photo:has(img) { background: #f5f7f8; border-radius: 8px; outline: 1px solid rgb(0 0 0 / .1); }
+.preview-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.parking-preview .parking-model-entry { margin-top: 14px; padding: 20px; background: #101f2b; }
+.parking-preview .parking-model-tests > summary { font-weight: 650; }
+.parking-preview .parking-model-entry > .parking-muted { font-size: 13px; }
+.parking-preview .parking-section-head h3 { font-size: 23px; }
+.parking-preview #selection-count { display: inline-block; white-space: nowrap; }
+.parking-preview .comparison-card > .parking-tag:first-of-type:not(.warning) { display: none; }
+.parking-preview button:active { transform: scale(.96); }
+@media (max-width: 600px) {
+  .parking-preview main { padding-left: 12px; padding-right: 12px; }
+  .parking-preview .parking-hero { padding-top: 28px; }
+  .parking-preview .parking-explorer { padding: 12px; }
+  .parking-preview .parking-comparison { margin-left: -5px; margin-right: -5px; padding: 10px; }
+  .preview-chart { padding: 12px; }
+  .preview-chart-row { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 20px 0; }
+  .preview-axis { margin-left: 0; }
+  .preview-value { font-size: 24px; }
+  .preview-chart-label strong { font-size: 17px; }
+  .preview-bar-track { height: 30px; }
+  .preview-view-controls button { flex: 1 1 100px; }
+  .parking-preview .parking-model-entry { padding: 14px; }
+  .parking-preview .comparison-card { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .parking-preview button:active { transform: none; } }
