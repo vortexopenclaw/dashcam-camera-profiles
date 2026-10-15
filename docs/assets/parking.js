@@ -31,7 +31,19 @@
   const link = (url, text) => safeURL(url) ? `<a href="${escape(safeURL(url))}" target="_blank" rel="noopener noreferrer">${escape(text)} <span aria-label="opens in new tab">↗</span></a>` : escape(text);
   // Presentation only. Canonical rows, source strings and IDs stay untouched.
   const known = value => value != null && value !== '' && !/^(unknown|not applicable|not reported)$/i.test(String(value));
-  const modelName = row => row.brand === 'Vueroid' && ['S1-4K', 'S1-4K Infinite'].includes(row.model) ? 'S1-4K Infinite' : row.model;
+  const modelAliases = {
+    Vueroid: { 'S1-4K': 'S1-4K Infinite' },
+    Vantrue: { 'Nexus 5 (N5)': 'N5', 'Sonnet 1 (S1)': 'S1', 'Sonnet 1 (S1) Pro': 'S1 Pro' },
+    '70mai': { '4K Omni [X800]': '4K Omni' },
+    Thinkware: { ARC800: 'ARC 800', 'ARC800 LTE': 'ARC 800' }
+  };
+  const modelName = row => modelAliases[row.brand]?.[row.model] || row.model;
+  const connectivityLabel = row => {
+    if (known(row.connectivity) && /LTE/i.test(row.connectivity)) return row.connectivity;
+    if (row.brand === 'Thinkware' && row.model === 'ARC800 LTE') return 'With LTE module';
+    if (row.brand === 'Thinkware' && row.model === 'ARC800') return 'Without LTE module';
+    return '';
+  };
   const modelLabel = row => `${row.brand} ${modelName(row)}`;
   const condition = row => row.state === 'monitoring' ? 'Idle power draw' : row.state === 'event-recording' ? 'Recording an event' : '';
   function modeLabel(row) {
@@ -71,7 +83,7 @@
   function setup(row) {
     const raw = row.mode_name || '';
     const values = [channels(row), (row.active_channels || []).join(' + '), known(row.firmware) ? `Firmware ${row.firmware}` : '', cabinIR(row)];
-    if (known(row.connectivity) && /LTE/i.test(row.connectivity)) values.push(row.connectivity);
+    if (connectivityLabel(row)) values.push(connectivityLabel(row));
     const settings = [raw.match(/H\.26[45]/i)?.[0], raw.match(/Wi[ -]?Fi\s+(?:Off|On)/i)?.[0], raw.match(/HDR\s+(?:Off|On)/i)?.[0], raw.match(/MicroSD|SSD/i)?.[0], raw.match(/\d+\s*fps/i)?.[0]];
     const resolution = [...new Set(raw.match(/\d{3,4}p/ig) || [])].join(' + ');
     if (resolution) settings.push(resolution);
@@ -172,7 +184,7 @@
       ['Source model', `${row.brand} ${row.model}`], ['Source mode name', row.mode_name],
       ['Power condition', condition(row)], ['Channels', channels(row)], ['Active views', (row.active_channels || []).join(', ')],
       ['Cabin IR', cabinIR(row)], ['Firmware', row.firmware],
-      ['Connectivity', known(row.connectivity) && /LTE/i.test(row.connectivity) ? row.connectivity : ''],
+      ['LTE module', connectivityLabel(row)],
       ['Current at stated voltage', `${rangeValue(row, 'current_ma', 'mA')} / ${valueWithUnit(row.voltage_v, 'V')}`],
       ['Measurement statistic', row.measurement_statistic],
       ['Impact to first frame / camera scope', wake(row)], ['Reported startup (method unconfirmed)', valueWithUnit(row.reported_startup_seconds, 's')],
@@ -180,7 +192,7 @@
       ...(!numeric(row.prebuffer_impact_s) && !numeric(row.prebuffer_motion_s) ? [['Pre-event buffer (source unqualified)', valueWithUnit(row.prebuffer_s, 's')]] : []),
       ['Power adapter', row.power_path], ['Tester', row.tester], ['Source date', row.date], ['Measurement ID', row.id]
     ].filter(([, value]) => known(value));
-    return `<dl class="parking-facts">${entries.map(([key, value]) => `<div><dt>${escape(key)}</dt><dd>${escape(value)}</dd></div>`).join('')}</dl><p class="parking-muted">${escape(row.notes || 'See the original source for test conditions.')}${row.source_power_precision ? ` ${escape(row.source_power_precision)}` : ''}</p>${link(row.source_url, 'Original source')}${row.image_url ? ` · ${link(row.image_url, 'Measurement image')}` : ''}`;
+    return `<dl class="parking-facts">${entries.map(([key, value]) => `<div><dt>${escape(key)}</dt><dd>${escape(value)}</dd></div>`).join('')}</dl><p class="parking-muted">${escape(row.notes || 'See the original source for test conditions.')}${row.source_power_precision ? ` ${escape(row.source_power_precision)}` : ''}</p>${link(row.source_url, row.source_is_private ? 'Source notes' : 'Original source')}${row.image_url ? ` · ${link(row.image_url, 'Measurement image')}` : ''}`;
   }
   function measurement(row, scale) {
     return `<article class="parking-measurement" data-id="${escape(row.id)}"><div class="parking-row"><div><label class="parking-select"><input type="checkbox" data-select="${escape(row.id)}" ${selected.has(row.id) ? 'checked' : ''} aria-label="Compare ${escape(`${modelLabel(row)}, ${modeLabel(row)}, ${condition(row)}, ${row.id}`)}"><span>Compare measurement</span></label><strong class="parking-mode-name">${escape(modeLabel(row))}</strong>${condition(row) ? `<small>${escape(condition(row))}</small>` : ''}${tags(row)}</div><div><span class="parking-watts">${escape(watts(row))}</span><div class="parking-track${numeric(row.power_w) ? '' : ' unknown'}" aria-hidden="true">${numeric(row.power_w) ? `<span style="width:${scale ? row.power_w / scale * 100 : 0}%"></span>` : ''}</div><small>${escape(electrical(row))}</small></div><div><small>${escape(setup(row))}</small>${known(row.power_path) ? `<small>Power adapter: ${escape(row.power_path)}</small>` : ''}${known(wake(row)) ? `<small>Wake to first frame: ${escape(wake(row))}</small>` : ''}<small>Tested by ${escape(shown(row.tester))}</small></div></div><details><summary>Source details</summary>${facts(row)}</details></article>`;
@@ -279,7 +291,7 @@
   }
   async function load() {
     try {
-      const response = await fetch('data/parking-measurements.json');
+      const response = await fetch('data/parking-measurements.json', { cache: 'no-store' });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
       if (data.version !== 1 || !Array.isArray(data.measurements)) throw new Error('Unsupported dataset format');
@@ -289,11 +301,14 @@
       populate('channels', rows.map(row => row.installed_channels)); populate('tester', rows.map(row => row.tester));
       controlsFromState();
       $('dataset-meta').textContent = `${groupModels(rows).length} models · ${rows.length} measurements · Dataset updated ${shown(data.updated)}`;
-      $('coverage-notes').textContent = coverageText(data.coverage) || 'Coverage is incomplete. Refer to the indexed sources for extraction status and limitations.';
+      $('coverage-notes').textContent = '';
+      $('coverage-notes').hidden = true;
       $('source-index').innerHTML = sources.length ? sources.map(source => {
         const url = source.source_url || source.url;
         const count = source.measurement_count ?? rows.filter(row => row.source_url === url).length;
-        return `<li>${link(url, source.title || source.label || source.post_id || url || 'Source')}<small>${escape(source.tester || source.author || 'Tester not specified')} · ${escape(source.status || source.review_status || 'Indexed')} · ${escape(count)} transcribed measurements${count === 0 ? ' (no transcribed measurements)' : ''}</small><small>${escape(coverageText(source.notes || source.reason || ''))}</small>${Array.isArray(source.images) && source.images.length ? `<details><summary>Original source images (${source.images.length})</summary>${source.images.map((image, index) => link(typeof image === 'string' ? image : image.url, `Original image ${index + 1}`)).join(' · ')}</details>` : ''}</li>`;
+        const title = source.title || source.label || source.post_id || 'Original testing data';
+        const heading = source.private ? `${escape(title)} (provided privately)` : link(url, title);
+        return `<li>${heading}<small>${escape(source.tester || source.author || 'Contributor')}${count === 0 ? ' · no transcribed measurements' : ''}</small>${source.notes && !source.private ? `<details><summary>Test notes</summary><p>${escape(coverageText(source.notes))}</p></details>` : ''}${Array.isArray(source.images) && source.images.length ? `<details><summary>Original test charts (${source.images.length})</summary>${source.images.map((image, index) => link(typeof image === 'string' ? image : image.url, `Chart ${index + 1}`)).join(' · ')}</details>` : ''}</li>`;
       }).join('') : '<li>No source index entries are available yet. Measurement details link directly to original sources.</li>';
       ready = true; render();
     } catch (error) {

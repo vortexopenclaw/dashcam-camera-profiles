@@ -5527,7 +5527,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A16:G16",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -5548,7 +5548,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-17",
@@ -5567,7 +5568,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A17:G17",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
@@ -5588,7 +5589,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "rcg530-662070-1",
@@ -6907,7 +6909,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A14:G14",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -6928,7 +6930,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-15",
@@ -6947,7 +6950,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A15:G15",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
@@ -6968,7 +6971,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-13",
@@ -6987,7 +6991,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A13:G13",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -7008,7 +7012,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "rcg530-595611-1",
@@ -7322,7 +7327,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A10:G10",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -7343,7 +7348,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-11",
@@ -7362,7 +7368,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A11:G11",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
@@ -7383,7 +7389,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-12",
@@ -7402,7 +7409,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A12:G12",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -7423,7 +7430,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "rcg530-666875-1",
@@ -9846,7 +9854,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A19:G19",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -9867,7 +9875,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-20",
@@ -9886,7 +9895,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A20:G20",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Quick-start impact standby; not equivalent to minimum-power sleep. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
@@ -9907,7 +9916,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-21",
@@ -9926,7 +9936,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A21:G21",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
@@ -9947,7 +9957,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-22",
@@ -9966,7 +9977,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A22:G22",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -9987,7 +9998,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-23",
@@ -10006,7 +10018,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A23:G23",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Quick-start impact standby; not equivalent to minimum-power sleep. Sheet reports Parking Voltage 12.4 V; its meaning as supply voltage versus another setting is unconfirmed, so it is not used for conversions.",
@@ -10027,7 +10039,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-24",
@@ -10046,7 +10059,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A24:G24",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Sheet reports Parking Voltage 12.4 V; its meaning as supply voltage versus another setting is unconfirmed, so it is not used for conversions. Needs a strong impact, DOUBLECHECK VIDEO",
@@ -10067,7 +10080,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-25",
@@ -10086,7 +10100,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A25:G25",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Sheet reports Parking Voltage 12.4 V; its meaning as supply voltage versus another setting is unconfirmed, so it is not used for conversions.",
@@ -10107,7 +10121,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "rcg530-593859-1",
@@ -18600,7 +18615,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A3:G3",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Sheet reports Parking Voltage 12.4 V; its meaning as supply voltage versus another setting is unconfirmed, so it is not used for conversions.",
@@ -18621,7 +18636,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-4",
@@ -18640,7 +18656,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A4:G4",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
@@ -18661,7 +18677,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "rcg530-564682-1",
@@ -20360,7 +20377,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A5:G5",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -20381,7 +20398,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-6",
@@ -20400,7 +20418,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A6:G6",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Sheet reports Parking Voltage 13.2 V; its meaning as supply voltage versus another setting is unconfirmed, so it is not used for conversions. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
@@ -20421,7 +20439,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "rcg530-612534-1",
@@ -21589,7 +21608,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A7:G7",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -21610,7 +21629,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-8",
@@ -21629,7 +21649,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A8:G8",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
@@ -21650,7 +21670,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "vortex-sheet-row-9",
@@ -21669,7 +21690,7 @@
       "wake_seconds": null,
       "prebuffer_s": null,
       "tester": "Vortex Radar",
-      "source_url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit#gid=0&range=A9:G9",
+      "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "image_url": null,
       "date": null,
       "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Startup time reported by Vortex Radar; timing methodology is not documented in the sheet.",
@@ -21690,7 +21711,8 @@
       "prebuffer_impact_s": null,
       "prebuffer_motion_s": null,
       "power_is_derived": false,
-      "connectivity": null
+      "connectivity": null,
+      "source_is_private": true
     },
     {
       "id": "rcg530-650980-1",
@@ -26043,14 +26065,15 @@
     {
       "id": "vortex-sheet",
       "post_id": null,
-      "title": "Dashcam Low Power Parking Mode Testing",
-      "url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit",
+      "title": "Vortex Radar testing",
+      "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
       "tester": "Vortex Radar",
       "date": null,
       "images": [],
       "status": "extracted",
-      "notes": "Primary data block imported without repeated summary tables or blank measurement rows. One tester-flagged value remains provisional. Sheet was read only, not edited.",
-      "measurement_count": 22
+      "notes": "Measurements provided by Vortex Radar. The original spreadsheet is private.",
+      "measurement_count": 22,
+      "private": true
     },
     {
       "id": "viofo-support-674916",

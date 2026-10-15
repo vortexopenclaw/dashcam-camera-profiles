@@ -24,6 +24,13 @@ assert len(rows)==len(exports)==payload['coverage']['measurements']
 assert all(any(r.get(k) is not None for k in ['power_w','current_ma','current_ma_min','power_w_min']) for r in rows)
 assert all(r['measurement_statistic']=='range' for r in rows if r['current_ma_min'] is not None or r['power_w_min'] is not None)
 assert {'rcg530','Vortex Radar'} <= {r['tester'] for r in rows}
+assert all(r.get('source_is_private') for r in rows if r['tester']=='Vortex Radar')
+for content in [public.read_text(),csv_path.read_text(),json.dumps(sources)]:
+    assert 'docs.google.com/spreadsheets' not in content, 'Private spreadsheet link in public data'
+bad=copy.deepcopy(rows);bad[0]['source_url']='https://docs.google.com/spreadsheets/d/private-test-fixture'
+try:mod.validate(bad,sources)
+except AssertionError:pass
+else:raise AssertionError('Private spreadsheet negative control accepted')
 assert len([s for s in sources if s['tester']=='rcg530'])==67,'All indexed sources need review entries'
 assert not payload['coverage'].get('all_account_posts_exhaustive',True),'Exhaustive account claim unsupported'
 assert all('hash=' not in (r.get('image_url') or '') for r in rows),'Prefer stable original attachment URLs'

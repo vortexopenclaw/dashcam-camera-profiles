@@ -1050,14 +1050,15 @@
   {
     "id": "vortex-sheet",
     "post_id": null,
-    "title": "Dashcam Low Power Parking Mode Testing",
-    "url": "https://docs.google.com/spreadsheets/d/REDACTED_PRIVATE_SOURCE_ID/edit",
+    "title": "Vortex Radar testing",
+    "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "tester": "Vortex Radar",
     "date": null,
     "images": [],
     "status": "extracted",
-    "notes": "Primary data block imported without repeated summary tables or blank measurement rows. One tester-flagged value remains provisional. Sheet was read only, not edited.",
-    "measurement_count": 22
+    "notes": "Measurements provided by Vortex Radar. The original spreadsheet is private.",
+    "measurement_count": 22,
+    "private": true
   },
   {
     "id": "viofo-support-674916",

@@ -53,7 +53,11 @@ if (fs.existsSync(dataPath)) {
   const groups = ui.groupModels(data.measurements);
   assert.equal(groups.flatMap(group => group.rows).length, 588);
   assert.equal(new Set(groups.map(group => group.label)).size, groups.length);
-  for (const query of ['S1-QHD Infinite', 'S1-4K']) assert.equal(ui.groupModels(ui.filterRows(data.measurements, {...state, q: query})).length, 1);
+  for (const query of ['S1-QHD Infinite', 'S1-4K', 'N5', 'Nexus 5', 'S1 Pro', 'X800', '4K Omni', 'ARC800', 'ARC 800']) assert.equal(ui.groupModels(ui.filterRows(data.measurements, {...state, q: query})).length, 1);
+  for (const [brand,source,display] of [['Vantrue','Nexus 5 (N5)','N5'],['Vantrue','Sonnet 1 (S1) Pro','S1 Pro'],['Vantrue','Sonnet 1 (S1)','S1'],['70mai','4K Omni [X800]','4K Omni'],['Thinkware','ARC800 LTE','ARC 800']]) assert.equal(ui.modelName({brand,model:source}),display);
+  assert.equal(ui.modelName({brand:'Thinkware',model:'ARC'}),'ARC');
+  assert.ok(ui.setup(data.measurements.find(row=>row.model==='ARC800 LTE')).includes('With LTE module'));
+  assert.ok(ui.setup(data.measurements.find(row=>row.model==='ARC800')).includes('Without LTE module'));
   for (const model of ['Elite 9', 'Elite 10']) {
     const group = groups.find(group => group.label === `BlackVue ${model}`);
     assert.equal(group.rows.length, 10);
@@ -106,7 +110,11 @@ with sync_playwright() as p:
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Actual page overflow at %s'%width
     actual = json.load(open('docs/data/parking-measurements.json'))['measurements']
     assert len(actual) == 588
-    for query in ['S1-QHD Infinite','S1-4K','S1-4K Infinite','Elite 9','Elite 10']:
+    assert page.locator('a[href*="docs.google.com/spreadsheets"]').count() == 0
+    assert not page.locator('#coverage-notes').is_visible()
+    assert page.locator('#sources-title').inner_text() == 'Original testing data'
+    assert page.locator('#vortex-radar-testing').inner_text().find("isn't public") >= 0
+    for query in ['S1-QHD Infinite','S1-4K','S1-4K Infinite','Elite 9','Elite 10','N5','Nexus 5','S1 Pro','X800','4K Omni','ARC800','ARC 800']:
         page.locator('#filter-q').fill(query)
         assert page.locator('.parking-model-entry').count() == 1, query
         entry = page.locator('.parking-model-entry')
@@ -123,7 +131,7 @@ with sync_playwright() as p:
     page.goto(url+'?state=all&superseded=1&provisional=1')
     page.wait_for_selector('.parking-model-entry')
     assert page.locator('.parking-measurement').count() == 588
-    assert page.locator('.parking-model-entry').count() == 49
+    assert page.locator('.parking-model-entry').count() == 47
     page.locator('.parking-model-tests').evaluate_all('(items) => items.forEach(item => item.open = true)')
     for width in [320,375,768,1440]:
         page.set_viewport_size({'width':width,'height':900})
@@ -201,7 +209,7 @@ with sync_playwright() as p:
     card = page.locator('.comparison-card').first
     assert card.locator('details').count()==1
     card.locator('summary').click()
-    for label, value in [('Channels','2 channels'),('Active views','front, rear'),('Firmware','test'),('Connectivity','CM100G LTE connected'),('Current at stated voltage','100 mA / 12.5 V'),('Power adapter','Battery-side hardwire input'),('Impact to first frame / camera scope','3–5 s (range) · rear camera'),('Impact pre-event buffer','5 s'),('Motion pre-event buffer','10 s'),('Tester','Test only')]:
+    for label, value in [('Channels','2 channels'),('Active views','front, rear'),('Firmware','test'),('LTE module','CM100G LTE connected'),('Current at stated voltage','100 mA / 12.5 V'),('Power adapter','Battery-side hardwire input'),('Impact to first frame / camera scope','3–5 s (range) · rear camera'),('Impact pre-event buffer','5 s'),('Motion pre-event buffer','10 s'),('Tester','Test only')]:
         fact = card.locator('.parking-facts > div').filter(has=page.get_by_text(label,exact=True))
         assert fact.locator('dd').is_visible() and fact.locator('dd').inner_text()==value, label
     assert 'END OF SOURCE NOTE' in card.inner_text()

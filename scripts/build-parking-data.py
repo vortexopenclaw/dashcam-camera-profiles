@@ -24,6 +24,8 @@ def validate(rows, sources):
         for k in ['brand','model','mode_name','tester','source_url']:
             assert isinstance(r[k], str) and r[k].strip(), (r['id'],k)
         assert r['source_url'].startswith('https://'), r['id']
+        assert 'docs.google.com/spreadsheets' not in r['source_url'], 'Private sheet links must not be published'
+        assert 'sheets.google.com' not in r['source_url'], 'Private sheet links must not be published'
         assert r.get('image_url') is None or r['image_url'].startswith('https://'), r['id']
         assert r['installed_channels'] is None or (isinstance(r['installed_channels'],int) and 1 <= r['installed_channels'] <= 6), r['id']
         assert r.get('active_channels') is None or isinstance(r['active_channels'],list), r['id']
@@ -37,6 +39,8 @@ def validate(rows, sources):
         for k in FIELDS:
             assert k in r, (r['id'],'missing '+k)
     source_ids = [s['id'] for s in sources]
+    for source in sources:
+        assert 'docs.google.com/spreadsheets' not in (source.get('url') or ''), 'Private sheet source links must not be published'
     assert len(source_ids) == len(set(source_ids)), 'Duplicate source id'
 
 
