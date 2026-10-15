@@ -203,7 +203,7 @@
     const notes = [
       state.metric === 'watts' && plotted.some(item=>item.row.power_is_derived) ? '≈ marks calculated power.' : '',
       hasRanges ? 'Ranges show measured endpoints, not averages. Firmware and setups remain separate.' : '',
-      result.excluded ? `${result.excluded} selected measurements are unavailable for this metric and excluded, never plotted as zero.` : '',
+
       state.details ? 'Sources and configurations' : ''
     ].filter(Boolean);
     for (const note of notes) { for (const line of wrapped(note, width - 72, 13)) { y += 19; text(36, y, line, { 'font-size': 13, fill: '#536174' }); } y += 5; }
@@ -271,7 +271,8 @@
     $('chart-clear').disabled = !state.ids.length;
     $('chart-csv').disabled = !state.ids.length;
     $('chart-switch-watts').hidden = !result.blocked;
-    $('chart-notice').textContent = result.blocked ? 'Current comparison blocked: selected measurements have different or unknown measurement voltages. Choose tests at one known voltage, or switch to W.' : `${result.excluded ? `${result.excluded} selected measurements are unavailable for this metric and excluded, never plotted as zero. ` : ''}${!result.plotted.length ? 'Choose a measurement with a documented value for this metric.' : ''}`;
+    const missingModels=[...new Set(result.selected.filter(row=>!interval(row,state.metric)).map(UI.modelLabel))];
+    $('chart-notice').textContent = result.blocked ? 'Current comparison blocked: selected measurements have different or unknown measurement voltages. Choose tests at one known voltage, or switch to W.' : (result.excluded ? `No ${metrics[state.metric].label.toLowerCase()} data for: ${missingModels.join(', ')}. ${result.excluded===1?'That selection is':'Those selections are'} not shown.` : (!result.plotted.length ? 'Choose a dashcam with a result for this metric.' : ''));
     currentSVG = !result.blocked && result.plotted.length ? draw(result) : null;
     $('chart-canvas').replaceChildren(...(currentSVG ? [currentSVG] : [el('p', 'charts-empty', result.blocked ? 'No current chart until the voltage comparison is valid.' : 'No measured values to plot.')]));
     $('chart-canvas').setAttribute('aria-busy', 'false');

@@ -187,7 +187,8 @@ with sync_playwright() as p:
     fit_svg(page)
     page.locator('#chart-metric').select_option('wake')
     assert page.locator('#chart-canvas svg').count()==0
-    assert '7 selected measurements' in page.locator('#chart-notice').text_content()
+    assert 'No impact to first frame data for:' in page.locator('#chart-notice').text_content()
+    assert 'Viofo T340' in page.locator('#chart-notice').text_content()
     assert page.locator('#chart-svg').is_disabled()
     page.locator('#preset-current').click()
     assert page.locator('#chart-canvas [data-measurement]').count()==7
@@ -207,7 +208,7 @@ with sync_playwright() as p:
     chosen=choose.get_attribute('data-id'); choose.check()
     assert chosen in urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
     page.locator('#chart-metric').select_option('watts')
-    assert row(page,chosen).count()==1 or 'unavailable' in page.locator('#chart-notice').text_content()
+    assert row(page,chosen).count()==1 or 'not shown' in page.locator('#chart-notice').text_content()
     # Selection remains when searching and clearing only removes selected measurements.
     page.locator('#chart-search').fill('NO SUCH CAMERA'); assert page.locator('.chart-model').count()==0
     assert chosen in urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
@@ -267,7 +268,9 @@ with sync_playwright() as p:
     page.goto(url+'?'+params([a,b,c]));ready(page)
     assert row(page,a).locator('[data-kind=zero]').count()==1
     assert row(page,a).locator('[data-kind=value]').text_content()=='0 W'
-    assert row(page,b).count()==0 and '1 selected measurements' in page.locator('#chart-notice').text_content()
+    assert row(page,b).count()==0 and 'No measured power data for: Viofo T340. That selection is not shown.' == page.locator('#chart-notice').text_content()
+    assert 'not shown' not in page.locator('#chart-canvas svg > g').text_content()
+    assert 'unavailable' not in page.locator('#chart-canvas svg > g').text_content()
     assert row(page,c).locator('[data-kind=range]').count()==1 and row(page,c).locator('rect').count()==0
     assert row(page,c).locator('[data-kind=value]').text_content()=='1–3 W'
     fit_svg(page)
