@@ -7,6 +7,14 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const { interval, metricInterval } = require('../docs/assets/parking-preview.js');
 const root = path.resolve(__dirname, '..');
+const photoCatalog=JSON.parse(fs.readFileSync(path.join(root,'docs/assets/parking-preview/photos.json'),'utf8'));
+assert.equal(photoCatalog.length,3);
+for(const photo of photoCatalog){
+  assert.match(photo.file,/^assets\/parking-preview\/[a-z0-9-]+\.png$/);
+  const bytes=fs.readFileSync(path.join(root,'docs',photo.file));
+  assert.equal(bytes.subarray(1,4).toString(),'PNG');
+  assert.equal(bytes.readUInt32BE(16),800);assert.equal(bytes.readUInt32BE(20),480);
+}
 assert.deepEqual(interval({ power_w: 0 }, 'power_w'), { min: 0, max: 0, range: false });
 assert.deepEqual(interval({ power_w_min: 1, power_w_max: 3 }, 'power_w'), { min: 1, max: 3, range: true });
 for (const row of [{}, { power_w: -1 }, { power_w: '2' }, { power_w_min: 3, power_w_max: 1 }]) assert.equal(interval(row, 'power_w'), null);

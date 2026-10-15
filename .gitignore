@@ -6,6 +6,7 @@
 *.jpg
 *.jpeg
 *.png
+!docs/assets/parking-preview/*.png
 *.wav
 *.m4a
 *.gpx
