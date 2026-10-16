@@ -11,6 +11,8 @@ const rows = require('../docs/data/parking-measurements.json').measurements;
 assert.equal(rows.length, 588);
 assert.equal(UI.groupModels(rows).length, 47);
 assert.equal(new Set(rows.map(r => r.id)).size, 588);
+assert.equal(chart.readState('?metric=watts&title=Parking+Mode+Power+Draw',rows).title,'Parking Mode Power Draw Comparison');
+assert.equal(chart.readState('?metric=watts&title=My+custom+title',rows).title,'My custom title');
 const e1=rows.filter(r=>r.brand==='Vantrue'&&r.model==='E1 Pro'&&r.state==='monitoring'&&r.category==='impact-sleep');
 assert.equal(chart.representative(e1,[],'low-power').id,'rcg530-660569-2');
 assert.equal(chart.tester({tester:'Robert'}),'Retro CarGuy530 (rcg530)');
@@ -111,7 +113,13 @@ def params(ids,metric='watts',**kw):
     return urllib.parse.urlencode(p)
 def row(page,id): return page.locator('#chart-canvas [data-measurement="%s"]'%id)
 def fit_svg(page):
-    assert page.locator('#chart-canvas svg [data-role="chart-heading"]').evaluate_all("es=>es.length>=3&&es.every(e=>e.getAttribute('text-anchor')==='middle'&&Number(e.getAttribute('x'))===e.ownerSVGElement.viewBox.baseVal.width/2)"), 'Centered chart headings'
+    assert page.locator('#chart-canvas svg [data-role="chart-heading"]').evaluate_all("es=>es.length>=2&&es.every(e=>e.getAttribute('text-anchor')==='middle'&&Number(e.getAttribute('x'))===e.ownerSVGElement.viewBox.baseVal.width/2)"), 'Centered chart headings'
+    assert 'Zero baseline' not in page.locator('#chart-canvas svg > g').text_content()
+    assert '(Lower is better)' in page.locator('#chart-canvas svg [data-role="chart-heading"]').last.text_content()
+    axis=page.locator('#chart-canvas svg [data-role="chart-axis"]')
+    assert axis.count()==1
+    assert axis.evaluate("e=>e.getBBox().y>Math.max(...[...e.ownerSVGElement.querySelectorAll('[data-measurement]')].map(g=>g.getBBox().y+g.getBBox().height))"), 'Axis label below chart'
+    if page.locator('#chart-metric').input_value()=='watts':assert axis.text_content()=='Power Draw (Watts)'
     assert page.locator('#chart-canvas svg').evaluate('''s => [...s.querySelectorAll('text')].every(t=>{const b=t.getBBox();return b.x>=0 && b.y>=0 && b.x+b.width<=s.viewBox.baseVal.width+1 && b.y+b.height<=s.viewBox.baseVal.height+1})'''), 'SVG text clipping'
 def download(page,button,name):
     with page.expect_download() as d: page.locator(button).click()

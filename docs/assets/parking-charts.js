@@ -11,7 +11,8 @@
     wake: { key: 'wake_seconds', unit: 's', label: 'Impact to first frame' }
   };
   const seed = [4, 6, 9, 11, 15, 17, 21].map(n => `vortex-sheet-row-${n}`);
-  const titles = {current:'Parking-mode current draw',watts:'Parking-mode power draw',delay:'Recording delay after impact detection',wake:'Impact to first recorded frame'};
+  const titles = {current:'Parking Mode Current Draw Comparison',watts:'Parking Mode Power Draw Comparison',delay:'Parking Mode Recording Delay Comparison',wake:'Parking Mode Wakeup Time Comparison'};
+  const legacyTitles = new Set(['Parking-mode current draw','Parking-mode power draw','Parking Mode Power Draw','Recording delay after impact detection','Impact to first recorded frame']);
   const families = {
     'low-power': 'Low-power parking', buffered: 'Buffered parking',
     'buffered-motion': 'Buffered motion detection', 'buffered-impact': 'Buffered impact detection',
@@ -77,7 +78,7 @@
     const ids = p.has('selection') ? [...new Set(p.getAll('id').filter(id => known.has(id)))] : fallback.ids.filter(id => known.has(id));
     return { ids, group: Object.hasOwn(families, p.get('group')) ? p.get('group') : fallback.group, family: Object.hasOwn(families, p.get('family')) ? p.get('family') : (p.has('selection') ? 'all' : fallback.family), condition: ['', 'monitoring', 'event-recording', 'time-lapse', 'continuous'].includes(p.get('condition')) ? p.get('condition') : fallback.condition, details: p.get('details') === '1', metric: Object.hasOwn(metrics, p.get('metric')) ? p.get('metric') : fallback.metric,
       sort: p.get('sort') === 'asc' ? 'asc' : 'desc', highlight: p.has('highlight') ? (models.has(p.get('highlight')) ? p.get('highlight') : '') : fallback.highlight,
-      title: p.has('title') ? p.get('title').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0, 180) : titles[Object.hasOwn(metrics,p.get('metric')) ? p.get('metric') : 'current'] };
+      title: p.has('title') && !legacyTitles.has(p.get('title')) ? p.get('title').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0, 180) : titles[Object.hasOwn(metrics,p.get('metric')) ? p.get('metric') : 'current'] };
   }
   function query(state) {
     const p = new URLSearchParams({ selection: '1', group: state.group || 'all', family: state.family || 'all', condition: state.condition ?? 'monitoring', metric: state.metric, sort: state.sort, highlight: state.highlight, title: state.title, details: state.details ? '1' : '0' });
@@ -198,7 +199,7 @@
   }
   function draw(result) {
     const { plotted } = result, metric = metrics[state.metric];
-    const axis = `${metric.label} (${metric.unit})${state.metric === 'current' ? ` at ${result.voltage} V` : ''}`;
+    const axis = {watts:'Power Draw (Watts)',current:`Current Draw (mA at ${result.voltage} V)`,delay:'Recording Delay (Seconds)',wake:'Impact to First Recorded Frame (Seconds)'}[state.metric];
     const variantKey = row => [UI.modelLabel(row),row.installed_channels,UI.modeLabel(row),row.state].join('|');
     const labels = plotted.map(({ row }, i) => {
       const siblings = plotted.filter(item => UI.modelLabel(item.row) === UI.modelLabel(row));
@@ -217,10 +218,11 @@
     const text = (x, y, value, attrs = {}) => content.appendChild(make('text', { x, y, ...attrs }, value));
     let y = 45;
     for (const line of wrapped(state.title || metric.label, width - 72, 28, true)) { text(width / 2, y, line, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 28, 'font-weight': 700, fill: '#172337' }); y += 35; }
-    text(width / 2, y + 8, `${families[state.family] || families.all} · ${axis}`, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 16, fill: '#516174' });
+    const family=families[state.family] || families.all;
+    const subtitle=`${/parking$/.test(family) ? family+' mode' : family} (Lower is better)`;
+    text(width / 2, y + 8, subtitle, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 16, fill: '#516174' });
     const hasRanges = plotted.some(item => item.value.range);
-    text(width / 2, y + 34, `Zero baseline · ${state.sort === 'asc' ? 'Low to high' : 'High to low'}${hasRanges ? ' · Ranges sorted by upper endpoint' : ''}`, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 13, fill: '#637285' });
-    const top = y + 66, bottom = top + labels.reduce((sum, label) => sum + label.height, 0);
+    const top = y + 50, bottom = top + labels.reduce((sum, label) => sum + label.height, 0);
     const maximum = Math.max(0, ...plotted.map(item => item.value.max));
     const rawStep = maximum > 0 ? maximum / 5 : 0.2;
     const magnitude = 10 ** Math.floor(Math.log10(rawStep));
@@ -250,7 +252,8 @@
       group.append(make('text', { x: scale(value.max) + 10, y: cy + 5, 'font-size': 16, 'font-weight': highlighted ? 700 : 600, fill: '#23354a', 'data-kind': 'value' }, valueLabel(row, value, state.metric)));
       content.append(group);
     });
-    y = bottom + 65;
+    text(left + plotWidth / 2, bottom + 54, axis, {'text-anchor':'middle','data-role':'chart-axis','font-size':15,fill:'#516174'});
+    y = bottom + 80;
     content.append(make('line', { x1: 36, x2: width - 36, y1: y - 8, y2: y - 8, stroke: '#dae2eb' }));
     const notes = [
       state.metric === 'watts' && plotted.some(item=>item.row.power_is_derived) ? '≈ marks calculated power.' : '',
