@@ -98,7 +98,46 @@
     const text = value.range ? `${number(value.min, metric)}–${number(value.max, metric)}` : number(value.max, metric);
     return `${metric === 'watts' && row.power_is_derived ? '≈ ' : ''}${text} ${metrics[metric].unit}`;
   }
-  const api = { metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
+  const tester = row => /^(?:Robert|rcg530|Retro\s*CarGuy530)$/i.test(row.tester || '') ? 'Retro CarGuy530 (rcg530)' : (row.tester || '');
+  // Only explicit settings are shown. IR off never means the camera is off.
+  function testFields(row) {
+    const notes = row.notes || '';
+    const day = notes.match(/^(Day|Night)\b|\b(Day|Night) IR setting\b/i);
+    const period = notes.match(/^((?:1st|2nd|3rd|\d+th) 5-minutes)\b/i);
+    const interior = /Interior camera disabled in parking but still plugged in/i.test(notes) ? 'Off while parked, still connected' : /Interior camera enabled/i.test(notes) ? 'On' : '';
+    return [
+      ['Mode', UI.modeLabel(row)], ['Firmware', row.firmware], ['Tested by', tester(row)],
+      ['Interior IR', UI.cabinIR(row) || interior ? (['on','off','auto'].includes(row.ir) ? row.ir : '') : ''],
+      ['Active cameras', (row.active_channels || []).join(' + ')],
+      ['Settings', (row.mode_name || '').match(/(?:H\.26[45]|Wi[ -]?Fi\s+(?:Off|On)|HDR\s+(?:Off|On)|\d+\s*fps|\d{3,4}p|Pre-Recording (?:On|Off)|Sensitivity\s*=\s*(?:Medium|Ultra High))/ig)?.join(', ')],
+      ['Interior camera', interior], ['Lighting', day ? (day[1] || day[2]) : ''],
+      ['Test window', period ? period[1].replace('5-minutes','5-minute interval') : ''],
+      ['Test voltage', valid(row.voltage_v) && row.voltage_v > 0 ? `${row.voltage_v} V` : ''],
+      ['Tested date', row.date], ['Power adapter', row.power_path], ['LTE', row.connectivity]
+    ].filter(([,value]) => value && !/^(unknown|not reported|none)$/i.test(String(value)));
+  }
+  function differences(items) {
+    const fields = items.map(row => new Map(testFields(row)));
+    return ['Mode','Firmware','Tested by','Interior IR','Interior camera','Lighting','Test window','Test voltage','Tested date','Power adapter','LTE','Active cameras','Settings'].filter(key => new Set(fields.map(f => f.get(key)).filter(Boolean)).size > 1);
+  }
+  function variantLabel(row, items, metric, includeMode = true) {
+    const varying = differences(items);
+    const describe = candidate => {
+      const parts = testFields(candidate).filter(([key]) => (includeMode && key === 'Mode') || varying.includes(key) && key !== 'Mode').map(([key,value]) => key === 'Firmware' ? `FW ${value}` : key === 'Interior IR' ? `Interior IR ${value}` : key === 'Interior camera' ? `Interior camera ${value}` : value);
+      const reading = interval(candidate, metric);
+      if (includeMode && reading) parts.push(valueLabel(candidate, reading, metric));
+      return parts.join(' · ');
+    };
+    const base = describe(row);
+    const same = items.filter(other => describe(other) === base && (includeMode || UI.modeLabel(other) === UI.modeLabel(row)) && other.installed_channels === row.installed_channels);
+    return [base, same.length > 1 ? `Test ${same.slice().sort((a,b)=>a.id.localeCompare(b.id)).findIndex(other=>other.id===row.id)+1}` : ''].filter(Boolean).join(' · ');
+  }
+  function sourceName(row) {
+    if(row.source_is_private || tester(row)==='Vortex Radar')return 'Vortex Radar testing notes';
+    const url=UI.safeURL(row.source_url), forum=url && /^(?:www\.)?dashcamtalk\.com$/.test(new URL(url).hostname);
+    return `${tester(row) || 'Contributor'} · ${UI.modelLabel(row)} ${forum ? 'test on DashCamTalk' : 'testing data'}`;
+  }
+  const api = { tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof window === 'undefined') return;
   window.ParkingCharts = api;
@@ -145,6 +184,18 @@
     const parsed = new URL(url);
     return ['dashcamtalk.com', 'www.dashcamtalk.com', 'vortexopenclaw.github.io', 'www.vortexradar.com', 'vortexradar.com'].includes(parsed.hostname) ? url : '';
   }
+  function appendTestDetails(target, row) {
+    const fields=el('dl','chart-test-fields');
+    for(const [key,value] of testFields(row)) fields.append(el('dt','',key),el('dd','',value));
+    target.append(fields);
+    const links=el('div','chart-test-links');
+    const add=(url,label)=>{if(!url)return;const a=el('a','',label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a);};
+    add(source(row),sourceName(row));
+    if(row.image_url&&!row.source_is_private)add(source({...row,source_url:row.image_url}),'Original measurement chart');
+    target.append(links);
+    const original=el('details','chart-original-notes');original.append(el('summary','','Original test notes'),el('small','',`Source mode label: ${row.mode_name}`));
+    if(row.notes)original.append(el('small','',row.notes));target.append(original);
+  }
   function draw(result) {
     const { plotted } = result, metric = metrics[state.metric];
     const axis = `${metric.label} (${metric.unit})${state.metric === 'current' ? ` at ${result.voltage} V` : ''}`;
@@ -154,7 +205,7 @@
       const repeated = plotted.filter(item => variantKey(item.row) === variantKey(row)).length > 1;
       const modes = new Set(siblings.map(item => UI.modeLabel(item.row)));
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean);
-      return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}${state.details ? ` [${i + 1}]` : ''}`, second: [modes.size > 1 ? UI.modeLabel(row) : '', repeated ? `${UI.setup(row)} · ${row.id}` : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
+      return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}${state.details ? ` [${i + 1}]` : ''}`, second: [modes.size > 1 ? UI.modeLabel(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
     });
     const left = 420;
     labels.forEach(label => { label.firstLines = wrapped(label.first, left - 56, 16, true); label.secondLines = label.second ? wrapped(label.second, left - 56, 14) : []; label.height = Math.max(58, label.firstLines.length * 20 + label.secondLines.length * 18 + 18); });
@@ -212,21 +263,22 @@
     const sources = new Map();
     plotted.forEach(({ row }, index) => {
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean).join(' · ');
-      const note = `[${index + 1}] ${UI.modelLabel(row)} · ${row.id} · ${UI.setup(row)} · ${row.mode_name} · ${UI.condition(row) || row.state} · ${row.tester || 'Tester not reported'}${row.date ? ` · ${row.date}` : ''}${flags ? ` · ${flags}` : ''}`;
+      const note = `[${index + 1}] ${UI.modelLabel(row)} · ${row.installed_channels ? `${row.installed_channels}CH · ` : ''}${testFields(row).map(([key,value])=>`${key}: ${value}`).join(' · ')}${flags ? ` · ${flags}` : ''}`;
       for (const line of wrapped(note + (state.metric === 'wake' && row.notes ? ` · Timing context: ${row.notes}` : ''), width - 72, 12)) { y += 17; text(36, y, line, { 'font-size': 12, fill: '#536174' }); }
       const url = source(row);
-      const sourceKey = url || 'Source URL not available in the public index.';
+      const sourceKey = JSON.stringify({url, name:sourceName(row)});
       if (!sources.has(sourceKey)) sources.set(sourceKey, []);
       sources.get(sourceKey).push(index + 1);
       y += 8;
     });
     for (const [url, references] of sources) {
-      for (const line of wrapped(`Source for [${references.join(', ')}]: ${url}`, width - 72, 12)) { y += 17; text(36, y, line, { 'font-size': 12, fill: '#536174' }); }
+      const ref = JSON.parse(url);
+      for (const line of wrapped(`[${references.join(', ')}] ${ref.name}`, width - 72, 12)) { y += 17; const node=text(36, y, line, { 'font-size': 12, fill: '#245a85' }); if(ref.url){const link=make('a',{href:ref.url});node.replaceWith(link);link.append(node);} }
       y += 8;
     }
     }
     y += 22;
-    const contributors = [...new Set(plotted.map(item => item.row.tester).filter(Boolean))].join(', ');
+    const contributors = [...new Set(plotted.map(item => tester(item.row)).filter(Boolean))].join(', ');
     for (const line of wrapped(`Sources: ${contributors}. Full measurements and configurations: vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html`, width - 72, 12)) {
       text(36, y, line, { 'font-size': 12, fill: '#69778a' }); y += 17;
     }
@@ -329,15 +381,19 @@
       setupSelect.dataset.test = group.label;
       setupSelect.setAttribute('aria-label',`Test and mode for ${group.label}`);
       const variants=group.rows.filter(row=>row.installed_channels===chosen.installed_channels);
-      variants.forEach(row=>{const option=el('option','',`${UI.modeLabel(row)} · ${UI.setup(row)} · ${row.id}`);option.value=row.id;setupSelect.append(option);});
+      variants.forEach(row=>{const option=el('option','',variantLabel(row, variants, state.metric));option.value=row.id;setupSelect.append(option);});
       setupSelect.value=chosen.id;
       setupSelect.addEventListener('change',()=>editModel(group,rows.find(row=>row.id===setupSelect.value),selected,'select[data-test]'));
       setupLabel.append(setupSelect);details.append(setupLabel);
       const value=interval(chosen,state.metric);
-      details.append(el('small','',`Selected test: ${chosen.id} · ${value?valueLabel(chosen,value,state.metric):'Not measured for this metric'}`),el('small','',`Original mode: ${chosen.mode_name}`),el('small','',`${UI.setup(chosen)} · ${chosen.tester || 'Contributor'}${chosen.date ? ` · ${chosen.date}` : ''}`));
+      details.append(el('strong','chart-selected-reading',value?`${metrics[state.metric].label}: ${valueLabel(chosen,value,state.metric)}`:'Not measured for this metric'));
+      const varying=differences(variants);
+      const names={'Mode':'parking mode','Firmware':'firmware','Tested by':'tester','Interior IR':'interior IR setting','Interior camera':'interior camera setting','Lighting':'day/night conditions','Test window':'measurement period','Test voltage':'test voltage','Tested date':'test date','Power adapter':'power adapter','LTE':'LTE connection','Active cameras':'active cameras','Settings':'recording settings'};
+      if(varying.length)details.append(el('p','chart-variant-summary',`Available tests differ by ${new Intl.ListFormat('en',{type:'conjunction'}).format(varying.map(key=>names[key]))}.`));
+      appendTestDetails(details,chosen);
       const flags=[chosen.test_status==='prototype'?'Prototype':'',UI.provisional(chosen)?'Provisional':'',chosen.superseded?'Superseded':''].filter(Boolean);
       if(flags.length)label.append(el('small','',flags.join(' · ')));
-      if(chosen.notes)details.append(el('small','',chosen.notes));
+
       const multiple=state.ids.filter(id=>rows.some(row=>row.id===id&&UI.modelLabel(row)===group.label)).length;
       if(multiple>1)details.append(el('small','',`${multiple} shared measurements retained. Editing this camera replaces only its selected tests.`));
       card.append(details);fragment.append(card);
@@ -364,16 +420,15 @@
       details.append(summary);
       for (const row of group.rows) {
         const label = el('label', 'chart-pick-row'), input = document.createElement('input');
-        input.type = 'checkbox'; input.dataset.id = row.id; input.checked = selected.has(row.id); input.setAttribute('aria-label', `${UI.modelLabel(row)}, ${UI.modeLabel(row)}, ${row.id}`);
+        input.type = 'checkbox'; input.dataset.id = row.id; input.checked = selected.has(row.id); input.setAttribute('aria-label', `${UI.modelLabel(row)}, ${variantLabel(row, group.rows, state.metric)}`);
         const body = el('span'); body.append(el('strong', '', `${UI.modeLabel(row)} · ${UI.condition(row) || (row.state === 'time-lapse' ? 'Time-lapse recording' : 'Continuous recording')}`));
-        body.append(el('small', '', UI.setup(row)));
+        body.append(el('small', '', variantLabel(row, group.rows, state.metric, false)));
         const value = interval(row, state.metric);
         body.append(el('small', 'chart-metric-reading', `${value ? valueLabel(row, value, state.metric) : 'Not measured for this metric'}${state.metric === 'current' ? ` · ${valid(row.voltage_v) ? `${row.voltage_v} V` : 'Voltage unknown'}` : ''}`));
         if (row.test_status === 'prototype' || UI.provisional(row) || row.superseded) body.append(el('small','', [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '',row.superseded ? 'Superseded' : ''].filter(Boolean).join(' · ')));
         const sourceDetails=el('details','chart-test-details');
         sourceDetails.append(el('summary','','Test details'));
-        sourceDetails.append(el('small','',`Original mode: ${row.mode_name}`),el('small','',`${row.tester || 'Contributor'} · ${row.id}${row.date ? ` · ${row.date}` : ''}`));
-        if (row.power_path) sourceDetails.append(el('small','',`Power adapter: ${row.power_path}`));
+        appendTestDetails(sourceDetails,row);
         if (row.wake_camera) sourceDetails.append(el('small','',`First-frame scope: ${row.wake_camera}`));
         if (row.reported_startup_seconds != null && row.reported_startup_method !== method) sourceDetails.append(el('small','',`Other reported startup: ${row.reported_startup_seconds} s, method unconfirmed. Not plotted as impact timing.`));
         body.append(sourceDetails);

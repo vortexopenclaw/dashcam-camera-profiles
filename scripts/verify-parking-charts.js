@@ -13,6 +13,27 @@ assert.equal(UI.groupModels(rows).length, 47);
 assert.equal(new Set(rows.map(r => r.id)).size, 588);
 const e1=rows.filter(r=>r.brand==='Vantrue'&&r.model==='E1 Pro'&&r.state==='monitoring'&&r.category==='impact-sleep');
 assert.equal(chart.representative(e1,[],'low-power').id,'rcg530-660569-2');
+assert.equal(chart.tester({tester:'Robert'}),'Retro CarGuy530 (rcg530)');
+assert.equal(chart.tester({tester:'VIOFO-Support'}),'VIOFO-Support');
+assert.equal(new Map(chart.testFields(e1[0])).has('Interior IR'),false);
+assert.deepEqual(chart.differences(e1),['Mode']);
+assert.equal(new Map(chart.testFields({notes:'1st 5-minutes.',mode_name:'Motion Detection'})).get('Test window'),'1st 5-minute interval');
+assert.match(chart.sourceName({brand:'Viofo',model:'A329S',tester:'VIOFO-Support',source_url:'https://viofo.com/'}),/testing data$/);
+const interiorOff=rows.find(r=>/Interior camera disabled in parking but still plugged in/.test(r.notes || '') && r.ir==='on');
+assert.ok(interiorOff);
+assert.equal(new Map(chart.testFields(interiorOff)).get('Interior camera'),'Off while parked, still connected');
+assert.equal(new Map(chart.testFields(interiorOff)).get('Interior IR'),'on');
+assert.equal(new Map(chart.testFields(interiorOff)).get('Lighting'),'Night');
+const duplicates=[{...e1[0],id:'b'},{...e1[0],id:'a'}];
+assert.match(chart.variantLabel(duplicates[0],duplicates,'watts'),/Test 2$/);
+for(const group of UI.groupModels(rows)) {
+  for(const channels of new Set(group.rows.map(row=>row.installed_channels))) {
+    const variants=group.rows.filter(row=>row.installed_channels===channels);
+    const labels=variants.map(row=>chart.variantLabel(row,variants,'watts'));
+    assert.equal(new Set(labels).size,variants.length,group.label+' unique readable variant labels');
+    assert.ok(labels.every(label=>!/vortex-sheet-row-|rcg530-\d/.test(label)));
+  }
+}
 assert.equal(chart.representative(e1,['rcg530-660569-1'],'low-power').id,'rcg530-660569-1');
 assert.match(UI.modeLabel(e1.find(r=>r.id==='rcg530-660569-1')),/Quick Start/);
 assert.match(UI.modeLabel(e1.find(r=>r.id==='rcg530-660569-2')),/Power Saving/);
@@ -306,7 +327,7 @@ with sync_playwright() as p:
     assert page.locator('#chart-model-picker input[type=checkbox]').evaluate_all('es=>es.every(e=>e.getBoundingClientRect().height>0)')
     omni=page.locator('.chart-model-choice[data-model="70mai 4K Omni"]')
     assert omni.count()==1 and omni.locator('input[type=checkbox]').count()==1
-    assert not omni.locator('details').evaluate('e=>e.open')
+    assert not omni.locator('.chart-model-setup').evaluate('e=>e.open')
     omni_rows=[r for r in rows if r['brand']=='70mai' and 'Omni' in r['model'] and r['category'] in ['impact-sleep','radar'] and r['state']=='monitoring']
     high=max(r['installed_channels'] for r in omni_rows if isinstance(r.get('installed_channels'),int))
     assert omni.locator('select[data-channels]').input_value()==str(high)
@@ -320,7 +341,7 @@ with sync_playwright() as p:
     selected=urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
     omni_ids=[id for id in selected if byid[id] in omni_rows]
     assert len(omni_ids)==1 and byid[omni_ids[0]]['installed_channels']==high
-    omni.locator('summary').click()
+    omni.locator('.chart-model-setup > summary').click()
     lower=min(r['installed_channels'] for r in omni_rows if isinstance(r.get('installed_channels'),int))
     assert lower<high
     omni.locator('select[data-channels]').select_option(str(lower))
@@ -333,7 +354,7 @@ with sync_playwright() as p:
     page.locator('#chart-group').select_option('buffered')
     box=page.locator('.chart-model-choice[data-model="BlackVue DR970X BOX-2CH Plus"]')
     assert box.count()==1 and box.locator('input[type=checkbox]').count()==1
-    assert not box.locator('details').evaluate('e=>e.open')
+    assert not box.locator('.chart-model-setup').evaluate('e=>e.open')
     box.locator('input[type=checkbox]').check()
     box_selected=urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
     assert len([id for id in box_selected if 'BOX' in byid[id]['model'] and 'DR970' in byid[id]['model']])==1
@@ -386,6 +407,46 @@ with sync_playwright() as p:
     assert page.locator('#chart-group').input_value()=='buffered-motion'
     assert page.locator('#chart-metric').input_value()=='watts'
     assert set(page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)'))==set(plotted)
+    # Readable variants, named provenance, real expanded setup screenshots.
+    n4=[r['id'] for r in rows if r['model']=='N4 Pro S' and r['category']=='impact-sleep' and r['state']=='monitoring']
+    e1=['rcg530-660569-1','rcg530-660569-2']
+    for model,ids,slug in [('Vantrue N4 Pro S',n4,'n4-pro-s'),('Vantrue E1 Pro',e1,'e1-pro')]:
+        page.goto(url+'?'+params(ids,'watts',details='1'));ready(page)
+        page.locator('#chart-search').fill(model.replace('Vantrue ',''))
+        card=page.locator('.chart-model-choice[data-model="%s"]'%model)
+        card.locator('.chart-model-setup > summary').click()
+        options=card.locator('select[data-test] option').all_text_contents()
+        assert len(options)==len(set(options)),options
+        assert all(not any(id in option for id in byid) for option in options)
+        assert 'Firmware' in card.text_content() and 'Tested by' in card.text_content()
+        assert 'Available tests differ by' in card.text_content()
+        if slug=='e1-pro':
+            assert any('Quick Start' in text for text in options) and any('Power Saving' in text for text in options)
+            assert 'Interior IR' not in card.text_content()
+            assert 'Retro CarGuy530 (rcg530)' in card.text_content()
+            assert card.locator('a').first.get_attribute('href')==byid[e1[0]]['source_url']
+        else:
+            assert 'firmware' in card.locator('.chart-variant-summary').text_content()
+        assert not page.locator('#chart-canvas svg text').evaluate_all('es=>es.some(e=>/vortex-sheet-row-|rcg530-\\d/.test(e.textContent))')
+        assert set(page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)'))==set(ids)
+        download(page,'#chart-svg',slug+'-detailed-sources.svg')
+        page.locator('.site-header').evaluate("e=>e.style.visibility='hidden'")
+        page.locator('#chart-canvas svg').screenshot(path=str(out/(slug+'-detailed-sources.png')))
+        page.locator('.site-header').evaluate("e=>e.style.visibility=''")
+        fit_svg(page)
+        if slug=='n4-pro-s':
+            card.locator('select[data-test]').select_option('vortex-sheet-row-21')
+            assert card.locator('a',has_text='Vortex Radar testing notes').count()==1
+        for width in [1440,375]:
+            page.set_viewport_size({'width':width,'height':1100})
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            card.scroll_into_view_if_needed()
+            page.screenshot(path=str(out/(slug+'-setup-'+str(width)+'.png')))
+            card.screenshot(path=str(out/(slug+'-setup-card-'+str(width)+'.png')))
+        if slug=='e1-pro':
+            card.locator('select[data-test]').select_option(e1[1])
+            assert '0.21 W' in card.text_content()
+            assert card.locator('select[data-test]').input_value()==e1[1]
     # Final page restored to the genuine seven-camera initial dataset for review.
     page.goto(url);ready(page)
     page.screenshot(path=str(out/'review-initial-page.png'),full_page=True)

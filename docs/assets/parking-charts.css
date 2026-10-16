@@ -24,6 +24,13 @@
 .chart-model-setup summary, #chart-advanced > summary { min-height:44px; cursor:pointer; color:#b8c9df; padding:12px 0; }
 .chart-model-setup label { margin:10px 0; }
 .chart-model-setup small { display:block; overflow-wrap:anywhere; margin:8px 0; color:#becadd; line-height:1.6; }
+.chart-test-fields { display:grid; grid-template-columns:minmax(90px,auto) minmax(0,1fr); gap:7px 16px; margin:14px 0; font-size:.85rem; line-height:1.5; }
+.chart-test-fields dt { color:#b8c9df; }
+.chart-test-fields dd { margin:0; overflow-wrap:anywhere; }
+.chart-test-links { display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin:12px 0; font-size:.85rem; overflow-wrap:anywhere; }
+.chart-test-links a { color:#9acbff; text-underline-offset:3px; }
+.chart-variant-summary { color:#becadd; font-size:.85rem; line-height:1.6; text-wrap:pretty; }
+.chart-selected-reading { display:block; margin-top:16px; font-variant-numeric:tabular-nums; }
 #chart-model-picker { margin-top:16px; }
 #chart-advanced { margin-top:24px; }
 @media(max-width:760px) { .charts-page .chart-model-choice { grid-template-columns:minmax(0,1fr); gap:0; } }
