@@ -45,6 +45,7 @@
     }
   }
   const defaultCondition = family => family === 'time-lapse' ? 'time-lapse' : family === 'low-bitrate' ? 'continuous' : 'monitoring';
+  const steadyState = (row,family) => family==='hybrid' ? ['monitoring','continuous','time-lapse'].includes(row.state) : row.state===defaultCondition(family);
   const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', highlight: '', details: false, title: titles[metric], group: 'low-power', family: 'low-power', condition: 'monitoring' });
   // Keep an existing compatible test. Otherwise use the highest documented
   // channel count, then established status, source date and stable ID. Power
@@ -110,7 +111,8 @@
       ['Mode', UI.modeLabel(row)], ['Firmware', row.firmware], ['Tested by', tester(row)],
       ['Interior IR', UI.cabinIR(row) || interior ? (['on','off','auto'].includes(row.ir) ? row.ir : '') : ''],
       ['Active cameras', (row.active_channels || []).join(' + ')],
-      ['Settings', (row.mode_name || '').match(/(?:H\.26[45]|Wi[ -]?Fi\s+(?:Off|On)|HDR\s+(?:Off|On)|\d+\s*fps|\d{3,4}p|Pre-Recording (?:On|Off)|Sensitivity\s*=\s*(?:Medium|Ultra High))/ig)?.join(', ')],
+      ['Settings', (row.mode_name || '').match(/(?:H\.26[45]|Wi[ -]?Fi\s+(?:Off|On)|HDR\s+(?:Off|On)|\d+\s*fps|\d+\s+Seconds? Per Frame|\d{3,4}p|Pre-Recording (?:On|Off)|Sensitivity\s*=\s*(?:Medium|Ultra High))/ig)?.join(', ')],
+      ['Reported recording-start delay', valid(row.reported_startup_seconds_min)&&valid(row.reported_startup_seconds_max) ? `${row.reported_startup_seconds_min}–${row.reported_startup_seconds_max} s` : ''],
       ['Interior camera', interior], ['Lighting', day ? (day[1] || day[2]) : ''],
       ['Test window', period ? period[1].replace('5-minutes','5-minute interval') : ''],
       ['Test voltage', valid(row.voltage_v) && row.voltage_v > 0 ? `${row.voltage_v} V` : ''],
@@ -337,7 +339,7 @@
   }
   function primaryGroups() {
     const q = $('chart-search').value.toLocaleLowerCase().trim();
-    const eligible = rows.filter(row => matchesFamily(row, state.group) && row.state === defaultCondition(state.group));
+    const eligible = rows.filter(row => matchesFamily(row, state.group) && steadyState(row,state.group));
     return UI.groupModels(eligible).filter(group => !q || group.rows.some(row => `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q))).sort((a,b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
   }
   function chosenFor(group, channels = null) {
@@ -347,7 +349,7 @@
   function editModel(group, chosen, checked, focus = 'input[type=checkbox]') {
     modelChoices.set(group.label, chosen.id);
     // A normal model choice follows the requested group, without mixing old modes.
-    if (checked) state.ids=state.ids.filter(id=>{const row=rows.find(row=>row.id===id);return matchesFamily(row,state.group)&&row.state===defaultCondition(state.group);});
+    if (checked) state.ids=state.ids.filter(id=>{const row=rows.find(row=>row.id===id);return matchesFamily(row,state.group)&&steadyState(row,state.group);});
     state.ids = state.ids.filter(id => UI.modelLabel(rows.find(row => row.id === id)) !== group.label);
     if (checked) state.ids.push(chosen.id);
     state.family = state.ids.every(id => matchesFamily(rows.find(row => row.id === id), state.group)) ? state.group : 'all';

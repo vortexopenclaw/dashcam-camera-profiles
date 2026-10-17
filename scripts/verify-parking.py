@@ -37,7 +37,7 @@ bad=copy.deepcopy(rows);bad[0]['source_url']='https://docs.google.com/spreadshee
 try:mod.validate(bad,sources)
 except AssertionError:pass
 else:raise AssertionError('Private spreadsheet negative control accepted')
-assert len([s for s in sources if s['tester']=='rcg530'])==67,'All indexed sources need review entries'
+assert len([s for s in sources if s['tester']=='rcg530'])==68,'All indexed sources need review entries'
 assert not payload['coverage'].get('all_account_posts_exhaustive',True),'Exhaustive account claim unsupported'
 assert all('hash=' not in (r.get('image_url') or '') for r in rows),'Prefer stable original attachment URLs'
 for k,v in [('power_w',-1),('current_ma',float('nan')),('category','invented-mode'),('state','normal-driving')]:

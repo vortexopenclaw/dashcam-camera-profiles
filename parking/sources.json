@@ -1076,5 +1076,20 @@
     "status": "extracted",
     "notes": "Manufacturer-provided results at 13 V via HK6, not rcg530 data. Explicit standby, triggered, low-bitrate, and parking time-lapse rows extracted. Auto Event Detection chart does not specify monitoring versus recording state, so it is not promoted as an idle measurement. Generic non-parking time-lapse rows excluded.",
     "measurement_count": 10
+  },
+  {
+    "id": "rcg530-675957",
+    "post_id": "675957",
+    "title": "VANTRUE E1 Pro S - 4K UHD 1-Channel - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-e1-pro-s-4k-uhd-1-channel-testing-review-rcg.61842/#post-675957",
+    "tester": "rcg530",
+    "date": "2026-10-16",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1792189574854-webp.94861/",
+      "https://dashcamtalk.com/forum/attachments/1792189377371-webp.94860/"
+    ],
+    "status": "extracted",
+    "measurement_count": 11,
+    "notes": "Original full-size chart 94861 visually verified, including top/bottom setting pairs. Eleven parking measurements for distinct E1 Pro S pre-production hardware, VT-EFI242, 12.6 V. Companion author posts 675956/675958/675962 establish hardware status and explain TurboBoot/parking behavior. Runtime chart 94860 repeats the power inputs and is not a second measurement series. All nine public thread posts on its single discovered page reviewed; no pagination links were present. Normal driving, shutdown, disconnected-kit and cutoff measurements, powered-off boot timings, and runtime estimates excluded. Collision recording-start range 1.37–1.42 s retained without midpoint or first-frame claim. No Quick Start/Power Saving labels in this E1 Pro S chart. LFR transition heading 1 fps conflicts with configuration 5 fps; transition times not assigned to a 5 fps test."
   }
 ]

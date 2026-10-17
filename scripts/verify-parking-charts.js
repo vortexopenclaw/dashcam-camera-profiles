@@ -8,9 +8,17 @@ const { spawnSync } = require('node:child_process');
 const chart = require('../docs/assets/parking-charts.js');
 const UI = require('../docs/assets/parking.js');
 const rows = require('../docs/data/parking-measurements.json').measurements;
-assert.equal(rows.length, 588);
-assert.equal(UI.groupModels(rows).length, 47);
-assert.equal(new Set(rows.map(r => r.id)).size, 588);
+assert.equal(rows.length, 599);
+assert.equal(UI.groupModels(rows).length, 48);
+const e1s=rows.filter(r=>r.brand==='Vantrue'&&r.model==='E1 Pro S');
+assert.equal(e1s.length,11);
+assert.ok(e1s.every(r=>r.test_status==='prototype'&&r.voltage_v===12.6&&r.installed_channels===1));
+const e1sIdle=e1s.find(r=>r.id==='rcg530-675957-5');
+assert.equal(e1sIdle.power_w,0.09);assert.equal(e1sIdle.current_ma,7);
+assert.equal(new Map(chart.testFields(e1sIdle)).get('Reported recording-start delay'),'1.37–1.42 s');
+assert.equal(chart.interval(e1sIdle,'wake'),null);
+assert.notEqual(new Map(chart.testFields(e1s.find(r=>r.id==='rcg530-675957-3'))).get('Settings'),new Map(chart.testFields(e1s.find(r=>r.id==='rcg530-675957-4'))).get('Settings'));
+assert.equal(new Set(rows.map(r => r.id)).size, 599);
 assert.equal(chart.readState('?metric=watts&title=Parking+Mode+Power+Draw',rows).title,'Parking Mode Power Draw Comparison');
 assert.equal(chart.readState('?metric=watts&title=My+custom+title',rows).title,'My custom title');
 const e1=rows.filter(r=>r.brand==='Vantrue'&&r.model==='E1 Pro'&&r.state==='monitoring'&&r.category==='impact-sleep');
@@ -134,7 +142,7 @@ with sync_playwright() as p:
     assert page.locator('#chart-group').input_value()=='low-power'
     assert page.locator('#chart-condition').input_value()=='monitoring'
     assert page.locator('#chart-highlight').input_value()==''
-    assert page.locator('#chart-data-status').text_content()=='588 measurements · 47 models'
+    assert page.locator('#chart-data-status').text_content()=='599 measurements · 48 models'
     assert page.locator('#chart-canvas [data-measurement]').count()==7
     assert '12.4 V' in page.locator('#chart-canvas').text_content()
     for id,value in current.items():
@@ -231,7 +239,7 @@ with sync_playwright() as p:
     page.locator('#chart-group').select_option('all')
     page.locator('#chart-advanced > summary').click()
     page.locator('#chart-condition').select_option('')
-    assert page.locator('#chart-picker input[data-id]').count()==588
+    assert page.locator('#chart-picker input[data-id]').count()==599
     # Aliases match their one canonical group, and exact model variants remain distinct.
     for search,label in [('Nexus 5','Vantrue N5'),('N5','Vantrue N5'),('Sonnet 1 (S1) Pro','Vantrue S1 Pro'),('4K Omni [X800]','70mai 4K Omni'),('ARC800','Thinkware ARC 800'),('S1-QHD Infinite','Vueroid S1-QHD Infinite')]:
         page.locator('#chart-search').fill(search)
@@ -457,12 +465,27 @@ with sync_playwright() as p:
             assert card.locator('select[data-test]').input_value()==e1[1]
     # Final page restored to the genuine seven-camera initial dataset for review.
     page.goto(url);ready(page)
+    pro_s=page.locator('.chart-model-choice[data-model="Vantrue E1 Pro S"]')
+    assert pro_s.count()==1
+    pro_s.locator('input[type=checkbox]').check()
+    page.wait_for_function("()=>document.querySelector('#chart-canvas [data-measurement=\"rcg530-675957-5\"] [data-kind=value]')?.textContent==='0.09 W'")
+    assert 'Prototype' in row(page,'rcg530-675957-5').text_content()
+    pro_s.locator('.chart-model-setup > summary').click()
+    assert '1.37–1.42 s' in pro_s.locator('.chart-test-fields').text_content()
+    for family,id,value in [('buffered-motion','rcg530-675957-7','2.85 W'),('hybrid','rcg530-675957-1','0.87 W')]:
+        page.locator('#chart-group').select_option(family)
+        pro_s.locator('input[type=checkbox]').check()
+        page.wait_for_function("([id,value])=>document.querySelector('[data-measurement=\"'+id+'\"] [data-kind=value]')?.textContent===value",arg=[id,value])
+    page.locator('#chart-group').select_option('time-lapse')
+    opts=pro_s.locator('select[data-test] option').all_text_contents()
+    assert any('1 Second Per Frame' in text for text in opts) and any('2 Seconds Per Frame' in text for text in opts)
+    page.goto(url);ready(page)
     page.screenshot(path=str(out/'review-initial-page.png'),full_page=True)
     page.locator('#picker-title').evaluate('e=>window.scrollTo(0,e.getBoundingClientRect().top+scrollY-100)')
     page.screenshot(path=str(out/'primary-model-picker.png'))
     assert not errors,errors
     assert not any('docs.google.com' in r or 'sheets.googleapis.com' in r for r in requests)
-    (out/'verification.json').write_text(json.dumps({'measurements':588,'models':47,'viewports':[320,375,768,1440],'current_values':current,'delay_values':delay,'decoded_png':image,'page_errors':errors,'selected_buffered_models':len(matching),'selected_buffered_ids':matching,'checks':['primary-one-checkbox','70mai-highest-channel-default','channel-override-exact-value','BlackVue-single-model-choice','functional-family-evidence','explicit-model-bulk','legacy-multiple-ID-preservation','native-keyboard-typeahead','forced-colors-native-select','source-presets','same-voltage-block','method-separation','share-reload','aliases','40-configurations','true-zero-scale','range-endpoints','null-zero','escaped-svg','csv-injection','2x-png-white-canvas','text-bounds']},indent=2))
+    (out/'verification.json').write_text(json.dumps({'measurements':599,'models':48,'viewports':[320,375,768,1440],'current_values':current,'delay_values':delay,'decoded_png':image,'page_errors':errors,'selected_buffered_models':len(matching),'selected_buffered_ids':matching,'checks':['primary-one-checkbox','70mai-highest-channel-default','channel-override-exact-value','BlackVue-single-model-choice','functional-family-evidence','explicit-model-bulk','legacy-multiple-ID-preservation','native-keyboard-typeahead','forced-colors-native-select','source-presets','same-voltage-block','method-separation','share-reload','aliases','40-configurations','true-zero-scale','range-endpoints','null-zero','escaped-svg','csv-injection','2x-png-white-canvas','text-bounds']},indent=2))
     browser.close()
 server.shutdown()
 print('PASS: Node contracts and real Chrome acceptance at 320, 375, 768, and 1440 px')

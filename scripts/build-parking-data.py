@@ -29,11 +29,11 @@ def validate(rows, sources):
         assert r.get('image_url') is None or r['image_url'].startswith('https://'), r['id']
         assert r['installed_channels'] is None or (isinstance(r['installed_channels'],int) and 1 <= r['installed_channels'] <= 6), r['id']
         assert r.get('active_channels') is None or isinstance(r['active_channels'],list), r['id']
-        for k in ['power_w','current_ma','voltage_v','wake_seconds','prebuffer_s','power_w_min','power_w_max','current_ma_min','current_ma_max','wake_seconds_min','wake_seconds_max','prebuffer_impact_s','prebuffer_motion_s','reported_startup_seconds','reported_parking_voltage_v']:
+        for k in ['power_w','current_ma','voltage_v','wake_seconds','prebuffer_s','power_w_min','power_w_max','current_ma_min','current_ma_max','wake_seconds_min','wake_seconds_max','prebuffer_impact_s','prebuffer_motion_s','reported_startup_seconds','reported_startup_seconds_min','reported_startup_seconds_max','reported_parking_voltage_v']:
             v = r.get(k)
             assert v is None or (isinstance(v,(int,float)) and not isinstance(v,bool) and math.isfinite(v) and v >= 0), (r['id'],k,v)
         assert any(r.get(k) is not None for k in ['power_w','current_ma','current_ma_min','power_w_min']), f"No measurement: {r['id']}"
-        for prefix in ['power_w','current_ma']:
+        for prefix in ['power_w','current_ma','reported_startup_seconds']:
             low,high=r.get(prefix+'_min'),r.get(prefix+'_max')
             assert (low is None and high is None) or (low is not None and high is not None and low <= high), r['id']
         for k in FIELDS:
