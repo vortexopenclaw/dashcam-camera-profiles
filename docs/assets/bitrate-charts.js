@@ -9,7 +9,7 @@
     if (!response.ok) throw new Error('Could not load camera measurements.');
     const data = await response.json();
     // Keep the two verified Maximum T340 units, not the historical lower presets.
-    const rows = data.filter(r => r.id !== 'viofo-t340' || /Maximum/.test(r.camera)).map(r => ({...r, camera:clean(r.camera), configuration:clean(r.configuration), key:r.id === 'viofo-t340' ? (/T340 A/.test(r.camera) ? 't340-a' : 't340-b') : r.id}));
+    const rows = data.filter(r => r.id !== 'viofo-t340' || /Maximum/.test(r.camera)).map(r => ({...r, camera:clean(r.camera).replace(/\s*•\s*Maximum$/, ''), configuration:clean(r.configuration), key:r.id === 'viofo-t340' ? (/T340 A/.test(r.camera) ? 't340-a' : 't340-b') : r.id}));
     const known = new Set(rows.map(r => r.key));
     const params = new URLSearchParams(location.search);
     let selected = new Set(params.has('selection') ? params.getAll('camera').filter(k => known.has(k)) : ['t340-a','t340-b']);
@@ -28,7 +28,7 @@
       const span = document.createElement('span');
       span.textContent = r.camera;
       const small = document.createElement('small');
-      small.textContent = `${fmt(r.highMbps)} Mbps${r.id === 'viofo-t340' ? ' · Maximum' : ' · Measured'}`;
+      small.textContent = `${fmt(r.highMbps)} Mbps`;
       span.append(small); label.append(input,span); $('choices').append(label);
     }
     // Remove only the initial loading text, retaining all checkbox nodes.
