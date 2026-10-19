@@ -19,8 +19,8 @@ with sync_playwright() as p:
     page.goto(base + 'bitrate-charts.html')
     page.wait_for_selector('#chart svg')
     assert page.locator('#choices input:checked').count() == 2
-    assert '40.96' in page.locator('#chart').inner_text()
-    assert '53.25' in page.locator('#chart').inner_text()
+    assert '41.0' in page.locator('#chart').inner_text()
+    assert '53.3' in page.locator('#chart').inner_text()
     assert page.locator('#choices input[value="t340-a"]').is_checked()
     assert page.locator('#subtitle').input_value() == 'Front Camera Bitrates at Maximum Quality'
     assert 'not verified maximum-quality' not in page.locator('#chart').inner_text()
@@ -30,7 +30,7 @@ with sync_playwright() as p:
     e1s = page.locator('#choices input[value="vantrue-e1-pro-s"]')
     assert e1s.count() == 1
     e1s.check()
-    assert '36.04' in page.locator('#chart').inner_text()
+    assert '36.0' in page.locator('#chart').inner_text()
     assert 'Prototype' in page.locator('#chart').inner_text()
     e1s.uncheck()
     page.locator('#search').fill('A329S')
@@ -69,6 +69,9 @@ with sync_playwright() as p:
     page.locator('#all').click()
     available = page.locator('#choices input').count()
     assert page.locator('#choices input:checked').count() == available
+    assert '44.3 – 48.0' in page.locator('#chart').inner_text()
+    assert '60.0' in page.locator('#chart').inner_text()
+    assert '53.25' not in page.locator('#chart').inner_text()
     # All SVG text must remain inside the canvas, including the longest model name.
     assert page.evaluate('''() => [...document.querySelectorAll('#chart svg text')].every(t => {
       const b=t.getBBox(),s=document.querySelector('#chart svg').viewBox.baseVal;

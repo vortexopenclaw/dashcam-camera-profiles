@@ -3,7 +3,7 @@
   const $ = id => document.getElementById(id);
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
   const clean = value => value.replace(/\\u([0-9a-f]{4})/gi, (_, n) => String.fromCharCode(parseInt(n, 16)));
-  const fmt = n => n.toFixed(2).replace(/\.?0+$/, '');
+  const fmt = n => n.toFixed(1);
   try {
     const response = await fetch('data/4k30-comparison.json', {cache:'no-store'});
     if (!response.ok) throw new Error('Could not load camera measurements.');
@@ -41,7 +41,7 @@
       history.replaceState(null,'',`${location.pathname}?${state}`);
       $('png').disabled = $('svg').disabled = !picked.length;
       $('status').textContent = picked.length ? `${picked.length} camera results selected.` : 'Choose a camera to draw your chart.';
-      $('measurements').innerHTML = picked.map(r => `<article><strong>${escape(r.camera)}</strong><br>${escape(r.codec)} · ${escape(r.configuration)}<br>${escape(r.settings)}<br>Source: ${escape(r.source)}<br>Video bitrate: ${escape(r.lowMbps)}–${escape(r.highMbps)} Mbps</article>`).join('');
+      $('measurements').innerHTML = picked.map(r => `<article><strong>${escape(r.camera)}</strong><br>${escape(r.codec)} · ${escape(r.configuration)}<br>${escape(r.settings)}<br>Source: ${escape(r.source)}<br>Video bitrate: ${fmt(r.lowMbps)} – ${fmt(r.highMbps)} Mbps</article>`).join('');
       if (!picked.length) {svgText=''; $('chart').textContent='No cameras selected.'; return;}
       const width=1120,left=360,right=140,top=112,rowHeight=48,bottom=124;
       const height=top+picked.length*rowHeight+bottom;
@@ -51,7 +51,7 @@
       for(let tick=0;tick<=max;tick+=10) parts.push(`<path d="M${x(tick)} ${top-16}V${height-bottom+4}" stroke="#e0e5eb"/><text x="${x(tick)}" y="${height-bottom+30}" text-anchor="middle" font-size="16">${tick}</text>`);
       picked.forEach((r,i)=>{
         const y=top+i*rowHeight,highlight=r.id==='viofo-t340';
-        const value=r.highMbps-r.lowMbps>=0.15 ? `${fmt(r.lowMbps)}–${fmt(r.highMbps)}` : fmt(r.highMbps);
+        const value=r.highMbps-r.lowMbps>=0.15 ? `${fmt(r.lowMbps)} – ${fmt(r.highMbps)}` : fmt(r.highMbps);
         const words=r.camera.split(' '),lines=[''];
         for(const word of words) {if((lines[lines.length-1]+' '+word).trim().length>32) lines.push(word);else lines[lines.length-1]=(lines[lines.length-1]+' '+word).trim();}
         const label=lines.map((line,j)=>`<tspan x="${left-18}" dy="${j?20:0}">${escape(line)}</tspan>`).join('');
