@@ -5,7 +5,7 @@
   const clean = value => value.replace(/\\u([0-9a-f]{4})/gi, (_, n) => String.fromCharCode(parseInt(n, 16)));
   const fmt = n => n.toFixed(2).replace(/\.?0+$/, '');
   try {
-    const response = await fetch('data/4k30-comparison.json');
+    const response = await fetch('data/4k30-comparison.json', {cache:'no-store'});
     if (!response.ok) throw new Error('Could not load camera measurements.');
     const data = await response.json();
     // Keep the two verified Maximum T340 units, not the historical lower presets.
@@ -14,6 +14,7 @@
     const params = new URLSearchParams(location.search);
     let selected = new Set(params.has('selection') ? params.getAll('camera').filter(k => known.has(k)) : ['t340-a','t340-b']);
     $('sort').value = ['high','low','name'].includes(params.get('sort')) ? params.get('sort') : 'high';
+    $('subtitle').value = (params.get('subtitle') ?? 'Front Camera Bitrates at Maximum Quality').slice(0,100);
     let svgText = '';
     const ordered = () => rows.filter(r => selected.has(r.key)).sort((a,b) => $('sort').value === 'name' ? a.camera.localeCompare(b.camera, undefined, {numeric:true}) : ($('sort').value === 'low' ? a.highMbps-b.highMbps : b.highMbps-a.highMbps));
     const list = [...rows].sort((a,b) => a.camera.localeCompare(b.camera, undefined, {numeric:true}));
@@ -35,7 +36,7 @@
     function render() {
       for (const input of $('choices').querySelectorAll('input')) input.checked = selected.has(input.value);
       const picked = ordered();
-      const state = new URLSearchParams({selection:'1',sort:$('sort').value});
+      const state = new URLSearchParams({selection:'1',sort:$('sort').value,subtitle:$('subtitle').value});
       for (const r of picked) state.append('camera',r.key);
       history.replaceState(null,'',`${location.pathname}?${state}`);
       $('png').disabled = $('svg').disabled = !picked.length;
@@ -46,7 +47,7 @@
       const height=top+picked.length*rowHeight+bottom;
       const max=Math.ceil(Math.max(...picked.map(r=>r.highMbps))/10)*10;
       const x=n=>left+n/max*(width-left-right);
-      const parts=[`<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Selected 4K30 front-camera video bitrates" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}"><rect width="${width}" height="${height}" fill="white"/><g font-family="Arial, sans-serif" fill="#182733"><text x="560" y="34" font-size="26" font-weight="700" text-anchor="middle">4K30 Front-Camera Bitrate Comparison</text><text x="560" y="65" font-size="17" text-anchor="middle">Measured driving video · T340 at Maximum · Audio excluded</text>`];
+      const parts=[`<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Selected 4K30 front-camera video bitrates" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}"><rect width="${width}" height="${height}" fill="white"/><g font-family="Arial, sans-serif" fill="#182733"><text x="560" y="34" font-size="26" font-weight="700" text-anchor="middle">4K30 Front-Camera Bitrate Comparison</text><text x="560" y="65" font-size="17" text-anchor="middle">${escape($('subtitle').value)}</text>`];
       for(let tick=0;tick<=max;tick+=10) parts.push(`<path d="M${x(tick)} ${top-16}V${height-bottom+4}" stroke="#e0e5eb"/><text x="${x(tick)}" y="${height-bottom+30}" text-anchor="middle" font-size="16">${tick}</text>`);
       picked.forEach((r,i)=>{
         const y=top+i*rowHeight,highlight=r.id==='viofo-t340';
@@ -58,7 +59,7 @@
         if(r.highMbps>r.lowMbps) parts.push(`<path d="M${x(r.lowMbps)} ${y}H${x(r.highMbps)}M${x(r.lowMbps)} ${y-8}V${y+8}M${x(r.highMbps)} ${y-8}V${y+8}" stroke="#182733" stroke-width="2"/>`);
         parts.push(`<text x="${x(r.highMbps)+10}" y="${y+6}" font-size="18" font-weight="700">${value}</text>`);
       });
-      parts.push(`<text x="${(left+width-right)/2}" y="${height-bottom+60}" text-anchor="middle" font-size="18">Video Bitrate (Mbps)</text><text x="28" y="${height-36}" font-size="15">Vortex Radar testing library · Ranges are observed values, not verified maximum-quality settings.</text><text x="28" y="${height-12}" font-size="15">T340 A/B are separate units. Codecs and setups differ. Higher bitrate alone doesn't establish better image quality.</text></g><metadata>${escape(JSON.stringify(picked))}</metadata></svg>`);
+      parts.push(`<text x="${(left+width-right)/2}" y="${height-bottom+60}" text-anchor="middle" font-size="18">Video Bitrate (Mbps)</text><text x="28" y="${height-36}" font-size="15">Vortex Radar testing library · Video bitrate only, audio excluded.</text><text x="28" y="${height-12}" font-size="15">T340 A/B are separate units. Codecs and setups differ. Higher bitrate alone doesn't establish better image quality.</text></g><metadata>${escape(JSON.stringify(picked))}</metadata></svg>`);
       svgText=parts.join(''); $('chart').innerHTML=svgText;
     }
     function download(blob, extension) {
@@ -72,6 +73,7 @@
     $('clear').onclick=()=>{selected.clear();render();};
     $('t340').onclick=()=>{selected=new Set(['t340-a','t340-b']);render();};
     $('sort').onchange=render;
+    $('subtitle').addEventListener('input',render);
     $('svg').onclick=()=>download(new Blob([svgText],{type:'image/svg+xml'}),'svg');
     $('png').onclick=async()=>{
       const url=URL.createObjectURL(new Blob([svgText],{type:'image/svg+xml'}));

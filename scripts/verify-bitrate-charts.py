@@ -22,6 +22,11 @@ with sync_playwright() as p:
     assert '40.96' in page.locator('#chart').inner_text()
     assert '53.25' in page.locator('#chart').inner_text()
     assert page.locator('#choices input[value="t340-a"]').is_checked()
+    assert page.locator('#subtitle').input_value() == 'Front Camera Bitrates at Maximum Quality'
+    assert 'not verified maximum-quality' not in page.locator('#chart').inner_text()
+    custom_subtitle = 'Custom <subtitle> & quality'
+    page.locator('#subtitle').fill(custom_subtitle)
+    page.wait_for_function("document.querySelector('#chart').textContent.includes('Custom <subtitle> & quality')")
     e1s = page.locator('#choices input[value="vantrue-e1-pro-s"]')
     assert e1s.count() == 1
     e1s.check()
@@ -38,6 +43,7 @@ with sync_playwright() as p:
     page.wait_for_selector('#chart svg')
     assert page.locator('#choices input:checked').count() == 3
     assert page.locator('#sort').input_value() == 'low'
+    assert page.locator('#subtitle').input_value() == custom_subtitle
     assert page.locator('#chart svg text tspan').first.text_content() == 'VIOFO T340 B • Maximum'
     for extension in ('svg', 'png'):
         with page.expect_download() as info:
@@ -46,6 +52,8 @@ with sync_playwright() as p:
         info.value.save_as(target)
         if extension == 'svg':
             root = ET.parse(target).getroot()
+            assert custom_subtitle in ''.join(root.itertext())
+            assert 'not verified maximum-quality' not in ''.join(root.itertext())
             records = json.loads(root.find('{http://www.w3.org/2000/svg}metadata').text)
             assert len(records) == 3
             t340 = {r['key']: r for r in records if r['id'] == 'viofo-t340'}
