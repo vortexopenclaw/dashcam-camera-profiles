@@ -51,6 +51,8 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
             name = re.sub(r'\s+', ' ', name).strip()
         rows.append(dict(id=camera['id'], camera=name, lowMbps=min(rates), highMbps=max(rates), codec=sample['codec'], configuration=sample.get('recording_configuration') or 'Not recorded', settings=sample.get('settings_note') or 'Quality setting not recorded', source=sample['source']))
 
+# Reviewed public driving measurements for cameras without a full card profile.
+rows.extend(json.loads((ROOT / 'docs/data/4k30-supplemental.json').read_text()))
 data = json.loads((ROOT / 'docs/data/t340-quality-comparison.json').read_text())
 for row in data['rows']:
     if row['setting'] not in ['Low', 'Normal', 'High']:
@@ -63,8 +65,8 @@ for row in data['rows']:
 # Keep the original lower-quality observations unassigned to either unit.
 evidence = json.loads((ROOT / 'docs/data/storage-evidence.json').read_text())
 for cohort, label, configuration in [
-    ('bench_tested_4ch', 'A', '4 cameras; bench-tested unit; firmware 1.0_260911'),
-    ('owner_installed_4ch', 'B', '4 cameras; owner-installed unit; capture firmware not recorded'),
+    ('bench_tested_4ch', 'B', '4 cameras; unit B; firmware 1.0_260911; bench and road tested'),
+    ('owner_installed_4ch', 'A', '4 cameras; unit A; firmware 1.0_260911; bench and road tested'),
 ]:
     samples = [s for s in evidence['pairedSamples']
                if s.get('model') == 'T340' and s.get('cameraCohort') == cohort
@@ -123,7 +125,7 @@ def asset(extension):
     return f'assets/4k30/comparison.{extension}?v={digest}'
 
 SECTION = f'<section id="4k30-comparison"><h2>4K30 front-camera comparison</h2><p><a href="bitrate-charts.html">Build your own chart: choose cameras and export PNG/SVG</a></p><a href="{asset("png")}"><img src="{asset("png")}" alt="Descending measured 4K30 front-camera video bitrates, highlighting T340 configurations" loading="lazy"></a><p>Measured driving video, not advertised maximums. Audio excluded. <a href="4k30-comparison.html">Settings, codecs and measurement notes</a> · <a href="{asset("png")}">PNG</a> · <a href="{asset("svg")}">SVG</a> · <a href="assets/4k30/measurements.csv">CSV</a></p></section>'
-SECTION = SECTION.replace('</section>', '<p><strong>T340 A</strong> is the bench-tested unit (40.96 Mbps Maximum); <strong>T340 B</strong> is the separate owner-installed unit (about 53.25 Mbps Maximum). A/B are unit labels, not product revisions. Low, Normal and High remain historical observations, not independently measured settings for both units. The Maximum difference is unexplained.</p></section>')
+SECTION = SECTION.replace('</section>', '<p><strong>T340 A</strong> is the higher-bitrate unit (about 53.25 Mbps Maximum); <strong>T340 B</strong> is the lower-bitrate unit (40.96 Mbps Maximum). The owner confirms both run firmware 1.0_260911 and both have been bench and road tested. A/B are unit labels, not product revisions. Low, Normal and High remain historical observations, not independently measured settings for both units. The Maximum difference is unexplained.</p></section>')
 unranked = json.loads((ROOT / 'docs/data/4k30-unranked.json').read_text())
 pending = '<section id="unranked"><h2>Additional 4K models not yet ranked</h2><p>These known models are not silently omitted or assigned borrowed values. They need a comparable front-camera, driving-only video bitrate at 4K30. This covers our reviewed library and research, not every dashcam on the market.</p><ul>' + ''.join(f'<li><strong>{html.escape(r["camera"])}</strong>: {html.escape(r["reason"])} <a href="{html.escape(r["source"])}">Evidence</a></li>' for r in unranked) + '</ul></section>'
 SECTION = SECTION.replace('</section>', '<p><a href="4k30-comparison.html#unranked">Additional 4K models still awaiting comparable measurements</a></p></section>')

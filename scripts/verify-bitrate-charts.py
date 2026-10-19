@@ -22,6 +22,12 @@ with sync_playwright() as p:
     assert '40.96' in page.locator('#chart').inner_text()
     assert '53.25' in page.locator('#chart').inner_text()
     assert page.locator('#choices input[value="t340-a"]').is_checked()
+    e1s = page.locator('#choices input[value="vantrue-e1-pro-s"]')
+    assert e1s.count() == 1
+    e1s.check()
+    assert '36.04' in page.locator('#chart').inner_text()
+    assert 'Prototype' in page.locator('#chart').inner_text()
+    e1s.uncheck()
     page.locator('#search').fill('A329S')
     assert page.locator('.choice:visible').count() == 1
     page.locator('input[value="viofo-a329s"]').check()
@@ -32,7 +38,7 @@ with sync_playwright() as p:
     page.wait_for_selector('#chart svg')
     assert page.locator('#choices input:checked').count() == 3
     assert page.locator('#sort').input_value() == 'low'
-    assert page.locator('#chart svg text tspan').first.text_content() == 'VIOFO T340 A • Maximum'
+    assert page.locator('#chart svg text tspan').first.text_content() == 'VIOFO T340 B • Maximum'
     for extension in ('svg', 'png'):
         with page.expect_download() as info:
             page.locator('#' + extension).click()
@@ -42,6 +48,9 @@ with sync_playwright() as p:
             root = ET.parse(target).getroot()
             records = json.loads(root.find('{http://www.w3.org/2000/svg}metadata').text)
             assert len(records) == 3
+            t340 = {r['key']: r for r in records if r['id'] == 'viofo-t340'}
+            assert t340['t340-a']['highMbps'] > t340['t340-b']['highMbps']
+            assert all('firmware 1.0_260911' in r['configuration'] and 'bench and road tested' in r['configuration'] for r in t340.values())
             assert {r['key'] for r in records} == {'t340-a', 't340-b', 'viofo-a329s'}
         else:
             import struct

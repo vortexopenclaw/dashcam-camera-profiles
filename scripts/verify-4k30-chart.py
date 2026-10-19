@@ -10,7 +10,7 @@ evidence = json.loads((root / 'docs/data/storage-evidence.json').read_text())
 t340 = [row for row in rows if row['id'] == 'viofo-t340']
 assert len(t340) == 5, 'Expected historical Low/Normal/High plus Maximum A/B'
 assert not any(row['camera'] == 'VIOFO T340 • Maximum' for row in rows)
-for label, cohort in [('A', 'bench_tested_4ch'), ('B', 'owner_installed_4ch')]:
+for label, cohort in [('B', 'bench_tested_4ch'), ('A', 'owner_installed_4ch')]:
     matches = [row for row in rows if row['camera'] == f'VIOFO T340 {label} • Maximum']
     assert len(matches) == 1, f'Expected exactly one T340 {label} Maximum row'
     source = [sample for sample in evidence['pairedSamples']

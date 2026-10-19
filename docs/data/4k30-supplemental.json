@@ -1,0 +1,12 @@
+[
+  {
+    "id": "vantrue-e1-pro-s",
+    "camera": "Vantrue E1 Pro S (Prototype)",
+    "lowMbps": 36.04,
+    "highMbps": 36.04,
+    "codec": "H.264/AVC",
+    "configuration": "1 channel, front; pre-production hardware; firmware VT-EFI242",
+    "settings": "Retro CarGuy530 normal driving test: 3840x2160, 30 fps, Standard image quality, HDR enabled, Wi-Fi off, screen off, 256 GB card. Chart reports 36.04 Mbps front video in the Normal directory with N filename tag. Not a verified Maximum setting. Excludes separate TurboBoot and parking recordings. Original chart visually verified.",
+    "source": "Retro CarGuy530 (rcg530), https://dashcamtalk.com/forum/threads/vantrue-e1-pro-s-4k-uhd-1-channel-testing-review-rcg.61842/#post-675957 ; original chart https://dashcamtalk.com/forum/attachments/vantrue_e1_pro_s_power_consumption_20261019-webp.95016/"
+  }
+]
