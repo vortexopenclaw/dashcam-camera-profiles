@@ -59,7 +59,8 @@ state.qualityFps = "30";
 assert(!qualityMatches().some(item => item.camera.id === "metadata-only-rove-r2-4k-dual"));
 assert(!qualityMatches().some(item => item.camera.id === "metadata-only-rove-r2-4k"));
 assert(!qualityMatches().some(item => item.camera.id === "rexing-v1-4k"));
-assert(qualityMatches().some(item => item.camera.id === "rove-r2-4k-pro"));
+assert(!qualityMatches().some(item => item.camera.id === "rove-r2-4k-pro"));
+assert(drivingSamples().some(item => item.camera.id === "rove-r2-4k-pro"));
 assert(drivingSamples().some(item => item.camera.id === "metadata-only-rove-r2-4k-dual"));`);
 eval(`${source}
 state.cameras = cameras;

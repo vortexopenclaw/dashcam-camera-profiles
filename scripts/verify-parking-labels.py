@@ -29,6 +29,7 @@ with sync_playwright() as p:
         assert value in page.locator('#chart-canvas').text_content()
     for ext in ['svg','png']:
         with page.expect_download() as d:page.locator('#chart-'+ext).click()
+        assert d.value.suggested_filename==f'buffered-motion-impact-parking-current-draw-16x9.{ext}'
         file=out/('custom.'+ext);d.value.save_as(file)
         if ext=='svg':
             import xml.etree.ElementTree as ET

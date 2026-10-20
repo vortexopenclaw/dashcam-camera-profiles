@@ -114,7 +114,8 @@ def main() -> None:
     assert 'id="quality-brand"' in frontend
     assert 'id="quality-sort"' in frontend
     subprocess.run(["python3", str(ROOT / "scripts" / "verify-4k30-chart.py")], check=True)
-    print("Verification passed: canonical profiles, privacy, mode-specific video, folders, filenames, manuals, and T340 A/B comparison")
+    subprocess.run(["python3", str(ROOT / "scripts" / "verify-bitrate-variants.py")], check=True)
+    print("Verification passed: canonical profiles, privacy, mode-specific video, folders, filenames, manuals, and measured bitrate variants")
 
 
 if __name__ == "__main__":

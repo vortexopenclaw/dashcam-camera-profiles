@@ -160,7 +160,12 @@
     const url=UI.safeURL(row.source_url), forum=url && /^(?:www\.)?dashcamtalk\.com$/.test(new URL(url).hostname);
     return `${tester(row) || 'Contributor'} · ${UI.modelLabel(row)} ${forum ? 'test on DashCamTalk' : 'testing data'}`;
   }
-  const api = { tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
+  function exportFilename(state,extension) {
+    const modes={'low-power':'low-power-parking',buffered:'buffered-motion-impact-parking','buffered-motion':'buffered-motion-detection-parking','buffered-impact':'buffered-impact-detection-parking',unbuffered:'non-buffered-parking',radar:'radar-parking','time-lapse':'time-lapse-parking','low-bitrate':'low-bitrate-parking',hybrid:'hybrid-parking',all:'mixed-parking-modes'};
+    const quantities={current:'current-draw',watts:'power-draw',delay:'recording-delay',wake:'impact-to-first-frame'};
+    return `${modes[state.family] || modes.all}-${quantities[state.metric] || 'comparison'}${extension!=='csv' && state.format!=='auto' ? '-16x9' : ''}.${extension}`;
+  }
+  const api = { exportFilename, tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof window === 'undefined') return;
   window.ParkingCharts = api;
@@ -330,6 +335,7 @@
   function serialized() { return new XMLSerializer().serializeToString(currentSVG); }
   async function exportPNG() {
     if (!currentSVG || pendingPNG) return;
+    const filename=exportFilename(state,'png');
     pendingPNG = true; $('chart-png').disabled = true;
     const original = currentSVG, url = URL.createObjectURL(new Blob([serialized()], { type: 'image/svg+xml;charset=utf-8' }));
     try {
@@ -342,7 +348,7 @@
       context.drawImage(image, 0, 0, canvas.width, canvas.height);
       const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
       if (!blob) throw new Error('PNG creation failed');
-      download(blob, 'parking-comparison-2x.png'); $('chart-action-status').textContent = 'PNG downloaded with the complete chart.';
+      download(blob, filename); $('chart-action-status').textContent = 'PNG downloaded with the complete chart.';
     } catch { $('chart-action-status').textContent = 'PNG export could not finish. Try the SVG download instead.'; }
     finally { URL.revokeObjectURL(url); pendingPNG = false; $('chart-png').disabled = !currentSVG; }
   }
@@ -544,9 +550,9 @@
           details.querySelector('.chart-model-count').textContent = `${inputs.length} measurements · ${inputs.filter(input => input.checked).length} selected`;
         });
       });
-      $('chart-svg').addEventListener('click', () => { if (currentSVG) download(new Blob([serialized()], { type: 'image/svg+xml;charset=utf-8' }), 'parking-comparison.svg'); });
+      $('chart-svg').addEventListener('click', () => { if (currentSVG) download(new Blob([serialized()], { type: 'image/svg+xml;charset=utf-8' }), exportFilename(state,'svg')); });
       $('chart-png').addEventListener('click', exportPNG);
-      $('chart-csv').addEventListener('click', () => download(new Blob([UI.toCSV(safeRows(prepare(rows, state).selected))], { type: 'text/csv;charset=utf-8' }), 'parking-selected-measurements.csv'));
+      $('chart-csv').addEventListener('click', () => download(new Blob([UI.toCSV(safeRows(prepare(rows, state).selected))], { type: 'text/csv;charset=utf-8' }), exportFilename(state,'csv')));
       $('chart-share').addEventListener('click', async () => {
         try { await navigator.clipboard.writeText(location.href); $('chart-action-status').textContent = 'Share link copied. Selections, metric, sort, highlight, and title are included.'; }
         catch { $('chart-action-status').textContent = `Copy the current address to share this chart: ${location.href}`; }

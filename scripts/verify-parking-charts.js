@@ -65,6 +65,9 @@ for (const file of ['docs/parking-charts.html', 'docs/assets/parking-charts.js',
   assert.ok(!/docs\.google\.com\/spreadsheets|sheets\.googleapis\.com|BEGIN PRIVATE KEY|client_email/.test(content), file);
 }
 assert.equal(chart.preset('current').highlight, '');
+assert.equal(chart.exportFilename({family:'low-power',metric:'watts',format:'video'},'png'),'low-power-parking-power-draw-16x9.png');
+assert.equal(chart.exportFilename({family:'buffered-motion',metric:'current',format:'auto'},'svg'),'buffered-motion-detection-parking-current-draw.svg');
+assert.equal(chart.exportFilename({family:'low-power',metric:'delay',format:'video'},'csv'),'low-power-parking-recording-delay.csv');
 for (const group of Object.keys(chart.families).filter(group => group !== 'all')) {
   assert.equal(chart.matchesFamily({category:'unknown',mode_name:'Energy Saving M&I AED',prebuffer_motion_s:8},group),false);
 }

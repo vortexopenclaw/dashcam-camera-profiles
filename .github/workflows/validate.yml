@@ -29,4 +29,5 @@ jobs:
       - name: Check frontend JavaScript
         run: |
           node --check docs/assets/app.js
+          node --check docs/assets/bitrate-charts.js
           node scripts/verify-frontend.js

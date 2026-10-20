@@ -21,7 +21,7 @@
   },
   {
     "id": "blackvue-dr970x-box-plus",
-    "camera": "BlackVue DR970X Box+",
+    "camera": "BlackVue DR970X Box Plus",
     "lowMbps": 60.0,
     "highMbps": 60.0,
     "codec": "H.265",
@@ -31,7 +31,7 @@
   },
   {
     "id": "blackvue-dr970x-plus",
-    "camera": "BlackVue DR970X+",
+    "camera": "BlackVue DR970X Plus",
     "lowMbps": 60.0,
     "highMbps": 60.0,
     "codec": "HEVC",
@@ -148,16 +148,6 @@
     "configuration": "4 cameras; unit B; firmware 1.0_260911; bench and road tested",
     "settings": "Maximum; separate physical-camera cohort",
     "source": "Reviewed bench_tested_4ch 60-second driving/protected front samples, 2026-10-12"
-  },
-  {
-    "id": "rove-r2-4k-pro",
-    "camera": "Rove R2-4K Pro",
-    "lowMbps": 36.8,
-    "highMbps": 36.9,
-    "codec": "H.265",
-    "configuration": "Not recorded",
-    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 36.785236-36.865316 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
-    "source": "reviewed archive metadata"
   },
   {
     "id": "viofo-a119m-pro",
@@ -361,7 +351,7 @@
   },
   {
     "id": "blackvue-dr900x-2ch-plus",
-    "camera": "BlackVue DR900X+",
+    "camera": "BlackVue DR900X Plus",
     "lowMbps": 24.3,
     "highMbps": 24.8,
     "codec": "H.264",

@@ -5931,6 +5931,7 @@
       "manufacturer": "Rove",
       "model": "R2-4K Pro",
       "notes": [
+        "Upscaled 4K (not native 4K): the R2-4K Pro uses a 2K sensor and upscales its output, confirmed by Vortex Radar. Excluded from native-4K bitrate comparisons.",
         "Earlier 4K30 driving reference measured approximately 36.9 Mbps. New archive samples replace that rounded comparison row; this is not evidence of a setting or firmware change."
       ],
       "recording": {
@@ -5958,6 +5959,14 @@
         }
       ],
       "technical_facts": [
+        {
+          "label": "Front capture classification",
+          "value": "upscaled_4k"
+        },
+        {
+          "label": "Native sensor capture",
+          "value": "2K sensor upscaled to 4K output, owner-confirmed. Not native 4K."
+        },
         {
           "label": "sampled_recording_settings \u203a video \u203a codec",
           "value": "h265"
