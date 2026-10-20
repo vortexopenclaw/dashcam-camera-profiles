@@ -52,6 +52,17 @@ with sync_playwright() as p:
     page.reload();page.wait_for_selector('#chart-canvas svg')
     for key in ['subtitle','xLabel','yLabel']:assert page.locator('#chart-'+key).input_value()==''
     assert page.locator('#chart-canvas [data-role="chart-y-axis"]').count()==0
+    mode_params=[('selection','1'),('family','low-power'),('group','low-power'),('metric','watts'),('title','Parking Mode Power Draw Comparison')]+[('id',f'vortex-sheet-row-{n}') for n in [4,6,9,15,21,11]]+[('id','rcg530-664217-1')]
+    page.goto(base+'parking-charts.html?'+urlencode(mode_params));page.wait_for_selector('#chart-canvas svg')
+    assert page.locator('#chart-title').input_value()=='Low Power Parking Mode Power Draw Comparison'
+    page.locator('#chart-metric').select_option('current')
+    assert page.locator('#chart-title').input_value()=='Low Power Parking Mode Current Draw Comparison'
+    page.locator('#chart-group').select_option('buffered-motion')
+    page.locator('#chart-apply-group').click()
+    assert page.locator('#chart-title').input_value()=='Buffered Motion Detection Parking Mode Power Draw Comparison'
+    page.locator('#chart-title').fill('Keep my custom title')
+    page.locator('#chart-metric').select_option('delay')
+    assert page.locator('#chart-title').input_value()=='Keep my custom title'
     import json
     data=page.request.get(base+'data/parking-measurements.json').json()['measurements']
     unknown=next(r for r in data if isinstance(r.get('current_ma'),(int,float)) and not r.get('voltage_v'))

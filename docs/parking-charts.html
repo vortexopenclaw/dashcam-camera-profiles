@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/styles.css?v=20261008">
   <link rel="stylesheet" href="assets/parking-charts.css?v=3-readable-tests">
   <script src="assets/parking.js?v=6-brand-styling" defer></script>
-  <script src="assets/parking-charts.js?v=11-video-layout" defer></script>
+  <script src="assets/parking-charts.js?v=13-mode-selections" defer></script>
 </head>
 <body class="charts-page">
   <a class="skip-link" href="#chart-settings">Skip to chart settings</a>
@@ -50,7 +50,7 @@
       <div class="charts-actions"><button id="chart-apply-group" type="button" disabled>Compare shown models</button></div>
       <label>Search dashcams<input id="chart-search" type="search" placeholder="Brand or model"></label>
       <div id="chart-model-picker"></div>
-      <details id="chart-advanced"><summary>All measurements and advanced selection</summary><p id="picker-count" class="charts-muted"></p><p class="charts-muted">Every source measurement remains available. Advanced selection can keep multiple tests per model.</p>
+      <details id="chart-advanced"><summary>Mode measurements and advanced selection</summary><p id="picker-count" class="charts-muted"></p><p class="charts-muted">Measurements below follow the selected parking mode. Advanced selection can keep multiple tests per model.</p>
       <div class="chart-picker-filters"><label>Power condition<select id="chart-condition"><option value="">All conditions</option><option value="monitoring">Idle power draw</option><option value="event-recording">Recording an event</option><option value="time-lapse">Time-lapse recording</option><option value="continuous">Continuous recording</option></select></label><label class="chart-check"><input id="chart-only-selected" type="checkbox"> Selected only</label></div>
       <div id="chart-picker"></div>
       <p class="charts-muted">Default test choice keeps a compatible selected test. Otherwise it uses the highest documented channel count, prefers established tests over provisional, superseded, or prototype tests, then uses the most recent known source date and a stable ID. For low-power parking, impact-sleep tests take priority over radar at the same channel count, and documented Power Saving modes take priority over Quick Start. Power draw does not determine the choice. Unknown dates are not evidence of a newer test.</p>

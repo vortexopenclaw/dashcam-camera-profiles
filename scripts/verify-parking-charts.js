@@ -19,8 +19,10 @@ assert.equal(new Map(chart.testFields(e1sIdle)).get('Reported recording-start de
 assert.equal(chart.interval(e1sIdle,'wake'),null);
 assert.notEqual(new Map(chart.testFields(e1s.find(r=>r.id==='rcg530-675957-3'))).get('Settings'),new Map(chart.testFields(e1s.find(r=>r.id==='rcg530-675957-4'))).get('Settings'));
 assert.equal(new Set(rows.map(r => r.id)).size, 599);
-assert.equal(chart.readState('?metric=watts&title=Parking+Mode+Power+Draw',rows).title,'Parking Mode Power Draw Comparison');
+assert.equal(chart.readState('?metric=watts&title=Parking+Mode+Power+Draw',rows).title,'Low Power Parking Mode Power Draw Comparison');
 assert.equal(chart.readState('?metric=watts&title=My+custom+title',rows).title,'My custom title');
+assert.equal(chart.readState('?selection=1&family=buffered-motion&metric=watts&title=Parking+Mode+Power+Draw+Comparison',rows).title,'Buffered Motion Detection Parking Mode Power Draw Comparison');
+assert.equal(chart.readState('?selection=1&family=low-power&metric=watts&title=Parking+Mode+Power+Draw+Comparison',rows).title,'Low Power Parking Mode Power Draw Comparison');
 const e1=rows.filter(r=>r.brand==='Vantrue'&&r.model==='E1 Pro'&&r.state==='monitoring'&&r.category==='impact-sleep');
 assert.equal(chart.representative(e1,[],'low-power').id,'rcg530-660569-2');
 assert.equal(chart.tester({tester:'Robert'}),'Retro CarGuy530 (rcg530)');
@@ -233,10 +235,10 @@ with sync_playwright() as p:
     download(page,'#chart-svg','recording-delay.svg');download(page,'#chart-png','recording-delay-2x.png')
     fit_svg(page)
     page.locator('#chart-metric').select_option('wake')
-    assert page.locator('#chart-canvas svg').count()==0
+    assert page.locator('#chart-model-picker input:checked').count()==7
     assert 'No impact to first frame data for:' in page.locator('#chart-notice').text_content()
     assert 'Viofo T340' in page.locator('#chart-notice').text_content()
-    assert page.locator('#chart-svg').is_disabled()
+    assert page.locator('#chart-svg').is_disabled()==(page.locator('#chart-canvas svg').count()==0)
     page.locator('#preset-current').click()
     assert page.locator('#chart-canvas [data-measurement]').count()==7
     page.locator('#chart-group').select_option('all')
@@ -396,18 +398,21 @@ with sync_playwright() as p:
     # Functional quick groups are explicit, complete and waiting-state comparisons.
     page.goto(url);ready(page)
     before=page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')
+    before_models=set(page.locator('#chart-model-picker input:checked').evaluate_all('es=>es.map(e=>e.dataset.model)'))
     page.locator('#chart-group').select_option('buffered-motion')
     assert page.locator('#chart-condition').input_value()=='monitoring'
-    assert page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')==before
+    mapped=page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')
+    assert mapped!=before
+    assert set(page.locator('#chart-model-picker input:checked').evaluate_all('es=>es.map(e=>e.dataset.model)'))==before_models
     models=page.locator('#chart-model-picker input[type=checkbox]').evaluate_all('es=>es.map(e=>e.dataset.model)')
     assert len(models)>7 and len(models)==len(set(models))
     assert 'Compare shown models · '+str(len(models)) == page.locator('#chart-apply-group').text_content()
     page.reload();ready(page)
     assert page.locator('#chart-group').input_value()=='buffered-motion'
-    assert page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')==before
+    assert page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')==mapped
     page.locator('#chart-apply-group').click()
     assert page.locator('#chart-metric').input_value()=='watts'
-    assert 'Switched to W' in page.locator('#chart-action-status').text_content()
+    assert 'camera models selected' in page.locator('#chart-action-status').text_content()
     matching=urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id']
     assert len(matching)==len(models)
     assert all(byid[id]['state']=='monitoring' for id in matching)
