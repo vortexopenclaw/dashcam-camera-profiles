@@ -36,6 +36,16 @@ with sync_playwright() as p:
     assert page.locator('#chart-title').input_value()=='My custom comparison'
     page.locator('#chart-metric').select_option('delay')
     assert page.locator('#chart-title').input_value()=='My custom comparison'
+    # Exact owner-shared low-power power-draw selection must filter on load too.
+    owner_ids=['vortex-sheet-row-15','vortex-sheet-row-11','vortex-sheet-row-21','vortex-sheet-row-4','vortex-sheet-row-6','vortex-sheet-row-9','rcg530-660569-2','rcg530-664217-1']
+    owner_params=[('selection','1'),('group','low-power'),('family','low-power'),('condition','monitoring'),('metric','watts'),('sort','desc'),('highlight','Viofo T340'),('title','Low Power Parking Mode Power Draw Comparison'),('details','0'),('format','video')]+[('id',id) for id in owner_ids]
+    page.goto(base+'parking-charts.html?'+urlencode(owner_params));page.wait_for_selector('#chart-model-picker input')
+    expected=set(page.evaluate('rows=>[...new Set(rows.filter(r=>window.ParkingCharts.matchesFamily(r,"low-power")&&r.state==="monitoring").map(window.ParkingUI.modelLabel))]',rows))
+    shown=set(page.locator('#chart-model-picker input').evaluate_all('nodes=>nodes.map(n=>n.dataset.model)'))
+    assert shown==expected,(shown^expected)
+    total=page.evaluate('rows=>new Set(rows.map(window.ParkingUI.modelLabel)).size',rows)
+    assert len(shown)<total
+    assert set(parse_qs(urlsplit(page.url).query)['id'])==set(owner_ids)
     assert not errors,errors
     browser.close()
 print('Passed: supplied generic title upgrades, mode-filtered primary/advanced lists, camera retention across modes and metrics, unavailable-model recovery after reload, and custom-title preservation.')

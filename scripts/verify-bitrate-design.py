@@ -50,7 +50,8 @@ with sync_playwright() as p:
     assert page.locator('#t340').count() == 0
     assert page.locator('#highlight').input_value() == ''
     assert page.locator('#chart g[data-highlight="true"]').count() == 0
-    assert page.locator('#chart rect[fill="#559bd4"]').count() > 0
+    assert page.locator('#chart rect[fill="#559bd4"]').count() == 12
+    assert page.locator('#chart g[data-variant]').evaluate_all('nodes=>nodes.every(n=>Number(n.querySelector("rect[data-kind=bar]")?.getAttribute("width"))>0)')
     assert 'Prototype' in page.locator('#chart').inner_text()
     assert '41.0 – 53.3 Mbps' in page.locator('#chart').inner_text()
     assert page.evaluate(BOUNDS)

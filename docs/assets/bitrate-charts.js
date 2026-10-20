@@ -144,10 +144,11 @@
         parts.push(`<g data-variant="${escape(row.key)}" data-highlight="${highlight}">`);
         lines[i].forEach((line,j)=>text(left-20,cy-lines[i].length*10+15+j*20,line,`text-anchor="end" font-size="16" font-weight="${highlight?700:600}" fill="${highlight?'#ac520e':'#23354a'}"`));
         const color=highlight?'#ef8a2c':'#559bd4';
-        if (row.highMbps>row.lowMbps) {
-          parts.push(`<path data-kind="range" d="M${x(row.lowMbps)} ${cy}H${x(row.highMbps)}M${x(row.lowMbps)} ${cy-12}V${cy+12}M${x(row.highMbps)} ${cy-12}V${cy+12}" stroke="${highlight?'#ac520e':'#243a50'}" stroke-width="3"/>`);
-        } else if (row.highMbps>0) parts.push(`<rect data-kind="scalar" x="${left}" y="${cy-13}" width="${x(row.highMbps)-left}" height="26" fill="${color}"/>`);
+        if (row.highMbps>0) parts.push(`<rect data-kind="bar" x="${left}" y="${cy-13}" width="${x(row.highMbps)-left}" height="26" fill="${color}"/>`);
         else parts.push(`<circle cx="${left}" cy="${cy}" r="3" fill="${color}"/>`);
+        if (row.highMbps>row.lowMbps) {
+          parts.push(`<path data-kind="range" d="M${x(row.lowMbps)} ${cy}H${x(row.highMbps)}M${x(row.lowMbps)} ${cy-12}V${cy+12}M${x(row.highMbps)} ${cy-12}V${cy+12}" stroke="${highlight?'#ac520e':'#243a50'}" stroke-width="3" fill="none"/>`);
+        }
         text(x(row.highMbps)+10,cy+5,`${rate(row)} Mbps`,`data-kind="value" font-size="16" font-weight="${highlight?700:600}" fill="#23354a"`);
         parts.push('</g>');
       });
@@ -158,7 +159,7 @@
       yLines.forEach((line,i)=>text(24+i*18,center,line,`text-anchor="middle" data-role="chart-y-axis" font-size="15" fill="#516174" transform="rotate(-90 ${24+i*18} ${center})"`));
       y=bottom+80+Math.max(0,axisLines.length-1)*19;
       parts.push(`<line x1="36" x2="${width-36}" y1="${y-8}" y2="${y-8}" stroke="#dae2eb"/>`);
-      if (picked.some(row=>row.highMbps>row.lowMbps)) {y+=19;text(36,y,'Ranges show measured endpoints, not averages. Units and setups remain separate.','font-size="13" fill="#536174"');y+=5;}
+      if (picked.some(row=>row.highMbps>row.lowMbps)) {y+=19;text(36,y,'Bars show measured maxima. Markers show observed ranges.','font-size="13" fill="#536174"');y+=5;}
       y+=22;
       const contributors=[...new Set(picked.map(row=>/Retro CarGuy530|rcg530/.test(row.source) ? 'Retro CarGuy530 (rcg530)' : 'Vortex Radar'))].join(', ');
       for (const line of wrap(`Sources: ${contributors}. Full measurements and configurations: vortexopenclaw.github.io/dashcam-camera-profiles/4k30-comparison.html`,width-72,12)) {

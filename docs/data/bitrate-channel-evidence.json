@@ -261,7 +261,10 @@
         "front"
       ],
       "source": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
-      "verificationMethod": "verified_explicit_front_only_card_scan"
+      "verificationMethod": "verified_explicit_front_only_card_scan",
+      "measurement": {
+        "settings": "Measured across 129 front-only driving files, firmware 1.00.06. This 1CH configuration is separate from the paired front/rear recordings."
+      }
     },
     "cansonic-ultradash-z4-standard": {
       "channels": 3,
@@ -271,7 +274,10 @@
         "rear"
       ],
       "source": "Actual owner-trained Z4 card has front, front_telephoto, rear continuous groups. Matching stored 60-second 4K30 H.264 front rates 31.126250 and 40.957612 Mbps. Three channels, not Z3/Z3+ inference. Raw synchronized original clips not mounted; sanitized scans lack filename samples.",
-      "verificationMethod": "matching_card_scan"
+      "verificationMethod": "matching_card_scan",
+      "measurement": {
+        "settings": "Full-minute primary-front samples from verified 3CH driving scans measure 31.126250 and 40.957612 Mbps. Short interrupted and parking clips are excluded."
+      }
     },
     "70mai-t800": {
       "channels": 3,
@@ -344,7 +350,10 @@
         "rear"
       ],
       "source": "Explicit3CH48Mbps variant confirmed by recorded3-channel card group and freshly probed original F/I/R triples at48Mbps H.2644K30.",
-      "verificationMethod": "matching_card_scan_and_original"
+      "verificationMethod": "matching_card_scan_and_original",
+      "measurement": {
+        "settings": "Approximately 48 Mbps in the explicitly recorded 3CH setup. Separately verified 2CH and 3CH archive configurations remain available."
+      }
     },
     "viofo-a139-pro": {
       "channels": 1,
