@@ -157,7 +157,9 @@
         "rear"
       ],
       "source": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
-      "verificationMethod": "verified_card_scan_and_original_pair_codec"
+      "verificationMethod": "verified_card_scan_and_original_pair_codec",
+      "codec": "H.265",
+      "codecSource": "HEVC verified in original Elite 10 MP4s and an independent model-identified front/rear card scan. The firmware 1.009 bitrate scan did not itself retain a codec field."
     },
     "blackvue-elite-9": {
       "channels": 2,

@@ -4,7 +4,7 @@
 #chart svg{display:block;width:100%;min-width:1100px;height:auto;max-width:none}
 #choices{margin-top:16px}
 .bitrate-page .camera-choice{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:12px 20px;padding:12px 0;border-bottom:1px solid #334155;min-width:0}
-.bitrate-page .camera-choice[hidden]{display:none}
+.bitrate-page .camera-choice[hidden],.bitrate-page .variant-choice[hidden]{display:none}
 .bitrate-page .choice{display:flex;flex-direction:row;align-items:center;gap:12px;min-height:44px;cursor:pointer}
 .choice input{width:20px;height:20px;flex-shrink:0;accent-color:#559bd4}
 .choice small{display:block;margin-top:4px;color:#b8c9df;font-size:.8rem;font-weight:400;font-variant-numeric:tabular-nums}

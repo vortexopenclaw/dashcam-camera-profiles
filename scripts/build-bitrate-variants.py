@@ -88,6 +88,7 @@ def build(check=False):
             row['configuration'] = f"{row['channels']}CH: " + ', '.join(role.replace('_', ' ') for role in row['channelRoles'])
         row.pop('channelScope', None)
         if channel_evidence.get('codec'): row['codec'] = channel_evidence['codec']
+        if channel_evidence.get('codecSource'): row['codecSource'] = channel_evidence['codecSource']
         if 'channel count unrecorded' in row.get('variantLabel', ''):
             row['variantLabel'] = f"{row['channels']}CH, archive measurements"
         assert row['channels'] in {1, 2, 3, 4}

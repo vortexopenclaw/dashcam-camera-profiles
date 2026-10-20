@@ -77,7 +77,7 @@
     "camera": "Blackvue Elite 10",
     "lowMbps": 60.0,
     "highMbps": 60.0,
-    "codec": "Not captured",
+    "codec": "H.265",
     "configuration": "2-channel: front, rear; firmware 1.009",
     "settings": "Seven normal-driving samples of at least 55 seconds measure 60.026696-60.059968 Mbps. Short and mixed-recording samples excluded. VideoQuality=0 is recorded but its named preset is unverified. See docs/data/elite10-1.009-evidence.json.",
     "source": "privacy-safe card scan summary",
@@ -88,7 +88,8 @@
     "channelRoles": [
       "front",
       "rear"
-    ]
+    ],
+    "codecSource": "HEVC verified in original Elite 10 MP4s and an independent model-identified front/rear card scan. The firmware 1.009 bitrate scan did not itself retain a codec field."
   },
   {
     "id": "blackvue-elite-9",

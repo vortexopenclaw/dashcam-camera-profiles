@@ -5,6 +5,9 @@
   const fmt = n => n.toFixed(1);
   const rate = row => fmt(row.lowMbps) === fmt(row.highMbps) ? fmt(row.highMbps) : `${fmt(row.lowMbps)} – ${fmt(row.highMbps)}`;
   const channels = row => `${row.channels}CH`;
+  const codecKey = row => /265|hevc/i.test(row.codec) ? 'h265' : /264|avc/i.test(row.codec) ? 'h264' : null;
+  const codecLabel = row => codecKey(row)==='h265' ? 'H.265' : 'H.264';
+  const matchesCodec = row => $('codec').value==='all' || codecKey(row)===$('codec').value;
   const defaults = ['viofo-a329s','blackvue-elite-10','nextbase-622gw','viofo-t340','vueroid-s1-4k-infinite','viofo-a119m-pro','vantrue-e1-pro-s','viofo-a229-pro','vantrue-n4-pro-s','thinkware-arc-800','vantrue-e1-pro','thinkware-u3000-pro'];
   const measure = document.createElement('canvas').getContext('2d');
   const textWidth = (text, size=16, bold=false) => {
@@ -32,6 +35,7 @@
     if (!Array.isArray(rows)) throw new Error('Camera measurements are not a list.');
     for (const row of rows) {
       if (![row.lowMbps,row.highMbps].every(n=>typeof n==='number' && Number.isFinite(n) && n>=0) || row.highMbps<row.lowMbps) throw new Error(`Invalid bitrate measurement for ${row.camera || row.key}.`);
+      if (!codecKey(row)) throw new Error(`Unverified video codec for ${row.camera || row.key}.`);
       if (!Number.isInteger(row.channels) || row.channels<1 || row.channels>4) throw new Error(`Invalid tested channel count for ${row.camera || row.key}.`);
     }
     const known = new Set(rows.map(r => r.key));
@@ -42,6 +46,7 @@
     const params = new URLSearchParams(location.search);
     let selected = new Set(params.has('selection') ? params.getAll('camera').filter(k => known.has(k)) : defaults.filter(k=>known.has(k)));
     $('format').value = params.get('format')==='auto' ? 'auto' : 'video';
+    $('codec').value = ['h264','h265'].includes(params.get('codec')) ? params.get('codec') : 'all';
     $('sort').value = ['high','low','name'].includes(params.get('sort')) ? params.get('sort') : 'high';
     for (const [id,fallback] of Object.entries(textControls)) $(id).value=(params.get(id) ?? fallback).replace(/[\u0000-\u001f\u007f]/g,' ').slice(0,id.endsWith('Label') ? 120 : 180);
     for (const model of models) {
@@ -52,7 +57,7 @@
     const highlighted=models.find(model=>model.id===requested || model.camera.toLowerCase()===requested.toLowerCase());
     $('highlight').value=highlighted?.id || '';
     let svgText = '';
-    const ordered = () => rows.filter(r=>selected.has(r.key)).sort((a,b)=>$('sort').value==='name' ? a.camera.localeCompare(b.camera,undefined,{numeric:true}) : ($('sort').value==='low' ? a.highMbps-b.highMbps : b.highMbps-a.highMbps));
+    const ordered = (all=false) => rows.filter(r=>selected.has(r.key) && (all || matchesCodec(r))).sort((a,b)=>$('sort').value==='name' ? a.camera.localeCompare(b.camera,undefined,{numeric:true}) : ($('sort').value==='low' ? a.highMbps-b.highMbps : b.highMbps-a.highMbps));
     // The 16:9 export can have side gutters when many rows set its scale.
     // Start the narrow-screen scroller at the real content, not that blank gutter.
     function positionPreview() {
@@ -68,8 +73,9 @@
       const label=document.createElement('label');label.className='choice';
       const input=document.createElement('input');input.type='checkbox';input.value=model.id;input.dataset.model=model.id;
       input.addEventListener('change',()=>{
-        if (input.checked) selected.add(model.preferred.key);
-        else for (const row of model.variants) selected.delete(row.key);
+        const available=model.variants.filter(matchesCodec);
+        if (input.checked) selected.add((available.find(row=>row.default) || available[0]).key);
+        else for (const row of available) selected.delete(row.key);
         render();
       });
       const span=document.createElement('span');span.textContent=model.camera;
@@ -78,12 +84,12 @@
         const details=document.createElement('details');details.className='variant-options';
         const summary=document.createElement('summary');summary.textContent='Channel setups and units';details.append(summary);
         for (const row of model.variants) {
-          const option=document.createElement('label');option.className='choice variant-choice';
+          const option=document.createElement('label');option.className='choice variant-choice';option.dataset.codec=codecKey(row);
           const checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.value=row.key;checkbox.dataset.variant=row.key;
           checkbox.addEventListener('change',()=>{checkbox.checked ? selected.add(row.key) : selected.delete(row.key);render();});
           const text=document.createElement('span');
           const unit=row.key==='t340-a' ? 'Unit A' : row.key==='t340-b' ? 'Unit B' : row.key==='viofo-t340' ? 'Combined unit range' : row.variantLabel || channels(row);
-          text.textContent=`${unit} · ${rate(row)} Mbps`;
+          text.textContent=`${unit}${unit.includes(codecLabel(row)) ? '' : ' · '+codecLabel(row)} · ${rate(row)} Mbps`;
           if (row.variantLabel && !row.variantLabel.includes(channels(row))) text.textContent=`${channels(row)} · ${text.textContent}`;
           option.append(checkbox,text);details.append(option);
         }
@@ -94,24 +100,29 @@
     }
     function render() {
       for (const model of models) {
-        const picked=model.variants.filter(r=>selected.has(r.key));
+        const available=model.variants.filter(matchesCodec);
+        const picked=available.filter(r=>selected.has(r.key)),preferred=available.find(r=>r.default) || available[0] || model.preferred;
         const card=[...$('choices').children].find(node=>node.dataset.model===model.id);
+        card.hidden=!available.length || !card.dataset.search.includes($('search').value.toLowerCase());
         card.querySelector('input[data-model]').checked=!!picked.length;
-        card.querySelector('[data-summary]').textContent=(picked.length>1 ? `${picked.length} configurations selected` : `${channels(picked[0] || model.preferred)} · ${rate(picked[0] || model.preferred)} Mbps`);
+        for (const option of card.querySelectorAll('.variant-choice')) option.hidden=$('codec').value!=='all' && option.dataset.codec!==$('codec').value;
+        card.querySelector('[data-summary]').textContent=(picked.length>1 ? `${picked.length} configurations selected` : `${channels(picked[0] || preferred)} · ${codecLabel(picked[0] || preferred)} · ${rate(picked[0] || preferred)} Mbps`);
         for (const box of card.querySelectorAll('input[data-variant]')) box.checked=selected.has(box.value);
       }
       const picked=ordered();
-      const state=new URLSearchParams({selection:'1',sort:$('sort').value,format:$('format').value,highlight:$('highlight').value});
+      const state=new URLSearchParams({selection:'1',sort:$('sort').value,format:$('format').value,highlight:$('highlight').value,codec:$('codec').value});
       for (const id of Object.keys(textControls)) state.set(id,$(id).value);
-      for (const row of picked) state.append('camera',row.key);
+      for (const row of ordered(true)) state.append('camera',row.key);
       history.replaceState(null,'',`${location.pathname}?${state}`);
       $('png').disabled=$('svg').disabled=!picked.length;
-      $('status').textContent=picked.length ? `${picked.length} camera results selected.` : 'Choose a camera to draw your chart.';
+      const hidden=selected.size-picked.length;
+      $('status').textContent=(picked.length ? `${picked.length} camera results selected.` : selected.size ? 'No selected cameras match this codec.' : 'Choose a camera to draw your chart.')+(hidden ? ` ${hidden} selected results kept for other codecs.` : '');
+      $('all').textContent=$('codec').value==='all' ? 'Compare all models' : 'Compare all '+$('codec').selectedOptions[0].textContent+' models';
       $('t340-note').hidden=!picked.some(row=>row.id==='viofo-t340');
-      $('measurements').innerHTML=picked.map(row=>`<article><strong>${escape(row.camera)} · ${escape(channels(row))}</strong><br>${escape(row.codec)} · ${escape(row.configuration)}<br>${escape(row.settings)}<br>Channel evidence: ${escape(row.channelSource || 'The tested channel count was not retained.')}<br>Source: ${escape(row.source)}<br>Video bitrate: ${rate(row)} Mbps</article>`).join('');
-      if (!picked.length) {svgText='';$('chart').textContent='No cameras selected.';return;}
+      $('measurements').innerHTML=picked.map(row=>`<article><strong>${escape(row.camera)} · ${escape(channels(row))}</strong><br>${escape(codecLabel(row))} · ${escape(row.configuration)}${row.codecSource ? '<br>Codec evidence: '+escape(row.codecSource) : ''}<br>${escape(row.settings)}<br>Channel evidence: ${escape(row.channelSource || 'The tested channel count was not retained.')}<br>Source: ${escape(row.source)}<br>Video bitrate: ${rate(row)} Mbps</article>`).join('');
+      if (!picked.length) {svgText='';$('chart').textContent=selected.size ? 'No selected cameras match this codec.' : 'No cameras selected.';return;}
       const video=$('format').value==='video';
-      const labels=picked.map(row=>`${row.camera} · ${channels(row)}`);
+      const labels=picked.map(row=>`${row.camera} · ${channels(row)} · ${codecLabel(row)}`);
       const left=Math.ceil(Math.min(330,Math.max(220,...labels.map(label=>textWidth(label,16,true)+64))));
       const right=Math.ceil(Math.max(110,...picked.map(row=>textWidth(`${rate(row)} Mbps`,16,true)))+35);
       const width=1200;
@@ -172,26 +183,27 @@
       $('chart').innerHTML=svgText;
       positionPreview();
     }
-    function download(blob,extension,layout=$('format').value) {
-      const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`front-camera-bitrates-4k30${layout==='video'?'-16x9':''}.${extension}`;a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);
+    function download(blob,extension,layout=$('format').value,codec=$('codec').value) {
+      const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`front-camera-bitrates-4k30${codec==='all'?'':'-'+codec}${layout==='video'?'-16x9':''}.${extension}`;a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);
     }
-    $('search').addEventListener('input',()=>{for (const card of $('choices').children) card.hidden=!card.dataset.search.includes($('search').value.toLowerCase());});
-    $('all').onclick=()=>{selected=new Set(models.map(model=>model.preferred.key));render();};
+    $('search').addEventListener('input',render);
+    $('all').onclick=()=>{selected=new Set([...rows.filter(row=>selected.has(row.key)&&!matchesCodec(row)).map(row=>row.key),...models.map(model=>{const available=model.variants.filter(matchesCodec);return (available.find(row=>row.default)||available[0])?.key;}).filter(Boolean)]);render();};
     $('clear').onclick=()=>{selected.clear();render();};
-    $('defaults').onclick=()=>{selected=new Set(defaults.filter(key=>known.has(key)));render();};
+    $('defaults').onclick=()=>{$('codec').value='all';selected=new Set(defaults.filter(key=>known.has(key)));render();};
     $('format').onchange=render;
     $('sort').onchange=render;
+    $('codec').onchange=render;
     $('highlight').onchange=render;
     for (const id of Object.keys(textControls)) $(id).addEventListener('input',render);
     $('svg').onclick=()=>download(new Blob([svgText],{type:'image/svg+xml'}),'svg');
     $('png').onclick=async()=>{
-      const layout=$('format').value;
+      const layout=$('format').value,codec=$('codec').value;
       const url=URL.createObjectURL(new Blob([svgText],{type:'image/svg+xml'}));
       try {
         const image=new Image();image.src=url;await image.decode();
         const canvas=document.createElement('canvas');canvas.width=image.width*2;canvas.height=image.height*2;canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);
         const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
-        if (!blob) throw new Error('PNG export failed.');download(blob,'png',layout);
+        if (!blob) throw new Error('PNG export failed.');download(blob,'png',layout,codec);
       } catch(error) {$('status').textContent=error.message;} finally {URL.revokeObjectURL(url);}
     };
     $('share').onclick=async()=>{try {await navigator.clipboard.writeText(location.href);$('status').textContent='Chart link copied.';}catch {$('status').textContent='Copy the chart link from your address bar.';}};

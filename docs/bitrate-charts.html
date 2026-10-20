@@ -6,8 +6,8 @@
 <title>Front-camera bitrate chart builder | Dashcam Camera Profiles</title>
 <link rel="stylesheet" href="assets/styles.css?v=20261008">
 <link rel="stylesheet" href="assets/parking-charts.css?v=3-readable-tests">
-<link rel="stylesheet" href="assets/bitrate-charts.css?v=1-parking-design">
-<script src="assets/bitrate-charts.js?v=9-range-bars" defer></script>
+<link rel="stylesheet" href="assets/bitrate-charts.css?v=2-codecs">
+<script src="assets/bitrate-charts.js?v=10-codecs" defer></script>
 </head>
 <body class="charts-page bitrate-page">
 <a class="skip-link" href="#chart-settings">Skip to chart settings</a>
@@ -26,6 +26,7 @@
 <label>X-axis label<input id="xLabel" type="text" maxlength="120"></label>
 <label>Y-axis label<input id="yLabel" type="text" maxlength="120"></label>
 <label>Image layout<select id="format"><option value="video">YouTube · 16:9</option><option value="auto">Auto height</option></select></label>
+<label>Codec<select id="codec"><option value="all">All codecs</option><option value="h264">H.264</option><option value="h265">H.265 / HEVC</option></select></label>
 <label>Sort<select id="sort"><option value="high">High to low</option><option value="low">Low to high</option><option value="name">Camera name</option></select></label>
 <label>Highlight a model (optional)<select id="highlight"><option value="">None</option></select></label>
 </div>

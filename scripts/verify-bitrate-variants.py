@@ -33,6 +33,7 @@ assert bykey['vueroid-s1-4k-infinite:archive']['channels'] in [2,3]
 assert bykey['thinkware-u3000-pro:1ch']['channels']==1
 assert bykey['thinkware-u3000-pro']['channels']==2
 for row in rows:
+    assert any(token in row['codec'].lower() for token in ['264','265','avc','hevc']),row['key']
     assert row['channels'] in [1,2,3,4]
     assert len(set(row['channelRoles']))==row['channels'],row['key']
     assert row.get('channelSource'),row['key']
