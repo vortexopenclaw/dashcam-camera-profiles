@@ -4,7 +4,7 @@
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
   const fmt = n => n.toFixed(1);
   const rate = row => fmt(row.lowMbps) === fmt(row.highMbps) ? fmt(row.highMbps) : `${fmt(row.lowMbps)} – ${fmt(row.highMbps)}`;
-  const channels = row => row.channels ? `${row.channels}CH${row.channelScope==='cohort' ? ' cohort' : ''}` : 'CH unrecorded';
+  const channels = row => row.channels ? `${row.channels}CH` : 'CH unrecorded';
   const defaults = ['viofo-a329s','blackvue-elite-10','nextbase-622gw','viofo-t340','vueroid-s1-4k-infinite','viofo-a119m-pro','vantrue-e1-pro-s','viofo-a229-pro','vantrue-n4-pro-s','thinkware-arc-800','vantrue-e1-pro','thinkware-u3000-pro'];
   const wrap = (text, length=32) => {
     const lines=[''];
