@@ -11,7 +11,7 @@
     "state": "monitoring",
     "power_w": 5.34,
     "current_ma": 431.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": 12.4,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -19,7 +19,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. Sheet reports Parking Voltage 12.4 V; its meaning as supply voltage versus another setting is unconfirmed, so it is not used for conversions.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. 12.4 V confirmed by Vortex Radar's buffered-parking comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -38,7 +38,8 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar buffered motion and impact parking comparison chart"
   },
   {
     "id": "vortex-sheet-row-4",
@@ -96,7 +97,7 @@
     "state": "monitoring",
     "power_w": 6.94,
     "current_ma": 560.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -104,7 +105,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. 12.4 V confirmed by Vortex Radar's buffered-parking comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -123,7 +124,8 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar buffered motion and impact parking comparison chart"
   },
   {
     "id": "vortex-sheet-row-6",
@@ -181,7 +183,7 @@
     "state": "monitoring",
     "power_w": 6.47,
     "current_ma": 522.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -189,7 +191,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. 12.4 V confirmed by Vortex Radar's buffered-parking comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -208,7 +210,8 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar buffered motion and impact parking comparison chart"
   },
   {
     "id": "vortex-sheet-row-8",
@@ -307,7 +310,7 @@
     "state": "monitoring",
     "power_w": 3.93,
     "current_ma": 317.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -315,7 +318,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. 12.4 V confirmed by Vortex Radar's buffered-parking comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -334,7 +337,8 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar buffered motion and impact parking comparison chart"
   },
   {
     "id": "vortex-sheet-row-11",
@@ -475,7 +479,7 @@
     "state": "monitoring",
     "power_w": 4.89,
     "current_ma": 394.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -483,7 +487,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. 12.4 V confirmed by Vortex Radar's buffered-parking comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -502,7 +506,8 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar buffered motion and impact parking comparison chart"
   },
   {
     "id": "vortex-sheet-row-15",
@@ -560,7 +565,7 @@
     "state": "monitoring",
     "power_w": 5.44,
     "current_ma": 439.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -568,7 +573,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. 12.4 V confirmed by Vortex Radar's buffered-parking comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -587,7 +592,8 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar buffered motion and impact parking comparison chart"
   },
   {
     "id": "vortex-sheet-row-17",
@@ -645,7 +651,7 @@
     "state": "monitoring",
     "power_w": 8.01,
     "current_ma": 646.0,
-    "voltage_v": null,
+    "voltage_v": 12.4,
     "reported_parking_voltage_v": null,
     "wake_seconds": null,
     "prebuffer_s": null,
@@ -653,7 +659,7 @@
     "source_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing",
     "image_url": null,
     "date": null,
-    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet.",
+    "notes": "Idle measurements supplied by Vortex Radar. Channel views, IR state, and power path were not specified in this sheet. 12.4 V confirmed by Vortex Radar's buffered-parking comparison chart.",
     "test_status": "unknown",
     "ir": "unknown",
     "power_path": null,
@@ -672,7 +678,8 @@
     "prebuffer_motion_s": null,
     "power_is_derived": false,
     "connectivity": null,
-    "source_is_private": true
+    "source_is_private": true,
+    "voltage_source": "Vortex Radar buffered motion and impact parking comparison chart"
   },
   {
     "id": "vortex-sheet-row-20",

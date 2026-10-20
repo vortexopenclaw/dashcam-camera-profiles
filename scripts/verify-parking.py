@@ -30,7 +30,12 @@ chart_rows=[r for r in rows if r['id'] in chart_ids]
 assert len(chart_rows)==8 and all(r['voltage_v']==12.4 and r.get('voltage_source') for r in chart_rows)
 timed=[r for r in chart_rows if r['id']!='vortex-sheet-row-12']
 assert len(timed)==7 and all(r.get('reported_startup_method')=='Impact detection to start of recording' and r['wake_seconds'] is None for r in timed)
-assert all(r['voltage_v'] is None for r in rows if r['tester']=='Vortex Radar' and r['id'] not in chart_ids),'No blanket voltage assumption for other contributed rows'
+buffered_chart={f'vortex-sheet-row-{n}': current for n,current in [(19,646),(5,560),(7,522),(16,439),(3,431),(14,394),(10,317)]}
+for row in rows:
+    if row['id'] in buffered_chart:
+        assert row['voltage_v']==12.4 and row['current_ma']==buffered_chart[row['id']]
+        assert row['category']=='buffered-event' and row['state']=='monitoring' and row.get('voltage_source')
+assert all(r['voltage_v'] is None for r in rows if r['tester']=='Vortex Radar' and r['id'] not in chart_ids | buffered_chart.keys()),'No blanket voltage assumption for other contributed rows'
 for content in [public.read_text(),csv_path.read_text(),json.dumps(sources)]:
     assert 'docs.google.com/spreadsheets' not in content, 'Private spreadsheet link in public data'
 bad=copy.deepcopy(rows);bad[0]['source_url']='https://docs.google.com/spreadsheets/d/private-test-fixture'
