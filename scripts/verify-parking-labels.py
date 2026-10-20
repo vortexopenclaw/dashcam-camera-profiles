@@ -11,6 +11,9 @@ with sync_playwright() as p:
     page=browser.new_page(accept_downloads=True)
     errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
     page.goto(base+'parking-charts.html?'+urlencode(params));page.wait_for_selector('#chart-canvas svg')
+    assert page.locator('#chart-format').input_value()=='video'
+    assert page.locator('#chart-canvas svg').get_attribute('viewBox')=='0 0 1920 1080'
+    assert float(page.locator('#chart-canvas g[data-measurement] rect').first.get_attribute('x'))<=330
     assert page.locator('#chart-subtitle').input_value()=='Power Draw at Idle, 12.4 V (Lower is Better)'
     assert page.locator('#chart-xLabel').input_value()=='Power Draw (mA)'
     assert page.locator('#chart-yLabel').input_value()=='Dash Cameras'
@@ -31,6 +34,14 @@ with sync_playwright() as p:
             import xml.etree.ElementTree as ET
             content=''.join(ET.parse(file).getroot().itertext())
             assert all(value in content for value in values.values())
+        else:
+            import struct
+            assert struct.unpack('>II',file.read_bytes()[16:24])==(3840,2160)
+    page.locator('#chart-format').select_option('auto')
+    page.reload();page.wait_for_selector('#chart-canvas svg')
+    assert page.locator('#chart-format').input_value()=='auto'
+    page.locator('#chart-format').select_option('video')
+    assert page.locator('#chart-canvas svg').get_attribute('viewBox')=='0 0 1920 1080'
     page.locator('#chart-metric').select_option('watts')
     for key,value in values.items():assert page.locator('#chart-'+key).input_value()==value
     for width in [320,390,768,1440]:

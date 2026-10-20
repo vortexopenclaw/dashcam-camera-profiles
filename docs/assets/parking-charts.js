@@ -46,7 +46,7 @@
   }
   const defaultCondition = family => family === 'time-lapse' ? 'time-lapse' : family === 'low-bitrate' ? 'continuous' : 'monitoring';
   const steadyState = (row,family) => family==='hybrid' ? ['monitoring','continuous','time-lapse'].includes(row.state) : row.state===defaultCondition(family);
-  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', highlight: '', details: false, subtitle: null, xLabel: null, yLabel: null, title: titles[metric], group: 'low-power', family: 'low-power', condition: 'monitoring' });
+  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', format: 'video', highlight: '', details: false, subtitle: null, xLabel: null, yLabel: null, title: titles[metric], group: 'low-power', family: 'low-power', condition: 'monitoring' });
   const axisText = state => state.xLabel ?? ({current:'Power Draw (mA)',watts:'Power Draw (Watts)',delay:'Recording Delay (Seconds)',wake:'Impact to First Recorded Frame (Seconds)'}[state.metric]);
   const subtitleText = (state, voltage = null) => {
     if (state.subtitle != null) return state.subtitle;
@@ -87,6 +87,7 @@
     const ids = p.has('selection') ? [...new Set(p.getAll('id').filter(id => known.has(id)))] : fallback.ids.filter(id => known.has(id));
     return { ids, group: Object.hasOwn(families, p.get('group')) ? p.get('group') : fallback.group, family: Object.hasOwn(families, p.get('family')) ? p.get('family') : (p.has('selection') ? 'all' : fallback.family), condition: ['', 'monitoring', 'event-recording', 'time-lapse', 'continuous'].includes(p.get('condition')) ? p.get('condition') : fallback.condition, details: p.get('details') === '1', metric: Object.hasOwn(metrics, p.get('metric')) ? p.get('metric') : fallback.metric,
       sort: p.get('sort') === 'asc' ? 'asc' : 'desc', highlight: p.has('highlight') ? (models.has(highlight) ? highlight : '') : fallback.highlight,
+      format: p.get('format')==='auto' ? 'auto' : 'video',
       xLabel: p.has('xLabel') ? p.get('xLabel').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,120) : null,
       yLabel: p.has('yLabel') ? p.get('yLabel').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,120) : null,
       subtitle: p.has('subtitle') ? p.get('subtitle').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,180) : null,
@@ -94,6 +95,7 @@
   }
   function query(state) {
     const p = new URLSearchParams({ selection: '1', group: state.group || 'all', family: state.family || 'all', condition: state.condition ?? 'monitoring', metric: state.metric, sort: state.sort, highlight: state.highlight, title: state.title, details: state.details ? '1' : '0' });
+    p.set('format',state.format || 'video');
     for (const key of ['subtitle','xLabel','yLabel']) if (state[key] != null) p.set(key,state[key]);
     state.ids.forEach(id => p.append('id', id));
     return p.toString();
@@ -222,7 +224,7 @@
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean);
       return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}${state.details ? ` [${i + 1}]` : ''}`, second: [modes.size > 1 ? UI.modeLabel(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
     });
-    const left = 420;
+    const left = Math.ceil(Math.min(330,Math.max(220,...labels.map(label=>textWidth(label.first,16,true)+64))));
     labels.forEach(label => { label.firstLines = wrapped(label.first, left - 56, 16, true); label.secondLines = label.second ? wrapped(label.second, left - 56, 14) : []; label.height = Math.max(58, label.firstLines.length * 20 + label.secondLines.length * 18 + 18); });
     const right = Math.ceil(Math.max(110, ...plotted.map(({ row, value }) => textWidth(valueLabel(row, value, state.metric), 16, true))) + 35);
     const width = Math.max(1200, left + right + 490), plotWidth = width - left - right;
@@ -305,8 +307,13 @@
     metadata.textContent = JSON.stringify({metric:state.metric,family:state.family,group:state.group,measurements:safeRows(plotted.map(item=>item.row))});
     svg.append(metadata);
     const height = y + 30;
-    svg.setAttribute('height', height); svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-    svg.append(make('rect', { x: 0, y: 0, width, height, fill: '#ffffff' }), content);
+    const video = state.format !== 'auto', outputWidth = video ? 1920 : width, outputHeight = video ? 1080 : height;
+    if (video) {
+      const scale = Math.min(outputWidth/width,outputHeight/height);
+      content.setAttribute('transform',`translate(${(outputWidth-width*scale)/2} ${(outputHeight-height*scale)/2}) scale(${scale})`);
+    }
+    svg.setAttribute('width',outputWidth);svg.setAttribute('height',outputHeight);svg.setAttribute('viewBox',`0 0 ${outputWidth} ${outputHeight}`);
+    svg.append(make('rect', { x: 0, y: 0, width:outputWidth, height:outputHeight, fill: '#ffffff' }), content);
     return svg;
   }
   function safeRows(items) { return items.map(row => ({ ...row, source_url: source(row), image_url: row.source_is_private ? null : source({ ...row, source_url: row.image_url }) })); }
@@ -329,12 +336,12 @@
       context.drawImage(image, 0, 0, canvas.width, canvas.height);
       const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
       if (!blob) throw new Error('PNG creation failed');
-      download(blob, 'parking-comparison-2x.png'); $('chart-action-status').textContent = 'PNG downloaded at 2× with the complete chart and source notes.';
+      download(blob, 'parking-comparison-2x.png'); $('chart-action-status').textContent = 'PNG downloaded with the complete chart.';
     } catch { $('chart-action-status').textContent = 'PNG export could not finish. Try the SVG download instead.'; }
     finally { URL.revokeObjectURL(url); pendingPNG = false; $('chart-png').disabled = !currentSVG; }
   }
   function syncControls() {
-    for (const key of ['title', 'metric', 'sort', 'highlight', 'group', 'condition']) $(`chart-${key}`).value = state[key];
+    for (const key of ['title', 'metric', 'sort', 'highlight', 'group', 'condition', 'format']) $(`chart-${key}`).value = state[key];
     $('chart-subtitle').value = subtitleText(state,prepare(rows,state).voltage);
     $('chart-xLabel').value = axisText(state);
     $('chart-yLabel').value = state.yLabel ?? 'Dash Cameras';
@@ -477,7 +484,7 @@
       state = readState(location.search, rows);
       $('chart-data-status').textContent = `${rows.length} measurements · ${UI.groupModels(rows).length} models`;
       UI.groupModels(rows).sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' })).forEach(group => { const option = el('option', '', group.label); option.value = group.label; $('chart-highlight').append(option); });
-      for (const key of ['title', 'subtitle', 'xLabel', 'yLabel', 'metric', 'sort', 'highlight']) $(`chart-${key}`).addEventListener(['title','subtitle','xLabel','yLabel'].includes(key) ? 'input' : 'change', () => {
+      for (const key of ['title', 'subtitle', 'xLabel', 'yLabel', 'metric', 'sort', 'highlight', 'format']) $(`chart-${key}`).addEventListener(['title','subtitle','xLabel','yLabel'].includes(key) ? 'input' : 'change', () => {
         const value=$(`chart-${key}`).value;
         if (key==='metric' && Object.values(titles).includes(state.title)) {state.title=titles[value];$('chart-title').value=state.title;}
         state[key]=value;renderChart();if(key==='metric'){syncControls();renderPicker();}

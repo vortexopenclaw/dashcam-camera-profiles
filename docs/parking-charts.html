@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/styles.css?v=20261008">
   <link rel="stylesheet" href="assets/parking-charts.css?v=3-readable-tests">
   <script src="assets/parking.js?v=6-brand-styling" defer></script>
-  <script src="assets/parking-charts.js?v=10-editable-labels" defer></script>
+  <script src="assets/parking-charts.js?v=11-video-layout" defer></script>
 </head>
 <body class="charts-page">
   <a class="skip-link" href="#chart-settings">Skip to chart settings</a>
@@ -25,6 +25,7 @@
         <label class="chart-title-setting">Chart subtitle<input id="chart-subtitle" type="text" maxlength="180"></label>
         <label>X-axis label<input id="chart-xLabel" type="text" maxlength="120"></label>
         <label>Y-axis label<input id="chart-yLabel" type="text" maxlength="120"></label>
+        <label>Image layout<select id="chart-format"><option value="video">YouTube · 16:9</option><option value="auto">Auto height</option></select></label>
         <label>Metric<select id="chart-metric"><option value="current">Measured current (mA)</option><option value="watts">Measured power (W)</option><option value="delay">Recording delay after impact detection (s)</option><option value="wake">Impact to first frame (s)</option></select></label>
         <label>Sort<select id="chart-sort"><option value="desc">High to low</option><option value="asc">Low to high</option></select></label>
         <label>Highlight a model (optional)<select id="chart-highlight"><option value="">No highlight</option></select></label>

@@ -121,7 +121,7 @@ def params(ids,metric='watts',**kw):
     return urllib.parse.urlencode(p)
 def row(page,id): return page.locator('#chart-canvas [data-measurement="%s"]'%id)
 def fit_svg(page):
-    assert page.locator('#chart-canvas svg [data-role="chart-heading"]').evaluate_all("es=>es.length>=2&&es.every(e=>e.getAttribute('text-anchor')==='middle'&&Number(e.getAttribute('x'))===e.ownerSVGElement.viewBox.baseVal.width/2)"), 'Centered chart headings'
+    assert page.locator('#chart-canvas svg [data-role="chart-heading"]').evaluate_all("es=>es.length>=2&&es.every(e=>{const b=e.getBoundingClientRect(),s=e.ownerSVGElement.getBoundingClientRect();return e.getAttribute('text-anchor')==='middle'&&Math.abs((b.left+b.right)/2-(s.left+s.right)/2)<1})"), 'Centered chart headings'
     assert 'Zero baseline' not in page.locator('#chart-canvas svg > g').text_content()
     assert '(Lower is Better)' in page.locator('#chart-canvas svg [data-role="chart-heading"]').last.text_content()
     axis=page.locator('#chart-canvas svg [data-role="chart-axis"]')
@@ -139,6 +139,8 @@ with sync_playwright() as p:
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.on('request',lambda r:requests.append(r.url))
     page.goto(url); ready(page)
+    assert page.locator('#chart-format').input_value()=='video'
+    page.locator('#chart-format').select_option('auto')
     assert page.locator('#chart-group').input_value()=='low-power'
     assert page.locator('#chart-condition').input_value()=='monitoring'
     assert page.locator('#chart-highlight').input_value()==''
@@ -199,6 +201,7 @@ with sync_playwright() as p:
     assert page.locator('#chart-canvas [data-kind=value]').evaluate_all('es=>es.every(e=>e.getAttribute("font-size")==="16")')
     assert page.locator('#chart-canvas svg metadata').count()==1
     assert not page.locator('#chart-canvas svg text').filter(has_text='Sources and configurations').count()
+    page.locator('#chart-format').select_option('auto')
     compact_height=int(page.locator('#chart-canvas svg').get_attribute('height'))
     page.locator('#chart-details').check()
     assert int(page.locator('#chart-canvas svg').get_attribute('height'))>compact_height
