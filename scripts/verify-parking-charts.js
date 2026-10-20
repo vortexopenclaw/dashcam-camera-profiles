@@ -111,7 +111,7 @@ out.mkdir(parents=True,exist_ok=True)
 data=json.load(open('docs/data/parking-measurements.json'))
 rows=data['measurements']; byid={r['id']:r for r in rows}
 seed=['vortex-sheet-row-'+str(n) for n in [4,6,9,11,15,17,21]]
-current={'vortex-sheet-row-'+str(n):v for n,v in [(6,36),(4,35),(21,15),(11,11),(15,5),(9,1),(17,1)]}
+current={'vortex-sheet-row-'+str(n):v for n,v in [(6,37),(4,35),(21,15),(11,11),(15,5),(9,1),(17,1)]}
 delay={'vortex-sheet-row-'+str(n):v for n,v in [(21,'13.83'),(4,'2.10'),(6,'2.00'),(15,'1.80'),(11,'1.30'),(9,'1.00'),(17,'0.83')]}
 def ready(page):
     page.wait_for_function("() => document.querySelectorAll('#chart-picker input[data-id]').length > 0")
@@ -150,11 +150,11 @@ with sync_playwright() as p:
     for id,value in current.items():
         assert row(page,id).locator('[data-kind=value]').text_content()==str(value)+' mA'
         assert float(row(page,id).get_attribute('data-max'))==value
-    assert [float(v) for v in page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.max)')]==[36,35,15,11,5,1,1]
+    assert [float(v) for v in page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.max)')]==[37,35,15,11,5,1,1]
     # Exact linear widths, including 1 mA. No artificial minimum bar width.
     w36=float(row(page,'vortex-sheet-row-6').locator('rect').get_attribute('width'))
     w1=float(row(page,'vortex-sheet-row-9').locator('rect').get_attribute('width'))
-    assert abs(w36/w1-36)<1e-8
+    assert abs(w36/w1-37)<1e-8
     assert page.locator('#chart-canvas [data-highlight=true]').count()==0
     assert row(page,'vortex-sheet-row-6').locator('rect').get_attribute('fill')=='#559bd4'
     assert 'Power Draw at Idle' in page.locator('#chart-canvas svg > g').text_content()
@@ -189,7 +189,7 @@ with sync_playwright() as p:
     png=download(page,'#chart-png','idle-current-2x.png')
     root=ET.parse(sv).getroot(); w=int(root.attrib['width']); h=int(root.attrib['height'])
     text=' '.join(root.itertext())
-    assert '1 mA' in text and '36 mA' in text and '12.4 V' in text
+    assert '1 mA' in text and '37 mA' in text and '12.4 V' in text
     assert 'source' in text.lower() and 'Vortex Radar' in text
     assert '<foreignObject' not in sv.read_text() and '<script' not in sv.read_text()
     assert 'docs.google.com' not in text
