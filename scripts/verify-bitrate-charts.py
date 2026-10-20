@@ -44,7 +44,7 @@ with sync_playwright() as p:
     assert page.locator('#choices input:checked').count() == 3
     assert page.locator('#sort').input_value() == 'low'
     assert page.locator('#subtitle').input_value() == custom_subtitle
-    assert page.locator('#chart svg text tspan').first.text_content() == 'VIOFO T340 B'
+    assert page.locator('#chart svg text tspan').first.text_content() == 'Viofo T340 B'
     for extension in ('svg', 'png'):
         with page.expect_download() as info:
             page.locator('#' + extension).click()

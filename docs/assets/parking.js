@@ -44,7 +44,7 @@
     if (row.brand === 'Thinkware' && row.model === 'ARC800') return 'Without LTE module';
     return '';
   };
-  const modelLabel = row => `${row.brand} ${modelName(row)}`;
+  const modelLabel = row => `${/^blackvue$/i.test(row.brand) ? "Blackvue" : /^viofo$/i.test(row.brand) ? "Viofo" : row.brand} ${modelName(row)}`;
   const condition = row => row.state === 'monitoring' ? 'Idle power draw' : row.state === 'event-recording' ? 'Recording an event' : '';
   function modeLabel(row) {
     const raw = row.mode_name || '';

@@ -59,7 +59,7 @@ if (fs.existsSync(dataPath)) {
   assert.ok(ui.setup(data.measurements.find(row=>row.model==='ARC800 LTE')).includes('With LTE module'));
   assert.ok(ui.setup(data.measurements.find(row=>row.model==='ARC800')).includes('Without LTE module'));
   for (const model of ['Elite 9', 'Elite 10']) {
-    const group = groups.find(group => group.label === `BlackVue ${model}`);
+    const group = groups.find(group => group.label === `Blackvue ${model}`);
     assert.equal(group.rows.length, 10);
     assert.deepEqual(new Set(group.rows.map(row => row.connectivity)), new Set(['No LTE module', 'CM100G LTE connected']));
     assert.ok(group.rows.every(row => !ui.cabinIR(row)));

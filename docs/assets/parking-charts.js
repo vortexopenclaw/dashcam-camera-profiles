@@ -46,7 +46,14 @@
   }
   const defaultCondition = family => family === 'time-lapse' ? 'time-lapse' : family === 'low-bitrate' ? 'continuous' : 'monitoring';
   const steadyState = (row,family) => family==='hybrid' ? ['monitoring','continuous','time-lapse'].includes(row.state) : row.state===defaultCondition(family);
-  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', highlight: '', details: false, title: titles[metric], group: 'low-power', family: 'low-power', condition: 'monitoring' });
+  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', highlight: '', details: false, subtitle: null, xLabel: null, yLabel: null, title: titles[metric], group: 'low-power', family: 'low-power', condition: 'monitoring' });
+  const axisText = state => state.xLabel ?? ({current:'Power Draw (mA)',watts:'Power Draw (Watts)',delay:'Recording Delay (Seconds)',wake:'Impact to First Recorded Frame (Seconds)'}[state.metric]);
+  const subtitleText = (state, voltage = null) => {
+    if (state.subtitle != null) return state.subtitle;
+    if (['current','watts'].includes(state.metric)) return `Power Draw at Idle${state.metric==='current' && voltage ? ', '+voltage+' V' : ''} (Lower is Better)`;
+    const family = families[state.family] || families.all;
+    return `${/parking$/.test(family) ? family+' mode' : family} (Lower is Better)`;
+  };
   // Keep an existing compatible test. Otherwise use the highest documented
   // channel count, then established status, source date and stable ID. Power
   // never participates in this choice. Unknown dates do not imply recency.
@@ -76,13 +83,18 @@
   function readState(search, rows) {
     const p = new URLSearchParams(search), fallback = preset('current');
     const known = new Set(rows.map(r => r.id)), models = new Set(rows.map(UI.modelLabel));
+    const highlight = (p.get('highlight') || '').replace(/^BlackVue /,'Blackvue ').replace(/^VIOFO /,'Viofo ');
     const ids = p.has('selection') ? [...new Set(p.getAll('id').filter(id => known.has(id)))] : fallback.ids.filter(id => known.has(id));
     return { ids, group: Object.hasOwn(families, p.get('group')) ? p.get('group') : fallback.group, family: Object.hasOwn(families, p.get('family')) ? p.get('family') : (p.has('selection') ? 'all' : fallback.family), condition: ['', 'monitoring', 'event-recording', 'time-lapse', 'continuous'].includes(p.get('condition')) ? p.get('condition') : fallback.condition, details: p.get('details') === '1', metric: Object.hasOwn(metrics, p.get('metric')) ? p.get('metric') : fallback.metric,
-      sort: p.get('sort') === 'asc' ? 'asc' : 'desc', highlight: p.has('highlight') ? (models.has(p.get('highlight')) ? p.get('highlight') : '') : fallback.highlight,
+      sort: p.get('sort') === 'asc' ? 'asc' : 'desc', highlight: p.has('highlight') ? (models.has(highlight) ? highlight : '') : fallback.highlight,
+      xLabel: p.has('xLabel') ? p.get('xLabel').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,120) : null,
+      yLabel: p.has('yLabel') ? p.get('yLabel').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,120) : null,
+      subtitle: p.has('subtitle') ? p.get('subtitle').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,180) : null,
       title: p.has('title') && !legacyTitles.has(p.get('title')) ? p.get('title').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0, 180) : titles[Object.hasOwn(metrics,p.get('metric')) ? p.get('metric') : 'current'] };
   }
   function query(state) {
     const p = new URLSearchParams({ selection: '1', group: state.group || 'all', family: state.family || 'all', condition: state.condition ?? 'monitoring', metric: state.metric, sort: state.sort, highlight: state.highlight, title: state.title, details: state.details ? '1' : '0' });
+    for (const key of ['subtitle','xLabel','yLabel']) if (state[key] != null) p.set(key,state[key]);
     state.ids.forEach(id => p.append('id', id));
     return p.toString();
   }
@@ -201,7 +213,7 @@
   }
   function draw(result) {
     const { plotted } = result, metric = metrics[state.metric];
-    const axis = {watts:'Power Draw (Watts)',current:`Current Draw (mA at ${result.voltage} V)`,delay:'Recording Delay (Seconds)',wake:'Impact to First Recorded Frame (Seconds)'}[state.metric];
+    const axis = axisText(state);
     const variantKey = row => [UI.modelLabel(row),row.installed_channels,UI.modeLabel(row),row.state].join('|');
     const labels = plotted.map(({ row }, i) => {
       const siblings = plotted.filter(item => UI.modelLabel(item.row) === UI.modelLabel(row));
@@ -220,9 +232,9 @@
     const text = (x, y, value, attrs = {}) => content.appendChild(make('text', { x, y, ...attrs }, value));
     let y = 45;
     for (const line of wrapped(state.title || metric.label, width - 72, 28, true)) { text(width / 2, y, line, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 28, 'font-weight': 700, fill: '#172337' }); y += 35; }
-    const family=families[state.family] || families.all;
-    const subtitle=`${/parking$/.test(family) ? family+' mode' : family} (Lower is better)`;
-    text(width / 2, y + 8, subtitle, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 16, fill: '#516174' });
+    const subtitleLines = subtitleText(state,result.voltage) ? wrapped(subtitleText(state,result.voltage),width-72,16) : [];
+    subtitleLines.forEach((line,i) => text(width / 2, y + 8 + i*22, line, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 16, fill: '#516174' }));
+    y += Math.max(0,subtitleLines.length-1)*22;
     const hasRanges = plotted.some(item => item.value.range);
     const top = y + 50, bottom = top + labels.reduce((sum, label) => sum + label.height, 0);
     const maximum = Math.max(0, ...plotted.map(item => item.value.max));
@@ -255,6 +267,8 @@
       content.append(group);
     });
     text(left + plotWidth / 2, bottom + 54, axis, {'text-anchor':'middle','data-role':'chart-axis','font-size':15,fill:'#516174'});
+    const yAxis = state.yLabel ?? 'Dash Cameras';
+    if (yAxis) text(24,(top+bottom)/2,yAxis,{'text-anchor':'middle','data-role':'chart-y-axis','font-size':15,fill:'#516174',transform:`rotate(-90 24 ${(top+bottom)/2})`});
     y = bottom + 80;
     content.append(make('line', { x1: 36, x2: width - 36, y1: y - 8, y2: y - 8, stroke: '#dae2eb' }));
     const notes = [
@@ -321,6 +335,9 @@
   }
   function syncControls() {
     for (const key of ['title', 'metric', 'sort', 'highlight', 'group', 'condition']) $(`chart-${key}`).value = state[key];
+    $('chart-subtitle').value = subtitleText(state,prepare(rows,state).voltage);
+    $('chart-xLabel').value = axisText(state);
+    $('chart-yLabel').value = state.yLabel ?? 'Dash Cameras';
     $('chart-details').checked = !!state.details;
   }
   function renderChart() {
@@ -330,7 +347,14 @@
     $('chart-csv').disabled = !state.ids.length;
     $('chart-switch-watts').hidden = !result.blocked;
     const missingModels=[...new Set(result.selected.filter(row=>!interval(row,state.metric)).map(UI.modelLabel))];
-    $('chart-notice').textContent = result.blocked ? 'Current comparison blocked: selected measurements have different or unknown measurement voltages. Choose tests at one known voltage, or switch to W.' : (result.excluded ? `No ${metrics[state.metric].label.toLowerCase()} data for: ${missingModels.join(', ')}. ${result.excluded===1?'That selection is':'Those selections are'} not shown.` : (!result.plotted.length ? 'Choose a dashcam with a result for this metric.' : ''));
+    const voltageGroups = new Map(), unknownVoltage = [];
+    for (const {row} of result.plotted) {
+      if (!valid(row.voltage_v) || row.voltage_v===0) unknownVoltage.push(UI.modelLabel(row));
+      else {if (!voltageGroups.has(row.voltage_v)) voltageGroups.set(row.voltage_v,[]);voltageGroups.get(row.voltage_v).push(UI.modelLabel(row));}
+    }
+    const names = items => [...new Set(items)].join(', ');
+    const blockers = [unknownVoltage.length ? `Missing test voltage: ${names(unknownVoltage)}.` : '',voltageGroups.size>1 ? `Different test voltages: ${[...voltageGroups].map(([voltage,models])=>`${voltage} V: ${names(models)}`).join('; ')}.` : ''].filter(Boolean).join(' ');
+    $('chart-notice').textContent = result.blocked ? `Current comparison blocked. ${blockers} Remove those cameras, choose tests at one voltage, or switch to W.` : (result.excluded ? `No ${metrics[state.metric].label.toLowerCase()} data for: ${missingModels.join(', ')}. ${result.excluded===1?'That selection is':'Those selections are'} not shown.` : (!result.plotted.length ? 'Choose a dashcam with a result for this metric.' : ''));
     currentSVG = !result.blocked && result.plotted.length ? draw(result) : null;
     $('chart-canvas').replaceChildren(...(currentSVG ? [currentSVG] : [el('p', 'charts-empty', result.blocked ? 'No current chart until the voltage comparison is valid.' : 'No measured values to plot.')]));
     $('chart-canvas').setAttribute('aria-busy', 'false');
@@ -453,10 +477,10 @@
       state = readState(location.search, rows);
       $('chart-data-status').textContent = `${rows.length} measurements · ${UI.groupModels(rows).length} models`;
       UI.groupModels(rows).sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' })).forEach(group => { const option = el('option', '', group.label); option.value = group.label; $('chart-highlight').append(option); });
-      for (const key of ['title', 'metric', 'sort', 'highlight']) $(`chart-${key}`).addEventListener(key === 'title' ? 'input' : 'change', () => {
+      for (const key of ['title', 'subtitle', 'xLabel', 'yLabel', 'metric', 'sort', 'highlight']) $(`chart-${key}`).addEventListener(['title','subtitle','xLabel','yLabel'].includes(key) ? 'input' : 'change', () => {
         const value=$(`chart-${key}`).value;
         if (key==='metric' && Object.values(titles).includes(state.title)) {state.title=titles[value];$('chart-title').value=state.title;}
-        state[key]=value;renderChart();if(key==='metric')renderPicker();
+        state[key]=value;renderChart();if(key==='metric'){syncControls();renderPicker();}
       });
       $('chart-details').addEventListener('change', () => {state.details=$('chart-details').checked;renderChart();});
       $('chart-group').addEventListener('change', () => { state.group = $('chart-group').value; modelChoices.clear(); state.condition = defaultCondition(state.group); $('chart-condition').value = state.condition; renderPicker(); history.replaceState(null, '', `${location.pathname}?${query(state)}`); });

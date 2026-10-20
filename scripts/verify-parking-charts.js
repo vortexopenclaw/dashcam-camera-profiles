@@ -123,12 +123,12 @@ def row(page,id): return page.locator('#chart-canvas [data-measurement="%s"]'%id
 def fit_svg(page):
     assert page.locator('#chart-canvas svg [data-role="chart-heading"]').evaluate_all("es=>es.length>=2&&es.every(e=>e.getAttribute('text-anchor')==='middle'&&Number(e.getAttribute('x'))===e.ownerSVGElement.viewBox.baseVal.width/2)"), 'Centered chart headings'
     assert 'Zero baseline' not in page.locator('#chart-canvas svg > g').text_content()
-    assert '(Lower is better)' in page.locator('#chart-canvas svg [data-role="chart-heading"]').last.text_content()
+    assert '(Lower is Better)' in page.locator('#chart-canvas svg [data-role="chart-heading"]').last.text_content()
     axis=page.locator('#chart-canvas svg [data-role="chart-axis"]')
     assert axis.count()==1
     assert axis.evaluate("e=>e.getBBox().y>Math.max(...[...e.ownerSVGElement.querySelectorAll('[data-measurement]')].map(g=>g.getBBox().y+g.getBBox().height))"), 'Axis label below chart'
     if page.locator('#chart-metric').input_value()=='watts':assert axis.text_content()=='Power Draw (Watts)'
-    assert page.locator('#chart-canvas svg').evaluate('''s => [...s.querySelectorAll('text')].every(t=>{const b=t.getBBox();return b.x>=0 && b.y>=0 && b.x+b.width<=s.viewBox.baseVal.width+1 && b.y+b.height<=s.viewBox.baseVal.height+1})'''), 'SVG text clipping'
+    assert page.locator('#chart-canvas svg').evaluate('''s => [...s.querySelectorAll('text')].every(t=>{const b=t.getBoundingClientRect(),r=s.getBoundingClientRect();return b.left>=r.left-1 && b.top>=r.top-1 && b.right<=r.right+1 && b.bottom<=r.bottom+1})'''), 'SVG text clipping'
 def download(page,button,name):
     with page.expect_download() as d: page.locator(button).click()
     dest=out/name; d.value.save_as(dest); return dest
@@ -155,7 +155,7 @@ with sync_playwright() as p:
     assert abs(w36/w1-36)<1e-8
     assert page.locator('#chart-canvas [data-highlight=true]').count()==0
     assert row(page,'vortex-sheet-row-6').locator('rect').get_attribute('fill')=='#559bd4'
-    assert 'Idle' not in page.locator('#chart-canvas svg > g').text_content()
+    assert 'Power Draw at Idle' in page.locator('#chart-canvas svg > g').text_content()
     assert 'Orange highlights' not in page.locator('#chart-canvas svg > g').text_content()
     assert row(page,'vortex-sheet-row-6').locator('text').count()==2
     assert row(page,'vortex-sheet-row-12').count()==0
@@ -338,8 +338,8 @@ with sync_playwright() as p:
     assert page.locator('#picker-title').text_content()=='Choose your dashcams and parking modes'
     for selector in ['#chart-highlight option:not([value=""])','.chart-model-choice','.chart-model']:
         assert page.locator(selector).evaluate_all("es=>{const names=es.map(e=>e.dataset.model||e.textContent);return names.every((name,i)=>i===0||names[i-1].localeCompare(name,undefined,{numeric:true,sensitivity:'base'})<=0)}"), 'Natural model-name ordering'
-    elite=[name for name in page.locator('#chart-highlight option').all_text_contents() if name.startswith('BlackVue Elite ')]
-    assert elite==['BlackVue Elite 8','BlackVue Elite 9','BlackVue Elite 10'], elite
+    elite=[name for name in page.locator('#chart-highlight option').all_text_contents() if name.startswith('Blackvue Elite ')]
+    assert elite==['Blackvue Elite 8','Blackvue Elite 9','Blackvue Elite 10'], elite
     assert page.locator('#chart-model-picker input[type=checkbox]').evaluate_all('es=>es.every(e=>e.getBoundingClientRect().height>0)')
     omni=page.locator('.chart-model-choice[data-model="70mai 4K Omni"]')
     assert omni.count()==1 and omni.locator('input[type=checkbox]').count()==1
@@ -368,7 +368,7 @@ with sync_playwright() as p:
     page.reload();ready(page)
     assert omni.locator('select[data-channels]').input_value()==str(lower)
     page.locator('#chart-group').select_option('buffered')
-    box=page.locator('.chart-model-choice[data-model="BlackVue DR970X BOX-2CH Plus"]')
+    box=page.locator('.chart-model-choice[data-model="Blackvue DR970X BOX-2CH Plus"]')
     assert box.count()==1 and box.locator('input[type=checkbox]').count()==1
     assert not box.locator('.chart-model-setup').evaluate('e=>e.open')
     box.locator('input[type=checkbox]').check()
@@ -413,8 +413,7 @@ with sync_playwright() as p:
     plotted=page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')
     expected=[id for id in matching if isinstance(byid[id].get('power_w'),(int,float)) or byid[id].get('power_w_min') is not None]
     assert set(plotted)==set(expected)
-    assert 'Buffered motion detection' in page.locator('#chart-canvas svg > g').text_content()
-    assert 'Idle' not in page.locator('#chart-canvas svg > g').text_content()
+    assert 'Power Draw at Idle' in page.locator('#chart-canvas svg > g').text_content()
     fit_svg(page)
     download(page,'#chart-svg','buffered-motion.svg');download(page,'#chart-png','buffered-motion-2x.png')
     download(page,'#chart-csv','buffered-motion.csv')
@@ -485,7 +484,7 @@ with sync_playwright() as p:
     page.screenshot(path=str(out/'primary-model-picker.png'))
     assert not errors,errors
     assert not any('docs.google.com' in r or 'sheets.googleapis.com' in r for r in requests)
-    (out/'verification.json').write_text(json.dumps({'measurements':599,'models':48,'viewports':[320,375,768,1440],'current_values':current,'delay_values':delay,'decoded_png':image,'page_errors':errors,'selected_buffered_models':len(matching),'selected_buffered_ids':matching,'checks':['primary-one-checkbox','70mai-highest-channel-default','channel-override-exact-value','BlackVue-single-model-choice','functional-family-evidence','explicit-model-bulk','legacy-multiple-ID-preservation','native-keyboard-typeahead','forced-colors-native-select','source-presets','same-voltage-block','method-separation','share-reload','aliases','40-configurations','true-zero-scale','range-endpoints','null-zero','escaped-svg','csv-injection','2x-png-white-canvas','text-bounds']},indent=2))
+    (out/'verification.json').write_text(json.dumps({'measurements':599,'models':48,'viewports':[320,375,768,1440],'current_values':current,'delay_values':delay,'decoded_png':image,'page_errors':errors,'selected_buffered_models':len(matching),'selected_buffered_ids':matching,'checks':['primary-one-checkbox','70mai-highest-channel-default','channel-override-exact-value','Blackvue-single-model-choice','functional-family-evidence','explicit-model-bulk','legacy-multiple-ID-preservation','native-keyboard-typeahead','forced-colors-native-select','source-presets','same-voltage-block','method-separation','share-reload','aliases','40-configurations','true-zero-scale','range-endpoints','null-zero','escaped-svg','csv-injection','2x-png-white-canvas','text-bounds']},indent=2))
     browser.close()
 server.shutdown()
 print('PASS: Node contracts and real Chrome acceptance at 320, 375, 768, and 1440 px')
