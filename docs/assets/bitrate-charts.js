@@ -4,20 +4,36 @@
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
   const fmt = n => n.toFixed(1);
   const rate = row => fmt(row.lowMbps) === fmt(row.highMbps) ? fmt(row.highMbps) : `${fmt(row.lowMbps)} – ${fmt(row.highMbps)}`;
-  const channels = row => row.channels ? `${row.channels}CH` : 'CH unrecorded';
+  const channels = row => `${row.channels}CH`;
   const defaults = ['viofo-a329s','blackvue-elite-10','nextbase-622gw','viofo-t340','vueroid-s1-4k-infinite','viofo-a119m-pro','vantrue-e1-pro-s','viofo-a229-pro','vantrue-n4-pro-s','thinkware-arc-800','vantrue-e1-pro','thinkware-u3000-pro'];
-  const wrap = (text, length=32) => {
-    const lines=[''];
-    for (const word of text.split(' ')) {
-      if ((lines[lines.length-1]+' '+word).trim().length>length) lines.push(word);
-      else lines[lines.length-1]=(lines[lines.length-1]+' '+word).trim();
+  const measure = document.createElement('canvas').getContext('2d');
+  const textWidth = (text, size=16, bold=false) => {
+    measure.font=`${bold ? 700 : 400} ${size}px Arial, Helvetica, sans-serif`;
+    return measure.measureText(text).width;
+  };
+  // Match parking charts, including safe wrapping of long unbroken custom text.
+  const wrap = (text, width, size=16, bold=false) => {
+    const lines=[];let line='';
+    for (const char of String(text)) {
+      if (line && textWidth(line+char,size,bold)>width) {
+        const space=line.lastIndexOf(' ');
+        if (space>line.length/2) {lines.push(line.slice(0,space));line=line.slice(space+1)+char;}
+        else {lines.push(line);line=char;}
+      } else line+=char;
     }
+    if (line) lines.push(line);
     return lines;
   };
+  const textControls={title:'4K30 Front-Camera Bitrate Comparison',subtitle:'Front Camera Bitrates at Maximum Quality',xLabel:'Video Bitrate (Mbps)',yLabel:'Dash Cameras'};
   try {
     const response = await fetch('data/bitrate-variants.json', {cache:'no-store'});
     if (!response.ok) throw new Error('Could not load camera measurements.');
     const rows = await response.json();
+    if (!Array.isArray(rows)) throw new Error('Camera measurements are not a list.');
+    for (const row of rows) {
+      if (![row.lowMbps,row.highMbps].every(n=>typeof n==='number' && Number.isFinite(n) && n>=0) || row.highMbps<row.lowMbps) throw new Error(`Invalid bitrate measurement for ${row.camera || row.key}.`);
+      if (!Number.isInteger(row.channels) || row.channels<1 || row.channels>4) throw new Error(`Invalid tested channel count for ${row.camera || row.key}.`);
+    }
     const known = new Set(rows.map(r => r.key));
     const models = [...new Set(rows.map(r=>r.id))].map(id => {
       const variants=rows.filter(r=>r.id===id), preferred=variants.find(r=>r.default) || variants[0];
@@ -27,9 +43,25 @@
     let selected = new Set(params.has('selection') ? params.getAll('camera').filter(k => known.has(k)) : defaults.filter(k=>known.has(k)));
     $('format').value = params.get('format')==='auto' ? 'auto' : 'video';
     $('sort').value = ['high','low','name'].includes(params.get('sort')) ? params.get('sort') : 'high';
-    $('subtitle').value = (params.get('subtitle') ?? 'Front Camera Bitrates at Maximum Quality').slice(0,100);
+    for (const [id,fallback] of Object.entries(textControls)) $(id).value=(params.get(id) ?? fallback).replace(/[\u0000-\u001f\u007f]/g,' ').slice(0,id.endsWith('Label') ? 120 : 180);
+    for (const model of models) {
+      const option=document.createElement('option');option.value=model.id;option.textContent=model.camera;$('highlight').append(option);
+    }
+    // IDs are canonical; accept model-name links too, as the parking builder does.
+    const requested=params.get('highlight') || '';
+    const highlighted=models.find(model=>model.id===requested || model.camera.toLowerCase()===requested.toLowerCase());
+    $('highlight').value=highlighted?.id || '';
     let svgText = '';
     const ordered = () => rows.filter(r=>selected.has(r.key)).sort((a,b)=>$('sort').value==='name' ? a.camera.localeCompare(b.camera,undefined,{numeric:true}) : ($('sort').value==='low' ? a.highMbps-b.highMbps : b.highMbps-a.highMbps));
+    // The 16:9 export can have side gutters when many rows set its scale.
+    // Start the narrow-screen scroller at the real content, not that blank gutter.
+    function positionPreview() {
+      const svg=$('chart').querySelector('svg');
+      const content=svg?.querySelector(':scope > g');
+      const gutter=content?.transform.baseVal.consolidate()?.matrix.e || 0;
+      $('chart').scrollLeft=innerWidth<=760 && svg ? gutter*svg.clientWidth/Number(svg.getAttribute('width')) : 0;
+    }
+    window.addEventListener('resize',positionPreview);
     $('choices').replaceChildren();
     for (const model of models) {
       const card=document.createElement('div');card.className='camera-choice';card.dataset.search=model.camera.toLowerCase();card.dataset.model=model.id;
@@ -69,7 +101,8 @@
         for (const box of card.querySelectorAll('input[data-variant]')) box.checked=selected.has(box.value);
       }
       const picked=ordered();
-      const state=new URLSearchParams({selection:'1',sort:$('sort').value,subtitle:$('subtitle').value,format:$('format').value});
+      const state=new URLSearchParams({selection:'1',sort:$('sort').value,format:$('format').value,highlight:$('highlight').value});
+      for (const id of Object.keys(textControls)) state.set(id,$(id).value);
       for (const row of picked) state.append('camera',row.key);
       history.replaceState(null,'',`${location.pathname}?${state}`);
       $('png').disabled=$('svg').disabled=!picked.length;
@@ -78,30 +111,65 @@
       $('measurements').innerHTML=picked.map(row=>`<article><strong>${escape(row.camera)} · ${escape(channels(row))}</strong><br>${escape(row.codec)} · ${escape(row.configuration)}<br>${escape(row.settings)}<br>Channel evidence: ${escape(row.channelSource || 'The tested channel count was not retained.')}<br>Source: ${escape(row.source)}<br>Video bitrate: ${rate(row)} Mbps</article>`).join('');
       if (!picked.length) {svgText='';$('chart').textContent='No cameras selected.';return;}
       const video=$('format').value==='video';
-      const width=video?1600:1120,left=video?430:360,right=video?190:160,top=video?126:112,bottom=124;
-      const font=video?22:18,lineHeight=video?24:20,barHeight=video?36:28;
-      const labels=picked.map(row=>wrap(`${row.camera} · ${channels(row)}`,video?34:32));
-      const minimum=labels.map(lines=>Math.max(video?56:48,lines.length*lineHeight+16));
-      const extra=video?Math.max(0,900-top-bottom-minimum.reduce((a,b)=>a+b,0))/picked.length:0;
-      const heights=minimum.map(h=>h+extra);
-      const height=top+heights.reduce((a,b)=>a+b,0)+bottom;
-      const outputWidth=video?1920:width,outputHeight=video?1080:height;
-      const scale=video?Math.min(outputWidth/width,outputHeight/height):1;
-      const transform=`translate(${(outputWidth-width*scale)/2} ${(outputHeight-height*scale)/2}) scale(${scale})`;
-      const max=Math.ceil(Math.max(...picked.map(row=>row.highMbps))/10)*10;
+      const labels=picked.map(row=>`${row.camera} · ${channels(row)}`);
+      const left=Math.ceil(Math.min(330,Math.max(220,...labels.map(label=>textWidth(label,16,true)+64))));
+      const right=Math.ceil(Math.max(110,...picked.map(row=>textWidth(`${rate(row)} Mbps`,16,true)))+35);
+      const width=1200;
+      const lines=labels.map(label=>wrap(label,left-56,16,true));
+      const heights=lines.map(label=>Math.max(58,label.length*20+18));
+      const parts=[];
+      const text=(x,y,value,attrs='')=>parts.push(`<text x="${x}" y="${y}" ${attrs}>${escape(value)}</text>`);
+      let y=45;
+      for (const line of wrap($('title').value,width-72,28,true)) {
+        text(width/2,y,line,'text-anchor="middle" data-role="chart-heading" font-size="28" font-weight="700" fill="#172337"');y+=35;
+      }
+      const subtitleLines=wrap($('subtitle').value,width-72,16);
+      subtitleLines.forEach((line,i)=>text(width/2,y+8+i*22,line,'text-anchor="middle" data-role="chart-heading" font-size="16" fill="#516174"'));
+      y+=Math.max(0,subtitleLines.length-1)*22;
+      const top=y+50,bottom=top+heights.reduce((sum,h)=>sum+h,0);
+      const maximum=Math.max(...picked.map(row=>row.highMbps));
+      const rawStep=maximum>0 ? maximum/5 : .2,magnitude=10**Math.floor(Math.log10(rawStep));
+      const step=[1,2,2.5,5,10].find(n=>n*magnitude>=rawStep)*magnitude;
+      const max=Math.max(step,Math.ceil(maximum/step)*step);
       const x=n=>left+n/max*(width-left-right);
-      const parts=[`<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Selected 4K30 front-camera video bitrates" viewBox="0 0 ${outputWidth} ${outputHeight}" width="${outputWidth}" height="${outputHeight}"><rect width="${outputWidth}" height="${outputHeight}" fill="white"/><g transform="${transform}" font-family="Arial, sans-serif" fill="#182733"><text x="${width/2}" y="${video?44:34}" font-size="${video?36:26}" font-weight="700" text-anchor="middle">4K30 Front-Camera Bitrate Comparison</text><text x="${width/2}" y="${video?84:65}" font-size="${video?24:17}" text-anchor="middle">${escape($('subtitle').value)}</text>`];
-      for(let tick=0;tick<=max;tick+=10) parts.push(`<path d="M${x(tick)} ${top-16}V${height-bottom+4}" stroke="#e0e5eb"/><text x="${x(tick)}" y="${height-bottom+30}" text-anchor="middle" font-size="${video?20:16}">${tick}</text>`);
+      for(let tick=0;tick<=Math.round(max/step);tick++) {
+        const value=tick*step;
+        parts.push(`<line x1="${x(value)}" x2="${x(value)}" y1="${top-12}" y2="${bottom}" stroke="${tick?'#e3e8ee':'#7e8996'}" stroke-width="${tick?1:1.5}"/>`);
+        text(x(value),bottom+26,String(Number(value.toPrecision(3))),'text-anchor="middle" font-size="13" fill="#627084"');
+      }
       let rowTop=top;
       picked.forEach((row,i)=>{
-        const y=rowTop+heights[i]/2,highlight=row.id==='viofo-t340',lines=labels[i];rowTop+=heights[i];
-        const label=lines.map((line,j)=>`<tspan x="${left-18}" dy="${j?lineHeight:0}">${escape(line)}</tspan>`).join('');
-        parts.push(`<g data-variant="${escape(row.key)}"><text x="${left-18}" y="${y+font/3-(lines.length-1)*lineHeight/2}" text-anchor="end" font-size="${font}" font-weight="${highlight?'700':'400'}">${label}</text><rect x="${left}" y="${y-barHeight/2}" width="${x(row.highMbps)-left}" height="${barHeight}" fill="${highlight?'#ee8a19':'#23839d'}"/>`);
-        if (row.highMbps>row.lowMbps) parts.push(`<path d="M${x(row.lowMbps)} ${y}H${x(row.highMbps)}M${x(row.lowMbps)} ${y-8}V${y+8}M${x(row.highMbps)} ${y-8}V${y+8}" stroke="#182733" stroke-width="2"/>`);
-        parts.push(`<text x="${x(row.highMbps)+10}" y="${y+font/3}" font-size="${font}" font-weight="700">${rate(row)}</text></g>`);
+        const cy=rowTop+heights[i]/2,highlight=row.id===$('highlight').value;
+        rowTop+=heights[i];
+        parts.push(`<g data-variant="${escape(row.key)}" data-highlight="${highlight}">`);
+        lines[i].forEach((line,j)=>text(left-20,cy-lines[i].length*10+15+j*20,line,`text-anchor="end" font-size="16" font-weight="${highlight?700:600}" fill="${highlight?'#ac520e':'#23354a'}"`));
+        const color=highlight?'#ef8a2c':'#559bd4';
+        if (row.highMbps>row.lowMbps) {
+          parts.push(`<path data-kind="range" d="M${x(row.lowMbps)} ${cy}H${x(row.highMbps)}M${x(row.lowMbps)} ${cy-12}V${cy+12}M${x(row.highMbps)} ${cy-12}V${cy+12}" stroke="${highlight?'#ac520e':'#243a50'}" stroke-width="3"/>`);
+        } else if (row.highMbps>0) parts.push(`<rect data-kind="scalar" x="${left}" y="${cy-13}" width="${x(row.highMbps)-left}" height="26" fill="${color}"/>`);
+        else parts.push(`<circle cx="${left}" cy="${cy}" r="3" fill="${color}"/>`);
+        text(x(row.highMbps)+10,cy+5,`${rate(row)} Mbps`,`data-kind="value" font-size="16" font-weight="${highlight?700:600}" fill="#23354a"`);
+        parts.push('</g>');
       });
-      parts.push(`<text x="${(left+width-right)/2}" y="${height-bottom+60}" text-anchor="middle" font-size="${font}">Video Bitrate (Mbps)</text><text x="28" y="${height-36}" font-size="15">Vortex Radar testing library · Video bitrate only, audio excluded.</text><text x="28" y="${height-12}" font-size="15">Channel setups are shown where recorded. Codecs and setups differ.</text></g><metadata>${escape(JSON.stringify(picked))}</metadata></svg>`);
-      svgText=parts.join('');$('chart').innerHTML=svgText;
+      const axisLines=wrap($('xLabel').value,width-left-right,15);
+      axisLines.forEach((line,i)=>text((left+width-right)/2,bottom+54+i*19,line,'text-anchor="middle" data-role="chart-axis" font-size="15" fill="#516174"'));
+      const center=(top+bottom)/2;
+      const yLines=wrap($('yLabel').value,bottom-top,15);
+      yLines.forEach((line,i)=>text(24+i*18,center,line,`text-anchor="middle" data-role="chart-y-axis" font-size="15" fill="#516174" transform="rotate(-90 ${24+i*18} ${center})"`));
+      y=bottom+80+Math.max(0,axisLines.length-1)*19;
+      parts.push(`<line x1="36" x2="${width-36}" y1="${y-8}" y2="${y-8}" stroke="#dae2eb"/>`);
+      if (picked.some(row=>row.highMbps>row.lowMbps)) {y+=19;text(36,y,'Ranges show measured endpoints, not averages. Units and setups remain separate.','font-size="13" fill="#536174"');y+=5;}
+      y+=22;
+      const contributors=[...new Set(picked.map(row=>/Retro CarGuy530|rcg530/.test(row.source) ? 'Retro CarGuy530 (rcg530)' : 'Vortex Radar'))].join(', ');
+      for (const line of wrap(`Sources: ${contributors}. Full measurements and configurations: vortexopenclaw.github.io/dashcam-camera-profiles/4k30-comparison.html`,width-72,12)) {
+        text(36,y,line,'font-size="12" fill="#69778a"');y+=17;
+      }
+      const height=y+30,outputWidth=video?1920:width,outputHeight=video?1080:height;
+      const scale=video?Math.min(outputWidth/width,outputHeight/height):1;
+      const transform=`translate(${(outputWidth-width*scale)/2} ${(outputHeight-height*scale)/2}) scale(${scale})`;
+      svgText=`<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="bitrate-chart-title bitrate-chart-desc" viewBox="0 0 ${outputWidth} ${outputHeight}" width="${outputWidth}" height="${outputHeight}" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#263343"><title id="bitrate-chart-title">${escape($('title').value)}</title><desc id="bitrate-chart-desc">4K30 front-camera video bitrates. Ranges show endpoints, not averages. Audio excluded.</desc><metadata>${escape(JSON.stringify(picked))}</metadata><rect width="${outputWidth}" height="${outputHeight}" fill="#ffffff"/><g transform="${transform}">${parts.join('')}</g></svg>`;
+      $('chart').innerHTML=svgText;
+      positionPreview();
     }
     function download(blob,extension,layout=$('format').value) {
       const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`front-camera-bitrates-4k30${layout==='video'?'-16x9':''}.${extension}`;a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);
@@ -110,9 +178,10 @@
     $('all').onclick=()=>{selected=new Set(models.map(model=>model.preferred.key));render();};
     $('clear').onclick=()=>{selected.clear();render();};
     $('defaults').onclick=()=>{selected=new Set(defaults.filter(key=>known.has(key)));render();};
-    $('t340').onclick=()=>{selected=new Set(['viofo-t340']);render();};
     $('format').onchange=render;
-    $('sort').onchange=render;$('subtitle').addEventListener('input',render);
+    $('sort').onchange=render;
+    $('highlight').onchange=render;
+    for (const id of Object.keys(textControls)) $(id).addEventListener('input',render);
     $('svg').onclick=()=>download(new Blob([svgText],{type:'image/svg+xml'}),'svg');
     $('png').onclick=async()=>{
       const layout=$('format').value;

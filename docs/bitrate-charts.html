@@ -2,32 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dashcam front-camera bitrate chart builder</title>
-<style>
-*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;color:#182733;background:#f5f7fa;margin:0}main{max-width:1280px;margin:auto;padding:24px}a{color:#12609a}h1{font-size:clamp(24px,4vw,34px);margin-bottom:8px}h2{font-size:19px;margin-top:0}.intro{max-width:900px}.layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:24px;align-items:start}.panel{background:white;border:1px solid #dbe1e8;border-radius:12px;padding:20px;min-width:0}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}button,select,input[type=text],input[type=search]{font:inherit;padding:9px 12px;border:1px solid #bcc8d4;border-radius:6px;background:white;color:#182733}button{cursor:pointer}button:hover{background:#edf3f8}button:disabled{opacity:.5;cursor:default}input[type=search],input[type=text]{width:100%}.choices{max-height:65vh;overflow:auto;margin-top:12px}.choice{display:flex;gap:10px;align-items:flex-start;padding:8px 0;cursor:pointer}.choice input{margin-top:5px;flex:none;width:18px;height:18px;accent-color:#197f9d}.choice small{display:block;color:#526273}.choice:has(input:checked){font-weight:650}.camera-choice{border-bottom:1px solid #edf0f4;padding:4px 0}.camera-choice[hidden]{display:none}.variant-options{margin:0 0 10px 28px}.variant-options summary{font-size:14px;color:#12609a}.variant-choice{font-size:14px}.note{font-size:14px;color:#526273}#chart svg{width:100%;height:auto;display:block}#chart{overflow:auto}summary{cursor:pointer}details{margin-top:16px}#measurements article{padding:12px 0;border-bottom:1px solid #dbe1e8;overflow-wrap:anywhere}#status{min-height:24px}label[for=sort]{margin-right:6px}@media(max-width:760px){main{padding:16px}.layout{grid-template-columns:1fr}.choices{max-height:300px}.panel{padding:16px}}
-</style>
-<script src="assets/bitrate-charts.js?v=7-channel-labels" defer></script>
+<meta name="description" content="Build and export comparisons of tested dashcam front-camera bitrates.">
+<title>Front-camera bitrate chart builder | Dashcam Camera Profiles</title>
+<link rel="stylesheet" href="assets/styles.css?v=20261008">
+<link rel="stylesheet" href="assets/parking-charts.css?v=3-readable-tests">
+<link rel="stylesheet" href="assets/bitrate-charts.css?v=1-parking-design">
+<script src="assets/bitrate-charts.js?v=8-parking-design" defer></script>
 </head>
-<body><main>
-<a href="4k30-comparison.html">Full comparison and measurement notes</a>
-<h1>Compare front-camera bitrates</h1>
-<p class="intro">Compare 4K30 front-camera bitrates and tested channel setups. Maximum bitrate is the default where available. Audio is excluded.</p>
-<p class="note">Upscaled models, including the Rove R2-4K Pro with its 2K sensor, are excluded from native-4K comparisons.</p>
-<div class="layout">
-<section class="panel" aria-labelledby="picker-title">
-<h2 id="picker-title">Choose your dashcams</h2>
-<label for="search">Find a camera</label><input type="search" id="search" placeholder="Search cameras">
-<div class="toolbar"><button id="defaults" type="button">Default comparison</button><button id="all" type="button">Select all</button><button id="t340" type="button">T340 only</button><button id="clear" type="button">Clear</button></div>
-<div id="choices" class="choices">Loading cameras…</div>
+<body class="charts-page bitrate-page">
+<a class="skip-link" href="#chart-settings">Skip to chart settings</a>
+<header class="site-header">
+<a class="brand" href="./"><span class="brand-mark" aria-hidden="true">D</span><span><strong>Dashcam Camera Profiles</strong><small>Open technical reference</small></span></a>
+<nav aria-label="Page links"><a href="4k30-comparison.html">Bitrate comparison</a><a href="parking-charts.html">Parking charts</a></nav>
+</header>
+<main>
+<section class="charts-intro"><p class="charts-eyebrow">Front-camera bitrate · Direct comparisons</p><h1>Compare front-camera bitrates</h1><p>Compare 4K30 front-camera bitrates and download charts for reviews, videos, and posts. Maximum bitrate is the default where available. Audio is excluded.</p></section>
+<p class="note charts-muted">Upscaled models, including the Rove R2-4K Pro with its 2K sensor, are excluded from native-4K comparisons.</p>
+<section id="chart-settings" class="charts-panel" aria-labelledby="settings-title">
+<h2 id="settings-title">Build your comparison</h2>
+<div class="chart-settings-grid">
+<label class="chart-title-setting">Chart title<input id="title" type="text" maxlength="180"></label>
+<label class="chart-title-setting">Chart subtitle<input id="subtitle" type="text" maxlength="180"></label>
+<label>X-axis label<input id="xLabel" type="text" maxlength="120"></label>
+<label>Y-axis label<input id="yLabel" type="text" maxlength="120"></label>
+<label>Image layout<select id="format"><option value="video">YouTube · 16:9</option><option value="auto">Auto height</option></select></label>
+<label>Sort<select id="sort"><option value="high">High to low</option><option value="low">Low to high</option><option value="name">Camera name</option></select></label>
+<label>Highlight a model (optional)<select id="highlight"><option value="">None</option></select></label>
+</div>
+<p class="charts-muted">Ranges use their upper endpoint for sorting. No averaging across cameras, units, or settings.</p>
+<div class="charts-actions"><button id="defaults" type="button">Default comparison</button><button id="clear" type="button">Clear selection</button></div>
 </section>
-<section class="panel" aria-label="Bitrate comparison chart">
-<div class="toolbar"><label for="format">Image layout</label><select id="format"><option value="video">YouTube · 16:9</option><option value="auto">Auto height</option></select><label for="sort">Sort</label><select id="sort"><option value="high">High to low</option><option value="low">Low to high</option><option value="name">Camera name</option></select></div>
-<label for="subtitle">Chart subtitle</label><input id="subtitle" type="text" maxlength="100" value="Front Camera Bitrates at Maximum Quality">
-<div id="chart"></div>
-<div class="toolbar"><button id="png" type="button">Download PNG</button><button id="svg" type="button">Download SVG</button><button id="share" type="button">Copy chart link</button></div>
+<section class="charts-panel chart-output" aria-labelledby="output-title">
+<div class="chart-output-heading"><h2 id="output-title">Chart preview</h2></div>
+<p class="charts-muted chart-scroll-hint">On a small screen, swipe across the chart to read every label. Downloads include the entire chart.</p>
+<div id="chart" tabindex="0" role="region" aria-label="Scrollable bitrate comparison chart"></div>
+<div class="charts-actions"><button id="svg" type="button" disabled>Download SVG</button><button id="png" type="button" disabled>Download PNG · 2×</button><button id="share" type="button">Copy share link</button></div>
 <p id="status" role="status" aria-live="polite"></p>
-<p id="t340-note" class="note">T340 defaults to the range across two 4CH units. Expand its setups to compare units individually.</p>
-<p class="note">Range markers show observed measurements and sorting uses the upper endpoint. Codecs, HDR, scenes, and camera configurations differ. Higher bitrate alone doesn't establish better image quality.</p>
-<details><summary>Selected camera settings and measurement notes</summary><div id="measurements"></div></details>
 </section>
-</div></main></body></html>
+<section class="charts-panel" aria-labelledby="picker-title">
+<h2 id="picker-title">Choose your dashcams</h2>
+<p class="charts-muted">Check camera models, then expand Channel setups and units to compare alternative configurations.</p>
+<div class="charts-actions"><button id="all" type="button">Compare all models</button></div>
+<label>Search dashcams<input type="search" id="search" placeholder="Brand or model"></label>
+<div id="choices" class="choices">Loading cameras…</div>
+<p id="t340-note" class="charts-muted">T340 defaults to the range across two 4CH units. Expand its setups to compare units individually.</p>
+</section>
+<section class="charts-panel charts-methods" aria-labelledby="methods-title"><h2 id="methods-title">Read the comparison in context</h2>
+<p class="charts-muted">Range markers show observed measurements. Codecs, HDR, scenes, and camera configurations differ. Higher bitrate alone doesn't establish better image quality.</p>
+<details><summary>Selected camera settings and measurement notes</summary><div id="measurements"></div></details>
+<p><a href="4k30-comparison.html">Full comparison and measurement notes</a> · <a href="data/bitrate-variants.json">Public measurement data</a></p>
+</section>
+<noscript><p>Enable JavaScript to build a chart, or open the public measurement data linked above.</p></noscript>
+</main>
+<footer><p>Community technical reference. Measurements attributed to their original testers.</p></footer>
+</body></html>

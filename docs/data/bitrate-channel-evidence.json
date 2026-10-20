@@ -1,0 +1,495 @@
+{
+  "configurations": {
+    "viofo-a329s": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Actual recorded card-scan channel groups, reviewed against the front measurement.",
+      "verificationMethod": "verified_card_scan"
+    },
+    "viofo-a329t": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "telephoto",
+        "rear"
+      ],
+      "source": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+      "verificationMethod": "verified_original_triplets_and_scan"
+    },
+    "t340-a": {
+      "channels": 4,
+      "roles": [
+        "front",
+        "telephoto",
+        "interior",
+        "rear"
+      ],
+      "source": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+      "verificationMethod": "verified_original_quartet_and_scan"
+    },
+    "viofo-a129-pro": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+      "verificationMethod": "verified_original_pairs"
+    },
+    "viofo-t330w": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "Actual recorded card-scan channel groups, reviewed against the front measurement.",
+      "verificationMethod": "verified_card_scan"
+    },
+    "t340-b": {
+      "channels": 4,
+      "roles": [
+        "front",
+        "telephoto",
+        "interior",
+        "rear"
+      ],
+      "source": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+      "verificationMethod": "verified_original_quartet"
+    },
+    "viofo-a119m-pro": {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "source": "Original front recordings and documented front-only single-channel layout.",
+      "verificationMethod": "verified_front_only_originals_with_single_channel_source"
+    },
+    "viofo-a229-pro": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+      "verificationMethod": "verified_original_triplets_and_scan"
+    },
+    "viofo-a229-ultra": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+      "verificationMethod": "verified_original_triplets_catalog_endpoints_partly_cohort",
+      "measurement": {
+        "lowMbps": 36.044175,
+        "highMbps": 36.04523,
+        "settings": "Front rates from original synchronized front/interior/rear recordings. The unpaired historical lower sample is retained separately in archive evidence.",
+        "source": "Original synchronized 3CH recordings, reviewed video metadata"
+      }
+    },
+    "viofo-t340": {
+      "channels": 4,
+      "roles": [
+        "front",
+        "telephoto",
+        "interior",
+        "rear"
+      ],
+      "source": "Combined unit A and B measurements; both verified with four recorded channels: front, telephoto, interior, and rear.",
+      "verificationMethod": "verified_composite_of_two_4ch_units"
+    },
+    "viofo-a329s:3ch": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+      "verificationMethod": "verified_original_triplets",
+      "measurement": {
+        "lowMbps": 53.246878,
+        "highMbps": 65.537835,
+        "variantLabel": "3CH",
+        "settings": "Exact front video-track rates from original synchronized front/interior/rear recordings.",
+        "source": "Original synchronized 3CH recordings, reviewed video metadata"
+      }
+    },
+    "viofo-t340:3ch": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "Actual recorded card-scan channel groups, reviewed against the front measurement.",
+      "verificationMethod": "verified_card_scan"
+    },
+    "blackvue-dr970x-box-plus": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "blackvue-dr970x-plus": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
+      "verificationMethod": "verified_historical_card_pair_report_original_rear_unavailable"
+    },
+    "blackvue-elite-10": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
+      "verificationMethod": "verified_card_scan_and_original_pair_codec"
+    },
+    "blackvue-elite-9": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "thinkware-arc-800": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
+      "verificationMethod": "verified_active_card_groups_original_pair_unavailable"
+    },
+    "thinkware-u3000": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "thinkware-u3000-pro": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "metadata-only-blackvue-dr900s-2ch": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "blackvue-dr900x-2ch": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "blackvue-dr970x-2ch": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "blackvue-dr900x-2ch-plus": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "thinkware-u1000": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair"
+    },
+    "thinkware-u1000-plus": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+      "verificationMethod": "verified_original_synchronized_pair",
+      "measurement": {
+        "lowMbps": 23.999893,
+        "highMbps": 24.013136,
+        "settings": "Original U1000 Plus front/rear pairs. The older U1000 clip previously mixed into the Plus archive is excluded.",
+        "source": "Model-identified original U1000 Plus synchronized recordings"
+      }
+    },
+    "thinkware-u3000-pro:1ch": {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "source": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
+      "verificationMethod": "verified_explicit_front_only_card_scan"
+    },
+    "cansonic-ultradash-z4-standard": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "front_telephoto",
+        "rear"
+      ],
+      "source": "Actual owner-trained Z4 card has front, front_telephoto, rear continuous groups. Matching stored 60-second 4K30 H.264 front rates 31.126250 and 40.957612 Mbps. Three channels, not Z3/Z3+ inference. Raw synchronized original clips not mounted; sanitized scans lack filename samples.",
+      "verificationMethod": "matching_card_scan"
+    },
+    "70mai-t800": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "Actual owner-trained T800 (generic selected profile) has front/interior/rear groups with main HEVC front 4K30. Stored full-minute front 31.875828,31.876648,31.883654 Mbps. Low-resolution front H.264 and rear HEVC proxy copies are not additional cameras. Ignore X800 record mis-selected T800 profile.",
+      "verificationMethod": "matching_card_scan"
+    },
+    "metadata-only-wolfbox-g900-pro": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Actual owner-trained G900 Pro scan has 23 front and 23 rear driving files; main HEVC front4K30, rear1440p30. Matching storage cohort six full-minute front video rates 31.194364\u201331.396454 Mbps. Original NAS model folder contains phone recordings, not original card clips. No direct fresh ffprobe on this model originals; source is retained measured card scan.",
+      "verificationMethod": "matching_card_scan"
+    },
+    "miofive-s1-ultra": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Catalog front29.489652 and29.491566 Mbps freshly matched to front A/rear B exact timestamp groups. Third catalog front29.490948 Mbps has matching same driving sequence rear B with two-second timestamp offset and adjacent file counter; do not describe as identical timestamps. HEVC3840x2160 front30fps/rear24fps. Other exact timestamp pair at29.491128Mbps independently confirms2CH.",
+      "verificationMethod": "original_synchronized"
+    },
+    "nextbase-622gw": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "All three catalog front samples 47.611805,49.459361,53.566810 Mbps freshly matched to exact timestamp/sequence FH/RH pairs; H.264 4K29.97 front,1080p29.97 rear. Rear-view attachment and rear-window attachment alternatives both two channels, not simultaneous three.",
+      "verificationMethod": "original_synchronized"
+    },
+    "vantrue-n4-pro-s": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "Catalog rates match exact same-timestamp/sequence A/B/C triples, HEVC front4K30/interior1080p30/rear1440p30. Full catalog extrema31.948359 and31.951958 Mbps both paired.",
+      "verificationMethod": "original_synchronized"
+    },
+    "vantrue-e1-pro": {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "source": "Original front H.2644K30 files freshly verify catalog rates31.947456\u201331.947778 Mbps; existing real-card profile explicitly one channel. No unrelated E1 Pro S attribution.",
+      "verificationMethod": "original_and_recorded_configuration"
+    },
+    "vantrue-e1-pro-s": {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "source": "Catalog explicitly public rcg530 pre-production EFI242 normal driving1CH front H.2644K30 36.04Mbps, Standard/HDR. No unrelated NAS E1 Pro scan used; no fresh public retrieval required by delegated context.",
+      "verificationMethod": "existing_public_test_retained"
+    },
+    "vueroid-s1-4k-infinite": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "Explicit3CH48Mbps variant confirmed by recorded3-channel card group and freshly probed original F/I/R triples at48Mbps H.2644K30.",
+      "verificationMethod": "matching_card_scan_and_original"
+    },
+    "viofo-a139-pro": {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "source": "Original 4K30 front files explicitly labeled 1CH by the owner, independently verified with ffprobe. The separate 2CH front/interior setup uses its own matched originals.",
+      "verificationMethod": "owner_labeled_original_video_metadata",
+      "measurement": {
+        "lowMbps": 53.247421,
+        "highMbps": 53.249429,
+        "codec": "H.265",
+        "variantLabel": "1CH, H.265",
+        "settings": "Verified owner-labeled 1CH H.265 recordings. Unlinked historical H.264 samples are retained in the archive evidence, not assigned this setup.",
+        "source": "Original 1CH recordings, reviewed video metadata"
+      }
+    },
+    "vueroid-s1-4k-infinite:archive": {
+      "channels": 3,
+      "roles": [
+        "front",
+        "interior",
+        "rear"
+      ],
+      "source": "The three retained front samples defining this 44.254961\u201348.000947 Mbps range have original synchronized front/interior/rear triples. Separate front/rear samples are exposed as a 2CH option.",
+      "verificationMethod": "original_synchronized_triples",
+      "measurement": {
+        "lowMbps": 44.254961,
+        "highMbps": 48.000947,
+        "variantLabel": "3CH, archive measurements",
+        "settings": "Range includes only original recordings with matching front/interior/rear triples. Separate front/rear recordings have their own 2CH option."
+      }
+    },
+    "70mai-x800": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original matched front/rear recording pairs and the owner-identified X800 card scan establish two main cameras. Proxy files are not additional channels.",
+      "verificationMethod": "original_synchronized_pairs_and_card_scan",
+      "measurement": {
+        "lowMbps": 31.87529,
+        "highMbps": 42.822949,
+        "codec": "H.265",
+        "settings": "Verified 4K30 front recordings with matched rear companions. Unlinked historical endpoints are retained in archive evidence rather than assigned this channel count.",
+        "source": "Original synchronized 2CH recordings, reviewed video metadata"
+      }
+    },
+    "nexigo-d90-gen3": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original front/rear recordings linked by exact timestamp pairs or matching adjacent-counter recording sequences.",
+      "verificationMethod": "original_linked_pairs",
+      "measurement": {
+        "lowMbps": 19.365518,
+        "highMbps": 32.480844,
+        "codec": "H.265",
+        "settings": "Range across verified 4K30 front/rear recording sessions. The unpaired historical sample remains in archive evidence.",
+        "source": "Original linked 2CH recordings, reviewed video metadata"
+      }
+    },
+    "blueskysea-b4k": {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "source": "Vortex Radar identified the tested configuration as front-only (1CH). Retained original TS front footage was independently checked as 4K30 HEVC.",
+      "verificationMethod": "owner_setup_confirmation_and_original_front_media"
+    },
+    "viofo-a139-pro:2ch-hevc": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "interior"
+      ],
+      "source": "Original recordings explicitly owner-labeled 2CH, with synchronized front/interior files and H.265 4K30 front video metadata.",
+      "verificationMethod": "owner_labeled_original_synchronized_pair"
+    },
+    "vueroid-s1-4k-infinite:2ch": {
+      "channels": 2,
+      "roles": [
+        "front",
+        "rear"
+      ],
+      "source": "Original synchronized front/rear recordings and a separate complete front/rear card scan establish this 2CH setup.",
+      "verificationMethod": "original_pairs_and_complete_2ch_scan"
+    }
+  },
+  "alternatives": [
+    {
+      "id": "viofo-a139-pro",
+      "key": "viofo-a139-pro:2ch-hevc",
+      "lowMbps": 45.87408,
+      "highMbps": 45.877043,
+      "codec": "H.265",
+      "configuration": "2CH: front, interior",
+      "variantLabel": "2CH, front/interior, H.265",
+      "settings": "Separate explicitly owner-labeled 2CH HDR recordings, verified with synchronized front/interior files.",
+      "source": "Original owner-labeled 2CH recordings, reviewed video metadata"
+    },
+    {
+      "id": "vueroid-s1-4k-infinite",
+      "key": "vueroid-s1-4k-infinite:2ch",
+      "lowMbps": 44.847168,
+      "highMbps": 46.20239,
+      "codec": "H.264",
+      "configuration": "2CH: front, rear",
+      "variantLabel": "2CH, front/rear",
+      "settings": "Separate front/rear recordings, with a matching two-camera card-scan configuration.",
+      "source": "Original linked front/rear recordings and recorded 2CH card scan"
+    }
+  ],
+  "unlinkedHistoricalMeasurements": [
+    {
+      "id": "viofo-a139-pro",
+      "lowMbps": 45.872523,
+      "highMbps": 59.802893,
+      "reason": "Historical H.264 range includes unpaired front recordings. Explicitly labeled verified 1CH/2CH H.265 configurations are plotted separately."
+    },
+    {
+      "id": "70mai-x800",
+      "lowMbps": 31.801219,
+      "highMbps": 56.370431,
+      "reason": "Unpaired historical endpoints cannot be assigned the two-camera configuration merely from other sessions."
+    },
+    {
+      "id": "nexigo-d90-gen3",
+      "lowMbps": 31.621513,
+      "highMbps": 31.621513,
+      "reason": "No retained rear companion for this historical front sample; verified linked sessions supply the plotted range."
+    },
+    {
+      "id": "viofo-a229-ultra",
+      "lowMbps": 36.044068,
+      "highMbps": 36.044068,
+      "reason": "This historical front-only retained sample is excluded from the verified synchronized three-camera range."
+    }
+  ],
+  "privateAuditReceiptDigests": {
+    "viofo": "43b8d084df76c73e47c431beeee5ed6b5383c0162fbef4dc26e4a4d1053a60e8",
+    "blackvue-thinkware": "d6be4deabda5332a5df415ff7eb458456af4c79a1eec252aa85764f2a2ac46e3",
+    "other": "f4800344699e876de85301bd8667a30f318d375bc4ec3e94562e843e2f057eda"
+  }
+}

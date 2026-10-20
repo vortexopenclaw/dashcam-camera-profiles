@@ -29,13 +29,16 @@ assert bykey['viofo-a229-pro']['unmeasuredSetups'][0]['channels']==2
 assert bykey['viofo-a329s']['channels']==2 and bykey['viofo-a329s:3ch']['channels']==3
 assert bykey['viofo-a119m-pro']['channels']==1
 assert bykey['vueroid-s1-4k-infinite']['channels']==3
-assert bykey['vueroid-s1-4k-infinite:archive']['channels'] is None
+assert bykey['vueroid-s1-4k-infinite:archive']['channels'] in [2,3]
 assert bykey['thinkware-u3000-pro:1ch']['channels']==1
-assert bykey['thinkware-u3000-pro']['channelScope']=='cohort'
+assert bykey['thinkware-u3000-pro']['channels']==2
 for row in rows:
-    assert row['channels'] in [None,1,2,3,4]
+    assert row['channels'] in [1,2,3,4]
+    assert len(set(row['channelRoles']))==row['channels'],row['key']
+    assert row.get('channelSource'),row['key']
+    assert 'channelScope' not in row
+    assert 'unrecorded' not in row.get('variantLabel','').lower() or 'quality' in row.get('variantLabel','').lower()
     assert 0<row['lowMbps']<=row['highMbps']
-    if row['channels']:assert row.get('channelSource'),row['key']
 for row in json.loads((ROOT/'docs/data/bitrate-setup-evidence.json').read_text())['alternatives']:
     match=re.search(r'(profiles/[a-z0-9-]+\.json) video_samples\[(\d+)\]',row['source'])
     assert match,row['key']
@@ -43,4 +46,18 @@ for row in json.loads((ROOT/'docs/data/bitrate-setup-evidence.json').read_text()
     assert sample['mode']=='driving' and sample['resolution']=='3840x2160' and sample['fps']=='30'
     numbers=[float(value) for value in re.findall(r'\d+(?:\.\d+)?',sample['bitrate'])]
     assert row['lowMbps']==min(numbers) and row['highMbps']==max(numbers),row['key']
-print('Verified native-4K exclusion, T340 combined/unit ranges, channel provenance, source-exact alternatives, and absent A229 Pro 2CH driving measurement.')
+reviewed=json.loads((ROOT/'docs/data/bitrate-channel-evidence.json').read_text())
+for key,evidence in reviewed['configurations'].items():
+    assert bykey[key]['channels']==evidence['channels'],key
+    assert bykey[key]['channelRoles']==evidence['roles'],key
+    for field,value in evidence.get('measurement',{}).items():
+        assert bykey[key][field]==value,(key,field)
+for option in reviewed['alternatives']:
+    assert all(bykey[option['key']][field]==value for field,value in option.items()),option['key']
+assert bykey['blueskysea-b4k']['channels']==1
+assert bykey['cansonic-ultradash-z4-standard']['channels']==3
+assert bykey['70mai-t800']['channels']==3
+assert bykey['metadata-only-wolfbox-g900-pro']['channels']==2
+assert bykey['miofive-s1-ultra']['channels']==2
+assert bykey['vueroid-s1-4k-infinite:2ch']['channels']==2
+print(f"Verified all {len(rows)} variants have source-backed channel counts across {len({r['id'] for r in rows})} models, preserved setups, native-4K exclusion, and exact reviewed measurements.")

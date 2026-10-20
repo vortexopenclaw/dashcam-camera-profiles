@@ -1,0 +1,21 @@
+/* Bitrate-specific hooks; parking-charts.css owns shared controls and surfaces. */
+.bitrate-page{-webkit-font-smoothing:antialiased}
+#chart{max-width:100%;overflow:auto;background:#fff;border-radius:8px;margin-top:14px}
+#chart svg{display:block;width:100%;min-width:1100px;height:auto;max-width:none}
+#choices{margin-top:16px}
+.bitrate-page .camera-choice{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:12px 20px;padding:12px 0;border-bottom:1px solid #334155;min-width:0}
+.bitrate-page .camera-choice[hidden]{display:none}
+.bitrate-page .choice{display:flex;flex-direction:row;align-items:center;gap:12px;min-height:44px;cursor:pointer}
+.choice input{width:20px;height:20px;flex-shrink:0;accent-color:#559bd4}
+.choice small{display:block;margin-top:4px;color:#b8c9df;font-size:.8rem;font-weight:400;font-variant-numeric:tabular-nums}
+.choice:has(input:checked)>span{font-weight:650}
+.variant-options{min-width:0;margin:0}
+.variant-options summary{min-height:44px;padding:12px 0;cursor:pointer;color:#b8c9df;font-size:.85rem}
+.variant-options .variant-choice{font-size:.85rem;margin:8px 0;font-weight:400}
+.variant-options .note{font-size:.85rem;color:#becadd;overflow-wrap:anywhere}
+#measurements article{padding:16px 0;border-bottom:1px solid #334155;overflow-wrap:anywhere;font-size:.9rem;line-height:1.7}
+#status{min-height:24px;color:#d6e9ff;overflow-wrap:anywhere}
+.bitrate-page details>summary{cursor:pointer;min-height:44px}
+.bitrate-page #search{margin-top:8px}
+.bitrate-page .charts-actions+label{margin-top:18px}
+@media(max-width:760px){.bitrate-page .camera-choice{grid-template-columns:minmax(0,1fr);gap:0}}

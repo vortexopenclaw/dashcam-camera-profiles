@@ -11,7 +11,11 @@
     "channels": 2,
     "key": "viofo-a329s",
     "default": true,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Actual recorded card-scan channel groups, reviewed against the front measurement.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "viofo-a329t",
@@ -25,7 +29,12 @@
     "channels": 3,
     "key": "viofo-a329t",
     "default": true,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+    "channelRoles": [
+      "front",
+      "telephoto",
+      "rear"
+    ]
   },
   {
     "id": "blackvue-dr970x-box-plus",
@@ -33,13 +42,17 @@
     "lowMbps": 60.0,
     "highMbps": 60.0,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 59.998936-60.030954 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 2,
     "key": "blackvue-dr970x-box-plus",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "blackvue-dr970x-plus",
@@ -47,13 +60,17 @@
     "lowMbps": 60.0,
     "highMbps": 60.0,
     "codec": "HEVC",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Quality setting not recorded",
     "source": "ffprobe",
-    "channels": null,
+    "channels": 2,
     "key": "blackvue-dr970x-plus",
     "default": true,
-    "channelSource": null
+    "channelSource": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "blackvue-elite-10",
@@ -67,7 +84,11 @@
     "channels": 2,
     "key": "blackvue-elite-10",
     "default": true,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "blackvue-elite-9",
@@ -81,35 +102,47 @@
     "channels": 2,
     "key": "blackvue-elite-9",
     "default": true,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "viofo-a139-pro",
     "camera": "Viofo A139 Pro",
-    "lowMbps": 45.9,
-    "highMbps": 59.8,
-    "codec": "H.264",
-    "configuration": "Not recorded",
-    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 45.872523-59.802893 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
-    "source": "reviewed archive metadata",
-    "channels": null,
+    "lowMbps": 53.247421,
+    "highMbps": 53.249429,
+    "codec": "H.265",
+    "configuration": "1CH: front",
+    "settings": "Verified owner-labeled 1CH H.265 recordings. Unlinked historical H.264 samples are retained in the archive evidence, not assigned this setup.",
+    "source": "Original 1CH recordings, reviewed video metadata",
+    "channels": 1,
     "key": "viofo-a139-pro",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original 4K30 front files explicitly labeled 1CH by the owner, independently verified with ffprobe. The separate 2CH front/interior setup uses its own matched originals.",
+    "variantLabel": "1CH, H.265",
+    "channelRoles": [
+      "front"
+    ]
   },
   {
     "id": "70mai-x800",
     "camera": "70mai 4K Omni X800",
-    "lowMbps": 31.8,
-    "highMbps": 56.4,
+    "lowMbps": 31.87529,
+    "highMbps": 42.822949,
     "codec": "H.265",
-    "configuration": "Not recorded",
-    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 31.801219-56.370431 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
-    "source": "reviewed archive metadata",
-    "channels": null,
+    "configuration": "2CH: front, rear",
+    "settings": "Verified 4K30 front recordings with matched rear companions. Unlinked historical endpoints are retained in archive evidence rather than assigned this channel count.",
+    "source": "Original synchronized 2CH recordings, reviewed video metadata",
+    "channels": 2,
     "key": "70mai-x800",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original matched front/rear recording pairs and the owner-identified X800 card scan establish two main cameras. Proxy files are not additional channels.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "nextbase-622gw",
@@ -117,14 +150,17 @@
     "lowMbps": 47.6,
     "highMbps": 53.6,
     "codec": "H.264",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 47.611805-53.566810 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
     "channels": 2,
     "key": "nextbase-622gw",
     "default": true,
-    "channelSource": "Front/rear measurements in docs/data/archive-20261008-evidence.json samples 619 through 624. Two channels are observed in the archive cohort, but per-front-clip concurrent channel count was not retained.",
-    "channelScope": "cohort"
+    "channelSource": "All three catalog front samples 47.611805,49.459361,53.566810 Mbps freshly matched to exact timestamp/sequence FH/RH pairs; H.264 4K29.97 front,1080p29.97 rear. Rear-view attachment and rear-window attachment alternatives both two channels, not simultaneous three.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "viofo-t340",
@@ -138,7 +174,13 @@
     "channels": 4,
     "key": "t340-a",
     "default": false,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+    "channelRoles": [
+      "front",
+      "telephoto",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "viofo-a129-pro",
@@ -146,28 +188,37 @@
     "lowMbps": 51.2,
     "highMbps": 51.2,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 2 usable sampled clips, exact video-track rates 51.202628-51.203285 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 2,
     "key": "viofo-a129-pro",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "vueroid-s1-4k-infinite",
     "camera": "Vueroid S1 4K Infinite",
-    "lowMbps": 44.3,
-    "highMbps": 48.0,
+    "lowMbps": 44.254961,
+    "highMbps": 48.000947,
     "codec": "H.264",
-    "configuration": "Not recorded",
-    "settings": "Archive review 2026-10-08: 5 usable sampled clips, exact video-track rates 44.254961-48.000947 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
+    "configuration": "3CH: front, interior, rear",
+    "settings": "Range includes only original recordings with matching front/interior/rear triples. Separate front/rear recordings have their own 2CH option.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 3,
     "key": "vueroid-s1-4k-infinite:archive",
     "default": false,
-    "channelSource": null,
-    "variantLabel": "Archive range, channel count unrecorded"
+    "channelSource": "The three retained front samples defining this 44.254961\u201348.000947 Mbps range have original synchronized front/interior/rear triples. Separate front/rear samples are exposed as a 2CH option.",
+    "variantLabel": "3CH, archive measurements",
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "cansonic-ultradash-z4-standard",
@@ -175,13 +226,18 @@
     "lowMbps": 31.1,
     "highMbps": 41.0,
     "codec": "H.264",
-    "configuration": "Not recorded",
+    "configuration": "3CH: front, front telephoto, rear",
     "settings": "Retained 60-second primary-front driving samples in docs/data/storage-evidence.json measure 31.126250 and 40.957612 Mbps across separate scans. Quality settings were not captured; the range is not one preset or a verified Maximum. Interrupted and parking clips are excluded.",
     "source": "privacy-safe card scan summary",
-    "channels": null,
+    "channels": 3,
     "key": "cansonic-ultradash-z4-standard",
     "default": true,
-    "channelSource": null
+    "channelSource": "Actual owner-trained Z4 card has front, front_telephoto, rear continuous groups. Matching stored 60-second 4K30 H.264 front rates 31.126250 and 40.957612 Mbps. Three channels, not Z3/Z3+ inference. Raw synchronized original clips not mounted; sanitized scans lack filename samples.",
+    "channelRoles": [
+      "front",
+      "front_telephoto",
+      "rear"
+    ]
   },
   {
     "id": "viofo-t330w",
@@ -195,7 +251,12 @@
     "channels": 3,
     "key": "viofo-t330w",
     "default": true,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Actual recorded card-scan channel groups, reviewed against the front measurement.",
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "viofo-t340",
@@ -209,7 +270,13 @@
     "channels": 4,
     "key": "t340-b",
     "default": false,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+    "channelRoles": [
+      "front",
+      "telephoto",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "viofo-a119m-pro",
@@ -217,13 +284,16 @@
     "lowMbps": 36.9,
     "highMbps": 36.9,
     "codec": "H.264",
-    "configuration": "Not recorded",
+    "configuration": "1CH: front",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 36.861888-36.864136 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
     "channels": 1,
     "key": "viofo-a119m-pro",
     "default": true,
-    "channelSource": "Single-channel front-only camera explicitly documented in https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-a119m-pro.md; sampled front footage in profiles/viofo-a119m-pro.json."
+    "channelSource": "Original front recordings and documented front-only single-channel layout.",
+    "channelRoles": [
+      "front"
+    ]
   },
   {
     "id": "vantrue-e1-pro-s",
@@ -237,7 +307,10 @@
     "channels": 1,
     "key": "vantrue-e1-pro-s",
     "default": true,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Catalog explicitly public rcg530 pre-production EFI242 normal driving1CH front H.2644K30 36.04Mbps, Standard/HDR. No unrelated NAS E1 Pro scan used; no fresh public retrieval required by delegated context.",
+    "channelRoles": [
+      "front"
+    ]
   },
   {
     "id": "viofo-a229-pro",
@@ -245,33 +318,43 @@
     "lowMbps": 36.0,
     "highMbps": 36.0,
     "codec": "H.264",
-    "configuration": "Not recorded",
+    "configuration": "3CH: front, interior, rear",
     "settings": "Quality setting not recorded",
     "source": "ffprobe",
     "channels": 3,
     "key": "viofo-a229-pro",
     "default": true,
-    "channelSource": "profiles/viofo-a229-pro.json video_samples[0:3] and docs/data/storage-evidence.json card digest 7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53 contain front/interior/rear driving streams. Full-minute front samples: 36.044120 and 36.044328 Mbps. No measured 2CH driving-4K30 alternative retained.",
+    "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
     "unmeasuredSetups": [
       {
         "channels": 2,
         "note": "2CH driving bitrate not yet logged. Parking-mode measurements do not establish a 4K30 driving bitrate."
       }
+    ],
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
     ]
   },
   {
     "id": "viofo-a229-ultra",
     "camera": "Viofo A229 Ultra",
-    "lowMbps": 36.0,
-    "highMbps": 36.0,
+    "lowMbps": 36.044175,
+    "highMbps": 36.04523,
     "codec": "H.264",
-    "configuration": "Not recorded",
-    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 36.044068-36.045230 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
-    "source": "reviewed archive metadata",
-    "channels": null,
+    "configuration": "3CH: front, interior, rear",
+    "settings": "Front rates from original synchronized front/interior/rear recordings. The unpaired historical lower sample is retained separately in archive evidence.",
+    "source": "Original synchronized 3CH recordings, reviewed video metadata",
+    "channels": 3,
     "key": "viofo-a229-ultra",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "vantrue-n4-pro-s",
@@ -279,13 +362,18 @@
     "lowMbps": 31.9,
     "highMbps": 32.0,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "3CH: front, interior, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 31.948359-31.951958 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
     "channels": 3,
     "key": "vantrue-n4-pro-s",
     "default": true,
-    "channelSource": "profiles/vantrue-n4-pro-s.json documents simultaneous front/interior/rear recording per timestamp. Archive cohort includes all three positions in docs/data/archive-20261008-evidence.json samples 485 through 493."
+    "channelSource": "Catalog rates match exact same-timestamp/sequence A/B/C triples, HEVC front4K30/interior1080p30/rear1440p30. Full catalog extrema31.948359 and31.951958 Mbps both paired.",
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "70mai-t800",
@@ -293,13 +381,18 @@
     "lowMbps": 31.9,
     "highMbps": 31.9,
     "codec": "HEVC",
-    "configuration": "Not recorded",
+    "configuration": "3CH: front, interior, rear",
     "settings": "Three retained 60-second driving samples in docs/data/storage-evidence.json measure 31.875828-31.883654 Mbps on the video track. Quality setting not recorded. Interrupted clips, including a 0.233-second outlier, are excluded from the representative bitrate.",
     "source": "privacy-safe card scan summary",
-    "channels": null,
+    "channels": 3,
     "key": "70mai-t800",
     "default": true,
-    "channelSource": null
+    "channelSource": "Actual owner-trained T800 (generic selected profile) has front/interior/rear groups with main HEVC front 4K30. Stored full-minute front 31.875828,31.876648,31.883654 Mbps. Low-resolution front H.264 and rear HEVC proxy copies are not additional cameras. Ignore X800 record mis-selected T800 profile.",
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "thinkware-arc-800",
@@ -313,7 +406,11 @@
     "channels": 2,
     "key": "thinkware-arc-800",
     "default": true,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "vantrue-e1-pro",
@@ -321,27 +418,34 @@
     "lowMbps": 31.9,
     "highMbps": 31.9,
     "codec": "H.264",
-    "configuration": "Not recorded",
+    "configuration": "1CH: front",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 31.947456-31.947778 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
     "channels": 1,
     "key": "vantrue-e1-pro",
     "default": true,
-    "channelSource": "profiles/vantrue-e1-pro.json channel_variants[0]: one front channel, real_card_sampled."
+    "channelSource": "Original front H.2644K30 files freshly verify catalog rates31.947456\u201331.947778 Mbps; existing real-card profile explicitly one channel. No unrelated E1 Pro S attribution.",
+    "channelRoles": [
+      "front"
+    ]
   },
   {
     "id": "nexigo-d90-gen3",
     "camera": "NexiGo D90 Gen 3",
-    "lowMbps": 19.4,
-    "highMbps": 31.6,
+    "lowMbps": 19.365518,
+    "highMbps": 32.480844,
     "codec": "H.265",
-    "configuration": "Not recorded",
-    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 19.365518-31.621513 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
-    "source": "reviewed archive metadata",
-    "channels": null,
+    "configuration": "2CH: front, rear",
+    "settings": "Range across verified 4K30 front/rear recording sessions. The unpaired historical sample remains in archive evidence.",
+    "source": "Original linked 2CH recordings, reviewed video metadata",
+    "channels": 2,
     "key": "nexigo-d90-gen3",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original front/rear recordings linked by exact timestamp pairs or matching adjacent-counter recording sequences.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "metadata-only-wolfbox-g900-pro",
@@ -349,13 +453,17 @@
     "lowMbps": 31.3,
     "highMbps": 31.3,
     "codec": "HEVC",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Six approximately 60-second 4K30 front driving samples in docs/data/storage-evidence.json measure 31.194364-31.396454 Mbps on the video track, averaging about 31.28 Mbps. Quality setting not captured. Short interrupted clips are excluded.",
     "source": "privacy-safe card scan summary",
-    "channels": null,
+    "channels": 2,
     "key": "metadata-only-wolfbox-g900-pro",
     "default": true,
-    "channelSource": null
+    "channelSource": "Actual owner-trained G900 Pro scan has 23 front and 23 rear driving files; main HEVC front4K30, rear1440p30. Matching storage cohort six full-minute front video rates 31.194364\u201331.396454 Mbps. Original NAS model folder contains phone recordings, not original card clips. No direct fresh ffprobe on this model originals; source is retained measured card scan.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "thinkware-u3000",
@@ -363,13 +471,17 @@
     "lowMbps": 30.0,
     "highMbps": 30.0,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 29.985413-30.042103 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 2,
     "key": "thinkware-u3000",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "thinkware-u3000-pro",
@@ -377,14 +489,17 @@
     "lowMbps": 30.0,
     "highMbps": 30.0,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 29.960577-30.015732 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
     "channels": 2,
     "key": "thinkware-u3000-pro",
     "default": true,
-    "channelSource": "Front/rear measurements in docs/data/archive-20261008-evidence.json samples 429 through 434 and profiles/thinkware-u3000-pro.json video_samples[8:10]. Two channels are observed in the archive cohort, but per-front-clip concurrent channel count and capture firmware were not retained.",
-    "channelScope": "cohort"
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "miofive-s1-ultra",
@@ -392,13 +507,17 @@
     "lowMbps": 29.5,
     "highMbps": 29.5,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 29.489652-29.491566 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 2,
     "key": "miofive-s1-ultra",
     "default": true,
-    "channelSource": null
+    "channelSource": "Catalog front29.489652 and29.491566 Mbps freshly matched to front A/rear B exact timestamp groups. Third catalog front29.490948 Mbps has matching same driving sequence rear B with two-second timestamp offset and adjacent file counter; do not describe as identical timestamps. HEVC3840x2160 front30fps/rear24fps. Other exact timestamp pair at29.491128Mbps independently confirms2CH.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "blueskysea-b4k",
@@ -406,13 +525,16 @@
     "lowMbps": 26.2,
     "highMbps": 26.2,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "1CH: front",
     "settings": "Archive review 2026-10-08: 1 usable sampled clips, exact video-track rates 26.219133-26.219133 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 1,
     "key": "blueskysea-b4k",
     "default": true,
-    "channelSource": null
+    "channelSource": "Vortex Radar identified the tested configuration as front-only (1CH). Retained original TS front footage was independently checked as 4K30 HEVC.",
+    "channelRoles": [
+      "front"
+    ]
   },
   {
     "id": "metadata-only-blackvue-dr900s-2ch",
@@ -426,7 +548,11 @@
     "channels": 2,
     "key": "metadata-only-blackvue-dr900s-2ch",
     "default": true,
-    "channelSource": "Recorded measurement configuration"
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "blackvue-dr900x-2ch",
@@ -434,13 +560,17 @@
     "lowMbps": 25.2,
     "highMbps": 25.2,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 25.200007-25.225058 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 2,
     "key": "blackvue-dr900x-2ch",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "blackvue-dr970x-2ch",
@@ -448,13 +578,17 @@
     "lowMbps": 25.0,
     "highMbps": 25.1,
     "codec": "H.264",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 25.012337-25.083676 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 2,
     "key": "blackvue-dr970x-2ch",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "blackvue-dr900x-2ch-plus",
@@ -462,13 +596,17 @@
     "lowMbps": 24.3,
     "highMbps": 24.8,
     "codec": "H.264",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 24.260897-24.828378 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 2,
     "key": "blackvue-dr900x-2ch-plus",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "thinkware-u1000",
@@ -476,27 +614,35 @@
     "lowMbps": 24.0,
     "highMbps": 24.0,
     "codec": "H.265",
-    "configuration": "Not recorded",
+    "configuration": "2CH: front, rear",
     "settings": "Archive review 2026-10-08: 4 usable sampled clips, exact video-track rates 23.983381-24.038827 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
     "source": "reviewed archive metadata",
-    "channels": null,
+    "channels": 2,
     "key": "thinkware-u1000",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "thinkware-u1000-plus",
     "camera": "Thinkware U1000 Plus",
-    "lowMbps": 24.0,
-    "highMbps": 24.0,
+    "lowMbps": 23.999893,
+    "highMbps": 24.013136,
     "codec": "H.265",
-    "configuration": "Not recorded",
-    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 23.997770-24.014061 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
-    "source": "reviewed archive metadata",
-    "channels": null,
+    "configuration": "2CH: front, rear",
+    "settings": "Original U1000 Plus front/rear pairs. The older U1000 clip previously mixed into the Plus archive is excluded.",
+    "source": "Model-identified original U1000 Plus synchronized recordings",
+    "channels": 2,
     "key": "thinkware-u1000-plus",
     "default": true,
-    "channelSource": null
+    "channelSource": "Original synchronized front/rear recordings, verified by recording timestamp, mode, and measured video metadata.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   },
   {
     "id": "viofo-t340",
@@ -510,7 +656,7 @@
     "channels": 4,
     "key": "viofo-t340",
     "default": true,
-    "channelSource": "Recorded measurement configuration",
+    "channelSource": "Combined unit A and B measurements; both verified with four recorded channels: front, telephoto, interior, and rear.",
     "members": [
       {
         "id": "viofo-t340",
@@ -524,7 +670,13 @@
         "channels": 4,
         "key": "t340-a",
         "default": false,
-        "channelSource": "Recorded measurement configuration"
+        "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+        "channelRoles": [
+          "front",
+          "telephoto",
+          "interior",
+          "rear"
+        ]
       },
       {
         "id": "viofo-t340",
@@ -538,8 +690,20 @@
         "channels": 4,
         "key": "t340-b",
         "default": false,
-        "channelSource": "Recorded measurement configuration"
+        "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+        "channelRoles": [
+          "front",
+          "telephoto",
+          "interior",
+          "rear"
+        ]
       }
+    ],
+    "channelRoles": [
+      "front",
+      "telephoto",
+      "interior",
+      "rear"
     ]
   },
   {
@@ -547,15 +711,20 @@
     "key": "viofo-a329s:3ch",
     "camera": "Viofo A329S",
     "channels": 3,
-    "lowMbps": 53,
-    "highMbps": 66,
+    "lowMbps": 53.246878,
+    "highMbps": 65.537835,
     "codec": "H.264",
-    "variantLabel": "3CH, historical quality unrecorded",
+    "variantLabel": "3CH",
     "configuration": "3-channel: front, interior, rear",
-    "settings": "Historical card measurement, approximately 53\u201366 Mbps. Video Quality was not recorded. Not a controlled channel-count comparison against the owner-confirmed Maximum 2CH setup.",
-    "source": "profiles/viofo-a329s.json video_samples[2], ffprobe",
-    "channelSource": "Explicit recording_configuration in the sampled video record.",
-    "default": false
+    "settings": "Exact front video-track rates from original synchronized front/interior/rear recordings.",
+    "source": "Original synchronized 3CH recordings, reviewed video metadata",
+    "channelSource": "Original recording channel sets and retained card evidence, reviewed against the front measurement.",
+    "default": false,
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "viofo-t340",
@@ -569,8 +738,13 @@
     "configuration": "3-channel: front, rear, interior; telephoto disconnected",
     "settings": "Maximum. Physical-unit linkage was not retained, so this 3CH result is not assigned to unit A or B.",
     "source": "profiles/viofo-t340.json video_samples[42], app_submission",
-    "channelSource": "Explicit three-channel configuration with telephoto disconnected.",
-    "default": false
+    "channelSource": "Actual recorded card-scan channel groups, reviewed against the front measurement.",
+    "default": false,
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "vueroid-s1-4k-infinite",
@@ -585,7 +759,12 @@
     "configuration": "3-channel: front, rear, interior; firmware 1.6.0",
     "settings": "Approximately 48 Mbps in the explicitly recorded 3CH setup. Quality preset not retained. The separate archive range remains available without assigning it a specific channel count.",
     "source": "profiles/vueroid-s1-4k-infinite.json video_samples[0], app_submission",
-    "channelSource": "Explicit 3-channel recording_configuration."
+    "channelSource": "Explicit3CH48Mbps variant confirmed by recorded3-channel card group and freshly probed original F/I/R triples at48Mbps H.2644K30.",
+    "channelRoles": [
+      "front",
+      "interior",
+      "rear"
+    ]
   },
   {
     "id": "thinkware-u3000-pro",
@@ -599,7 +778,48 @@
     "configuration": "1CH front-only; firmware 1.00.06",
     "settings": "Observed across 129 driving files. Quality preset not retained. Separate measured cohort from the front/rear archive recordings.",
     "source": "profiles/thinkware-u3000-pro.json video_samples[0], privacy-safe card scan summary",
-    "channelSource": "Explicit 1CH front-only recording_configuration.",
-    "default": false
+    "channelSource": "Actual recorded card-scan groups establish this channel setup; original media were cross-checked where retained.",
+    "default": false,
+    "channelRoles": [
+      "front"
+    ]
+  },
+  {
+    "id": "viofo-a139-pro",
+    "camera": "Viofo A139 Pro",
+    "lowMbps": 45.87408,
+    "highMbps": 45.877043,
+    "codec": "H.265",
+    "configuration": "2CH: front, interior",
+    "settings": "Separate explicitly owner-labeled 2CH HDR recordings, verified with synchronized front/interior files.",
+    "source": "Original owner-labeled 2CH recordings, reviewed video metadata",
+    "channels": 2,
+    "key": "viofo-a139-pro:2ch-hevc",
+    "default": false,
+    "channelSource": "Original recordings explicitly owner-labeled 2CH, with synchronized front/interior files and H.265 4K30 front video metadata.",
+    "variantLabel": "2CH, front/interior, H.265",
+    "channelRoles": [
+      "front",
+      "interior"
+    ]
+  },
+  {
+    "id": "vueroid-s1-4k-infinite",
+    "key": "vueroid-s1-4k-infinite:2ch",
+    "camera": "Vueroid S1 4K Infinite",
+    "channels": 2,
+    "lowMbps": 44.847168,
+    "highMbps": 46.20239,
+    "codec": "H.264",
+    "default": false,
+    "variantLabel": "2CH, front/rear",
+    "configuration": "2CH: front, rear",
+    "settings": "Separate front/rear recordings, with a matching two-camera card-scan configuration.",
+    "source": "Original linked front/rear recordings and recorded 2CH card scan",
+    "channelSource": "Original synchronized front/rear recordings and a separate complete front/rear card scan establish this 2CH setup.",
+    "channelRoles": [
+      "front",
+      "rear"
+    ]
   }
 ]

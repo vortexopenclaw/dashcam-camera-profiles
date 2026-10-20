@@ -34,7 +34,7 @@ with sync_playwright() as p:
     assert page.locator('#subtitle').input_value()=='Front Camera Bitrates at Maximum Quality'
     page.locator('#search').fill('A329S');assert page.locator('.camera-choice:visible').count()==1
     page.locator('#search').fill('')
-    page.locator('#t340').click();assert page.locator('#chart g[data-variant]').count()==1
+    page.locator('#clear').click();page.locator('input[data-model="viofo-t340"]').check();assert page.locator('#chart g[data-variant]').count()==1
     card=page.locator('.camera-choice[data-model="viofo-t340"]');card.locator('summary').click()
     card.locator('input[data-variant="viofo-t340"]').uncheck()
     card.locator('input[data-variant="t340-a"]').check();card.locator('input[data-variant="t340-b"]').check()
@@ -62,7 +62,7 @@ with sync_playwright() as p:
         else:
             raw=file.read_bytes();assert raw[:8]==b'\x89PNG\r\n\x1a\n'
             width,height=struct.unpack('>II',raw[16:24]);assert (width,height)==(3840,2160)
-    page.locator('#t340').click()
+    page.locator('#clear').click();page.locator('input[data-model="viofo-t340"]').check()
     card=page.locator('.camera-choice[data-model="viofo-t340"]')
     if not card.locator('details').evaluate('node=>node.open'):card.locator('summary').click()
     card.locator('input[data-variant="viofo-t340:3ch"]').check()
@@ -73,7 +73,7 @@ with sync_playwright() as p:
     page.locator('#format').select_option('auto')
     page.reload();page.wait_for_selector('#chart svg')
     assert page.locator('#format').input_value()=='auto'
-    assert page.locator('#chart svg').get_attribute('width')=='1120'
+    assert page.locator('#chart svg').get_attribute('width')=='1200'
     page.locator('#format').select_option('video')
     assert page.locator('#chart svg').get_attribute('viewBox')=='0 0 1920 1080'
     page.locator('#all').click();models=page.locator('#choices input[data-model]').count()

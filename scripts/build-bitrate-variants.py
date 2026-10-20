@@ -24,6 +24,7 @@ def channel_count(configuration):
 def build(check=False):
     evidence = json.loads((DATA / 'bitrate-setup-evidence.json').read_text())
     raw = json.loads((DATA / '4k30-comparison.json').read_text())
+    reviewed = json.loads((DATA / 'bitrate-channel-evidence.json').read_text())
     rows = []
     for original in raw:
         if original['id'] == 'viofo-t340' and 'Maximum' not in original['camera']:
@@ -64,12 +65,33 @@ def build(check=False):
             previous = next(r for r in rows if r['id'] == alternative['id'] and r['default'])
             previous['key'] = previous['id'] + ':archive'
             previous['default'] = False
-            previous['variantLabel'] = 'Archive range, channel count unrecorded'
+            previous['variantLabel'] = 'Archive measurements'
         rows.append(dict(alternative, camera=clean(alternative['camera']), default=alternative.get('default', False)))
+    for alternative in reviewed.get('alternatives', []):
+        base = next(r for r in rows if r['id'] == alternative['id'] and r['default'])
+        rows.append(dict(base, **alternative, default=False))
     assert len({r['key'] for r in rows}) == len(rows), 'Variant keys must be unique'
     assert len({r['id'] for r in rows if r['default']}) == sum(r['default'] for r in rows)
+    verified_channels = reviewed['configurations']
     for row in rows:
-        assert row['channels'] in {None, 1, 2, 3, 4}
+        channel_evidence = verified_channels.get(row['key'], verified_channels.get(row['id']))
+        assert channel_evidence, f"Missing original-file/card-scan channel evidence: {row['key']}"
+        measurement = channel_evidence.get('measurement', {})
+        assert set(measurement) <= {'lowMbps','highMbps','codec','variantLabel','settings','source','configuration'}
+        row.update(measurement)
+        row['channels'] = channel_evidence['channels']
+        row['channelRoles'] = channel_evidence['roles']
+        row['channelSource'] = channel_evidence['source']
+        recorded_count = channel_count(row['configuration'])
+        assert recorded_count in {None, row['channels']}, f"Configuration conflicts with verified channels: {row['key']}"
+        if recorded_count is None:
+            row['configuration'] = f"{row['channels']}CH: " + ', '.join(role.replace('_', ' ') for role in row['channelRoles'])
+        row.pop('channelScope', None)
+        if channel_evidence.get('codec'): row['codec'] = channel_evidence['codec']
+        if 'channel count unrecorded' in row.get('variantLabel', ''):
+            row['variantLabel'] = f"{row['channels']}CH, archive measurements"
+        assert row['channels'] in {1, 2, 3, 4}
+        assert len(set(row['channelRoles'])) == row['channels'], row['key']
         assert 0 < row['lowMbps'] <= row['highMbps']
     output = json.dumps(rows, indent=2) + '\n'
     if check:
