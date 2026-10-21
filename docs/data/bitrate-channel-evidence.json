@@ -454,6 +454,14 @@
       ],
       "source": "Original front recordings and documented front-only single-channel layout.",
       "verificationMethod": "verified_front_only_originals_with_single_channel_source"
+    },
+    "viofo-a119m-pro:medium-fw1.2_20260817": {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "source": "Owner-confirmed 1CH front-only A119M Pro, firmware 1.2_20260817 Medium / Low Bitrate. Driving attribution uses DCIM/Movie context, not native recognition. See docs/data/a119m-pro-medium-1.2_20260817.json.",
+      "verificationMethod": "owner_confirmed_single_channel_model_and_reviewed_card_structure"
     }
   },
   "alternatives": [

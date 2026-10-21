@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "model": "Viofo A119M Pro",
+  "attribution": "Vortex Radar submitted card scan",
+  "ownerAssertions": {
+    "channelCount": 1,
+    "firmware": "1.2_20260817",
+    "manufacturer": "VIOFO",
+    "model": "A119M Pro",
+    "parkingMode": "low-bitrate",
+    "parkingModeLabel": "Low Bitrate",
+    "quality": "medium",
+    "qualityLabel": "Medium"
+  },
+  "inventory": {
+    "completed": true,
+    "fileCount": 9,
+    "folders": [
+      {
+        "components": [
+          "DCIM",
+          "Movie"
+        ],
+        "extensions": [
+          {
+            "count": 3,
+            "extension": "MP4",
+            "mediaType": "video"
+          }
+        ],
+        "fileCount": 3,
+        "filenameTemplates": [
+          "unknown"
+        ],
+        "mediaCount": 3
+      },
+      {
+        "components": [
+          "DCIM",
+          "Parking"
+        ],
+        "extensions": [
+          {
+            "count": 4,
+            "extension": "MP4",
+            "mediaType": "video"
+          }
+        ],
+        "fileCount": 4,
+        "filenameTemplates": [
+          "unknown"
+        ],
+        "mediaCount": 4
+      },
+      {
+        "components": [
+          "DCIM"
+        ],
+        "extensions": [],
+        "fileCount": 0,
+        "filenameTemplates": [],
+        "mediaCount": 0
+      },
+      {
+        "components": [],
+        "extensions": [
+          {
+            "count": 2,
+            "extension": "txt",
+            "mediaType": "other"
+          }
+        ],
+        "fileCount": 2,
+        "filenameTemplates": [],
+        "mediaCount": 0
+      }
+    ],
+    "mediaCount": 7,
+    "observedLayouts": []
+  },
+  "samples": [
+    {
+      "bitrateKbps": 51194.98383480826,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 169.5,
+      "folderIndex": 0,
+      "fps": 30.0,
+      "height": 2160,
+      "mode": "unknown",
+      "sizeBytes": 1093591596,
+      "width": 3840
+    },
+    {
+      "bitrateKbps": 3767.810177777778,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 180.0,
+      "folderIndex": 1,
+      "fps": 30.0,
+      "height": 1440,
+      "mode": "unknown",
+      "sizeBytes": 94664044,
+      "width": 2560
+    },
+    {
+      "bitrateKbps": 51197.56155555555,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 180.0,
+      "folderIndex": 0,
+      "fps": 30.0,
+      "height": 2160,
+      "mode": "unknown",
+      "sizeBytes": 1161299000,
+      "width": 3840
+    },
+    {
+      "bitrateKbps": 3769.8987024128687,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 124.33333333333331,
+      "folderIndex": 1,
+      "fps": 30.0,
+      "height": 1440,
+      "mode": "unknown",
+      "sizeBytes": 66769848,
+      "width": 2560
+    },
+    {
+      "bitrateKbps": 3768.5981786643542,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 153.73333333333332,
+      "folderIndex": 1,
+      "fps": 30.000000000000004,
+      "height": 1440,
+      "mode": "unknown",
+      "sizeBytes": 81585908,
+      "width": 2560
+    }
+  ],
+  "review": {
+    "roleMapping": "Owner-confirmed single-channel front-only A119M Pro. Native channel/mode hints remain unknown; manual context maps DCIM/Movie to driving and DCIM/Parking to parking. Low Bitrate is owner-confirmed continuous parking, not inferred from bitrate alone.",
+    "drivingSampleIndices": [
+      0,
+      2
+    ],
+    "parkingSampleIndices": [
+      1,
+      3,
+      4
+    ],
+    "minimumDrivingDurationSeconds": 60,
+    "notes": [
+      "Identical report resubmissions count as one measurement set, not independent tests.",
+      "Medium driving quality and Low Bitrate parking are separate settings. High/AED measurements from the same firmware remain a distinct configuration.",
+      "Power measurements come from separate Vortex Radar testing notes, not from video sizes or bitrates."
+    ]
+  },
+  "evidenceDigest": "4104918338b960641466fd4e808ac1f0bcbd2b3d0f9742986b5f2b0f04f42ced"
+}

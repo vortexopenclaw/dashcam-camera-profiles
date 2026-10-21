@@ -30,7 +30,7 @@ legacy=next(r for r in rows if r['key']=='viofo-a119m-pro:archive');assert not l
 assert next(r for r in json.loads((ROOT/'docs/data/4k30-comparison.json').read_text()) if r['id']=='viofo-a119m-pro')['highMbps']==r['highMbps']
 assert profile['video_samples'][0]['mode']=='driving'
 assert 'firmware 1.2_20260817' in profile['video_samples'][0]['recording_configuration']
-assert all('Historical older-firmware' in s['settings_note'] for s in profile['video_samples'][4:])
+assert all('Historical older-firmware' in s['settings_note'] for s in profile['video_samples'] if s['source'] in {'ffprobe','reviewed archive metadata'})
 assert {f['path'] for f in profile['recording']['parking_folders']}=={'DCIM/Parking','DCIM/Parking/RO'}
 assert any(s['mode']=='driving (short clip)' for s in profile['video_samples'])
 assert profile['filename_patterns'][0]['default_channel'] is None

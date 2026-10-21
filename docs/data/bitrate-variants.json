@@ -806,9 +806,31 @@
     "variantLabel": "Historical firmware (superseded)",
     "configuration": "1CH front-only; older firmware version not retained",
     "settings": "Historical older-firmware measurements. Superseded for current comparisons by owner-confirmed firmware 1.2_20260817. Exact older firmware and named quality not retained.",
-    "source": "profiles/viofo-a119m-pro.json video_samples[6], reviewed archive metadata",
+    "source": "profiles/viofo-a119m-pro.json video_samples[8], reviewed archive metadata",
     "channelSource": "Original front recordings and documented front-only single-channel layout.",
     "default": false,
+    "channelRoles": [
+      "front"
+    ]
+  },
+  {
+    "id": "viofo-a119m-pro",
+    "key": "viofo-a119m-pro:medium-fw1.2_20260817",
+    "camera": "Viofo A119M Pro",
+    "channels": 1,
+    "lowMbps": 51.19498383480826,
+    "highMbps": 51.19756155555555,
+    "codec": "H.264",
+    "quality": "medium",
+    "qualityLabel": "Medium",
+    "firmware": "1.2_20260817",
+    "status": "current",
+    "default": false,
+    "variantLabel": "1CH, Medium, firmware 1.2_20260817",
+    "configuration": "1CH front-only; firmware 1.2_20260817",
+    "settings": "Medium driving bitrate / quality, with Low Bitrate selected for parking. Uses only the two DCIM/Movie driving samples. Identical report resubmissions counted as one measurement set. High remains the higher-quality current-firmware comparison default.",
+    "source": "profiles/viofo-a119m-pro.json video_samples[4], reviewed submitted card scan",
+    "channelSource": "Owner-confirmed 1CH front-only A119M Pro, firmware 1.2_20260817 Medium / Low Bitrate. Driving attribution uses DCIM/Movie context, not native recognition. See docs/data/a119m-pro-medium-1.2_20260817.json.",
     "channelRoles": [
       "front"
     ]

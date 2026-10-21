@@ -10040,7 +10040,7 @@
             "importable": true,
             "mode": "continuous",
             "notes": [
-              "Four MP4 files observed in the submitted card inventory. Three video samples retained. Mapped to driving from folder context, not a native scanner mode classification."
+              "High/AED card scan: four Movie MP4 files, three retained video samples. Medium/Low Bitrate card scan: three Movie MP4 files, two retained video samples. These are separate card inventories, not counts to add. Folder-based driving mapping is manual context, not native recognition."
             ],
             "path": "DCIM/Movie",
             "validation": "submitted_card_scan"
@@ -10052,7 +10052,7 @@
             "importable": true,
             "mode": "parking",
             "notes": [
-              "One MP4 file observed. Owner selected Auto Event Detection. No measured event-trigger subtype or buffer length."
+              "High/AED scan: one parking MP4 sample. Medium/Low Bitrate scan: four parking MP4 files, three retained samples. Parking behavior follows the owner-confirmed setting, not the folder or bitrate alone."
             ],
             "path": "DCIM/Parking",
             "validation": "submitted_card_scan"
@@ -10068,7 +10068,8 @@
           }
         ],
         "parking_modes": [
-          "Auto Event Detection"
+          "Auto Event Detection",
+          "Low Bitrate Recording"
         ]
       },
       "schema_version": "1.0",
@@ -10102,6 +10103,16 @@
           "kind": "source",
           "label": "Vortex Radar A119M Pro firmware 1.2_20260817 High / Auto Event Detection card-scan measurements",
           "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/a119m-pro-high-1.2_20260817.json"
+        },
+        {
+          "kind": "source",
+          "label": "Vortex Radar A119M Pro firmware 1.2_20260817 Medium / Low Bitrate card-scan measurements",
+          "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/a119m-pro-medium-1.2_20260817.json"
+        },
+        {
+          "kind": "source",
+          "label": "Vortex Radar A119M Pro firmware 1.2_20260817 parking power tests",
+          "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/parking-measurements.json"
         }
       ],
       "technical_facts": [
@@ -10124,6 +10135,18 @@
         {
           "label": "Current reviewed firmware",
           "value": "1.2_20260817"
+        },
+        {
+          "label": "Current comparison quality",
+          "value": "High"
+        },
+        {
+          "label": "Firmware 1.2_20260817 Medium / Low Bitrate card scan",
+          "value": "Owner-confirmed 1CH front-only. Driving: 4K30 H.264, 51.19498383480826-51.19756155555555 Mbps. Continuous parking: 2560x1440, 30 fps, H.264, 3.7678101777777777-3.7698987024128687 Mbps. Repeated identical reports count as one measurement set."
+        },
+        {
+          "label": "Firmware 1.2_20260817 owner parking power tests",
+          "value": "At owner-confirmed actual 12.4 V supply with HK6-F cable: Auto Event Detection monitoring 252 mA / 3.12 W; Auto Event Detection recording 252 mA / 3.12 W; continuous Low Bitrate parking 256 mA / 3.17 W. Reported watts retained as supplied. Power-test video-quality setting, wakeup delay, and prebuffer duration not stated. See parking/measurements.json."
         }
       ],
       "video_samples": [
@@ -10173,6 +10196,30 @@
           "recording_configuration": "1CH front-only; firmware 1.2_20260817",
           "resolution": "3840x2160",
           "settings_note": "Owner-confirmed High video bitrate / quality; Auto Event Detection selected for parking. Numeric video metadata are scanner-measured, while channel/mode mapping is reviewed owner/folder context. Short 2.566667-second sample 0 in docs/data/a119m-pro-high-1.2_20260817.json, excluded from the comparison range.",
+          "source": "reviewed card scan metadata"
+        },
+        {
+          "bitrate": "51.19498383480826-51.19756155555555 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "1CH front-only; firmware 1.2_20260817",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed Medium video bitrate / quality; Low Bitrate selected for parking. Native channel/mode hints were unknown, so role/mode interpretation uses confirmed front-only model and folder context. Two driving samples: 169.5 and 180 seconds. Identical resubmissions counted once.",
+          "source": "reviewed card scan metadata"
+        },
+        {
+          "bitrate": "3.7678101777777777-3.7698987024128687 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "1CH front-only; firmware 1.2_20260817",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed Medium video bitrate / quality; Low Bitrate selected for parking. Native channel/mode hints were unknown, so role/mode interpretation uses confirmed front-only model and folder context. Three samples of continuous Low Bitrate parking. Playback frame rate is 30 fps, not time-lapse cadence.",
           "source": "reviewed card scan metadata"
         },
         {

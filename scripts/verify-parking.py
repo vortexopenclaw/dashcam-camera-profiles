@@ -35,7 +35,23 @@ for row in rows:
     if row['id'] in buffered_chart:
         assert row['voltage_v']==12.4 and row['current_ma']==buffered_chart[row['id']]
         assert row['category']=='buffered-event' and row['state']=='monitoring' and row.get('voltage_source')
-assert all(r['voltage_v'] is None for r in rows if r['tester']=='Vortex Radar' and r['id'] not in chart_ids | buffered_chart.keys()),'No blanket voltage assumption for other contributed rows'
+a119m_ids={f'vortex-sheet-row-{n}' for n in (26,27,28)}
+a119m_rows={r['id']:r for r in rows if r['id'] in a119m_ids}
+assert len(a119m_rows)==3, 'Keep all three distinct A119M Pro measurements'
+for number,category,state,current,watts in [(26,'buffered-event','monitoring',252,3.12),(27,'buffered-event','event-recording',252,3.12),(28,'low-bitrate','continuous',256,3.17)]:
+    row=a119m_rows[f'vortex-sheet-row-{number}']
+    assert (row['brand'],row['model'],row['installed_channels'],row['active_channels'])==('Viofo','A119M Pro',1,['front'])
+    assert (row['category'],row['state'],row['current_ma'],row['power_w'])==(category,state,current,watts)
+    assert row['firmware']=='1.2_20260817', 'Owner-confirmed firmware overrides low-bitrate sheet typo'
+    assert row['voltage_v']==12.4 and row.get('voltage_source')
+    assert row['power_path']=='Viofo HK6-F hardwire cable'
+    assert row['tester']=='Vortex Radar' and row['source_is_private'] is True
+    assert row['source_url']=='https://vortexopenclaw.github.io/dashcam-camera-profiles/parking-mode.html#vortex-radar-testing'
+    assert row['date'] is None and row['power_is_derived'] is False
+    assert all(row.get(field) is None for field in ['wake_seconds','reported_startup_seconds','prebuffer_s','prebuffer_motion_s','prebuffer_impact_s','connectivity'])
+    assert row['test_status']=='unknown' and row['review_status']=='verified' and row['superseded'] is False
+assert next(s for s in sources if s['id']=='vortex-sheet')['measurement_count']==sum(r['id'].startswith('vortex-sheet-row-') for r in rows)
+assert all(r['voltage_v'] is None for r in rows if r['tester']=='Vortex Radar' and r['id'] not in chart_ids | buffered_chart.keys() | a119m_ids),'No blanket voltage assumption for other contributed rows'
 for content in [public.read_text(),csv_path.read_text(),json.dumps(sources)]:
     assert 'docs.google.com/spreadsheets' not in content, 'Private spreadsheet link in public data'
 bad=copy.deepcopy(rows);bad[0]['source_url']='https://docs.google.com/spreadsheets/d/private-test-fixture'
