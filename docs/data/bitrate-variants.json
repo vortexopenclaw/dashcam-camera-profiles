@@ -786,6 +786,27 @@
     ]
   },
   {
+    "id": "viofo-a119m-pro",
+    "key": "viofo-a119m-pro:high-fw1.2_20260817",
+    "camera": "Viofo A119M Pro (High)",
+    "channels": 1,
+    "lowMbps": 61.437535777777775,
+    "highMbps": 61.540436035658104,
+    "codec": "H.264",
+    "quality": "high",
+    "qualityLabel": "High",
+    "firmware": "1.2_20260817",
+    "variantLabel": "1CH, High, firmware 1.2_20260817",
+    "configuration": "1CH front-only; firmware 1.2_20260817",
+    "settings": "High bitrate / quality, not Maximum. Auto Event Detection is the selected parking setting; this row uses only DCIM/Movie driving samples of 180 and 63.566667 seconds. The 2.566667-second short clip is retained separately.",
+    "source": "profiles/viofo-a119m-pro.json video_samples[4], reviewed submitted card scan",
+    "channelSource": "Owner-confirmed 1CH A119M Pro card scan, firmware 1.2_20260817. Front role is reviewed single-channel model context; driving category is reviewed DCIM/Movie context, not native scanner recognition. See docs/data/a119m-pro-high-1.2_20260817.json.",
+    "default": false,
+    "channelRoles": [
+      "front"
+    ]
+  },
+  {
     "id": "viofo-a139-pro",
     "camera": "Viofo A139 Pro",
     "lowMbps": 45.87408,

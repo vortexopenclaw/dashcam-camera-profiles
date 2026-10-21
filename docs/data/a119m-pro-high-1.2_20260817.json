@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "model": "Viofo A119M Pro",
+  "attribution": "Vortex Radar submitted card scan",
+  "ownerAssertions": {
+    "channelCount": 1,
+    "firmware": "1.2_20260817",
+    "manufacturer": "VIOFO",
+    "model": "A119M Pro",
+    "parkingMode": "buffered",
+    "parkingModeLabel": "Auto Event Detection",
+    "quality": "high",
+    "qualityLabel": "High"
+  },
+  "inventory": {
+    "completed": true,
+    "fileCount": 8,
+    "folders": [
+      {
+        "components": [
+          "DCIM",
+          "Movie"
+        ],
+        "extensions": [
+          {
+            "count": 4,
+            "extension": "MP4",
+            "mediaType": "video"
+          }
+        ],
+        "fileCount": 4,
+        "filenameTemplates": [
+          "unknown"
+        ],
+        "mediaCount": 4
+      },
+      {
+        "components": [
+          "DCIM",
+          "Parking",
+          "RO"
+        ],
+        "extensions": [
+          {
+            "count": 1,
+            "extension": "MP4",
+            "mediaType": "video"
+          }
+        ],
+        "fileCount": 1,
+        "filenameTemplates": [
+          "unknown"
+        ],
+        "mediaCount": 1
+      },
+      {
+        "components": [
+          "DCIM",
+          "Parking"
+        ],
+        "extensions": [
+          {
+            "count": 1,
+            "extension": "MP4",
+            "mediaType": "video"
+          }
+        ],
+        "fileCount": 1,
+        "filenameTemplates": [
+          "unknown"
+        ],
+        "mediaCount": 1
+      },
+      {
+        "components": [
+          "DCIM"
+        ],
+        "extensions": [],
+        "fileCount": 0,
+        "filenameTemplates": [],
+        "mediaCount": 0
+      },
+      {
+        "components": [],
+        "extensions": [
+          {
+            "count": 2,
+            "extension": "txt",
+            "mediaType": "other"
+          }
+        ],
+        "fileCount": 2,
+        "filenameTemplates": [],
+        "mediaCount": 0
+      }
+    ],
+    "mediaCount": 6,
+    "observedLayouts": []
+  },
+  "samples": [
+    {
+      "bitrateKbps": 52228.63168831168,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 2.566666666666667,
+      "folderIndex": 0,
+      "fps": 29.999999999999996,
+      "height": 2160,
+      "mode": "unknown",
+      "sizeBytes": 20126068,
+      "width": 3840
+    },
+    {
+      "bitrateKbps": 8388.370311111112,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 45.0,
+      "folderIndex": 1,
+      "fps": 30.0,
+      "height": 1440,
+      "mode": "unknown",
+      "sizeBytes": 52582688,
+      "width": 2560
+    },
+    {
+      "bitrateKbps": 8388.264177777777,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 45.0,
+      "folderIndex": 2,
+      "fps": 30.0,
+      "height": 1440,
+      "mode": "unknown",
+      "sizeBytes": 52535312,
+      "width": 2560
+    },
+    {
+      "bitrateKbps": 61437.535777777775,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 180.0,
+      "folderIndex": 0,
+      "fps": 30.0,
+      "height": 2160,
+      "mode": "unknown",
+      "sizeBytes": 1391691232,
+      "width": 3840
+    },
+    {
+      "bitrateKbps": 61540.4360356581,
+      "channel": "unknown",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 63.56666666666667,
+      "folderIndex": 0,
+      "fps": 30.0,
+      "height": 2160,
+      "mode": "unknown",
+      "sizeBytes": 493870424,
+      "width": 3840
+    }
+  ],
+  "review": {
+    "roleMapping": "Owner-confirmed single-channel front-only A119M Pro. The scanner reported unknown channel/mode; manual context maps DCIM/Movie to driving and DCIM/Parking descendants to parking. Native recognition is not asserted.",
+    "drivingSampleIndices": [
+      3,
+      4
+    ],
+    "shortDrivingSampleIndices": [
+      0
+    ],
+    "parkingSampleIndices": [
+      1,
+      2
+    ],
+    "minimumDrivingDurationSeconds": 60,
+    "notes": [
+      "High is not relabeled Maximum. The previous firmware-unrecorded archive measurements remain separate.",
+      "Auto Event Detection is the owner-confirmed parking setting, not a setting measured from video bitrate.",
+      "Parking/RO establishes a protected parking location, not a verified impact trigger.",
+      "Video durations do not measure parking power draw, wakeup delay, or pre-event buffer duration."
+    ]
+  },
+  "evidenceDigest": "712f04ae2da383193ebd9fbe88945edbff25a7839660109e685d3fd1b2ca607a"
+}

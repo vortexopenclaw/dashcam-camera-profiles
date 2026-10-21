@@ -446,6 +446,14 @@
       ],
       "source": "Original synchronized front/rear recordings and a separate complete front/rear card scan establish this 2CH setup.",
       "verificationMethod": "original_pairs_and_complete_2ch_scan"
+    },
+    "viofo-a119m-pro:high-fw1.2_20260817": {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "source": "Owner-confirmed 1CH A119M Pro card scan, firmware 1.2_20260817. Front role is reviewed single-channel model context; driving category is reviewed DCIM/Movie context, not native scanner recognition. See docs/data/a119m-pro-high-1.2_20260817.json.",
+      "verificationMethod": "owner_confirmed_single_channel_model_and_reviewed_card_structure"
     }
   },
   "alternatives": [

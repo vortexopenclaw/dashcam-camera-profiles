@@ -110,6 +110,8 @@
         for (const box of card.querySelectorAll('input[data-variant]')) box.checked=selected.has(box.value);
       }
       const picked=ordered();
+      const automaticSubtitles=new Set([textControls.subtitle,'Front Camera Bitrates, Maximum Video Quality','Front Camera Bitrates at Selected Quality Settings']);
+      if(automaticSubtitles.has($('subtitle').value)) $('subtitle').value=picked.some(row=>row.quality && row.quality!=='maximum') ? 'Front Camera Bitrates at Selected Quality Settings' : textControls.subtitle;
       const state=new URLSearchParams({selection:'1',sort:$('sort').value,format:$('format').value,highlight:$('highlight').value,codec:$('codec').value});
       for (const id of Object.keys(textControls)) state.set(id,$(id).value);
       for (const row of ordered(true)) state.append('camera',row.key);

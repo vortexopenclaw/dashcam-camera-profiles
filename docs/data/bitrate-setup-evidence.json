@@ -1,40 +1,112 @@
 {
   "defaults": {
-    "viofo-a119m-pro": {"channels": 1, "source": "Single-channel front-only camera explicitly documented in https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-a119m-pro.md; sampled front footage in profiles/viofo-a119m-pro.json."},
-    "vantrue-e1-pro": {"channels": 1, "source": "profiles/vantrue-e1-pro.json channel_variants[0]: one front channel, real_card_sampled."},
-    "viofo-a229-pro": {"channels": 3, "source": "profiles/viofo-a229-pro.json video_samples[0:3] and docs/data/storage-evidence.json card digest 7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53 contain front/interior/rear driving streams. Full-minute front samples: 36.044120 and 36.044328 Mbps. No measured 2CH driving-4K30 alternative retained.", "unmeasuredSetups": [{"channels": 2, "note": "2CH driving bitrate not yet logged. Parking-mode measurements do not establish a 4K30 driving bitrate."}]},
-    "vantrue-n4-pro-s": {"channels": 3, "source": "profiles/vantrue-n4-pro-s.json documents simultaneous front/interior/rear recording per timestamp. Archive cohort includes all three positions in docs/data/archive-20261008-evidence.json samples 485 through 493."},
-    "nextbase-622gw": {"channels": 2, "channelScope": "cohort", "source": "Front/rear measurements in docs/data/archive-20261008-evidence.json samples 619 through 624. Two channels are observed in the archive cohort, but per-front-clip concurrent channel count was not retained."},
-    "thinkware-u3000-pro": {"channels": 2, "channelScope": "cohort", "source": "Front/rear measurements in docs/data/archive-20261008-evidence.json samples 429 through 434 and profiles/thinkware-u3000-pro.json video_samples[8:10]. Two channels are observed in the archive cohort, but per-front-clip concurrent channel count and capture firmware were not retained."}
+    "viofo-a119m-pro": {
+      "channels": 1,
+      "source": "Single-channel front-only camera explicitly documented in https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/viofo-a119m-pro.md; sampled front footage in profiles/viofo-a119m-pro.json."
+    },
+    "vantrue-e1-pro": {
+      "channels": 1,
+      "source": "profiles/vantrue-e1-pro.json channel_variants[0]: one front channel, real_card_sampled."
+    },
+    "viofo-a229-pro": {
+      "channels": 3,
+      "source": "profiles/viofo-a229-pro.json video_samples[0:3] and docs/data/storage-evidence.json card digest 7ff321771afd4725b11c4ffd99edd0028d64eb7c7e39fa18b24364eb200e9b53 contain front/interior/rear driving streams. Full-minute front samples: 36.044120 and 36.044328 Mbps. No measured 2CH driving-4K30 alternative retained.",
+      "unmeasuredSetups": [
+        {
+          "channels": 2,
+          "note": "2CH driving bitrate not yet logged. Parking-mode measurements do not establish a 4K30 driving bitrate."
+        }
+      ]
+    },
+    "vantrue-n4-pro-s": {
+      "channels": 3,
+      "source": "profiles/vantrue-n4-pro-s.json documents simultaneous front/interior/rear recording per timestamp. Archive cohort includes all three positions in docs/data/archive-20261008-evidence.json samples 485 through 493."
+    },
+    "nextbase-622gw": {
+      "channels": 2,
+      "channelScope": "cohort",
+      "source": "Front/rear measurements in docs/data/archive-20261008-evidence.json samples 619 through 624. Two channels are observed in the archive cohort, but per-front-clip concurrent channel count was not retained."
+    },
+    "thinkware-u3000-pro": {
+      "channels": 2,
+      "channelScope": "cohort",
+      "source": "Front/rear measurements in docs/data/archive-20261008-evidence.json samples 429 through 434 and profiles/thinkware-u3000-pro.json video_samples[8:10]. Two channels are observed in the archive cohort, but per-front-clip concurrent channel count and capture firmware were not retained."
+    }
   },
   "alternatives": [
     {
-      "id": "viofo-a329s", "key": "viofo-a329s:3ch", "camera": "Viofo A329S", "channels": 3,
-      "lowMbps": 53, "highMbps": 66, "codec": "H.264", "variantLabel": "3CH, historical quality unrecorded",
+      "id": "viofo-a329s",
+      "key": "viofo-a329s:3ch",
+      "camera": "Viofo A329S",
+      "channels": 3,
+      "lowMbps": 53,
+      "highMbps": 66,
+      "codec": "H.264",
+      "variantLabel": "3CH, historical quality unrecorded",
       "configuration": "3-channel: front, interior, rear",
-      "settings": "Historical card measurement, approximately 53–66 Mbps. Video Quality was not recorded. Not a controlled channel-count comparison against the owner-confirmed Maximum 2CH setup.",
-      "source": "profiles/viofo-a329s.json video_samples[2], ffprobe", "channelSource": "Explicit recording_configuration in the sampled video record."
+      "settings": "Historical card measurement, approximately 53\u201366 Mbps. Video Quality was not recorded. Not a controlled channel-count comparison against the owner-confirmed Maximum 2CH setup.",
+      "source": "profiles/viofo-a329s.json video_samples[2], ffprobe",
+      "channelSource": "Explicit recording_configuration in the sampled video record."
     },
     {
-      "id": "viofo-t340", "key": "viofo-t340:3ch", "camera": "Viofo T340", "channels": 3,
-      "lowMbps": 53.182404, "highMbps": 53.252076, "codec": "H.264", "variantLabel": "3CH, Maximum",
+      "id": "viofo-t340",
+      "key": "viofo-t340:3ch",
+      "camera": "Viofo T340",
+      "channels": 3,
+      "lowMbps": 53.182404,
+      "highMbps": 53.252076,
+      "codec": "H.264",
+      "variantLabel": "3CH, Maximum",
       "configuration": "3-channel: front, rear, interior; telephoto disconnected",
       "settings": "Maximum. Physical-unit linkage was not retained, so this 3CH result is not assigned to unit A or B.",
-      "source": "profiles/viofo-t340.json video_samples[42], app_submission", "channelSource": "Explicit three-channel configuration with telephoto disconnected."
+      "source": "profiles/viofo-t340.json video_samples[42], app_submission",
+      "channelSource": "Explicit three-channel configuration with telephoto disconnected."
     },
     {
-      "id": "vueroid-s1-4k-infinite", "key": "vueroid-s1-4k-infinite", "camera": "Vueroid S1 4K Infinite", "channels": 3,
-      "lowMbps": 48, "highMbps": 48, "codec": "H.264", "default": true, "variantLabel": "3CH, firmware 1.6.0",
+      "id": "vueroid-s1-4k-infinite",
+      "key": "vueroid-s1-4k-infinite",
+      "camera": "Vueroid S1 4K Infinite",
+      "channels": 3,
+      "lowMbps": 48,
+      "highMbps": 48,
+      "codec": "H.264",
+      "default": true,
+      "variantLabel": "3CH, firmware 1.6.0",
       "configuration": "3-channel: front, rear, interior; firmware 1.6.0",
       "settings": "Approximately 48 Mbps in the explicitly recorded 3CH setup. Quality preset not retained. The separate archive range remains available without assigning it a specific channel count.",
-      "source": "profiles/vueroid-s1-4k-infinite.json video_samples[0], app_submission", "channelSource": "Explicit 3-channel recording_configuration."
+      "source": "profiles/vueroid-s1-4k-infinite.json video_samples[0], app_submission",
+      "channelSource": "Explicit 3-channel recording_configuration."
     },
     {
-      "id": "thinkware-u3000-pro", "key": "thinkware-u3000-pro:1ch", "camera": "Thinkware U3000 Pro", "channels": 1,
-      "lowMbps": 29.99, "highMbps": 30.11, "codec": "HEVC", "variantLabel": "1CH, firmware 1.00.06",
+      "id": "thinkware-u3000-pro",
+      "key": "thinkware-u3000-pro:1ch",
+      "camera": "Thinkware U3000 Pro",
+      "channels": 1,
+      "lowMbps": 29.99,
+      "highMbps": 30.11,
+      "codec": "HEVC",
+      "variantLabel": "1CH, firmware 1.00.06",
       "configuration": "1CH front-only; firmware 1.00.06",
       "settings": "Observed across 129 driving files. Quality preset not retained. Separate measured cohort from the front/rear archive recordings.",
-      "source": "profiles/thinkware-u3000-pro.json video_samples[0], privacy-safe card scan summary", "channelSource": "Explicit 1CH front-only recording_configuration."
+      "source": "profiles/thinkware-u3000-pro.json video_samples[0], privacy-safe card scan summary",
+      "channelSource": "Explicit 1CH front-only recording_configuration."
+    },
+    {
+      "id": "viofo-a119m-pro",
+      "key": "viofo-a119m-pro:high-fw1.2_20260817",
+      "camera": "Viofo A119M Pro (High)",
+      "channels": 1,
+      "lowMbps": 61.437535777777775,
+      "highMbps": 61.540436035658104,
+      "codec": "H.264",
+      "quality": "high",
+      "qualityLabel": "High",
+      "firmware": "1.2_20260817",
+      "variantLabel": "1CH, High, firmware 1.2_20260817",
+      "configuration": "1CH front-only; firmware 1.2_20260817",
+      "settings": "High bitrate / quality, not Maximum. Auto Event Detection is the selected parking setting; this row uses only DCIM/Movie driving samples of 180 and 63.566667 seconds. The 2.566667-second short clip is retained separately.",
+      "source": "profiles/viofo-a119m-pro.json video_samples[4], reviewed submitted card scan",
+      "channelSource": "Owner-confirmed front-only A119M Pro setup with documented single-channel hardware; original scanner channel/mode hints were unknown."
     }
   ]
 }
