@@ -147,6 +147,24 @@
       "settings": "Medium driving bitrate / quality, with Low Bitrate selected for parking. Uses only the two DCIM/Movie driving samples. Identical report resubmissions counted as one measurement set. High remains the higher-quality current-firmware comparison default.",
       "source": "profiles/viofo-a119m-pro.json video_samples[4], reviewed submitted card scan",
       "channelSource": "Owner-confirmed 1CH front-only model and reviewed card folder context; native channel/mode hints were unknown."
+    },
+    {
+      "id": "viofo-a119m-pro",
+      "key": "viofo-a119m-pro:low-fw1.2_20260817",
+      "camera": "Viofo A119M Pro",
+      "channels": 1,
+      "lowMbps": 32.766297824216345,
+      "highMbps": 32.76647248888889,
+      "codec": "H.264",
+      "quality": "low",
+      "qualityLabel": "Low",
+      "firmware": "1.2_20260817",
+      "status": "current",
+      "default": false,
+      "variantLabel": "1CH, Low, firmware 1.2_20260817",
+      "configuration": "1CH front-only; firmware 1.2_20260817",
+      "settings": "Owner-confirmed Low driving quality. Uses only the two DCIM/Movie samples; 1 fps Night Vision time-lapse parking is separate. High remains the current-firmware default.",
+      "source": "profiles/viofo-a119m-pro.json video_samples[10], reviewed Windows card scan"
     }
   ]
 }

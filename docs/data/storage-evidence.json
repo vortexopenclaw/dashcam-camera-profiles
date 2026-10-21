@@ -1,6 +1,6 @@
 {
-  "reviewedOn": "2026-10-12",
-  "policy": "Anonymous technical evidence. Each pair includes complete file size. Do not combine configurations or infer quality labels. Unknown channels are not calculator-ready. Short preallocated clips remain evidence but are excluded from sustained full-loop estimates. T330W settings labels are owner-reported time cohorts; nominal playback fps does not establish capture cadence. Source digest covers anonymous numerical samples only. T340 owner-installed and bench-tested Maximum observations and current T330W measurements are separate physical-camera/configuration cohorts, not a universal model bitrate or a Wi-Fi effect; cameraCohort preserves identity separation without publishing device identifiers.",
+  "reviewedOn": "2026-10-21",
+  "policy": "Anonymous technical evidence. Each pair includes complete file size. Do not combine configurations or infer quality labels. Unknown channels are not calculator-ready. Short preallocated clips remain evidence but are excluded from sustained full-loop estimates. T330W settings labels are owner-reported time cohorts; nominal playback fps does not establish capture cadence. Source digest covers anonymous numerical samples only. T340 owner-installed and bench-tested Maximum observations and current T330W measurements are separate physical-camera/configuration cohorts, not a universal model bitrate or a Wi-Fi effect; cameraCohort preserves identity separation without publishing device identifiers. A119M Pro 1 fps Night Vision time-lapse retains 30 fps playback rates and playback durations; exclude those pairs from real-time storage estimates unless capture cadence is explicitly normalized.",
   "pairedSamples": [
     {
       "manufacturer": "Cansonic",
@@ -6020,6 +6020,60 @@
       "durationSeconds": 60.0,
       "estimatedBitrate": 23756889,
       "sourceDigest": "8d58e0321bf31108ebf5c5bb56fda1f0894a72274810b5d7643f9af76f0bd013"
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A119M Pro",
+      "sourceDigest": "42151bbf2217d0153e2dcc6d47fae62fa969681492b0fc1365d90319f37e384f",
+      "channel": "front",
+      "mode": "continuous",
+      "settingsLabel": "low_driving",
+      "settingsProvenance": "Owner-confirmed A119M Pro 1CH; firmware 1.2_20260817 confirmed separately because form omitted it. Windows native scanner paired video-stream bitrate, full file size and playback duration. Low driving / 1 fps Night Vision time-lapse parking are distinct configurations. See docs/data/a119m-pro-low-1.2_20260817.json.",
+      "cameraCohort": "owner_reported_a119m_pro_1ch",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 746474728,
+      "durationSeconds": 180,
+      "estimatedBitrate": 32766472.48888889
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A119M Pro",
+      "sourceDigest": "42151bbf2217d0153e2dcc6d47fae62fa969681492b0fc1365d90319f37e384f",
+      "channel": "front",
+      "mode": "parking",
+      "settingsLabel": "1fps_night_vision_timelapse_parking",
+      "settingsProvenance": "Owner-confirmed A119M Pro 1CH; firmware 1.2_20260817 confirmed separately because form omitted it. Windows native scanner paired video-stream bitrate, full file size and playback duration. Low driving / 1 fps Night Vision time-lapse parking are distinct configurations. See docs/data/a119m-pro-low-1.2_20260817.json.",
+      "cameraCohort": "owner_reported_a119m_pro_1ch",
+      "width": 2560,
+      "height": 1440,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 439695744,
+      "durationSeconds": 132,
+      "estimatedBitrate": 26213128.0,
+      "captureFrameRate": 1,
+      "durationBasis": "playback",
+      "excludeFromRealtimeEstimates": true
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A119M Pro",
+      "sourceDigest": "42151bbf2217d0153e2dcc6d47fae62fa969681492b0fc1365d90319f37e384f",
+      "channel": "front",
+      "mode": "continuous",
+      "settingsLabel": "low_driving",
+      "settingsProvenance": "Owner-confirmed A119M Pro 1CH; firmware 1.2_20260817 confirmed separately because form omitted it. Windows native scanner paired video-stream bitrate, full file size and playback duration. Low driving / 1 fps Night Vision time-lapse parking are distinct configurations. See docs/data/a119m-pro-low-1.2_20260817.json.",
+      "cameraCohort": "owner_reported_a119m_pro_1ch",
+      "width": 3840,
+      "height": 2160,
+      "nominalFrameRate": 30,
+      "codec": "H.264",
+      "fileSizeBytes": 451368968,
+      "durationSeconds": 108.46666666666668,
+      "estimatedBitrate": 32766297.824216347
     }
   ],
   "summaryGroups": [
@@ -8070,6 +8124,55 @@
       "sampleDurationMax": 60.333333333333336,
       "minFileSizeBytes": 63963136,
       "maxFileSizeBytes": 63963136
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A119M Pro",
+      "sourceDigest": "42151bbf2217d0153e2dcc6d47fae62fa969681492b0fc1365d90319f37e384f",
+      "channel": "front",
+      "mode": "continuous",
+      "settingsLabel": "low_driving",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 32766297.824216347,
+      "sampleBitrateMax": 32766472.48888889,
+      "sampleDurationMin": 108.46666666666668,
+      "sampleDurationMax": 180,
+      "minFileSizeBytes": 451368968,
+      "maxFileSizeBytes": 746474728
+    },
+    {
+      "manufacturer": "VIOFO",
+      "model": "A119M Pro",
+      "sourceDigest": "42151bbf2217d0153e2dcc6d47fae62fa969681492b0fc1365d90319f37e384f",
+      "channel": "front",
+      "mode": "parking",
+      "settingsLabel": "1fps_night_vision_timelapse_parking",
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleResolutions": [
+        "2560x1440"
+      ],
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleBitrateMin": 26213128.0,
+      "sampleBitrateMax": 26213128.0,
+      "sampleDurationMin": 132,
+      "sampleDurationMax": 132,
+      "minFileSizeBytes": 439695744,
+      "maxFileSizeBytes": 439695744,
+      "captureFrameRate": 1,
+      "durationBasis": "playback",
+      "excludeFromRealtimeEstimates": true
     }
   ]
 }

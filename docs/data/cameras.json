@@ -10032,7 +10032,8 @@
       "notes": [
         "Current reviewed firmware is 1.2_20260817, High bitrate with Auto Event Detection parking. The owner confirms the older approximately 36.9 Mbps archive used older firmware and is superseded for current comparisons. Historical measurements remain available separately.",
         "The new scan did not supply original filename templates. The historical inferred filename regex is not newly validated by this report.",
-        "No parking power consumption or wakeup timing was measured in this video-only card scan."
+        "No parking power consumption or wakeup timing was measured in this video-only card scan.",
+        "Low driving and 1 fps Night Vision time-lapse parking were additionally confirmed by a Windows card scan; do not confuse the Low driving quality with Low Bitrate continuous parking or 30 fps playback with capture cadence."
       ],
       "recording": {
         "driving_folders": [
@@ -10069,7 +10070,8 @@
         ],
         "parking_modes": [
           "Auto Event Detection",
-          "Low Bitrate Recording"
+          "Low Bitrate Recording",
+          "1 fps Night Vision Time-Lapse"
         ]
       },
       "schema_version": "1.0",
@@ -10113,6 +10115,11 @@
           "kind": "source",
           "label": "Vortex Radar A119M Pro firmware 1.2_20260817 parking power tests",
           "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/parking-measurements.json"
+        },
+        {
+          "kind": "source",
+          "label": "Vortex Radar Windows card scan: 1.2_20260817 Low / 1 fps Night Vision time-lapse",
+          "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/a119m-pro-low-1.2_20260817.json"
         }
       ],
       "technical_facts": [
@@ -10147,6 +10154,10 @@
         {
           "label": "Firmware 1.2_20260817 owner parking power tests",
           "value": "At owner-confirmed actual 12.4 V supply with HK6-F cable: Auto Event Detection monitoring 252 mA / 3.12 W; Auto Event Detection recording 252 mA / 3.12 W; continuous Low Bitrate parking 256 mA / 3.17 W. Reported watts retained as supplied. Power-test video-quality setting, wakeup delay, and prebuffer duration not stated. See parking/measurements.json."
+        },
+        {
+          "label": "Firmware 1.2_20260817 Low / 1 fps Night Vision time-lapse card scan",
+          "value": "Windows scan: two 4K30 H.264 driving samples 32.766297824216345-32.76647248888889 Mbps; one 2560x1440 H.264 parking sample 26.213128 Mbps at 30 fps playback, with owner-confirmed 1 fps Night Vision capture. Firmware confirmed in follow-up, not present in this submitted form. Exact pairs in docs/data/a119m-pro-low-1.2_20260817.json."
         }
       ],
       "video_samples": [
@@ -10265,6 +10276,30 @@
           "resolution": "2560x1440",
           "settings_note": "Historical older-firmware result, superseded for current comparisons. Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 3.767750-8.388256 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
           "source": "reviewed archive metadata"
+        },
+        {
+          "bitrate": "32.766297824216345-32.76647248888889 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving",
+          "recording_configuration": "1CH front-only; firmware 1.2_20260817",
+          "resolution": "3840x2160",
+          "settings_note": "Owner-confirmed Low driving video bitrate / quality. Two DCIM/Movie samples. Firmware confirmed in follow-up, not present in the submitted form. See docs/data/a119m-pro-low-1.2_20260817.json.",
+          "source": "reviewed card scan metadata"
+        },
+        {
+          "bitrate": "26.213128 Mbps",
+          "channel": "front",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking",
+          "recording_configuration": "1CH front-only; firmware 1.2_20260817",
+          "resolution": "2560x1440",
+          "settings_note": "Owner-confirmed 1 fps Night Vision time-lapse parking. The measured 30 fps and 132-second duration are playback properties, not real-time capture. No power measurement supplied. See docs/data/a119m-pro-low-1.2_20260817.json.",
+          "source": "reviewed card scan metadata"
         }
       ]
     },

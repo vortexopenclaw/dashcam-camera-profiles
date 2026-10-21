@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "model": "Viofo A119M Pro",
+  "attribution": "Vortex Radar submitted Windows card scan",
+  "ownerAssertions": {
+    "channelCount": 1,
+    "manufacturer": "VIOFO",
+    "model": "A119M Pro",
+    "parkingMode": "time-lapse",
+    "parkingModeLabel": "Time-Lapse",
+    "quality": "low",
+    "qualityLabel": "Low",
+    "timeLapseFps": 1,
+    "firmware": "1.2_20260817"
+  },
+  "inventory": {
+    "completed": true,
+    "fileCount": 6,
+    "folders": [
+      {
+        "components": [
+          "DCIM",
+          "Movie"
+        ],
+        "extensions": [
+          {
+            "count": 3,
+            "extension": "MP4",
+            "mediaType": "video"
+          }
+        ],
+        "fileCount": 3,
+        "filenameTemplates": [
+          "unknown"
+        ],
+        "mediaCount": 3
+      },
+      {
+        "components": [
+          "DCIM",
+          "Parking"
+        ],
+        "extensions": [
+          {
+            "count": 1,
+            "extension": "MP4",
+            "mediaType": "video"
+          }
+        ],
+        "fileCount": 1,
+        "filenameTemplates": [
+          "unknown"
+        ],
+        "mediaCount": 1
+      },
+      {
+        "components": [
+          "DCIM"
+        ],
+        "extensions": [],
+        "fileCount": 0,
+        "filenameTemplates": [],
+        "mediaCount": 0
+      },
+      {
+        "components": [],
+        "extensions": [
+          {
+            "count": 2,
+            "extension": "txt",
+            "mediaType": "other"
+          }
+        ],
+        "fileCount": 2,
+        "filenameTemplates": [],
+        "mediaCount": 0
+      }
+    ],
+    "mediaCount": 4,
+    "observedLayouts": []
+  },
+  "samples": [
+    {
+      "bitrateKbps": 32766.47248888889,
+      "channel": "front",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 180,
+      "folderIndex": 0,
+      "fps": 30,
+      "height": 2160,
+      "mode": "unknown",
+      "sizeBytes": 746474728,
+      "width": 3840
+    },
+    {
+      "bitrateKbps": 26213.128,
+      "channel": "front",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 132,
+      "folderIndex": 1,
+      "fps": 30,
+      "height": 1440,
+      "mode": "unknown",
+      "sizeBytes": 439695744,
+      "width": 2560
+    },
+    {
+      "bitrateKbps": 32766.297824216348,
+      "channel": "front",
+      "codec": "h264",
+      "containerBitrateKbps": null,
+      "durationSeconds": 108.46666666666668,
+      "folderIndex": 0,
+      "fps": 30,
+      "height": 2160,
+      "mode": "unknown",
+      "sizeBytes": 451368968,
+      "width": 3840
+    }
+  ],
+  "review": {
+    "roleMapping": "Native samples report front channel; mode is unknown. Owner context and sanitized DCIM/Movie versus DCIM/Parking placement map driving and parking.",
+    "drivingSampleIndices": [
+      0,
+      2
+    ],
+    "parkingSampleIndices": [
+      1
+    ],
+    "ownerConfirmedFirmware": "1.2_20260817",
+    "firmwareProvenance": "Firmware omitted in the submitted form; owner confirmed same firmware as previous A119M Pro scans.",
+    "ownerConfirmedNightVision": true,
+    "ownerConfirmedCaptureFps": 1,
+    "notes": [
+      "Low is the owner-selected driving quality, not Low Bitrate continuous parking.",
+      "Night Vision and 1 fps capture are owner assertions. The measured 30 fps is playback encoding, not capture cadence.",
+      "Keep individual whole-file sizes, playback durations and native video-stream rates paired; do not treat time-lapse playback duration as wall-clock duration.",
+      "No parking power or wakeup measurement was supplied."
+    ]
+  },
+  "evidenceDigest": "42151bbf2217d0153e2dcc6d47fae62fa969681492b0fc1365d90319f37e384f"
+}
