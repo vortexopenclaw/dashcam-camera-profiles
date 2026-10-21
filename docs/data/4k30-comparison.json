@@ -20,6 +20,16 @@
     "source": "ffprobe"
   },
   {
+    "id": "viofo-a119m-pro",
+    "camera": "VIOFO A119M Pro",
+    "lowMbps": 61.437535777777775,
+    "highMbps": 61.540436035658104,
+    "codec": "H.264",
+    "configuration": "1CH front-only; firmware 1.2_20260817",
+    "settings": "Owner-confirmed High video bitrate / quality; Auto Event Detection selected for parking. Numeric video metadata are scanner-measured, while channel/mode mapping is reviewed owner/folder context. Comparison uses the 180-second and 63.566667-second samples. The 2.566667-second short clip is retained separately, not mixed into this range.",
+    "source": "reviewed card scan metadata"
+  },
+  {
     "id": "blackvue-dr970x-box-plus",
     "camera": "BlackVue DR970X Box Plus",
     "lowMbps": 60.0,
@@ -148,16 +158,6 @@
     "configuration": "4 cameras; unit B; firmware 1.0_260911; bench and road tested",
     "settings": "Maximum; separate physical-camera cohort",
     "source": "Reviewed bench_tested_4ch 60-second driving/protected front samples, 2026-10-12"
-  },
-  {
-    "id": "viofo-a119m-pro",
-    "camera": "VIOFO A119M Pro",
-    "lowMbps": 36.9,
-    "highMbps": 36.9,
-    "codec": "H.264",
-    "configuration": "Not recorded",
-    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 36.861888-36.864136 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
-    "source": "reviewed archive metadata"
   },
   {
     "id": "viofo-t340",

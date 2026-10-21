@@ -27,6 +27,9 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
         # Use the reviewed archive cohort once, retaining older cohorts in the
         # canonical profile rather than drawing duplicate unnamed-quality rows.
         samples = archived
+    if camera['id'] == 'viofo-a119m-pro':
+        current = next(f['value'] for f in camera['technical_facts'] if f['label'] == 'Current reviewed firmware')
+        samples = [s for s in camera['video_samples'] if s['source'] == 'reviewed card scan metadata' and (s.get('recording_configuration') or '').endswith('firmware ' + current)]
     if camera['id'] == 'viofo-a329s':
         # Prefer the confirmed Maximum 2CH scan for this comparison; retain
         # the older unknown-setting 3CH evidence in the canonical profile.

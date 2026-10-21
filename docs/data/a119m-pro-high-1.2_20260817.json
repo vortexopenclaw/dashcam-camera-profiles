@@ -179,7 +179,7 @@
     ],
     "minimumDrivingDurationSeconds": 60,
     "notes": [
-      "High is not relabeled Maximum. The previous firmware-unrecorded archive measurements remain separate.",
+      "High is not relabeled Maximum. The owner confirms the older archive used older firmware and is superseded. Firmware 1.2_20260817 is the current comparison default.",
       "Auto Event Detection is the owner-confirmed parking setting, not a setting measured from video bitrate.",
       "Parking/RO establishes a protected parking location, not a verified impact trigger.",
       "Video durations do not measure parking power draw, wakeup delay, or pre-event buffer duration."

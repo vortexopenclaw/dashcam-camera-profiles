@@ -63,9 +63,12 @@ def build(check=False):
         assert all(key in alternative for key in ['id','key','camera','channels','lowMbps','highMbps','codec','configuration','settings','source'])
         if alternative.get('default'):
             previous = next(r for r in rows if r['id'] == alternative['id'] and r['default'])
-            previous['key'] = previous['id'] + ':archive'
-            previous['default'] = False
-            previous['variantLabel'] = 'Archive measurements'
+            if alternative.get('replacesBase'):
+                rows.remove(previous)
+            else:
+                previous['key'] = previous['id'] + ':archive'
+                previous['default'] = False
+                previous['variantLabel'] = 'Archive measurements'
         rows.append(dict(alternative, camera=clean(alternative['camera']), default=alternative.get('default', False)))
     for alternative in reviewed.get('alternatives', []):
         base = next(r for r in rows if r['id'] == alternative['id'] and r['default'])

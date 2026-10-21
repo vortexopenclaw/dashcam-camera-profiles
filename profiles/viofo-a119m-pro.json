@@ -32,7 +32,7 @@
   "manufacturer": "VIOFO",
   "model": "A119M Pro",
   "notes": [
-    "Firmware 1.2_20260817 High / Auto Event Detection submission is separate from the earlier approximately 36.9 Mbps driving archive, whose firmware and named quality were not recorded.",
+    "Current reviewed firmware is 1.2_20260817, High bitrate with Auto Event Detection parking. The owner confirms the older approximately 36.9 Mbps archive used older firmware and is superseded for current comparisons. Historical measurements remain available separately.",
     "The new scan did not supply original filename templates. The historical inferred filename regex is not newly validated by this report.",
     "No parking power consumption or wakeup timing was measured in this video-only card scan."
   ],
@@ -122,51 +122,13 @@
     {
       "label": "Firmware 1.2_20260817 High / Auto Event Detection card scan",
       "value": "Owner-confirmed 1CH front-only. 4K30 H.264 driving video 61.437536-61.540436 Mbps from two samples of at least 60 seconds. Parking: 2560x1440, 30 fps, H.264, approximately 8.4 Mbps, 45-second clips. Detailed individual measurements retained in docs/data/a119m-pro-high-1.2_20260817.json."
+    },
+    {
+      "label": "Current reviewed firmware",
+      "value": "1.2_20260817"
     }
   ],
   "video_samples": [
-    {
-      "bitrate": "~36.9 Mbps",
-      "channel": "F (front)",
-      "codec": "H.264",
-      "container": "MP4",
-      "fps": "30",
-      "mode": "driving",
-      "resolution": "3840x2160",
-      "source": "ffprobe"
-    },
-    {
-      "bitrate": "~3.8-8.4 Mbps",
-      "channel": "F (front)",
-      "codec": "H.264",
-      "container": "MP4",
-      "fps": "30",
-      "mode": "parking",
-      "resolution": "2560x1440",
-      "source": "ffprobe"
-    },
-    {
-      "channel": "front",
-      "mode": "driving",
-      "codec": "H.264",
-      "resolution": "3840x2160",
-      "fps": "30",
-      "bitrate": "~36.9 Mbps",
-      "container": "MP4",
-      "source": "reviewed archive metadata",
-      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 36.861888-36.864136 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
-    },
-    {
-      "channel": "front",
-      "mode": "parking",
-      "codec": "H.264",
-      "resolution": "2560x1440",
-      "fps": "30",
-      "bitrate": "3.8-8.4 Mbps",
-      "container": "MP4",
-      "source": "reviewed archive metadata",
-      "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 3.767750-8.388256 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
-    },
     {
       "channel": "front",
       "codec": "H.264",
@@ -214,6 +176,50 @@
       "resolution": "3840x2160",
       "bitrate": "52.228631688312 Mbps",
       "settings_note": "Owner-confirmed High video bitrate / quality; Auto Event Detection selected for parking. Numeric video metadata are scanner-measured, while channel/mode mapping is reviewed owner/folder context. Short 2.566667-second sample 0 in docs/data/a119m-pro-high-1.2_20260817.json, excluded from the comparison range."
+    },
+    {
+      "bitrate": "~36.9 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving",
+      "resolution": "3840x2160",
+      "source": "ffprobe",
+      "settings_note": "Historical older-firmware result, superseded for current comparisons. Capture firmware and named quality were not retained."
+    },
+    {
+      "bitrate": "~3.8-8.4 Mbps",
+      "channel": "F (front)",
+      "codec": "H.264",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "parking",
+      "resolution": "2560x1440",
+      "source": "ffprobe",
+      "settings_note": "Historical older-firmware result, superseded for current comparisons. Capture firmware and named quality were not retained."
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.861888-36.864136 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Historical older-firmware result, superseded for current comparisons. Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 36.861888-36.864136 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
+    },
+    {
+      "channel": "front",
+      "mode": "parking",
+      "codec": "H.264",
+      "resolution": "2560x1440",
+      "fps": "30",
+      "bitrate": "3.8-8.4 Mbps",
+      "container": "MP4",
+      "source": "reviewed archive metadata",
+      "settings_note": "Historical older-firmware result, superseded for current comparisons. Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 3.767750-8.388256 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json."
     }
   ]
 }

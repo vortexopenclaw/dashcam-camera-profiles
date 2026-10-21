@@ -31,7 +31,10 @@ with sync_playwright() as p:
     variants=page.request.get(base+'data/bitrate-variants.json').json()
     assert all(row['id']!='rove-r2-4k-pro' for row in variants)
     assert len({row['key'] for row in variants})==len(variants)
-    assert page.locator('#subtitle').input_value()=='Front Camera Bitrates at Maximum Quality'
+    assert page.locator('#subtitle').input_value()=='Front Camera Bitrates at Selected Quality Settings'
+    current=next(row for row in variants if row['key']=='viofo-a119m-pro')
+    assert current['default'] and current['firmware']=='1.2_20260817' and current['highMbps']>60
+    assert page.locator('#chart g[data-variant="viofo-a119m-pro:archive"]').count()==0
     page.locator('#search').fill('A329S');assert page.locator('.camera-choice:visible').count()==1
     page.locator('#search').fill('')
     page.locator('#clear').click();page.locator('input[data-model="viofo-t340"]').check();assert page.locator('#chart g[data-variant]').count()==1

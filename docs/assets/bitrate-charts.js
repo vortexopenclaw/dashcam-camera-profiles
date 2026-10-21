@@ -7,6 +7,10 @@
   const channels = row => `${row.channels}CH`;
   const codecKey = row => /265|hevc/i.test(row.codec) ? 'h265' : /264|avc/i.test(row.codec) ? 'h264' : null;
   const codecLabel = row => codecKey(row)==='h265' ? 'H.265' : 'H.264';
+  const detailLabel = row => {
+    const quality=row.status==='superseded' ? 'Historical firmware' : row.qualityLabel ? `${row.qualityLabel} Bitrate` : '';
+    return [quality,codecLabel(row)].filter(Boolean).join(' · ');
+  };
   const matchesCodec = row => $('codec').value==='all' || codecKey(row)===$('codec').value;
   const defaults = ['viofo-a329s','blackvue-elite-10','nextbase-622gw','viofo-t340','vueroid-s1-4k-infinite','viofo-a119m-pro','vantrue-e1-pro-s','viofo-a229-pro','vantrue-n4-pro-s','thinkware-arc-800','vantrue-e1-pro','thinkware-u3000-pro'];
   const measure = document.createElement('canvas').getContext('2d');
@@ -39,12 +43,17 @@
       if (!Number.isInteger(row.channels) || row.channels<1 || row.channels>4) throw new Error(`Invalid tested channel count for ${row.camera || row.key}.`);
     }
     const known = new Set(rows.map(r => r.key));
+    const aliases=new Map();
+    for(const row of rows) for(const alias of row.aliases || []) {
+      if(known.has(alias) || aliases.has(alias)) throw new Error('Ambiguous camera link alias.');
+      aliases.set(alias,row.key);
+    }
     const models = [...new Set(rows.map(r=>r.id))].map(id => {
       const variants=rows.filter(r=>r.id===id), preferred=variants.find(r=>r.default) || variants[0];
       return {id,camera:preferred.camera,variants,preferred};
     }).sort((a,b)=>a.camera.localeCompare(b.camera,undefined,{numeric:true}));
     const params = new URLSearchParams(location.search);
-    let selected = new Set(params.has('selection') ? params.getAll('camera').filter(k => known.has(k)) : defaults.filter(k=>known.has(k)));
+    let selected = new Set(params.has('selection') ? params.getAll('camera').map(k=>aliases.get(k) || k).filter(k => known.has(k)) : defaults.filter(k=>known.has(k)));
     $('format').value = params.get('format')==='auto' ? 'auto' : 'video';
     $('codec').value = ['h264','h265'].includes(params.get('codec')) ? params.get('codec') : 'all';
     $('sort').value = ['high','low','name'].includes(params.get('sort')) ? params.get('sort') : 'high';
@@ -111,7 +120,7 @@
       }
       const picked=ordered();
       const automaticSubtitles=new Set([textControls.subtitle,'Front Camera Bitrates, Maximum Video Quality','Front Camera Bitrates at Selected Quality Settings']);
-      if(automaticSubtitles.has($('subtitle').value)) $('subtitle').value=picked.some(row=>row.quality && row.quality!=='maximum') ? 'Front Camera Bitrates at Selected Quality Settings' : textControls.subtitle;
+      if(automaticSubtitles.has($('subtitle').value)) $('subtitle').value=picked.some(row=>row.status==='superseded' || (row.quality && row.quality!=='maximum')) ? 'Front Camera Bitrates at Selected Quality Settings' : textControls.subtitle;
       const state=new URLSearchParams({selection:'1',sort:$('sort').value,format:$('format').value,highlight:$('highlight').value,codec:$('codec').value});
       for (const id of Object.keys(textControls)) state.set(id,$(id).value);
       for (const row of ordered(true)) state.append('camera',row.key);
@@ -124,12 +133,14 @@
       $('measurements').innerHTML=picked.map(row=>`<article><strong>${escape(row.camera)} · ${escape(channels(row))}</strong><br>${escape(codecLabel(row))} · ${escape(row.configuration)}${row.codecSource ? '<br>Codec evidence: '+escape(row.codecSource) : ''}<br>${escape(row.settings)}<br>Channel evidence: ${escape(row.channelSource || 'The tested channel count was not retained.')}<br>Source: ${escape(row.source)}<br>Video bitrate: ${rate(row)} Mbps</article>`).join('');
       if (!picked.length) {svgText='';$('chart').textContent=selected.size ? 'No selected cameras match this codec.' : 'No cameras selected.';return;}
       const video=$('format').value==='video';
-      const labels=picked.map(row=>`${row.camera} · ${channels(row)} · ${codecLabel(row)}`);
-      const left=Math.ceil(Math.min(330,Math.max(220,...labels.map(label=>textWidth(label,16,true)+64))));
+      const labels=picked.map(row=>`${row.camera} · ${channels(row)}`);
+      const details=picked.map(detailLabel);
+      const left=Math.ceil(Math.min(330,Math.max(220,...labels.map(label=>textWidth(label,16,true)+64),...details.map(label=>textWidth(label,13)+64))));
       const right=Math.ceil(Math.max(110,...picked.map(row=>textWidth(`${rate(row)} Mbps`,16,true)))+35);
       const width=1200;
       const lines=labels.map(label=>wrap(label,left-56,16,true));
-      const heights=lines.map(label=>Math.max(58,label.length*20+18));
+      const detailLines=details.map(label=>wrap(label,left-56,13));
+      const heights=lines.map((label,i)=>Math.max(62,label.length*20+detailLines[i].length*18+16));
       const parts=[];
       const text=(x,y,value,attrs='')=>parts.push(`<text x="${x}" y="${y}" ${attrs}>${escape(value)}</text>`);
       let y=45;
@@ -139,7 +150,9 @@
       const subtitleLines=wrap($('subtitle').value,width-72,16);
       subtitleLines.forEach((line,i)=>text(width/2,y+8+i*22,line,'text-anchor="middle" data-role="chart-heading" font-size="16" fill="#516174"'));
       y+=Math.max(0,subtitleLines.length-1)*22;
-      const top=y+50,bottom=top+heights.reduce((sum,h)=>sum+h,0);
+      const top=y+50,rowsHeight=heights.reduce((sum,h)=>sum+h,0);
+      const plotHeight=Math.max(rowsHeight,textWidth($('yLabel').value,15)+24);
+      const bottom=top+plotHeight;
       const maximum=Math.max(...picked.map(row=>row.highMbps));
       const rawStep=maximum>0 ? maximum/5 : .2,magnitude=10**Math.floor(Math.log10(rawStep));
       const step=[1,2,2.5,5,10].find(n=>n*magnitude>=rawStep)*magnitude;
@@ -150,12 +163,14 @@
         parts.push(`<line x1="${x(value)}" x2="${x(value)}" y1="${top-12}" y2="${bottom}" stroke="${tick?'#e3e8ee':'#7e8996'}" stroke-width="${tick?1:1.5}"/>`);
         text(x(value),bottom+26,String(Number(value.toPrecision(3))),'text-anchor="middle" font-size="13" fill="#627084"');
       }
-      let rowTop=top;
+      let rowTop=top+(plotHeight-rowsHeight)/2;
       picked.forEach((row,i)=>{
         const cy=rowTop+heights[i]/2,highlight=row.id===$('highlight').value;
         rowTop+=heights[i];
         parts.push(`<g data-variant="${escape(row.key)}" data-highlight="${highlight}">`);
-        lines[i].forEach((line,j)=>text(left-20,cy-lines[i].length*10+15+j*20,line,`text-anchor="end" font-size="16" font-weight="${highlight?700:600}" fill="${highlight?'#ac520e':'#23354a'}"`));
+        const labelTop=cy-(lines[i].length*20+detailLines[i].length*18)/2+15;
+        lines[i].forEach((line,j)=>text(left-20,labelTop+j*20,line,`data-kind="model-label" text-anchor="end" font-size="16" font-weight="${highlight?700:600}" fill="${highlight?'#ac520e':'#23354a'}"`));
+        detailLines[i].forEach((line,j)=>text(left-20,labelTop+lines[i].length*20+j*18,line,`data-kind="configuration-label" text-anchor="end" font-size="13" fill="${highlight?'#965120':'#627084'}"`));
         const color=highlight?'#ef8a2c':'#559bd4';
         if (row.highMbps>0) parts.push(`<rect data-kind="bar" x="${left}" y="${cy-13}" width="${x(row.highMbps)-left}" height="26" fill="${color}"/>`);
         else parts.push(`<circle cx="${left}" cy="${cy}" r="3" fill="${color}"/>`);
@@ -168,8 +183,7 @@
       const axisLines=wrap($('xLabel').value,width-left-right,15);
       axisLines.forEach((line,i)=>text((left+width-right)/2,bottom+54+i*19,line,'text-anchor="middle" data-role="chart-axis" font-size="15" fill="#516174"'));
       const center=(top+bottom)/2;
-      const yLines=wrap($('yLabel').value,bottom-top,15);
-      yLines.forEach((line,i)=>text(24+i*18,center,line,`text-anchor="middle" data-role="chart-y-axis" font-size="15" fill="#516174" transform="rotate(-90 ${24+i*18} ${center})"`));
+      if($('yLabel').value) text(24,center,$('yLabel').value,`text-anchor="middle" data-role="chart-y-axis" font-size="15" fill="#516174" transform="rotate(-90 24 ${center})"`);
       y=bottom+80+Math.max(0,axisLines.length-1)*19;
       parts.push(`<line x1="36" x2="${width-36}" y1="${y-8}" y2="${y-8}" stroke="#dae2eb"/>`);
       if (picked.some(row=>row.highMbps>row.lowMbps)) {y+=19;text(36,y,'Bars show measured maxima. Markers show observed ranges.','font-size="13" fill="#536174"');y+=5;}

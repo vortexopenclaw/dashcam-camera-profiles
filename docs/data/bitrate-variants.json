@@ -280,23 +280,6 @@
     ]
   },
   {
-    "id": "viofo-a119m-pro",
-    "camera": "Viofo A119M Pro",
-    "lowMbps": 36.9,
-    "highMbps": 36.9,
-    "codec": "H.264",
-    "configuration": "1CH: front",
-    "settings": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 36.861888-36.864136 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
-    "source": "reviewed archive metadata",
-    "channels": 1,
-    "key": "viofo-a119m-pro",
-    "default": true,
-    "channelSource": "Original front recordings and documented front-only single-channel layout.",
-    "channelRoles": [
-      "front"
-    ]
-  },
-  {
     "id": "vantrue-e1-pro-s",
     "camera": "Vantrue E1 Pro S (Prototype)",
     "lowMbps": 36.04,
@@ -787,8 +770,8 @@
   },
   {
     "id": "viofo-a119m-pro",
-    "key": "viofo-a119m-pro:high-fw1.2_20260817",
-    "camera": "Viofo A119M Pro (High)",
+    "key": "viofo-a119m-pro",
+    "camera": "Viofo A119M Pro",
     "channels": 1,
     "lowMbps": 61.437535777777775,
     "highMbps": 61.540436035658104,
@@ -799,8 +782,32 @@
     "variantLabel": "1CH, High, firmware 1.2_20260817",
     "configuration": "1CH front-only; firmware 1.2_20260817",
     "settings": "High bitrate / quality, not Maximum. Auto Event Detection is the selected parking setting; this row uses only DCIM/Movie driving samples of 180 and 63.566667 seconds. The 2.566667-second short clip is retained separately.",
-    "source": "profiles/viofo-a119m-pro.json video_samples[4], reviewed submitted card scan",
+    "source": "profiles/viofo-a119m-pro.json video_samples[0], reviewed submitted card scan",
     "channelSource": "Owner-confirmed 1CH A119M Pro card scan, firmware 1.2_20260817. Front role is reviewed single-channel model context; driving category is reviewed DCIM/Movie context, not native scanner recognition. See docs/data/a119m-pro-high-1.2_20260817.json.",
+    "default": true,
+    "replacesBase": true,
+    "status": "current",
+    "aliases": [
+      "viofo-a119m-pro:high-fw1.2_20260817"
+    ],
+    "channelRoles": [
+      "front"
+    ]
+  },
+  {
+    "id": "viofo-a119m-pro",
+    "key": "viofo-a119m-pro:archive",
+    "camera": "Viofo A119M Pro",
+    "channels": 1,
+    "lowMbps": 36.861888,
+    "highMbps": 36.864136,
+    "codec": "H.264",
+    "status": "superseded",
+    "variantLabel": "Historical firmware (superseded)",
+    "configuration": "1CH front-only; older firmware version not retained",
+    "settings": "Historical older-firmware measurements. Superseded for current comparisons by owner-confirmed firmware 1.2_20260817. Exact older firmware and named quality not retained.",
+    "source": "profiles/viofo-a119m-pro.json video_samples[6], reviewed archive metadata",
+    "channelSource": "Original front recordings and documented front-only single-channel layout.",
     "default": false,
     "channelRoles": [
       "front"
