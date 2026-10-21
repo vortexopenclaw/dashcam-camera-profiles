@@ -6,9 +6,9 @@
   <meta name="description" content="Build and export direct comparisons of sourced dashcam parking-mode measurements.">
   <title>Parking comparison chart builder | Dashcam Camera Profiles</title>
   <link rel="stylesheet" href="assets/styles.css?v=20261008">
-  <link rel="stylesheet" href="assets/parking-charts.css?v=3-readable-tests">
+  <link rel="stylesheet" href="assets/parking-charts.css?v=4-mode-labels">
   <script src="assets/parking.js?v=6-brand-styling" defer></script>
-  <script src="assets/parking-charts.js?v=14-export-names" defer></script>
+  <script src="assets/parking-charts.js?v=15-metric-copy" defer></script>
 </head>
 <body class="charts-page">
   <a class="skip-link" href="#chart-settings">Skip to chart settings</a>
@@ -26,13 +26,14 @@
         <label>X-axis label<input id="chart-xLabel" type="text" maxlength="120"></label>
         <label>Y-axis label<input id="chart-yLabel" type="text" maxlength="120"></label>
         <label>Image layout<select id="chart-format"><option value="video">YouTube · 16:9</option><option value="auto">Auto height</option></select></label>
-        <label>Metric<select id="chart-metric"><option value="current">Measured current (mA)</option><option value="watts">Measured power (W)</option><option value="delay">Recording delay after impact detection (s)</option><option value="wake">Impact to first frame (s)</option></select></label>
+        <label>Metric<select id="chart-metric"><option value="current">Measured current (mA)</option><option value="watts">Measured power (W)</option><option value="delay">Wakeup time to start recording (s)</option><option value="wake">Impact to first frame (s)</option></select></label>
         <label>Sort<select id="chart-sort"><option value="desc">High to low</option><option value="asc">Low to high</option></select></label>
         <label>Highlight a model (optional)<select id="chart-highlight"><option value="">No highlight</option></select></label>
       </div>
-      <label class="chart-check"><input id="chart-details" type="checkbox"> Include detailed source notes in the chart</label>
+      <label class="chart-check"><input id="chart-details" type="checkbox"><span id="chart-details-label">Include detailed source notes in the chart</span></label>
+      <label class="chart-check"><input id="chart-mode-labels" type="checkbox"><span>Show parking modes below model names</span></label>
       <p class="charts-muted">Ranges use their upper endpoint for sorting. No averaging across cameras, firmware, or settings.</p>
-      <div class="charts-actions"><button id="preset-current" type="button">Reset to low-power current · 7 cameras</button><button id="preset-delay" type="button">Recording delay · 7 tests</button><button id="chart-clear" type="button">Clear selection</button></div>
+      <div class="charts-actions"><button id="preset-current" type="button">Reset to low-power current · 7 cameras</button><button id="preset-delay" type="button">Wakeup times · 7 tests</button><button id="chart-clear" type="button">Clear selection</button></div>
     </section>
     <section class="charts-panel chart-output" aria-labelledby="output-title">
       <div class="chart-output-heading"><h2 id="output-title">Chart preview</h2><span id="chart-count"></span></div>

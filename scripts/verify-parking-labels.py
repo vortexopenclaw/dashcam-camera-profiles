@@ -14,7 +14,7 @@ with sync_playwright() as p:
     assert page.locator('#chart-format').input_value()=='video'
     assert page.locator('#chart-canvas svg').get_attribute('viewBox')=='0 0 1920 1080'
     assert float(page.locator('#chart-canvas g[data-measurement] rect').first.get_attribute('x'))<=330
-    assert page.locator('#chart-subtitle').input_value()=='Power Draw at Idle, 12.4 V (Lower is Better)'
+    assert page.locator('#chart-subtitle').input_value()=='Current Draw While Idle, 12.4 V (Lower is Better)'
     assert page.locator('#chart-xLabel').input_value()=='Power Draw (mA)'
     assert page.locator('#chart-yLabel').input_value()=='Dash Cameras'
     assert 'Blackvue Elite 8' in page.locator('#chart-canvas').text_content()

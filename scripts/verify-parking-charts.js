@@ -67,7 +67,7 @@ for (const file of ['docs/parking-charts.html', 'docs/assets/parking-charts.js',
 assert.equal(chart.preset('current').highlight, '');
 assert.equal(chart.exportFilename({family:'low-power',metric:'watts',format:'video'},'png'),'low-power-parking-power-draw-16x9.png');
 assert.equal(chart.exportFilename({family:'buffered-motion',metric:'current',format:'auto'},'svg'),'buffered-motion-detection-parking-current-draw.svg');
-assert.equal(chart.exportFilename({family:'low-power',metric:'delay',format:'video'},'csv'),'low-power-parking-recording-delay.csv');
+assert.equal(chart.exportFilename({family:'low-power',metric:'delay',format:'video'},'csv'),'low-power-parking-wakeup-times.csv');
 for (const group of Object.keys(chart.families).filter(group => group !== 'all')) {
   assert.equal(chart.matchesFamily({category:'unknown',mode_name:'Energy Saving M&I AED',prebuffer_motion_s:8},group),false);
 }
@@ -162,11 +162,11 @@ with sync_playwright() as p:
     assert abs(w36/w1-36)<1e-8
     assert page.locator('#chart-canvas [data-highlight=true]').count()==0
     assert row(page,'vortex-sheet-row-6').locator('rect').get_attribute('fill')=='#559bd4'
-    assert 'Power Draw at Idle' in page.locator('#chart-canvas svg > g').text_content()
+    assert 'Draw While Idle' in page.locator('#chart-canvas svg > g').text_content()
     assert 'Orange highlights' not in page.locator('#chart-canvas svg > g').text_content()
-    assert row(page,'vortex-sheet-row-6').locator('text').count()==2
+    assert 'Low Power Impact Detection' in row(page,'vortex-sheet-row-6').text_content()
     assert row(page,'vortex-sheet-row-12').count()==0
-    assert 'Energy saving' not in row(page,'vortex-sheet-row-11').text_content()
+    assert 'Energy Saving Mode' in row(page,'vortex-sheet-row-11').text_content()
     fit_svg(page)
     for width in [320,375,768,1440]:
         page.set_viewport_size({'width':width,'height':1000})
@@ -392,7 +392,7 @@ with sync_playwright() as p:
     assert set(urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query)['id'])==set(legacy)
     assert page.locator('#chart-canvas [data-measurement]').count()==2
     assert 'Radar impact detection' in row(page,'vortex-sheet-row-12').text_content()
-    assert 'Energy saving' in row(page,'vortex-sheet-row-11').text_content()
+    assert 'Energy Saving Mode' in row(page,'vortex-sheet-row-11').text_content()
     page.reload();ready(page)
     assert page.locator('#chart-canvas [data-measurement]').count()==2
     u=page.locator('.chart-model-choice[data-model="Thinkware U3000"]')
@@ -424,7 +424,7 @@ with sync_playwright() as p:
     plotted=page.locator('#chart-canvas [data-measurement]').evaluate_all('es=>es.map(e=>e.dataset.measurement)')
     expected=[id for id in matching if isinstance(byid[id].get('power_w'),(int,float)) or byid[id].get('power_w_min') is not None]
     assert set(plotted)==set(expected)
-    assert 'Power Draw at Idle' in page.locator('#chart-canvas svg > g').text_content()
+    assert 'Draw While Idle' in page.locator('#chart-canvas svg > g').text_content()
     fit_svg(page)
     download(page,'#chart-svg','buffered-motion.svg');download(page,'#chart-png','buffered-motion-2x.png')
     download(page,'#chart-csv','buffered-motion.csv')

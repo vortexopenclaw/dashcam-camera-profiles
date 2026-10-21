@@ -21,9 +21,11 @@
     hybrid: 'Hybrid parking', all: 'Selected parking modes'
   };
   const modeTitles = {'low-power':'Low Power Parking Mode',buffered:'Buffered Motion & Impact Detection Parking Mode','buffered-motion':'Buffered Motion Detection Parking Mode','buffered-impact':'Buffered Impact Detection Parking Mode',unbuffered:'Non-Buffered Parking Mode',radar:'Radar Parking Mode','time-lapse':'Time-Lapse Parking Mode','low-bitrate':'Low Bitrate Parking Mode',hybrid:'Hybrid Parking Mode',all:'Parking Mode'};
-  const automaticTitle = state => `${modeTitles[state.family] || modeTitles.all} ${{current:'Current Draw',watts:'Power Draw',delay:'Recording Delay',wake:'Wakeup Time'}[state.metric]} Comparison`;
-  const isAutomaticTitle = title => legacyTitles.has(title) || Object.values(titles).includes(title) || Object.keys(modeTitles).some(family=>Object.keys(metrics).some(metric=>automaticTitle({family,metric})===title));
-  const normalizeTitle = state => {if (!state.title || isAutomaticTitle(state.title)) state.title=automaticTitle(state);return state;};
+  const automaticTitle = state => `${modeTitles[state.family] || modeTitles.all} ${{current:'Current Draw Comparison',watts:'Power Draw Comparison',delay:'Wakeup Times',wake:'Time to First Recorded Frame'}[state.metric]}`;
+  const isAutomaticTitle = title => legacyTitles.has(title) || Object.values(titles).includes(title) || Object.keys(modeTitles).some(family=>Object.keys(metrics).some(metric=>automaticTitle({family,metric})===title || `${modeTitles[family]} ${{current:'Current Draw',watts:'Power Draw',delay:'Recording Delay',wake:'Wakeup Time'}[metric]} Comparison`===title));
+  const isAutomaticSubtitle = value => value==null || /^(?:Power|Current) Draw (?:at|While) (?:Idle|Recording)(?:, [0-9.]+ V)? \(Lower is Better\)$/i.test(value) || ['How Quick the Dashcam Starts Recording After an Impact (Lower is Better)','Wakeup Times to Start Recording After an Impact (Lower is Better)','Time from Impact to the First Recorded Frame (Lower is Better)',...Object.values(families).map(family=>`${/parking$/.test(family) ? family+' mode' : family} (Lower is Better)`)].includes(value);
+  const normalizeTitle = state => {if (state.title==null || isAutomaticTitle(state.title)) state.title=automaticTitle(state);if(isAutomaticSubtitle(state.subtitle))state.subtitle=null;return state;};
+  const showModeLabels = state => state.modeLabels ?? (state.family==='low-power' && !state.details);
   // Categories establish behavior. Names identify triggers only, never buffering.
   // The canonical schema has no trigger flags. Trigger-specific durations are
   // stronger evidence than the documented MD, M&I and collision shorthand.
@@ -50,13 +52,14 @@
   }
   const defaultCondition = family => family === 'time-lapse' ? 'time-lapse' : family === 'low-bitrate' ? 'continuous' : 'monitoring';
   const steadyState = (row,family) => family==='hybrid' ? ['monitoring','continuous','time-lapse'].includes(row.state) : row.state===defaultCondition(family);
-  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', format: 'video', highlight: '', missingModels: [], details: false, subtitle: null, xLabel: null, yLabel: null, title: automaticTitle({family:'low-power',metric}), group: 'low-power', family: 'low-power', condition: 'monitoring' });
-  const axisText = state => state.xLabel ?? ({current:'Power Draw (mA)',watts:'Power Draw (Watts)',delay:'Recording Delay (Seconds)',wake:'Impact to First Recorded Frame (Seconds)'}[state.metric]);
+  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', format: 'video', highlight: '', modeLabels: null, missingModels: [], details: false, subtitle: null, xLabel: null, yLabel: null, title: automaticTitle({family:'low-power',metric}), group: 'low-power', family: 'low-power', condition: 'monitoring' });
+  const axisText = state => state.xLabel ?? ({current:'Power Draw (mA)',watts:'Power Draw (Watts)',delay:'Time to Start Recording (Seconds)',wake:'Impact to First Recorded Frame (Seconds)'}[state.metric]);
   const subtitleText = (state, voltage = null) => {
-    if (state.subtitle != null) return state.subtitle;
-    if (['current','watts'].includes(state.metric)) return `Power Draw at Idle${state.metric==='current' && voltage ? ', '+voltage+' V' : ''} (Lower is Better)`;
-    const family = families[state.family] || families.all;
-    return `${/parking$/.test(family) ? family+' mode' : family} (Lower is Better)`;
+    if (state.subtitle != null && !isAutomaticSubtitle(state.subtitle)) return state.subtitle;
+    if (state.metric==='delay') return 'How Quick the Dashcam Starts Recording After an Impact (Lower is Better)';
+    if (state.metric==='wake') return 'Time from Impact to the First Recorded Frame (Lower is Better)';
+    const activity=['time-lapse','low-bitrate'].includes(state.family) ? 'Recording' : 'Idle';
+    return `${state.metric==='current' ? 'Current' : 'Power'} Draw While ${activity}${state.metric==='current' && voltage ? ', '+voltage+' V' : ''} (Lower is Better)`;
   };
   // Keep an existing compatible test. Otherwise use the highest documented
   // channel count, then established status, source date and stable ID. Power
@@ -93,6 +96,7 @@
       sort: p.get('sort') === 'asc' ? 'asc' : 'desc', highlight: p.has('highlight') ? (models.has(highlight) ? highlight : '') : fallback.highlight,
       missingModels: [...new Set(p.getAll('missingModel').map(name=>name.replace(/^BlackVue /,'Blackvue ').replace(/^VIOFO /,'Viofo ')).filter(name=>models.has(name)))],
       format: p.get('format')==='auto' ? 'auto' : 'video',
+      modeLabels:p.has('modeLabels') ? p.get('modeLabels')==='1' : null,
       xLabel: p.has('xLabel') ? p.get('xLabel').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,120) : null,
       yLabel: p.has('yLabel') ? p.get('yLabel').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,120) : null,
       subtitle: p.has('subtitle') ? p.get('subtitle').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,180) : null,
@@ -101,6 +105,7 @@
   function query(state) {
     const p = new URLSearchParams({ selection: '1', group: state.group || 'all', family: state.family || 'all', condition: state.condition ?? 'monitoring', metric: state.metric, sort: state.sort, highlight: state.highlight, title: state.title, details: state.details ? '1' : '0' });
     p.set('format',state.format || 'video');
+    if(state.modeLabels!=null)p.set('modeLabels',state.modeLabels ? '1' : '0');
     for (const name of state.missingModels || []) p.append('missingModel',name);
     for (const key of ['subtitle','xLabel','yLabel']) if (state[key] != null) p.set(key,state[key]);
     state.ids.forEach(id => p.append('id', id));
@@ -139,14 +144,30 @@
       ['Tested date', row.date], ['Power adapter', row.power_path], ['LTE', row.connectivity]
     ].filter(([,value]) => value && !/^(unknown|not reported|none)$/i.test(String(value)));
   }
-  function differences(items) {
-    const fields = items.map(row => new Map(testFields(row)));
+  function parkingMode(row) {
+    const label=UI.modeLabel(row),raw=row.mode_name || '',notes=row.notes || '';
+    if (/^Vantrue /i.test(UI.modelLabel(row)) && /collision detection/i.test(label)) {
+      const setting=/Power Saving|\bPS\b/i.test(raw) || /^Power Saving Mode\b/i.test(notes) ? 'Power Saving Mode' : /Quick Start|\bQS\b/i.test(raw) || /^Quick Start Mode\b/i.test(notes) ? 'Quick Start Mode' : '';
+      return 'Collision Detection'+(setting ? ', '+setting : '');
+    }
+    if (/^low[- ]power impact detection$/i.test(label)) return 'Low Power Impact Detection';
+    if (/^energy saving$/i.test(label)) return 'Energy Saving Mode';
+    if (/^extreme low power$/i.test(label)) return 'Extreme Low Power Mode';
+    if (/^power saving$/i.test(label)) return 'Power Saving Mode';
+    return label;
+  }
+  function chartFields(row,metric) {
+    const timing=['delay','wake'].includes(metric);
+    return testFields(row).filter(([key])=>!(timing && key==='Test voltage')).map(([key,value])=>[key,key==='Mode' ? parkingMode(row) : value]);
+  }
+  function differences(items,metric=null) {
+    const fields = items.map(row => new Map(metric ? chartFields(row,metric) : testFields(row)));
     return ['Mode','Firmware','Tested by','Interior IR','Interior camera','Lighting','Test window','Test voltage','Tested date','Power adapter','LTE','Active cameras','Settings'].filter(key => new Set(fields.map(f => f.get(key)).filter(Boolean)).size > 1);
   }
   function variantLabel(row, items, metric, includeMode = true) {
-    const varying = differences(items);
+    const varying = differences(items,metric);
     const describe = candidate => {
-      const parts = testFields(candidate).filter(([key]) => (includeMode && key === 'Mode') || varying.includes(key) && key !== 'Mode').map(([key,value]) => key === 'Firmware' ? `FW ${value}` : key === 'Interior IR' ? `Interior IR ${value}` : key === 'Interior camera' ? `Interior camera ${value}` : value);
+      const parts = chartFields(candidate,metric).filter(([key]) => (includeMode && key === 'Mode') || varying.includes(key) && key !== 'Mode').map(([key,value]) => key === 'Firmware' ? `FW ${value}` : key === 'Interior IR' ? `Interior IR ${value}` : key === 'Interior camera' ? `Interior camera ${value}` : value);
       const reading = interval(candidate, metric);
       if (includeMode && reading) parts.push(valueLabel(candidate, reading, metric));
       return parts.join(' · ');
@@ -162,10 +183,10 @@
   }
   function exportFilename(state,extension) {
     const modes={'low-power':'low-power-parking',buffered:'buffered-motion-impact-parking','buffered-motion':'buffered-motion-detection-parking','buffered-impact':'buffered-impact-detection-parking',unbuffered:'non-buffered-parking',radar:'radar-parking','time-lapse':'time-lapse-parking','low-bitrate':'low-bitrate-parking',hybrid:'hybrid-parking',all:'mixed-parking-modes'};
-    const quantities={current:'current-draw',watts:'power-draw',delay:'recording-delay',wake:'impact-to-first-frame'};
+    const quantities={current:'current-draw',watts:'power-draw',delay:'wakeup-times',wake:'impact-to-first-frame'};
     return `${modes[state.family] || modes.all}-${quantities[state.metric] || 'comparison'}${extension!=='csv' && state.format!=='auto' ? '-16x9' : ''}.${extension}`;
   }
-  const api = { exportFilename, tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
+  const api = { automaticTitle, subtitleText, showModeLabels, parkingMode, chartFields, exportFilename, tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof window === 'undefined') return;
   window.ParkingCharts = api;
@@ -214,7 +235,7 @@
   }
   function appendTestDetails(target, row) {
     const fields=el('dl','chart-test-fields');
-    for(const [key,value] of testFields(row)) fields.append(el('dt','',key),el('dd','',value));
+    for(const [key,value] of chartFields(row,state.metric)) fields.append(el('dt','',key),el('dd','',value));
     target.append(fields);
     const links=el('div','chart-test-links');
     const add=(url,label)=>{if(!url)return;const a=el('a','',label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a);};
@@ -233,18 +254,18 @@
       const repeated = plotted.filter(item => variantKey(item.row) === variantKey(row)).length > 1;
       const modes = new Set(siblings.map(item => UI.modeLabel(item.row)));
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean);
-      return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}${state.details ? ` [${i + 1}]` : ''}`, second: [modes.size > 1 ? UI.modeLabel(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
+      return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}`, second: [(showModeLabels(state) || modes.size > 1) ? parkingMode(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
     });
     const left = Math.ceil(Math.min(330,Math.max(220,...labels.map(label=>textWidth(label.first,16,true)+64))));
     labels.forEach(label => { label.firstLines = wrapped(label.first, left - 56, 16, true); label.secondLines = label.second ? wrapped(label.second, left - 56, 14) : []; label.height = Math.max(58, label.firstLines.length * 20 + label.secondLines.length * 18 + 18); });
     const right = Math.ceil(Math.max(110, ...plotted.map(({ row, value }) => textWidth(valueLabel(row, value, state.metric), 16, true))) + 35);
     const width = Math.max(1200, left + right + 490), plotWidth = width - left - right;
     const svg = make('svg', { xmlns: ns, width, role: 'img', 'aria-labelledby': 'export-chart-title export-chart-desc', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': 14, fill: '#263343' });
-    svg.append(make('title', { id: 'export-chart-title' }, state.title || metric.label), make('desc', { id: 'export-chart-desc' }, `${axis}. ${plotted.length} measurements. Ranges show endpoints only. Values sorted ${state.sort === 'asc' ? 'low to high' : 'high to low'} by upper endpoint.`));
+    svg.append(make('title', { id: 'export-chart-title' }, state.title ?? metric.label), make('desc', { id: 'export-chart-desc' }, `${axis}. ${plotted.length} measurements. Ranges show endpoints only. Values sorted ${state.sort === 'asc' ? 'low to high' : 'high to low'} by upper endpoint.`));
     const content = make('g');
     const text = (x, y, value, attrs = {}) => content.appendChild(make('text', { x, y, ...attrs }, value));
     let y = 45;
-    for (const line of wrapped(state.title || metric.label, width - 72, 28, true)) { text(width / 2, y, line, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 28, 'font-weight': 700, fill: '#172337' }); y += 35; }
+    for (const line of wrapped(state.title ?? metric.label, width - 72, 28, true)) { text(width / 2, y, line, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 28, 'font-weight': 700, fill: '#172337' }); y += 35; }
     const subtitleLines = subtitleText(state,result.voltage) ? wrapped(subtitleText(state,result.voltage),width-72,16) : [];
     subtitleLines.forEach((line,i) => text(width / 2, y + 8 + i*22, line, { 'text-anchor':'middle', 'data-role':'chart-heading', 'font-size': 16, fill: '#516174' }));
     y += Math.max(0,subtitleLines.length-1)*22;
@@ -295,17 +316,19 @@
     const sources = new Map();
     plotted.forEach(({ row }, index) => {
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean).join(' · ');
-      const note = `[${index + 1}] ${UI.modelLabel(row)} · ${row.installed_channels ? `${row.installed_channels}CH · ` : ''}${testFields(row).map(([key,value])=>`${key}: ${value}`).join(' · ')}${flags ? ` · ${flags}` : ''}`;
-      for (const line of wrapped(note + (state.metric === 'wake' && row.notes ? ` · Timing context: ${row.notes}` : ''), width - 72, 12)) { y += 17; text(36, y, line, { 'font-size': 12, fill: '#536174' }); }
+      const siblings=plotted.filter(item=>UI.modelLabel(item.row)===UI.modelLabel(row) && item.row.installed_channels===row.installed_channels);
+      const distinction=siblings.length>1 ? variantLabel(row,siblings.map(item=>item.row),state.metric,false) : '';
+      const note = `${UI.modelLabel(row)} · ${row.installed_channels ? `${row.installed_channels}CH · ` : ''}${distinction ? distinction+' · ' : ''}${chartFields(row,state.metric).map(([key,value])=>`${key}: ${value}`).join(' · ')}${flags ? ` · ${flags}` : ''}`;
+      for (const line of wrapped(note + (state.metric === 'wake' && row.wake_camera ? ` · Timing camera: ${row.wake_camera}` : ''), width - 72, 12)) { y += 17; text(36, y, line, { 'font-size': 12, fill: '#536174' }); }
       const url = source(row);
       const sourceKey = JSON.stringify({url, name:sourceName(row)});
       if (!sources.has(sourceKey)) sources.set(sourceKey, []);
-      sources.get(sourceKey).push(index + 1);
+      sources.get(sourceKey).push(UI.modelLabel(row));
       y += 8;
     });
     for (const [url, references] of sources) {
       const ref = JSON.parse(url);
-      for (const line of wrapped(`[${references.join(', ')}] ${ref.name}`, width - 72, 12)) { y += 17; const node=text(36, y, line, { 'font-size': 12, fill: '#245a85' }); if(ref.url){const link=make('a',{href:ref.url});node.replaceWith(link);link.append(node);} }
+      for (const line of wrapped(`${[...new Set(references)].join(', ')} · ${ref.name}`, width - 72, 12)) { y += 17; const node=text(36, y, line, { 'font-size': 12, fill: '#245a85' }); if(ref.url){const link=make('a',{href:ref.url});node.replaceWith(link);link.append(node);} }
       y += 8;
     }
     }
@@ -358,10 +381,13 @@
     $('chart-xLabel').value = axisText(state);
     $('chart-yLabel').value = state.yLabel ?? 'Dash Cameras';
     $('chart-details').checked = !!state.details;
+    $('chart-mode-labels').checked = showModeLabels(state);
   }
   function renderChart() {
     normalizeTitle(state);$('chart-title').value=state.title;
     const result = prepare(rows, state);
+    $('chart-subtitle').value=subtitleText(state,result.voltage);
+    $('chart-mode-labels').checked=showModeLabels(state);
     $('chart-count').textContent = `${result.selected.length} selected · ${result.blocked ? 0 : result.plotted.length} plotted`;
     $('chart-clear').disabled = !state.ids.length;
     $('chart-csv').disabled = !state.ids.length;
@@ -456,7 +482,7 @@
       setupLabel.append(setupSelect);details.append(setupLabel);
       const value=interval(chosen,state.metric);
       details.append(el('strong','chart-selected-reading',value?`${metrics[state.metric].label}: ${valueLabel(chosen,value,state.metric)}`:'Not measured for this metric'));
-      const varying=differences(variants);
+      const varying=differences(variants,state.metric);
       const names={'Mode':'parking mode','Firmware':'firmware','Tested by':'tester','Interior IR':'interior IR setting','Interior camera':'interior camera setting','Lighting':'day/night conditions','Test window':'measurement period','Test voltage':'test voltage','Tested date':'test date','Power adapter':'power adapter','LTE':'LTE connection','Active cameras':'active cameras','Settings':'recording settings'};
       if(varying.length)details.append(el('p','chart-variant-summary',`Available tests differ by ${new Intl.ListFormat('en',{type:'conjunction'}).format(varying.map(key=>names[key]))}.`));
       appendTestDetails(details,chosen);
@@ -522,6 +548,7 @@
         if (key==='metric') {retargetSelection(state.group,value);render();}
         else {state[key]=value;renderChart();}
       });
+      $('chart-mode-labels').addEventListener('change',()=>{state.modeLabels=$('chart-mode-labels').checked;renderChart();});
       $('chart-details').addEventListener('change', () => {state.details=$('chart-details').checked;renderChart();});
       $('chart-group').addEventListener('change', () => {retargetSelection($('chart-group').value,state.metric,true);render();});
       $('chart-apply-group').addEventListener('click', () => {
