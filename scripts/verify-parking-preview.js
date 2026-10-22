@@ -60,7 +60,7 @@ with sync_playwright() as p:
     page.on('request', lambda r: requests.append(r.url))
     page.goto(url)
     ready(page)
-    assert len(actual)==602
+    assert len(actual)==609
     assert page.locator('.comparison-card').count()==3
     assert page.locator('#starting-comparison').is_visible()
     page.wait_for_function("() => document.querySelectorAll('.preview-photo img').length === 3 && [...document.querySelectorAll('.preview-photo img')].every(i=>i.complete && i.naturalWidth===800)")
@@ -114,10 +114,10 @@ with sync_playwright() as p:
     page.goto(url+'?state=all&superseded=1&provisional=1')
     ready(page)
     assert page.locator('.parking-model-entry').count()==48
-    assert page.locator('.parking-measurement').count()==602
+    assert page.locator('.parking-measurement').count()==609
     page.locator('.parking-model-tests').evaluate_all('es=>es.forEach(e=>e.open=true)')
     fit(page)
-    print('Actual data: 602 measurements, 48 model groups, 3 seeded real rows, exact numeric values, 3 matching channel-kit photos, both layouts, 320/375/768/1440px, native keyboard, hidden selections, share/reload, and nondefault deselect/reselect passed.')
+    print('Actual data: 609 measurements, 48 model groups, 3 seeded real rows, exact numeric values, 3 matching channel-kit photos, both layouts, 320/375/768/1440px, native keyboard, hidden selections, share/reload, and nondefault deselect/reselect passed.')
     # Unknown IDs and explicit compare parameters never get default selections.
     page.goto(url+'?compare=retired-id')
     ready(page)

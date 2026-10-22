@@ -49,9 +49,9 @@ const dataPath = path.join(root, 'docs/data/parking-measurements.json');
 if (fs.existsSync(dataPath)) {
   const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
   assert.equal(data.version, 1);
-  assert.equal(data.measurements.length, 602);
+  assert.equal(data.measurements.length, 609);
   const groups = ui.groupModels(data.measurements);
-  assert.equal(groups.flatMap(group => group.rows).length, 602);
+  assert.equal(groups.flatMap(group => group.rows).length, 609);
   assert.equal(new Set(groups.map(group => group.label)).size, groups.length);
   for (const query of ['S1-QHD Infinite', 'S1-4K', 'N5', 'Nexus 5', 'S1 Pro', 'X800', '4K Omni', 'ARC800', 'ARC 800']) assert.equal(ui.groupModels(ui.filterRows(data.measurements, {...state, q: query})).length, 1);
   for (const [brand,source,display] of [['Vantrue','Nexus 5 (N5)','N5'],['Vantrue','Sonnet 1 (S1) Pro','S1 Pro'],['Vantrue','Sonnet 1 (S1)','S1'],['70mai','4K Omni [X800]','4K Omni'],['Thinkware','ARC800 LTE','ARC 800']]) assert.equal(ui.modelName({brand,model:source}),display);
@@ -109,7 +109,7 @@ with sync_playwright() as p:
         page.set_viewport_size({'width':width,'height':900})
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Actual page overflow at %s'%width
     actual = json.load(open('docs/data/parking-measurements.json'))['measurements']
-    assert len(actual) == 602
+    assert len(actual) == 609
     assert page.locator('a[href*="docs.google.com/spreadsheets"]').count() == 0
     assert not page.locator('#coverage-notes').is_visible()
     assert page.locator('#sources-title').inner_text() == 'Original testing data'
@@ -130,7 +130,7 @@ with sync_playwright() as p:
         assert all(not any(token in name for token in ['PM ', 'SM ', '[', 'WiFi', 'H.264', 'H.265']) for name in names)
     page.goto(url+'?state=all&superseded=1&provisional=1')
     page.wait_for_selector('.parking-model-entry')
-    assert page.locator('.parking-measurement').count() == 602
+    assert page.locator('.parking-measurement').count() == 609
     assert page.locator('.parking-model-entry').count() == 48
     page.locator('.parking-model-tests').evaluate_all('(items) => items.forEach(item => item.open = true)')
     for width in [320,375,768,1440]:

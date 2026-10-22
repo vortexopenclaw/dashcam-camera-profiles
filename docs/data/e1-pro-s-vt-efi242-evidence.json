@@ -1,0 +1,1056 @@
+{
+  "schema_version": "1.0",
+  "model_id": "vantrue-e1-pro-s",
+  "source": "Five reviewed Dashcam Offloader owner submissions",
+  "owner_correction_provenance": {
+    "scope": "All five reports in this reviewed batch",
+    "normalized_model": "E1 Pro S",
+    "normalized_firmware": "VT-EFI242",
+    "model_label_correction_count": 3,
+    "already_matching_model_label_count": 2,
+    "basis": "Owner explicitly corrected the camera model and confirmed firmware for every submission. Original intake retained privately without alteration."
+  },
+  "review_scope": {
+    "evidence_type": "measured-video-only",
+    "channel_mapping": "Owner confirms 1CH Front; raw front/channel_a scanner values remain in individual groups. No filename-token semantics established.",
+    "hardware_status": "Unknown for this owner unit; no production or prototype status inferred from third-party tests.",
+    "timing": "All sample durationSeconds and nominalFrameRate values describe playback metadata only. Configured AOV seconds per frame is an owner setting, not a measured capture cadence. No real elapsed time is derived.",
+    "mixed_recording_modes": "Owner reports mixed recording modes within files. Not independently verified; no sample is assumed to have one capture behavior throughout.",
+    "limits": "No power, wake latency, prebuffer, audio, image-quality or filename-semantic validation. Historical E1 Pro and separate rcg530 prototype evidence are not merged."
+  },
+  "driving_aggregate_policy": {
+    "required_folder": "Normal",
+    "minimum_playback_duration_seconds": 30,
+    "video_bitrate_strictly_greater_than_bps": 30000000,
+    "note": "Duration/rate thresholds exclude short and anomalous samples from ordinary driving comparison only. They neither prove driving behavior nor establish TurboBoot status. The single low-rate Normal sample is retained separately as potential TurboBoot, unverified. Use each configuration separately; do not blend quality/HDR settings."
+  },
+  "reports": [
+    {
+      "configuration": "platepix-aov-1s-timelapse",
+      "owner_assertions": {
+        "manufacturer": "Vantrue",
+        "model": "E1 Pro S",
+        "firmware": "VT-EFI242",
+        "channels": 1,
+        "roles": [
+          "front"
+        ],
+        "quality": "PlatePix",
+        "hdr": null,
+        "configured_parking_mode": "Timelapse",
+        "aov_enabled": true,
+        "aov_seconds_per_frame": 1,
+        "turboboot_enabled": null,
+        "hardware_status": null
+      },
+      "folder_inventory": [
+        {
+          "path": "Normal",
+          "fileCount": 9,
+          "mediaFileCount": 9,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 2147483648,
+          "minFileSizeBytes": 100663296,
+          "maxFileSizeBytes": 272629760,
+          "extensionCounts": {
+            "mp4": 9
+          }
+        },
+        {
+          "path": "Parking",
+          "fileCount": 3,
+          "mediaFileCount": 3,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 184549376,
+          "minFileSizeBytes": 29360128,
+          "maxFileSizeBytes": 79691776,
+          "extensionCounts": {
+            "mp4": 3
+          }
+        }
+      ],
+      "observed_video_groups": [
+        {
+          "folder": "Normal",
+          "extensionLowercased": "mp4",
+          "mode": "normal",
+          "displayMode": "Normal Recordings",
+          "outputCategory": "Driving",
+          "channel": "front",
+          "inferredParkingPattern": null,
+          "fileCount": 9,
+          "totalFileSizeBytes": 2147483648,
+          "minFileSizeBytes": 100663296,
+          "maxFileSizeBytes": 272629760,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 36041820,
+          "sampleBitrateMax": 36254900,
+          "sampleDurationMin": 21.6,
+          "sampleDurationMax": 60,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36041820,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 138412032,
+              "durationSeconds": 29.733333333333334,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36139380,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "short normal-folder sample, excluded"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36044004,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 100663296,
+              "durationSeconds": 21.6,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36254900,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "short normal-folder sample, excluded"
+            }
+          ],
+          "reviewed_context": "normal-folder recording",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        },
+        {
+          "folder": "Parking",
+          "extensionLowercased": "mp4",
+          "mode": "timelapse",
+          "displayMode": "Timelapse",
+          "outputCategory": "Parking",
+          "channel": "front",
+          "inferredParkingPattern": null,
+          "fileCount": 3,
+          "totalFileSizeBytes": 184549376,
+          "minFileSizeBytes": 29360128,
+          "maxFileSizeBytes": 79691776,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 20478184,
+          "sampleBitrateMax": 20494788,
+          "sampleDurationMin": 10.2,
+          "sampleDurationMax": 30,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 29360128,
+              "durationSeconds": 10.2,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20494788,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20478184,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 75497472,
+              "durationSeconds": 29.1,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20481574,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            }
+          ],
+          "reviewed_context": "parking",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        }
+      ]
+    },
+    {
+      "configuration": "platepix-hdr-off-aov-2s-collision",
+      "owner_assertions": {
+        "manufacturer": "Vantrue",
+        "model": "E1 Pro S",
+        "firmware": "VT-EFI242",
+        "channels": 1,
+        "roles": [
+          "front"
+        ],
+        "quality": "PlatePix",
+        "hdr": false,
+        "configured_parking_mode": "Collision detection",
+        "aov_enabled": true,
+        "aov_seconds_per_frame": 2,
+        "turboboot_enabled": null,
+        "hardware_status": null
+      },
+      "folder_inventory": [
+        {
+          "path": "Normal",
+          "fileCount": 8,
+          "mediaFileCount": 8,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 1639972864,
+          "minFileSizeBytes": 41943040,
+          "maxFileSizeBytes": 272629760,
+          "extensionCounts": {
+            "mp4": 8
+          }
+        },
+        {
+          "path": "Parking",
+          "fileCount": 4,
+          "mediaFileCount": 4,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 243335168,
+          "minFileSizeBytes": 4259840,
+          "maxFileSizeBytes": 79691776,
+          "extensionCounts": {
+            "mp4": 4
+          }
+        }
+      ],
+      "observed_video_groups": [
+        {
+          "folder": "Normal",
+          "extensionLowercased": "mp4",
+          "mode": "normal",
+          "displayMode": "Normal Recordings",
+          "outputCategory": "Driving",
+          "channel": "front",
+          "inferredParkingPattern": null,
+          "fileCount": 8,
+          "totalFileSizeBytes": 1639972864,
+          "minFileSizeBytes": 41943040,
+          "maxFileSizeBytes": 272629760,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 20623706,
+          "sampleBitrateMax": 36058644,
+          "sampleDurationMin": 12,
+          "sampleDurationMax": 60,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36039524,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 180355072,
+              "durationSeconds": 39.4,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36058644,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 41943040,
+              "durationSeconds": 15.033333333333333,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20623706,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "potential TurboBoot, unverified"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36041576,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36043884,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 54525952,
+              "durationSeconds": 12,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36048256,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "short normal-folder sample, excluded"
+            }
+          ],
+          "reviewed_context": "normal-folder recording",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        },
+        {
+          "folder": "Parking",
+          "extensionLowercased": "mp4",
+          "mode": "event",
+          "displayMode": null,
+          "outputCategory": "Protected",
+          "channel": "front",
+          "inferredParkingPattern": null,
+          "fileCount": 3,
+          "totalFileSizeBytes": 239075328,
+          "minFileSizeBytes": 79691776,
+          "maxFileSizeBytes": 79691776,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 20475654,
+          "sampleBitrateMax": 20479974,
+          "sampleDurationMin": 30,
+          "sampleDurationMax": 30,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20477934,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20479974,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20475654,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            }
+          ],
+          "reviewed_context": "parking",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        },
+        {
+          "folder": "Parking",
+          "extensionLowercased": "mp4",
+          "mode": "timelapse",
+          "displayMode": "Timelapse",
+          "outputCategory": "Parking",
+          "channel": "front",
+          "inferredParkingPattern": null,
+          "fileCount": 1,
+          "totalFileSizeBytes": 4259840,
+          "minFileSizeBytes": 4259840,
+          "maxFileSizeBytes": 4259840,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 20624486,
+          "sampleBitrateMax": 20624486,
+          "sampleDurationMin": 0.4666666666666667,
+          "sampleDurationMax": 0.4666666666666667,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 4259840,
+              "durationSeconds": 0.4666666666666667,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20624486,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            }
+          ],
+          "reviewed_context": "parking",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        }
+      ]
+    },
+    {
+      "configuration": "standard-aov-1s-collision",
+      "owner_assertions": {
+        "manufacturer": "Vantrue",
+        "model": "E1 Pro S",
+        "firmware": "VT-EFI242",
+        "channels": 1,
+        "roles": [
+          "front"
+        ],
+        "quality": "Standard",
+        "hdr": null,
+        "configured_parking_mode": "Collision detection",
+        "aov_enabled": true,
+        "aov_seconds_per_frame": 1,
+        "turboboot_enabled": null,
+        "hardware_status": null
+      },
+      "folder_inventory": [
+        {
+          "path": "Normal",
+          "fileCount": 6,
+          "mediaFileCount": 6,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 901840896,
+          "minFileSizeBytes": 12648448,
+          "maxFileSizeBytes": 272629760,
+          "extensionCounts": {
+            "mp4": 6
+          }
+        },
+        {
+          "path": "Parking",
+          "fileCount": 3,
+          "mediaFileCount": 3,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 163643392,
+          "minFileSizeBytes": 4259840,
+          "maxFileSizeBytes": 79691776,
+          "extensionCounts": {
+            "mp4": 3
+          }
+        }
+      ],
+      "observed_video_groups": [
+        {
+          "folder": "Normal",
+          "extensionLowercased": "mp4",
+          "mode": "continuous",
+          "displayMode": "Driving",
+          "outputCategory": "Driving",
+          "channel": "channel_a",
+          "inferredParkingPattern": null,
+          "fileCount": 6,
+          "totalFileSizeBytes": 901840896,
+          "minFileSizeBytes": 12648448,
+          "maxFileSizeBytes": 272629760,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 36040860,
+          "sampleBitrateMax": 36118468,
+          "sampleDurationMin": 2.466666666666667,
+          "sampleDurationMax": 60,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 41943040,
+              "durationSeconds": 8.466666666666667,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36058328,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "short normal-folder sample, excluded"
+            },
+            {
+              "fileSizeBytes": 12648448,
+              "durationSeconds": 2.466666666666667,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36081116,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "short normal-folder sample, excluded"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36040860,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36046368,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36043920,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 29360128,
+              "durationSeconds": 6.433333333333334,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36118468,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "short normal-folder sample, excluded"
+            }
+          ],
+          "reviewed_context": "normal-folder recording",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        },
+        {
+          "folder": "Parking",
+          "extensionLowercased": "mp4",
+          "mode": "driving_event",
+          "displayMode": "Driving Event",
+          "outputCategory": "Protected",
+          "channel": "channel_a",
+          "inferredParkingPattern": null,
+          "fileCount": 2,
+          "totalFileSizeBytes": 159383552,
+          "minFileSizeBytes": 79691776,
+          "maxFileSizeBytes": 79691776,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 20475808,
+          "sampleBitrateMax": 20478332,
+          "sampleDurationMin": 30,
+          "sampleDurationMax": 30,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20475808,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20478332,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            }
+          ],
+          "reviewed_context": "parking",
+          "review_note": "Parking folder and owner parking context retained despite raw driving_event scanner classification; trigger and within-file behavior unverified."
+        },
+        {
+          "folder": "Parking",
+          "extensionLowercased": "mp4",
+          "mode": "parking",
+          "displayMode": "Parking",
+          "outputCategory": "Parking",
+          "channel": "channel_a",
+          "inferredParkingPattern": null,
+          "fileCount": 1,
+          "totalFileSizeBytes": 4259840,
+          "minFileSizeBytes": 4259840,
+          "maxFileSizeBytes": 4259840,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 20793472,
+          "sampleBitrateMax": 20793472,
+          "sampleDurationMin": 0.5666666666666667,
+          "sampleDurationMax": 0.5666666666666667,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 4259840,
+              "durationSeconds": 0.5666666666666667,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20793472,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            }
+          ],
+          "reviewed_context": "parking",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        }
+      ]
+    },
+    {
+      "configuration": "unspecified-aov-2s-timelapse",
+      "owner_assertions": {
+        "manufacturer": "Vantrue",
+        "model": "E1 Pro S",
+        "firmware": "VT-EFI242",
+        "channels": 1,
+        "roles": [
+          "front"
+        ],
+        "quality": null,
+        "hdr": null,
+        "configured_parking_mode": "Timelapse",
+        "aov_enabled": true,
+        "aov_seconds_per_frame": 2,
+        "turboboot_enabled": null,
+        "hardware_status": null
+      },
+      "folder_inventory": [
+        {
+          "path": "Normal",
+          "fileCount": 5,
+          "mediaFileCount": 5,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 1203765248,
+          "minFileSizeBytes": 113246208,
+          "maxFileSizeBytes": 272629760,
+          "extensionCounts": {
+            "mp4": 5
+          }
+        },
+        {
+          "path": "Parking",
+          "fileCount": 6,
+          "mediaFileCount": 6,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 465567744,
+          "minFileSizeBytes": 67108864,
+          "maxFileSizeBytes": 79691776,
+          "extensionCounts": {
+            "mp4": 6
+          }
+        }
+      ],
+      "observed_video_groups": [
+        {
+          "folder": "Normal",
+          "extensionLowercased": "mp4",
+          "mode": "normal",
+          "displayMode": "Normal Recordings",
+          "outputCategory": "Driving",
+          "channel": "front",
+          "inferredParkingPattern": null,
+          "fileCount": 5,
+          "totalFileSizeBytes": 1203765248,
+          "minFileSizeBytes": 113246208,
+          "maxFileSizeBytes": 272629760,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 36042440,
+          "sampleBitrateMax": 36249288,
+          "sampleDurationMin": 24.566666666666666,
+          "sampleDurationMax": 60,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36042440,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36044344,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36044296,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 113246208,
+              "durationSeconds": 24.566666666666666,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36249288,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "short normal-folder sample, excluded"
+            }
+          ],
+          "reviewed_context": "normal-folder recording",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        },
+        {
+          "folder": "Parking",
+          "extensionLowercased": "mp4",
+          "mode": "parking_timelapse",
+          "displayMode": "Parking Timelapse",
+          "outputCategory": "Parking",
+          "channel": "front",
+          "inferredParkingPattern": "timelapse",
+          "fileCount": 6,
+          "totalFileSizeBytes": 465567744,
+          "minFileSizeBytes": 67108864,
+          "maxFileSizeBytes": 79691776,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 20426854,
+          "sampleBitrateMax": 20488014,
+          "sampleDurationMin": 25.133333333333333,
+          "sampleDurationMax": 30,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20479242,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20480250,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20488014,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 67108864,
+              "durationSeconds": 25.133333333333333,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20426854,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            }
+          ],
+          "reviewed_context": "parking",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        }
+      ]
+    },
+    {
+      "configuration": "unspecified-collision-turboboot",
+      "owner_assertions": {
+        "manufacturer": "Vantrue",
+        "model": "E1 Pro S",
+        "firmware": "VT-EFI242",
+        "channels": 1,
+        "roles": [
+          "front"
+        ],
+        "quality": null,
+        "hdr": null,
+        "configured_parking_mode": "Collision detection",
+        "aov_enabled": null,
+        "aov_seconds_per_frame": null,
+        "turboboot_enabled": true,
+        "hardware_status": null
+      },
+      "folder_inventory": [
+        {
+          "path": "Normal",
+          "fileCount": 21,
+          "mediaFileCount": 21,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 5645533184,
+          "minFileSizeBytes": 192937984,
+          "maxFileSizeBytes": 272629760,
+          "extensionCounts": {
+            "mp4": 21
+          }
+        },
+        {
+          "path": "Parking",
+          "fileCount": 5,
+          "mediaFileCount": 5,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 398458880,
+          "minFileSizeBytes": 79691776,
+          "maxFileSizeBytes": 79691776,
+          "extensionCounts": {
+            "mp4": 5
+          }
+        },
+        {
+          "path": "Photo",
+          "fileCount": 5,
+          "mediaFileCount": 5,
+          "supportFileCount": 0,
+          "totalFileSizeBytes": 1439798,
+          "minFileSizeBytes": 262013,
+          "maxFileSizeBytes": 339463,
+          "extensionCounts": {
+            "jpg": 5
+          }
+        }
+      ],
+      "observed_video_groups": [
+        {
+          "folder": "Normal",
+          "extensionLowercased": "mp4",
+          "mode": "normal",
+          "displayMode": "Normal Recordings",
+          "outputCategory": "Driving",
+          "channel": "front",
+          "inferredParkingPattern": null,
+          "fileCount": 21,
+          "totalFileSizeBytes": 5645533184,
+          "minFileSizeBytes": 192937984,
+          "maxFileSizeBytes": 272629760,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 36041940,
+          "sampleBitrateMax": 36115936,
+          "sampleDurationMin": 42.233333333333334,
+          "sampleDurationMax": 60,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36041940,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36045944,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 272629760,
+              "durationSeconds": 60,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36044836,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            },
+            {
+              "fileSizeBytes": 192937984,
+              "durationSeconds": 42.233333333333334,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 36115936,
+              "driving_aggregate_included": true,
+              "reviewed_sample_context": "normal-folder recording"
+            }
+          ],
+          "reviewed_context": "normal-folder recording",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        },
+        {
+          "folder": "Parking",
+          "extensionLowercased": "mp4",
+          "mode": "event",
+          "displayMode": null,
+          "outputCategory": "Protected",
+          "channel": "front",
+          "inferredParkingPattern": null,
+          "fileCount": 5,
+          "totalFileSizeBytes": 398458880,
+          "minFileSizeBytes": 79691776,
+          "maxFileSizeBytes": 79691776,
+          "sampleCodecs": [
+            "H.264"
+          ],
+          "sampleResolutions": [
+            "3840x2160"
+          ],
+          "sampleFrameRates": [
+            30
+          ],
+          "sampleBitrateMin": 20510378,
+          "sampleBitrateMax": 20532790,
+          "sampleDurationMin": 30.033333333333335,
+          "sampleDurationMax": 30.033333333333335,
+          "storageRateSamples": [
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30.033333333333335,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20524496,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30.033333333333335,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20510378,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30.033333333333335,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20527250,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            },
+            {
+              "fileSizeBytes": 79691776,
+              "durationSeconds": 30.033333333333335,
+              "width": 3840,
+              "height": 2160,
+              "nominalFrameRate": 30,
+              "videoBitrate": 20532790,
+              "driving_aggregate_included": false,
+              "reviewed_sample_context": "parking"
+            }
+          ],
+          "reviewed_context": "parking",
+          "review_note": "Raw scanner classification retained independently of configured parking mode."
+        }
+      ]
+    }
+  ]
+}

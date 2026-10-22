@@ -19,6 +19,11 @@ for path in sorted((ROOT / 'profiles').glob('*.json')):
     camera = json.loads(path.read_text())
     if camera['id'] == 'viofo-t340':
         continue
+    if camera['id'] == 'vantrue-e1-pro-s':
+        # Retain the explicitly scoped rcg530 Standard/HDR prototype comparison
+        # from supplemental evidence. New owner profile cohorts have different
+        # or unknown settings and must not become duplicate unnamed defaults.
+        continue
     if any(f['label'] == 'Front capture classification' and f['value'] in {'upscaled_4k', 'native_4k_unverified'} for f in camera['technical_facts']):
         continue
     samples = camera['video_samples']

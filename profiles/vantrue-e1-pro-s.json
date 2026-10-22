@@ -1,0 +1,296 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schema_version": "1.0",
+  "id": "vantrue-e1-pro-s",
+  "manufacturer": "Vantrue",
+  "model": "E1 Pro S",
+  "evidence": {
+    "level": "technical-sample",
+    "status": "owner-confirmed measured-video-only",
+    "confidence": "Owner settings and sampled metadata; filename semantics unvalidated",
+    "note": "Five Offloader submissions normalized by explicit owner correction to E1 Pro S, firmware VT-EFI242. Folder context and 1CH Front are observed/owner-confirmed. Hardware production/prototype status is unknown."
+  },
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "front"
+      ],
+      "variant": "Front-only",
+      "validation": "owner_confirmed"
+    }
+  ],
+  "filename_patterns": [],
+  "recording": {
+    "driving_folders": [
+      {
+        "path": "Normal",
+        "mode": "normal-folder recording",
+        "importable": true,
+        "validation": "submitted_scan_inventory",
+        "notes": [
+          "Observed media folder, not proof that every file is ordinary driving. One low-rate short clip is potential TurboBoot, unverified."
+        ]
+      }
+    ],
+    "parking_folders": [
+      {
+        "path": "Parking",
+        "mode": "parking",
+        "importable": true,
+        "validation": "submitted_scan_inventory_and_owner_context",
+        "notes": [
+          "Raw scanner modes include event, driving_event, parking, timelapse and parking_timelapse. Configured mode is recorded separately; folder alone does not establish capture behavior or trigger."
+        ]
+      }
+    ],
+    "other_folders": [
+      {
+        "path": "Photo",
+        "mode": "photo",
+        "importable": true,
+        "validation": "submitted_scan_inventory",
+        "notes": [
+          "JPG inventory observed in one report; no photo filename semantics inferred."
+        ]
+      }
+    ],
+    "parking_modes": [
+      "Always On Video, 1s/frame, Collision detection",
+      "Always On Video, 1s/frame, Timelapse",
+      "Always On Video, 2s/frame, Collision detection",
+      "Always On Video, 2s/frame, Timelapse",
+      "Collision detection, TurboBoot enabled"
+    ]
+  },
+  "sources": [
+    {
+      "kind": "source",
+      "label": "Reviewed owner video measurements and correction provenance",
+      "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/e1-pro-s-vt-efi242-evidence.json"
+    }
+  ],
+  "notes": [
+    "Measured-video-only profile. Original filename templates and mode/channel token meanings are not validated. No rules imported from E1 Pro.",
+    "Firmware VT-EFI242 applies to all five owner configurations. Quality and HDR stay unspecified unless explicitly supplied. Hardware production/prototype status is unknown.",
+    "Playback duration and nominal FPS are not real elapsed capture time. Owner-reported mixed modes within files are unverified. No parking power or wake timing is measured.",
+    "Normal-folder driving comparison includes only playback duration >=30 seconds and video-track bitrate >30 Mbps. Short and anomalous clips remain separate. These thresholds do not establish TurboBoot status or prove ordinary driving.",
+    "Historical E1 Pro history and rcg530 Standard HDR prototype measurements remain separate."
+  ],
+  "video_samples": [
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.041820-36.044004 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "platepix-aov-1s-timelapse",
+      "settings_note": "Firmware VT-EFI242; quality PlatePix; HDR unspecified. 2 retained samples. Configured parking: Timelapse; AOV seconds/frame 1; TurboBoot unspecified. Observed folder Normal, raw scanner mode normal, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "short normal-folder sample / unverified",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.139380-36.254900 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "platepix-aov-1s-timelapse",
+      "settings_note": "Firmware VT-EFI242; quality PlatePix; HDR unspecified. 2 retained samples. Configured parking: Timelapse; AOV seconds/frame 1; TurboBoot unspecified. Observed folder Normal, raw scanner mode normal, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "parking / raw timelapse",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "20.478184-20.494788 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "platepix-aov-1s-timelapse",
+      "settings_note": "Firmware VT-EFI242; quality PlatePix; HDR unspecified. 3 retained samples. Configured parking: Timelapse; AOV seconds/frame 1; TurboBoot unspecified. Observed folder Parking, raw scanner mode timelapse, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 1."
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.039524-36.058644 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "platepix-hdr-off-aov-2s-collision",
+      "settings_note": "Firmware VT-EFI242; quality PlatePix; HDR off. 4 retained samples. Configured parking: Collision detection; AOV seconds/frame 2; TurboBoot unspecified. Observed folder Normal, raw scanner mode normal, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "potential TurboBoot / unverified",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "20.623706 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "platepix-hdr-off-aov-2s-collision",
+      "settings_note": "Firmware VT-EFI242; quality PlatePix; HDR off. 1 retained samples. Configured parking: Collision detection; AOV seconds/frame 2; TurboBoot unspecified. Observed folder Normal, raw scanner mode normal, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "short normal-folder sample / unverified",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.048256 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "platepix-hdr-off-aov-2s-collision",
+      "settings_note": "Firmware VT-EFI242; quality PlatePix; HDR off. 1 retained samples. Configured parking: Collision detection; AOV seconds/frame 2; TurboBoot unspecified. Observed folder Normal, raw scanner mode normal, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "parking / raw event",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "20.475654-20.479974 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "platepix-hdr-off-aov-2s-collision",
+      "settings_note": "Firmware VT-EFI242; quality PlatePix; HDR off. 3 retained samples. Configured parking: Collision detection; AOV seconds/frame 2; TurboBoot unspecified. Observed folder Parking, raw scanner mode event, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 1."
+    },
+    {
+      "channel": "front",
+      "mode": "parking / raw timelapse",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "20.624486 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "platepix-hdr-off-aov-2s-collision",
+      "settings_note": "Firmware VT-EFI242; quality PlatePix; HDR off. 1 retained samples. Configured parking: Collision detection; AOV seconds/frame 2; TurboBoot unspecified. Observed folder Parking, raw scanner mode timelapse, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 2."
+    },
+    {
+      "channel": "front",
+      "mode": "short normal-folder sample / unverified",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.058328-36.118468 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "standard-aov-1s-collision",
+      "settings_note": "Firmware VT-EFI242; quality Standard; HDR unspecified. 3 retained samples. Configured parking: Collision detection; AOV seconds/frame 1; TurboBoot unspecified. Observed folder Normal, raw scanner mode continuous, channel channel_a. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.040860-36.046368 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "standard-aov-1s-collision",
+      "settings_note": "Firmware VT-EFI242; quality Standard; HDR unspecified. 3 retained samples. Configured parking: Collision detection; AOV seconds/frame 1; TurboBoot unspecified. Observed folder Normal, raw scanner mode continuous, channel channel_a. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "parking / raw driving_event",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "20.475808-20.478332 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "standard-aov-1s-collision",
+      "settings_note": "Firmware VT-EFI242; quality Standard; HDR unspecified. 2 retained samples. Configured parking: Collision detection; AOV seconds/frame 1; TurboBoot unspecified. Observed folder Parking, raw scanner mode driving_event, channel channel_a. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 1."
+    },
+    {
+      "channel": "front",
+      "mode": "parking / raw parking",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "20.793472 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "standard-aov-1s-collision",
+      "settings_note": "Firmware VT-EFI242; quality Standard; HDR unspecified. 1 retained samples. Configured parking: Collision detection; AOV seconds/frame 1; TurboBoot unspecified. Observed folder Parking, raw scanner mode parking, channel channel_a. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 2."
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.042440-36.044344 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "unspecified-aov-2s-timelapse",
+      "settings_note": "Firmware VT-EFI242; quality unspecified; HDR unspecified. 3 retained samples. Configured parking: Timelapse; AOV seconds/frame 2; TurboBoot unspecified. Observed folder Normal, raw scanner mode normal, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "short normal-folder sample / unverified",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.249288 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "unspecified-aov-2s-timelapse",
+      "settings_note": "Firmware VT-EFI242; quality unspecified; HDR unspecified. 1 retained samples. Configured parking: Timelapse; AOV seconds/frame 2; TurboBoot unspecified. Observed folder Normal, raw scanner mode normal, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "parking / raw parking_timelapse",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "20.426854-20.488014 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "unspecified-aov-2s-timelapse",
+      "settings_note": "Firmware VT-EFI242; quality unspecified; HDR unspecified. 4 retained samples. Configured parking: Timelapse; AOV seconds/frame 2; TurboBoot unspecified. Observed folder Parking, raw scanner mode parking_timelapse, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 1."
+    },
+    {
+      "channel": "front",
+      "mode": "driving",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "36.041940-36.115936 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "unspecified-collision-turboboot",
+      "settings_note": "Firmware VT-EFI242; quality unspecified; HDR unspecified. 4 retained samples. Configured parking: Collision detection; AOV seconds/frame unspecified; TurboBoot enabled. Observed folder Normal, raw scanner mode normal, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 0."
+    },
+    {
+      "channel": "front",
+      "mode": "parking / raw event",
+      "codec": "H.264",
+      "resolution": "3840x2160",
+      "fps": "30",
+      "bitrate": "20.510378-20.532790 Mbps",
+      "container": "MP4",
+      "source": "reviewed Offloader video-track metadata",
+      "recording_configuration": "unspecified-collision-turboboot",
+      "settings_note": "Firmware VT-EFI242; quality unspecified; HDR unspecified. 4 retained samples. Configured parking: Collision detection; AOV seconds/frame unspecified; TurboBoot enabled. Observed folder Parking, raw scanner mode event, channel front. Durations/FPS are playback only; within-file behavior unverified. Exact sample pairs in evidence, report configuration and group index 1."
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "Firmware",
+      "value": "VT-EFI242, owner-confirmed for all five reviewed configurations"
+    },
+    {
+      "label": "Hardware status",
+      "value": "Unknown; separate from third-party prototype measurements"
+    }
+  ]
+}

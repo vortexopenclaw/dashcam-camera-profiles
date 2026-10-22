@@ -8,17 +8,24 @@ const { spawnSync } = require('node:child_process');
 const chart = require('../docs/assets/parking-charts.js');
 const UI = require('../docs/assets/parking.js');
 const rows = require('../docs/data/parking-measurements.json').measurements;
-assert.equal(rows.length, 602);
+assert.equal(rows.length, 609);
 assert.equal(UI.groupModels(rows).length, 48);
 const e1s=rows.filter(r=>r.brand==='Vantrue'&&r.model==='E1 Pro S');
-assert.equal(e1s.length,11);
-assert.ok(e1s.every(r=>r.test_status==='prototype'&&r.voltage_v===12.6&&r.installed_channels===1));
+assert.equal(e1s.length,18);
+const e1sPrototype=e1s.filter(r=>r.tester==='rcg530');
+const e1sOwner=e1s.filter(r=>r.tester==='Vortex Radar');
+assert.equal(e1sPrototype.length,11);
+assert.equal(e1sOwner.length,7);
+assert.ok(e1sPrototype.every(r=>r.test_status==='prototype'));
+assert.ok(e1sOwner.every(r=>r.test_status==='unknown'&&r.firmware==='VT-EFI242'));
+assert.ok(e1sPrototype.every(r=>r.voltage_v===12.6&&r.installed_channels===1));
+assert.ok(e1sOwner.every(r=>r.voltage_v===null&&r.reported_parking_voltage_v===12.6&&r.installed_channels===1));
 const e1sIdle=e1s.find(r=>r.id==='rcg530-675957-5');
 assert.equal(e1sIdle.power_w,0.09);assert.equal(e1sIdle.current_ma,7);
 assert.equal(new Map(chart.testFields(e1sIdle)).get('Reported recording-start delay'),'1.37–1.42 s');
 assert.equal(chart.interval(e1sIdle,'wake'),null);
 assert.notEqual(new Map(chart.testFields(e1s.find(r=>r.id==='rcg530-675957-3'))).get('Settings'),new Map(chart.testFields(e1s.find(r=>r.id==='rcg530-675957-4'))).get('Settings'));
-assert.equal(new Set(rows.map(r => r.id)).size, 602);
+assert.equal(new Set(rows.map(r => r.id)).size, 609);
 assert.equal(chart.readState('?metric=watts&title=Parking+Mode+Power+Draw',rows).title,'Low Power Parking Mode Power Draw Comparison');
 assert.equal(chart.readState('?metric=watts&title=My+custom+title',rows).title,'My custom title');
 assert.equal(chart.readState('?selection=1&family=buffered-motion&metric=watts&title=Parking+Mode+Power+Draw+Comparison',rows).title,'Buffered Motion Detection Parking Mode Power Draw Comparison');
@@ -149,7 +156,7 @@ with sync_playwright() as p:
     assert page.locator('#chart-group').input_value()=='low-power'
     assert page.locator('#chart-condition').input_value()=='monitoring'
     assert page.locator('#chart-highlight').input_value()==''
-    assert page.locator('#chart-data-status').text_content()=='602 measurements · 48 models'
+    assert page.locator('#chart-data-status').text_content()=='609 measurements · 48 models'
     assert page.locator('#chart-canvas [data-measurement]').count()==7
     assert '12.4 V' in page.locator('#chart-canvas').text_content()
     for id,value in current.items():
@@ -247,7 +254,7 @@ with sync_playwright() as p:
     page.locator('#chart-group').select_option('all')
     page.locator('#chart-advanced > summary').click()
     page.locator('#chart-condition').select_option('')
-    assert page.locator('#chart-picker input[data-id]').count()==602
+    assert page.locator('#chart-picker input[data-id]').count()==609
     # Aliases match their one canonical group, and exact model variants remain distinct.
     for search,label in [('Nexus 5','Vantrue N5'),('N5','Vantrue N5'),('Sonnet 1 (S1) Pro','Vantrue S1 Pro'),('4K Omni [X800]','70mai 4K Omni'),('ARC800','Thinkware ARC 800'),('S1-QHD Infinite','Vueroid S1-QHD Infinite')]:
         page.locator('#chart-search').fill(search)
@@ -478,13 +485,17 @@ with sync_playwright() as p:
     pro_s=page.locator('.chart-model-choice[data-model="Vantrue E1 Pro S"]')
     assert pro_s.count()==1
     pro_s.locator('input[type=checkbox]').check()
+    page.wait_for_function("()=>document.querySelector('#chart-canvas [data-measurement=\"vortex-sheet-row-40\"] [data-kind=value]')?.textContent==='0.12 W'")
+    assert 'Prototype' not in row(page,'vortex-sheet-row-40').text_content()
+    pro_s.locator('.chart-model-setup > summary').click()
+    pro_s.locator('select[data-test]').select_option('rcg530-675957-5')
     page.wait_for_function("()=>document.querySelector('#chart-canvas [data-measurement=\"rcg530-675957-5\"] [data-kind=value]')?.textContent==='0.09 W'")
     assert 'Prototype' in row(page,'rcg530-675957-5').text_content()
-    pro_s.locator('.chart-model-setup > summary').click()
     assert '1.37–1.42 s' in pro_s.locator('.chart-test-fields').text_content()
     for family,id,value in [('buffered-motion','rcg530-675957-7','2.85 W'),('hybrid','rcg530-675957-1','0.87 W')]:
         page.locator('#chart-group').select_option(family)
         pro_s.locator('input[type=checkbox]').check()
+        pro_s.locator('select[data-test]').select_option(id)
         page.wait_for_function("([id,value])=>document.querySelector('[data-measurement=\"'+id+'\"] [data-kind=value]')?.textContent===value",arg=[id,value])
     page.locator('#chart-group').select_option('time-lapse')
     opts=pro_s.locator('select[data-test] option').all_text_contents()
@@ -495,7 +506,7 @@ with sync_playwright() as p:
     page.screenshot(path=str(out/'primary-model-picker.png'))
     assert not errors,errors
     assert not any('docs.google.com' in r or 'sheets.googleapis.com' in r for r in requests)
-    (out/'verification.json').write_text(json.dumps({'measurements':602,'models':48,'viewports':[320,375,768,1440],'current_values':current,'delay_values':delay,'decoded_png':image,'page_errors':errors,'selected_buffered_models':len(matching),'selected_buffered_ids':matching,'checks':['primary-one-checkbox','70mai-highest-channel-default','channel-override-exact-value','Blackvue-single-model-choice','functional-family-evidence','explicit-model-bulk','legacy-multiple-ID-preservation','native-keyboard-typeahead','forced-colors-native-select','source-presets','same-voltage-block','method-separation','share-reload','aliases','40-configurations','true-zero-scale','range-endpoints','null-zero','escaped-svg','csv-injection','2x-png-white-canvas','text-bounds']},indent=2))
+    (out/'verification.json').write_text(json.dumps({'measurements':609,'models':48,'viewports':[320,375,768,1440],'current_values':current,'delay_values':delay,'decoded_png':image,'page_errors':errors,'selected_buffered_models':len(matching),'selected_buffered_ids':matching,'checks':['primary-one-checkbox','70mai-highest-channel-default','channel-override-exact-value','Blackvue-single-model-choice','functional-family-evidence','explicit-model-bulk','legacy-multiple-ID-preservation','native-keyboard-typeahead','forced-colors-native-select','source-presets','same-voltage-block','method-separation','share-reload','aliases','40-configurations','true-zero-scale','range-endpoints','null-zero','escaped-svg','csv-injection','2x-png-white-canvas','text-bounds']},indent=2))
     browser.close()
 server.shutdown()
 print('PASS: Node contracts and real Chrome acceptance at 320, 375, 768, and 1440 px')
