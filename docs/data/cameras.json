@@ -8302,18 +8302,39 @@
         }
       ],
       "evidence": {
-        "confidence": "Owner settings and sampled metadata; filename semantics unvalidated",
-        "level": "technical-sample",
-        "note": "Five Offloader submissions normalized by explicit owner correction to E1 Pro S, firmware VT-EFI242. Folder context and 1CH Front are observed/owner-confirmed. Hardware production/prototype status is unknown.",
-        "status": "owner-confirmed measured-video-only"
+        "confidence": "Exact S-coded settings marker and card inventory; shared media grammar is not model identity",
+        "level": "card-validated",
+        "note": "A separate read-only card review observed GPS/E1PROS_Settings.ini and Normal, Parking, Event, Photo and GPS folders, with 12 videos and 3 photos. The historical five Offloader submissions and their 42 paired metadata measurements remain unchanged and retain their original observation scope. Firmware VT-EFI242 is owner-confirmed for those configurations, not independently extracted. Hardware production/prototype status is unknown.",
+        "status": "owner-confirmed identity; real-card structure and shared filename grammar validated"
       },
-      "filename_patterns": [],
+      "filename_patterns": [
+        {
+          "applies_to": [
+            "Normal",
+            "Parking",
+            "Event",
+            "Photo"
+          ],
+          "channels": {
+            "A": "front"
+          },
+          "modes": {
+            "E": "E token; historical owner-attributed media, capture behavior unverified",
+            "N": "N token; observed on Normal-folder card video",
+            "P": "P token; observed on Parking-folder video and Photo-folder images",
+            "T": "T token; historical owner-attributed media, capture behavior unverified"
+          },
+          "pattern": "^(\\d{8})_(\\d{6})_(\\d{5})_([NPET])_(A)\\.(MP4|JPG)$",
+          "timestamp_format": "YYYYMMDD_HHMMSS"
+        }
+      ],
       "id": "vantrue-e1-pro-s",
       "manufacturer": "Vantrue",
       "model": "E1 Pro S",
       "notes": [
-        "Measured-video-only profile. Original filename templates and mode/channel token meanings are not validated. No rules imported from E1 Pro.",
-        "Firmware VT-EFI242 applies to all five owner configurations. Quality and HDR stay unspecified unless explicitly supplied. Hardware production/prototype status is unknown.",
+        "Real-card structure and shared filename grammar are validated separately from the historical measured-video evidence. N/P tokens were observed on the current card; E/T tokens are corroborated by reviewed historical owner-attributed media. Mode tokens are not proof of trigger or within-file capture behavior. No rules imported from E1 Pro.",
+        "GPS/E1PROS_Settings.ini distinguishes this reviewed E1 Pro S card from the older source-documented GPS/E1PRO_Settings.ini marker. Exact complete basenames matter: shared folders, NPET_A filename grammar, codec, dimensions and playback FPS do not identify either sibling. Unknown suffixes must not be reduced to E1 Pro or E1 Pro S.",
+        "Firmware VT-EFI242 is owner-confirmed for all five historical configurations only, not independently extracted from the card or container metadata. Quality and HDR stay unspecified unless explicitly supplied. Hardware production/prototype status is unknown.",
         "Playback duration and nominal FPS are not real elapsed capture time. Owner-reported mixed modes within files are unverified. No parking power or wake timing is measured.",
         "Normal-folder driving comparison includes only playback duration >=30 seconds and video-track bitrate >30 Mbps. Short and anomalous clips remain separate. These thresholds do not establish TurboBoot status or prove ordinary driving.",
         "Historical E1 Pro history and rcg530 Standard HDR prototype measurements remain separate."
@@ -8324,7 +8345,8 @@
             "importable": true,
             "mode": "normal-folder recording",
             "notes": [
-              "Observed media folder, not proof that every file is ordinary driving. One low-rate short clip is potential TurboBoot, unverified."
+              "Observed media folder, not proof that every file is ordinary driving. One low-rate short clip is potential TurboBoot, unverified.",
+              "Separate real-card review observed this folder with 9 MP4 files; historical submitted-scan observations remain scoped to their original reports."
             ],
             "path": "Normal",
             "validation": "submitted_scan_inventory"
@@ -8335,10 +8357,28 @@
             "importable": true,
             "mode": "photo",
             "notes": [
-              "JPG inventory observed in one report; no photo filename semantics inferred."
+              "JPG inventory observed in one historical report. Separate real-card review observed 3 JPG files using the shared P_A grammar; P alone therefore does not establish video or capture behavior."
             ],
             "path": "Photo",
             "validation": "submitted_scan_inventory"
+          },
+          {
+            "importable": true,
+            "mode": "event folder; empty in reviewed card",
+            "notes": [
+              "Folder exists but contains no files in this card review; no trigger, pre-buffer or timing behavior inferred."
+            ],
+            "path": "Event",
+            "validation": "real_card_directory_observed_empty"
+          },
+          {
+            "importable": false,
+            "mode": "support metadata",
+            "notes": [
+              "Exact observed marker GPS/E1PROS_Settings.ini corroborates E1 Pro S identity. GPS/E1PRO_Settings.ini is the older E1 Pro marker documented by prior source review, not a marker observed on this card or independently recovered from historical media-only samples. No settings contents or GPS payload are published."
+            ],
+            "path": "GPS",
+            "validation": "real_card_exact_settings_basename"
           }
         ],
         "parking_folders": [
@@ -8346,7 +8386,8 @@
             "importable": true,
             "mode": "parking",
             "notes": [
-              "Raw scanner modes include event, driving_event, parking, timelapse and parking_timelapse. Configured mode is recorded separately; folder alone does not establish capture behavior or trigger."
+              "Raw scanner modes include event, driving_event, parking, timelapse and parking_timelapse. Configured mode is recorded separately; folder alone does not establish capture behavior or trigger.",
+              "Separate real-card review observed this folder with 3 MP4 files; no mixed-mode transitions were validated."
             ],
             "path": "Parking",
             "validation": "submitted_scan_inventory_and_owner_context"
@@ -8366,6 +8407,16 @@
           "kind": "source",
           "label": "Reviewed owner video measurements and correction provenance",
           "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/e1-pro-s-vt-efi242-evidence.json"
+        },
+        {
+          "kind": "source",
+          "label": "Sanitized real-card identity and structure dossier",
+          "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/e1-pro-s-card-identity.json"
+        },
+        {
+          "kind": "source",
+          "label": "Offloader E1 Pro S card profile and exact-marker recognition",
+          "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vantrue-e1-pro-s.md"
         }
       ],
       "technical_facts": [

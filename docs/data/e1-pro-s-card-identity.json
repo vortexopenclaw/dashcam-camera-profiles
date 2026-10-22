@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "model_id": "vantrue-e1-pro-s",
+  "scope": "Sanitized read-only real-card identity and structure review; separate from historical video measurements.",
+  "identity": {
+    "owner_confirmed_model": "Vantrue E1 Pro S",
+    "observed_exact_marker": "GPS/E1PROS_Settings.ini",
+    "older_model": "Vantrue E1 Pro",
+    "older_documented_marker": "GPS/E1PRO_Settings.ini",
+    "older_marker_provenance": "Prior reviewed Offloader E1 Pro source profile; not observed on this card or in historical media-only directories.",
+    "complete_basename_required": true,
+    "shared_media_layout_is_model_identity": false,
+    "unknown_settings_suffix_policy": "Do not reduce unknown suffixes to E1 Pro or E1 Pro S; conflicting exact markers require unresolved identity.",
+    "firmware": {
+      "owner_confirmed_historical_configurations": "VT-EFI242",
+      "independently_extracted": false,
+      "scope": "Owner assertion for the five historical reviewed configurations; not a firmware token recovered from current card settings or container metadata."
+    }
+  },
+  "card_inventory": {
+    "Normal": {"file_count": 9, "extension_counts": {".mp4": 9}},
+    "Parking": {"file_count": 3, "extension_counts": {".mp4": 3}},
+    "Event": {"file_count": 0, "extension_counts": {}},
+    "Photo": {"file_count": 3, "extension_counts": {".jpg": 3}},
+    "GPS": {"file_count": 1, "extension_counts": {".ini": 1}}
+  },
+  "media_totals": {"video": 12, "photo": 3},
+  "filename_grammar": {
+    "template": "YYYYMMDD_HHMMSS_NNNNN_[NPET]_A.(MP4|JPG)",
+    "pattern": "^(\\d{8})_(\\d{6})_(\\d{5})_([NPET])_(A)\\.(MP4|JPG)$",
+    "shared_between_models": true,
+    "current_card_matching_media_count": 15,
+    "current_card_nonmatching_media_count": 0,
+    "current_card_mode_channel_counts": {"N_A": 9, "P_A": 6},
+    "current_card_scope": "N_A occurs on Normal-folder videos; P_A occurs on Parking-folder videos and Photo-folder JPG files. Event is empty. No E/T files were observed on this card.",
+    "historical_media_scope": "Reviewed owner-attributed media-only samples corroborate E_A and T_A tokens and the shared family grammar. Their identity is not independently established by these filenames.",
+    "channel_scope": "A corresponds to the observed/owner-confirmed single front channel; not a sibling-model identifier.",
+    "mode_scope": "Tokens and folders do not establish capture rate, configured mode, trigger, pre-buffer, or within-file transitions."
+  },
+  "historical_measurement_boundary": {
+    "source": "e1-pro-s-vt-efi242-evidence.json",
+    "reviewed_configurations": 5,
+    "paired_metadata_samples": 42,
+    "profile_video_sample_rows": 17,
+    "policy": "Historical dossier, original folder inventories, source observations, configuration cohorts, sample pairings, numerical values and all profile video_samples are unchanged. Current card inventory is not retroactively attributed to those reports."
+  },
+  "inspection_limits": [
+    "One owner-identified mounted card; older E1 Pro marker is prior source evidence, not a second physical-card observation.",
+    "No original capture filenames, private paths, receipt identifiers, GPS payloads or configuration contents are included.",
+    "Bounded prior support/container inspection found no independent firmware or distinguishing model token; codec, dimensions and FPS are not model identity.",
+    "Owner-reported mixed modes remain unverified; no new video measurements, retail specifications, buffer or wake-latency claims are made."
+  ],
+  "sources": [
+    {
+      "kind": "source",
+      "label": "Local read-only card review and retained sanitized identity research",
+      "provenance": "Exact support basename, directory inventory and filename-token counts checked against mounted card; retained review supplies historical shared-grammar and older-marker context. No external product claim added."
+    },
+    {
+      "kind": "source",
+      "label": "Unchanged historical owner measurement dossier",
+      "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/e1-pro-s-vt-efi242-evidence.json"
+    },
+    {
+      "kind": "source",
+      "label": "Offloader E1 Pro S card profile; companion publication pending",
+      "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vantrue-e1-pro-s.md"
+    }
+  ]
+}

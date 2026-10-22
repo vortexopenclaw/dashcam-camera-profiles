@@ -28,7 +28,10 @@ def main():
     jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker()).validate(profile)
     assert profile['id'] == evidence['model_id'] == 'vantrue-e1-pro-s'
     assert profile['model'] == 'E1 Pro S'
-    assert profile['filename_patterns'] == []
+    # A separate real-card review validated shared grammar, not sibling identity.
+    assert len(profile['filename_patterns']) == 1
+    assert profile['filename_patterns'][0]['pattern'] == r'^(\d{8})_(\d{6})_(\d{5})_([NPET])_(A)\.(MP4|JPG)$'
+    assert set(profile['filename_patterns'][0]['modes']) == set('NPET')
     assert profile['channel_variants'][0]['roles'] == ['front']
     assert evidence['owner_correction_provenance']['model_label_correction_count'] == 3
     assert evidence['owner_correction_provenance']['already_matching_model_label_count'] == 2
