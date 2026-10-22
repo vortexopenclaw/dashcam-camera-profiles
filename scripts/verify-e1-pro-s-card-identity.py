@@ -84,7 +84,23 @@ def main():
     check(any('mixed modes within files are unverified' in n for n in profile['notes']), 'mixed-mode limit')
     urls = {s['url'] for s in profile['sources']}
     check(any(u.endswith('/docs/card-profiles/vantrue-e1-pro-s.md') for u in urls), 'companion source reference')
-    for path in (pp, dp):
+    cp = ROOT / 'docs/data/e1-sibling-card-comparison.json'
+    comparison = json.loads(cp.read_text())
+    cards = {c['model_id']: c for c in comparison['cards']}
+    check(set(cards) == {'vantrue-e1-pro', 'vantrue-e1-pro-s'}, 'separate sibling evidence')
+    for model_id, marker, firmware, count in [
+        ('vantrue-e1-pro-s', 'E1PROS_Settings.ini', 'VT-EFI242', 12),
+        ('vantrue-e1-pro', 'E1PRO_Settings.ini', 'VT-EFH112', 4),
+    ]:
+        card = cards[model_id]
+        check(card['exact_settings_basenames'] == [marker], 'direct sibling exact marker')
+        check(card['owner_reported_current_firmware'] == firmware and card['firmware_independently_extracted'] is False, 'owner-only current firmware')
+        check(card['all_inventoried_videos_probed'] and card['videos_probed'] == count, 'complete bounded sibling probes')
+        check(sum(g['video_track_samples'] for g in card['video_groups']) == count, 'sibling grouped totals')
+    check(comparison['capture_firmware'].startswith('Unknown'), 'clip firmware remains unknown')
+    check(comparison['quality_hdr_settings'].startswith('Unknown'), 'no controlled quality comparison')
+    check(any(u.endswith('/docs/data/e1-sibling-card-comparison.json') for u in urls), 'sibling source reference')
+    for path in (pp, dp, cp):
         text = path.read_text()
         for label, private_pattern in validation['PRIVATE_PATTERNS'].items():
             check(not private_pattern.search(text), 'public privacy: ' + label)

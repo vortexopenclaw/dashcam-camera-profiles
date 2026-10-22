@@ -8415,6 +8415,11 @@
         },
         {
           "kind": "source",
+          "label": "Direct E1 Pro S versus E1 Pro card metadata comparison; capture firmware and quality settings unknown",
+          "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/e1-sibling-card-comparison.json"
+        },
+        {
+          "kind": "source",
           "label": "Offloader E1 Pro S card profile and exact-marker recognition",
           "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/main/docs/card-profiles/vantrue-e1-pro-s.md"
         }

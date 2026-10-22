@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "scope": "Direct read-only sibling-card comparison, kept separate from historical configurations and chart defaults",
+  "identity_basis": "Exact complete model-coded regular settings basename; not file size, shared media grammar or video properties",
+  "capture_firmware": "Unknown per clip; current firmware below is owner-confirmed only",
+  "quality_hdr_settings": "Unknown; not a controlled image-quality or maximum-bitrate comparison",
+  "cards": [
+    {
+      "model": "E1 Pro S",
+      "model_id": "vantrue-e1-pro-s",
+      "owner_reported_current_firmware": "VT-EFI242",
+      "firmware_independently_extracted": false,
+      "exact_settings_basenames": [
+        "E1PROS_Settings.ini"
+      ],
+      "folder_inventory": {
+        "Event": {
+          "capture_suffix_tokens": {},
+          "entries_observed": 0,
+          "filename_grammars": {},
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {}
+        },
+        "GPS": {
+          "capture_suffix_tokens": {},
+          "entries_observed": 1,
+          "filename_grammars": {},
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {
+            "regular:.ini": 1
+          }
+        },
+        "Normal": {
+          "capture_suffix_tokens": {
+            "N_A": 9
+          },
+          "entries_observed": 9,
+          "filename_grammars": {
+            "YYYYMMDD_HHMMSS_NNNNN_<capture>_<suffix>.MP4": 9
+          },
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {
+            "regular:.mp4": 9
+          }
+        },
+        "Parking": {
+          "capture_suffix_tokens": {
+            "P_A": 3
+          },
+          "entries_observed": 3,
+          "filename_grammars": {
+            "YYYYMMDD_HHMMSS_NNNNN_<capture>_<suffix>.MP4": 3
+          },
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {
+            "regular:.mp4": 3
+          }
+        },
+        "Photo": {
+          "capture_suffix_tokens": {
+            "P_A": 3
+          },
+          "entries_observed": 3,
+          "filename_grammars": {
+            "YYYYMMDD_HHMMSS_NNNNN_<capture>_<suffix>.JPG": 3
+          },
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {
+            "regular:.jpg": 3
+          }
+        }
+      },
+      "all_inventoried_videos_probed": true,
+      "videos_probed": 12,
+      "video_groups": [
+        {
+          "avg_frame_rate": "30/1",
+          "codec": "h264",
+          "container_bit_rate_bps": {
+            "max": 37957502.0,
+            "min": 37957502.0
+          },
+          "duration_bucket": "under_30_playback_seconds",
+          "duration_seconds": {
+            "max": 22.1,
+            "min": 22.1
+          },
+          "file_size_bytes": {
+            "max": 104857600.0,
+            "min": 104857600.0
+          },
+          "folder": "Normal",
+          "height": 2160,
+          "r_frame_rate": "30/1",
+          "video_track_bit_rate_bps": {
+            "max": 36259123.0,
+            "min": 36259123.0
+          },
+          "video_track_samples": 1,
+          "width": 3840
+        },
+        {
+          "avg_frame_rate": "30/1",
+          "codec": "h264",
+          "container_bit_rate_bps": {
+            "max": 36592738.0,
+            "min": 36350634.0
+          },
+          "duration_bucket": "at_least_30_playback_seconds",
+          "duration_seconds": {
+            "max": 60.0,
+            "min": 50.433333
+          },
+          "file_size_bytes": {
+            "max": 272629760.0,
+            "min": 230686720.0
+          },
+          "folder": "Normal",
+          "height": 2160,
+          "r_frame_rate": "30/1",
+          "video_track_bit_rate_bps": {
+            "max": 36055980.0,
+            "min": 36041913.0
+          },
+          "video_track_samples": 8,
+          "width": 3840
+        },
+        {
+          "avg_frame_rate": "30/1",
+          "codec": "h264",
+          "container_bit_rate_bps": {
+            "max": 21437553.0,
+            "min": 21437553.0
+          },
+          "duration_bucket": "at_least_30_playback_seconds",
+          "duration_seconds": {
+            "max": 36.0,
+            "min": 36.0
+          },
+          "file_size_bytes": {
+            "max": 96468992.0,
+            "min": 96468992.0
+          },
+          "folder": "Parking",
+          "height": 2160,
+          "r_frame_rate": "30/1",
+          "video_track_bit_rate_bps": {
+            "max": 20479714.0,
+            "min": 20477769.0
+          },
+          "video_track_samples": 2,
+          "width": 3840
+        },
+        {
+          "avg_frame_rate": "30/1",
+          "codec": "h264",
+          "container_bit_rate_bps": {
+            "max": 22690496.0,
+            "min": 22690496.0
+          },
+          "duration_bucket": "under_30_playback_seconds",
+          "duration_seconds": {
+            "max": 16.266667,
+            "min": 16.266667
+          },
+          "file_size_bytes": {
+            "max": 46137344.0,
+            "min": 46137344.0
+          },
+          "folder": "Parking",
+          "height": 2160,
+          "r_frame_rate": "30/1",
+          "video_track_bit_rate_bps": {
+            "max": 20501162.0,
+            "min": 20501162.0
+          },
+          "video_track_samples": 1,
+          "width": 3840
+        }
+      ],
+      "limitations": [
+        "Card may retain recordings from earlier firmware/settings; owner latest-firmware report does not date every clip.",
+        "Folder and capture/suffix tokens are observations, not independently established capture modes or channel mapping.",
+        "FPS and duration describe playback, not elapsed real-world coverage.",
+        "Video-only stream query does not establish audio presence or total camera channel count.",
+        "No visual quality, HDR, maximum-quality setting, or current recording configuration inference."
+      ]
+    },
+    {
+      "model": "E1 Pro",
+      "model_id": "vantrue-e1-pro",
+      "owner_reported_current_firmware": "VT-EFH112",
+      "firmware_independently_extracted": false,
+      "exact_settings_basenames": [
+        "E1PRO_Settings.ini"
+      ],
+      "folder_inventory": {
+        "Event": {
+          "capture_suffix_tokens": {},
+          "entries_observed": 0,
+          "filename_grammars": {},
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {}
+        },
+        "GPS": {
+          "capture_suffix_tokens": {},
+          "entries_observed": 1,
+          "filename_grammars": {},
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {
+            "regular:.ini": 1
+          }
+        },
+        "Normal": {
+          "capture_suffix_tokens": {
+            "N_A": 4
+          },
+          "entries_observed": 4,
+          "filename_grammars": {
+            "YYYYMMDD_HHMMSS_NNNNN_<capture>_<suffix>.MP4": 4
+          },
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {
+            "regular:.mp4": 4
+          }
+        },
+        "Parking": {
+          "capture_suffix_tokens": {},
+          "entries_observed": 0,
+          "filename_grammars": {},
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {}
+        },
+        "Photo": {
+          "capture_suffix_tokens": {},
+          "entries_observed": 0,
+          "filename_grammars": {},
+          "nested_directories_not_traversed": 0,
+          "truncated": false,
+          "types": {}
+        }
+      },
+      "all_inventoried_videos_probed": true,
+      "videos_probed": 4,
+      "video_groups": [
+        {
+          "avg_frame_rate": "30/1",
+          "codec": "h264",
+          "container_bit_rate_bps": {
+            "max": 32435950.0,
+            "min": 32418694.0
+          },
+          "duration_bucket": "at_least_30_playback_seconds",
+          "duration_seconds": {
+            "max": 60.0,
+            "min": 60.0
+          },
+          "file_size_bytes": {
+            "max": 243269632.0,
+            "min": 243269632.0
+          },
+          "folder": "Normal",
+          "height": 2160,
+          "r_frame_rate": "30/1",
+          "video_track_bit_rate_bps": {
+            "max": 31948184.0,
+            "min": 31946441.0
+          },
+          "video_track_samples": 3,
+          "width": 3840
+        },
+        {
+          "avg_frame_rate": "30/1",
+          "codec": "h264",
+          "container_bit_rate_bps": {
+            "max": 32865814.0,
+            "min": 32865814.0
+          },
+          "duration_bucket": "under_30_playback_seconds",
+          "duration_seconds": {
+            "max": 17.866667,
+            "min": 17.866667
+          },
+          "file_size_bytes": {
+            "max": 73400320.0,
+            "min": 73400320.0
+          },
+          "folder": "Normal",
+          "height": 2160,
+          "r_frame_rate": "30/1",
+          "video_track_bit_rate_bps": {
+            "max": 31956043.0,
+            "min": 31956043.0
+          },
+          "video_track_samples": 1,
+          "width": 3840
+        }
+      ],
+      "limitations": [
+        "Card may retain recordings from earlier firmware/settings; owner latest-firmware report does not date every clip.",
+        "Folder and capture/suffix tokens are observations, not independently established capture modes or channel mapping.",
+        "FPS and duration describe playback, not elapsed real-world coverage.",
+        "Video-only stream query does not establish audio presence or total camera channel count.",
+        "No visual quality, HDR, maximum-quality setting, or current recording configuration inference."
+      ]
+    }
+  ]
+}
