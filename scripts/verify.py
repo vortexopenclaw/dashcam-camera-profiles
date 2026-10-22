@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -95,6 +96,27 @@ def main() -> None:
     assert any(folder["path"] == "cont_rec" for folder in arc900["recording"]["driving_folders"])
     assert any(folder["path"] == "parking_rec" for folder in arc900["recording"]["parking_folders"])
     assert any(source["kind"] == "manual" for source in arc900["sources"])
+
+    h1 = next(camera for camera in cameras if camera["id"] == "vueroid-h1")
+    assert h1["manufacturer"] == "Vueroid" and h1["model"] == "H1 QHD Infinite"
+    assert h1["evidence"]["level"] == "card-validated"
+    assert "historical" in h1["evidence"]["note"].lower()
+    assert "V0.5.9" in h1["evidence"]["note"]
+    assert h1["channel_variants"] == [{
+        "channels": 1, "roles": ["front"],
+        "validation": "app_submission_and_real_card_sampled", "variant": None,
+    }]
+    assert {folder["path"] for folder in h1["recording"]["driving_folders"]} == {"INF", "EVENT", "USER", "BOOKMARK"}
+    assert {folder["path"] for folder in h1["recording"]["parking_folders"]} == {"PARK", "PEVENT"}
+    assert h1["recording"]["parking_modes"] == ["parking", "parking_event"]
+    assert h1["filename_patterns"][0]["channels"] == {"N": "front"}
+    assert h1["filename_patterns"][0]["pattern"] == r"^(\d{8})_(\d{6})_([A-Z]+)_([A-Z])\.mp4$"
+    assert any("H1-QHD-INFINITE" in fact["value"] for fact in h1["technical_facts"])
+    assert any("not name the exact parking mode" in note for note in h1["notes"])
+    assert any(source["url"] == "https://vueroid.com/product/h1-qhd-infinite/" for source in h1["sources"])
+    # The archived profile had no per-file video measurements. Do not borrow S1 rows.
+    assert h1["video_samples"] == []
+    assert not re.search(r"\b\d{8}_\d{6}_[A-Z]+_[A-Z]\.mp4\b", json.dumps(h1))
 
     s1_qhd = next(camera for camera in cameras if camera["id"] == "vueroid-s1-qhd-infinite")
     assert s1_qhd["evidence"]["level"] == "card-validated"

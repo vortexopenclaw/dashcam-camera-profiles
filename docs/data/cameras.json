@@ -1,5 +1,5 @@
 {
-  "camera_count": 101,
+  "camera_count": 102,
   "cameras": [
     {
       "$schema": "../schemas/profile.schema.json",
@@ -14803,6 +14803,140 @@
           "roles": [
             "front"
           ],
+          "validation": "app_submission_and_real_card_sampled",
+          "variant": null
+        }
+      ],
+      "evidence": {
+        "confidence": "high",
+        "level": "card-validated",
+        "note": "Historical app learning and real-card research identified H1-QHD-INFINITE V0.5.9 and front-only 1CH recording. These observations do not validate current retail firmware or every advertised feature.",
+        "status": "seed"
+      },
+      "filename_patterns": [
+        {
+          "applies_to": [],
+          "channels": {
+            "N": "front"
+          },
+          "default_channel": null,
+          "modes": {},
+          "pattern": "^(\\d{8})_(\\d{6})_([A-Z]+)_([A-Z])\\.mp4$",
+          "timestamp_format": "YYYYMMDD_HHMMSS"
+        }
+      ],
+      "id": "vueroid-h1",
+      "manufacturer": "Vueroid",
+      "model": "H1 QHD Infinite",
+      "notes": [
+        "Public visibility is authorized by the owner's release confirmation. The official product page styles the camera H1 QHD Infinite; the stable profile ID remains vueroid-h1.",
+        "The historical config and log evidence confirms parking recording but does not name the exact parking mode. PARK and PEVENT are observed folder categories, not proof of a particular motion, time-lapse, or power-saving setting.",
+        "Historical V0.5.9 observations are not a current retail specification or bitrate guarantee. No S1 measurements or additional channel capabilities are transferred to H1."
+      ],
+      "recording": {
+        "driving_folders": [
+          {
+            "importable": true,
+            "mode": "continuous",
+            "notes": [],
+            "path": "INF",
+            "validation": "app_submission_and_real_card_sampled"
+          },
+          {
+            "importable": true,
+            "mode": "driving_event",
+            "notes": [],
+            "path": "EVENT",
+            "validation": "app_submission_and_real_card_sampled"
+          },
+          {
+            "importable": true,
+            "mode": "manual",
+            "notes": [],
+            "path": "USER",
+            "validation": "app_submission_and_real_card_sampled"
+          },
+          {
+            "importable": false,
+            "mode": "bookmark_image",
+            "notes": [],
+            "path": "BOOKMARK",
+            "validation": "real_card_sampled"
+          }
+        ],
+        "other_folders": [
+          {
+            "importable": false,
+            "mode": "support_metadata",
+            "notes": [
+              "Configuration and logs are excluded from normal video import."
+            ],
+            "path": "CONFIG",
+            "validation": "real_card_sampled"
+          }
+        ],
+        "parking_folders": [
+          {
+            "importable": true,
+            "mode": "parking",
+            "notes": [],
+            "path": "PARK",
+            "validation": "app_submission_and_real_card_sampled"
+          },
+          {
+            "importable": true,
+            "mode": "parking_event",
+            "notes": [],
+            "path": "PEVENT",
+            "validation": "app_submission_and_real_card_sampled"
+          }
+        ],
+        "parking_modes": [
+          "parking",
+          "parking_event"
+        ]
+      },
+      "schema_version": "1.0",
+      "sources": [
+        {
+          "kind": "research",
+          "label": "Vueroid H1 historical card research notes",
+          "url": "https://github.com/vortexopenclaw/dashcam-offloader/blob/caa362d/docs/card-profiles/vueroid-h1.md"
+        },
+        {
+          "kind": "source",
+          "label": "Official H1 QHD Infinite product page",
+          "url": "https://vueroid.com/product/h1-qhd-infinite/"
+        }
+      ],
+      "technical_facts": [
+        {
+          "label": "Exact safe model marker",
+          "value": "H1-QHD-INFINITE in CONFIG/config.bin; historical observed firmware V0.5.9."
+        },
+        {
+          "label": "Historical channel evidence",
+          "value": "1CH in the boot log; observed filenames omit the S1 F/I/R physical channel tokens. N maps to front in the sampled H1 profile."
+        },
+        {
+          "label": "Historical media summary",
+          "value": "Research notes report driving and parking MP4 samples as H.264, 2560x1440, 30 fps, approximately 22 Mbps. No per-file numeric measurements were retained in the archived reference profile."
+        },
+        {
+          "label": "Grouping keys",
+          "value": "date, time, and prefix"
+        }
+      ],
+      "video_samples": []
+    },
+    {
+      "$schema": "../schemas/profile.schema.json",
+      "channel_variants": [
+        {
+          "channels": 1,
+          "roles": [
+            "front"
+          ],
           "validation": "real_card_sampled",
           "variant": null
         },
@@ -15462,7 +15596,7 @@
     }
   ],
   "generated_from": "profiles/*.json",
-  "profile_count": 88,
+  "profile_count": 89,
   "schema_version": "1.0",
   "technical_sample_only_count": 13
 }

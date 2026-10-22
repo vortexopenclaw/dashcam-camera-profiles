@@ -66,22 +66,29 @@ manufacturer maximum or a high-quality preset. Those labels require a captured
 setting in the evidence. Selecting a camera intentionally replaces the chart
 with that camera's full reference page.
 
-## Selector availability (2026-08-17)
+## H1 public eligibility (2026-10-22)
 
-Vueroid H1 is retained as non-public research and an auto-detection profile,
-but is hidden from the Dashcam Offloader's manual model selector until it has a
-public release. This avoids offering an unreleased camera as a user-selectable
-product while preserving its evidence for a real card that might be scanned.
+The owner confirms that Vueroid H1 is publicly released and authorizes its public
+reference and app eligibility. The official product page styles it **H1 QHD
+Infinite**. Restore the stable `vueroid-h1` reference ID, superseding the earlier
+unreleased-camera exclusion. App selector changes are maintained in their own
+repositories.
 
-**Success checks:** H1 does not appear in manual model choices, while an exact
-H1 card signature remains detectable. The static reference starts in the
-comparison overview, and an explicit camera selection still opens that
-camera's full detail.
+Public eligibility does not turn historical research into current retail
+validation. Preserve the observed V0.5.9 firmware and front-only 1CH scope, retain
+any explicit prototype labels in their original source scope, and do not borrow
+S1 data. The archived reference has no per-file video rows; its approximate media
+summary stays labeled as historical research. The exact sampled parking mode
+remains unknown.
 
-**Rollback:** Remove the selector exclusion to restore H1 to manual choices,
-or clear the selected-camera state only if the overview behavior must be
-reverted. Neither action changes the canonical H1 profile or recorded video
-facts.
+**Success checks:** The generated index contains H1 QHD Infinite with the original
+H1 identity, folder mapping, and filename grammar, without private source paths,
+card names, original filenames, or invented video rows. Existing cameras are
+unchanged. The static reference still starts in the comparison overview, and an
+explicit camera selection opens that camera's full detail.
+
+**Rollback:** Remove the H1 public profile and regenerate the index. Keep the
+private historical source evidence unchanged.
 
 ## Acceptance checks
 
