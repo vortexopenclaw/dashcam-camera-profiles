@@ -19,7 +19,7 @@ assert.equal(e1sOwner.length,7);
 assert.ok(e1sPrototype.every(r=>r.test_status==='prototype'));
 assert.ok(e1sOwner.every(r=>r.test_status==='unknown'&&r.firmware==='VT-EFI242'));
 assert.ok(e1sPrototype.every(r=>r.voltage_v===12.6&&r.installed_channels===1));
-assert.ok(e1sOwner.every(r=>r.voltage_v===null&&r.reported_parking_voltage_v===12.6&&r.installed_channels===1));
+assert.ok(e1sOwner.every(r=>r.voltage_v===12.6&&r.reported_parking_voltage_v===12.6&&r.installed_channels===1));
 const e1sIdle=e1s.find(r=>r.id==='rcg530-675957-5');
 assert.equal(e1sIdle.power_w,0.09);assert.equal(e1sIdle.current_ma,7);
 assert.equal(new Map(chart.testFields(e1sIdle)).get('Reported recording-start delay'),'1.37–1.42 s');

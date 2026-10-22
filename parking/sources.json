@@ -1056,7 +1056,7 @@
     "date": null,
     "images": [],
     "status": "extracted",
-    "notes": "Measurements provided by Vortex Radar. The original spreadsheet is private. Seven owner E1 Pro S power rows reviewed on 2026-10-21, with owner model-name correction scoped to that day only. Reported Parking Voltage 12.6 V and supplied watts retained. Actual supply versus cutoff is unconfirmed, and watts match 12.4 V calculations rather than 12.6 V. Blank-current rows with formula 0.00 W excluded. AOV seconds-per-frame settings and idle time-lapse versus event-recording remain separate. Mixed time-lapse/normal recording within a file is a provisional owner observation, not an established timing result. Measurement dates remain unknown.",
+    "notes": "Measurements provided by Vortex Radar. The original spreadsheet is private. Seven owner E1 Pro S power rows reviewed on 2026-10-21, with owner model-name correction scoped to that day only. Owner confirms actual test supply changed to 12.6 V starting with E1 Pro S. Supplied watts retained despite matching 12.4 V calculations rather than 12.6 V. Blank-current rows with formula 0.00 W excluded. AOV seconds-per-frame settings and idle time-lapse versus event-recording remain separate. Mixed time-lapse/normal recording within a file is a provisional owner observation, not an established timing result. Measurement dates remain unknown.",
     "measurement_count": 32,
     "private": true
   },

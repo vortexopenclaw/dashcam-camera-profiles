@@ -39,7 +39,7 @@ def main():
         r = by_id[f'vortex-sheet-row-{n}']
         assert (r['brand'], r['model'], r['installed_channels'], r['active_channels']) == ('Vantrue', 'E1 Pro S', 1, ['front'])
         assert (r['current_ma'], r['power_w'], r['category'], r['state']) == (ma, watts, category, state)
-        assert r['voltage_v'] is None and r['reported_parking_voltage_v'] == 12.6
+        assert r['voltage_v'] == r['reported_parking_voltage_v'] == 12.6
         assert r['firmware'] == 'VT-EFI242' and r['power_path'] == 'VP03(II)'
         assert r['source_is_private'] is True and r['source_url'] == URL
         assert r['image_url'] is None and r['power_is_derived'] is False

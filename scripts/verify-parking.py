@@ -52,7 +52,7 @@ for number,category,state,current,watts in [(26,'buffered-event','monitoring',25
     assert row['test_status']=='unknown' and row['review_status']=='verified' and row['superseded'] is False
 assert next(s for s in sources if s['id']=='vortex-sheet')['measurement_count']==sum(r['id'].startswith('vortex-sheet-row-') for r in rows)
 e1s_ids={f'vortex-sheet-row-{n}' for n in (34,35,36,37,38,40,41)}
-assert all(r['voltage_v'] is None and r['reported_parking_voltage_v']==12.6 and r.get('voltage_source') for r in rows if r['id'] in e1s_ids)
+assert all(r['voltage_v']==12.6 and r['reported_parking_voltage_v']==12.6 and r.get('voltage_source') for r in rows if r['id'] in e1s_ids)
 assert all(r['voltage_v'] is None for r in rows if r['tester']=='Vortex Radar' and r['id'] not in chart_ids | buffered_chart.keys() | a119m_ids | e1s_ids),'No blanket voltage assumption for other contributed rows'
 for content in [public.read_text(),csv_path.read_text(),json.dumps(sources)]:
     assert 'docs.google.com/spreadsheets' not in content, 'Private spreadsheet link in public data'
