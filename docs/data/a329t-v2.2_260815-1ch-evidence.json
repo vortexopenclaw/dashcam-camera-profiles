@@ -1,0 +1,396 @@
+{
+  "camera_id": "viofo-a329t",
+  "evidence_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/a329t-v2.2_260815-1ch-evidence.json",
+  "groups": [
+    {
+      "channel": "front",
+      "displayMode": "Driving Event",
+      "extensionLowercased": "mp4",
+      "fileCount": 10,
+      "folder": "DCIM/Movie/RO",
+      "inferredParkingPattern": null,
+      "maxFileSizeBytes": 494927872,
+      "minFileSizeBytes": 492830720,
+      "mode": "driving_event",
+      "outputCategory": "Protected",
+      "sampleBitrateMax": 65542536,
+      "sampleBitrateMin": 65527488,
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleDurationMax": 60,
+      "sampleDurationMin": 60,
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "storageRateSamples": [
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 494927872,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65542536,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 492830720,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65534644,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 492830720,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65532940,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 492830720,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65537224,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 492830720,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65527488,
+          "width": 3840
+        }
+      ],
+      "totalFileSizeBytes": 4930404352
+    },
+    {
+      "channel": "front",
+      "displayMode": "Parking Impact Detection",
+      "extensionLowercased": "mp4",
+      "fileCount": 83,
+      "folder": "DCIM/Movie/RO",
+      "inferredParkingPattern": "impact_detection",
+      "maxFileSizeBytes": 511705088,
+      "minFileSizeBytes": 2228224,
+      "mode": "parking_impact_detection",
+      "outputCategory": "Parking Events",
+      "sampleBitrateMax": 65585360,
+      "sampleBitrateMin": 4096041,
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleDurationMax": 62,
+      "sampleDurationMin": 0.5666666666666667,
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "storageRateSamples": [
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 33554432,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 4096430,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 0.5666666666666667,
+          "fileSizeBytes": 2228224,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 12459445,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 33554432,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 4096041,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 33554432,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 4137037,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 37.63333333333333,
+          "fileSizeBytes": 20971520,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 4139012,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 35651584,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 4341208,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 37748736,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 4661181,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 62,
+          "fileSizeBytes": 511705088,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65537856,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 494927872,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65534552,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 17.133333333333333,
+          "fileSizeBytes": 142606336,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65585360,
+          "width": 3840
+        }
+      ],
+      "totalFileSizeBytes": 5550505984
+    },
+    {
+      "channel": "front",
+      "displayMode": "Driving",
+      "extensionLowercased": "mp4",
+      "fileCount": 499,
+      "folder": "DCIM/Movie",
+      "inferredParkingPattern": null,
+      "maxFileSizeBytes": 494927872,
+      "minFileSizeBytes": 10616832,
+      "mode": "continuous",
+      "outputCategory": "Driving",
+      "sampleBitrateMax": 67643784,
+      "sampleBitrateMin": 65321988,
+      "sampleCodecs": [
+        "H.264"
+      ],
+      "sampleDurationMax": 60,
+      "sampleDurationMin": 1.1333333333333333,
+      "sampleFrameRates": [
+        30
+      ],
+      "sampleResolutions": [
+        "3840x2160"
+      ],
+      "storageRateSamples": [
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 492830720,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65530372,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 492830720,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65536536,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 494927872,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65580048,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 1.1333333333333333,
+          "fileSizeBytes": 10616832,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 67643784,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 492830720,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65321988,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 5.3,
+          "fileSizeBytes": 44171264,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65990356,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 60,
+          "fileSizeBytes": 494927872,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65546416,
+          "width": 3840
+        },
+        {
+          "durationSeconds": 27.833333333333332,
+          "fileSizeBytes": 230686720,
+          "height": 2160,
+          "nominalFrameRate": 30,
+          "videoBitrate": 65547484,
+          "width": 3840
+        }
+      ],
+      "totalFileSizeBytes": 237642186752
+    }
+  ],
+  "inventory": {
+    "front_inventory_item_count": 657,
+    "photo_file_count": 65,
+    "video_file_count": 592
+  },
+  "limitations": [
+    "Inventory counts are not per-file video probes; 657 front items include 65 JPEG photos. Only 23 storage-rate sample occurrences are supplied across three video summary groups.",
+    "Group mode and inferredParkingPattern are app classifications, not owner-confirmed configured parking modes. Folder placement alone does not establish capture behavior.",
+    "sampleCodecs is an app-reported group summary, not an independently verified per-file codec distribution. No per-file codec was supplied.",
+    "nominalFrameRate and durationSeconds are encoded playback metadata, not capture cadence or elapsed real-world coverage.",
+    "Every storageRateSamples occurrence is retained in group order, without numeric deduplication; fileSizeBytes is the whole file size and videoBitrate is the reported video-track bitrate.",
+    "Short/partial clips remain separate from full-length cohorts; bitrate alone does not prove TurboBoot, a mode transition, or continuous parking operation.",
+    "Review cohort rules: full-length means at least 60 playback seconds; shorter samples are partial. Parking-classified full-length samples are split below versus at least 10000000 reported video bps solely to show the two observed bitrate bands, not to infer configured modes.",
+    "Owner-confirmed front-only firmware scope applies only to this submission. Historical multi-channel rows remain unchanged.",
+    "This data publication does not claim new native app recognition support. No power measurements were submitted."
+  ],
+  "owner_assertions": {
+    "channel_count": 1,
+    "firmware": "V2.2_260815",
+    "roles": [
+      "front"
+    ]
+  },
+  "reviewed_cohorts": [
+    {
+      "duration_seconds_max": 60,
+      "duration_seconds_min": 60,
+      "group_index": 0,
+      "label": "protected driving full-length",
+      "sample_count": 5,
+      "sample_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "video_bitrate_bps_max": 65542536,
+      "video_bitrate_bps_min": 65527488
+    },
+    {
+      "duration_seconds_max": 60,
+      "duration_seconds_min": 60,
+      "group_index": 1,
+      "label": "parking-classified full-length lower-bitrate",
+      "sample_count": 5,
+      "sample_indices": [
+        0,
+        2,
+        3,
+        5,
+        6
+      ],
+      "video_bitrate_bps_max": 4661181,
+      "video_bitrate_bps_min": 4096041
+    },
+    {
+      "duration_seconds_max": 62,
+      "duration_seconds_min": 60,
+      "group_index": 1,
+      "label": "parking-classified full-length higher-bitrate",
+      "sample_count": 2,
+      "sample_indices": [
+        7,
+        8
+      ],
+      "video_bitrate_bps_max": 65537856,
+      "video_bitrate_bps_min": 65534552
+    },
+    {
+      "duration_seconds_max": 37.63333333333333,
+      "duration_seconds_min": 0.5666666666666667,
+      "group_index": 1,
+      "label": "parking-classified short/partial",
+      "sample_count": 3,
+      "sample_indices": [
+        1,
+        4,
+        9
+      ],
+      "video_bitrate_bps_max": 65585360,
+      "video_bitrate_bps_min": 4139012
+    },
+    {
+      "duration_seconds_max": 60,
+      "duration_seconds_min": 60,
+      "group_index": 2,
+      "label": "driving full-length",
+      "sample_count": 5,
+      "sample_indices": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "video_bitrate_bps_max": 65580048,
+      "video_bitrate_bps_min": 65321988
+    },
+    {
+      "duration_seconds_max": 27.833333333333332,
+      "duration_seconds_min": 1.1333333333333333,
+      "group_index": 2,
+      "label": "driving short/partial",
+      "sample_count": 3,
+      "sample_indices": [
+        3,
+        5,
+        7
+      ],
+      "video_bitrate_bps_max": 67643784,
+      "video_bitrate_bps_min": 65547484
+    }
+  ],
+  "sample_occurrences": 23,
+  "source_kind": "owner-submitted card-scan report; not a new physical-card probe",
+  "unreported_settings": {
+    "HDR": null,
+    "capture_cadence": null,
+    "configured_parking_mode": null,
+    "quality": null
+  }
+}

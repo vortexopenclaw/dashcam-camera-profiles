@@ -12689,12 +12689,20 @@
           ],
           "validation": "official_reference",
           "variant": null
+        },
+        {
+          "channels": 1,
+          "roles": [
+            "front"
+          ],
+          "validation": "owner_confirmed_app_submission_sampled",
+          "variant": "front-only; firmware V2.2_260815"
         }
       ],
       "evidence": {
         "confidence": "not stated",
         "level": "manual-backed",
-        "note": null,
+        "note": "Owner-confirmed A329T front-only card-scan report on firmware V2.2_260815 adds sampled video measurements. Historical/manual-backed multi-channel scope is retained; no new physical-card or native app recognition validation is claimed.",
         "status": "experimental"
       },
       "filename_patterns": [
@@ -12725,7 +12733,8 @@
       "manufacturer": "VIOFO",
       "model": "A329T",
       "notes": [
-        "A later owner-confirmed A329T 3CH auto-event card uses T/PT for telephoto. Its Parking-folder clips are motion-triggered and its RO-folder parking clips are impact-triggered; low bitrate alone must not be interpreted as continuous parking recording. Parking subtype depends on the camera setting and cannot always be determined from timing alone."
+        "A later owner-confirmed A329T 3CH auto-event card uses T/PT for telephoto. Its Parking-folder clips are motion-triggered and its RO-folder parking clips are impact-triggered; low bitrate alone must not be interpreted as continuous parking recording. Parking subtype depends on the camera setting and cannot always be determined from timing alone.",
+        "The owner-confirmed 1CH front-only V2.2_260815 submission is separate from historical 3CH evidence. Quality, HDR, configured parking mode and capture cadence were not reported. App-reported codec summaries are not per-file codec verification; parking classifications are not confirmed settings."
       ],
       "recording": {
         "driving_folders": [
@@ -12811,6 +12820,11 @@
           "kind": "source",
           "label": "Reference source",
           "url": "https://www.viofo.com/blogs/viofo-car-dash-camera-guide-faq-and-news/highlights-of-the-a329s-series-what-are-low-power-impact-mode-hybrid-parking-mode"
+        },
+        {
+          "kind": "source",
+          "label": "Owner-confirmed A329T front-only V2.2_260815 sampled card-scan evidence and exact storage-rate pairs",
+          "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/a329t-v2.2_260815-1ch-evidence.json"
         }
       ],
       "technical_facts": [
@@ -12969,6 +12983,10 @@
         {
           "label": "grouping \u203a expected_sets \u203a parking_three_channel",
           "value": "PT"
+        },
+        {
+          "label": "Front-only V2.2_260815 sampled video evidence",
+          "value": "Three app video-summary groups retain 23 sample occurrences: five protected-driving, ten parking-classified and eight driving. Inventory contains 592 MP4 and 65 JPEG items, not 657 videos. See linked evidence for exact file sizes, playback durations, video-track bitrates, and separate full-length/short cohorts."
         }
       ],
       "video_samples": [
@@ -13037,6 +13055,78 @@
           "mode": "parking",
           "resolution": "2560x1440",
           "source": "ffprobe"
+        },
+        {
+          "bitrate": "65.527488-65.542536 Mbps",
+          "channel": "front",
+          "codec": "Unknown (app-reported group summary: H.264)",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "protected driving full-length",
+          "recording_configuration": "1-channel: front only; owner-confirmed firmware V2.2_260815",
+          "resolution": "3840x2160",
+          "settings_note": "5 sampled occurrences; playback metadata only. Quality/HDR/configured parking mode/capture cadence unknown. Short/partial clips separated. App classification, not verified capture behavior. Exact pairs and cohort membership in linked evidence.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.096041-4.661181 Mbps",
+          "channel": "front",
+          "codec": "Unknown (app-reported group summary: H.264)",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking-classified full-length lower-bitrate",
+          "recording_configuration": "1-channel: front only; owner-confirmed firmware V2.2_260815",
+          "resolution": "3840x2160",
+          "settings_note": "5 sampled occurrences; playback metadata only. Quality/HDR/configured parking mode/capture cadence unknown. Short/partial clips separated. App classification, not verified capture behavior. Exact pairs and cohort membership in linked evidence.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "65.534552-65.537856 Mbps",
+          "channel": "front",
+          "codec": "Unknown (app-reported group summary: H.264)",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking-classified full-length higher-bitrate",
+          "recording_configuration": "1-channel: front only; owner-confirmed firmware V2.2_260815",
+          "resolution": "3840x2160",
+          "settings_note": "2 sampled occurrences; playback metadata only. Quality/HDR/configured parking mode/capture cadence unknown. Short/partial clips separated. App classification, not verified capture behavior. Exact pairs and cohort membership in linked evidence.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "4.139012-65.585360 Mbps",
+          "channel": "front",
+          "codec": "Unknown (app-reported group summary: H.264)",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking-classified short/partial",
+          "recording_configuration": "1-channel: front only; owner-confirmed firmware V2.2_260815",
+          "resolution": "3840x2160",
+          "settings_note": "3 sampled occurrences; playback metadata only. Quality/HDR/configured parking mode/capture cadence unknown. Short/partial clips separated. App classification, not verified capture behavior. Exact pairs and cohort membership in linked evidence.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "65.321988-65.580048 Mbps",
+          "channel": "front",
+          "codec": "Unknown (app-reported group summary: H.264)",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving full-length",
+          "recording_configuration": "1-channel: front only; owner-confirmed firmware V2.2_260815",
+          "resolution": "3840x2160",
+          "settings_note": "5 sampled occurrences; playback metadata only. Quality/HDR/configured parking mode/capture cadence unknown. Short/partial clips separated. App classification, not verified capture behavior. Exact pairs and cohort membership in linked evidence.",
+          "source": "app_submission"
+        },
+        {
+          "bitrate": "65.547484-67.643784 Mbps",
+          "channel": "front",
+          "codec": "Unknown (app-reported group summary: H.264)",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving short/partial",
+          "recording_configuration": "1-channel: front only; owner-confirmed firmware V2.2_260815",
+          "resolution": "3840x2160",
+          "settings_note": "3 sampled occurrences; playback metadata only. Quality/HDR/configured parking mode/capture cadence unknown. Short/partial clips separated. App classification, not verified capture behavior. Exact pairs and cohort membership in linked evidence.",
+          "source": "app_submission"
         }
       ]
     },
