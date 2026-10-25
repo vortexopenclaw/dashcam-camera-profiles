@@ -104,6 +104,22 @@ assert.equal(chart.representative(candidates,['b']).id,'b');
 assert.equal(chart.representative(candidates,[],'all',2).id,'b');
 assert.deepEqual(chart.readState('?'+chart.query({...chart.preset('current'),group:'buffered-motion',family:'low-power',condition:'monitoring'}),rows),{...chart.preset('current'),group:'buffered-motion',family:'low-power',condition:'monitoring'});
 for(const token of ['__proto__','toString','not-a-family']) assert.equal(chart.readState('?group='+token+'&family='+token,rows).group,'low-power');
+// Every supported metric/family/state uses exactly the renderer's interval rules.
+for (const metric of Object.keys(chart.metrics)) for (const group of Object.keys(chart.families)) {
+  for (const condition of ['', 'monitoring', 'event-recording', 'time-lapse', 'continuous']) {
+    const state={metric,group,condition,ids:rows.map(row=>row.id)};
+    const expected=rows.filter(row=>chart.matchesFamily(row,group)&&(!condition||row.state===condition)&&chart.interval(row,metric)&&(metric!=='current'||typeof row.voltage_v==='number'&&Number.isFinite(row.voltage_v)&&row.voltage_v>0));
+    assert.deepEqual(chart.eligibleRows(rows,state),expected);
+    chart.pruneSelection(rows,state);
+    assert.deepEqual(state.ids,expected.map(row=>row.id));
+    assert.equal(chart.prepare(rows,state).excluded,0);
+  }
+}
+const t340=rows.find(row=>UI.modelLabel(row)==='Viofo T340'&&row.reported_startup_seconds_min===1.76);
+assert.ok(t340); assert.equal(t340.reported_startup_seconds,null);
+assert.ok(chart.eligibleRows(rows,{metric:'delay',group:'low-power',condition:'monitoring'}).includes(t340));
+assert.deepEqual(chart.interval(t340,'delay'),{min:1.76,max:1.85,range:true});
+for (const value of [null,'',NaN]) assert.equal(chart.interval({power_w:value},'watts'),null);
 if (!process.argv.includes('--browser')) {
   console.log('Parking chart numeric, selection, voltage, timing-method, and public-asset contracts passed.');
   process.exit(0);
@@ -116,7 +132,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Handler,directory='docs'))
 threading.Thread(target=server.serve_forever,daemon=True).start()
 url='http://127.0.0.1:%s/parking-charts.html'%server.server_port
-scratch=pathlib.Path.home()/'.hermes/cache/scratch'
+scratch=pathlib.Path(os.environ['TMPDIR'])
 scratch.mkdir(parents=True,exist_ok=True)
 out=pathlib.Path(os.environ.get('PARKING_CHART_ARTIFACTS') or tempfile.mkdtemp(prefix='parking-charts-',dir=str(scratch)))
 out.mkdir(parents=True,exist_ok=True)
@@ -129,7 +145,7 @@ def ready(page):
     page.wait_for_function("() => document.querySelectorAll('#chart-picker input[data-id]').length > 0")
     page.wait_for_function("() => document.querySelector('#chart-canvas').getAttribute('aria-busy') === 'false'")
 def params(ids,metric='watts',**kw):
-    p=[('selection','1'),('metric',metric)]+[('id',id) for id in ids]+list(kw.items())
+    p=list({'selection':'1','group':'all','condition':'','metric':metric,**kw}.items())+[('id',id) for id in ids]
     return urllib.parse.urlencode(p)
 def row(page,id): return page.locator('#chart-canvas [data-measurement="%s"]'%id)
 def fit_svg(page):
@@ -245,16 +261,15 @@ with sync_playwright() as p:
     download(page,'#chart-svg','recording-delay.svg');download(page,'#chart-png','recording-delay-2x.png')
     fit_svg(page)
     page.locator('#chart-metric').select_option('wake')
-    assert page.locator('#chart-model-picker input:checked').count()==7
-    assert 'No impact to first frame data for:' in page.locator('#chart-notice').text_content()
-    assert 'Viofo T340' in page.locator('#chart-notice').text_content()
+    assert page.locator('#chart-model-picker input:checked').count()==0
+    assert 'Choose a dashcam with a result' in page.locator('#chart-notice').text_content()
     assert page.locator('#chart-svg').is_disabled()==(page.locator('#chart-canvas svg').count()==0)
     page.locator('#preset-current').click()
     assert page.locator('#chart-canvas [data-measurement]').count()==7
     page.locator('#chart-group').select_option('all')
     page.locator('#chart-advanced > summary').click()
     page.locator('#chart-condition').select_option('')
-    assert page.locator('#chart-picker input[data-id]').count()==615
+    assert page.locator('#chart-picker input[data-id]').count()==page.evaluate("rows=>ParkingCharts.eligibleRows(rows,{group:'all',metric:'current',condition:''}).length",rows)
     # Aliases match their one canonical group, and exact model variants remain distinct.
     for search,label in [('Nexus 5','Vantrue N5'),('N5','Vantrue N5'),('Sonnet 1 (S1) Pro','Vantrue S1 Pro'),('4K Omni [X800]','70mai 4K Omni'),('ARC800','Thinkware ARC 800'),('S1-QHD Infinite','Vueroid S1-QHD Infinite')]:
         page.locator('#chart-search').fill(search)
@@ -285,10 +300,10 @@ with sync_playwright() as p:
     # Watts stay source-exact. Never infer 0.0124 W from a 1 mA source row.
     page.goto(url+'?'+params(seed));ready(page)
     assert row(page,'vortex-sheet-row-9').locator('[data-kind=value]').text_content()=='0.01 W'
-    # Mixed known voltages, then unknown voltage, must block measured mA.
+    # Mixed known voltages still block mA; unknown-voltage rows are not offered.
     different=next(r['id'] for r in rows if r.get('voltage_v')==12.6 and r.get('current_ma') is not None)
     unknown=next(r['id'] for r in rows if r.get('voltage_v') is None and r.get('current_ma') is not None)
-    for id in [different,unknown]:
+    for id in [different]:
         page.goto(url+'?'+params([seed[0],id],'current'));ready(page)
         assert 'blocked' in page.locator('#chart-notice').text_content()
         assert page.locator('#chart-canvas svg').count()==0
@@ -296,6 +311,9 @@ with sync_playwright() as p:
         page.locator('#chart-switch-watts').click()
         assert page.locator('#chart-metric').input_value()=='watts'
         assert page.locator('#chart-canvas svg').count()==1
+    page.goto(url+'?'+params([seed[0],unknown],'current'));ready(page)
+    assert row(page,unknown).count()==0
+    assert row(page,seed[0]).count()==1
     # Actual source range, with endpoint markers and no scalar rectangle.
     ranged=next(r for r in rows if r.get('power_w_min') is not None)
     page.goto(url+'?'+params([ranged['id']]));ready(page)
@@ -327,7 +345,7 @@ with sync_playwright() as p:
     page.goto(url+'?'+params([a,b,c]));ready(page)
     assert row(page,a).locator('[data-kind=zero]').count()==1
     assert row(page,a).locator('[data-kind=value]').text_content()=='0 W'
-    assert row(page,b).count()==0 and 'No measured power data for: Viofo T340. That selection is not shown.' == page.locator('#chart-notice').text_content()
+    assert row(page,b).count()==0 and b not in urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query).get('id',[])
     assert 'not shown' not in page.locator('#chart-canvas svg > g').text_content()
     assert 'unavailable' not in page.locator('#chart-canvas svg > g').text_content()
     assert row(page,c).locator('[data-kind=range]').count()==1 and row(page,c).locator('rect').count()==0
@@ -358,7 +376,7 @@ with sync_playwright() as p:
     assert page.locator('#picker-title').text_content()=='Choose your dashcams and parking modes'
     for selector in ['#chart-highlight option:not([value=""])','.chart-model-choice','.chart-model']:
         assert page.locator(selector).evaluate_all("es=>{const names=es.map(e=>e.dataset.model||e.textContent);return names.every((name,i)=>i===0||names[i-1].localeCompare(name,undefined,{numeric:true,sensitivity:'base'})<=0)}"), 'Natural model-name ordering'
-    elite=[name for name in page.locator('#chart-highlight option').all_text_contents() if name.startswith('Blackvue Elite ')]
+    elite=[name for name in page.locator('.chart-model-choice').evaluate_all('es=>es.map(e=>e.dataset.model)') if name.startswith('Blackvue Elite ')]
     assert elite==['Blackvue Elite 8','Blackvue Elite 9','Blackvue Elite 10'], elite
     assert page.locator('#chart-model-picker input[type=checkbox]').evaluate_all('es=>es.every(e=>e.getBoundingClientRect().height>0)')
     omni=page.locator('.chart-model-choice[data-model="70mai 4K Omni"]')
@@ -513,7 +531,11 @@ with sync_playwright() as p:
     assert '1.37–1.42 s' in pro_s.locator('.chart-test-fields').text_content()
     for family,id,value in [('buffered-motion','rcg530-675957-7','2.85 W'),('hybrid','rcg530-675957-1','0.87 W')]:
         page.locator('#chart-group').select_option(family)
+        if family=='hybrid':
+            page.locator('#chart-advanced').evaluate('e=>e.open=true')
+            page.locator('#chart-condition').select_option('')
         pro_s.locator('input[type=checkbox]').check()
+        pro_s.locator('.chart-model-setup').evaluate('e=>e.open=true')
         pro_s.locator('select[data-test]').select_option(id)
         page.wait_for_function("([id,value])=>document.querySelector('[data-measurement=\"'+id+'\"] [data-kind=value]')?.textContent===value",arg=[id,value])
     page.locator('#chart-group').select_option('time-lapse')

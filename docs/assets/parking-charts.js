@@ -51,7 +51,7 @@
     }
   }
   const defaultCondition = family => family === 'time-lapse' ? 'time-lapse' : family === 'low-bitrate' ? 'continuous' : 'monitoring';
-  const steadyState = (row,family) => family==='hybrid' ? ['monitoring','continuous','time-lapse'].includes(row.state) : row.state===defaultCondition(family);
+
   const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', format: 'video', highlight: '', modeLabels: null, missingModels: [], details: false, subtitle: null, xLabel: null, yLabel: null, title: automaticTitle({family:'low-power',metric}), group: 'low-power', family: 'low-power', condition: 'monitoring' });
   const axisText = state => state.xLabel ?? ({current:'Power Draw (mA)',watts:'Power Draw (Watts)',delay:'Time to Start Recording (Seconds)',wake:'Impact to First Recorded Frame (Seconds)'}[state.metric]);
   const subtitleText = (state, voltage = null) => {
@@ -86,6 +86,20 @@
     // A partially reported or invalid range is not a scalar measurement.
     if (min != null || max != null) return valid(min) && valid(max) && max >= min ? { min, max, range: true } : null;
     return valid(row[key]) ? { min: row[key], max: row[key], range: false } : null;
+  }
+  // Use the renderer's interval contract, including trusted range-only timings.
+  // Search and "only selected" narrow the picker, not the chart selection.
+  function eligibleRows(rows, state) {
+    return rows.filter(row => interval(row, state.metric) && matchesFamily(row, state.group) &&
+      matchesFamily(row,state.family || state.group) &&
+      (state.metric !== 'current' || valid(row.voltage_v) && row.voltage_v > 0) &&
+      (!state.condition || row.state === state.condition));
+  }
+  function pruneSelection(rows, state) {
+    const eligible = new Set(eligibleRows(rows, state).map(row => row.id));
+    state.ids = state.ids.filter(id => eligible.has(id));
+    state.missingModels = [];
+    return state;
   }
   function readState(search, rows) {
     const p = new URLSearchParams(search), fallback = preset('current');
@@ -187,7 +201,7 @@
     const quantities={current:'current-draw',watts:'power-draw',delay:'wakeup-times',wake:'impact-to-first-frame'};
     return `${modes[state.family] || modes.all}-${quantities[state.metric] || 'comparison'}${extension!=='csv' && state.format!=='auto' ? '-16x9' : ''}.${extension}`;
   }
-  const api = { automaticTitle, subtitleText, showModeLabels, parkingMode, chartFields, exportFilename, tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
+  const api = { eligibleRows, pruneSelection, automaticTitle, subtitleText, showModeLabels, parkingMode, chartFields, exportFilename, tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof window === 'undefined') return;
   window.ParkingCharts = api;
@@ -411,8 +425,8 @@
   }
   function primaryGroups() {
     const q = $('chart-search').value.toLocaleLowerCase().trim();
-    const eligible = rows.filter(row => matchesFamily(row, state.group) && steadyState(row,state.group));
-    return UI.groupModels(eligible).filter(group => !q || group.rows.some(row => `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q))).sort((a,b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
+    const eligible = eligibleRows(rows, state).filter(row=>!q || `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q));
+    return UI.groupModels(eligible).sort((a,b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
   }
   function chosenFor(group, channels = null) {
     const remembered = modelChoices.get(group.label);
@@ -420,27 +434,28 @@
   }
   function retargetSelection(group,metric,allowWatts=false) {
     const previous=rows.filter(row=>state.ids.includes(row.id));
-    const requested=[...new Set([...previous.map(UI.modelLabel),...(state.missingModels || [])])];
-    const ids=[],missing=[];
+    const requested=[...new Set(previous.map(UI.modelLabel))];
+    const ids=[];
     modelChoices.clear();
     for (const name of requested) {
       const before=previous.filter(row=>UI.modelLabel(row)===name);
-      const modeRows=rows.filter(row=>UI.modelLabel(row)===name&&matchesFamily(row,group)&&steadyState(row,group));
-      if (!modeRows.length) {missing.push(name);continue;}
-      const measured=modeRows.filter(row=>interval(row,metric));
-      const candidates=measured.length ? measured : modeRows;
+      const modeRows=eligibleRows(rows,{...state,group,family:group,metric,condition:group===state.group ? state.condition : defaultCondition(group)}).filter(row=>UI.modelLabel(row)===name);
+      if (!modeRows.length) continue;
+      const candidates=modeRows;
+      const retained=before.filter(row=>candidates.some(candidate=>candidate.id===row.id));
+      if(retained.length){ids.push(...retained.map(row=>row.id));continue;}
       const channel=before[0]?.installed_channels ?? null;
       const chosen=representative(candidates,state.ids,group,channel)||representative(candidates,state.ids,group);
       ids.push(chosen.id);modelChoices.set(name,chosen.id);
     }
-    state.ids=ids;state.missingModels=missing;state.group=group;state.family=group;state.metric=metric;state.condition=defaultCondition(group);
+    state.ids=ids;state.missingModels=[];if(group!==state.group)state.condition=defaultCondition(group);state.group=group;state.family=group;state.metric=metric;
     if (allowWatts&&metric==='current'&&(prepare(rows,state).blocked||ids.some(id=>{const row=rows.find(row=>row.id===id);return !interval(row,'current')&&interval(row,'watts');}))) state.metric='watts';
   }
   function editModel(group, chosen, checked, focus = 'input[type=checkbox]') {
     modelChoices.set(group.label, chosen.id);
     state.missingModels=(state.missingModels || []).filter(name=>name!==group.label);
     // A normal model choice follows the requested group, without mixing old modes.
-    if (checked) state.ids=state.ids.filter(id=>{const row=rows.find(row=>row.id===id);return matchesFamily(row,state.group)&&steadyState(row,state.group);});
+    if (checked) pruneSelection(rows,state);
     state.ids = state.ids.filter(id => UI.modelLabel(rows.find(row => row.id === id)) !== group.label);
     if (checked) state.ids.push(chosen.id);
     state.family = state.ids.every(id => matchesFamily(rows.find(row => row.id === id), state.group)) ? state.group : 'all';
@@ -494,13 +509,13 @@
       if(multiple>1)details.append(el('small','',`${multiple} shared measurements retained. Editing this camera replaces only its selected tests.`));
       card.append(details);fragment.append(card);
     }
-    if(!groups.length)fragment.append(el('p','charts-muted','No matching camera models. Your chart has not changed.'));
+    if(!groups.length)fragment.append(el('p','charts-muted','No camera models have plottable data for these criteria. Try another metric, parking mode, state, or search.'));
     $('chart-model-picker').replaceChildren(fragment);
   }
   function renderPicker() {
     const open = new Set([...document.querySelectorAll('.chart-model[open]')].map(node => node.dataset.model));
-    const selected = new Set(state.ids), q = $('chart-search').value.toLocaleLowerCase().trim(), condition = $('chart-condition').value;
-    const visible = rows.filter(row => matchesFamily(row,state.group) && (!q || `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q)) && (!condition || row.state === condition) && (!$('chart-only-selected').checked || selected.has(row.id)));
+    const selected = new Set(state.ids), q = $('chart-search').value.toLocaleLowerCase().trim();
+    const visible = eligibleRows(rows,state).filter(row => (!q || `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q)) && (!$('chart-only-selected').checked || selected.has(row.id)));
     const groups = UI.groupModels(visible).sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
     $('picker-count').textContent = `${visible.length} matching measurements · ${groups.length} models`;
     const models = primaryGroups(); renderModels(models);
@@ -532,10 +547,18 @@
       }
       fragment.append(details);
     }
-    if (!groups.length) fragment.append(el('p', 'charts-muted', 'No matching measurements. Your chart selection has not changed.'));
+    if (!groups.length) fragment.append(el('p', 'charts-muted', 'No plottable measurements match this metric, parking mode, state, and search.'));
     $('chart-picker').replaceChildren(fragment);
   }
-  function render() { syncControls(); renderChart(); renderPicker(); }
+  function render() {
+    pruneSelection(rows,state);
+    const highlighted=UI.groupModels(rows.filter(row=>state.ids.includes(row.id))).sort((a,b)=>a.label.localeCompare(b.label,undefined,{numeric:true,sensitivity:'base'}));
+    if(!highlighted.some(group=>group.label===state.highlight))state.highlight='';
+    $('chart-highlight').replaceChildren(el('option','','No highlight'));
+    $('chart-highlight').firstChild.value='';
+    highlighted.forEach(group=>{const option=el('option','',group.label);option.value=group.label;$('chart-highlight').append(option);});
+    syncControls(); renderChart(); renderPicker();
+  }
   async function init() {
     try {
       const response = await fetch('data/parking-measurements.json', {cache:'no-store'});
@@ -543,10 +566,10 @@
       const data = await response.json(); rows = data.measurements;
       state = readState(location.search, rows);
       $('chart-data-status').textContent = `${rows.length} measurements · ${UI.groupModels(rows).length} models`;
-      UI.groupModels(rows).sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' })).forEach(group => { const option = el('option', '', group.label); option.value = group.label; $('chart-highlight').append(option); });
+
       for (const key of ['title', 'subtitle', 'xLabel', 'yLabel', 'metric', 'sort', 'highlight', 'format']) $(`chart-${key}`).addEventListener(['title','subtitle','xLabel','yLabel'].includes(key) ? 'input' : 'change', () => {
         const value=$(`chart-${key}`).value;
-        if (key==='metric') {retargetSelection(state.group,value);render();}
+        if (key==='metric') {state.metric=value;render();}
         else {state[key]=value;renderChart();}
       });
       $('chart-mode-labels').addEventListener('change',()=>{state.modeLabels=$('chart-mode-labels').checked;renderChart();});
@@ -563,20 +586,16 @@
       for (const metric of ['current', 'delay']) $(`preset-${metric}`).addEventListener('click', () => { state = preset(metric); modelChoices.clear(); render(); });
       $('chart-clear').addEventListener('click', () => { state.ids = []; state.missingModels=[]; render(); });
       $('chart-switch-watts').addEventListener('click', () => {if(Object.values(titles).includes(state.title))state.title=titles.watts;state.metric = 'watts'; render(); });
-      for (const key of ['chart-search', 'chart-condition', 'chart-only-selected']) $(key).addEventListener(key === 'chart-search' ? 'input' : 'change', () => { state.condition = $('chart-condition').value; renderPicker(); history.replaceState(null, '', `${location.pathname}?${query(state)}`); });
+      for (const key of ['chart-search', 'chart-condition', 'chart-only-selected']) $(key).addEventListener(key === 'chart-search' ? 'input' : 'change', () => { state.condition = $('chart-condition').value; render(); });
+      window.addEventListener('popstate',()=>{state=readState(location.search,rows);modelChoices.clear();render();});
       $('chart-picker').addEventListener('change', event => {
         const { id } = event.target.dataset;
         if (!id || !rows.some(row => row.id === id)) return;
         modelChoices.delete(UI.modelLabel(rows.find(row => row.id === id)));
         if (event.target.checked && !matchesFamily(rows.find(row => row.id === id), state.family)) state.family = 'all';
         state.ids = event.target.checked ? [...new Set([...state.ids, id])] : state.ids.filter(value => value !== id);
-        renderChart();
-        renderModels(primaryGroups());
-        // Update counts without replacing a focused advanced checkbox.
-        document.querySelectorAll('.chart-model').forEach(details => {
-          const inputs = [...details.querySelectorAll('input[data-id]')];
-          details.querySelector('.chart-model-count').textContent = `${inputs.length} measurements · ${inputs.filter(input => input.checked).length} selected`;
-        });
+        render();
+        [...document.querySelectorAll('#chart-picker input[data-id]')].find(input=>input.dataset.id===id)?.focus({preventScroll:true});
       });
       $('chart-svg').addEventListener('click', () => { if (currentSVG) download(new Blob([serialized()], { type: 'image/svg+xml;charset=utf-8' }), exportFilename(state,'svg')); });
       $('chart-png').addEventListener('click', exportPNG);
