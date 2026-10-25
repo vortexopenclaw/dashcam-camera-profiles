@@ -52,7 +52,7 @@
   }
   const defaultCondition = family => family === 'time-lapse' ? 'time-lapse' : family === 'low-bitrate' ? 'continuous' : 'monitoring';
 
-  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', format: 'video', highlight: '', modeLabels: null, missingModels: [], details: false, subtitle: null, xLabel: null, yLabel: null, title: automaticTitle({family:'low-power',metric}), group: 'low-power', family: 'low-power', condition: 'monitoring' });
+  const preset = metric => ({ ids: seed.filter(id => metric !== 'delay' || id !== 'vortex-sheet-row-12'), metric, sort: 'desc', format: 'auto', highlight: '', modeLabels: null, missingModels: [], details: false, subtitle: null, xLabel: null, yLabel: null, title: automaticTitle({family:'low-power',metric}), group: 'low-power', family: 'low-power', condition: 'monitoring' });
   const axisText = state => state.xLabel ?? ({current:'Power Draw (mA)',watts:'Power Draw (Watts)',delay:'Time to Start Recording (Seconds)',wake:'Impact to First Recorded Frame (Seconds)'}[state.metric]);
   const subtitleText = (state, voltage = null) => {
     if (state.subtitle != null && !isAutomaticSubtitle(state.subtitle)) return state.subtitle;
@@ -109,7 +109,7 @@
     return normalizeTitle({ ids, group: Object.hasOwn(families, p.get('group')) ? p.get('group') : fallback.group, family: Object.hasOwn(families, p.get('family')) ? p.get('family') : (p.has('selection') ? 'all' : fallback.family), condition: ['', 'monitoring', 'event-recording', 'time-lapse', 'continuous'].includes(p.get('condition')) ? p.get('condition') : fallback.condition, details: p.get('details') === '1', metric: Object.hasOwn(metrics, p.get('metric')) ? p.get('metric') : fallback.metric,
       sort: p.get('sort') === 'asc' ? 'asc' : 'desc', highlight: p.has('highlight') ? (models.has(highlight) ? highlight : '') : fallback.highlight,
       missingModels: [...new Set(p.getAll('missingModel').map(name=>name.replace(/^BlackVue /,'Blackvue ').replace(/^VIOFO /,'Viofo ')).filter(name=>models.has(name)))],
-      format: p.get('format')==='auto' ? 'auto' : 'video',
+      format: p.get('format')==='video' ? 'video' : 'auto',
       modeLabels:p.has('modeLabels') ? p.get('modeLabels')==='1' : null,
       xLabel: p.has('xLabel') ? p.get('xLabel').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,120) : null,
       yLabel: p.has('yLabel') ? p.get('yLabel').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0,120) : null,
@@ -118,7 +118,7 @@
   }
   function query(state) {
     const p = new URLSearchParams({ selection: '1', group: state.group || 'all', family: state.family || 'all', condition: state.condition ?? 'monitoring', metric: state.metric, sort: state.sort, highlight: state.highlight, title: state.title, details: state.details ? '1' : '0' });
-    p.set('format',state.format || 'video');
+    p.set('format',state.format || 'auto');
     if(state.modeLabels!=null)p.set('modeLabels',state.modeLabels ? '1' : '0');
     for (const name of state.missingModels || []) p.append('missingModel',name);
     for (const key of ['subtitle','xLabel','yLabel']) if (state[key] != null) p.set(key,state[key]);
@@ -276,7 +276,7 @@
     const right = Math.ceil(Math.max(110, ...plotted.map(({ row, value }) => textWidth(valueLabel(row, value, state.metric), 16, true))) + 35);
     const width = Math.max(1200, left + right + 490), plotWidth = width - left - right;
     const svg = make('svg', { xmlns: ns, width, role: 'img', 'aria-labelledby': 'export-chart-title export-chart-desc', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': 14, fill: '#263343' });
-    svg.append(make('title', { id: 'export-chart-title' }, state.title ?? metric.label), make('desc', { id: 'export-chart-desc' }, `${axis}. ${plotted.length} measurements. Ranges show endpoints only. Values sorted ${state.sort === 'asc' ? 'low to high' : 'high to low'} by upper endpoint.`));
+    svg.append(make('title', { id: 'export-chart-title' }, state.title ?? metric.label), make('desc', { id: 'export-chart-desc' }, `${axis}. ${plotted.length} measurements. Bars extend from zero to the upper endpoint; lighter bands and endcaps mark minimum–maximum ranges, not averages. Zero values use a dot at the baseline. Values sorted ${state.sort === 'asc' ? 'low to high' : 'high to low'} by upper endpoint.`));
     const content = make('g');
     const text = (x, y, value, attrs = {}) => content.appendChild(make('text', { x, y, ...attrs }, value));
     let y = 45;
@@ -307,11 +307,15 @@
       label.firstLines.forEach(line => { group.append(make('text', { x: left - 20, y: labelY, 'text-anchor': 'end', 'font-size': 16, 'font-weight': highlighted ? 700 : 600, fill: highlighted ? '#ac520e' : '#23354a' }, line)); labelY += 20; });
       label.secondLines.forEach(line => { group.append(make('text', { x: left - 20, y: labelY, 'text-anchor': 'end', 'font-size': 14, fill: '#566477' }, line)); labelY += 18; });
       const color = highlighted ? '#ef8a2c' : '#559bd4';
-      if (value.range) {
-        group.append(make('line', { x1: scale(value.min), x2: scale(value.max), y1: cy, y2: cy, stroke: '#243a50', 'stroke-width': 3, 'data-kind': 'range' }));
-        for (const endpoint of [value.min, value.max]) group.append(make('line', { x1: scale(endpoint), x2: scale(endpoint), y1: cy - 12, y2: cy + 12, stroke: '#243a50', 'stroke-width': 3 }));
-      } else if (value.max > 0) group.append(make('rect', { x: left, y: cy - 13, width: scale(value.max) - left, height: 26, fill: color, 'data-kind': 'scalar' }));
+      // Use the same zero baseline for scalars and ranges. A lighter terminal
+      // band and exact endcaps distinguish uncertainty without inventing a mean.
+      if (value.max > 0) group.append(make('rect', { x: left, y: cy - 13, width: scale(value.max) - left, height: 26, fill: color, 'data-kind': value.range ? 'bar' : 'scalar' }));
       else group.append(make('circle', { cx: left, cy, r: 3, fill: color, 'data-kind': 'zero' }));
+      if (value.range) {
+        group.append(make('rect', { x: scale(value.min), y: cy - 13, width: scale(value.max) - scale(value.min), height: 26, fill: '#ffffff', 'fill-opacity': 0.4, 'data-kind': 'range-band' }));
+        group.append(make('line', { x1: scale(value.min), x2: scale(value.max), y1: cy, y2: cy, stroke: '#243a50', 'stroke-width': 3, 'data-kind': 'range' }));
+        for (const endpoint of [value.min, value.max]) group.append(make('line', { x1: scale(endpoint), x2: scale(endpoint), y1: cy - 12, y2: cy + 12, stroke: '#243a50', 'stroke-width': 3, 'data-kind': 'range-endpoint' }));
+      }
       group.append(make('text', { x: scale(value.max) + 10, y: cy + 5, 'font-size': 16, 'font-weight': highlighted ? 700 : 600, fill: '#23354a', 'data-kind': 'value' }, valueLabel(row, value, state.metric)));
       content.append(group);
     });
@@ -322,7 +326,7 @@
     content.append(make('line', { x1: 36, x2: width - 36, y1: y - 8, y2: y - 8, stroke: '#dae2eb' }));
     const notes = [
       state.metric === 'watts' && plotted.some(item=>item.row.power_is_derived) ? '≈ marks calculated power.' : '',
-      hasRanges ? 'Ranges show measured endpoints, not averages. Firmware and setups remain separate.' : '',
+      hasRanges ? 'Bars extend from zero to the upper endpoint. Lighter bands and endcaps mark min–max ranges, not averages. Firmware and setups remain separate.' : '',
 
       state.details ? 'Sources and configurations' : ''
     ].filter(Boolean);
@@ -566,6 +570,12 @@
       const data = await response.json(); rows = data.measurements;
       state = readState(location.search, rows);
       $('chart-data-status').textContent = `${rows.length} measurements · ${UI.groupModels(rows).length} models`;
+      // WebKit does not consistently pan focused SVG scroll regions with arrows.
+      $('chart-canvas').addEventListener('keydown', event => {
+        if (event.target !== event.currentTarget || event.altKey || event.ctrlKey || event.metaKey || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
+        event.preventDefault();
+        event.currentTarget.scrollLeft += event.key === 'ArrowRight' ? 80 : -80;
+      });
 
       for (const key of ['title', 'subtitle', 'xLabel', 'yLabel', 'metric', 'sort', 'highlight', 'format']) $(`chart-${key}`).addEventListener(['title','subtitle','xLabel','yLabel'].includes(key) ? 'input' : 'change', () => {
         const value=$(`chart-${key}`).value;

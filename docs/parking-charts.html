@@ -25,7 +25,7 @@
         <label class="chart-title-setting">Chart subtitle<input id="chart-subtitle" type="text" maxlength="180"></label>
         <label>X-axis label<input id="chart-xLabel" type="text" maxlength="120"></label>
         <label>Y-axis label<input id="chart-yLabel" type="text" maxlength="120"></label>
-        <label>Image layout<select id="chart-format"><option value="video">YouTube · 16:9</option><option value="auto">Auto height</option></select></label>
+        <label>Image layout<select id="chart-format"><option value="auto">Auto height</option><option value="video">YouTube · 16:9</option></select></label>
         <label>Metric<select id="chart-metric"><option value="current">Measured current (mA)</option><option value="watts">Measured power (W)</option><option value="delay">Wakeup time to start recording (s)</option><option value="wake">Impact to first frame (s)</option></select></label>
         <label>Sort<select id="chart-sort"><option value="desc">High to low</option><option value="asc">Low to high</option></select></label>
         <label>Highlight a model (optional)<select id="chart-highlight"><option value="">No highlight</option></select></label>
@@ -38,8 +38,8 @@
     <section class="charts-panel chart-output" aria-labelledby="output-title">
       <div class="chart-output-heading"><h2 id="output-title">Chart preview</h2><span id="chart-count"></span></div>
       <p id="chart-notice" role="status"></p><button id="chart-switch-watts" type="button" hidden>Switch to W</button>
-      <p class="charts-muted chart-scroll-hint">On a small screen, swipe across the chart to read every label. Downloads include the entire chart.</p>
-      <div id="chart-canvas" tabindex="0" role="region" aria-label="Scrollable comparison chart" aria-busy="true"></div>
+      <p id="chart-scroll-hint" class="charts-muted chart-scroll-hint">On a small screen, swipe horizontally across the chart, or focus it and use the arrow keys, to read every bar and value. Downloads include the entire chart.</p>
+      <div id="chart-canvas" tabindex="0" role="region" aria-label="Scrollable comparison chart" aria-describedby="chart-scroll-hint" aria-busy="true"></div>
       <div class="charts-actions"><button id="chart-svg" type="button" disabled>Download SVG</button><button id="chart-png" type="button" disabled>Download PNG</button><button id="chart-share" type="button">Copy share link</button><button id="chart-csv" type="button" disabled>Download selected CSV</button></div>
       <p id="chart-action-status" role="status"></p>
     </section>

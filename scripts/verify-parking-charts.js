@@ -72,6 +72,10 @@ for (const file of ['docs/parking-charts.html', 'docs/assets/parking-charts.js',
   assert.ok(!/docs\.google\.com\/spreadsheets|sheets\.googleapis\.com|BEGIN PRIVATE KEY|client_email/.test(content), file);
 }
 assert.equal(chart.preset('current').highlight, '');
+assert.equal(chart.preset('current').format, 'auto');
+assert.equal(chart.readState('',rows).format, 'auto');
+assert.equal(chart.readState('?format=video',rows).format, 'video');
+assert.equal(chart.readState('?format=auto',rows).format, 'auto');
 assert.equal(chart.exportFilename({family:'low-power',metric:'watts',format:'video'},'png'),'low-power-parking-power-draw-16x9.png');
 assert.equal(chart.exportFilename({family:'buffered-motion',metric:'current',format:'auto'},'svg'),'buffered-motion-detection-parking-current-draw.svg');
 assert.equal(chart.exportFilename({family:'low-power',metric:'delay',format:'video'},'csv'),'low-power-parking-wakeup-times.csv');
@@ -167,7 +171,7 @@ with sync_playwright() as p:
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.on('request',lambda r:requests.append(r.url))
     page.goto(url); ready(page)
-    assert page.locator('#chart-format').input_value()=='video'
+    assert page.locator('#chart-format').input_value()=='auto'
     page.locator('#chart-format').select_option('auto')
     assert page.locator('#chart-group').input_value()=='low-power'
     assert page.locator('#chart-condition').input_value()=='monitoring'
@@ -314,11 +318,12 @@ with sync_playwright() as p:
     page.goto(url+'?'+params([seed[0],unknown],'current'));ready(page)
     assert row(page,unknown).count()==0
     assert row(page,seed[0]).count()==1
-    # Actual source range, with endpoint markers and no scalar rectangle.
+    # Actual source range, with a filled upper-endpoint bar and min–max band.
     ranged=next(r for r in rows if r.get('power_w_min') is not None)
     page.goto(url+'?'+params([ranged['id']]));ready(page)
     assert row(page,ranged['id']).locator('[data-kind=range]').count()==1
-    assert row(page,ranged['id']).locator('rect').count()==0
+    assert row(page,ranged['id']).locator('rect[data-kind=bar]').count()==1
+    assert row(page,ranged['id']).locator('rect[data-kind=range-band]').count()==1
     assert float(row(page,ranged['id']).get_attribute('data-min'))==ranged['power_w_min']
     assert float(row(page,ranged['id']).get_attribute('data-max'))==ranged['power_w_max']
     download(page,'#chart-svg','source-range.svg')
@@ -348,7 +353,7 @@ with sync_playwright() as p:
     assert row(page,b).count()==0 and b not in urllib.parse.parse_qs(urllib.parse.urlparse(page.url).query).get('id',[])
     assert 'not shown' not in page.locator('#chart-canvas svg > g').text_content()
     assert 'unavailable' not in page.locator('#chart-canvas svg > g').text_content()
-    assert row(page,c).locator('[data-kind=range]').count()==1 and row(page,c).locator('rect').count()==0
+    assert row(page,c).locator('[data-kind=range]').count()==1 and row(page,c).locator('rect[data-kind=bar]').count()==1
     assert row(page,c).locator('[data-kind=value]').text_content()=='1–3 W'
     fit_svg(page)
     safe=download(page,'#chart-svg','fixture-zero-range.svg')
