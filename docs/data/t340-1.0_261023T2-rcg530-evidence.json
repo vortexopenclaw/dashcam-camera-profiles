@@ -351,7 +351,7 @@
     "Firmware identity and measurement source remain separate from existing T340 firmware datasets.",
     "Contributor rcg530 and T340 identity of the power-button-off row are owner-confirmed; original source typo remains in the literal row identifier.",
     "Test date, IR state and prototype/retail status are unknown.",
-    "Reported impact-event-to-recording wording does not establish detection methodology or physical-impact-to-first-saved-frame timing; excluded from timing comparison metrics.",
+    "Trusted source-reported impact-event-to-recording timing is included in recording-delay charts. Exact detection methodology and physical-impact-to-first-saved-frame timing are not independently established. One shared range applies to LPID monitoring; day/night power rows are not independent timing tests.",
     "Source top readings are day; bottom readings are night. Source watts and current are independently rounded; do not recompute watts."
   ],
   "source_sha256": "7f31cbb5ea17b5ad0884465f20579084aacc428c53734d37c5d50315824473bc",

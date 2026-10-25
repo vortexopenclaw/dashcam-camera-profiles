@@ -21216,7 +21216,14 @@
       "source_is_private": null,
       "voltage_source": null,
       "lighting": "day",
-      "source_mode": "LPID_monitoring"
+      "source_mode": "LPID_monitoring",
+      "reported_startup_seconds_min": 1.76,
+      "reported_startup_seconds_max": 1.85,
+      "reported_startup_method": "Impact event to start of recording (source-reported)",
+      "reported_startup_source": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/t340-1.0_261023T2-rcg530-evidence.json",
+      "reported_startup_timing_group": "rcg530-t340-1.0_261023T2-lpid-impact",
+      "reported_startup_lighting_scope": "Shared source range; not separately timed day/night",
+      "reported_startup_method_details": "Source: starts recording after impact event. Trusted source-reported timing; exact detection and saved-frame methodology not independently established."
     },
     {
       "id": "rcg530-t340-1.0_261023T2-LPID_monitoring-night",
@@ -21260,7 +21267,14 @@
       "source_is_private": null,
       "voltage_source": null,
       "lighting": "night",
-      "source_mode": "LPID_monitoring"
+      "source_mode": "LPID_monitoring",
+      "reported_startup_seconds_min": 1.76,
+      "reported_startup_seconds_max": 1.85,
+      "reported_startup_method": "Impact event to start of recording (source-reported)",
+      "reported_startup_source": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/t340-1.0_261023T2-rcg530-evidence.json",
+      "reported_startup_timing_group": "rcg530-t340-1.0_261023T2-lpid-impact",
+      "reported_startup_lighting_scope": "Shared source range; not separately timed day/night",
+      "reported_startup_method_details": "Source: starts recording after impact event. Trusted source-reported timing; exact detection and saved-frame methodology not independently established."
     },
     {
       "id": "rcg530-t340-1.0_261023T2-LPID_unbuffered_event_recording-day",

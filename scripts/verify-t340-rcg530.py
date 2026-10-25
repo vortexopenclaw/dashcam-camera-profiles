@@ -21,6 +21,14 @@ for m,values in zip(e['measurements'],expected):
     assert r['firmware']=='1.0_261023T2' and r['tester']=='rcg530' and r['voltage_v']==12.6
     assert r['source_url']==e['evidence_url'] and r['ir']=='unknown' and r['test_status']=='unknown'
     assert r['wake_seconds'] is None and r['reported_startup_seconds'] is None and not r['power_is_derived']
+timed=[r for r in new if r['source_mode']=='LPID_monitoring']
+assert len(timed)==2
+assert len({r['reported_startup_timing_group'] for r in timed})==1
+for r in timed:
+    assert (r['reported_startup_seconds_min'],r['reported_startup_seconds_max'])==(1.76,1.85)
+    assert r['reported_startup_method']=='Impact event to start of recording (source-reported)'
+    assert r['reported_startup_source']==e['evidence_url']
+assert all(r.get('reported_startup_seconds_min') is None for r in new if r not in timed)
 assert len([r for r in rows if r['model']=='T340' and r not in new])==7
 assert e['timings']['reported_LPID_recording_start_after_impact_event_s']['first_saved_frame_verified'] is False
 assert len(e['video_observations'])==3 and len(e['timings'])==9

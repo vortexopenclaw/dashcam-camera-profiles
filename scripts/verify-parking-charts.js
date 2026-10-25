@@ -338,6 +338,11 @@ with sync_playwright() as p:
     csv=download(page,'#chart-csv','fixture-safe.csv').read_text(encoding='utf-8-sig')
     assert "'=SUM(1,1)" in csv and 'javascript:' not in csv
     f[a].update(disabled=True,power_w=1)
+    # Remove alternate trusted T340 timings only in this no-timing fixture;
+    # metric switching otherwise correctly chooses a supported alternate test.
+    for candidate in fixture['measurements']:
+        if candidate['model']==f[b]['model']:
+            candidate.update(reported_startup_method='unknown')
     f[b].update(reported_startup_seconds=99,reported_startup_method='unknown',wake_seconds=None)
     page.goto(url+'?'+params([a,b]));ready(page)
     assert page.locator('#chart-canvas svg').count()==0
@@ -480,6 +485,20 @@ with sync_playwright() as p:
             card.locator('select[data-test]').select_option(e1[1])
             assert '0.21 W' in card.text_content()
             assert card.locator('select[data-test]').input_value()==e1[1]
+    # Trusted rcg530 impact-event range: one selected source, no invented average.
+    t340='rcg530-t340-1.0_261023T2-LPID_monitoring-day'
+    page.goto(url+'?'+params([t340],'delay',group='low-power',family='low-power'));ready(page)
+    assert row(page,t340).locator('[data-kind=value]').text_content()=='1.76–1.85 s'
+    assert row(page,t340).locator('[data-kind=range]').count()==1
+    assert page.locator('#chart-canvas [data-measurement]').count()==1
+    card=page.locator('.chart-model-choice[data-model="Viofo T340"]')
+    card.locator('.chart-model-setup > summary').click()
+    card.locator('select[data-test]').select_option(t340)
+    assert row(page,t340).locator('[data-kind=value]').text_content()=='1.76–1.85 s'
+    assert 'source-reported' in card.text_content()
+    page.reload();ready(page)
+    assert row(page,t340).locator('[data-kind=value]').text_content()=='1.76–1.85 s'
+    download(page,'#chart-svg','t340-reported-impact-delay.svg')
     # Final page restored to the genuine seven-camera initial dataset for review.
     page.goto(url);ready(page)
     pro_s=page.locator('.chart-model-choice[data-model="Vantrue E1 Pro S"]')

@@ -189,7 +189,7 @@
       ['LTE module', connectivityLabel(row)],
       ['Current at stated voltage', `${rangeValue(row, 'current_ma', 'mA')} / ${valueWithUnit(row.voltage_v, 'V')}`],
       ['Measurement statistic', row.measurement_statistic],
-      ['Impact to first frame / camera scope', wake(row)], [row.reported_startup_method === 'Impact detection to start of recording' ? 'Impact detection to recording' : 'Reported startup (method unconfirmed)', valueWithUnit(row.reported_startup_seconds, 's')], ['Timing method', row.reported_startup_method],
+      ['Impact to first frame / camera scope', wake(row)], [row.reported_startup_method === 'Impact detection to start of recording' ? 'Impact detection to recording' : row.reported_startup_method === 'Impact event to start of recording (source-reported)' ? 'Impact event to recording (source-reported)' : 'Reported startup (method unconfirmed)', rangeValue(row, 'reported_startup_seconds', 's')], ['Timing method', row.reported_startup_method],
       ['Impact pre-event buffer', valueWithUnit(row.prebuffer_impact_s, 's')], ['Motion pre-event buffer', valueWithUnit(row.prebuffer_motion_s, 's')],
       ...(!numeric(row.prebuffer_impact_s) && !numeric(row.prebuffer_motion_s) ? [['Pre-event buffer (source unqualified)', valueWithUnit(row.prebuffer_s, 's')]] : []),
       ['Power adapter', row.power_path], ['Tester', row.tester], ['Source date', row.date], ['Measurement ID', row.id]

@@ -79,7 +79,7 @@
   }
   function interval(row, metric) {
     if (!Object.hasOwn(metrics, metric)) return null;
-    if (metric === 'delay' && row.reported_startup_method !== method) return null;
+    if (metric === 'delay' && ![method, 'Impact event to start of recording (source-reported)'].includes(row.reported_startup_method)) return null;
     if (row.disabled === true || row.measurement_statistic === 'disabled') return null;
     const key = metrics[metric].key;
     const min = row[`${key}_min`], max = row[`${key}_max`];
@@ -137,6 +137,7 @@
       ['Interior IR', UI.cabinIR(row) || interior ? (['on','off','auto'].includes(row.ir) ? row.ir : '') : ''],
       ['Active cameras', (row.active_channels || []).join(' + ')],
       ['Settings', (row.mode_name || '').match(/(?:H\.26[45]|Wi[ -]?Fi\s+(?:Off|On)|HDR\s+(?:Off|On)|\d+\s*fps|\d+\s+Seconds? Per Frame|\d{3,4}p|Pre-Recording (?:On|Off)|Sensitivity\s*=\s*(?:Medium|Ultra High))/ig)?.join(', ')],
+      ['Timing method', row.reported_startup_method], ['Timing scope', row.reported_startup_lighting_scope],
       ['Reported recording-start delay', valid(row.reported_startup_seconds_min)&&valid(row.reported_startup_seconds_max) ? `${row.reported_startup_seconds_min}–${row.reported_startup_seconds_max} s` : ''],
       ['Interior camera', interior], ['Lighting', day ? (day[1] || day[2]) : ''],
       ['Test window', period ? period[1].replace('5-minutes','5-minute interval') : ''],
