@@ -1,0 +1,359 @@
+{
+  "model": "Viofo T340",
+  "firmware": "1.0_261023T2",
+  "contributor": "rcg530",
+  "owner_confirmation": {
+    "attribution": "Owner confirms this is rcg530’s chart.",
+    "shutdown_model": "Owner confirms T140 in the power-button row is a typo for T340.",
+    "source_preservation": "Literal source-row identifier retained; reviewed model identity is T340."
+  },
+  "source_url": null,
+  "test_date": null,
+  "status": "reviewed; contributor and shutdown-model correction owner-confirmed",
+  "setup": {
+    "installed_channels": 4,
+    "channel_roles": [
+      "front",
+      "interior",
+      "rear",
+      "telephoto"
+    ],
+    "supply_v": 12.6,
+    "measurement_side": "12-volt input side of HK6-F",
+    "power_path": "HK6-F",
+    "power_supply": "NANKADF",
+    "meter": "Fluke 117",
+    "measurement_window": "5 minutes or longer",
+    "bitrate_setting": "Max",
+    "normal_hdr_channels": [
+      "front",
+      "rear"
+    ],
+    "ir_state": null,
+    "storage_gb": 256,
+    "parking_gps": "off"
+  },
+  "measurements": [
+    {
+      "mode": "normal_recording",
+      "lighting": "day",
+      "current_ma": {
+        "min": 515,
+        "max": 598,
+        "avg": 551
+      },
+      "power_w": {
+        "min": 6.49,
+        "max": 7.54,
+        "avg": 6.94
+      },
+      "parking_comparison_eligible": false
+    },
+    {
+      "mode": "normal_recording",
+      "lighting": "night",
+      "current_ma": {
+        "min": 573,
+        "max": 654,
+        "avg": 608
+      },
+      "power_w": {
+        "min": 7.22,
+        "max": 8.24,
+        "avg": 7.66
+      },
+      "parking_comparison_eligible": false
+    },
+    {
+      "mode": "normal_wifi_live_view",
+      "lighting": "day",
+      "current_ma": {
+        "min": 544,
+        "max": 626,
+        "avg": 581
+      },
+      "power_w": {
+        "min": 6.85,
+        "max": 7.89,
+        "avg": 7.32
+      },
+      "parking_comparison_eligible": false
+    },
+    {
+      "mode": "normal_wifi_live_view",
+      "lighting": "night",
+      "current_ma": {
+        "min": 600,
+        "max": 690,
+        "avg": 643
+      },
+      "power_w": {
+        "min": 7.56,
+        "max": 8.69,
+        "avg": 8.1
+      },
+      "parking_comparison_eligible": false
+    },
+    {
+      "mode": "LPID_monitoring",
+      "lighting": "day",
+      "current_ma": {
+        "min": 34,
+        "max": 37,
+        "avg": 35
+      },
+      "power_w": {
+        "min": 0.43,
+        "max": 0.47,
+        "avg": 0.44
+      },
+      "parking_comparison_eligible": true
+    },
+    {
+      "mode": "LPID_monitoring",
+      "lighting": "night",
+      "current_ma": {
+        "min": 34,
+        "max": 38,
+        "avg": 35
+      },
+      "power_w": {
+        "min": 0.43,
+        "max": 0.48,
+        "avg": 0.44
+      },
+      "parking_comparison_eligible": true
+    },
+    {
+      "mode": "LPID_unbuffered_event_recording",
+      "lighting": "day",
+      "current_ma": {
+        "min": 505,
+        "max": 587,
+        "avg": 532
+      },
+      "power_w": {
+        "min": 6.36,
+        "max": 7.4,
+        "avg": 6.7
+      },
+      "parking_comparison_eligible": true
+    },
+    {
+      "mode": "LPID_unbuffered_event_recording",
+      "lighting": "night",
+      "current_ma": {
+        "min": 559,
+        "max": 635,
+        "avg": 588
+      },
+      "power_w": {
+        "min": 7.04,
+        "max": 8.0,
+        "avg": 7.41
+      },
+      "parking_comparison_eligible": true
+    },
+    {
+      "mode": "low_bitrate_recording",
+      "lighting": "day",
+      "current_ma": {
+        "min": 493,
+        "max": 577,
+        "avg": 511
+      },
+      "power_w": {
+        "min": 6.21,
+        "max": 7.27,
+        "avg": 6.44
+      },
+      "parking_comparison_eligible": true
+    },
+    {
+      "mode": "low_bitrate_recording",
+      "lighting": "night",
+      "current_ma": {
+        "min": 557,
+        "max": 641,
+        "avg": 573
+      },
+      "power_w": {
+        "min": 7.02,
+        "max": 8.08,
+        "avg": 7.22
+      },
+      "parking_comparison_eligible": true
+    },
+    {
+      "mode": "power_button_off_model_text_T140",
+      "lighting": null,
+      "current_ma": {
+        "min": 7,
+        "max": 9,
+        "avg": 8
+      },
+      "power_w": {
+        "min": 0.09,
+        "max": 0.11,
+        "avg": 0.1
+      },
+      "parking_comparison_eligible": false,
+      "reviewed_model": "Viofo T340",
+      "reviewed_mode": "power_button_off",
+      "correction_provenance": "Owner-confirmed T140 source typo; T340 shutdown baseline, not active parking."
+    },
+    {
+      "mode": "HK6_F_disconnected_from_dashcam",
+      "lighting": null,
+      "current_ma": {
+        "min": 5,
+        "max": 7,
+        "avg": 6
+      },
+      "power_w": {
+        "min": 0.06,
+        "max": 0.09,
+        "avg": 0.08
+      },
+      "parking_comparison_eligible": false
+    }
+  ],
+  "video_observations": {
+    "normal": {
+      "folder": "DCIM/Movie",
+      "protected_folder": "DCIM/Movie/RO",
+      "resolutions": [
+        "3840x2160",
+        "2560x1440",
+        "2560x1440",
+        "2560x1440"
+      ],
+      "capture_fps": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "video_mbps": [
+        40.96,
+        23.75,
+        23.75,
+        23.75
+      ]
+    },
+    "lpid_impact": {
+      "folder": "DCIM/Movie/RO",
+      "buffering": "unbuffered",
+      "clip_seconds": 180,
+      "resolutions": [
+        "3840x2160",
+        "2560x1440",
+        "2560x1440",
+        "2560x1440"
+      ],
+      "capture_fps": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "video_mbps": [
+        31.9,
+        14.3,
+        14.3,
+        14.3
+      ]
+    },
+    "low_bitrate": {
+      "folder": "DCIM/Movie/Parking",
+      "protected_folder": "DCIM/Movie/RO",
+      "resolutions": [
+        "3840x2160",
+        "2560x1440",
+        "2560x1440",
+        "2560x1440"
+      ],
+      "capture_fps": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "video_mbps": [
+        4.09,
+        4.09,
+        4.09,
+        4.09
+      ]
+    }
+  },
+  "timings": {
+    "channel_order": [
+      "front",
+      "interior",
+      "rear",
+      "telephoto"
+    ],
+    "cold_power_on_VCC_and_ACC_off_to_on_s": [
+      22.9,
+      22.9,
+      22.9,
+      22.9
+    ],
+    "VCC_on_ACC_off_to_ACC_on_s": [
+      19.5,
+      19.6,
+      19.6,
+      19.6
+    ],
+    "LPID_ACC_on_to_normal_recording_start_s": [
+      8.17,
+      8.2,
+      8.19,
+      8.2
+    ],
+    "reported_LPID_recording_start_after_impact_event_s": {
+      "min": 1.76,
+      "max": 1.85,
+      "first_saved_frame_verified": false,
+      "lighting_scope": "not separately assigned",
+      "method": "source wording: starts recording after impact event; physical-impact-to-first-saved-frame method not independently established"
+    },
+    "normal_to_LBR_ACC_off_to_normal_stop_s": [
+      4.42,
+      4.44,
+      4.4,
+      4.42
+    ],
+    "normal_to_LBR_normal_stop_to_LBR_start_s": [
+      5.41,
+      5.4,
+      5.41,
+      5.41
+    ],
+    "LBR_to_normal_ACC_on_to_LBR_stop_s": [
+      2.58,
+      2.53,
+      2.62,
+      2.58
+    ],
+    "LBR_to_normal_LBR_stop_to_normal_start_s": [
+      5.23,
+      5.19,
+      5.2,
+      5.23
+    ]
+  },
+  "source_cautions": [
+    "Day/night readings are separate; the two accessory/off rows have no separately established lighting assignment.",
+    "Min/max are source observations, not confidence intervals. Retain all reported averages rather than replacing them with midpoints.",
+    "No 5 V measurement column is present despite a generic footnote about calculated 5 V current.",
+    "Firmware identity and measurement source remain separate from existing T340 firmware datasets.",
+    "Contributor rcg530 and T340 identity of the power-button-off row are owner-confirmed; original source typo remains in the literal row identifier.",
+    "Test date, IR state and prototype/retail status are unknown.",
+    "Reported impact-event-to-recording wording does not establish detection methodology or physical-impact-to-first-saved-frame timing; excluded from timing comparison metrics.",
+    "Source top readings are day; bottom readings are night. Source watts and current are independently rounded; do not recompute watts."
+  ],
+  "source_sha256": "7f31cbb5ea17b5ad0884465f20579084aacc428c53734d37c5d50315824473bc",
+  "evidence_url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/t340-1.0_261023T2-rcg530-evidence.json"
+}

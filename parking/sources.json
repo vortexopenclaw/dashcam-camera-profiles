@@ -1091,5 +1091,17 @@
     "status": "extracted",
     "measurement_count": 11,
     "notes": "Original full-size chart 94861 visually verified, including top/bottom setting pairs. Eleven parking measurements for distinct E1 Pro S pre-production hardware, VT-EFI242, 12.6 V. Companion author posts 675956/675958/675962 establish hardware status and explain TurboBoot/parking behavior. Runtime chart 94860 repeats the power inputs and is not a second measurement series. All nine public thread posts on its single discovered page reviewed; no pagination links were present. Normal driving, shutdown, disconnected-kit and cutoff measurements, powered-off boot timings, and runtime estimates excluded. Collision recording-start range 1.37–1.42 s retained without midpoint or first-frame claim. No Quick Start/Power Saving labels in this E1 Pro S chart. LFR transition heading 1 fps conflicts with configuration 5 fps; transition times not assigned to a 5 fps test."
+  },
+  {
+    "id": "rcg530-t340-1.0_261023T2",
+    "post_id": null,
+    "title": "rcg530 Viofo T340 4CH firmware 1.0_261023T2 chart (owner-confirmed)",
+    "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/t340-1.0_261023T2-rcg530-evidence.json",
+    "tester": "rcg530",
+    "date": null,
+    "images": [],
+    "status": "extracted",
+    "notes": "User-provided chart; attribution and T140-to-T340 shutdown typo correction owner-confirmed. Sanitized evidence retains 12 full rows, video observations and separated timings; no original public post URL established. Six active parking rows imported; driving and off/accessory baselines remain evidence only.",
+    "measurement_count": 6
   }
 ]

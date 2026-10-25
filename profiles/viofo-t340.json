@@ -934,6 +934,10 @@
     {
       "label": "Firmware for current owner test card",
       "value": "1.0_260911, confirmed by the owner on 2026-10-08. Normal full-minute footage was checked directly from this card. Retain firmware provenance for future comparisons; do not assume an unreported older scan's firmware from this value."
+    },
+    {
+      "label": "rcg530 firmware 1.0_261023T2 chart",
+      "value": "Separate 4CH front/interior/rear/telephoto test at HK6-F 12.6 V input; Max bitrate, normal HDR front/rear. Linked evidence retains 12 full power rows (six parking, four driving/Wi-Fi, two off/accessory), normal/LPID/LBR video details and per-channel cold, ACC and mode-transition timings. LPID reported recording start 1.76–1.85 s after impact event is not verified physical-impact-to-first-saved-frame latency. Owner confirms shutdown-row T140 is a T340 typo. Date, IR and prototype/retail status unknown."
     }
   ],
   "sources": [
@@ -956,6 +960,11 @@
       "kind": "manual",
       "label": "Official English user manual (PDF)",
       "url": "https://viofotech.com/download/manual/T340/T340EnglishManual.pdf"
+    },
+    {
+      "kind": "research",
+      "label": "rcg530 1.0_261023T2 power, video and startup evidence (owner-confirmed chart)",
+      "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/t340-1.0_261023T2-rcg530-evidence.json"
     }
   ],
   "notes": [
