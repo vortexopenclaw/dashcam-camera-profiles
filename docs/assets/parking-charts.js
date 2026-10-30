@@ -260,7 +260,7 @@
     const original=el('details','chart-original-notes');original.append(el('summary','','Original test notes'),el('small','',`Source mode label: ${row.mode_name}`));
     if(row.notes)original.append(el('small','',row.notes));target.append(original);
   }
-  function draw(result) {
+  function draw(result, layoutWidth = 1200) {
     const { plotted } = result, metric = metrics[state.metric];
     const axis = axisText(state);
     const variantKey = row => [UI.modelLabel(row),row.installed_channels,UI.modeLabel(row),row.state].join('|');
@@ -271,10 +271,16 @@
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean);
       return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}`, second: [(showModeLabels(state) || modes.size > 1) ? parkingMode(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
     });
-    const left = Math.ceil(Math.min(330,Math.max(220,...labels.map(label=>textWidth(label.first,16,true)+64))));
-    labels.forEach(label => { label.firstLines = wrapped(label.first, left - 56, 16, true); label.secondLines = label.second ? wrapped(label.second, left - 56, 14) : []; label.height = Math.max(58, label.firstLines.length * 20 + label.secondLines.length * 18 + 18); });
-    const right = Math.ceil(Math.max(110, ...plotted.map(({ row, value }) => textWidth(valueLabel(row, value, state.metric), 16, true))) + 35);
-    const width = Math.max(1200, left + right + 490), plotWidth = width - left - right;
+    const video = state.format !== 'auto';
+    // Keep comfortable frame padding even when many rows require a wider
+    // logical canvas for a fixed 16:9 export. Reserve actual text, not an
+    // unconditional empty numeric column.
+    const inset = video ? Math.max(36, layoutWidth * 36 / 1920) : 36;
+    const labelWidth = Math.ceil(Math.min(274, Math.max(104, ...labels.map(label=>textWidth(label.first,16,true)))));
+    const left = Math.ceil(labelWidth + inset + 20);
+    labels.forEach(label => { label.firstLines = wrapped(label.first, labelWidth, 16, true); label.secondLines = label.second ? wrapped(label.second, labelWidth, 14) : []; label.height = Math.max(58, label.firstLines.length * 20 + label.secondLines.length * 18 + 18); });
+    const right = Math.ceil(Math.max(...plotted.map(({ row, value }) => textWidth(valueLabel(row, value, state.metric), 16, true))) + 10 + inset);
+    const width = Math.max(layoutWidth, left + right + 490), plotWidth = width - left - right;
     const svg = make('svg', { xmlns: ns, width, role: 'img', 'aria-labelledby': 'export-chart-title export-chart-desc', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': 14, fill: '#263343' });
     svg.append(make('title', { id: 'export-chart-title' }, state.title ?? metric.label), make('desc', { id: 'export-chart-desc' }, `${axis}. ${plotted.length} measurements. Bars extend from zero to the upper endpoint; lighter bands and endcaps mark minimum–maximum ranges, not averages. Zero values use a dot at the baseline. Values sorted ${state.sort === 'asc' ? 'low to high' : 'high to low'} by upper endpoint.`));
     const content = make('g');
@@ -290,13 +296,16 @@
     const rawStep = maximum > 0 ? maximum / 5 : 0.2;
     const magnitude = 10 ** Math.floor(Math.log10(rawStep));
     const step = [1, 2, 2.5, 5, 10].find(value => value * magnitude >= rawStep) * magnitude;
-    const scaleMax = Math.max(step, Math.ceil(maximum / step) * step);
+    // Nice tick spacing must not round the data domain up and leave a large
+    // unused tail. All rows still share the same honest zero-based scale.
+    const scaleMax = maximum || 1;
     const scale = value => left + value / scaleMax * plotWidth;
-    for (let tick = 0; tick <= Math.round(scaleMax / step); tick++) {
+    for (let tick = 0; tick <= Math.floor(scaleMax / step + 1e-9); tick++) {
       const value = step * tick, x = scale(value);
       content.append(make('line', { x1: x, x2: x, y1: top - 12, y2: bottom, stroke: tick ? '#e3e8ee' : '#7e8996', 'stroke-width': tick ? 1 : 1.5 }));
       text(x, bottom + 26, String(Number(value.toPrecision(3))), { 'text-anchor': 'middle', 'font-size': 13, fill: '#627084' });
     }
+    if (Math.abs(scaleMax / step - Math.round(scaleMax / step)) > 1e-9) content.append(make('line', { x1: scale(scaleMax), x2: scale(scaleMax), y1: top - 12, y2: bottom, stroke: '#e3e8ee', 'stroke-width': 1 }));
     let rowTop = top;
     plotted.forEach(({ row, value }, index) => {
       const label = labels[index];
@@ -360,7 +369,11 @@
     metadata.textContent = JSON.stringify({metric:state.metric,family:state.family,group:state.group,measurements:safeRows(plotted.map(item=>item.row))});
     svg.append(metadata);
     const height = y + 30;
-    const video = state.format !== 'auto', outputWidth = video ? 1920 : width, outputHeight = video ? 1080 : height;
+    // Lay out a tall chart across the video frame before scaling it. Fitting
+    // the narrow auto canvas first used to create huge side letterboxes.
+    // Wider reflow only reduces wrapping/height, so this second pass is bounded.
+    if (video && height * 16 / 9 > width) return draw(result, Math.ceil(height * 16 / 9));
+    const outputWidth = video ? 1920 : width, outputHeight = video ? 1080 : height;
     if (video) {
       const scale = Math.min(outputWidth/width,outputHeight/height);
       content.setAttribute('transform',`translate(${(outputWidth-width*scale)/2} ${(outputHeight-height*scale)/2}) scale(${scale})`);
