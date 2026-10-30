@@ -275,9 +275,15 @@
     // Keep comfortable frame padding even when many rows require a wider
     // logical canvas for a fixed 16:9 export. Reserve actual text, not an
     // unconditional empty numeric column.
-    const inset = video ? Math.max(36, layoutWidth * 36 / 1920) : 36;
+    const frameUnit = video ? Math.max(1, layoutWidth / 1920) : 1;
+    const inset = 36 * frameUnit;
+    // Reserve the rotated title's glyph thickness separately from the label
+    // column. Scale the visible gap with the logical video canvas so dense
+    // charts do not squeeze it away when fitted back into the output frame.
+    const yAxisX = inset + 18;
+    const labelInset = inset + 22 + 24 * frameUnit;
     const labelWidth = Math.ceil(Math.min(274, Math.max(104, ...labels.map(label=>textWidth(label.first,16,true)))));
-    const left = Math.ceil(labelWidth + inset + 20);
+    const left = Math.ceil(labelWidth + labelInset + 20);
     labels.forEach(label => { label.firstLines = wrapped(label.first, labelWidth, 16, true); label.secondLines = label.second ? wrapped(label.second, labelWidth, 14) : []; label.height = Math.max(58, label.firstLines.length * 20 + label.secondLines.length * 18 + 18); });
     const right = Math.ceil(Math.max(...plotted.map(({ row, value }) => textWidth(valueLabel(row, value, state.metric), 16, true))) + 10 + inset);
     const width = Math.max(layoutWidth, left + right + 490), plotWidth = width - left - right;
@@ -330,7 +336,7 @@
     });
     text(left + plotWidth / 2, bottom + 54, axis, {'text-anchor':'middle','data-role':'chart-axis','font-size':15,fill:'#516174'});
     const yAxis = state.yLabel ?? 'Dash Cameras';
-    if (yAxis) text(24,(top+bottom)/2,yAxis,{'text-anchor':'middle','data-role':'chart-y-axis','font-size':15,fill:'#516174',transform:`rotate(-90 24 ${(top+bottom)/2})`});
+    if (yAxis) text(yAxisX,(top+bottom)/2,yAxis,{'text-anchor':'middle','data-role':'chart-y-axis','font-size':15,fill:'#516174',transform:`rotate(-90 ${yAxisX} ${(top+bottom)/2})`});
     y = bottom + 80;
     content.append(make('line', { x1: 36, x2: width - 36, y1: y - 8, y2: y - 8, stroke: '#dae2eb' }));
     const notes = [
