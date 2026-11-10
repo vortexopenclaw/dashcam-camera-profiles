@@ -46,7 +46,8 @@ with sync_playwright() as pw:
     assert set(plotted(page))==set(IDS+[REF])
     assert page.locator('[data-measurement="'+REF+'"]').get_attribute('data-highlight')=='true'
     assert 'Example' not in urlsplit(page.url).query
-    assert page.locator('#chart-canvas').text_content().count(CLAIM)>=2
+    assert sum(t.count(CLAIM) for t in page.locator('#chart-canvas svg text').all_text_contents())==1
+    assert 'Collision Detection' in page.locator('[data-measurement="'+REF+'"]').text_content()
     assert page.locator('.chart-model-choice[data-model="Example Cam"]').count()==1
     page.add_init_script("navigator.clipboard.writeText = async text => {window.copiedChartLink=text;}")
     page.reload();ready(page)
@@ -68,7 +69,8 @@ with sync_playwright() as pw:
             expected=row['power_w_max'] if row.get('power_w_max') is not None else row['power_w']
             assert float(groups[row['id']].attrib['data-max'])==expected
     assert groups[REF].attrib['data-max']=='0.123'
-    assert CLAIM in ' '.join(groups[REF].itertext())
+    assert 'Collision Detection' in ' '.join(groups[REF].itertext())
+    assert sum(''.join(t.itertext()).count(CLAIM) for t in root.iter('{http://www.w3.org/2000/svg}text'))==1
     metadata_node=root.find('s:metadata',ns)
     assert metadata_node is not None and metadata_node.text
     metadata=json.loads(metadata_node.text)

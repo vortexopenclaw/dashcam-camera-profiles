@@ -8,6 +8,7 @@ for (const watts of [0, 0.123, 100]) {
   assert.equal(warning,'');
   assert.equal(rows.length,1);
   assert.equal(rows[0].power_w,watts);
+  assert.equal(rows[0].mode_name,'Collision Detection');
   for (const key of ['current_ma','voltage_v','installed_channels','firmware','date','wake_seconds','source_url']) assert.equal(rows[0][key],undefined);
   for (const metric of Object.keys(C.metrics)) {
     const state = {...C.preset(metric),ids:[C.referenceID]};

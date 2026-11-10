@@ -2,8 +2,8 @@
 
 The parking chart builder accepts one optional, chart-only reported power claim.
 It never imports the claim into the public measurement database or submits it to
-an API. It labels the row and exported chart **Reported / not independently
-measured**, including with `details=0`.
+an API. The row is labeled **Collision Detection**, with one **Reported / not
+independently measured** note in the chart footer, including with `details=0`.
 
 ## Fragment schema
 

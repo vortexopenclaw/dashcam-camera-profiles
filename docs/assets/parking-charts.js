@@ -31,7 +31,7 @@
           !valid(value.watts) || value.watts > 100) return ignored;
       return {rows: [{id: referenceID, manual_reported: true, model: value.name,
         power_w: value.watts, category: 'impact-sleep', state: 'monitoring',
-        mode_name: 'Low-power monitoring (reported)', notes: referenceClaim}], warning: ''};
+        mode_name: 'Collision Detection', notes: referenceClaim}], warning: ''};
     } catch { return ignored; }
   }
   const method = 'Impact detection to start of recording';
@@ -313,7 +313,7 @@
       const repeated = plotted.filter(item => variantKey(item.row) === variantKey(row)).length > 1;
       const modes = new Set(siblings.map(item => modeLabel(item.row)));
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean);
-      return {first: `${modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}`, second: [row.manual_reported ? referenceClaim : '', (showModeLabels(state) || modes.size > 1) ? parkingMode(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
+      return {first: `${modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}`, second: [(showModeLabels(state) || modes.size > 1) ? parkingMode(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
     });
     const video = state.format !== 'auto';
     // Keep comfortable frame padding even when many rows require a wider
@@ -384,7 +384,7 @@
     y = bottom + 80;
     content.append(make('line', { x1: 36, x2: width - 36, y1: y - 8, y2: y - 8, stroke: '#dae2eb' }));
     const notes = [
-      plotted.some(item=>item.row.manual_reported) ? `${referenceClaim}. Manual chart-only claim, not part of the public measurement database.` : '',
+      plotted.some(item=>item.row.manual_reported) ? `Manual reference: ${referenceClaim}.` : '',
       state.metric === 'watts' && plotted.some(item=>item.row.power_is_derived) ? '≈ marks calculated power.' : '',
       hasRanges ? 'Bars extend from zero to the upper endpoint. Lighter bands and endcaps mark min–max ranges, not averages. Firmware and setups remain separate.' : '',
 
