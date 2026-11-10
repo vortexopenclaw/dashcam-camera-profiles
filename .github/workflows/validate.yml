@@ -27,6 +27,7 @@ jobs:
           node --check docs/assets/parking-charts.js
           node scripts/verify-parking-preview.js
           node scripts/verify-parking-charts.js
+          node scripts/verify-parking-reference.js
       - name: Audit public content for private data
         run: bash scripts/privacy-audit.sh
       - name: Check frontend JavaScript

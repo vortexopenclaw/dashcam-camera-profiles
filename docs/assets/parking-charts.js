@@ -1,8 +1,39 @@
-/* Standalone chart builder. Only canonical measurement IDs enter shared state. */
+/* Standalone chart builder. Manual claims stay local to the URL fragment. */
 (() => {
   'use strict';
   const UI = typeof window === 'undefined' ? require('./parking.js') : window.ParkingUI;
   const valid = value => typeof value === 'number' && Number.isFinite(value) && value >= 0;
+  const referenceID = 'manual-reported-reference';
+  const referenceClaim = 'Reported / not independently measured';
+  const modelLabel = row => row.manual_reported ? row.model : UI.modelLabel(row);
+  const modeLabel = row => row.manual_reported ? row.mode_name : UI.modeLabel(row);
+  function groupModels(items) {
+    const groups = new Map();
+    for (const row of items) {
+      const label = modelLabel(row);
+      if (!groups.has(label)) groups.set(label, {label, rows: []});
+      groups.get(label).rows.push(row);
+    }
+    return [...groups.values()];
+  }
+  function readReference(hash = '') {
+    const ignored = {rows: [], warning: 'Manual reference ignored: use one name (1–80 characters) and numeric watts from 0 to 100.'};
+    // Bound work before decoding. Never echo malformed input into a warning.
+    if (hash.length > 2048) return ignored;
+    const p = new URLSearchParams(hash.replace(/^#/, ''));
+    if (!p.has('reference')) return {rows: [], warning: ''};
+    if (p.getAll('reference').length !== 1) return ignored;
+    try {
+      const value = JSON.parse(p.get('reference'));
+      if (!value || Array.isArray(value) || Object.keys(value).sort().join(',') !== 'name,watts' ||
+          typeof value.name !== 'string' || !value.name.trim() || value.name !== value.name.trim() ||
+          value.name.length > 80 || /[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/u.test(value.name) ||
+          !valid(value.watts) || value.watts > 100) return ignored;
+      return {rows: [{id: referenceID, manual_reported: true, model: value.name,
+        power_w: value.watts, category: 'impact-sleep', state: 'monitoring',
+        mode_name: 'Low-power monitoring (reported)', notes: referenceClaim}], warning: ''};
+    } catch { return ignored; }
+  }
   const method = 'Impact detection to start of recording';
   const metrics = {
     current: { key: 'current_ma', unit: 'mA', label: 'Measured current' },
@@ -78,7 +109,7 @@
     return candidates.slice().sort((a,b) => (family==='low-power' ? lowPowerMode(a)-lowPowerMode(b) : 0) || status(a)-status(b) || date(b).localeCompare(date(a)) || a.id.localeCompare(b.id))[0];
   }
   function interval(row, metric) {
-    if (!Object.hasOwn(metrics, metric)) return null;
+    if (!Object.hasOwn(metrics, metric) || row.manual_reported && metric !== 'watts') return null;
     if (metric === 'delay' && ![method, 'Impact event to start of recording (source-reported)'].includes(row.reported_startup_method)) return null;
     if (row.disabled === true || row.measurement_statistic === 'disabled') return null;
     const key = metrics[metric].key;
@@ -90,7 +121,7 @@
   // Use the renderer's interval contract, including trusted range-only timings.
   // Search and "only selected" narrow the picker, not the chart selection.
   function eligibleRows(rows, state) {
-    return rows.filter(row => interval(row, state.metric) && matchesFamily(row, state.group) &&
+    return rows.filter(row => (!row.manual_reported || ['low-power','all'].includes(state.group) && ['low-power','all'].includes(state.family || state.group)) && interval(row, state.metric) && matchesFamily(row, state.group) &&
       matchesFamily(row,state.family || state.group) &&
       (state.metric !== 'current' || valid(row.voltage_v) && row.voltage_v > 0) &&
       (!state.condition || row.state === state.condition));
@@ -103,10 +134,11 @@
   }
   function readState(search, rows) {
     const p = new URLSearchParams(search), fallback = preset('current');
-    const known = new Set(rows.map(r => r.id)), models = new Set(rows.map(UI.modelLabel));
-    const highlight = (p.get('highlight') || '').replace(/^BlackVue /,'Blackvue ').replace(/^VIOFO /,'Viofo ');
+    const known = new Set(rows.map(r => r.id)), models = new Set(rows.map(modelLabel));
+    const referenceName = rows.find(row=>row.manual_reported)?.model;
+    const highlight = p.get('highlight') === referenceID ? referenceName : (p.get('highlight') || '').replace(/^BlackVue /,'Blackvue ').replace(/^VIOFO /,'Viofo ');
     const ids = p.has('selection') ? [...new Set(p.getAll('id').filter(id => known.has(id)))] : fallback.ids.filter(id => known.has(id));
-    return normalizeTitle({ ids, group: Object.hasOwn(families, p.get('group')) ? p.get('group') : fallback.group, family: Object.hasOwn(families, p.get('family')) ? p.get('family') : (p.has('selection') ? 'all' : fallback.family), condition: ['', 'monitoring', 'event-recording', 'time-lapse', 'continuous'].includes(p.get('condition')) ? p.get('condition') : fallback.condition, details: p.get('details') === '1', metric: Object.hasOwn(metrics, p.get('metric')) ? p.get('metric') : fallback.metric,
+    return normalizeTitle({ ids, ...(referenceName ? {referenceName} : {}), group: Object.hasOwn(families, p.get('group')) ? p.get('group') : fallback.group, family: Object.hasOwn(families, p.get('family')) ? p.get('family') : (p.has('selection') ? 'all' : fallback.family), condition: ['', 'monitoring', 'event-recording', 'time-lapse', 'continuous'].includes(p.get('condition')) ? p.get('condition') : fallback.condition, details: p.get('details') === '1', metric: Object.hasOwn(metrics, p.get('metric')) ? p.get('metric') : fallback.metric,
       sort: p.get('sort') === 'asc' ? 'asc' : 'desc', highlight: p.has('highlight') ? (models.has(highlight) ? highlight : '') : fallback.highlight,
       missingModels: [...new Set(p.getAll('missingModel').map(name=>name.replace(/^BlackVue /,'Blackvue ').replace(/^VIOFO /,'Viofo ')).filter(name=>models.has(name)))],
       format: p.get('format')==='video' ? 'video' : 'auto',
@@ -117,7 +149,7 @@
       title: p.has('title') && !legacyTitles.has(p.get('title')) ? p.get('title').replace(/[\u0000-\u001f\u007f]/g, ' ').slice(0, 180) : titles[Object.hasOwn(metrics,p.get('metric')) ? p.get('metric') : 'current'] });
   }
   function query(state) {
-    const p = new URLSearchParams({ selection: '1', group: state.group || 'all', family: state.family || 'all', condition: state.condition ?? 'monitoring', metric: state.metric, sort: state.sort, highlight: state.highlight, title: state.title, details: state.details ? '1' : '0' });
+    const p = new URLSearchParams({ selection: '1', group: state.group || 'all', family: state.family || 'all', condition: state.condition ?? 'monitoring', metric: state.metric, sort: state.sort, highlight: state.referenceName && state.highlight === state.referenceName ? referenceID : state.highlight, title: state.title, details: state.details ? '1' : '0' });
     p.set('format',state.format || 'auto');
     if(state.modeLabels!=null)p.set('modeLabels',state.modeLabels ? '1' : '0');
     for (const name of state.missingModels || []) p.append('missingModel',name);
@@ -128,7 +160,8 @@
   function prepare(rows, state) {
     const ids = new Set(state.ids);
     const selected = rows.filter(r => ids.has(r.id));
-    const plotted = selected.map(row => ({ row, value: interval(row, state.metric) })).filter(item => item.value);
+    const allowed = new Set(eligibleRows(rows, state).map(row => row.id));
+    const plotted = selected.filter(row => !row.manual_reported || allowed.has(row.id)).map(row => ({ row, value: interval(row, state.metric) })).filter(item => item.value);
     plotted.sort((a, b) => (state.sort === 'asc' ? 1 : -1) * (a.value.max - b.value.max) || state.ids.indexOf(a.row.id) - state.ids.indexOf(b.row.id));
     const voltages = [...new Set(plotted.map(item => item.row.voltage_v))];
     const blocked = state.metric === 'current' && plotted.length > 0 && (voltages.length !== 1 || !valid(voltages[0]) || voltages[0] === 0);
@@ -142,12 +175,13 @@
   const tester = row => /^(?:Robert|rcg530|Retro\s*CarGuy530)$/i.test(row.tester || '') ? 'Retro CarGuy530 (rcg530)' : (row.tester || '');
   // Only explicit settings are shown. IR off never means the camera is off.
   function testFields(row) {
+    if (row.manual_reported) return [['Claim', referenceClaim], ['Scope', 'Low-power monitoring, watts only']];
     const notes = row.notes || '';
     const day = notes.match(/^(Day|Night)\b|\b(Day|Night) IR setting\b/i);
     const period = notes.match(/^((?:1st|2nd|3rd|\d+th) 5-minutes)\b/i);
     const interior = /Interior camera disabled in parking but still plugged in/i.test(notes) ? 'Off while parked, still connected' : /Interior camera enabled/i.test(notes) ? 'On' : '';
     return [
-      ['Mode', UI.modeLabel(row)], ['Firmware', row.firmware], ['Tested by', tester(row)],
+      ['Mode', modeLabel(row)], ['Firmware', row.firmware], ['Tested by', tester(row)],
       ['Interior IR', UI.cabinIR(row) || interior ? (['on','off','auto'].includes(row.ir) ? row.ir : '') : ''],
       ['Active cameras', (row.active_channels || []).join(' + ')],
       ['Settings', (row.mode_name || '').match(/(?:H\.26[45]|Wi[ -]?Fi\s+(?:Off|On)|HDR\s+(?:Off|On)|\d+\s*fps|\d+\s+Seconds? Per Frame|\d{3,4}p|Pre-Recording (?:On|Off)|Sensitivity\s*=\s*(?:Medium|Ultra High))/ig)?.join(', ')],
@@ -160,8 +194,8 @@
     ].filter(([,value]) => value && !/^(unknown|not reported|none)$/i.test(String(value)));
   }
   function parkingMode(row) {
-    const label=UI.modeLabel(row),raw=row.mode_name || '',notes=row.notes || '';
-    if (/^Vantrue /i.test(UI.modelLabel(row)) && /collision detection/i.test(label)) {
+    const label=modeLabel(row),raw=row.mode_name || '',notes=row.notes || '';
+    if (/^Vantrue /i.test(modelLabel(row)) && /collision detection/i.test(label)) {
       const setting=/Power Saving|\bPS\b/i.test(raw) || /^Power Saving Mode\b/i.test(notes) ? 'Power Saving Mode' : /Quick Start|\bQS\b/i.test(raw) || /^Quick Start Mode\b/i.test(notes) ? 'Quick Start Mode' : '';
       return 'Collision Detection'+(setting ? ', '+setting : '');
     }
@@ -188,26 +222,36 @@
       return parts.join(' · ');
     };
     const base = describe(row);
-    const same = items.filter(other => describe(other) === base && (includeMode || UI.modeLabel(other) === UI.modeLabel(row)) && other.installed_channels === row.installed_channels);
+    const same = items.filter(other => describe(other) === base && (includeMode || modeLabel(other) === modeLabel(row)) && other.installed_channels === row.installed_channels);
     return [base, same.length > 1 ? `Test ${same.slice().sort((a,b)=>a.id.localeCompare(b.id)).findIndex(other=>other.id===row.id)+1}` : ''].filter(Boolean).join(' · ');
   }
   function sourceName(row) {
+    if (row.manual_reported) return referenceClaim;
     if(row.source_is_private || tester(row)==='Vortex Radar')return 'Vortex Radar testing notes';
     const url=UI.safeURL(row.source_url), forum=url && /^(?:www\.)?dashcamtalk\.com$/.test(new URL(url).hostname);
-    return `${tester(row) || 'Contributor'} · ${UI.modelLabel(row)} ${forum ? 'test on DashCamTalk' : 'testing data'}`;
+    return `${tester(row) || 'Contributor'} · ${modelLabel(row)} ${forum ? 'test on DashCamTalk' : 'testing data'}`;
   }
   function exportFilename(state,extension) {
     const modes={'low-power':'low-power-parking',buffered:'buffered-motion-impact-parking','buffered-motion':'buffered-motion-detection-parking','buffered-impact':'buffered-impact-detection-parking',unbuffered:'non-buffered-parking',radar:'radar-parking','time-lapse':'time-lapse-parking','low-bitrate':'low-bitrate-parking',hybrid:'hybrid-parking',all:'mixed-parking-modes'};
     const quantities={current:'current-draw',watts:'power-draw',delay:'wakeup-times',wake:'impact-to-first-frame'};
     return `${modes[state.family] || modes.all}-${quantities[state.metric] || 'comparison'}${extension!=='csv' && state.format!=='auto' ? '-16x9' : ''}.${extension}`;
   }
-  const api = { eligibleRows, pruneSelection, automaticTitle, subtitleText, showModeLabels, parkingMode, chartFields, exportFilename, tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
+  const api = { readReference, referenceID, referenceClaim, eligibleRows, pruneSelection, automaticTitle, subtitleText, showModeLabels, parkingMode, chartFields, exportFilename, tester, testFields, differences, variantLabel, sourceName, metrics, families, matchesFamily, defaultCondition, representative, seed, preset, interval, readState, query, prepare, valueLabel };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof window === 'undefined') return;
   window.ParkingCharts = api;
   const $ = id => document.getElementById(id);
   const ns = 'http://www.w3.org/2000/svg';
-  let rows = [], state, currentSVG, pendingPNG = false;
+  let rows = [], canonicalRows = [], referenceWarning = '', state, currentSVG, pendingPNG = false;
+  function restoreLocation() {
+    const reference = readReference(location.hash);
+    referenceWarning = reference.warning;
+    rows = [...canonicalRows, ...reference.rows];
+    state = readState(location.search, rows);
+    if (!new URLSearchParams(location.search).has('selection') && reference.rows.length) state.ids.push(referenceID);
+    modelChoices.clear();
+    render();
+  }
   const modelChoices = new Map();
   const make = (tag, attributes = {}, text) => {
     const node = document.createElementNS(ns, tag);
@@ -263,13 +307,13 @@
   function draw(result, layoutWidth = 1200) {
     const { plotted } = result, metric = metrics[state.metric];
     const axis = axisText(state);
-    const variantKey = row => [UI.modelLabel(row),row.installed_channels,UI.modeLabel(row),row.state].join('|');
+    const variantKey = row => [modelLabel(row),row.installed_channels,modeLabel(row),row.state].join('|');
     const labels = plotted.map(({ row }, i) => {
-      const siblings = plotted.filter(item => UI.modelLabel(item.row) === UI.modelLabel(row));
+      const siblings = plotted.filter(item => modelLabel(item.row) === modelLabel(row));
       const repeated = plotted.filter(item => variantKey(item.row) === variantKey(row)).length > 1;
-      const modes = new Set(siblings.map(item => UI.modeLabel(item.row)));
+      const modes = new Set(siblings.map(item => modeLabel(item.row)));
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean);
-      return {first: `${UI.modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}`, second: [(showModeLabels(state) || modes.size > 1) ? parkingMode(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
+      return {first: `${modelLabel(row)}${row.installed_channels ? ` · ${row.installed_channels}CH` : ''}${flags.length ? ` · ${flags.join(', ')}` : ''}`, second: [row.manual_reported ? referenceClaim : '', (showModeLabels(state) || modes.size > 1) ? parkingMode(row) : '', repeated ? variantLabel(row, siblings.map(item=>item.row), state.metric, false) : '', siblings.some(item => item.row.state !== row.state) ? (UI.condition(row) || row.state) : '', state.metric === 'wake' ? row.wake_camera : ''].filter(Boolean).join(' · ')};
     });
     const video = state.format !== 'auto';
     // Keep comfortable frame padding even when many rows require a wider
@@ -288,7 +332,7 @@
     const right = Math.ceil(Math.max(...plotted.map(({ row, value }) => textWidth(valueLabel(row, value, state.metric), 16, true))) + 10 + inset);
     const width = Math.max(layoutWidth, left + right + 490), plotWidth = width - left - right;
     const svg = make('svg', { xmlns: ns, width, role: 'img', 'aria-labelledby': 'export-chart-title export-chart-desc', 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': 14, fill: '#263343' });
-    svg.append(make('title', { id: 'export-chart-title' }, state.title ?? metric.label), make('desc', { id: 'export-chart-desc' }, `${axis}. ${plotted.length} measurements. Bars extend from zero to the upper endpoint; lighter bands and endcaps mark minimum–maximum ranges, not averages. Zero values use a dot at the baseline. Values sorted ${state.sort === 'asc' ? 'low to high' : 'high to low'} by upper endpoint.`));
+    svg.append(make('title', { id: 'export-chart-title' }, state.title ?? metric.label), make('desc', { id: 'export-chart-desc' }, `${axis}. ${plotted.length} measurements.${plotted.some(item=>item.row.manual_reported) ? ' '+referenceClaim+'.' : ''} Bars extend from zero to the upper endpoint; lighter bands and endcaps mark minimum–maximum ranges, not averages. Zero values use a dot at the baseline. Values sorted ${state.sort === 'asc' ? 'low to high' : 'high to low'} by upper endpoint.`));
     const content = make('g');
     const text = (x, y, value, attrs = {}) => content.appendChild(make('text', { x, y, ...attrs }, value));
     let y = 45;
@@ -315,7 +359,7 @@
     let rowTop = top;
     plotted.forEach(({ row, value }, index) => {
       const label = labels[index];
-      const cy = rowTop + label.height / 2, highlighted = UI.modelLabel(row) === state.highlight;
+      const cy = rowTop + label.height / 2, highlighted = modelLabel(row) === state.highlight;
       rowTop += label.height;
       const group = make('g', { 'data-measurement': row.id, 'data-min': value.min, 'data-max': value.max, 'data-range': value.range, 'data-highlight': highlighted });
       let labelY = cy - (label.firstLines.length * 20 + label.secondLines.length * 18) / 2 + 15;
@@ -340,6 +384,7 @@
     y = bottom + 80;
     content.append(make('line', { x1: 36, x2: width - 36, y1: y - 8, y2: y - 8, stroke: '#dae2eb' }));
     const notes = [
+      plotted.some(item=>item.row.manual_reported) ? `${referenceClaim}. Manual chart-only claim, not part of the public measurement database.` : '',
       state.metric === 'watts' && plotted.some(item=>item.row.power_is_derived) ? '≈ marks calculated power.' : '',
       hasRanges ? 'Bars extend from zero to the upper endpoint. Lighter bands and endcaps mark min–max ranges, not averages. Firmware and setups remain separate.' : '',
 
@@ -350,14 +395,14 @@
     const sources = new Map();
     plotted.forEach(({ row }, index) => {
       const flags = [row.test_status === 'prototype' ? 'Prototype' : '', UI.provisional(row) ? 'Provisional' : '', row.superseded ? 'Superseded' : ''].filter(Boolean).join(' · ');
-      const siblings=plotted.filter(item=>UI.modelLabel(item.row)===UI.modelLabel(row) && item.row.installed_channels===row.installed_channels);
+      const siblings=plotted.filter(item=>modelLabel(item.row)===modelLabel(row) && item.row.installed_channels===row.installed_channels);
       const distinction=siblings.length>1 ? variantLabel(row,siblings.map(item=>item.row),state.metric,false) : '';
-      const note = `${UI.modelLabel(row)} · ${row.installed_channels ? `${row.installed_channels}CH · ` : ''}${distinction ? distinction+' · ' : ''}${chartFields(row,state.metric).map(([key,value])=>`${key}: ${value}`).join(' · ')}${flags ? ` · ${flags}` : ''}`;
+      const note = `${modelLabel(row)} · ${row.installed_channels ? `${row.installed_channels}CH · ` : ''}${distinction ? distinction+' · ' : ''}${chartFields(row,state.metric).map(([key,value])=>`${key}: ${value}`).join(' · ')}${flags ? ` · ${flags}` : ''}`;
       for (const line of wrapped(note + (state.metric === 'wake' && row.wake_camera ? ` · Timing camera: ${row.wake_camera}` : ''), width - 72, 12)) { y += 17; text(36, y, line, { 'font-size': 12, fill: '#536174' }); }
       const url = source(row);
       const sourceKey = JSON.stringify({url, name:sourceName(row)});
       if (!sources.has(sourceKey)) sources.set(sourceKey, []);
-      sources.get(sourceKey).push(UI.modelLabel(row));
+      sources.get(sourceKey).push(modelLabel(row));
       y += 8;
     });
     for (const [url, references] of sources) {
@@ -430,26 +475,27 @@
     $('chart-clear').disabled = !state.ids.length;
     $('chart-csv').disabled = !state.ids.length;
     $('chart-switch-watts').hidden = !result.blocked;
-    const missingModels=[...new Set(result.selected.filter(row=>!interval(row,state.metric)).map(UI.modelLabel))];
+    const missingModels=[...new Set(result.selected.filter(row=>!interval(row,state.metric)).map(modelLabel))];
     const voltageGroups = new Map(), unknownVoltage = [];
     for (const {row} of result.plotted) {
-      if (!valid(row.voltage_v) || row.voltage_v===0) unknownVoltage.push(UI.modelLabel(row));
-      else {if (!voltageGroups.has(row.voltage_v)) voltageGroups.set(row.voltage_v,[]);voltageGroups.get(row.voltage_v).push(UI.modelLabel(row));}
+      if (!valid(row.voltage_v) || row.voltage_v===0) unknownVoltage.push(modelLabel(row));
+      else {if (!voltageGroups.has(row.voltage_v)) voltageGroups.set(row.voltage_v,[]);voltageGroups.get(row.voltage_v).push(modelLabel(row));}
     }
     const names = items => [...new Set(items)].join(', ');
     const blockers = [unknownVoltage.length ? `Missing test voltage: ${names(unknownVoltage)}.` : '',voltageGroups.size>1 ? `Different test voltages: ${[...voltageGroups].map(([voltage,models])=>`${voltage} V: ${names(models)}`).join('; ')}.` : ''].filter(Boolean).join(' ');
     $('chart-notice').textContent = result.blocked ? `Current comparison blocked. ${blockers} Remove those cameras, choose tests at one voltage, or switch to W.` : (result.excluded ? `No ${metrics[state.metric].label.toLowerCase()} data for: ${missingModels.join(', ')}. ${result.excluded===1?'That selection is':'Those selections are'} not shown.` : (!result.plotted.length ? 'Choose a dashcam with a result for this metric.' : ''));
     if (state.missingModels?.length) $('chart-notice').textContent += ` No ${families[state.group].toLowerCase()} data for: ${state.missingModels.join(', ')}. These cameras are kept for other modes.`;
+    if (referenceWarning) $('chart-notice').textContent += ` ${referenceWarning}`;
     currentSVG = !result.blocked && result.plotted.length ? draw(result) : null;
     $('chart-canvas').replaceChildren(...(currentSVG ? [currentSVG] : [el('p', 'charts-empty', result.blocked ? 'No current chart until the voltage comparison is valid.' : 'No measured values to plot.')]));
     $('chart-canvas').setAttribute('aria-busy', 'false');
     $('chart-svg').disabled = !currentSVG; $('chart-png').disabled = !currentSVG || pendingPNG;
-    history.replaceState(null, '', `${location.pathname}?${query(state)}`);
+    history.replaceState(null, '', `${location.pathname}?${query(state)}${location.hash}`);
   }
   function primaryGroups() {
     const q = $('chart-search').value.toLocaleLowerCase().trim();
-    const eligible = eligibleRows(rows, state).filter(row=>!q || `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q));
-    return UI.groupModels(eligible).sort((a,b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
+    const eligible = eligibleRows(rows, state).filter(row=>!q || `${modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q));
+    return groupModels(eligible).sort((a,b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
   }
   function chosenFor(group, channels = null) {
     const remembered = modelChoices.get(group.label);
@@ -457,12 +503,12 @@
   }
   function retargetSelection(group,metric,allowWatts=false) {
     const previous=rows.filter(row=>state.ids.includes(row.id));
-    const requested=[...new Set(previous.map(UI.modelLabel))];
+    const requested=[...new Set(previous.map(modelLabel))];
     const ids=[];
     modelChoices.clear();
     for (const name of requested) {
-      const before=previous.filter(row=>UI.modelLabel(row)===name);
-      const modeRows=eligibleRows(rows,{...state,group,family:group,metric,condition:group===state.group ? state.condition : defaultCondition(group)}).filter(row=>UI.modelLabel(row)===name);
+      const before=previous.filter(row=>modelLabel(row)===name);
+      const modeRows=eligibleRows(rows,{...state,group,family:group,metric,condition:group===state.group ? state.condition : defaultCondition(group)}).filter(row=>modelLabel(row)===name);
       if (!modeRows.length) continue;
       const candidates=modeRows;
       const retained=before.filter(row=>candidates.some(candidate=>candidate.id===row.id));
@@ -479,7 +525,7 @@
     state.missingModels=(state.missingModels || []).filter(name=>name!==group.label);
     // A normal model choice follows the requested group, without mixing old modes.
     if (checked) pruneSelection(rows,state);
-    state.ids = state.ids.filter(id => UI.modelLabel(rows.find(row => row.id === id)) !== group.label);
+    state.ids = state.ids.filter(id => modelLabel(rows.find(row => row.id === id)) !== group.label);
     if (checked) state.ids.push(chosen.id);
     state.family = state.ids.every(id => matchesFamily(rows.find(row => row.id === id), state.group)) ? state.group : 'all';
     const useWatts=state.metric==='current' && (prepare(rows,state).blocked || state.ids.some(id=>{const row=rows.find(row=>row.id===id);return !interval(row,'current')&&interval(row,'watts');}));
@@ -520,7 +566,7 @@
       setupSelect.addEventListener('change',()=>editModel(group,rows.find(row=>row.id===setupSelect.value),selected,'select[data-test]'));
       setupLabel.append(setupSelect);details.append(setupLabel);
       const value=interval(chosen,state.metric);
-      details.append(el('strong','chart-selected-reading',value?`${metrics[state.metric].label}: ${valueLabel(chosen,value,state.metric)}`:'Not measured for this metric'));
+      details.append(el('strong','chart-selected-reading',value?`${chosen.manual_reported ? 'Reported power' : metrics[state.metric].label}: ${valueLabel(chosen,value,state.metric)}`:'Not measured for this metric'));
       const varying=differences(variants,state.metric);
       const names={'Mode':'parking mode','Firmware':'firmware','Tested by':'tester','Interior IR':'interior IR setting','Interior camera':'interior camera setting','Lighting':'day/night conditions','Test window':'measurement period','Test voltage':'test voltage','Tested date':'test date','Power adapter':'power adapter','LTE':'LTE connection','Active cameras':'active cameras','Settings':'recording settings'};
       if(varying.length)details.append(el('p','chart-variant-summary',`Available tests differ by ${new Intl.ListFormat('en',{type:'conjunction'}).format(varying.map(key=>names[key]))}.`));
@@ -528,7 +574,7 @@
       const flags=[chosen.test_status==='prototype'?'Prototype':'',UI.provisional(chosen)?'Provisional':'',chosen.superseded?'Superseded':''].filter(Boolean);
       if(flags.length)label.append(el('small','',flags.join(' · ')));
 
-      const multiple=state.ids.filter(id=>rows.some(row=>row.id===id&&UI.modelLabel(row)===group.label)).length;
+      const multiple=state.ids.filter(id=>rows.some(row=>row.id===id&&modelLabel(row)===group.label)).length;
       if(multiple>1)details.append(el('small','',`${multiple} shared measurements retained. Editing this camera replaces only its selected tests.`));
       card.append(details);fragment.append(card);
     }
@@ -538,8 +584,8 @@
   function renderPicker() {
     const open = new Set([...document.querySelectorAll('.chart-model[open]')].map(node => node.dataset.model));
     const selected = new Set(state.ids), q = $('chart-search').value.toLocaleLowerCase().trim();
-    const visible = eligibleRows(rows,state).filter(row => (!q || `${UI.modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q)) && (!$('chart-only-selected').checked || selected.has(row.id)));
-    const groups = UI.groupModels(visible).sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
+    const visible = eligibleRows(rows,state).filter(row => (!q || `${modelLabel(row)} ${row.brand} ${row.model} ${row.mode_name} ${UI.setup(row)} ${row.id}`.toLocaleLowerCase().includes(q)) && (!$('chart-only-selected').checked || selected.has(row.id)));
+    const groups = groupModels(visible).sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true, sensitivity: 'base' }));
     $('picker-count').textContent = `${visible.length} matching measurements · ${groups.length} models`;
     const models = primaryGroups(); renderModels(models);
     $('chart-apply-group').textContent = `Compare shown models · ${models.length}`;
@@ -554,8 +600,8 @@
       details.append(summary);
       for (const row of group.rows) {
         const label = el('label', 'chart-pick-row'), input = document.createElement('input');
-        input.type = 'checkbox'; input.dataset.id = row.id; input.checked = selected.has(row.id); input.setAttribute('aria-label', `${UI.modelLabel(row)}, ${variantLabel(row, group.rows, state.metric)}`);
-        const body = el('span'); body.append(el('strong', '', `${UI.modeLabel(row)} · ${UI.condition(row) || (row.state === 'time-lapse' ? 'Time-lapse recording' : 'Continuous recording')}`));
+        input.type = 'checkbox'; input.dataset.id = row.id; input.checked = selected.has(row.id); input.setAttribute('aria-label', `${modelLabel(row)}, ${variantLabel(row, group.rows, state.metric)}`);
+        const body = el('span'); body.append(el('strong', '', `${modeLabel(row)} · ${UI.condition(row) || (row.state === 'time-lapse' ? 'Time-lapse recording' : 'Continuous recording')}`));
         body.append(el('small', '', variantLabel(row, group.rows, state.metric, false)));
         const value = interval(row, state.metric);
         body.append(el('small', 'chart-metric-reading', `${value ? valueLabel(row, value, state.metric) : 'Not measured for this metric'}${state.metric === 'current' ? ` · ${valid(row.voltage_v) ? `${row.voltage_v} V` : 'Voltage unknown'}` : ''}`));
@@ -575,7 +621,8 @@
   }
   function render() {
     pruneSelection(rows,state);
-    const highlighted=UI.groupModels(rows.filter(row=>state.ids.includes(row.id))).sort((a,b)=>a.label.localeCompare(b.label,undefined,{numeric:true,sensitivity:'base'}));
+    state.referenceName = rows.find(row=>row.manual_reported)?.model;
+    const highlighted=groupModels(rows.filter(row=>state.ids.includes(row.id))).sort((a,b)=>a.label.localeCompare(b.label,undefined,{numeric:true,sensitivity:'base'}));
     if(!highlighted.some(group=>group.label===state.highlight))state.highlight='';
     $('chart-highlight').replaceChildren(el('option','','No highlight'));
     $('chart-highlight').firstChild.value='';
@@ -586,9 +633,9 @@
     try {
       const response = await fetch('data/parking-measurements.json', {cache:'no-store'});
       if (!response.ok) throw new Error('Data request failed');
-      const data = await response.json(); rows = data.measurements;
-      state = readState(location.search, rows);
-      $('chart-data-status').textContent = `${rows.length} measurements · ${UI.groupModels(rows).length} models`;
+      const data = await response.json(); canonicalRows = data.measurements;
+      restoreLocation();
+      $('chart-data-status').textContent = `${canonicalRows.length} public measurements · ${groupModels(canonicalRows).length} models`;
       // WebKit does not consistently pan focused SVG scroll regions with arrows.
       $('chart-canvas').addEventListener('keydown', event => {
         if (event.target !== event.currentTarget || event.altKey || event.ctrlKey || event.metaKey || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
@@ -616,11 +663,12 @@
       $('chart-clear').addEventListener('click', () => { state.ids = []; state.missingModels=[]; render(); });
       $('chart-switch-watts').addEventListener('click', () => {if(Object.values(titles).includes(state.title))state.title=titles.watts;state.metric = 'watts'; render(); });
       for (const key of ['chart-search', 'chart-condition', 'chart-only-selected']) $(key).addEventListener(key === 'chart-search' ? 'input' : 'change', () => { state.condition = $('chart-condition').value; render(); });
-      window.addEventListener('popstate',()=>{state=readState(location.search,rows);modelChoices.clear();render();});
+      window.addEventListener('popstate',restoreLocation);
+      window.addEventListener('hashchange',restoreLocation);
       $('chart-picker').addEventListener('change', event => {
         const { id } = event.target.dataset;
         if (!id || !rows.some(row => row.id === id)) return;
-        modelChoices.delete(UI.modelLabel(rows.find(row => row.id === id)));
+        modelChoices.delete(modelLabel(rows.find(row => row.id === id)));
         if (event.target.checked && !matchesFamily(rows.find(row => row.id === id), state.family)) state.family = 'all';
         state.ids = event.target.checked ? [...new Set([...state.ids, id])] : state.ids.filter(value => value !== id);
         render();
