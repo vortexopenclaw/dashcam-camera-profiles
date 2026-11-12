@@ -26,6 +26,9 @@ e = load('docs/data/ddpai-z100-master-power-evidence.json')
 p = load('profiles/ddpai-z100-master.json')
 rows = load('parking/measurements.json')
 sources = load('parking/sources.json')
+# The separate later 4CH cohort has its own full-baseline preservation regression.
+rows = [r for r in rows if r.get('source_id') != 'vortex-owner-z100-master-4ch-dc009-12v6']
+sources = [s for s in sources if s['id'] != 'vortex-owner-z100-master-4ch-dc009-12v6']
 assert e['source_id'] == SID and e['provenance']['source_quote'] == SOURCE_QUOTE
 assert e['provenance']['original_public_url'] is None
 assert len(e['measurements']) == 4
@@ -63,7 +66,7 @@ index = load('docs/data/cameras.json')
 assert next(c for c in index['cameras'] if c['id']==p['id']) == p
 assert [c for c in index['cameras'] if c['id']!=p['id']] == [c for c in old('docs/data/cameras.json')['cameras'] if c['id']!=p['id']]
 export = load('docs/data/parking-measurements.json')
-assert {r['id']:r for r in export['measurements']} == {r['id']:r for r in rows}
+assert {r['id']:r for r in export['measurements'] if r.get('source_id') != 'vortex-owner-z100-master-4ch-dc009-12v6'} == {r['id']:r for r in rows}
 csv_rows = {r['id']:r for r in csv.DictReader((R/'docs/data/parking-measurements.csv').open())}
 for row in imported:
     c = csv_rows[row['id']]

@@ -16,6 +16,8 @@ The [owner-confirmed rcg530 T340 1.0_261023T2 chart evidence](../docs/data/t340-
 
 The [owner Z100 Master power evidence](../docs/data/ddpai-z100-master-power-evidence.json) retains four owner-chat current readings at 12.6 V, no cloud, through the DC009 hardwire cable. Driving is explicitly 2CH front/telephoto and stays outside parking comparisons; the three parking readings retain ongoing timelapse, collision monitoring, and triggered event recording separately. Watts are derived from the stated voltage and current, not independently reported. Collision idle is 52 mA / 0.6552 W, not the earlier relayed 135 mW / 0.135 W claim, whose equivalent test conditions are unknown. No wake/start timing, firmware, HDR, capture FPS/SPF, lighting, or exact meter hardware is inferred. Historical client-only custom claim links are unchanged.
 
+The [separate owner 4CH Z100 Master power evidence](../docs/data/ddpai-z100-master-4ch-power-evidence.json) records installed front/telephoto/rear/cabin, 12.6 V, cloud off and the same DC009 cable: driving 964 mA / 12.1464 W derived (evidence only), timelapse 632 mA / 7.9632 W derived (one parking row). Both collision states are explicitly pending/null, not zero. Rear firmware 9.0.0.17 applies only to rear; other component and main-unit firmware remain unknown. Rear 4K and cabin 3K are owner-declared; promised card scans have not yet arrived for this cohort. No earlier 2CH data or video measurements are relabeled.
+
 ## Functional categories
 
 Brand names remain visible alongside these cross-brand categories:

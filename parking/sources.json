@@ -1116,5 +1116,18 @@
     "private": true,
     "measurement_count": 3,
     "notes": "Sanitized owner-chat provenance, not a public original post or borrowed source. Four source currents retained in linked evidence; three parking rows imported. Driving stays evidence only. Watts derived from explicit supply voltage; exact measurement date and hardware details unknown."
+  },
+  {
+    "id": "vortex-owner-z100-master-4ch-dc009-12v6",
+    "post_id": null,
+    "title": "Owner DDPAI Z100 Master separate 4CH power readings, DC009 at 12.6 V, cloud off",
+    "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-4ch-power-evidence.json",
+    "tester": "Vortex Radar",
+    "date": null,
+    "images": [],
+    "status": "extracted",
+    "private": true,
+    "measurement_count": 1,
+    "notes": "Two measured currents in sanitized dossier; only timelapse is a parking row. Driving is evidence only. Collision idle and recording are explicitly pending/null. Rear firmware 9.0.0.17 applies only to rear. No new card scans."
   }
 ]
