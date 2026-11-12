@@ -13,11 +13,14 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          fetch-depth: 0 # Source-preservation regressions compare the pinned pre-import commit.
       - name: Validate canonical data and generated frontend index
         run: |
           python3 scripts/verify.py
           python3 scripts/verify-a329t-front-only.py
           python3 scripts/verify-z100-master.py
+          python3 scripts/verify-z100-power.py
       - name: Validate parking measurements and exports
         run: |
           python3 scripts/verify-parking.py

@@ -68,7 +68,7 @@
     "S-prefixed clips are kept in a separate parking-classified cohort. Filename classification does not establish configured parking mode, capture cadence, real elapsed coverage, or within-file transitions.",
     "For this owner Z100 Master card cohort, the owner confirms the observed inside channel is physically the telephoto camera and reports a firmware labeling bug in the current firmware. The original inside label is retained as provenance; no exact firmware version or rear-camera evidence is established. This mapping does not extend to other models or contributors.",
     "The 19 original scanner numeric sample occurrences are retained separately without deduplication. They are not 19 additional videos, do not identify physical files, and can differ slightly from ffprobe values. App group codec summaries did not establish per-file codecs.",
-    "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. No measured parking power, wake timing, or startup timing is established.",
+    "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. Separate owner DC009 power readings at 12.6 V with no cloud are published; no wake timing or startup timing is established.",
     "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published.",
     "Scanner labels both groups Driving/continuous; this is classifier context, not proof that every sample is driving. Front samples cannot be assigned individually to driving or parking without retained filename links. Bitrate bands do not establish modes.",
     "The second stored folder token is anonymized; the inside-to-telephoto mapping is owner testimony, not a decoded folder token. Historical inside-to-telephoto attribution is separately owner-confirmed; cross-scan physical clip identity is not established.",
@@ -108,6 +108,11 @@
   "sources": [
     {
       "kind": "source",
+      "label": "Owner DDPAI Z100 Master current readings; sanitized chat evidence and derived watts",
+      "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-power-evidence.json"
+    },
+    {
+      "kind": "source",
       "label": "DDPAI official Z100 Master product page, advertised capabilities",
       "url": "https://www.ddpai.com/en-us/products/z100-master"
     },
@@ -123,6 +128,14 @@
     }
   ],
   "technical_facts": [
+    {
+      "label": "Owner power measurements: 12.6 V, no cloud, DC009 hardwire cable",
+      "value": "Driving, explicitly 2CH front/telephoto: 435 mA (5.481 W derived). Timelapse parking, ongoing recording: 282 mA (3.5532 W derived). Collision detection parking, idle monitoring: 52 mA (0.6552 W derived). Collision detection parking, event recording: 424 mA (5.3424 W derived). All four use the same owner configuration; active parking views are not separately established. Source reports current only; watts = 12.6 V × mA / 1000. Firmware, HDR, quality, capture FPS/SPF, day/night, exact meter hardware, wake and startup timings are unknown."
+    },
+    {
+      "label": "Measured collision idle versus earlier relayed claim",
+      "value": "The new measured 52 mA at 12.6 V gives 0.6552 W, not the earlier owner-relayed 135 mW (0.135 W) claim. Equivalent test conditions for that claim are not established; it is not published as a measured row. Historical client-only custom claim links remain separate and unchanged."
+    },
     {
       "label": "Official advertised recording capability, not measured card attribution",
       "value": "Front wide-angle 3840x2160 at 30/25 FPS; front telephoto 2560x1440 at 25 FPS; rear 3840x2160 at 25 FPS. Advertised capabilities alone do not establish observed roles or connected setup; inside-to-telephoto mapping is separately owner-confirmed. No rear video evidence is established."
