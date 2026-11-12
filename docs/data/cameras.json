@@ -3692,9 +3692,9 @@
           "channels": 2,
           "roles": [
             "front (observed channel)",
-            "inside (physical role unknown)"
+            "telephoto (observed label: inside; owner-confirmed)"
           ],
-          "validation": "observed video directories only",
+          "validation": "observed directories; inside-to-telephoto mapping owner-confirmed",
           "variant": "Inspected card subset; not a confirmed hardware setup"
         },
         {
@@ -3708,9 +3708,9 @@
         }
       ],
       "evidence": {
-        "confidence": "historical roles unresolved; separate new owner-confirmed front/telephoto setup",
+        "confidence": "historical inside-to-telephoto owner-confirmed; separate new owner-confirmed front/telephoto time-lapse setup; other historical attribution and configured modes unconfirmed",
         "level": "card-validated",
-        "note": "All 401 historical successful video probes and 19 historical scanner occurrences remain unchanged. A separate owner-labeled scan adds 19 exact numeric pairs from 902 inventoried MP4 entries. Front/telephoto mapping and time-lapse setting apply only to the new owner cohort; firmware remains unknown.",
+        "note": "All 401 historical successful video probes and 19 historical scanner occurrences remain unchanged; historical inside-to-telephoto attribution is owner-corrected. A separate owner-labeled scan adds 19 exact numeric pairs from 902 inventoried MP4 entries. Its confirmed front/telephoto setup and time-lapse setting are scoped to the new owner cohort; firmware remains unknown.",
         "status": "observed card structure and video metadata"
       },
       "filename_patterns": [
@@ -3739,7 +3739,7 @@
             "DCIM/200video/inside"
           ],
           "channels": {},
-          "default_channel": "inside (physical role unknown)",
+          "default_channel": "telephoto (observed label: inside; owner-confirmed)",
           "modes": {},
           "pattern": "^(\\d{14})_(\\d{4})_B\\.mp4$",
           "timestamp_format": null
@@ -3753,12 +3753,12 @@
         "Cohorts split observed channel, filename-classified mode, codec, dimensions, nominal playback FPS, and full-length versus short/partial duration. Settings are unknown; this is not evidence of one uniform configuration.",
         "Full-length threshold: video-stream playback duration >=59.9 seconds. All other clips are short/partial. No short clip is attributed to TurboBoot or a particular startup behavior.",
         "S-prefixed clips are kept in a separate parking-classified cohort. Filename classification does not establish configured parking mode, capture cadence, real elapsed coverage, or within-file transitions.",
-        "Historical inside directories remain physically unassigned. In the separate new owner cohort only, the owner confirms inside is telephoto and only front/telephoto are active. No matching prior private inventory identity has been established; this is not a global folder mapping.",
+        "For this owner Z100 Master card cohort, the owner confirms the observed inside channel is physically the telephoto camera and reports a firmware labeling bug in the current firmware. The original inside label is retained as provenance; no exact firmware version or rear-camera evidence is established. This mapping does not extend to other models or contributors.",
         "The 19 original scanner numeric sample occurrences are retained separately without deduplication. They are not 19 additional videos, do not identify physical files, and can differ slightly from ffprobe values. App group codec summaries did not establish per-file codecs.",
         "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. No measured parking power, wake timing, or startup timing is established.",
         "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published.",
         "Scanner labels both groups Driving/continuous; this is classifier context, not proof that every sample is driving. Front samples cannot be assigned individually to driving or parking without retained filename links. Bitrate bands do not establish modes.",
-        "The second stored folder token is anonymized; the inside-to-telephoto mapping is owner testimony, not a decoded folder token. Historical inside cohorts remain physically unassigned pending private inventory identity matching.",
+        "The second stored folder token is anonymized; the inside-to-telephoto mapping is owner testimony, not a decoded folder token. Historical inside-to-telephoto attribution is separately owner-confirmed; cross-scan physical clip identity is not established.",
         "Only nested retained numeric pairs are measured evidence here; 902 inventoried MP4 entries are not 902 retained probes or proof of 902 distinct valid recordings. Historical and new inventories must not be summed as distinct clips.",
         "Codec arrays are empty. No codec attribution is borrowed from historical ffprobe probes. No container bitrate or separate container duration is supplied in these samples.",
         "Playback frame rates do not establish capture cadence, real elapsed parking coverage, within-file transitions, power draw, or firmware. No footage was read or decoded for this update.",
@@ -3779,7 +3779,7 @@
             "importable": true,
             "mode": "driving-classified",
             "notes": [
-              "Directory name does not establish physical camera position."
+              "Owner confirms this inside-labeled channel is the telephoto camera; current firmware has a labeling bug."
             ],
             "path": "DCIM/200video/inside",
             "validation": "retained card inventory"
@@ -3812,7 +3812,7 @@
       "technical_facts": [
         {
           "label": "Official advertised recording capability, not measured card attribution",
-          "value": "Front wide-angle 3840x2160 at 30/25 FPS; front telephoto 2560x1440 at 25 FPS; rear 3840x2160 at 25 FPS. These advertised roles do not establish the physical mapping or connected setup of the inspected card."
+          "value": "Front wide-angle 3840x2160 at 30/25 FPS; front telephoto 2560x1440 at 25 FPS; rear 3840x2160 at 25 FPS. Advertised capabilities alone do not establish observed roles or connected setup; inside-to-telephoto mapping is separately owner-confirmed. No rear video evidence is established."
         },
         {
           "label": "Official advertised optics and sensors",
@@ -3824,7 +3824,7 @@
         },
         {
           "label": "Firmware and configured settings",
-          "value": "Firmware, quality, HDR, and capture cadence remain unknown. Time-lapse parking and front/telephoto setup are owner-confirmed only for the separate new scan; historical settings and physical attribution remain unresolved."
+          "value": "Firmware, quality, HDR, and capture cadence remain unknown. Time-lapse parking and complete front/telephoto setup are owner-confirmed only for the separate new scan. Historical inside-to-telephoto attribution is separately owner-confirmed; historical settings, front wide-angle attribution, and complete connected setup remain unconfirmed."
         },
         {
           "label": "Separate owner scan coverage",
@@ -3839,7 +3839,7 @@
           "container": "MP4",
           "fps": "30",
           "mode": "driving-classified full-length",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "3840x2160",
           "settings_note": "3 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
@@ -3851,7 +3851,7 @@
           "container": "MP4",
           "fps": "30",
           "mode": "driving-classified short/partial",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "3840x2160",
           "settings_note": "2 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
@@ -3863,7 +3863,7 @@
           "container": "MP4",
           "fps": "30",
           "mode": "driving-classified full-length",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "3840x2160",
           "settings_note": "106 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
@@ -3875,7 +3875,7 @@
           "container": "MP4",
           "fps": "30",
           "mode": "driving-classified short/partial",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "3840x2160",
           "settings_note": "7 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
@@ -3887,7 +3887,7 @@
           "container": "MP4",
           "fps": "30",
           "mode": "parking-classified S-prefix full-length",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "3840x2160",
           "settings_note": "159 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
@@ -3899,55 +3899,55 @@
           "container": "MP4",
           "fps": "30",
           "mode": "parking-classified S-prefix short/partial",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "3840x2160",
           "settings_note": "7 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
         },
         {
           "bitrate": "18.199504-18.880411 Mbps",
-          "channel": "inside (physical role unknown)",
+          "channel": "telephoto (observed label: inside; owner-confirmed)",
           "codec": "H.264",
           "container": "MP4",
           "fps": "25",
           "mode": "driving-classified full-length",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "2560x1440",
           "settings_note": "3 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
         },
         {
           "bitrate": "15.777641-18.825023 Mbps",
-          "channel": "inside (physical role unknown)",
+          "channel": "telephoto (observed label: inside; owner-confirmed)",
           "codec": "H.264",
           "container": "MP4",
           "fps": "25",
           "mode": "driving-classified short/partial",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "2560x1440",
           "settings_note": "2 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
         },
         {
           "bitrate": "18.168228-18.941948 Mbps",
-          "channel": "inside (physical role unknown)",
+          "channel": "telephoto (observed label: inside; owner-confirmed)",
           "codec": "H.265 / HEVC",
           "container": "MP4",
           "fps": "25",
           "mode": "driving-classified full-length",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "2560x1440",
           "settings_note": "107 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"
         },
         {
           "bitrate": "18.729162-18.910802 Mbps",
-          "channel": "inside (physical role unknown)",
+          "channel": "telephoto (observed label: inside; owner-confirmed)",
           "codec": "H.265 / HEVC",
           "container": "MP4",
           "fps": "25",
           "mode": "driving-classified short/partial",
-          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "recording_configuration": "Two observed labels: front and inside; inside is owner-confirmed telephoto; front wide-angle attribution and complete connected setup unconfirmed",
           "resolution": "2560x1440",
           "settings_note": "5 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
           "source": "retained ffprobe headers"

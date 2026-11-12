@@ -19,7 +19,19 @@ index = json.loads((R/'docs/data/cameras.json').read_text())
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
-assert digest(e['cohorts']) == '561ea7b7a8a4b451e619a284cfc268cdbf46ea484893b93bab390f448f6a227a'
+# Pin the original complete cohorts with only the authorized physical-role correction normalized.
+original_cohorts = [{**c, 'physical_role': None if c['channel'] == 'inside' else c['physical_role']} for c in e['cohorts']]
+assert digest(original_cohorts) == '561ea7b7a8a4b451e619a284cfc268cdbf46ea484893b93bab390f448f6a227a'
+# Preserve occurrence multiplicity, exact strings/numbers, and original observed labels.
+sample_multiset = Counter(json.dumps([c['channel'], c['mode'], c['codec'], s], sort_keys=True, separators=(',', ':')) for c in e['cohorts'] for s in c['storageRateSamples'])
+assert hashlib.sha256(json.dumps(sorted(sample_multiset.items()), separators=(',', ':')).encode()).hexdigest() == 'b632b09d8180d9328f8ad154bec24d03050609346a96a2200908e00ec47ae4e4'
+assert e['channel_role_corrections'] == [{'observed_channel': 'inside', 'physical_role': 'telephoto', 'source': 'owner confirmation', 'reason': 'Owner reports a firmware labeling bug in the current firmware.', 'scope': 'Existing owner Z100 Master card cohort only; no other models or contributors.', 'firmware': None}]
+assert 'physical_channel_mapping' not in e['unreported_settings']
+assert p['channel_variants'][0]['roles'][1] == 'telephoto (observed label: inside; owner-confirmed)'
+assert p['filename_patterns'][2]['default_channel'] == 'telephoto (observed label: inside; owner-confirmed)'
+assert 'inside (physical role unknown)' not in json.dumps(p)
+assert 'firmware labeling bug' in json.dumps(p)
+assert e['channel_role_corrections'][0]['firmware'] is None
 assert digest(e['scanner_samples']) == 'b4f2abdc64360f5de429781d086a977c38e3f9c20f078b96c01358f552301855'
 assert e['camera_id'] == p['id'] == 'ddpai-z100-master'
 assert next(c for c in index['cameras'] if c['id'] == p['id']) == p
@@ -47,13 +59,17 @@ for c, row in zip(e['cohorts'], p['video_samples']):
     assert all((s['width'],s['height'],s['nominalFrameRate']) == (c['width'],c['height'],c['nominalFrameRate']) for s in samples)
     assert row['resolution'] == f"{c['width']}x{c['height']}"
     if c['channel'] == 'inside':
-        assert c['physical_role'] is None and 'unknown' in row['channel']
+        assert c['physical_role'] == 'telephoto'
+        assert row['channel'] == 'telephoto (observed label: inside; owner-confirmed)'
+        assert (c['width'], c['height'], c['nominalFrameRate']) == (2560, 1440, '25/1')
+    else:
+        assert row['channel'] == 'front (observed channel)'
 assert codec_counts == e['codec_counts'] == {'hevc':391, 'h264':10}
 assert channel_counts == {'front':284, 'inside':117}
 assert p['recording']['parking_modes'] == ['time-lapse (owner-confirmed new cohort only)']
 
-# Owner testimony is scoped separately: historical cohorts and all 19 occurrences
-# retain their immutable digests above, including unresolved historical roles.
+# New-scan settings remain separately scoped. Historical numeric evidence and
+# all 19 occurrences retain their pins above, normalizing only the owner role correction.
 owner = e['owner_scan']
 assert digest([g['storageRateSamples'] for g in owner['groups']]) == '93ccd27d195406f5c8cfdafaf538bdf9ecadb3786fad10a2fa4f6ee22e60f737'
 fields = ('fileSizeBytes', 'durationSeconds', 'videoBitrate', 'width', 'height', 'nominalFrameRate')
@@ -157,12 +173,13 @@ if args.private_audit:
 
 if args.baseline:
     b = json.loads(args.baseline.read_text())
-    assert [c for c in index['cameras'] if c['id'] != p['id']] == b['index']['cameras']
+    assert [c for c in index['cameras'] if c['id'] != p['id']] == [c for c in b['index']['cameras'] if c['id'] != p['id']]
+    allowed_changes = {'profiles/ddpai-z100-master.json', 'docs/data/ddpai-z100-master-evidence.json', 'docs/data/cameras.json', 'scripts/verify-z100-master.py'}
     for name, sha in b['trackedHashes'].items():
-        if name not in {'docs/data/cameras.json','.github/workflows/validate.yml'}:
+        if name not in allowed_changes:
             assert hashlib.sha256((R/name).read_bytes()).hexdigest() == sha, name
     if args.private_audit:
         for name, sha in b['auditHashes'].items():
             assert hashlib.sha256((args.private_audit/name).read_bytes()).hexdigest() == sha, name
     print('All existing camera records and unrelated tracked bytes unchanged; private originals immutable.')
-print('Z100 Master verified: 401 exact historical probes, 19 historical scanner occurrences, 10 unchanged historical cohorts; 19 new unique pairs across 2 owner-scoped channels and 4 summary rows; privacy and index parity passed. Firmware/cadence unknown; historical roles unresolved.')
+print('Z100 Master verified: 401 exact historical probes, 19 historical scanner occurrences, 10 historical numeric cohorts preserved; historical inside-to-telephoto owner-confirmed; 19 new unique pairs across 2 owner-scoped channels and 4 summary rows; privacy and index parity passed. Firmware/cadence and other historical attribution/settings remain unconfirmed.')
