@@ -4603,8 +4603,301 @@
     "durationSeconds and rational frame rates preserve ffprobe video-stream strings. containerDurationSeconds and containerBitrate are separate whole-file metadata. videoBitrate excludes audio and container overhead. Means are unweighted per-clip video bitrate means within each cohort, not pooled camera/configuration averages.",
     "The 19 original scanner numeric sample occurrences are retained separately without deduplication. They are not 19 additional videos, do not identify physical files, and can differ slightly from ffprobe values. App group codec summaries did not establish per-file codecs.",
     "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. No measured parking power, wake timing, or startup timing is established.",
-    "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published."
+    "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published.",
+    "A separate owner-confirmed 2CH front/telephoto time-lapse scan is retained under owner_scan. Its testimony does not retroactively resolve historical physical roles or settings. New numeric samples are deduplicated by numeric equality within channel/context; occurrence indices retain source order anonymously."
   ],
+  "owner_scan": {
+    "capture_cadence": null,
+    "configuration": "2CH: front/telephoto",
+    "configured_parking_mode": "time-lapse (owner-reported)",
+    "duplicate_numeric_occurrences": 0,
+    "firmware": null,
+    "groups": [
+      {
+        "group_index": 0,
+        "inventoried_video_entries": 621,
+        "occurrences": [
+          {
+            "numeric_sample_index": 0,
+            "sample_index": 0
+          },
+          {
+            "numeric_sample_index": 1,
+            "sample_index": 1
+          },
+          {
+            "numeric_sample_index": 2,
+            "sample_index": 2
+          },
+          {
+            "numeric_sample_index": 3,
+            "sample_index": 3
+          },
+          {
+            "numeric_sample_index": 4,
+            "sample_index": 4
+          },
+          {
+            "numeric_sample_index": 5,
+            "sample_index": 5
+          },
+          {
+            "numeric_sample_index": 6,
+            "sample_index": 6
+          },
+          {
+            "numeric_sample_index": 7,
+            "sample_index": 7
+          },
+          {
+            "numeric_sample_index": 8,
+            "sample_index": 8
+          }
+        ],
+        "physical_role": "front",
+        "sample_codecs": [],
+        "sample_mode": "unresolved within owner time-lapse-configured scan",
+        "sample_occurrences": 9,
+        "scanner_channel": "front",
+        "scanner_display_mode": "Driving",
+        "scanner_mode": "continuous",
+        "storageRateSamples": [
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 316029440,
+            "height": 2160,
+            "nominalFrameRate": 30,
+            "videoBitrate": 41942088,
+            "width": 3840
+          },
+          {
+            "durationSeconds": 60.067,
+            "fileSizeBytes": 317251072,
+            "height": 2160,
+            "nominalFrameRate": 29.966703414916992,
+            "videoBitrate": 42052112,
+            "width": 3840
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 316085760,
+            "height": 2160,
+            "nominalFrameRate": 30,
+            "videoBitrate": 41950748,
+            "width": 3840
+          },
+          {
+            "durationSeconds": 60.034,
+            "fileSizeBytes": 315805696,
+            "height": 2160,
+            "nominalFrameRate": 29.98334312438965,
+            "videoBitrate": 41883224,
+            "width": 3840
+          },
+          {
+            "durationSeconds": 6.3,
+            "fileSizeBytes": 32082944,
+            "height": 2160,
+            "nominalFrameRate": 30,
+            "videoBitrate": 40553932,
+            "width": 3840
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 297668608,
+            "height": 2160,
+            "nominalFrameRate": 30,
+            "videoBitrate": 39293556,
+            "width": 3840
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 299790848,
+            "height": 2160,
+            "nominalFrameRate": 30,
+            "videoBitrate": 39574608,
+            "width": 3840
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 298683392,
+            "height": 2160,
+            "nominalFrameRate": 30,
+            "videoBitrate": 39426384,
+            "width": 3840
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 297670144,
+            "height": 2160,
+            "nominalFrameRate": 30,
+            "videoBitrate": 39289848,
+            "width": 3840
+          }
+        ],
+        "unique_numeric_sample_count": 9
+      },
+      {
+        "group_index": 1,
+        "inventoried_video_entries": 281,
+        "occurrences": [
+          {
+            "numeric_sample_index": 0,
+            "sample_index": 0
+          },
+          {
+            "numeric_sample_index": 1,
+            "sample_index": 1
+          },
+          {
+            "numeric_sample_index": 2,
+            "sample_index": 2
+          },
+          {
+            "numeric_sample_index": 3,
+            "sample_index": 3
+          },
+          {
+            "numeric_sample_index": 4,
+            "sample_index": 4
+          },
+          {
+            "numeric_sample_index": 5,
+            "sample_index": 5
+          },
+          {
+            "numeric_sample_index": 6,
+            "sample_index": 6
+          },
+          {
+            "numeric_sample_index": 7,
+            "sample_index": 7
+          },
+          {
+            "numeric_sample_index": 8,
+            "sample_index": 8
+          },
+          {
+            "numeric_sample_index": 9,
+            "sample_index": 9
+          }
+        ],
+        "physical_role": "telephoto",
+        "sample_codecs": [],
+        "sample_mode": "unresolved within owner time-lapse-configured scan",
+        "sample_occurrences": 10,
+        "scanner_channel": "interior",
+        "scanner_display_mode": "Driving",
+        "scanner_mode": "continuous",
+        "storageRateSamples": [
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 134562816,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 17753398,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 142746112,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 18842764,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 143380480,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 18926804,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 9.36,
+            "fileSizeBytes": 22554624,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 19112382,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 143037952,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 18882082,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 142985216,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 18878410,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 142801408,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 18860626,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 143074816,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 18886120,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 60,
+            "fileSizeBytes": 142899200,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 18863508,
+            "width": 2560
+          },
+          {
+            "durationSeconds": 55.6,
+            "fileSizeBytes": 132582912,
+            "height": 1440,
+            "nominalFrameRate": 25,
+            "videoBitrate": 18891784,
+            "width": 2560
+          }
+        ],
+        "unique_numeric_sample_count": 10
+      }
+    ],
+    "hdr": null,
+    "inventory": {
+      "copyable_items": 1367,
+      "jpeg_file_count": 440,
+      "scanned_files": 1589,
+      "video_file_count": 902
+    },
+    "limitations": [
+      "Scanner labels both groups Driving/continuous; this is classifier context, not proof that every sample is driving. Front samples cannot be assigned individually to driving or parking without retained filename links. Bitrate bands do not establish modes.",
+      "The second stored folder token is anonymized; the inside-to-telephoto mapping is owner testimony, not a decoded folder token. Historical inside cohorts remain physically unassigned pending private inventory identity matching.",
+      "Only nested retained numeric pairs are measured evidence here; 902 inventoried MP4 entries are not 902 retained probes or proof of 902 distinct valid recordings. Historical and new inventories must not be summed as distinct clips.",
+      "Codec arrays are empty. No codec attribution is borrowed from historical ffprobe probes. No container bitrate or separate container duration is supplied in these samples.",
+      "Playback frame rates do not establish capture cadence, real elapsed parking coverage, within-file transitions, power draw, or firmware. No footage was read or decoded for this update."
+    ],
+    "parking_filename_rule": "S_ prefix identifies front parking on this owner-confirmed setup only; no per-sample filename links survived in this stored scan.",
+    "physical_channel_mapping": {
+      "front": "front",
+      "interior": "telephoto (owner identifies inside directory)"
+    },
+    "provenance": "Separate owner-labeled stored scan; no private inventory identity match to the historical inspected card has been established.",
+    "quality": null,
+    "sample_occurrences": 19,
+    "unique_numeric_sample_count": 19
+  },
   "sample_occurrences": 401,
   "scanner_sample_occurrences": 19,
   "scanner_samples": [

@@ -9,12 +9,21 @@
       ],
       "validation": "observed video directories only",
       "variant": "Inspected card subset; not a confirmed hardware setup"
+    },
+    {
+      "channels": 2,
+      "roles": [
+        "front",
+        "telephoto"
+      ],
+      "validation": "owner-confirmed setup; separate stored scan",
+      "variant": "New owner cohort only; historical physical identity not matched"
     }
   ],
   "evidence": {
-    "confidence": "physical channel roles and configured modes unconfirmed",
+    "confidence": "historical roles unresolved; separate new owner-confirmed front/telephoto setup",
     "level": "card-validated",
-    "note": "Owner-authorized sanitized retained card inspection. All 401 successful video probes are preserved anonymously. Official product capabilities are separate from observed channels; firmware and settings remain unknown.",
+    "note": "All 401 historical successful video probes and 19 historical scanner occurrences remain unchanged. A separate owner-labeled scan adds 19 exact numeric pairs from 902 inventoried MP4 entries. Front/telephoto mapping and time-lapse setting apply only to the new owner cohort; firmware remains unknown.",
     "status": "observed card structure and video metadata"
   },
   "filename_patterns": [
@@ -53,14 +62,20 @@
   "manufacturer": "DDPAI",
   "model": "Z100 Master",
   "notes": [
-    "All successful retained video header probes are included exactly once. Anonymous technical values only; original media and audit records remain private and unchanged.",
+    "All historical successful retained video header probes are included exactly once. The separate owner scan adds anonymous nested per-sample measurements; no physical clip identity or cross-scan uniqueness is inferred.",
     "Cohorts split observed channel, filename-classified mode, codec, dimensions, nominal playback FPS, and full-length versus short/partial duration. Settings are unknown; this is not evidence of one uniform configuration.",
     "Full-length threshold: video-stream playback duration >=59.9 seconds. All other clips are short/partial. No short clip is attributed to TurboBoot or a particular startup behavior.",
     "S-prefixed clips are kept in a separate parking-classified cohort. Filename classification does not establish configured parking mode, capture cadence, real elapsed coverage, or within-file transitions.",
-    "The inside directory is an observed channel label, not confirmation of an interior camera, telephoto camera, or rear camera. Official capabilities do not resolve that physical attribution.",
+    "Historical inside directories remain physically unassigned. In the separate new owner cohort only, the owner confirms inside is telephoto and only front/telephoto are active. No matching prior private inventory identity has been established; this is not a global folder mapping.",
     "The 19 original scanner numeric sample occurrences are retained separately without deduplication. They are not 19 additional videos, do not identify physical files, and can differ slightly from ffprobe values. App group codec summaries did not establish per-file codecs.",
     "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. No measured parking power, wake timing, or startup timing is established.",
-    "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published."
+    "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published.",
+    "Scanner labels both groups Driving/continuous; this is classifier context, not proof that every sample is driving. Front samples cannot be assigned individually to driving or parking without retained filename links. Bitrate bands do not establish modes.",
+    "The second stored folder token is anonymized; the inside-to-telephoto mapping is owner testimony, not a decoded folder token. Historical inside cohorts remain physically unassigned pending private inventory identity matching.",
+    "Only nested retained numeric pairs are measured evidence here; 902 inventoried MP4 entries are not 902 retained probes or proof of 902 distinct valid recordings. Historical and new inventories must not be summed as distinct clips.",
+    "Codec arrays are empty. No codec attribution is borrowed from historical ffprobe probes. No container bitrate or separate container duration is supplied in these samples.",
+    "Playback frame rates do not establish capture cadence, real elapsed parking coverage, within-file transitions, power draw, or firmware. No footage was read or decoded for this update.",
+    "Owner confirms time-lapse parking and S_ front parking prefix on the new 2CH setup. This setting is not transferred to the historical cohorts. Numeric samples have no retained per-sample filename links, so no new individual sample is labeled driving or parking. No new generic filename/channel override is introduced."
   ],
   "recording": {
     "driving_folders": [
@@ -85,7 +100,9 @@
     ],
     "other_folders": [],
     "parking_folders": [],
-    "parking_modes": []
+    "parking_modes": [
+      "time-lapse (owner-confirmed new cohort only)"
+    ]
   },
   "schema_version": "1.0",
   "sources": [
@@ -120,7 +137,11 @@
     },
     {
       "label": "Firmware and configured settings",
-      "value": "Unknown. No independently confirmed firmware, quality, HDR, configured parking subtype, or capture cadence."
+      "value": "Firmware, quality, HDR, and capture cadence remain unknown. Time-lapse parking and front/telephoto setup are owner-confirmed only for the separate new scan; historical settings and physical attribution remain unresolved."
+    },
+    {
+      "label": "Separate owner scan coverage",
+      "value": "902 inventoried MP4 entries: front 621 and scanner interior 281 (owner-confirmed telephoto). Retained numeric samples: front 9 and telephoto 10; all 19 are numerically unique, with no exact six-field tuple overlap with the 19 historical scanner occurrences. Counts do not prove distinct clips across scans."
     }
   ],
   "video_samples": [
@@ -243,6 +264,54 @@
       "resolution": "2560x1440",
       "settings_note": "5 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
       "source": "retained ffprobe headers"
+    },
+    {
+      "bitrate": "39.289848-42.052112 Mbps",
+      "channel": "front (new owner cohort)",
+      "codec": "Unknown (not retained)",
+      "container": "MP4",
+      "fps": "29.966703414916992, 29.98334312438965, 30",
+      "mode": "unresolved driving/parking full-length",
+      "recording_configuration": "Owner-confirmed 2CH: front/telephoto; new scan only",
+      "resolution": "3840x2160",
+      "settings_note": "8 retained numeric pairs. Owner confirms time-lapse configured; individual sample modes unresolved. Firmware, quality, HDR, and capture cadence unknown. Video-stream bitrate only; no container bitrate retained. Playback FPS as supplied; exact values in owner_scan evidence. Full-length threshold >=59.9 seconds.",
+      "source": "owner-labeled stored scan; nested numeric samples"
+    },
+    {
+      "bitrate": "40.553932-40.553932 Mbps",
+      "channel": "front (new owner cohort)",
+      "codec": "Unknown (not retained)",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "unresolved driving/parking short/partial",
+      "recording_configuration": "Owner-confirmed 2CH: front/telephoto; new scan only",
+      "resolution": "3840x2160",
+      "settings_note": "1 retained numeric pairs. Owner confirms time-lapse configured; individual sample modes unresolved. Firmware, quality, HDR, and capture cadence unknown. Video-stream bitrate only; no container bitrate retained. Playback FPS as supplied; exact values in owner_scan evidence. Full-length threshold >=59.9 seconds.",
+      "source": "owner-labeled stored scan; nested numeric samples"
+    },
+    {
+      "bitrate": "17.753398-18.926804 Mbps",
+      "channel": "telephoto (new owner cohort)",
+      "codec": "Unknown (not retained)",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "unresolved driving/parking full-length",
+      "recording_configuration": "Owner-confirmed 2CH: front/telephoto; new scan only",
+      "resolution": "2560x1440",
+      "settings_note": "8 retained numeric pairs. Owner confirms time-lapse configured; individual sample modes unresolved. Firmware, quality, HDR, and capture cadence unknown. Video-stream bitrate only; no container bitrate retained. Playback FPS as supplied; exact values in owner_scan evidence. Full-length threshold >=59.9 seconds.",
+      "source": "owner-labeled stored scan; nested numeric samples"
+    },
+    {
+      "bitrate": "18.891784-19.112382 Mbps",
+      "channel": "telephoto (new owner cohort)",
+      "codec": "Unknown (not retained)",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "unresolved driving/parking short/partial",
+      "recording_configuration": "Owner-confirmed 2CH: front/telephoto; new scan only",
+      "resolution": "2560x1440",
+      "settings_note": "2 retained numeric pairs. Owner confirms time-lapse configured; individual sample modes unresolved. Firmware, quality, HDR, and capture cadence unknown. Video-stream bitrate only; no container bitrate retained. Playback FPS as supplied; exact values in owner_scan evidence. Full-length threshold >=59.9 seconds.",
+      "source": "owner-labeled stored scan; nested numeric samples"
     }
   ]
 }
