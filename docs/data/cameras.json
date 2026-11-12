@@ -1,5 +1,5 @@
 {
-  "camera_count": 102,
+  "camera_count": 103,
   "cameras": [
     {
       "$schema": "../schemas/profile.schema.json",
@@ -3682,6 +3682,254 @@
           "resolution": "1920x1080",
           "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 14.388068-14.430538 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
           "source": "reviewed archive metadata"
+        }
+      ]
+    },
+    {
+      "$schema": "../schemas/profile.schema.json",
+      "channel_variants": [
+        {
+          "channels": 2,
+          "roles": [
+            "front (observed channel)",
+            "inside (physical role unknown)"
+          ],
+          "validation": "observed video directories only",
+          "variant": "Inspected card subset; not a confirmed hardware setup"
+        }
+      ],
+      "evidence": {
+        "confidence": "physical channel roles and configured modes unconfirmed",
+        "level": "card-validated",
+        "note": "Owner-authorized sanitized retained card inspection. All 401 successful video probes are preserved anonymously. Official product capabilities are separate from observed channels; firmware and settings remain unknown.",
+        "status": "observed card structure and video metadata"
+      },
+      "filename_patterns": [
+        {
+          "applies_to": [
+            "DCIM/200video/front"
+          ],
+          "channels": {},
+          "default_channel": "front (observed channel)",
+          "modes": {},
+          "pattern": "^(\\d{14})_(\\d{4})\\.mp4$",
+          "timestamp_format": null
+        },
+        {
+          "applies_to": [
+            "DCIM/200video/front"
+          ],
+          "channels": {},
+          "default_channel": "front (observed channel)",
+          "modes": {},
+          "pattern": "^S_(\\d{14})_(\\d{4})_(\\d{4})\\.mp4$",
+          "timestamp_format": null
+        },
+        {
+          "applies_to": [
+            "DCIM/200video/inside"
+          ],
+          "channels": {},
+          "default_channel": "inside (physical role unknown)",
+          "modes": {},
+          "pattern": "^(\\d{14})_(\\d{4})_B\\.mp4$",
+          "timestamp_format": null
+        }
+      ],
+      "id": "ddpai-z100-master",
+      "manufacturer": "DDPAI",
+      "model": "Z100 Master",
+      "notes": [
+        "All successful retained video header probes are included exactly once. Anonymous technical values only; original media and audit records remain private and unchanged.",
+        "Cohorts split observed channel, filename-classified mode, codec, dimensions, nominal playback FPS, and full-length versus short/partial duration. Settings are unknown; this is not evidence of one uniform configuration.",
+        "Full-length threshold: video-stream playback duration >=59.9 seconds. All other clips are short/partial. No short clip is attributed to TurboBoot or a particular startup behavior.",
+        "S-prefixed clips are kept in a separate parking-classified cohort. Filename classification does not establish configured parking mode, capture cadence, real elapsed coverage, or within-file transitions.",
+        "The inside directory is an observed channel label, not confirmation of an interior camera, telephoto camera, or rear camera. Official capabilities do not resolve that physical attribution.",
+        "The 19 original scanner numeric sample occurrences are retained separately without deduplication. They are not 19 additional videos, do not identify physical files, and can differ slightly from ffprobe values. App group codec summaries did not establish per-file codecs.",
+        "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. No measured parking power, wake timing, or startup timing is established.",
+        "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published."
+      ],
+      "recording": {
+        "driving_folders": [
+          {
+            "importable": true,
+            "mode": "driving-classified and S-prefix parking-classified",
+            "notes": [
+              "Mixed classified modes share this directory."
+            ],
+            "path": "DCIM/200video/front",
+            "validation": "retained card inventory"
+          },
+          {
+            "importable": true,
+            "mode": "driving-classified",
+            "notes": [
+              "Directory name does not establish physical camera position."
+            ],
+            "path": "DCIM/200video/inside",
+            "validation": "retained card inventory"
+          }
+        ],
+        "other_folders": [],
+        "parking_folders": [],
+        "parking_modes": []
+      },
+      "schema_version": "1.0",
+      "sources": [
+        {
+          "kind": "source",
+          "label": "DDPAI official Z100 Master product page, advertised capabilities",
+          "url": "https://www.ddpai.com/en-us/products/z100-master"
+        },
+        {
+          "kind": "source",
+          "label": "DDPAI official Z100 series specification comparison",
+          "url": "https://www.ddpai.com/en-us/pages/z100-dash-cam"
+        },
+        {
+          "kind": "source",
+          "label": "Vortex Radar, owner card inspection; sanitized exact video evidence",
+          "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-evidence.json"
+        }
+      ],
+      "technical_facts": [
+        {
+          "label": "Official advertised recording capability, not measured card attribution",
+          "value": "Front wide-angle 3840x2160 at 30/25 FPS; front telephoto 2560x1440 at 25 FPS; rear 3840x2160 at 25 FPS. These advertised roles do not establish the physical mapping or connected setup of the inspected card."
+        },
+        {
+          "label": "Official advertised optics and sensors",
+          "value": "DDPAI advertises a DualFocal 4K wide-angle and 2K telephoto system, F1.0/F2.0 front variable aperture, and Sony STARVIS 2 IMX678 front wide-angle and rear sensors. Not independently measured here."
+        },
+        {
+          "label": "Measured codec distribution",
+          "value": "401 videos: 391 HEVC and 10 H.264. 440 JPEGs are not video channels; 23 AppleDouble MP4-suffixed sidecars are excluded."
+        },
+        {
+          "label": "Firmware and configured settings",
+          "value": "Unknown. No independently confirmed firmware, quality, HDR, configured parking subtype, or capture cadence."
+        }
+      ],
+      "video_samples": [
+        {
+          "bitrate": "41.837544-41.961273 Mbps",
+          "channel": "front (observed channel)",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving-classified full-length",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "3840x2160",
+          "settings_note": "3 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "41.895734-42.034887 Mbps",
+          "channel": "front (observed channel)",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving-classified short/partial",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "3840x2160",
+          "settings_note": "2 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "41.508988-42.356350 Mbps",
+          "channel": "front (observed channel)",
+          "codec": "H.265 / HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving-classified full-length",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "3840x2160",
+          "settings_note": "106 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "41.124131-42.774378 Mbps",
+          "channel": "front (observed channel)",
+          "codec": "H.265 / HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "driving-classified short/partial",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "3840x2160",
+          "settings_note": "7 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "38.421656-40.980340 Mbps",
+          "channel": "front (observed channel)",
+          "codec": "H.265 / HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking-classified S-prefix full-length",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "3840x2160",
+          "settings_note": "159 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "38.656846-40.025237 Mbps",
+          "channel": "front (observed channel)",
+          "codec": "H.265 / HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "parking-classified S-prefix short/partial",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "3840x2160",
+          "settings_note": "7 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "18.199504-18.880411 Mbps",
+          "channel": "inside (physical role unknown)",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "25",
+          "mode": "driving-classified full-length",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "2560x1440",
+          "settings_note": "3 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "15.777641-18.825023 Mbps",
+          "channel": "inside (physical role unknown)",
+          "codec": "H.264",
+          "container": "MP4",
+          "fps": "25",
+          "mode": "driving-classified short/partial",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "2560x1440",
+          "settings_note": "2 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "18.168228-18.941948 Mbps",
+          "channel": "inside (physical role unknown)",
+          "codec": "H.265 / HEVC",
+          "container": "MP4",
+          "fps": "25",
+          "mode": "driving-classified full-length",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "2560x1440",
+          "settings_note": "107 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
+        },
+        {
+          "bitrate": "18.729162-18.910802 Mbps",
+          "channel": "inside (physical role unknown)",
+          "codec": "H.265 / HEVC",
+          "container": "MP4",
+          "fps": "25",
+          "mode": "driving-classified short/partial",
+          "recording_configuration": "Two observed video channels: front and inside; physical roles and connected setup unconfirmed",
+          "resolution": "2560x1440",
+          "settings_note": "5 individual clips. Firmware, quality, HDR, and capture cadence unknown. Cohort is observational, not a confirmed uniform setting. Full-length means video playback duration >=59.9 seconds; short/partial clips separated. Exact pairs and rational playback FPS in linked evidence.",
+          "source": "retained ffprobe headers"
         }
       ]
     },
@@ -15751,7 +15999,7 @@
     }
   ],
   "generated_from": "profiles/*.json",
-  "profile_count": 89,
+  "profile_count": 90,
   "schema_version": "1.0",
   "technical_sample_only_count": 13
 }
