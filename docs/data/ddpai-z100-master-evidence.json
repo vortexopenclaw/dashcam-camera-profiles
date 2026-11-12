@@ -1,5 +1,15 @@
 {
   "camera_id": "ddpai-z100-master",
+  "channel_role_corrections": [
+    {
+      "observed_channel": "inside",
+      "physical_role": "telephoto",
+      "source": "owner confirmation",
+      "reason": "Owner reports a firmware labeling bug in the current firmware.",
+      "scope": "Existing owner Z100 Master card cohort only; no other models or contributors.",
+      "firmware": null
+    }
+  ],
   "codec_counts": {
     "h264": 10,
     "hevc": 391
@@ -3238,7 +3248,7 @@
       "length_class": "full-length",
       "mode": "driving-classified",
       "nominalFrameRate": "25/1",
-      "physical_role": null,
+      "physical_role": "telephoto",
       "sample_count": 3,
       "storageRateSamples": [
         {
@@ -3288,7 +3298,7 @@
       "length_class": "short/partial",
       "mode": "driving-classified",
       "nominalFrameRate": "25/1",
-      "physical_role": null,
+      "physical_role": "telephoto",
       "sample_count": 2,
       "storageRateSamples": [
         {
@@ -3327,7 +3337,7 @@
       "length_class": "full-length",
       "mode": "driving-classified",
       "nominalFrameRate": "25/1",
-      "physical_role": null,
+      "physical_role": "telephoto",
       "sample_count": 107,
       "storageRateSamples": [
         {
@@ -4521,7 +4531,7 @@
       "length_class": "short/partial",
       "mode": "driving-classified",
       "nominalFrameRate": "25/1",
-      "physical_role": null,
+      "physical_role": "telephoto",
       "sample_count": 5,
       "storageRateSamples": [
         {
@@ -4599,7 +4609,7 @@
     "Cohorts split observed channel, filename-classified mode, codec, dimensions, nominal playback FPS, and full-length versus short/partial duration. Settings are unknown; this is not evidence of one uniform configuration.",
     "Full-length threshold: video-stream playback duration >=59.9 seconds. All other clips are short/partial. No short clip is attributed to TurboBoot or a particular startup behavior.",
     "S-prefixed clips are kept in a separate parking-classified cohort. Filename classification does not establish configured parking mode, capture cadence, real elapsed coverage, or within-file transitions.",
-    "The inside directory is an observed channel label, not confirmation of an interior camera, telephoto camera, or rear camera. Official capabilities do not resolve that physical attribution.",
+    "For this owner Z100 Master card cohort, the owner confirms the observed inside channel is physically the telephoto camera and reports a firmware labeling bug in the current firmware. The original inside label is retained as provenance; no exact firmware version or rear-camera evidence is established. This mapping does not extend to other models or contributors.",
     "durationSeconds and rational frame rates preserve ffprobe video-stream strings. containerDurationSeconds and containerBitrate are separate whole-file metadata. videoBitrate excludes audio and container overhead. Means are unweighted per-clip video bitrate means within each cohort, not pooled camera/configuration averages.",
     "The 19 original scanner numeric sample occurrences are retained separately without deduplication. They are not 19 additional videos, do not identify physical files, and can differ slightly from ffprobe values. App group codec summaries did not establish per-file codecs.",
     "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. No measured parking power, wake timing, or startup timing is established.",
@@ -4843,7 +4853,6 @@
     "capture_cadence": null,
     "configured_parking_mode": null,
     "hdr": null,
-    "physical_channel_mapping": null,
     "quality": null
   }
 }
