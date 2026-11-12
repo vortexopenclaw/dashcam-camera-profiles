@@ -37,7 +37,7 @@ assert e['camera_id'] == p['id'] == 'ddpai-z100-master'
 assert next(c for c in index['cameras'] if c['id'] == p['id']) == p
 assert e['firmware'] is None and all(v is None for v in e['unreported_settings'].values())
 assert e['inventory'] == {'video_file_count':401, 'jpeg_file_count':440, 'excluded_appledouble_mp4_sidecars':23}
-assert len(e['cohorts']) == 10 and len(p['video_samples']) == 14
+assert len(e['cohorts']) == 10 and len(p['video_samples']) == 18
 assert sum(c['sample_count'] for c in e['cohorts']) == e['sample_occurrences'] == 401
 assert len(e['scanner_samples']) == e['scanner_sample_occurrences'] == 19
 assert Counter(x['group_index'] for x in e['scanner_samples']) == {0:10, 1:9}
@@ -66,7 +66,7 @@ for c, row in zip(e['cohorts'], p['video_samples']):
         assert row['channel'] == 'front (observed channel)'
 assert codec_counts == e['codec_counts'] == {'hevc':391, 'h264':10}
 assert channel_counts == {'front':284, 'inside':117}
-assert p['recording']['parking_modes'] == ['time-lapse (owner-confirmed new cohort only)']
+assert p['recording']['parking_modes'] == ['time-lapse (owner-confirmed new cohort only)', 'collision detection wake-record-sleep (owner-confirmed collision-test cohort only)']
 
 # New-scan settings remain separately scoped. Historical numeric evidence and
 # all 19 occurrences retain their pins above, normalizing only the owner role correction.
@@ -182,4 +182,5 @@ if args.baseline:
         for name, sha in b['auditHashes'].items():
             assert hashlib.sha256((args.private_audit/name).read_bytes()).hexdigest() == sha, name
     print('All existing camera records and unrelated tracked bytes unchanged; private originals immutable.')
-print('Z100 Master verified: 401 exact historical probes, 19 historical scanner occurrences, 10 historical numeric cohorts preserved; historical inside-to-telephoto owner-confirmed; 19 new unique pairs across 2 owner-scoped channels and 4 summary rows; privacy and index parity passed. Firmware/cadence and other historical attribution/settings remain unconfirmed.')
+runpy.run_path(str(R/'scripts/verify-z100-collision.py'))['verify'](e['collision_test_scan'], p)
+print('Z100 Master verified: unchanged 401 historical probes, 19 historical scanner occurrences and 19 earlier owner pairs; 40 collision-test canonical probes, 40 alternate native observations, 15 uniquely linked submitted occurrences and 4 new summary rows; privacy and index parity passed. Firmware/settings and per-file collision-test modes remain unresolved.')

@@ -23,7 +23,7 @@
   "evidence": {
     "confidence": "historical inside-to-telephoto owner-confirmed; separate new owner-confirmed front/telephoto time-lapse setup; other historical attribution and configured modes unconfirmed",
     "level": "card-validated",
-    "note": "All 401 historical successful video probes and 19 historical scanner occurrences remain unchanged; historical inside-to-telephoto attribution is owner-corrected. A separate owner-labeled scan adds 19 exact numeric pairs from 902 inventoried MP4 entries. Its confirmed front/telephoto setup and time-lapse setting are scoped to the new owner cohort; firmware remains unknown.",
+    "note": "All 401 historical successful video probes and 19 historical scanner occurrences remain unchanged; historical inside-to-telephoto attribution is owner-corrected. A separate owner-labeled scan adds 19 exact numeric pairs from 902 inventoried MP4 entries. Its confirmed front/telephoto setup and time-lapse setting are scoped to the new owner cohort; firmware remains unknown. A separate collision-test cohort adds 40 exact header probes with paired native alternate observations and preserves all 15 original submitted occurrences; individual modes remain unresolved.",
     "status": "observed card structure and video metadata"
   },
   "filename_patterns": [
@@ -75,7 +75,8 @@
     "Only nested retained numeric pairs are measured evidence here; 902 inventoried MP4 entries are not 902 retained probes or proof of 902 distinct valid recordings. Historical and new inventories must not be summed as distinct clips.",
     "Codec arrays are empty. No codec attribution is borrowed from historical ffprobe probes. No container bitrate or separate container duration is supplied in these samples.",
     "Playback frame rates do not establish capture cadence, real elapsed parking coverage, within-file transitions, power draw, or firmware. No footage was read or decoded for this update.",
-    "Owner confirms time-lapse parking and S_ front parking prefix on the new 2CH setup. This setting is not transferred to the historical cohorts. Numeric samples have no retained per-sample filename links, so no new individual sample is labeled driving or parking. No new generic filename/channel override is introduced."
+    "Owner confirms time-lapse parking and S_ front parking prefix on the new 2CH setup. This setting is not transferred to the historical cohorts. Numeric samples have no retained per-sample filename links, so no new individual sample is labeled driving or parking. No new generic filename/channel override is introduced.",
+    "Separate collision-test cohort: 40 measured videos (20 front, 20 telephoto), all HEVC; 40 paired native alternate observations and 15 original submitted occurrences retained. Ordinary names do not resolve individual driving/parking mode. Four approximately five-minute two-view bursts do not prove impacts. No quality/firmware attribution or cross-scan clip deduplication is inferred."
   ],
   "recording": {
     "driving_folders": [
@@ -101,7 +102,8 @@
     "other_folders": [],
     "parking_folders": [],
     "parking_modes": [
-      "time-lapse (owner-confirmed new cohort only)"
+      "time-lapse (owner-confirmed new cohort only)",
+      "collision detection wake-record-sleep (owner-confirmed collision-test cohort only)"
     ]
   },
   "schema_version": "1.0",
@@ -325,6 +327,54 @@
       "resolution": "2560x1440",
       "settings_note": "2 retained numeric pairs. Owner confirms time-lapse configured; individual sample modes unresolved. Firmware, quality, HDR, and capture cadence unknown. Video-stream bitrate only; no container bitrate retained. Playback FPS as supplied; exact values in owner_scan evidence. Full-length threshold >=59.9 seconds.",
       "source": "owner-labeled stored scan; nested numeric samples"
+    },
+    {
+      "bitrate": "41.827141-41.985778 Mbps",
+      "channel": "front (collision-test cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "unresolved driving/parking full-length",
+      "recording_configuration": "Owner-confirmed 2CH: front/telephoto; separate collision-test cohort",
+      "resolution": "3840x2160",
+      "settings_note": "16 canonical clips. Owner-reported collision detection wake-record-sleep setting; some driving remains. Per-file mode and triggers unresolved. Firmware, quality, HDR and capture cadence unknown. Native observations and original submitted pairs are linked evidence, not additional clips. Exact video/container pairs in collision_test_scan evidence.",
+      "source": "retained ffprobe headers; paired AVFoundation alternate observations"
+    },
+    {
+      "bitrate": "41.923810-42.034223 Mbps",
+      "channel": "front (collision-test cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "unresolved driving/parking short/partial",
+      "recording_configuration": "Owner-confirmed 2CH: front/telephoto; separate collision-test cohort",
+      "resolution": "3840x2160",
+      "settings_note": "4 canonical clips. Owner-reported collision detection wake-record-sleep setting; some driving remains. Per-file mode and triggers unresolved. Firmware, quality, HDR and capture cadence unknown. Native observations and original submitted pairs are linked evidence, not additional clips. Exact video/container pairs in collision_test_scan evidence.",
+      "source": "retained ffprobe headers; paired AVFoundation alternate observations"
+    },
+    {
+      "bitrate": "8.395097-9.753787 Mbps",
+      "channel": "telephoto (collision-test cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "unresolved driving/parking full-length",
+      "recording_configuration": "Owner-confirmed 2CH: front/telephoto; separate collision-test cohort",
+      "resolution": "2560x1440",
+      "settings_note": "16 canonical clips. Owner-reported collision detection wake-record-sleep setting; some driving remains. Per-file mode and triggers unresolved. Firmware, quality, HDR and capture cadence unknown. Native observations and original submitted pairs are linked evidence, not additional clips. Exact video/container pairs in collision_test_scan evidence.",
+      "source": "retained ffprobe headers; paired AVFoundation alternate observations"
+    },
+    {
+      "bitrate": "8.422113-9.386858 Mbps",
+      "channel": "telephoto (collision-test cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "unresolved driving/parking short/partial",
+      "recording_configuration": "Owner-confirmed 2CH: front/telephoto; separate collision-test cohort",
+      "resolution": "2560x1440",
+      "settings_note": "4 canonical clips. Owner-reported collision detection wake-record-sleep setting; some driving remains. Per-file mode and triggers unresolved. Firmware, quality, HDR and capture cadence unknown. Native observations and original submitted pairs are linked evidence, not additional clips. Exact video/container pairs in collision_test_scan evidence.",
+      "source": "retained ffprobe headers; paired AVFoundation alternate observations"
     }
   ]
 }
