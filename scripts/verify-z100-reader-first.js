@@ -12,7 +12,7 @@ const before = JSON.stringify(camera);
 const html = renderDetail(camera);
 const summary = renderZ100Specs(camera);
 const power = renderZ100Power(camera);
-for (const value of ['44 mA', '0.5544 W', '935 mA', '11.781 W', 'Post-update', 'MINI3X']) assert(power.includes(value), value);
+for (const value of ['44 mA', '0.5544 W', '935 mA', '11.781 W', 'Post-update', 'MINI3X', 'Main firmware 8.0.0.23']) assert(power.includes(value), value);
 assert(html.indexOf('Latest 4CH collision parking power') < html.indexOf('Recording evidence and technical details'));
 assert(!power.includes('Cloud off'));
 assert(!power.includes('not yet recorded'));

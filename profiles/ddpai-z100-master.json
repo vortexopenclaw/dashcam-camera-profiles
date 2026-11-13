@@ -209,7 +209,7 @@
     },
     {
       "label": "Latest owner 4CH collision parking power (post-update)",
-      "value": "Idle monitoring: 44 mA (0.5544 W derived). Event recording: 935 mA (11.781 W derived). 12.6 V, same DC009 hardwire cable; installed front + telephoto + 4K rear + 3K MINI3X cabin. Owner reports latest firmware updated yesterday; exact version is unknown. Cloud off was prior setup context, not restated or independently verified after the update. Active parking views and startup/wake timings remain unknown. This separate cohort does not revise earlier power or video measurements or establish a firmware power reduction."
+      "value": "Idle monitoring: 44 mA (0.5544 W derived). Event recording: 935 mA (11.781 W derived). 12.6 V, same DC009 hardwire cable; installed front + telephoto + 4K rear + 3K MINI3X cabin. Main firmware: 8.0.0.23, linked by same-unit UI-log observation and owner confirmation of no intervening updates; not read from these clips or power measurements. Component firmware remains unknown. Cloud off was prior setup context, not restated or independently verified after the update. Active parking views and startup/wake timings remain unknown. This separate cohort does not revise earlier power or video measurements or establish a firmware power reduction."
     }
   ],
   "video_samples": [

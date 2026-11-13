@@ -1141,6 +1141,6 @@
     "status": "extracted",
     "private": true,
     "measurement_count": 2,
-    "notes": "Two owner-chat currents retained verbatim in separate post-update dossier: idle monitoring and event recording. Exact firmware version unknown; no settings or timings backfilled. Prior setup cloud off is context, not verified current state. Watts derived with Decimal; no comparison establishes a firmware power reduction."
+    "notes": "Two owner-chat currents retained verbatim in separate post-update dossier: idle monitoring and event recording. Main firmware 8.0.0.23 from same-unit owner UI-log observation plus owner-confirmed continuity (no intervening updates), not these clips or the power receipt; no installation-action receipt claimed. No component firmware, settings or timings backfilled. Prior setup cloud off is context, not verified current state. Watts derived with Decimal; no comparison establishes a firmware power reduction."
   }
 ]

@@ -377,7 +377,7 @@ function renderZ100Power(camera) {
   const readings = [...fact.value.matchAll(/(Idle monitoring|Event recording): ([0-9.]+) mA \(([0-9.]+) W derived\)/g)];
   if (readings.length !== 2) return "";
   return `<section class="section parking-power-summary" aria-labelledby="parking-power-title"><h2 id="parking-power-title">Latest 4CH collision parking power</h2>
-    <p class="section-intro">Post-update owner test · 12.6 V · DC009 · MINI3X connected</p>
+    <p class="section-intro">Post-update owner test · Main firmware 8.0.0.23 · 12.6 V · DC009 · MINI3X connected</p>
     <table class="video-spec-table"><thead><tr><th scope="col">State</th><th scope="col">Current</th><th scope="col">Derived power</th></tr></thead><tbody>
       ${readings.map(([, state, current, watts]) => `<tr><th scope="row">${escapeHtml(state)}</th><td>${escapeHtml(current)} mA</td><td>${escapeHtml(watts)} W</td></tr>`).join("")}
     </tbody></table>

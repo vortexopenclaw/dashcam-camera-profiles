@@ -6090,7 +6090,7 @@
       "state": "time-lapse"
     },
     {
-      "firmware": null,
+      "firmware": "8.0.0.23",
       "power_w_min": null,
       "power_w_max": null,
       "current_ma_min": null,
@@ -6134,7 +6134,7 @@
       "measurement_statistic": "reported",
       "power_is_derived": true,
       "source_configuration": "Owner-confirmed installed 4CH front/telephoto/4K rear/3K MINI3X cabin; active parking views not separately reported",
-      "notes": "Separate post-update owner 4CH collision-detection readings on Vortex Radar’s same test unit, with MINI3X connected and the same DC009 cable. Installed front/telephoto/4K rear/3K MINI3X cabin; active views per parking state are unreported. Owner says latest firmware updated yesterday; exact main/component versions are not established for this cohort. Cloud off belongs to the prior setup context and was not restated or independently verified after the update. Current is source-reported; watts derived exactly as 12.6 V × mA / 1000. No startup/wake timing, capture cadence, or isolated accessory consumption is established. Earlier 2CH and 4CH power/video records remain separate; these results do not establish a firmware power reduction.",
+      "notes": "Separate post-update owner 4CH collision-detection readings on Vortex Radar’s same test unit, with MINI3X connected and the same DC009 cable. Installed front/telephoto/4K rear/3K MINI3X cabin; active views per parking state are unreported. Main firmware 8.0.0.23 is linked from the same owner unit’s UI-log observation by owner confirmation of no intervening updates; not read from these power measurements or clips. Component versions remain unknown for this cohort. Cloud off belongs to the prior setup context and was not restated or independently verified after the update. Current is source-reported; watts derived exactly as 12.6 V × mA / 1000. No startup/wake timing, capture cadence, or isolated accessory consumption is established. Earlier 2CH and 4CH power/video records remain separate; these results do not establish a firmware power reduction.",
       "id": "vortex-owner-z100-master-4ch-post-update-dc009-12v6-collision-idle",
       "mode_name": "Collision detection parking mode (idle monitoring), 4CH installed, post-update",
       "current_ma": 44,
@@ -6143,7 +6143,7 @@
       "state": "monitoring"
     },
     {
-      "firmware": null,
+      "firmware": "8.0.0.23",
       "power_w_min": null,
       "power_w_max": null,
       "current_ma_min": null,
@@ -6187,7 +6187,7 @@
       "measurement_statistic": "reported",
       "power_is_derived": true,
       "source_configuration": "Owner-confirmed installed 4CH front/telephoto/4K rear/3K MINI3X cabin; active parking views not separately reported",
-      "notes": "Separate post-update owner 4CH collision-detection readings on Vortex Radar’s same test unit, with MINI3X connected and the same DC009 cable. Installed front/telephoto/4K rear/3K MINI3X cabin; active views per parking state are unreported. Owner says latest firmware updated yesterday; exact main/component versions are not established for this cohort. Cloud off belongs to the prior setup context and was not restated or independently verified after the update. Current is source-reported; watts derived exactly as 12.6 V × mA / 1000. No startup/wake timing, capture cadence, or isolated accessory consumption is established. Earlier 2CH and 4CH power/video records remain separate; these results do not establish a firmware power reduction.",
+      "notes": "Separate post-update owner 4CH collision-detection readings on Vortex Radar’s same test unit, with MINI3X connected and the same DC009 cable. Installed front/telephoto/4K rear/3K MINI3X cabin; active views per parking state are unreported. Main firmware 8.0.0.23 is linked from the same owner unit’s UI-log observation by owner confirmation of no intervening updates; not read from these power measurements or clips. Component versions remain unknown for this cohort. Cloud off belongs to the prior setup context and was not restated or independently verified after the update. Current is source-reported; watts derived exactly as 12.6 V × mA / 1000. No startup/wake timing, capture cadence, or isolated accessory consumption is established. Earlier 2CH and 4CH power/video records remain separate; these results do not establish a firmware power reduction.",
       "id": "vortex-owner-z100-master-4ch-post-update-dc009-12v6-collision-recording",
       "mode_name": "Collision detection parking mode (event recording), 4CH installed, post-update",
       "current_ma": 935,
@@ -27794,7 +27794,7 @@
       "status": "extracted",
       "private": true,
       "measurement_count": 2,
-      "notes": "Two owner-chat currents retained verbatim in separate post-update dossier: idle monitoring and event recording. Exact firmware version unknown; no settings or timings backfilled. Prior setup cloud off is context, not verified current state. Watts derived with Decimal; no comparison establishes a firmware power reduction."
+      "notes": "Two owner-chat currents retained verbatim in separate post-update dossier: idle monitoring and event recording. Main firmware 8.0.0.23 from same-unit owner UI-log observation plus owner-confirmed continuity (no intervening updates), not these clips or the power receipt; no installation-action receipt claimed. No component firmware, settings or timings backfilled. Prior setup cloud off is context, not verified current state. Watts derived with Decimal; no comparison establishes a firmware power reduction."
     }
   ],
   "coverage": {
