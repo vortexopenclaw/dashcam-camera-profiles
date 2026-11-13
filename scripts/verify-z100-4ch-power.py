@@ -53,10 +53,17 @@ assert sources[-1]['id'] == SID and sources[-1]['measurement_count'] == 1
 for path in ['docs/data/ddpai-z100-master-power-evidence.json','docs/data/ddpai-z100-master-evidence.json']:
     assert (R/path).read_bytes() == subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R),path
 p = load('profiles/ddpai-z100-master.json')
+# Later 3CH video additions have their own exact-prefix and source-parity validator.
+current_profile = p
+pre_3ch = json.loads(subprocess.check_output(['git','show','b9f1536:profiles/ddpai-z100-master.json'],cwd=R))
+# Power facts remain exact; only the unrelated official capability note changed.
+assert [f for f in p['technical_facts'] if 'power' in f['label'].lower() or 'idle' in f['label'].lower()] == [f for f in pre_3ch['technical_facts'] if 'power' in f['label'].lower() or 'idle' in f['label'].lower()]
+p = pre_3ch
 prior = old('profiles/ddpai-z100-master.json')
 assert {k:v for k,v in p.items() if k not in ['technical_facts','sources']} == {k:v for k,v in prior.items() if k not in ['technical_facts','sources']}
 assert p['technical_facts'][:-1] == prior['technical_facts']
 assert p['sources'][:-1] == prior['sources']
+p = current_profile
 index = load('docs/data/cameras.json')
 assert next(c for c in index['cameras'] if c['id']==p['id']) == p
 assert [c for c in index['cameras'] if c['id']!=p['id']] == [c for c in old('docs/data/cameras.json')['cameras'] if c['id']!=p['id']]

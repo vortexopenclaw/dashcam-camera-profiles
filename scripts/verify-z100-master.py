@@ -37,7 +37,11 @@ assert e['camera_id'] == p['id'] == 'ddpai-z100-master'
 assert next(c for c in index['cameras'] if c['id'] == p['id']) == p
 assert e['firmware'] is None and all(v is None for v in e['unreported_settings'].values())
 assert e['inventory'] == {'video_file_count':401, 'jpeg_file_count':440, 'excluded_appledouble_mp4_sidecars':23}
-assert len(e['cohorts']) == 10 and len(p['video_samples']) == 18
+assert len(e['cohorts']) == 10 and len(p['video_samples']) >= 18
+# Pin the exact historical prefix while allowing separately verified append-only cohorts.
+assert digest(p['video_samples'][:18]) == '6b0ff2c45dda3e333318656a2925f698a30c2fc7398a41125d137495f28bc2c4'
+runpy_3ch = __import__('runpy').run_path(str(R/'scripts/verify-z100-3ch.py'))
+runpy_3ch['verify'](json.loads((R/'docs/data/ddpai-z100-master-3ch-evidence.json').read_text()), p)
 assert sum(c['sample_count'] for c in e['cohorts']) == e['sample_occurrences'] == 401
 assert len(e['scanner_samples']) == e['scanner_sample_occurrences'] == 19
 assert Counter(x['group_index'] for x in e['scanner_samples']) == {0:10, 1:9}

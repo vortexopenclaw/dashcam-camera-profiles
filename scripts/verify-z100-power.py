@@ -53,6 +53,12 @@ assert sources[:-1] == old('parking/sources.json')
 assert sources[-1]['id'] == SID and sources[-1]['measurement_count'] == 3
 video = load('docs/data/ddpai-z100-master-evidence.json')
 assert {k: v for k, v in video.items() if k != 'collision_test_scan'} == old('docs/data/ddpai-z100-master-evidence.json')
+# Later 3CH video additions have their own exact-prefix and source-parity validator.
+current_profile = p
+pre_3ch = json.loads(subprocess.check_output(['git','show','b9f1536:profiles/ddpai-z100-master.json'],cwd=R))
+# Power facts remain exact; only the unrelated official capability note changed.
+assert [f for f in p['technical_facts'] if 'power' in f['label'].lower() or 'idle' in f['label'].lower()] == [f for f in pre_3ch['technical_facts'] if 'power' in f['label'].lower() or 'idle' in f['label'].lower()]
+p = pre_3ch
 prior = old('profiles/ddpai-z100-master.json')
 for key in set(prior)-{'notes','technical_facts','sources','evidence','recording','video_samples'}:
     assert p[key] == prior[key], key
@@ -62,6 +68,7 @@ assert p['recording']['parking_modes'][:-1] == prior['recording']['parking_modes
 # The dedicated video validator checks every new cohort and its summary rows.
 import runpy
 runpy.run_path(str(R/'scripts/verify-z100-collision.py'))['verify'](video['collision_test_scan'], p)
+p = current_profile
 index = load('docs/data/cameras.json')
 assert next(c for c in index['cameras'] if c['id']==p['id']) == p
 assert [c for c in index['cameras'] if c['id']!=p['id']] == [c for c in old('docs/data/cameras.json')['cameras'] if c['id']!=p['id']]

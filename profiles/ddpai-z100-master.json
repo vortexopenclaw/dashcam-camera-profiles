@@ -18,6 +18,16 @@
       ],
       "validation": "owner-confirmed setup; separate stored scan",
       "variant": "New owner cohort only; historical physical identity not matched"
+    },
+    {
+      "channels": 3,
+      "roles": [
+        "front",
+        "telephoto",
+        "rear"
+      ],
+      "validation": "owner-confirmed physical roles and saved video headers",
+      "variant": "Separate 3CH driving/time-lapse card cohort"
     }
   ],
   "evidence": {
@@ -56,6 +66,16 @@
       "modes": {},
       "pattern": "^(\\d{14})_(\\d{4})_B\\.mp4$",
       "timestamp_format": null
+    },
+    {
+      "applies_to": [
+        "DCIM/200video/rear"
+      ],
+      "channels": {},
+      "default_channel": "rear (3CH cohort observed)",
+      "modes": {},
+      "pattern": "^Q_(\\d{14})_(\\d{4})_(\\d{4})\\.mp4$",
+      "timestamp_format": null
     }
   ],
   "id": "ddpai-z100-master",
@@ -66,9 +86,9 @@
     "Cohorts split observed channel, filename-classified mode, codec, dimensions, nominal playback FPS, and full-length versus short/partial duration. Settings are unknown; this is not evidence of one uniform configuration.",
     "Full-length threshold: video-stream playback duration >=59.9 seconds. All other clips are short/partial. No short clip is attributed to TurboBoot or a particular startup behavior.",
     "S-prefixed clips are kept in a separate parking-classified cohort. Filename classification does not establish configured parking mode, capture cadence, real elapsed coverage, or within-file transitions.",
-    "For this owner Z100 Master card cohort, the owner confirms the observed inside channel is physically the telephoto camera and reports a firmware labeling bug in the current firmware. The original inside label is retained as provenance; no exact firmware version or rear-camera evidence is established. This mapping does not extend to other models or contributors.",
+    "For this owner Z100 Master card cohort, the owner confirms the observed inside channel is physically the telephoto camera and reports a firmware labeling bug in the current firmware. The original inside label is retained as provenance; no exact firmware version or rear-camera evidence is established for that historical cohort. This mapping does not extend to other models or contributors.",
     "The 19 original scanner numeric sample occurrences are retained separately without deduplication. They are not 19 additional videos, do not identify physical files, and can differ slightly from ffprobe values. App group codec summaries did not establish per-file codecs.",
-    "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. Separate owner DC009 power readings at 12.6 V with no cloud are published; no wake timing or startup timing is established.",
+    "Historical cohort firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. Separate owner DC009 power readings at 12.6 V with no cloud are published; no wake timing or startup timing is established.",
     "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published.",
     "Scanner labels both groups Driving/continuous; this is classifier context, not proof that every sample is driving. Front samples cannot be assigned individually to driving or parking without retained filename links. Bitrate bands do not establish modes.",
     "The second stored folder token is anonymized; the inside-to-telephoto mapping is owner testimony, not a decoded folder token. Historical inside-to-telephoto attribution is separately owner-confirmed; cross-scan physical clip identity is not established.",
@@ -76,7 +96,8 @@
     "Codec arrays are empty. No codec attribution is borrowed from historical ffprobe probes. No container bitrate or separate container duration is supplied in these samples.",
     "Playback frame rates do not establish capture cadence, real elapsed parking coverage, within-file transitions, power draw, or firmware. No footage was read or decoded for this update.",
     "Owner confirms time-lapse parking and S_ front parking prefix on the new 2CH setup. This setting is not transferred to the historical cohorts. Numeric samples have no retained per-sample filename links, so no new individual sample is labeled driving or parking. No new generic filename/channel override is introduced.",
-    "Separate collision-test cohort: 40 measured videos (20 front, 20 telephoto), all HEVC; 40 paired native alternate observations and 15 original submitted occurrences retained. Ordinary names do not resolve individual driving/parking mode. Four approximately five-minute two-view bursts do not prove impacts. No quality/firmware attribution or cross-scan clip deduplication is inferred."
+    "Separate collision-test cohort: 40 measured videos (20 front, 20 telephoto), all HEVC; 40 paired native alternate observations and 15 original submitted occurrences retained. Ordinary names do not resolve individual driving/parking mode. Four approximately five-minute two-view bursts do not prove impacts. No quality/firmware attribution or cross-scan clip deduplication is inferred.",
+    "Separate 3CH cohort adds 72 canonical HEVC clips: 28 front, 13 owner-confirmed telephoto (inside), 31 rear. Front S_ and rear Q_ are owner-confirmed time-lapse on this card; ordinary clips are driving-inferred. No telephoto time-lapse observed is not a universal disablement claim. Main UI-log firmware 8.0.0.23 and DR4004 protocol fields are cohort provenance, not per-clip metadata or physical component equivalence. Prior power cohorts are separate and unchanged."
   ],
   "recording": {
     "driving_folders": [
@@ -97,6 +118,15 @@
         ],
         "path": "DCIM/200video/inside",
         "validation": "retained card inventory"
+      },
+      {
+        "importable": true,
+        "mode": "driving-inferred and Q-prefix time-lapse (3CH cohort only)",
+        "notes": [
+          "Owner-confirmed rear; Q_ is positive time-lapse evidence on this card, not a generic cross-model rule."
+        ],
+        "path": "DCIM/200video/rear",
+        "validation": "saved card headers and owner confirmation"
       }
     ],
     "other_folders": [],
@@ -132,12 +162,17 @@
       "kind": "source",
       "label": "Owner separate 4CH Z100 Master power readings; rear-only firmware and pending collision states",
       "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-4ch-power-evidence.json"
+    },
+    {
+      "kind": "source",
+      "label": "Anonymous exact 72-clip 3CH driving/time-lapse measurements",
+      "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-3ch-evidence.json"
     }
   ],
   "technical_facts": [
     {
       "label": "Owner power measurements: 12.6 V, no cloud, DC009 hardwire cable",
-      "value": "Driving, explicitly 2CH front/telephoto: 435 mA (5.481 W derived). Timelapse parking, ongoing recording: 282 mA (3.5532 W derived). Collision detection parking, idle monitoring: 52 mA (0.6552 W derived). Collision detection parking, event recording: 424 mA (5.3424 W derived). All four use the same owner configuration; active parking views are not separately established. Source reports current only; watts = 12.6 V × mA / 1000. Firmware, HDR, quality, capture FPS/SPF, day/night, exact meter hardware, wake and startup timings are unknown."
+      "value": "Driving, explicitly 2CH front/telephoto: 435 mA (5.481 W derived). Timelapse parking, ongoing recording: 282 mA (3.5532 W derived). Collision detection parking, idle monitoring: 52 mA (0.6552 W derived). Collision detection parking, event recording: 424 mA (5.3424 W derived). All four use the same owner configuration; active parking views are not separately established. Source reports current only; watts = 12.6 V \u00d7 mA / 1000. Firmware, HDR, quality, capture FPS/SPF, day/night, exact meter hardware, wake and startup timings are unknown."
     },
     {
       "label": "Measured collision idle versus earlier relayed claim",
@@ -145,7 +180,7 @@
     },
     {
       "label": "Official advertised recording capability, not measured card attribution",
-      "value": "Front wide-angle 3840x2160 at 30/25 FPS; front telephoto 2560x1440 at 25 FPS; rear 3840x2160 at 25 FPS. Advertised capabilities alone do not establish observed roles or connected setup; inside-to-telephoto mapping is separately owner-confirmed. No rear video evidence is established."
+      "value": "Front wide-angle 3840x2160 at 30/25 FPS; front telephoto 2560x1440 at 25 FPS; rear 3840x2160 at 25 FPS. Advertised capabilities alone do not establish observed roles or connected setup; inside-to-telephoto mapping is separately owner-confirmed. Rear video evidence is now separately established by the 72-clip 3CH cohort; it does not retroactively attribute older cohorts."
     },
     {
       "label": "Official advertised optics and sensors",
@@ -384,6 +419,1010 @@
       "resolution": "2560x1440",
       "settings_note": "4 canonical clips. Owner-reported collision detection wake-record-sleep setting; some driving remains. Per-file mode and triggers unresolved. Firmware, quality, HDR and capture cadence unknown. Native observations and original submitted pairs are linked evidence, not additional clips. Exact video/container pairs in collision_test_scan evidence.",
       "source": "retained ffprobe headers; paired AVFoundation alternate observations"
+    },
+    {
+      "bitrate": "41.822921-41.976152 Mbps",
+      "channel": "front (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving-inferred full-length",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "3840x2160",
+      "settings_note": "12 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 315712000,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41903252,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 42094933,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 315839488,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41929920,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.031625",
+          "containerBitrate": 42089746,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 315944960,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41938194,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 42125994,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 315958272,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41946057,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.031688",
+          "containerBitrate": 42105532,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 315984896,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41945576,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 42131319,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 315987968,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41950404,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.031688",
+          "containerBitrate": 42109489,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 315996672,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41939965,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 42132889,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 316064256,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41951735,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.031688",
+          "containerBitrate": 42119656,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 316106240,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41965709,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.031688",
+          "containerBitrate": 42125250,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 316110848,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41957171,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 42148113,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 316270592,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 41976152,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 42169412,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 315210240,
+          "durationSeconds": "60.033333",
+          "videoBitrate": 41822921,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "54000/1801",
+          "containerDurationSeconds": "60.033333",
+          "containerBitrate": 42004696,
+          "videoFrameCount": "1800"
+        }
+      ]
+    },
+    {
+      "bitrate": "42.032385-42.032385 Mbps",
+      "channel": "front (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "driving-inferred short/partial",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "3840x2160",
+      "settings_note": "1 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 107023360,
+          "durationSeconds": "20.300000",
+          "videoBitrate": 42032385,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "20.300000",
+          "containerBitrate": 42176693,
+          "videoFrameCount": "609"
+        }
+      ]
+    },
+    {
+      "bitrate": "11.685153-13.433632 Mbps",
+      "channel": "front (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "time-lapse (owner-confirmed) full-length",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "3840x2160",
+      "settings_note": "14 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 103734784,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 13433632,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 13831304,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 90653184,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 11685153,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12087091,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 91137536,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 11750667,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12151671,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 92188160,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 11887733,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12291754,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 92865024,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 11979633,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12382003,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 93255680,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12031916,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12434090,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 93364736,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12045350,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12448631,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 93487616,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12063319,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12465015,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 93701120,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12092027,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12493482,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 93786624,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12100213,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12504883,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 93949440,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12125174,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12526592,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 94786560,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12234562,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12638208,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 95020544,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12265790,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12669405,
+          "videoFrameCount": "1800"
+        },
+        {
+          "fileSizeBytes": 95379456,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 12315480,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 12717260,
+          "videoFrameCount": "1800"
+        }
+      ]
+    },
+    {
+      "bitrate": "11.998294-11.998294 Mbps",
+      "channel": "front (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "30",
+      "mode": "time-lapse (owner-confirmed) short/partial",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "3840x2160",
+      "settings_note": "1 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 91249664,
+          "durationSeconds": "58.900000",
+          "videoBitrate": 11998294,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "30/1",
+          "averageFrameRate": "30/1",
+          "containerDurationSeconds": "58.900000",
+          "containerBitrate": 12393842,
+          "videoFrameCount": "1767"
+        }
+      ]
+    },
+    {
+      "bitrate": "29.682157-29.858042 Mbps",
+      "channel": "rear (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "driving-inferred full-length",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "3840x2160",
+      "settings_note": "12 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 224030720,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29682157,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 29870762,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224091136,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29698734,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.032125",
+          "containerBitrate": 29862829,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224168960,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29701702,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.032000",
+          "containerBitrate": 29873262,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224253952,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29712134,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 29900526,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224350720,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29725452,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.032000",
+          "containerBitrate": 29897484,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224363520,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29731641,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.032250",
+          "containerBitrate": 29899065,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224584704,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29753913,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 29944627,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224629760,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29761626,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 29950634,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224704000,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29770477,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.032000",
+          "containerBitrate": 29944562,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 224887808,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29795697,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 29985041,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 225082880,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29830458,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.032250",
+          "containerBitrate": 29994928,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 225353728,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 29858042,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 30047163,
+          "videoFrameCount": "1500"
+        }
+      ]
+    },
+    {
+      "bitrate": "29.934067-29.934067 Mbps",
+      "channel": "rear (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "driving-inferred short/partial",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "3840x2160",
+      "settings_note": "1 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 73984512,
+          "durationSeconds": "19.680000",
+          "videoBitrate": 29934067,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "19.904000",
+          "containerBitrate": 29736540,
+          "videoFrameCount": "492"
+        }
+      ]
+    },
+    {
+      "bitrate": "19.579192-20.859455 Mbps",
+      "channel": "rear (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "time-lapse (owner-confirmed) full-length",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "3840x2160",
+      "settings_note": "17 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 148954624,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 19579192,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 19860616,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 149023744,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 19591105,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 19869832,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 149484544,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 19653287,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 19931272,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 150760960,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 19820095,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 20101461,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 157382656,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20705547,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 20984354,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 158124032,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20802348,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 21083204,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 158170112,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20808977,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 21089348,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 158368768,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20837891,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 21115835,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 158547968,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20859455,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 21139729,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 156544512,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20594315,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 20872601,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 156918784,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20641182,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 20922504,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 157195776,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20680054,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 20959436,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 157330944,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20697604,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 20977459,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 157427200,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20711575,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 20990293,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 157603840,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20735568,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 21013845,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 157672448,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20742937,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 21022993,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 158321664,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 20830003,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 21109555,
+          "videoFrameCount": "1500"
+        }
+      ]
+    },
+    {
+      "bitrate": "20.710883-20.710883 Mbps",
+      "channel": "rear (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "time-lapse (owner-confirmed) short/partial",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "3840x2160",
+      "settings_note": "1 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 153699328,
+          "durationSeconds": "58.600000",
+          "videoBitrate": 20710883,
+          "width": 3840,
+          "height": 2160,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "58.600000",
+          "containerBitrate": 20982843,
+          "videoFrameCount": "1465"
+        }
+      ]
+    },
+    {
+      "bitrate": "8.723341-9.287427 Mbps",
+      "channel": "telephoto (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "driving-inferred full-length",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "2560x1440",
+      "settings_note": "12 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 66839552,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 8723341,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 8911940,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 67532288,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 8816175,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 9004305,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 67872768,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 8861080,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.032063",
+          "containerBitrate": 9044868,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 67995648,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 8884502,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 9066086,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 68430336,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 8936680,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.031938",
+          "containerBitrate": 9119190,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 68820480,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 9005647,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 9176064,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 69204992,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 9039851,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.031938",
+          "containerBitrate": 9222423,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 69627904,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 9100689,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 9283720,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 69953024,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 9140152,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.031938",
+          "containerBitrate": 9322107,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 70630400,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 9231025,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 9417386,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 70837760,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 9256179,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.032063",
+          "containerBitrate": 9439990,
+          "videoFrameCount": "1500"
+        },
+        {
+          "fileSizeBytes": 70959104,
+          "durationSeconds": "60.000000",
+          "videoBitrate": 9287427,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "60.000000",
+          "containerBitrate": 9461213,
+          "videoFrameCount": "1500"
+        }
+      ]
+    },
+    {
+      "bitrate": "9.354655-9.354655 Mbps",
+      "channel": "telephoto (3CH cohort)",
+      "codec": "H.265 / HEVC",
+      "container": "MP4",
+      "fps": "25",
+      "mode": "driving-inferred short/partial",
+      "recording_configuration": "3CH: front/telephoto/rear",
+      "resolution": "2560x1440",
+      "settings_note": "1 canonical clips. Owner UI-log main firmware 8.0.0.23; not intrinsic per-clip evidence. Playback FPS is not capture cadence. Exact pairs in separate 3CH evidence.",
+      "source": "retained ffprobe headers; 64 paired native alternate observations across cohort",
+      "storageRateSamples": [
+        {
+          "fileSizeBytes": 23841280,
+          "durationSeconds": "20.080000",
+          "videoBitrate": 9354655,
+          "width": 2560,
+          "height": 1440,
+          "nominalFrameRate": "25/1",
+          "averageFrameRate": "25/1",
+          "containerDurationSeconds": "20.096063",
+          "containerBitrate": 9490925,
+          "videoFrameCount": "502"
+        }
+      ]
     }
   ]
 }

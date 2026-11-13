@@ -32,7 +32,7 @@ def verify(c, profile):
     assert len(groups) == 4
     assert [(g['physical_role'], g['length_class'], g['sample_count']) for g in groups] == [('front', 'full-length', 16), ('front', 'short/partial', 4), ('telephoto', 'full-length', 16), ('telephoto', 'short/partial', 4)]
     clips = {}
-    for g, row in zip(groups, profile['video_samples'][14:]):
+    for g, row in zip(groups, profile['video_samples'][14:18]):
         assert g['sample_mode'] == 'unresolved driving/parking' and g['codec'] == 'hevc'
         samples = g['samples']
         assert g['sample_count'] == len(samples)
