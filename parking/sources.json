@@ -1129,5 +1129,18 @@
     "private": true,
     "measurement_count": 1,
     "notes": "Two measured currents in sanitized dossier; only timelapse is a parking row. Driving is evidence only. Collision idle and recording are explicitly pending/null. Rear firmware 9.0.0.17 applies only to rear. No new card scans."
+  },
+  {
+    "id": "vortex-owner-z100-master-4ch-post-update-dc009-12v6",
+    "post_id": null,
+    "title": "Owner DDPAI Z100 Master post-update 4CH collision parking power, DC009 at 12.6 V",
+    "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-4ch-post-update-power-evidence.json",
+    "tester": "Vortex Radar",
+    "date": null,
+    "images": [],
+    "status": "extracted",
+    "private": true,
+    "measurement_count": 2,
+    "notes": "Two owner-chat currents retained verbatim in separate post-update dossier: idle monitoring and event recording. Exact firmware version unknown; no settings or timings backfilled. Prior setup cloud off is context, not verified current state. Watts derived with Decimal; no comparison establishes a firmware power reduction."
   }
 ]

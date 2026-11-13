@@ -44,8 +44,8 @@ try:
                 assert attribution.is_visible()
                 details = page.locator('details.technical-details')
                 assert details.count() == 1 and details.get_attribute('open') is None
-                assert page.locator('.video-spec-table').count() == 6
-                assert page.locator('.video-spec-table tbody tr').count() == 14
+                assert page.locator('.video-specs .video-spec-table').count() == 6
+                assert page.locator('.video-specs .video-spec-table tbody tr').count() == 14
                 attribution.scroll_into_view_if_needed()
                 geometry = page.evaluate('''() => {
                     const a = document.querySelector('.recording-attribution').getBoundingClientRect();

@@ -305,7 +305,7 @@ function renderDetail(camera) {
         ${coverage("Manual", manual)}
       </div>
     </header>
-    ${camera.id === "ddpai-z100-master" ? renderZ100Specs(camera) + '<details class="technical-details"><summary>Recording evidence and technical details</summary>' : ""}
+    ${camera.id === "ddpai-z100-master" ? renderZ100Specs(camera) + renderZ100Power(camera) + '<details class="technical-details"><summary>Recording evidence and technical details</summary>' : ""}
     ${renderVariants(camera.channel_variants)}
     ${renderFolderSection("Driving recordings", folders.driving_folders)}
     ${renderParking(camera)}
@@ -367,6 +367,21 @@ function renderZ100Specs(camera) {
     ${table("2CH · Front + telephoto · Time-lapse setting", owner)}
     ${table("2CH · Front + telephoto · Collision-detection setting", collision)}
     <p class="section-intro">The separate installed 4CH setup (front, telephoto, rear, and cabin) has power measurements, but no measured 4CH video specs yet. Advertised capabilities and firmware provenance are in the details below.</p>
+  </section>`;
+}
+
+function renderZ100Power(camera) {
+  const fact = camera.technical_facts.find(item => item.label === "Latest owner 4CH collision parking power (post-update)");
+  const source = camera.sources.find(item => item.label === "Vortex Radar test unit; latest post-update 4CH collision parking power readings");
+  if (!fact || !source) return "";
+  const readings = [...fact.value.matchAll(/(Idle monitoring|Event recording): ([0-9.]+) mA \(([0-9.]+) W derived\)/g)];
+  if (readings.length !== 2) return "";
+  return `<section class="section parking-power-summary" aria-labelledby="parking-power-title"><h2 id="parking-power-title">Latest 4CH collision parking power</h2>
+    <p class="section-intro">Post-update owner test · 12.6 V · DC009 · MINI3X connected</p>
+    <table class="video-spec-table"><thead><tr><th scope="col">State</th><th scope="col">Current</th><th scope="col">Derived power</th></tr></thead><tbody>
+      ${readings.map(([, state, current, watts]) => `<tr><th scope="row">${escapeHtml(state)}</th><td>${escapeHtml(current)} mA</td><td>${escapeHtml(watts)} W</td></tr>`).join("")}
+    </tbody></table>
+    <p class="section-intro">Installed front + telephoto + 4K rear + 3K cabin. <a href="${escapeHtml(source.url)}">Measurement evidence</a>; firmware and setup details below.</p>
   </section>`;
 }
 

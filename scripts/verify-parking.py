@@ -58,7 +58,7 @@ assert next(s for s in sources if s['id']=='vortex-sheet')['measurement_count']=
 e1s_ids={f'vortex-sheet-row-{n}' for n in (34,35,36,37,38,40,41)}
 assert all(r['voltage_v']==12.6 and r['reported_parking_voltage_v']==12.6 and r.get('voltage_source') for r in rows if r['id'] in e1s_ids)
 assert all(r['voltage_v']==12.6 and r.get('voltage_source') for r in rows if r.get('source_id')=='vortex-owner-z100-master-dc009-12v6')
-assert all(r['voltage_v'] is None for r in rows if r['tester']=='Vortex Radar' and r['id'] not in chart_ids | buffered_chart.keys() | a119m_ids | e1s_ids and r.get('source_id') not in {'vortex-owner-z100-master-dc009-12v6','vortex-owner-z100-master-4ch-dc009-12v6'}),'No blanket voltage assumption for other contributed rows'
+assert all(r['voltage_v'] is None for r in rows if r['tester']=='Vortex Radar' and r['id'] not in chart_ids | buffered_chart.keys() | a119m_ids | e1s_ids and r.get('source_id') not in {'vortex-owner-z100-master-dc009-12v6','vortex-owner-z100-master-4ch-dc009-12v6','vortex-owner-z100-master-4ch-post-update-dc009-12v6'}),'No blanket voltage assumption for other contributed rows'
 for content in [public.read_text(),csv_path.read_text(),json.dumps(sources)]:
     assert 'docs.google.com/spreadsheets' not in content, 'Private spreadsheet link in public data'
 bad=copy.deepcopy(rows);bad[0]['source_url']='https://docs.google.com/spreadsheets/d/private-test-fixture'

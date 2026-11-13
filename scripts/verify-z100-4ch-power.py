@@ -43,8 +43,9 @@ for row,(suffix,ma,watts,category,state) in zip(e['measurements'],expected):
     assert row['active_channels'] == (['front','telephoto','rear','cabin'] if state == 'driving' else None)
     assert row['source_url'] == e['evidence_url'] and row['source_url'].endswith('/data/ddpai-z100-master-4ch-power-evidence.json')
     assert all(row.get(k) is None for k in nulls)
-rows = load('parking/measurements.json')
-sources = load('parking/sources.json')
+from z100_post_update import prior_power_profile, without_post_update
+rows = without_post_update(load('parking/measurements.json'))
+sources = without_post_update(load('parking/sources.json'), source_index=True)
 assert len(rows) == 619 and len(old('parking/measurements.json')) == 618
 assert rows[:-1] == old('parking/measurements.json')
 assert rows[-1] == e['measurements'][1]
@@ -57,7 +58,7 @@ path = 'docs/data/ddpai-z100-master-power-evidence.json'
 assert (R/path).read_bytes() == subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R),path
 path = 'docs/data/ddpai-z100-master-evidence.json'
 assert prior_video_provenance(load(path)) == old(path), path
-p = load('profiles/ddpai-z100-master.json')
+p = prior_power_profile(load('profiles/ddpai-z100-master.json'))
 # Later 3CH video additions have their own exact-prefix and source-parity validator.
 current_profile = p
 pre_3ch = json.loads(subprocess.check_output(['git','show','b9f1536:profiles/ddpai-z100-master.json'],cwd=R))
@@ -70,11 +71,12 @@ assert p['technical_facts'][:-1] == prior['technical_facts']
 assert p['sources'][:-1] == prior['sources']
 p = current_profile
 index = load('docs/data/cameras.json')
-assert next(c for c in index['cameras'] if c['id']==p['id']) == p
+assert next(c for c in index['cameras'] if c['id']==p['id']) == load('profiles/ddpai-z100-master.json')
 assert [c for c in index['cameras'] if c['id']!=p['id']] == [c for c in old('docs/data/cameras.json')['cameras'] if c['id']!=p['id']]
 export = load('docs/data/parking-measurements.json')
+export['measurements'] = without_post_update(export['measurements'])
 assert {r['id']:r for r in export['measurements']} == {r['id']:r for r in rows}
-csv_rows = list(csv.DictReader((R/'docs/data/parking-measurements.csv').open()))
+csv_rows = without_post_update(list(csv.DictReader((R/'docs/data/parking-measurements.csv').open())))
 old_csv = list(csv.DictReader(subprocess.check_output(['git','show',f'{BASELINE}:docs/data/parking-measurements.csv'],cwd=R,text=True).splitlines()))
 assert [r for r in csv_rows if r['source_id']!=SID] == old_csv
 new_csv = [r for r in csv_rows if r['source_id']==SID]
@@ -103,8 +105,9 @@ if a.browser or a.url:
         page.goto(base+'#camera=ddpai-z100-master')
         page.wait_for_selector('.detail-title')
         assert page.locator('.detail-title').inner_text()=='Z100 Master'
+        page.locator('details.technical-details > summary').click()
         text=page.locator('body').inner_text()
-        for fragment in ['964 mA','12.1464 W derived','632 mA','7.9632 W derived','Rear firmware only: 9.0.0.17','main unit, front, cabin and telephoto firmware unknown','not yet recorded (pending, not zero)','front/telephoto/rear/cabin']:
+        for fragment in ['964 mA','12.1464 W derived','632 mA','7.9632 W derived','Rear firmware only: 9.0.0.17','main unit, front, cabin and telephoto firmware unknown','were pending in that earlier test','front/telephoto/rear/cabin']:
             assert fragment.casefold() in text.casefold(), fragment
         page.goto(base+'parking-charts.html?'+query)
         page.wait_for_function("()=>document.querySelector('#chart-canvas').getAttribute('aria-busy')==='false'")

@@ -8,7 +8,7 @@ const { spawnSync } = require('node:child_process');
 const chart = require('../docs/assets/parking-charts.js');
 const UI = require('../docs/assets/parking.js');
 const rows = require('../docs/data/parking-measurements.json').measurements;
-assert.equal(rows.length, 619);
+assert.equal(rows.length, 621);
 assert.equal(UI.groupModels(rows).length, 49);
 const e1s=rows.filter(r=>r.brand==='Vantrue'&&r.model==='E1 Pro S');
 assert.equal(e1s.length,18);
@@ -25,7 +25,7 @@ assert.equal(e1sIdle.power_w,0.09);assert.equal(e1sIdle.current_ma,7);
 assert.equal(new Map(chart.testFields(e1sIdle)).get('Reported recording-start delay'),'1.37–1.42 s');
 assert.equal(chart.interval(e1sIdle,'wake'),null);
 assert.notEqual(new Map(chart.testFields(e1s.find(r=>r.id==='rcg530-675957-3'))).get('Settings'),new Map(chart.testFields(e1s.find(r=>r.id==='rcg530-675957-4'))).get('Settings'));
-assert.equal(new Set(rows.map(r => r.id)).size, 619);
+assert.equal(new Set(rows.map(r => r.id)).size, 621);
 assert.equal(chart.readState('?metric=watts&title=Parking+Mode+Power+Draw',rows).title,'Low Power Parking Mode Power Draw Comparison');
 assert.equal(chart.readState('?metric=watts&title=My+custom+title',rows).title,'My custom title');
 assert.equal(chart.readState('?selection=1&family=buffered-motion&metric=watts&title=Parking+Mode+Power+Draw+Comparison',rows).title,'Buffered Motion Detection Parking Mode Power Draw Comparison');
@@ -176,7 +176,7 @@ with sync_playwright() as p:
     assert page.locator('#chart-group').input_value()=='low-power'
     assert page.locator('#chart-condition').input_value()=='monitoring'
     assert page.locator('#chart-highlight').input_value()==''
-    assert page.locator('#chart-data-status').text_content()=='619 public measurements · 49 models'
+    assert page.locator('#chart-data-status').text_content()=='621 public measurements · 49 models'
     assert page.locator('#chart-canvas [data-measurement]').count()==7
     assert '12.4 V' in page.locator('#chart-canvas').text_content()
     for id,value in current.items():

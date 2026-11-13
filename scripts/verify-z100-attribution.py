@@ -5,6 +5,7 @@ from copy import deepcopy
 import json
 from pathlib import Path
 import subprocess
+from z100_post_update import prior_power_profile, without_post_update
 from z100_attribution import BASELINE, ATTRIBUTION, PROFILE_CHANGES, prior_video_provenance, restore_leaves
 
 R = Path(__file__).resolve().parents[1]
@@ -46,7 +47,7 @@ def verify():
     assert restored == old(three_path)
     profile_path = 'profiles/ddpai-z100-master.json'
     profile = load(profile_path)
-    assert restore_leaves(profile, PROFILE_CHANGES) == old(profile_path)
+    assert restore_leaves(prior_power_profile(profile), PROFILE_CHANGES) == old(profile_path)
     assert profile['video_samples'] == old(profile_path)['video_samples']
     for name, value in [(path, video), (three_path, three), (profile_path, profile)]:
         assert occurrences(value) == occurrences(old(name)), name
@@ -54,9 +55,12 @@ def verify():
     index = load(index_path)
     assert next(c for c in index['cameras'] if c['id'] == profile['id']) == profile
     restored_index = deepcopy(index)
-    restored_index['cameras'] = [restore_leaves(c, PROFILE_CHANGES) if c['id'] == profile['id'] else c for c in index['cameras']]
+    restored_index['cameras'] = [restore_leaves(prior_power_profile(c), PROFILE_CHANGES) if c['id'] == profile['id'] else c for c in index['cameras']]
     assert restored_index == old(index_path), 'Other models and index metadata stay exact'
-    for name in ['parking/measurements.json', 'parking/sources.json', 'docs/data/parking-measurements.json', 'docs/data/parking-measurements.csv', 'docs/data/ddpai-z100-master-power-evidence.json', 'docs/data/ddpai-z100-master-4ch-power-evidence.json']:
+    # New append-only power rows/exports are pinned completely by the post-update regression.
+    assert without_post_update(load('parking/measurements.json')) == old('parking/measurements.json')
+    assert without_post_update(load('parking/sources.json'), source_index=True) == old('parking/sources.json')
+    for name in ['docs/data/ddpai-z100-master-power-evidence.json', 'docs/data/ddpai-z100-master-4ch-power-evidence.json']:
         assert (R/name).read_bytes() == subprocess.check_output(['git', 'show', f'{BASELINE}:{name}'], cwd=R), name
     assert video['recording_attribution'] == three['recording_attribution'] == ATTRIBUTION
     for name in ['docs/z100-master-measurements.md', 'docs/z100-master-3ch-measurements.md']:

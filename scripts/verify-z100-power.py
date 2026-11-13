@@ -26,7 +26,11 @@ e = load('docs/data/ddpai-z100-master-power-evidence.json')
 p = load('profiles/ddpai-z100-master.json')
 rows = load('parking/measurements.json')
 sources = load('parking/sources.json')
-# The separate later 4CH cohort has its own full-baseline preservation regression.
+from z100_post_update import prior_power_profile, without_post_update
+p = prior_power_profile(p)
+rows = without_post_update(rows)
+sources = without_post_update(sources, source_index=True)
+# The separate later 4CH cohorts have their own full-baseline preservation regressions.
 rows = [r for r in rows if r.get('source_id') != 'vortex-owner-z100-master-4ch-dc009-12v6']
 sources = [s for s in sources if s['id'] != 'vortex-owner-z100-master-4ch-dc009-12v6']
 assert e['source_id'] == SID and e['provenance']['source_quote'] == SOURCE_QUOTE
@@ -73,9 +77,10 @@ import runpy
 runpy.run_path(str(R/'scripts/verify-z100-collision.py'))['verify'](video['collision_test_scan'], p)
 p = current_profile
 index = load('docs/data/cameras.json')
-assert next(c for c in index['cameras'] if c['id']==p['id']) == p
+assert next(c for c in index['cameras'] if c['id']==p['id']) == load('profiles/ddpai-z100-master.json')
 assert [c for c in index['cameras'] if c['id']!=p['id']] == [c for c in old('docs/data/cameras.json')['cameras'] if c['id']!=p['id']]
 export = load('docs/data/parking-measurements.json')
+export['measurements'] = without_post_update(export['measurements'])
 assert {r['id']:r for r in export['measurements'] if r.get('source_id') != 'vortex-owner-z100-master-4ch-dc009-12v6'} == {r['id']:r for r in rows}
 csv_rows = {r['id']:r for r in csv.DictReader((R/'docs/data/parking-measurements.csv').open())}
 for row in imported:
@@ -112,6 +117,7 @@ if a.browser or a.url:
         page.wait_for_selector('.detail-title')
         # Model selection is represented by the existing camera URL fragment.
         assert page.locator('.detail-title').inner_text()=='Z100 Master'
+        page.locator('details.technical-details > summary').click()
         text=page.locator('body').inner_text()
         for _, ma, watts, _, _ in EXPECTED:
             assert (str(ma)+' mA').casefold() in text.casefold() and (watts+' W derived').casefold() in text.casefold()

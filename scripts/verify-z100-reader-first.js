@@ -11,6 +11,11 @@ const camera = cameras.find(item => item.id === "ddpai-z100-master");
 const before = JSON.stringify(camera);
 const html = renderDetail(camera);
 const summary = renderZ100Specs(camera);
+const power = renderZ100Power(camera);
+for (const value of ['44 mA', '0.5544 W', '935 mA', '11.781 W', 'Post-update', 'MINI3X']) assert(power.includes(value), value);
+assert(html.indexOf('Latest 4CH collision parking power') < html.indexOf('Recording evidence and technical details'));
+assert(!power.includes('Cloud off'));
+assert(!power.includes('not yet recorded'));
 assert.equal((html.match(/All recordings: Vortex Radar’s test unit\./g) || []).length, 1);
 assert(summary.includes('class="section-intro recording-attribution"'));
 assert(!/anonymous|unattributed|other historical attribution/i.test(html));
@@ -37,6 +42,7 @@ assert.equal(JSON.stringify(camera), before, "rendering cannot mutate source occ
 assert.equal((html.match(/<div class="card"><div class="card-head"><strong>/g) || []).length >= camera.video_samples.length, true);
 for (const other of cameras.filter(item => item.id !== camera.id)) {
  assert(!renderDetail(other).includes('class="technical-details"'), other.id);
+ assert.equal(renderZ100Power(other), '', other.id);
  assert(renderDetail(other).includes(renderVideoSamples(other.video_samples)), other.id);
 }
 console.log(JSON.stringify({groups:6,rows:14,driving:z100SpecRows(three)}, null, 2));
