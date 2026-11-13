@@ -16,7 +16,8 @@ from urllib.parse import urlencode
 from z100_post_update import BASELINE, SID, DOSSIER, URL, QUOTE, FACT, SOURCE, prior_power_profile, without_post_update
 
 R = Path(__file__).resolve().parents[1]
-def load(path): return json.loads((R/path).read_text())
+from z100_retest import restore_loaded, restore_rows
+def load(path): return restore_loaded(path, json.loads((R/path).read_text()))
 def old_bytes(path): return subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R)
 def old(path): return json.loads(old_bytes(path))
 EXPECTED = [('collision-idle',44,'0.5544','monitoring'),('collision-recording',935,'11.781','event-recording')]
@@ -66,10 +67,10 @@ def verify():
     expected_sources = published_json('parking/sources.json')
     expected_sources[-1]['notes'] = 'Two owner-chat currents retained verbatim in separate post-update dossier: idle monitoring and event recording. Main firmware 8.0.0.23 from same-unit owner UI-log observation plus owner-confirmed continuity (no intervening updates), not these clips or the power receipt; no installation-action receipt claimed. No component firmware, settings or timings backfilled. Prior setup cloud off is context, not verified current state. Watts derived with Decimal; no comparison establishes a firmware power reduction.'
     assert sources == expected_sources
-    profile = load('profiles/ddpai-z100-master.json')
+    profile = json.loads((R/'profiles/ddpai-z100-master.json').read_text())
     assert prior_power_profile(profile) == old('profiles/ddpai-z100-master.json'), 'Only explicit fact/source/pending-note allowlist'
     assert profile['video_samples'] == old('profiles/ddpai-z100-master.json')['video_samples']
-    index = load('docs/data/cameras.json')
+    index = json.loads((R/'docs/data/cameras.json').read_text())
     assert next(c for c in index['cameras'] if c['id']==profile['id']) == profile
     restored = deepcopy(index)
     restored['cameras'] = [prior_power_profile(c) if c['id']==profile['id'] else c for c in restored['cameras']]
@@ -86,7 +87,7 @@ def verify():
     exported = load('docs/data/parking-measurements.json')
     assert {r['id']:r for r in exported['measurements']} == {r['id']:r for r in rows}
     prior_export = old('docs/data/parking-measurements.json')
-    assert without_post_update(exported['measurements']) == prior_export['measurements']
+    assert [r for r in exported['measurements'] if r.get('source_id') != SID] == prior_export['measurements']
     assert exported['sources'] == sources
     expected_export = deepcopy(prior_export)
     expected_export['updated'] = '2026-11-13'
@@ -95,9 +96,9 @@ def verify():
     for key,delta in [('measurements',2),('sources',1),('source_reviews_completed',1)]:
         expected_export['coverage'][key] += delta
     assert exported == expected_export, 'Exact generated export with explicit metadata increments only'
-    csv_rows = list(csv.DictReader((R/'docs/data/parking-measurements.csv').open()))
+    csv_rows = restore_rows(list(csv.DictReader((R/'docs/data/parking-measurements.csv').open())))
     prior_csv = list(csv.DictReader(io.StringIO(old_bytes('docs/data/parking-measurements.csv').decode())))
-    assert without_post_update(csv_rows) == prior_csv
+    assert [r for r in csv_rows if r.get('source_id') != SID] == prior_csv
     new_csv = [r for r in csv_rows if r.get('source_id')==SID]
     assert len(new_csv)==2
     for row,(_,ma,watts,_) in zip(new_csv,EXPECTED):

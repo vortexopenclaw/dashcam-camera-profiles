@@ -372,17 +372,19 @@ function renderZ100Specs(camera) {
 }
 
 function renderZ100Power(camera) {
-  const fact = camera.technical_facts.find(item => item.label === "Latest owner 4CH collision parking power (post-update)");
-  const source = camera.sources.find(item => item.label === "Vortex Radar test unit; latest post-update 4CH collision parking power readings");
-  if (!fact || !source) return "";
-  const readings = [...fact.value.matchAll(/(Idle monitoring|Event recording): ([0-9.]+) mA \(([0-9.]+) W derived\)/g)];
-  if (readings.length !== 2) return "";
-  return `<section class="section parking-power-summary" aria-labelledby="parking-power-title"><h2 id="parking-power-title">Latest 4CH collision parking power</h2>
+  const fact = camera.technical_facts.find(item => item.label === "Current owner driving and timelapse power (explicit retest)");
+  const source = camera.sources.find(item => item.label === "Vortex Radar test unit; corrected driving and timelapse owner retest");
+  const collision = camera.technical_facts.find(item => item.label === "Latest owner 4CH collision parking power (post-update)");
+  if (!fact || !source || !collision) return "";
+  const readings = [...fact.value.matchAll(/(Driving|Timelapse): ([0-9.]+) mA \(([0-9.]+) W derived\)/g), ...collision.value.matchAll(/(Idle monitoring|Event recording): ([0-9.]+) mA \(([0-9.]+) W derived\)/g)];
+  if (readings.length !== 4) return "";
+  const stateLabel = state => state === "Timelapse" ? "Timelapse — 4 cameras installed; front/rear indicated" : state;
+  return `<section class="section parking-power-summary" aria-labelledby="parking-power-title"><h2 id="parking-power-title">Current driving and parking power</h2>
     <p class="section-intro">Post-update owner test · Main firmware 8.0.0.23 · 12.6 V · DC009 · MINI3X connected</p>
     <table class="video-spec-table"><thead><tr><th scope="col">State</th><th scope="col">Current</th><th scope="col">Derived power</th></tr></thead><tbody>
-      ${readings.map(([, state, current, watts]) => `<tr><th scope="row">${escapeHtml(state)}</th><td>${escapeHtml(current)} mA</td><td>${escapeHtml(watts)} W</td></tr>`).join("")}
+      ${readings.map(([, state, current, watts]) => `<tr><th scope="row">${escapeHtml(stateLabel(state))}</th><td>${state === "Driving" ? "1.185 A (1185 mA)" : `${escapeHtml(current)} mA`}</td><td>${escapeHtml(watts)} W</td></tr>`).join("")}
     </tbody></table>
-    <p class="section-intro">Installed front + telephoto + 4K rear + 3K cabin. <a href="${escapeHtml(source.url)}">Measurement evidence</a>; firmware and setup details below.</p>
+    <p class="section-intro">Installed front + telephoto + 4K rear + 3K cabin. <a href="${escapeHtml(source.url)}">Corrected measurement evidence</a>; firmware, tentative display observation and historical readings in details below.</p>
   </section>`;
 }
 

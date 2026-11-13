@@ -17,7 +17,8 @@ SOURCE = {'kind': 'source', 'label': 'Vortex Radar test unit; latest post-update
 
 def prior_power_profile(profile):
     """Undo only the exact authorized appended facts/source and pending-note wording."""
-    result = deepcopy(profile)
+    from z100_retest import restore_profile
+    result = restore_profile(profile)
     assert result['technical_facts'].pop() == FACT
     assert result['sources'].pop() == SOURCE
     assert result['technical_facts'][7] == {'label': 'Separate owner 4CH power cohort: front/telephoto/rear/cabin', 'value': NEW_4CH_VALUE}
@@ -28,4 +29,5 @@ def prior_power_profile(profile):
 def without_post_update(rows, source_index=False):
     """Exclude only this source, whose complete contents have a dedicated regression."""
     key = 'id' if source_index else 'source_id'
-    return [row for row in rows if row.get(key) != SID]
+    from z100_retest import restore_rows
+    return [row for row in restore_rows(rows, source_index) if row.get(key) != SID]

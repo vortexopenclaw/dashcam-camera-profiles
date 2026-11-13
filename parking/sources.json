@@ -1142,5 +1142,18 @@
     "private": true,
     "measurement_count": 2,
     "notes": "Two owner-chat currents retained verbatim in separate post-update dossier: idle monitoring and event recording. Main firmware 8.0.0.23 from same-unit owner UI-log observation plus owner-confirmed continuity (no intervening updates), not these clips or the power receipt; no installation-action receipt claimed. No component firmware, settings or timings backfilled. Prior setup cloud off is context, not verified current state. Watts derived with Decimal; no comparison establishes a firmware power reduction."
+  },
+  {
+    "id": "vortex-owner-z100-master-4ch-retest-dc009-12v6",
+    "post_id": null,
+    "title": "Owner DDPAI Z100 Master corrected driving and timelapse retest, DC009 at carried 12.6 V",
+    "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-4ch-retest-power-evidence.json",
+    "tester": "Vortex Radar",
+    "date": null,
+    "images": [],
+    "status": "extracted",
+    "private": true,
+    "measurement_count": 1,
+    "notes": "Explicit owner retest corrects current driving and timelapse only, superseding earlier 964 mA / 12.1464 W driving and 632 mA / 7.9632 W timelapse; original dossiers remain immutable history. Collision idle 44 mA / 0.5544 W and event recording 935 mA / 11.781 W remain current and unchanged. Installed front/telephoto/rear/MINI3X cabin (4 cameras). Owner tentatively reports front/rear indicated on the timelapse display and telephoto/cabin not seen saving; no clip verification establishes active recording views. Cabin LEDs being on does not prove saved footage. Whole-system supply-DC measurement, not isolated camera consumption. Main firmware 8.0.0.23 observed in fresh physical-card tracklog; MINI3X 9.0.1.10 observed in paired current-card product logs, not intrinsic clip metadata. Rear 9.0.0.17 belongs only to older cohort; current rear version unknown. 12.6 V and DC009 carried from standing current owner-test context, not restated in these messages. Cloud off belongs to earlier context; current connectivity unknown. Watts derived from current with Decimal. No capture FPS/SPF, wake/start timing or definitive recorded roles inferred."
   }
 ]

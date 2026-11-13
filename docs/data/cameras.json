@@ -3976,6 +3976,11 @@
           "kind": "source",
           "label": "Vortex Radar test unit; latest post-update 4CH collision parking power readings",
           "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-4ch-post-update-power-evidence.json"
+        },
+        {
+          "kind": "source",
+          "label": "Vortex Radar test unit; corrected driving and timelapse owner retest",
+          "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-4ch-retest-power-evidence.json"
         }
       ],
       "technical_facts": [
@@ -4009,11 +4014,15 @@
         },
         {
           "label": "Separate owner 4CH power cohort: front/telephoto/rear/cabin",
-          "value": "Earlier 4CH test, before the latest owner-reported firmware update: Driving recording: 964 mA (12.1464 W derived). Timelapse parking: 632 mA (7.9632 W derived). Installed 4CH; active parking views not separately established. 12.6 V, cloud off, same DC009 hardwire cable. Rear firmware only: 9.0.0.17; main unit, front, cabin and telephoto firmware unknown. Rear 4K / cabin 3K are owner-declared, not measured card metadata. Collision detection idle and recording were pending in that earlier test; see the separate post-update readings below. Card scans pending; no new 4CH bitrate/FPS or timing measurements. Earlier 2CH power and video cohorts are unchanged."
+          "value": "Historical \u2014 driving and timelapse superseded by explicit owner retest; original readings retained: Earlier 4CH test, before the latest owner-reported firmware update: Driving recording: 964 mA (12.1464 W derived). Timelapse parking: 632 mA (7.9632 W derived). Installed 4CH; active parking views not separately established. 12.6 V, cloud off, same DC009 hardwire cable. Rear firmware only: 9.0.0.17; main unit, front, cabin and telephoto firmware unknown. Rear 4K / cabin 3K are owner-declared, not measured card metadata. Collision detection idle and recording were pending in that earlier test; see the separate post-update readings below. Card scans pending; no new 4CH bitrate/FPS or timing measurements. Earlier 2CH power and video cohorts are unchanged."
         },
         {
           "label": "Latest owner 4CH collision parking power (post-update)",
           "value": "Idle monitoring: 44 mA (0.5544 W derived). Event recording: 935 mA (11.781 W derived). 12.6 V, same DC009 hardwire cable; installed front + telephoto + 4K rear + 3K MINI3X cabin. Main firmware: 8.0.0.23, linked by same-unit UI-log observation and owner confirmation of no intervening updates; not read from these clips or power measurements. Component firmware remains unknown. Cloud off was prior setup context, not restated or independently verified after the update. Active parking views and startup/wake timings remain unknown. This separate cohort does not revise earlier power or video measurements or establish a firmware power reduction."
+        },
+        {
+          "label": "Current owner driving and timelapse power (explicit retest)",
+          "value": "Driving: 1185 mA (14.931 W derived). Timelapse: 589 mA (7.4214 W derived). Explicit owner retest corrects current driving and timelapse only, superseding earlier 964 mA / 12.1464 W driving and 632 mA / 7.9632 W timelapse; original dossiers remain immutable history. Collision idle 44 mA / 0.5544 W and event recording 935 mA / 11.781 W remain current and unchanged. Installed front/telephoto/rear/MINI3X cabin (4 cameras). Owner tentatively reports front/rear indicated on the timelapse display and telephoto/cabin not seen saving; no clip verification establishes active recording views. Cabin LEDs being on does not prove saved footage. Whole-system supply-DC measurement, not isolated camera consumption. Main firmware 8.0.0.23 observed in fresh physical-card tracklog; MINI3X 9.0.1.10 observed in paired current-card product logs, not intrinsic clip metadata. Rear 9.0.0.17 belongs only to older cohort; current rear version unknown. 12.6 V and DC009 carried from standing current owner-test context, not restated in these messages. Cloud off belongs to earlier context; current connectivity unknown. Watts derived from current with Decimal. No capture FPS/SPF, wake/start timing or definitive recorded roles inferred."
         }
       ],
       "video_samples": [

@@ -41,9 +41,14 @@ assert len(refs) == 133
 assert next(r for r in refs if r['id'] == 'global-mini3x')['canonicalProfileId'] == 'ddpai-mini3x'
 assert not any(r['model'] == 'MINI3X (V3)' and 'MINI3X' in r['aliases'] for r in refs)
 old_index = json.loads(subprocess.check_output(['git','show',f'{BASELINE}:docs/data/cameras.json'], cwd=ROOT))
-new_index = load('docs/data/cameras.json')
+from z100_retest import restore_loaded
+new_index = restore_loaded('docs/data/cameras.json', load('docs/data/cameras.json'))
 assert [c for c in new_index['cameras'] if c['id'] != 'ddpai-mini3x'] == old_index['cameras']
 for path in subprocess.check_output(['git','ls-tree','-r','--name-only',BASELINE,'profiles','parking'],cwd=ROOT,text=True).splitlines():
-    assert (ROOT/path).read_bytes() == subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=ROOT), path
+    prior = subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=ROOT)
+    if path in {'profiles/ddpai-z100-master.json','parking/measurements.json','parking/sources.json'}:
+        assert restore_loaded(path,load(path)) == json.loads(prior), path
+    else:
+        assert (ROOT/path).read_bytes() == prior, path
 assert next(c for c in new_index['cameras'] if c['id']=='ddpai-mini3x') == profile
 print('MINI3X passed: 23 paired occurrences, exact video/audio metadata, scoped identity; all prior profiles and parking sources unchanged')
