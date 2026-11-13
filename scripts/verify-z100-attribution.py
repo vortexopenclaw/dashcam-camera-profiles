@@ -56,6 +56,10 @@ def verify():
     assert next(c for c in index['cameras'] if c['id'] == profile['id']) == profile
     restored_index = deepcopy(index)
     restored_index['cameras'] = [restore_leaves(prior_power_profile(c), PROFILE_CHANGES) if c['id'] == profile['id'] else c for c in index['cameras']]
+    assert next(c for c in restored_index['cameras'] if c['id']=='ddpai-mini3x') == load('profiles/ddpai-mini3x.json')
+    restored_index['cameras'] = [c for c in restored_index['cameras'] if c['id'] != 'ddpai-mini3x']
+    restored_index['camera_count'] -= 1
+    restored_index['profile_count'] -= 1
     assert restored_index == old(index_path), 'Other models and index metadata stay exact'
     # New append-only power rows/exports are pinned completely by the post-update regression.
     assert without_post_update(load('parking/measurements.json')) == old('parking/measurements.json')

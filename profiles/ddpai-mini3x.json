@@ -1,0 +1,117 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "schema_version": "1.0",
+  "id": "ddpai-mini3x",
+  "manufacturer": "DDPAI",
+  "model": "MINI3X",
+  "evidence": {
+    "level": "card-validated",
+    "status": "observed card structure and individual video headers",
+    "confidence": "Owner-confirmed MINI3X; Vortex Radar test unit",
+    "note": "23 physical video occurrences, paired submitted measurements and direct HEVC/AAC probes. Firmware v9.0.1.10 from five product-log observations. No retail revision inferred."
+  },
+  "channel_variants": [
+    {
+      "channels": 1,
+      "roles": [
+        "cabin (this owner installation only)"
+      ],
+      "variant": "Single camera; front, rear or cabin installation",
+      "validation": "owner-confirmed cabin in paired Z100 Master setup"
+    }
+  ],
+  "recording": {
+    "driving_folders": [
+      {
+        "path": "DCIM/200video",
+        "mode": "continuous-classified; individual driving/parking unresolved",
+        "importable": true,
+        "notes": [
+          "Do not apply Z100 inside-to-telephoto override or hardcode model role to cabin."
+        ],
+        "validation": "read-only direct inventory"
+      }
+    ],
+    "parking_folders": [],
+    "other_folders": [
+      {
+        "path": "DCIM/202thumb",
+        "mode": "thumbnail photos",
+        "importable": false,
+        "notes": []
+      },
+      {
+        "path": "DCIM/207log",
+        "mode": "support logs",
+        "importable": false,
+        "notes": [
+          "Private raw contents; public model and firmware only."
+        ]
+      }
+    ],
+    "parking_modes": []
+  },
+  "filename_patterns": [
+    {
+      "pattern": "^(\\d{14})_(\\d{4})\\.mp4$",
+      "applies_to": [
+        "DCIM/200video"
+      ],
+      "modes": {},
+      "channels": {},
+      "default_channel": "unknown",
+      "timestamp_format": null
+    }
+  ],
+  "video_samples": [
+    {
+      "channel": "cabin (owner-confirmed installation)",
+      "mode": "unresolved driving/parking",
+      "codec": "H.265 / HEVC",
+      "resolution": "2960x1664",
+      "fps": "30",
+      "bitrate": "7.423724-14.849620 Mbps",
+      "container": "MP4",
+      "source": "direct-card paired scan",
+      "recording_configuration": "Single MINI3X cabin; paired Z100 Master on separate card",
+      "settings_note": "23 individual occurrences retained in evidence dossier; no per-file mode or capture-cadence inference."
+    }
+  ],
+  "technical_facts": [
+    {
+      "label": "Observed logging SKU alias",
+      "value": "DDPAI DM003_Overseas_V2 → ddpai-mini3x, scoped to this owner-confirmed unit. Not a retail V2/V3 revision claim."
+    },
+    {
+      "label": "Firmware",
+      "value": "v9.0.1.10, five root product-log observations. Not main firmware 8.0.0.23 or rear firmware 9.0.0.17."
+    },
+    {
+      "label": "Audio and complete coverage",
+      "value": "All 23 videos: HEVC video and AAC audio. 303 relevant files: 23 videos, 230 JPEGs, 50 logs; two housekeeping sidecars excluded."
+    },
+    {
+      "label": "Official manual",
+      "value": "MINI3X name and 3K 30 FPS advertised recording; no retail revision established by this manual."
+    }
+  ],
+  "sources": [
+    {
+      "label": "DDPAI official MINI3X manual",
+      "url": "https://www.ddpai.com/manuals/mini3x/",
+      "kind": "manual"
+    },
+    {
+      "label": "Vortex Radar test unit; all 23 individual paired video measurements",
+      "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-mini3x-evidence.json",
+      "kind": "source"
+    }
+  ],
+  "notes": [
+    "Encoded playback FPS does not establish capture cadence or real elapsed coverage.",
+    "Individual driving/parking attribution and impact timing remain unresolved; filename gaps are not proof of physical impact, wake time or mode transitions.",
+    "Two before / two after impact owner context and main-unit log evidence are not aligned MINI3X timing measurements.",
+    "Full and partial clips remain individual occurrences, with submitted and direct measurements separately preserved.",
+    "No power or startup/wake measurements added; main firmware 8.0.0.23 and rear firmware 9.0.0.17 do not apply."
+  ]
+}

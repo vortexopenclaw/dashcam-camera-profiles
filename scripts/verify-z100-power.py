@@ -78,7 +78,8 @@ runpy.run_path(str(R/'scripts/verify-z100-collision.py'))['verify'](video['colli
 p = current_profile
 index = load('docs/data/cameras.json')
 assert next(c for c in index['cameras'] if c['id']==p['id']) == load('profiles/ddpai-z100-master.json')
-assert [c for c in index['cameras'] if c['id']!=p['id']] == [c for c in old('docs/data/cameras.json')['cameras'] if c['id']!=p['id']]
+assert next(c for c in index['cameras'] if c['id']=='ddpai-mini3x') == json.loads((R/'profiles/ddpai-mini3x.json').read_text())
+assert [c for c in index['cameras'] if c['id'] not in {p['id'],'ddpai-mini3x'}] == [c for c in old('docs/data/cameras.json')['cameras'] if c['id']!=p['id']]
 export = load('docs/data/parking-measurements.json')
 export['measurements'] = without_post_update(export['measurements'])
 assert {r['id']:r for r in export['measurements'] if r.get('source_id') != 'vortex-owner-z100-master-4ch-dc009-12v6'} == {r['id']:r for r in rows}

@@ -18,6 +18,8 @@ jobs:
       - name: Validate canonical data and generated frontend index
         run: |
           python3 scripts/verify.py
+          python3 scripts/verify-mini3x.py
+          python3 scripts/verify-ddpai-model-reference.py
           python3 scripts/verify-a329t-front-only.py
           python3 scripts/verify-z100-master.py
           python3 scripts/verify-z100-attribution.py

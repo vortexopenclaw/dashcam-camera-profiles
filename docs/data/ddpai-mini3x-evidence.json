@@ -1,0 +1,911 @@
+{
+  "schema_version": "1.0",
+  "camera_id": "ddpai-mini3x",
+  "recording_attribution": "Vortex Radar’s test unit",
+  "identity": {
+    "manufacturer": "DDPAI",
+    "model": "MINI3X",
+    "observed_log_sku_aliases": [
+      "DDPAI DM003_Overseas_V2"
+    ],
+    "alias_scope": "Owner-confirmed MINI3X test unit only; not retail V2 or V3 revision evidence",
+    "firmware": "v9.0.1.10",
+    "firmware_provenance": "Five root product-log observations; not an installation-action receipt"
+  },
+  "inventory": {
+    "relevant_files": 303,
+    "videos": 23,
+    "jpeg_photos": 230,
+    "logs": 50,
+    "excluded_housekeeping_sidecars": 2
+  },
+  "configuration": {
+    "observed_channels": 1,
+    "owner_confirmed_role": "cabin",
+    "paired_setup": "Separate MINI3X cabin card paired with Z100 Master front/telephoto/rear card; not one combined 3CH scan",
+    "model_role_policy": "Single camera may be used as front, rear or cabin; cabin attribution is test-specific"
+  },
+  "boundaries": [
+    "Encoded playback FPS does not establish capture cadence or real elapsed coverage.",
+    "Individual driving/parking attribution and impact timing remain unresolved; filename gaps are not proof of physical impact, wake time or mode transitions.",
+    "Two before / two after impact owner context and main-unit log evidence are not aligned MINI3X timing measurements.",
+    "Full and partial clips remain individual occurrences, with submitted and direct measurements separately preserved.",
+    "No power or startup/wake measurements added; main firmware 8.0.0.23 and rear firmware 9.0.0.17 do not apply."
+  ],
+  "samples": [
+    {
+      "sample_id": "sample-01",
+      "file_size_bytes": 41943040,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "16.266667",
+        "bit_rate": "10194255",
+        "nb_frames": "488"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "16.256000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "16.266667",
+        "size": "41943040",
+        "bit_rate": "20627724",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 41943040,
+        "durationSeconds": 16.266666666666666,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 10194256
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-02",
+      "file_size_bytes": 20971520,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "3.033333",
+        "bit_rate": "14849620",
+        "nb_frames": "91"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "3.008000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "3.033333",
+        "size": "20971520",
+        "bit_rate": "55309509",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 20971520,
+        "durationSeconds": 3.033333333333333,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 14849620
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-03",
+      "file_size_bytes": 41943040,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "25.733333",
+        "bit_rate": "9598342",
+        "nb_frames": "772"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "25.728000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "25.733333",
+        "size": "41943040",
+        "bit_rate": "13039287",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 41943040,
+        "durationSeconds": 25.733333333333334,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 9598343
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-04",
+      "file_size_bytes": 83886080,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "10679950",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "83886080",
+        "bit_rate": "11178848",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 83886080,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 10679950
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-05",
+      "file_size_bytes": 83886080,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "10679003",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "83886080",
+        "bit_rate": "11178848",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 83886080,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 10679003
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-06",
+      "file_size_bytes": 83886080,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "8622082",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "83886080",
+        "bit_rate": "11178848",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 83886080,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 8622083
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-07",
+      "file_size_bytes": 83886080,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "8407175",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "59.968000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.000000",
+        "size": "83886080",
+        "bit_rate": "11184810",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 83886080,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 8407175
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-08",
+      "file_size_bytes": 83886080,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "8957961",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "83886080",
+        "bit_rate": "11178848",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 83886080,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 8957961
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-09",
+      "file_size_bytes": 83886080,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "9218917",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "83886080",
+        "bit_rate": "11178848",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 83886080,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 9218918
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-10",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7992679",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "62914560",
+        "bit_rate": "8384136",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7992680
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-11",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7932083",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "59.968000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.000000",
+        "size": "62914560",
+        "bit_rate": "8388608",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7932084
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-12",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7746207",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "62914560",
+        "bit_rate": "8384136",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7746208
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-13",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7656192",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "59.968000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.000000",
+        "size": "62914560",
+        "bit_rate": "8388608",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7656193
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-14",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7423723",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "59.968000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.000000",
+        "size": "62914560",
+        "bit_rate": "8388608",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7423724
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-15",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7604149",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "59.968000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.000000",
+        "size": "62914560",
+        "bit_rate": "8388608",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7604149
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-16",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7938022",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "62914560",
+        "bit_rate": "8384136",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7938023
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-17",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7902961",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "59.968000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.000000",
+        "size": "62914560",
+        "bit_rate": "8388608",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7902961
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-18",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "8182175",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "59.968000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.000000",
+        "size": "62914560",
+        "bit_rate": "8388608",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 8182176
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-19",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7944606",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "62914560",
+        "bit_rate": "8384136",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7944606
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-20",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7943105",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "62914560",
+        "bit_rate": "8384136",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7943105
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-21",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7636033",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "59.968000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.000000",
+        "size": "62914560",
+        "bit_rate": "8388608",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7636034
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-22",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "60.000000",
+        "bit_rate": "7440141",
+        "nb_frames": "1800"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "60.032000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "60.032000",
+        "size": "62914560",
+        "bit_rate": "8384136",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 60,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7440142
+      },
+      "mode": "unresolved driving/parking"
+    },
+    {
+      "sample_id": "sample-23",
+      "file_size_bytes": 62914560,
+      "video": {
+        "codec_name": "hevc",
+        "codec_tag_string": "hvc1",
+        "width": 2960,
+        "height": 1664,
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/120000",
+        "duration": "46.266667",
+        "bit_rate": "7731043",
+        "nb_frames": "1388"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "16000",
+        "channels": 1,
+        "duration": "46.208000",
+        "bit_rate": "95125"
+      },
+      "container": {
+        "duration": "46.266667",
+        "size": "62914560",
+        "bit_rate": "10878598",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2"
+      },
+      "submitted_measurement": {
+        "fileSizeBytes": 62914560,
+        "durationSeconds": 46.266666666666666,
+        "width": 2960,
+        "height": 1664,
+        "nominalFrameRate": 30,
+        "videoBitrate": 7731044
+      },
+      "mode": "unresolved driving/parking"
+    }
+  ]
+}

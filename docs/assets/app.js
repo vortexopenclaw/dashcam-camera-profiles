@@ -306,6 +306,7 @@ function renderDetail(camera) {
       </div>
     </header>
     ${camera.id === "ddpai-z100-master" ? renderZ100Specs(camera) + renderZ100Power(camera) + '<details class="technical-details"><summary>Recording evidence and technical details</summary>' : ""}
+    ${camera.id === "ddpai-mini3x" ? renderMini3xSpecs(camera) + '<details class="technical-details"><summary>Recording evidence and technical details</summary>' : ""}
     ${renderVariants(camera.channel_variants)}
     ${renderFolderSection("Driving recordings", folders.driving_folders)}
     ${renderParking(camera)}
@@ -314,7 +315,7 @@ function renderDetail(camera) {
     ${renderVideoSamples(camera.video_samples)}
     ${renderFacts(camera.id === "viofo-t340" ? camera.technical_facts.filter(fact => ["Sampled filename family", "Driving bitrate settings", "Quality and storage charts"].includes(fact.label)) : camera.technical_facts)}
     ${camera.id === "viofo-t340" ? '<p><a href="t340-comparison.html">T340 bitrate, file size and recording capacity charts</a></p>' : renderNotes(camera.notes)}
-    ${camera.id === "ddpai-z100-master" ? "</details>" : ""}
+    ${["ddpai-z100-master", "ddpai-mini3x"].includes(camera.id) ? "</details>" : ""}
     ${renderSources(camera.sources)}
     <p class="section-intro">Only documented or observed details are shown. Firmware, settings, region, and connected-camera configuration can change the files a dashcam records.</p>`;
 }
@@ -469,3 +470,12 @@ function displayManufacturer(value) { return ({ blackvue: "BlackVue", viofo: "VI
 function label(value) { if (value === "real_card_sampled") return "Card sampled"; return String(value ?? "").replaceAll("_", " ").replace(/\b\w/g, character => character.toUpperCase()); }
 function naturalCompare(a, b) { return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }); }
 function escapeHtml(value) { return String(value ?? "").replace(/[&<>"]/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[character]); }
+
+function renderMini3xSpecs(camera) {
+  const sample = camera.video_samples[0];
+  return `<section class="section video-specs" aria-labelledby="mini3x-video-title"><h2 id="mini3x-video-title">Video specs</h2>
+    <p class="section-intro recording-attribution">Recordings: Vortex Radar’s test unit.</p>
+    <table class="video-spec-table"><thead><tr><th scope="col">Camera</th><th scope="col">Resolution</th><th scope="col">FPS</th><th scope="col">Mbps</th></tr></thead><tbody><tr><th scope="row">Cabin<small>HEVC · AAC audio</small></th><td>2960 × 1664</td><td>30</td><td>${escapeHtml(sample.bitrate.replace(" Mbps", ""))}</td></tr></tbody></table>
+    <p class="section-intro">Single MINI3X installed as cabin alongside a separate Z100 Master front + telephoto + rear card. MINI3X can also be installed front or rear. Driving/parking attribution is unresolved; FPS is playback metadata.</p>
+    <p class="section-intro">Observed MINI3X firmware: v9.0.1.10. <a href="data/ddpai-mini3x-evidence.json">All 23 individual measurements</a>.</p></section>`;
+}

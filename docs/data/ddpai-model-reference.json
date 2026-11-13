@@ -1140,17 +1140,17 @@
       ]
     },
     {
-      "id": "global-mini3x-v3",
-      "model": "MINI3X (V3)",
+      "id": "global-mini3x",
+      "model": "MINI3X",
       "region": "global-English",
       "status": "official_manual_verified_currentness_unknown",
-      "aliases": [
-        "MINI3X"
-      ],
+      "aliases": [],
       "recognitionEligible": true,
       "sources": [
         "https://www.ddpai.com/pages/mini3x-user-manual"
-      ]
+      ],
+      "canonicalProfileId": "ddpai-mini3x",
+      "identityNote": "Generic MINI3X manual identity. Previous V3 reference label does not establish the tested unit retail revision; observed SKU mapping is scoped in the canonical evidence dossier."
     },
     {
       "id": "global-mini5",

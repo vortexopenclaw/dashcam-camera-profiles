@@ -41,7 +41,12 @@ assert.equal(z100SpecRows([{channel:"front",resolution:"3840x2160",codec:"Unknow
 assert.equal(JSON.stringify(camera), before, "rendering cannot mutate source occurrences");
 assert.equal((html.match(/<div class="card"><div class="card-head"><strong>/g) || []).length >= camera.video_samples.length, true);
 for (const other of cameras.filter(item => item.id !== camera.id)) {
- assert(!renderDetail(other).includes('class="technical-details"'), other.id);
+ if (other.id === 'ddpai-mini3x') {
+  const mini = renderDetail(other);
+  assert(mini.includes('class="technical-details"'));
+  assert(!mini.includes('<details class="technical-details" open'));
+  for (const value of ['2960 × 1664', '7.423724-14.849620', 'v9.0.1.10', 'Vortex Radar’s test unit']) assert(mini.includes(value), value);
+ } else assert(!renderDetail(other).includes('class="technical-details"'), other.id);
  assert.equal(renderZ100Power(other), '', other.id);
  assert(renderDetail(other).includes(renderVideoSamples(other.video_samples)), other.id);
 }

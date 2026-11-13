@@ -73,6 +73,13 @@ def verify():
     assert next(c for c in index['cameras'] if c['id']==profile['id']) == profile
     restored = deepcopy(index)
     restored['cameras'] = [prior_power_profile(c) if c['id']==profile['id'] else c for c in restored['cameras']]
+    # Independently source-pinned in verify-mini3x.py; exclude only the new model.
+    added = [c for c in restored['cameras'] if c['id'] == 'ddpai-mini3x']
+    if added:
+        assert len(added) == 1 and added[0] == load('profiles/ddpai-mini3x.json')
+        restored['cameras'] = [c for c in restored['cameras'] if c['id'] != 'ddpai-mini3x']
+        restored['camera_count'] -= 1
+        restored['profile_count'] -= 1
     assert restored == old('docs/data/cameras.json'), 'Other models and index metadata exact'
     for path in ['docs/data/ddpai-z100-master-power-evidence.json','docs/data/ddpai-z100-master-4ch-power-evidence.json','docs/data/ddpai-z100-master-evidence.json','docs/data/ddpai-z100-master-3ch-evidence.json','docs/z100-master-measurements.md','docs/z100-master-3ch-measurements.md','docs/assets/parking-charts.js','docs/assets/parking.js']:
         assert (R/path).read_bytes() == old_bytes(path), path

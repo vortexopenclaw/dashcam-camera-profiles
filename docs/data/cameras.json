@@ -1,5 +1,5 @@
 {
-  "camera_count": 103,
+  "camera_count": 104,
   "cameras": [
     {
       "$schema": "../schemas/profile.schema.json",
@@ -3682,6 +3682,123 @@
           "resolution": "1920x1080",
           "settings_note": "Archive review 2026-10-08: 3 usable sampled clips, exact video-track rates 14.388068-14.430538 Mbps. Firmware, HDR and named quality settings not retained. Rates across clips do not establish preset changes or within-clip variation. Mode and camera attribution use owner context and original-file naming, not a complete card scan. See docs/data/archive-20261008-evidence.json.",
           "source": "reviewed archive metadata"
+        }
+      ]
+    },
+    {
+      "$schema": "../schemas/profile.schema.json",
+      "channel_variants": [
+        {
+          "channels": 1,
+          "roles": [
+            "cabin (this owner installation only)"
+          ],
+          "validation": "owner-confirmed cabin in paired Z100 Master setup",
+          "variant": "Single camera; front, rear or cabin installation"
+        }
+      ],
+      "evidence": {
+        "confidence": "Owner-confirmed MINI3X; Vortex Radar test unit",
+        "level": "card-validated",
+        "note": "23 physical video occurrences, paired submitted measurements and direct HEVC/AAC probes. Firmware v9.0.1.10 from five product-log observations. No retail revision inferred.",
+        "status": "observed card structure and individual video headers"
+      },
+      "filename_patterns": [
+        {
+          "applies_to": [
+            "DCIM/200video"
+          ],
+          "channels": {},
+          "default_channel": "unknown",
+          "modes": {},
+          "pattern": "^(\\d{14})_(\\d{4})\\.mp4$",
+          "timestamp_format": null
+        }
+      ],
+      "id": "ddpai-mini3x",
+      "manufacturer": "DDPAI",
+      "model": "MINI3X",
+      "notes": [
+        "Encoded playback FPS does not establish capture cadence or real elapsed coverage.",
+        "Individual driving/parking attribution and impact timing remain unresolved; filename gaps are not proof of physical impact, wake time or mode transitions.",
+        "Two before / two after impact owner context and main-unit log evidence are not aligned MINI3X timing measurements.",
+        "Full and partial clips remain individual occurrences, with submitted and direct measurements separately preserved.",
+        "No power or startup/wake measurements added; main firmware 8.0.0.23 and rear firmware 9.0.0.17 do not apply."
+      ],
+      "recording": {
+        "driving_folders": [
+          {
+            "importable": true,
+            "mode": "continuous-classified; individual driving/parking unresolved",
+            "notes": [
+              "Do not apply Z100 inside-to-telephoto override or hardcode model role to cabin."
+            ],
+            "path": "DCIM/200video",
+            "validation": "read-only direct inventory"
+          }
+        ],
+        "other_folders": [
+          {
+            "importable": false,
+            "mode": "thumbnail photos",
+            "notes": [],
+            "path": "DCIM/202thumb"
+          },
+          {
+            "importable": false,
+            "mode": "support logs",
+            "notes": [
+              "Private raw contents; public model and firmware only."
+            ],
+            "path": "DCIM/207log"
+          }
+        ],
+        "parking_folders": [],
+        "parking_modes": []
+      },
+      "schema_version": "1.0",
+      "sources": [
+        {
+          "kind": "manual",
+          "label": "DDPAI official MINI3X manual",
+          "url": "https://www.ddpai.com/manuals/mini3x/"
+        },
+        {
+          "kind": "source",
+          "label": "Vortex Radar test unit; all 23 individual paired video measurements",
+          "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-mini3x-evidence.json"
+        }
+      ],
+      "technical_facts": [
+        {
+          "label": "Observed logging SKU alias",
+          "value": "DDPAI DM003_Overseas_V2 \u2192 ddpai-mini3x, scoped to this owner-confirmed unit. Not a retail V2/V3 revision claim."
+        },
+        {
+          "label": "Firmware",
+          "value": "v9.0.1.10, five root product-log observations. Not main firmware 8.0.0.23 or rear firmware 9.0.0.17."
+        },
+        {
+          "label": "Audio and complete coverage",
+          "value": "All 23 videos: HEVC video and AAC audio. 303 relevant files: 23 videos, 230 JPEGs, 50 logs; two housekeeping sidecars excluded."
+        },
+        {
+          "label": "Official manual",
+          "value": "MINI3X name and 3K 30 FPS advertised recording; no retail revision established by this manual."
+        }
+      ],
+      "video_samples": [
+        {
+          "bitrate": "7.423724-14.849620 Mbps",
+          "channel": "cabin (owner-confirmed installation)",
+          "codec": "H.265 / HEVC",
+          "container": "MP4",
+          "fps": "30",
+          "mode": "unresolved driving/parking",
+          "recording_configuration": "Single MINI3X cabin; paired Z100 Master on separate card",
+          "resolution": "2960x1664",
+          "settings_note": "23 individual occurrences retained in evidence dossier; no per-file mode or capture-cadence inference.",
+          "source": "direct-card paired scan"
         }
       ]
     },
@@ -17188,7 +17305,7 @@
     }
   ],
   "generated_from": "profiles/*.json",
-  "profile_count": 90,
+  "profile_count": 91,
   "schema_version": "1.0",
   "technical_sample_only_count": 13
 }
