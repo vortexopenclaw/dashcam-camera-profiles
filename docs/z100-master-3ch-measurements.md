@@ -1,6 +1,8 @@
 # Z100 Master: separate 3CH driving/time-lapse measurements
 
-[Exact anonymous evidence](data/ddpai-z100-master-3ch-evidence.json) contains 72 canonical HEVC clips, with 64 paired native observations (not extra clips). Historical 401 probes, 19 scanner occurrences, 19 earlier owner pairs and 40 collision-test clips remain unchanged, as do the separate 2CH and 4CH power cohorts.
+All recordings: Vortex Radar’s test unit. Owner confirmation covers the existing Z100 recording batches, not a shared configuration, firmware, or mode across tests. No prototype or production status is inferred.
+
+[Exact filename-redacted evidence](data/ddpai-z100-master-3ch-evidence.json) contains 72 canonical HEVC clips, with 64 paired native observations (not extra clips). Historical 401 probes, 19 scanner occurrences, 19 earlier owner pairs and 40 collision-test clips remain unchanged, as do the separate 2CH and 4CH power cohorts.
 
 | Physical role | Driving-inferred | Owner-confirmed time-lapse | Video bitrate driving (bps) | Video bitrate time-lapse (bps) |
 |---|---:|---:|---:|---:|
@@ -14,4 +16,4 @@ Owner-confirmed time-lapse applies to front S_ and rear Q_ on this card. Ordinar
 
 Main UI-log identity is DDPAI DZ2602_GLOBAL_Z100 Master, software 8.0.0.23. This is scoped UI-log/owner provenance, not intrinsic per-clip metadata. Both rear_model and inside_model report DR4004 with version 9.0.0.17: protocol observations alone establish neither physical mapping nor two units. A separately reported Mini3X version is not evidence from this card. Empty pre-fix component metadata resulted from ANSI log framing and is not evidence of absence.
 
-Only saved JSON was used for integration. Original names, timestamps, source hashes, paths and private identifiers are not published. The digest covers only anonymous numeric projection. Validate with `python3 scripts/verify-z100-3ch.py`; optional `--private-data` reads saved JSON only, never media.
+Only saved JSON was used for integration. Original names, timestamps, source hashes, paths and private identifiers are not published. The digest covers only the filename-redacted numeric projection. Validate with `python3 scripts/verify-z100-3ch.py`; optional `--private-data` reads saved JSON only, never media.

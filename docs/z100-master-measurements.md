@@ -1,9 +1,11 @@
 # Z100 Master: separate collision-test video cohort
 
+All recordings: Vortex Radar’s test unit. Owner confirmation covers the existing Z100 recording batches, not a shared configuration, firmware, or mode across tests. No prototype or production status is inferred.
+
 For the later 72-clip front/telephoto/rear driving and time-lapse card, see
 [separate 3CH measurements](z100-master-3ch-measurements.md). The cohorts below remain unchanged.
 
-The [anonymous evidence](data/ddpai-z100-master-evidence.json), under
+The [filename-redacted evidence](data/ddpai-z100-master-evidence.json), under
 `collision_test_scan`, adds **40 measured clips: 20 front and 20 telephoto**.
 The owner confirms the main-unit two-view setup and collision-detection parking
 that wakes, records, then sleeps. Some driving footage remains on this card.
@@ -40,7 +42,7 @@ interchangeable. Header probes do **not** establish full-file decode validity.
   0.0011 seconds duration difference (millisecond rounding), and less than
   0.04 fps nominal-playback difference (representation differences). The
   source-specific bitrate and duration values are retained, not overwritten.
-- Anonymous `clip_index` values are numeric-evidence ordering, not source paths,
+- Public `clip_index` values are numeric-evidence ordering, not source paths,
   recording timestamps, folder identities, raw source identifiers or hashes.
   The correspondence to original media stays private outside Git.
 - The earlier **401 probes, 19 historical scanner occurrences and 19 separately

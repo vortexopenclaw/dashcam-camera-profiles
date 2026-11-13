@@ -354,6 +354,7 @@ function renderZ100Specs(camera) {
     return `<div class="video-spec-group"><h4>${escapeHtml(title)}</h4>${note ? `<p class="section-intro">${escapeHtml(note)}</p>` : ""}<table class="video-spec-table"><thead><tr><th scope="col">Camera</th><th scope="col">Resolution</th><th scope="col">FPS</th><th scope="col">Mbps</th></tr></thead><tbody>${z100SpecRows(selected).map(item => `<tr><th scope="row">${escapeHtml(item.camera)}${item.codec ? `<small>${escapeHtml(item.codec)}</small>` : ""}</th><td>${escapeHtml(item.resolution)}</td><td>${escapeHtml(item.fps)}</td><td>${escapeHtml(item.bitrate)}</td></tr>`).join("")}</tbody></table></div>`;
   };
   return `<section class="section video-specs" aria-labelledby="video-specs-title"><h2 id="video-specs-title">Video specs</h2>
+    <p class="section-intro recording-attribution">All recordings: Vortex Radar’s test unit.</p>
     <p class="section-intro">Measured video, not advertised maximums. Bitrates are observed ranges, rounded to 0.01 Mbps; FPS describes playback, not time-lapse capture cadence.</p>
     <h3>Driving overview</h3>
     ${table("3CH · Front + telephoto + rear", three.filter(sample => sample.mode.startsWith("driving")), "Owner-confirmed configuration. Ordinary clips are classified as driving from the saved evidence.")}

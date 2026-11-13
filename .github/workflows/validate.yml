@@ -20,6 +20,7 @@ jobs:
           python3 scripts/verify.py
           python3 scripts/verify-a329t-front-only.py
           python3 scripts/verify-z100-master.py
+          python3 scripts/verify-z100-attribution.py
           python3 scripts/verify-z100-power.py
           python3 scripts/verify-z100-4ch-power.py
           python3 scripts/verify-z100-collision.py

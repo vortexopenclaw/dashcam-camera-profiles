@@ -50,8 +50,13 @@ assert rows[:-1] == old('parking/measurements.json')
 assert rows[-1] == e['measurements'][1]
 assert sources[:-1] == old('parking/sources.json')
 assert sources[-1]['id'] == SID and sources[-1]['measurement_count'] == 1
-for path in ['docs/data/ddpai-z100-master-power-evidence.json','docs/data/ddpai-z100-master-evidence.json']:
-    assert (R/path).read_bytes() == subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R),path
+# Keep power bytes exact; only the explicit later video-attribution amendment
+# is normalized, never measurements, configuration, firmware or occurrence IDs.
+from z100_attribution import prior_video_provenance
+path = 'docs/data/ddpai-z100-master-power-evidence.json'
+assert (R/path).read_bytes() == subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R),path
+path = 'docs/data/ddpai-z100-master-evidence.json'
+assert prior_video_provenance(load(path)) == old(path), path
 p = load('profiles/ddpai-z100-master.json')
 # Later 3CH video additions have their own exact-prefix and source-parity validator.
 current_profile = p

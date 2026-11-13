@@ -52,7 +52,10 @@ assert [row for row in rows if row.get('source_id') != SID] == old('parking/meas
 assert sources[:-1] == old('parking/sources.json')
 assert sources[-1]['id'] == SID and sources[-1]['measurement_count'] == 3
 video = load('docs/data/ddpai-z100-master-evidence.json')
-assert {k: v for k, v in video.items() if k != 'collision_test_scan'} == old('docs/data/ddpai-z100-master-evidence.json')
+# Owner-confirmed recording attribution is an exact scoped metadata amendment.
+# Restore only its allowlisted leaves, retaining the complete value guard.
+from z100_attribution import prior_video_provenance
+assert {k: v for k, v in prior_video_provenance(video).items() if k != 'collision_test_scan'} == old('docs/data/ddpai-z100-master-evidence.json')
 # Later 3CH video additions have their own exact-prefix and source-parity validator.
 current_profile = p
 pre_3ch = json.loads(subprocess.check_output(['git','show','b9f1536:profiles/ddpai-z100-master.json'],cwd=R))

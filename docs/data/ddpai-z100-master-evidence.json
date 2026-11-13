@@ -1,5 +1,13 @@
 {
   "camera_id": "ddpai-z100-master",
+  "recording_attribution": {
+    "contributor": "Vortex Radar",
+    "unit": "Vortex Radar’s test unit",
+    "source": "explicit owner confirmation",
+    "source_quote": "Better. All of the recordings are off my test unit. None are anonymous or someone else",
+    "scope": "All existing Z100 Master recording batches: historical probes and scanner occurrences, separate owner scan, collision-test scan, and separate 3CH cohort. Not other models or future contributors.",
+    "qualification": "Same test unit does not establish the same configuration, firmware, mode, or cross-scan physical clip identity. No prototype or production status is inferred."
+  },
   "channel_role_corrections": [
     {
       "observed_channel": "inside",
@@ -4605,7 +4613,7 @@
     "video_file_count": 401
   },
   "methodology": [
-    "All successful retained video header probes are included exactly once. Anonymous technical values only; original media and audit records remain private and unchanged.",
+    "All successful retained video header probes are included exactly once. Filename-redacted technical samples only; original media and audit records remain private and unchanged.",
     "Cohorts split observed channel, filename-classified mode, codec, dimensions, nominal playback FPS, and full-length versus short/partial duration. Settings are unknown; this is not evidence of one uniform configuration.",
     "Full-length threshold: video-stream playback duration >=59.9 seconds. All other clips are short/partial. No short clip is attributed to TurboBoot or a particular startup behavior.",
     "S-prefixed clips are kept in a separate parking-classified cohort. Filename classification does not establish configured parking mode, capture cadence, real elapsed coverage, or within-file transitions.",
@@ -4614,7 +4622,7 @@
     "The 19 original scanner numeric sample occurrences are retained separately without deduplication. They are not 19 additional videos, do not identify physical files, and can differ slightly from ffprobe values. App group codec summaries did not establish per-file codecs.",
     "Firmware remains null. An owner-tentative version was not independently confirmed and is not certified here. No measured parking power, wake timing, or startup timing is established.",
     "Bounded header inspection is not full-file decode validation, footage review, or proof of capture behavior. No raw footage, locations, original filenames, timestamps, support logs, or settings payloads are published.",
-    "A separate owner-confirmed 2CH front/telephoto time-lapse scan is retained under owner_scan. Its settings do not establish historical settings or cross-scan physical clip identity. Historical inside-to-telephoto attribution is separately owner-confirmed in channel_role_corrections. New numeric samples are deduplicated by numeric equality within channel/context; occurrence indices retain source order anonymously."
+    "A separate owner-confirmed 2CH front/telephoto time-lapse scan is retained under owner_scan. Its settings do not establish historical settings or cross-scan physical clip identity. Historical inside-to-telephoto attribution is separately owner-confirmed in channel_role_corrections. New numeric samples are deduplicated by numeric equality within channel/context; occurrence indices retain source order with filenames redacted."
   ],
   "owner_scan": {
     "capture_cadence": null,
@@ -4903,7 +4911,7 @@
       "front": "front",
       "interior": "telephoto (owner identifies inside directory)"
     },
-    "provenance": "Separate owner-labeled stored scan; no private inventory identity match to the historical inspected card has been established.",
+    "provenance": "Separate Vortex Radar test-unit scan; cross-scan physical clip identity with the historical inspected card has not been established.",
     "quality": null,
     "sample_occurrences": 19,
     "unique_numeric_sample_count": 19
@@ -5141,7 +5149,7 @@
     }
   ],
   "schema_version": "1.0",
-  "source": "Vortex Radar, owner card inspection",
+  "source": "Vortex Radar test unit, owner card inspection",
   "unreported_settings": {
     "capture_cadence": null,
     "configured_parking_mode": null,

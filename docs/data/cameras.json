@@ -3704,7 +3704,7 @@
             "telephoto"
           ],
           "validation": "owner-confirmed setup; separate stored scan",
-          "variant": "New owner cohort only; historical physical identity not matched"
+          "variant": "Separate scan; cross-scan physical clip identity not matched"
         },
         {
           "channels": 3,
@@ -3718,7 +3718,7 @@
         }
       ],
       "evidence": {
-        "confidence": "historical inside-to-telephoto owner-confirmed; separate new owner-confirmed front/telephoto time-lapse setup; other historical attribution and configured modes unconfirmed",
+        "confidence": "All existing recordings: Vortex Radar test unit; configuration and settings remain batch-scoped",
         "level": "card-validated",
         "note": "All 401 historical successful video probes and 19 historical scanner occurrences remain unchanged; historical inside-to-telephoto attribution is owner-corrected. A separate owner-labeled scan adds 19 exact numeric pairs from 902 inventoried MP4 entries. Its confirmed front/telephoto setup and time-lapse setting are scoped to the new owner cohort; firmware remains unknown. A separate collision-test cohort adds 40 exact header probes with paired native alternate observations and preserves all 15 original submitted occurrences; individual modes remain unresolved.",
         "status": "observed card structure and video metadata"
@@ -3769,7 +3769,7 @@
       "manufacturer": "DDPAI",
       "model": "Z100 Master",
       "notes": [
-        "All historical successful retained video header probes are included exactly once. The separate owner scan adds anonymous nested per-sample measurements; no physical clip identity or cross-scan uniqueness is inferred.",
+        "All historical successful retained video header probes are included exactly once. The separate owner scan adds filename-redacted nested per-sample measurements; no physical clip identity or cross-scan uniqueness is inferred.",
         "Cohorts split observed channel, filename-classified mode, codec, dimensions, nominal playback FPS, and full-length versus short/partial duration. Settings are unknown; this is not evidence of one uniform configuration.",
         "Full-length threshold: video-stream playback duration >=59.9 seconds. All other clips are short/partial. No short clip is attributed to TurboBoot or a particular startup behavior.",
         "S-prefixed clips are kept in a separate parking-classified cohort. Filename classification does not establish configured parking mode, capture cadence, real elapsed coverage, or within-file transitions.",
@@ -3842,7 +3842,7 @@
         },
         {
           "kind": "source",
-          "label": "Vortex Radar, owner card inspection; sanitized exact video evidence",
+          "label": "Vortex Radar test unit; filename-redacted exact video evidence",
           "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-evidence.json"
         },
         {
@@ -3852,7 +3852,7 @@
         },
         {
           "kind": "source",
-          "label": "Anonymous exact 72-clip 3CH driving/time-lapse measurements",
+          "label": "Vortex Radar test unit; exact 72-clip 3CH driving/time-lapse measurements",
           "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-3ch-evidence.json"
         }
       ],

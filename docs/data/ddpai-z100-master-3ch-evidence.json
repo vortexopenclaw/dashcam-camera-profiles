@@ -1,6 +1,14 @@
 {
   "schema_version": "1.0",
   "camera_id": "ddpai-z100-master",
+  "recording_attribution": {
+    "contributor": "Vortex Radar",
+    "unit": "Vortex Radar’s test unit",
+    "source": "explicit owner confirmation",
+    "source_quote": "Better. All of the recordings are off my test unit. None are anonymous or someone else",
+    "scope": "All existing Z100 Master recording batches: historical probes and scanner occurrences, separate owner scan, collision-test scan, and separate 3CH cohort. Not other models or future contributors.",
+    "qualification": "Same test unit does not establish the same configuration, firmware, mode, or cross-scan physical clip identity. No prototype or production status is inferred."
+  },
   "configuration": "3CH: front/telephoto/rear",
   "physical_clip_count": 72,
   "native_observation_count": 64,
