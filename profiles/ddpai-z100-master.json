@@ -127,6 +127,11 @@
       "kind": "source",
       "label": "Vortex Radar, owner card inspection; sanitized exact video evidence",
       "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-evidence.json"
+    },
+    {
+      "kind": "source",
+      "label": "Owner separate 4CH Z100 Master power readings; rear-only firmware and pending collision states",
+      "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/ddpai-z100-master-4ch-power-evidence.json"
     }
   ],
   "technical_facts": [
@@ -157,6 +162,10 @@
     {
       "label": "Separate owner scan coverage",
       "value": "902 inventoried MP4 entries: front 621 and scanner interior 281 (owner-confirmed telephoto). Retained numeric samples: front 9 and telephoto 10; all 19 are numerically unique, with no exact six-field tuple overlap with the 19 historical scanner occurrences. Counts do not prove distinct clips across scans."
+    },
+    {
+      "label": "Separate owner 4CH power cohort: front/telephoto/rear/cabin",
+      "value": "Driving recording: 964 mA (12.1464 W derived). Timelapse parking: 632 mA (7.9632 W derived). Installed 4CH; active parking views not separately established. 12.6 V, cloud off, same DC009 hardwire cable. Rear firmware only: 9.0.0.17; main unit, front, cabin and telephoto firmware unknown. Rear 4K / cabin 3K are owner-declared, not measured card metadata. Collision detection idle and recording: not yet recorded (pending, not zero). Card scans pending; no new 4CH bitrate/FPS or timing measurements. Earlier 2CH power and video cohorts are unchanged."
     }
   ],
   "video_samples": [
