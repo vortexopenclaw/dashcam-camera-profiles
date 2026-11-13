@@ -18,6 +18,8 @@ def project(directory):
     ns = {s['folder']+'/'+s['filename']: {k:s[k] for k in FIELDS} for g in native['videoSpecSummaries'] for s in g['storageRateSamples']}
     groups = {}
     for r in rows:
+        if Path(r['path']).suffix.lower() not in ('.mp4', '.mov', '.m4v') or r.get('headerKind') == 'appledouble' or r.get('isReservation'):
+            continue
         streams = [s for s in r.get('mediaMetadata', {}).get('streams', []) if s.get('codec_type') == 'video']
         if not streams:
             continue
@@ -26,7 +28,8 @@ def project(directory):
         f = r['mediaMetadata']['format']
         path = Path(r['path'])
         role = {'front':'front', 'inside':'telephoto', 'rear':'rear'}[path.parent.name]
-        mode = 'time-lapse (owner-confirmed)' if path.name.startswith(('S_', 'Q_')) else 'driving-inferred'
+        is_time_lapse = (role == 'front' and path.name.startswith('S_')) or (role == 'rear' and path.name.startswith('Q_'))
+        mode = 'time-lapse (owner-confirmed)' if is_time_lapse else 'driving-inferred'
         length = 'full-length' if float(s['duration']) >= 59.9 else 'short/partial'
         key = (role, mode, length, s['codec_name'], s['width'], s['height'], s['r_frame_rate'])
         sample = {'fileSizeBytes':int(f['size']), 'durationSeconds':s['duration'], 'videoBitrate':int(s['bit_rate']), 'width':s['width'], 'height':s['height'], 'nominalFrameRate':s['r_frame_rate'], 'averageFrameRate':s['avg_frame_rate'], 'containerDurationSeconds':f['duration'], 'containerBitrate':int(f['bit_rate']), 'videoFrameCount':s['nb_frames']}
