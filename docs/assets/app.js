@@ -305,6 +305,7 @@ function renderDetail(camera) {
         ${coverage("Manual", manual)}
       </div>
     </header>
+    ${camera.id === "ddpai-z100-master" ? renderZ100Specs(camera) + '<details class="technical-details"><summary>Recording evidence and technical details</summary>' : ""}
     ${renderVariants(camera.channel_variants)}
     ${renderFolderSection("Driving recordings", folders.driving_folders)}
     ${renderParking(camera)}
@@ -313,8 +314,59 @@ function renderDetail(camera) {
     ${renderVideoSamples(camera.video_samples)}
     ${renderFacts(camera.id === "viofo-t340" ? camera.technical_facts.filter(fact => ["Sampled filename family", "Driving bitrate settings", "Quality and storage charts"].includes(fact.label)) : camera.technical_facts)}
     ${camera.id === "viofo-t340" ? '<p><a href="t340-comparison.html">T340 bitrate, file size and recording capacity charts</a></p>' : renderNotes(camera.notes)}
+    ${camera.id === "ddpai-z100-master" ? "</details>" : ""}
     ${renderSources(camera.sources)}
     <p class="section-intro">Only documented or observed details are shown. Firmware, settings, region, and connected-camera configuration can change the files a dashcam records.</p>`;
+}
+
+// Reader summary only: canonical samples and their exact provenance stay untouched below.
+function z100SpecRows(samples) {
+  const groups = new Map();
+  for (const sample of samples) {
+    const role = sample.channel.split(" (")[0];
+    const key = JSON.stringify([role, sample.resolution, sample.codec]);
+    if (!groups.has(key)) groups.set(key, { role, resolution: sample.resolution, codec: sample.codec, rates: [], fps: [] });
+    const group = groups.get(key);
+    group.rates.push(...bitrateValues(sample.bitrate));
+    group.fps.push(...fpsValues(sample.fps).map(Number));
+  }
+  const span = (values, digits) => {
+    if (!values.length) return "Not measured";
+    const low = Number(Math.min(...values).toFixed(digits));
+    const high = Number(Math.max(...values).toFixed(digits));
+    return low === high ? String(low) : `${low}–${high}`;
+  };
+  return [...groups.values()].sort((a, b) => ["front", "telephoto", "rear", "cabin"].indexOf(a.role) - ["front", "telephoto", "rear", "cabin"].indexOf(b.role)).map(group => ({
+    camera: label(group.role), resolution: group.resolution.replace("x", " × "),
+    fps: span(group.fps, 2), bitrate: span(group.rates, 2),
+    codec: group.codec.startsWith("Unknown") ? "" : group.codec.replace(" / HEVC", "")
+  }));
+}
+
+function renderZ100Specs(camera) {
+  const samples = camera.video_samples;
+  const three = samples.filter(sample => sample.recording_configuration === "3CH: front/telephoto/rear");
+  const historical = samples.filter(sample => sample.recording_configuration.startsWith("Two observed labels:"));
+  const owner = samples.filter(sample => sample.recording_configuration === "Owner-confirmed 2CH: front/telephoto; new scan only");
+  const collision = samples.filter(sample => sample.recording_configuration === "Owner-confirmed 2CH: front/telephoto; separate collision-test cohort");
+  const table = (title, selected, note = "") => {
+    if (!selected.length) return "";
+    return `<div class="video-spec-group"><h4>${escapeHtml(title)}</h4>${note ? `<p class="section-intro">${escapeHtml(note)}</p>` : ""}<table class="video-spec-table"><thead><tr><th scope="col">Camera</th><th scope="col">Resolution</th><th scope="col">FPS</th><th scope="col">Mbps</th></tr></thead><tbody>${z100SpecRows(selected).map(item => `<tr><th scope="row">${escapeHtml(item.camera)}${item.codec ? `<small>${escapeHtml(item.codec)}</small>` : ""}</th><td>${escapeHtml(item.resolution)}</td><td>${escapeHtml(item.fps)}</td><td>${escapeHtml(item.bitrate)}</td></tr>`).join("")}</tbody></table></div>`;
+  };
+  return `<section class="section video-specs" aria-labelledby="video-specs-title"><h2 id="video-specs-title">Video specs</h2>
+    <p class="section-intro">Measured video, not advertised maximums. Bitrates are observed ranges, rounded to 0.01 Mbps; FPS describes playback, not time-lapse capture cadence.</p>
+    <h3>Driving overview</h3>
+    ${table("3CH · Front + telephoto + rear", three.filter(sample => sample.mode.startsWith("driving")), "Owner-confirmed configuration. Ordinary clips are classified as driving from the saved evidence.")}
+    ${table("Earlier front + telephoto recordings", historical.filter(sample => sample.mode.startsWith("driving")), "Complete connected setup was not established for this earlier card subset.")}
+    <h3>Parking video</h3>
+    ${table("3CH · Time-lapse", three.filter(sample => sample.mode.startsWith("time-lapse")), "Owner-confirmed time-lapse. No telephoto time-lapse sample was observed in this set.")}
+    ${table("Earlier parking-classified recordings", historical.filter(sample => sample.mode.startsWith("parking")))}
+    <h3>Other tested settings</h3>
+    <p class="section-intro">These 2CH scans contain unresolved driving/parking samples, so their ranges are kept separate from the driving and parking results above.</p>
+    ${table("2CH · Front + telephoto · Time-lapse setting", owner)}
+    ${table("2CH · Front + telephoto · Collision-detection setting", collision)}
+    <p class="section-intro">The separate installed 4CH setup (front, telephoto, rear, and cabin) has power measurements, but no measured 4CH video specs yet. Advertised capabilities and firmware provenance are in the details below.</p>
+  </section>`;
 }
 
 function coverage(name, available) { return `<span class="${available ? "yes" : ""}">${available ? "●" : "○"} ${escapeHtml(name)}</span>`; }
