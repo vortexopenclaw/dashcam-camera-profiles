@@ -11,6 +11,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+from filename_pattern_history import corrected_baseline
 import threading
 from urllib.parse import urlencode
 from z100_post_update import BASELINE, SID, DOSSIER, URL, QUOTE, FACT, SOURCE, prior_power_profile, without_post_update
@@ -18,7 +19,7 @@ from z100_post_update import BASELINE, SID, DOSSIER, URL, QUOTE, FACT, SOURCE, p
 R = Path(__file__).resolve().parents[1]
 from z100_retest import restore_loaded, restore_rows
 def load(path): return restore_loaded(path, json.loads((R/path).read_text()))
-def old_bytes(path): return subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R)
+def old_bytes(path): return corrected_baseline(path, subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R))
 def old(path): return json.loads(old_bytes(path))
 EXPECTED = [('collision-idle',44,'0.5544','monitoring'),('collision-recording',935,'11.781','event-recording')]
 NULLS = ['active_channels','connectivity','wake_seconds','wake_seconds_min','wake_seconds_max','reported_startup_seconds','reported_startup_seconds_min','reported_startup_seconds_max','prebuffer_s','prebuffer_impact_s','prebuffer_motion_s','recording_fps','recording_seconds_per_frame','hdr','quality','lighting','meter_hardware','date','image_url','power_w_min','power_w_max','current_ma_min','current_ma_max']

@@ -8,6 +8,7 @@ import http.server
 import json
 from pathlib import Path
 import subprocess
+from filename_pattern_history import corrected_baseline
 import threading
 from urllib.parse import urlencode
 
@@ -21,7 +22,7 @@ parser.add_argument('--browser', action='store_true')
 parser.add_argument('--url', help='Optional public website base URL for browser acceptance')
 a = parser.parse_args()
 def load(path): return json.loads((R/path).read_text())
-def old(path): return json.loads(subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R))
+def old(path): return json.loads(corrected_baseline(path, subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R)))
 e = load('docs/data/ddpai-z100-master-power-evidence.json')
 p = load('profiles/ddpai-z100-master.json')
 rows = load('parking/measurements.json')

@@ -5,11 +5,31 @@ from pathlib import Path
 import re
 import runpy
 import unittest
+from filename_pattern_history import CORRECTIONS, corrected_baseline
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class FilenamePatterns(unittest.TestCase):
+    def test_preservation_allows_only_exact_reviewed_corrections(self):
+        for identity, (old, new) in CORRECTIONS.items():
+            path = f'profiles/{identity}.json'
+            current = (ROOT / path).read_bytes()
+            baseline = current.replace(json.dumps(new).encode(), json.dumps(old).encode())
+            self.assertNotEqual(baseline, current)
+            self.assertEqual(corrected_baseline(path, baseline), current)
+            changed = json.loads(current)
+            changed['model'] += ' changed'
+            self.assertNotEqual(corrected_baseline(path, baseline), json.dumps(changed).encode())
+            with self.assertRaises(AssertionError):
+                corrected_baseline(path, baseline.replace(json.dumps(old).encode(), b'"wrong"'))
+            self.assertEqual(corrected_baseline('unrelated.json', baseline), baseline)
+        current = (ROOT / 'docs/data/cameras.json').read_bytes()
+        baseline = current
+        for old, new in CORRECTIONS.values():
+            baseline = baseline.replace(json.dumps(new).encode(), json.dumps(old).encode(), 1)
+        self.assertEqual(corrected_baseline('docs/data/cameras.json', baseline), current)
+
     def test_e1_siblings(self):
         for identity in ('vantrue-e1-pro', 'vantrue-e1-pro-s'):
             profile = json.loads((ROOT / f'profiles/{identity}.json').read_text())

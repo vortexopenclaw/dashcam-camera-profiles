@@ -5,6 +5,7 @@ from copy import deepcopy
 import json
 from pathlib import Path
 import subprocess
+from filename_pattern_history import corrected_baseline
 from z100_post_update import prior_power_profile, without_post_update
 from z100_attribution import BASELINE, ATTRIBUTION, PROFILE_CHANGES, prior_video_provenance, restore_leaves
 
@@ -12,7 +13,7 @@ R = Path(__file__).resolve().parents[1]
 
 
 def old(path):
-    return json.loads(subprocess.check_output(['git', 'show', f'{BASELINE}:{path}'], cwd=R))
+    return json.loads(corrected_baseline(path, subprocess.check_output(['git', 'show', f'{BASELINE}:{path}'], cwd=R)))
 
 
 def load(path):

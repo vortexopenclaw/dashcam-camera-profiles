@@ -4,6 +4,7 @@ import argparse, csv, functools, http.server, io, json, os, subprocess, threadin
 from copy import deepcopy
 from decimal import Decimal
 from pathlib import Path
+from filename_pattern_history import corrected_baseline
 from urllib.parse import urlencode
 from z100_retest import SID, OLD, restore_loaded, restore_rows, restore_profile, FACT, SOURCE
 R=Path(__file__).resolve().parents[1]
@@ -11,7 +12,7 @@ BASE='32137d9edc95902a63aac82b287f3793b0d6e486'
 DOS='docs/data/ddpai-z100-master-4ch-retest-power-evidence.json'
 ART=Path(os.environ.get('Z100_RETEST_ARTIFACTS','/Users/openclaw/.hermes/profiles/dashcam-data-logging/artifacts/z100-current-retest'))
 def load(p):return json.loads((R/p).read_text())
-def before(p):return subprocess.check_output(['git','show',f'{BASE}:{p}'],cwd=R)
+def before(p):return corrected_baseline(p, subprocess.check_output(['git','show',f'{BASE}:{p}'],cwd=R))
 def verify():
     rows=load('parking/measurements.json');src=load('parking/sources.json');e=load(DOS)
     assert len(rows)==622 and len(src)==75
