@@ -29,7 +29,7 @@
         "P": "parking",
         "T": "timelapse"
       },
-      "pattern": "^(\\\\d{8})_(\\\\d{6})_(\\\\d{5})_([NPET])_([A])\\\\.(MP4|JPG)$",
+      "pattern": "^(\\d{8})_(\\d{6})_(\\d{5})_([NPET])_([A])\\.(MP4|JPG)$",
       "timestamp_format": "YYYYMMDD_HHMMSS"
     }
   ],

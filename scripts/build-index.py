@@ -45,6 +45,9 @@ def validate(profile: dict, path: Path) -> None:
     for source in profile["sources"]:
         parsed = urlparse(source.get("url", ""))
         require(parsed.scheme in {"http", "https"} and bool(parsed.netloc), f"{path.name}: invalid source URL")
+    for filename in profile['filename_patterns']:
+        # JSON escapes regex backslashes on disk, not in the decoded pattern.
+        require(not re.search(r'\\\\(?:[dDsSwW]|\.)', filename['pattern']), f"{path.name}: overescaped filename pattern")
     serialized = json.dumps(profile, sort_keys=True)
     for label, pattern in PRIVATE_PATTERNS.items():
         require(not pattern.search(serialized), f"{path.name}: contains {label}")

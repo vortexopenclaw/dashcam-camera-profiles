@@ -22,7 +22,7 @@
       "channels": {},
       "default_channel": null,
       "modes": {},
-      "pattern": "^(\\\\d{4})_(\\\\d{4})_(\\\\d{6})_(\\\\d+)\\\\.(MP4)$",
+      "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)\\.(MP4)$",
       "timestamp_format": "YYYY_MMDD_HHMMSS"
     }
   ],

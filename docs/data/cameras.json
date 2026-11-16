@@ -7486,7 +7486,7 @@
           "channels": {},
           "default_channel": null,
           "modes": {},
-          "pattern": "^(\\\\d{4})_(\\\\d{4})_(\\\\d{6})_(\\\\d+)\\\\.(MP4)$",
+          "pattern": "^(\\d{4})_(\\d{4})_(\\d{6})_(\\d+)\\.(MP4)$",
           "timestamp_format": "YYYY_MMDD_HHMMSS"
         }
       ],
@@ -9654,7 +9654,7 @@
             "P": "parking",
             "T": "timelapse"
           },
-          "pattern": "^(\\\\d{8})_(\\\\d{6})_(\\\\d{5})_([NPET])_([A])\\\\.(MP4|JPG)$",
+          "pattern": "^(\\d{8})_(\\d{6})_(\\d{5})_([NPET])_([A])\\.(MP4|JPG)$",
           "timestamp_format": "YYYYMMDD_HHMMSS"
         }
       ],
