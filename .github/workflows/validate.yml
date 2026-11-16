@@ -19,6 +19,7 @@ jobs:
         run: |
           python3 scripts/verify.py
           python3 scripts/test-filename-patterns.py
+          python3 scripts/test-filename-pattern-history.py
           python3 scripts/verify-mini3x.py
           python3 scripts/verify-ddpai-model-reference.py
           python3 scripts/verify-a329t-front-only.py
