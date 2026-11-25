@@ -1,0 +1,693 @@
+{
+  "title": "rcg530 video bitrate charts reviewed 2026-11-24",
+  "contributor": "rcg530",
+  "review_date": "2026-11-24",
+  "status": "reviewed transcription of public DashCamTalk charts; values are source-reported, not ffprobe measurements",
+  "conventions": "Mbps and MB per 1-minute driving file as printed by the tester. MB unit (decimal or binary) is not stated. Codec and fps are recorded only where the chart states them. Original charts remain hosted by DashCamTalk.",
+  "charts": [
+    {
+      "model": "70mai A900 Ultra",
+      "firmware": "v1.3.88ww",
+      "configuration": "2CH: front + RC435 rear",
+      "source_url": "https://dashcamtalk.com/forum/threads/70mai-a900-ultra-2-channel-4k-uhd-front-4k-uhd-rear-testing-review-rcg.61787/#post-675874",
+      "image_url": "https://dashcamtalk.com/forum/attachments/1794931203274-webp.95960/",
+      "chart_added": "2026-11-17",
+      "notes": [
+        "Power tests in the same post used FW v1.0.65ww; this bitrate chart is a later firmware.",
+        "Low compression uses H.264/AVC and limits front and rear to 1080p.",
+        "Front: Sony STARVIS 2 IMX678, F/1.8, FOV 130 deg. Rear RC435: IMX678, F/1.6, FOV 130 deg.",
+        "Low-resolution copies are written to .s_Front and .s_Rear directories."
+      ],
+      "rows": [
+        {
+          "anti_flicker_hz": 60,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "front",
+          "directory": "Front",
+          "resolution": "3840x2160",
+          "fps": 30,
+          "video_mbps": 33.55,
+          "file_mb_per_minute": 242
+        },
+        {
+          "anti_flicker_hz": 60,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "front_low_res",
+          "directory": "Front/.s_Front",
+          "resolution": "848x480",
+          "fps": 30,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 60,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "rear",
+          "directory": "Rear",
+          "resolution": "3840x2160",
+          "fps": 24,
+          "video_mbps": 33.55,
+          "file_mb_per_minute": 241
+        },
+        {
+          "anti_flicker_hz": 60,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "rear_low_res",
+          "directory": "Rear/.s_Rear",
+          "resolution": "848x480",
+          "fps": 24,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 60,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "front",
+          "directory": "Front",
+          "resolution": "1920x1080",
+          "fps": 30,
+          "video_mbps": 12.58,
+          "file_mb_per_minute": 92
+        },
+        {
+          "anti_flicker_hz": 60,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "front_low_res",
+          "directory": "Front/.s_Front",
+          "resolution": "848x480",
+          "fps": 30,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 60,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "rear",
+          "directory": "Rear",
+          "resolution": "1920x1080",
+          "fps": 30,
+          "video_mbps": 12.58,
+          "file_mb_per_minute": 91
+        },
+        {
+          "anti_flicker_hz": 60,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "rear_low_res",
+          "directory": "Rear/.s_Rear",
+          "resolution": "848x480",
+          "fps": 30,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 55,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "front",
+          "directory": "Front",
+          "resolution": "3840x2160",
+          "fps": 27,
+          "video_mbps": 33.55,
+          "file_mb_per_minute": 242
+        },
+        {
+          "anti_flicker_hz": 55,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "front_low_res",
+          "directory": "Front/.s_Front",
+          "resolution": "848x480",
+          "fps": 27,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 55,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "rear",
+          "directory": "Rear",
+          "resolution": "3840x2160",
+          "fps": 25,
+          "video_mbps": 33.55,
+          "file_mb_per_minute": 241
+        },
+        {
+          "anti_flicker_hz": 55,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "rear_low_res",
+          "directory": "Rear/.s_Rear",
+          "resolution": "848x480",
+          "fps": 25,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 55,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "front",
+          "directory": "Front",
+          "resolution": "1920x1080",
+          "fps": 27,
+          "video_mbps": 12.58,
+          "file_mb_per_minute": 92
+        },
+        {
+          "anti_flicker_hz": 55,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "front_low_res",
+          "directory": "Front/.s_Front",
+          "resolution": "848x480",
+          "fps": 27,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 55,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "rear",
+          "directory": "Rear",
+          "resolution": "1920x1080",
+          "fps": 27,
+          "video_mbps": 12.58,
+          "file_mb_per_minute": 91
+        },
+        {
+          "anti_flicker_hz": 55,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "rear_low_res",
+          "directory": "Rear/.s_Rear",
+          "resolution": "848x480",
+          "fps": 27,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 50,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "front",
+          "directory": "Front",
+          "resolution": "3840x2160",
+          "fps": 25,
+          "video_mbps": 33.55,
+          "file_mb_per_minute": 242
+        },
+        {
+          "anti_flicker_hz": 50,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "front_low_res",
+          "directory": "Front/.s_Front",
+          "resolution": "848x480",
+          "fps": 25,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 50,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "rear",
+          "directory": "Rear",
+          "resolution": "3840x2160",
+          "fps": 25,
+          "video_mbps": 33.55,
+          "file_mb_per_minute": 241
+        },
+        {
+          "anti_flicker_hz": 50,
+          "compression": "High",
+          "codec": "H.265/HEVC",
+          "channel": "rear_low_res",
+          "directory": "Rear/.s_Rear",
+          "resolution": "848x480",
+          "fps": 25,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 50,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "front",
+          "directory": "Front",
+          "resolution": "1920x1080",
+          "fps": 25,
+          "video_mbps": 12.58,
+          "file_mb_per_minute": 92
+        },
+        {
+          "anti_flicker_hz": 50,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "front_low_res",
+          "directory": "Front/.s_Front",
+          "resolution": "848x480",
+          "fps": 25,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        },
+        {
+          "anti_flicker_hz": 50,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "rear",
+          "directory": "Rear",
+          "resolution": "1920x1080",
+          "fps": 25,
+          "video_mbps": 12.58,
+          "file_mb_per_minute": 91
+        },
+        {
+          "anti_flicker_hz": 50,
+          "compression": "Low",
+          "codec": "H.264/AVC",
+          "channel": "rear_low_res",
+          "directory": "Rear/.s_Rear",
+          "resolution": "848x480",
+          "fps": 25,
+          "video_mbps": 2.09,
+          "file_mb_per_minute": 16
+        }
+      ]
+    },
+    {
+      "model": "Viofo T330",
+      "firmware": "v1.0_261030",
+      "configuration": "3CH: front + RC420 rear + RCC360 fisheye interior",
+      "source_url": "https://dashcamtalk.com/forum/threads/viofo-t330-2ch-3ch-testing-review-rcg.61728/#post-674502",
+      "image_url": "https://dashcamtalk.com/forum/attachments/viofo_t330_bitrates_1-0_261030_20261114-webp.95805/",
+      "chart_added": "2026-11-14",
+      "notes": [
+        "Unreleased test firmware per the tester.",
+        "Chart labels front 4K UHD and rear/interior 2K QHD; fps and codec are not stated.",
+        "This is the T330 rear configuration, not T330W card evidence."
+      ],
+      "rows": [
+        {
+          "setting": "Low",
+          "channel": "front",
+          "video_mbps": 27.03,
+          "file_mb_per_minute": 196
+        },
+        {
+          "setting": "Low",
+          "channel": "rear",
+          "video_mbps": 11.87,
+          "file_mb_per_minute": 88
+        },
+        {
+          "setting": "Low",
+          "channel": "interior",
+          "video_mbps": 11.87,
+          "file_mb_per_minute": 88
+        },
+        {
+          "setting": "Normal",
+          "channel": "front",
+          "video_mbps": 31.95,
+          "file_mb_per_minute": 232
+        },
+        {
+          "setting": "Normal",
+          "channel": "rear",
+          "video_mbps": 14.33,
+          "file_mb_per_minute": 106
+        },
+        {
+          "setting": "Normal",
+          "channel": "interior",
+          "video_mbps": 14.33,
+          "file_mb_per_minute": 106
+        },
+        {
+          "setting": "High",
+          "channel": "front",
+          "video_mbps": 36.86,
+          "file_mb_per_minute": 266
+        },
+        {
+          "setting": "High",
+          "channel": "rear",
+          "video_mbps": 21.29,
+          "file_mb_per_minute": 154
+        },
+        {
+          "setting": "High",
+          "channel": "interior",
+          "video_mbps": 21.29,
+          "file_mb_per_minute": 154
+        },
+        {
+          "setting": "Maximum",
+          "channel": "front",
+          "video_mbps": 40.96,
+          "file_mb_per_minute": 296
+        },
+        {
+          "setting": "Maximum",
+          "channel": "rear",
+          "video_mbps": 23.75,
+          "file_mb_per_minute": 172
+        },
+        {
+          "setting": "Maximum",
+          "channel": "interior",
+          "video_mbps": 23.75,
+          "file_mb_per_minute": 172
+        }
+      ]
+    },
+    {
+      "model": "Viofo T340",
+      "firmware": "v1.0_261030",
+      "configuration": "4CH: front + integrated OS04J10 fisheye interior + RC420 rear + RTC420 telephoto",
+      "source_url": "https://dashcamtalk.com/forum/threads/viofo-t340-3ch-4ch-testing-review-rcg.61727/#post-674496",
+      "image_url": "https://dashcamtalk.com/forum/attachments/viofo_t340_bitrates_1-0_261030_20261114-webp.95807/",
+      "chart_added": "2026-11-14",
+      "notes": [
+        "Unreleased test firmware per the tester.",
+        "Chart labels front 4K UHD and interior/rear/telephoto 2K QHD; fps and codec are not stated.",
+        "HDR on front and rear in the tester's setup."
+      ],
+      "rows": [
+        {
+          "setting": "Low",
+          "channel": "front",
+          "video_mbps": 27.03,
+          "file_mb_per_minute": 196
+        },
+        {
+          "setting": "Low",
+          "channel": "interior",
+          "video_mbps": 11.87,
+          "file_mb_per_minute": 88
+        },
+        {
+          "setting": "Low",
+          "channel": "rear",
+          "video_mbps": 11.87,
+          "file_mb_per_minute": 88
+        },
+        {
+          "setting": "Low",
+          "channel": "telephoto",
+          "video_mbps": 11.87,
+          "file_mb_per_minute": 88
+        },
+        {
+          "setting": "Normal",
+          "channel": "front",
+          "video_mbps": 31.94,
+          "file_mb_per_minute": 232
+        },
+        {
+          "setting": "Normal",
+          "channel": "interior",
+          "video_mbps": 14.33,
+          "file_mb_per_minute": 106
+        },
+        {
+          "setting": "Normal",
+          "channel": "rear",
+          "video_mbps": 14.33,
+          "file_mb_per_minute": 106
+        },
+        {
+          "setting": "Normal",
+          "channel": "telephoto",
+          "video_mbps": 14.33,
+          "file_mb_per_minute": 106
+        },
+        {
+          "setting": "High",
+          "channel": "front",
+          "video_mbps": 36.86,
+          "file_mb_per_minute": 266
+        },
+        {
+          "setting": "High",
+          "channel": "interior",
+          "video_mbps": 21.29,
+          "file_mb_per_minute": 154
+        },
+        {
+          "setting": "High",
+          "channel": "rear",
+          "video_mbps": 21.29,
+          "file_mb_per_minute": 154
+        },
+        {
+          "setting": "High",
+          "channel": "telephoto",
+          "video_mbps": 21.29,
+          "file_mb_per_minute": 154
+        },
+        {
+          "setting": "Maximum",
+          "channel": "front",
+          "video_mbps": 40.96,
+          "file_mb_per_minute": 296
+        },
+        {
+          "setting": "Maximum",
+          "channel": "interior",
+          "video_mbps": 23.75,
+          "file_mb_per_minute": 172
+        },
+        {
+          "setting": "Maximum",
+          "channel": "rear",
+          "video_mbps": 23.75,
+          "file_mb_per_minute": 172
+        },
+        {
+          "setting": "Maximum",
+          "channel": "telephoto",
+          "video_mbps": 23.75,
+          "file_mb_per_minute": 172
+        }
+      ]
+    },
+    {
+      "model": "Viofo A229 Ultra",
+      "firmware": "V1.2_260813 (front); rear 4K_V1.1_260126 per power chart",
+      "configuration": "3CH, 2CH and 1CH: front + RNE800 4K rear + RNF210 1080p fisheye interior",
+      "source_url": "https://dashcamtalk.com/forum/threads/viofo-a229-ultra-3ch-4k-front-4k-rear-1080p-interior-testing-review-rcg.54127/page-4#post-677657",
+      "image_url": "https://dashcamtalk.com/forum/attachments/1795122003001-webp.96027/",
+      "chart_added": "2026-11-19",
+      "notes": [
+        "Chart titles state front FW v1.2_260813 only.",
+        "fps and codec are not stated on the bitrate chart; the power chart states 2160p 30 fps front/rear and 1080p 30 fps interior at Max.",
+        "1CH front bitrates are higher than front in 2CH/3CH.",
+        "3CH High front and Maximum rear are printed as 248 MB; the same bitrates are printed as 250 MB in 2CH. Both retained as printed."
+      ],
+      "groups": [
+        {
+          "channels": "3CH",
+          "rows": [
+            {
+              "setting": "Low",
+              "channel": "front",
+              "video_mbps": 25.39,
+              "file_mb_per_minute": 184
+            },
+            {
+              "setting": "Low",
+              "channel": "rear",
+              "video_mbps": 22.93,
+              "file_mb_per_minute": 166
+            },
+            {
+              "setting": "Low",
+              "channel": "interior",
+              "video_mbps": 8.19,
+              "file_mb_per_minute": 62
+            },
+            {
+              "setting": "Normal",
+              "channel": "front",
+              "video_mbps": 31.12,
+              "file_mb_per_minute": 226
+            },
+            {
+              "setting": "Normal",
+              "channel": "rear",
+              "video_mbps": 27.03,
+              "file_mb_per_minute": 196
+            },
+            {
+              "setting": "Normal",
+              "channel": "interior",
+              "video_mbps": 12.28,
+              "file_mb_per_minute": 90
+            },
+            {
+              "setting": "High",
+              "channel": "front",
+              "video_mbps": 34.4,
+              "file_mb_per_minute": 248
+            },
+            {
+              "setting": "High",
+              "channel": "rear",
+              "video_mbps": 31.12,
+              "file_mb_per_minute": 226
+            },
+            {
+              "setting": "High",
+              "channel": "interior",
+              "video_mbps": 13.92,
+              "file_mb_per_minute": 102
+            },
+            {
+              "setting": "Maximum",
+              "channel": "front",
+              "video_mbps": 36.04,
+              "file_mb_per_minute": 260
+            },
+            {
+              "setting": "Maximum",
+              "channel": "rear",
+              "video_mbps": 34.4,
+              "file_mb_per_minute": 248
+            },
+            {
+              "setting": "Maximum",
+              "channel": "interior",
+              "video_mbps": 15.56,
+              "file_mb_per_minute": 114
+            }
+          ]
+        },
+        {
+          "channels": "2CH",
+          "rows": [
+            {
+              "setting": "Low",
+              "channel": "front",
+              "video_mbps": 25.39,
+              "file_mb_per_minute": 184
+            },
+            {
+              "setting": "Low",
+              "channel": "rear",
+              "video_mbps": 22.93,
+              "file_mb_per_minute": 166
+            },
+            {
+              "setting": "Normal",
+              "channel": "front",
+              "video_mbps": 31.12,
+              "file_mb_per_minute": 226
+            },
+            {
+              "setting": "Normal",
+              "channel": "rear",
+              "video_mbps": 27.03,
+              "file_mb_per_minute": 196
+            },
+            {
+              "setting": "High",
+              "channel": "front",
+              "video_mbps": 34.4,
+              "file_mb_per_minute": 250
+            },
+            {
+              "setting": "High",
+              "channel": "rear",
+              "video_mbps": 31.12,
+              "file_mb_per_minute": 226
+            },
+            {
+              "setting": "Maximum",
+              "channel": "front",
+              "video_mbps": 36.04,
+              "file_mb_per_minute": 260
+            },
+            {
+              "setting": "Maximum",
+              "channel": "rear",
+              "video_mbps": 34.4,
+              "file_mb_per_minute": 250
+            }
+          ]
+        },
+        {
+          "channels": "1CH",
+          "rows": [
+            {
+              "setting": "Low",
+              "channel": "front",
+              "video_mbps": 27.03,
+              "file_mb_per_minute": 196
+            },
+            {
+              "setting": "Normal",
+              "channel": "front",
+              "video_mbps": 37.68,
+              "file_mb_per_minute": 272
+            },
+            {
+              "setting": "High",
+              "channel": "front",
+              "video_mbps": 42.59,
+              "file_mb_per_minute": 308
+            },
+            {
+              "setting": "Maximum",
+              "channel": "front",
+              "video_mbps": 49.15,
+              "file_mb_per_minute": 354
+            }
+          ]
+        }
+      ],
+      "parking_video": [
+        {
+          "source_url": "https://dashcamtalk.com/forum/threads/viofo-a229-ultra-3ch-4k-front-4k-rear-1080p-interior-testing-review-rcg.54127/page-4#post-677657",
+          "mode": "Low Bitrate, 3CH",
+          "files": "2160p 30 fps front and rear, 1080p 30 fps interior",
+          "video_mbps": {
+            "front": 4.09,
+            "rear": 4.09,
+            "interior": 3.93
+          }
+        },
+        {
+          "source_url": "https://dashcamtalk.com/forum/threads/viofo-a229-ultra-3ch-4k-front-4k-rear-1080p-interior-testing-review-rcg.54127/page-4#post-677699",
+          "mode": "Time-lapse 10 fps, 2CH",
+          "files": "2160p 30 fps playback",
+          "video_mbps": {
+            "front": 36.04,
+            "rear": 34.4
+          }
+        },
+        {
+          "source_url": "https://dashcamtalk.com/forum/threads/viofo-a229-ultra-3ch-4k-front-4k-rear-1080p-interior-testing-review-rcg.54127/page-4#post-677699",
+          "mode": "Time-lapse 1 fps, 2CH",
+          "files": "2160p 30 fps playback",
+          "video_mbps": {
+            "front": 35.67,
+            "rear": 33.85
+          },
+          "note": "Rear first time-lapse frame about 30 s after the front (37.36 s vs 7.92 s from NR stop); reported to VIOFO as a bug."
+        }
+      ]
+    }
+  ]
+}

@@ -47,8 +47,12 @@ new_index = restore_loaded('docs/data/cameras.json', load('docs/data/cameras.jso
 assert [c for c in new_index['cameras'] if c['id'] != 'ddpai-mini3x'] == old_index['cameras']
 for path in subprocess.check_output(['git','ls-tree','-r','--name-only',BASELINE,'profiles','parking'],cwd=ROOT,text=True).splitlines():
     prior = corrected_baseline(path, subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=ROOT))
-    if path in {'profiles/ddpai-z100-master.json','parking/measurements.json','parking/sources.json'}:
+    from rcg530_20261124 import TOUCHED as later_rcg530
+    if path in {'profiles/ddpai-z100-master.json','parking/measurements.json','parking/sources.json'} | later_rcg530:
         assert restore_loaded(path,load(path)) == json.loads(prior), path
+    elif path == 'parking/README.md':
+        from rcg530_20261124 import restore_readme
+        assert restore_readme((ROOT/path).read_bytes()) == prior, path
     else:
         assert (ROOT/path).read_bytes() == prior, path
 assert next(c for c in new_index['cameras'] if c['id']=='ddpai-mini3x') == profile

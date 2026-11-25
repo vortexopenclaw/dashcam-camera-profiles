@@ -29,7 +29,9 @@ for r in timed:
     assert r['reported_startup_method']=='Impact event to start of recording (source-reported)'
     assert r['reported_startup_source']==e['evidence_url']
 assert all(r.get('reported_startup_seconds_min') is None for r in new if r not in timed)
-assert len([r for r in rows if r['model']=='T340' and r not in new])==7
+from rcg530_20261124 import is_new_row
+assert len([r for r in rows if r['model']=='T340' and r not in new and not is_new_row(r['id'])])==7
+assert len([r for r in rows if r['model']=='T340' and r['id'].startswith('rcg530-674496-')])==32
 assert e['timings']['reported_LPID_recording_start_after_impact_event_s']['first_saved_frame_verified'] is False
 assert len(e['video_observations'])==3 and len(e['timings'])==9
 assert 'pending clarification' not in json.dumps(e) and 'No contributor' not in json.dumps(e)

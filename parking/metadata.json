@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-24",
   "coverage": {
     "all_account_posts_exhaustive": false,
-    "scope_note": "All discovered pages in 51 rcg530-authored threads were traversed; account-wide history is access-limited. Source index includes unresolved and superseded material. Numerical transcription is separate from source discovery.",
+    "scope_note": "All discovered pages in 51 rcg530-authored threads were traversed; account-wide history is access-limited. Source index includes unresolved and superseded material. Numerical transcription is separate from source discovery. 2026-11-24 refresh reviewed rcg530 posts since 2026-10-16 in nine recently active threads found through the public new-posts listing.",
     "authored_threads_reviewed": 51,
     "posts_indexed": 1313,
     "candidate_posts": 67,

@@ -17,7 +17,9 @@ def old(path):
 
 
 def load(path):
-    return json.loads((R/path).read_text())
+    # Later rcg530 refresh is stripped by its exact allowlist before historical comparison.
+    from rcg530_20261124 import restore_loaded as later
+    return later(path, json.loads((R/path).read_text()))
 
 
 def occurrences(value):

@@ -15,6 +15,8 @@ def load(p):return json.loads((R/p).read_text())
 def before(p):return corrected_baseline(p, subprocess.check_output(['git','show',f'{BASE}:{p}'],cwd=R))
 def verify():
     rows=load('parking/measurements.json');src=load('parking/sources.json');e=load(DOS)
+    import rcg530_20261124 as later
+    rows=later.restore_rows(rows);src=later.restore_rows(src,True)
     assert len(rows)==622 and len(src)==75
     assert restore_rows(rows)==json.loads(before('parking/measurements.json'))
     assert restore_rows(src,True)==json.loads(before('parking/sources.json'))
@@ -22,7 +24,9 @@ def verify():
     assert restore_loaded('docs/data/cameras.json',load('docs/data/cameras.json'))==json.loads(before('docs/data/cameras.json'))
     # All historical dossiers, video/index datasets and other profiles remain byte exact.
     for p in subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'profiles','docs/data','docs/z100-master-measurements.md','docs/z100-master-3ch-measurements.md'],cwd=R,text=True).splitlines():
-        if p not in {'profiles/ddpai-z100-master.json','docs/data/cameras.json','docs/data/parking-measurements.json','docs/data/parking-measurements.csv'}:
+        if p in later.TOUCHED and p.startswith('profiles/'):
+            assert later.restore_loaded(p,load(p))==json.loads(before(p)),p
+        elif p not in {'profiles/ddpai-z100-master.json','docs/data/cameras.json','docs/data/parking-measurements.json','docs/data/parking-measurements.csv'}:
             assert (R/p).read_bytes()==before(p),p
     assert e['source_id']==SID and e['installed_channels']==4 and e['active_channels'] is None
     assert e['display_observation']['confidence']=='owner-observed/tentative; pending clip verification'

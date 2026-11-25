@@ -21,7 +21,9 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--browser', action='store_true')
 parser.add_argument('--url')
 a = parser.parse_args()
-def load(path): return json.loads((R/path).read_text())
+def load(path):
+    from rcg530_20261124 import restore_loaded as later  # exact later rcg530 refresh allowlist
+    return later(path, json.loads((R/path).read_text()))
 def old(path): return json.loads(corrected_baseline(path, subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=R)))
 e = load(PATH)
 assert e['source_id'] == SID and e['provenance']['source_quote'] == QUOTE

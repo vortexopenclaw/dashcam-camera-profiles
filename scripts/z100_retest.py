@@ -18,7 +18,8 @@ def restore_profile(value):
     return value
 
 def restore_rows(values, source_index=False):
-    values = deepcopy(values)
+    import rcg530_20261124
+    values = rcg530_20261124.restore_rows(values, source_index)
     key = 'id' if source_index else 'source_id'
     values = [v for v in values if v.get(key) != SID]
     if not source_index:
@@ -31,6 +32,8 @@ def restore_rows(values, source_index=False):
     return values
 
 def restore_loaded(path, value):
+    import rcg530_20261124
+    value = rcg530_20261124.restore_loaded(path, value)
     if path == 'parking/measurements.json': return restore_rows(value)
     if path == 'parking/sources.json': return restore_rows(value, True)
     if path == 'profiles/ddpai-z100-master.json': return restore_profile(value)

@@ -102,6 +102,11 @@
       "kind": "source",
       "label": "Privacy-safe archive video metadata",
       "url": "https://github.com/vortexopenclaw/dashcam-camera-profiles/blob/main/docs/data/archive-20261008-evidence.json"
+    },
+    {
+      "kind": "research",
+      "label": "rcg530 V1.2_260813 bitrate chart transcription",
+      "url": "https://vortexopenclaw.github.io/dashcam-camera-profiles/data/rcg530-20261124-video-evidence.json"
     }
   ],
   "technical_facts": [
@@ -160,6 +165,10 @@
     {
       "label": "2026-10-08 archive review",
       "value": "12 clips sampled; 0 metadata probes incomplete. Successful measurements retained separately from incomplete probes. Archive folders are not claimed as original card folders."
+    },
+    {
+      "label": "rcg530 firmware V1.2_260813 bitrate chart",
+      "value": "Source-reported 1-minute driving files. 3CH: front 25.39 / 31.12 / 34.40 / 36.04 Mbps, RNE800 4K rear 22.93 / 27.03 / 31.12 / 34.40, RNF210 1080p interior 8.19 / 12.28 / 13.92 / 15.56 at Low / Normal / High / Maximum. 2CH bitrates match 3CH. 1CH front rises to 27.03 / 37.68 / 42.59 / 49.15 Mbps. Low Bitrate parking files 4.09 Mbps front and rear, 3.93 interior. Chart does not state fps or codec; file sizes are retained in the linked transcription."
     }
   ],
   "video_samples": [

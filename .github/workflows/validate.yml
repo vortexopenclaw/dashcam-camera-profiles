@@ -34,6 +34,7 @@ jobs:
         run: |
           python3 scripts/verify-parking.py
           python3 scripts/verify-t340-rcg530.py
+          python3 scripts/verify-rcg530-20261124.py
           node --check docs/assets/parking.js
           node scripts/verify-parking-frontend.js
           node --check docs/assets/parking-preview.js

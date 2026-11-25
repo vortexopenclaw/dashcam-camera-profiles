@@ -1040,11 +1040,12 @@
     "tester": "rcg530",
     "date": "2026-10-15",
     "images": [
-      "https://dashcamtalk.com/forum/attachments/70mai_a900_ultra_2ch_power_consumption_20261015-webp.94821/",
-      "https://dashcamtalk.com/forum/attachments/70mai_a900_ultra_2ch_parking_mode_times_20261015-webp.94822/"
+      "https://dashcamtalk.com/forum/attachments/70mai_a900_ultra_2ch_power_consumption_20261116-webp.95925/",
+      "https://dashcamtalk.com/forum/attachments/70mai_a900_ultra_2ch_parking_mode_times_20261116-webp.95924/",
+      "https://dashcamtalk.com/forum/attachments/1794931203274-webp.95960/"
     ],
     "status": "extracted",
-    "notes": "Verified original image-103; all 13 parking measurement configurations; preserved chart 1.84 s impact wake vs prose 1.85 s, no normal/off/runtime rows.",
+    "notes": "Verified original image-103; all 13 parking measurement configurations; preserved chart 1.84 s impact wake vs prose 1.85 s, no normal/off/runtime rows. 2026-11-24 review: post edited 16/17-Nov-2026. Refreshed power chart 95925 repeats all 13 parking values and FW v1.0.65ww (original 94821 attachment no longer served). Added 1-minute driving bitrate chart 95960 is FW v1.3.88ww, a later firmware than the power tests; retained in docs/data/rcg530-20261124-video-evidence.json.",
     "measurement_count": 13
   },
   {
@@ -1085,12 +1086,12 @@
     "tester": "rcg530",
     "date": "2026-10-16",
     "images": [
-      "https://dashcamtalk.com/forum/attachments/1792189574854-webp.94861/",
-      "https://dashcamtalk.com/forum/attachments/1792189377371-webp.94860/"
+      "https://dashcamtalk.com/forum/attachments/1792738835809-webp.95141/",
+      "https://dashcamtalk.com/forum/attachments/1792738894098-webp.95142/"
     ],
     "status": "extracted",
-    "measurement_count": 11,
-    "notes": "Original full-size chart 94861 visually verified, including top/bottom setting pairs. Eleven parking measurements for distinct E1 Pro S pre-production hardware, VT-EFI242, 12.6 V. Companion author posts 675956/675958/675962 establish hardware status and explain TurboBoot/parking behavior. Runtime chart 94860 repeats the power inputs and is not a second measurement series. All nine public thread posts on its single discovered page reviewed; no pagination links were present. Normal driving, shutdown, disconnected-kit and cutoff measurements, powered-off boot timings, and runtime estimates excluded. Collision recording-start range 1.37–1.42 s retained without midpoint or first-frame claim. No Quick Start/Power Saving labels in this E1 Pro S chart. LFR transition heading 1 fps conflicts with configuration 5 fps; transition times not assigned to a 5 fps test."
+    "measurement_count": 12,
+    "notes": "Original full-size chart 94861 visually verified, including top/bottom setting pairs. Eleven parking measurements for distinct E1 Pro S pre-production hardware, VT-EFI242, 12.6 V. Companion author posts 675956/675958/675962 establish hardware status and explain TurboBoot/parking behavior. Runtime chart 94860 repeats the power inputs and is not a second measurement series. All nine public thread posts on its single discovered page reviewed; no pagination links were present. Normal driving, shutdown, disconnected-kit and cutoff measurements, powered-off boot timings, and runtime estimates excluded. Collision recording-start range 1.37–1.42 s retained without midpoint or first-frame claim. No Quick Start/Power Saving labels in this E1 Pro S chart. LFR transition heading 1 fps conflicts with configuration 5 fps; transition times not assigned to a 5 fps test. 2026-11-24 review: post edited 22/23-Oct-2026. Refreshed chart 95141 repeats the eleven earlier values (original 94861 no longer served), relabels AOV CD 1 fps as 1 spf, and adds AOV CD 2 SPF 45 mA / 0.57 W as row 12. Thread now has three pages."
   },
   {
     "id": "rcg530-t340-1.0_261023T2",
@@ -1155,5 +1156,103 @@
     "private": true,
     "measurement_count": 1,
     "notes": "Explicit owner retest corrects current driving and timelapse only, superseding earlier 964 mA / 12.1464 W driving and 632 mA / 7.9632 W timelapse; original dossiers remain immutable history. Collision idle 44 mA / 0.5544 W and event recording 935 mA / 11.781 W remain current and unchanged. Installed front/telephoto/rear/MINI3X cabin (4 cameras). Owner tentatively reports front/rear indicated on the timelapse display and telephoto/cabin not seen saving; no clip verification establishes active recording views. Cabin LEDs being on does not prove saved footage. Whole-system supply-DC measurement, not isolated camera consumption. Main firmware 8.0.0.23 observed in fresh physical-card tracklog; MINI3X 9.0.1.10 observed in paired current-card product logs, not intrinsic clip metadata. Rear 9.0.0.17 belongs only to older cohort; current rear version unknown. 12.6 V and DC009 carried from standing current owner-test context, not restated in these messages. Cloud off belongs to earlier context; current connectivity unknown. Watts derived from current with Decimal. No capture FPS/SPF, wake/start timing or definitive recorded roles inferred."
+  },
+  {
+    "id": "rcg530-674502",
+    "post_id": "674502",
+    "title": "VIOFO T330 2CH/3CH - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-t330-2ch-3ch-testing-review-rcg.61728/#post-674502",
+    "tester": "rcg530",
+    "date": "2026-11-14",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_t330_parking_mode_time_estimates_1-0_261030_20261114-webp.95806/",
+      "https://dashcamtalk.com/forum/attachments/viofo_t330_bitrates_1-0_261030_20261114-webp.95805/"
+    ],
+    "status": "extracted",
+    "notes": "Post #2 updated 14-Nov-2026 with unreleased FW v1.0_261030 3CH results. Average power column of the time-estimate chart verified twice; 32 rows (8 modes x 3CH/ICOff x day/night). Runtime estimates excluded. Bitrate chart retained in the video evidence dossier.",
+    "measurement_count": 32
+  },
+  {
+    "id": "rcg530-674496",
+    "post_id": "674496",
+    "title": "VIOFO T340 3CH/4CH - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-t340-3ch-4ch-testing-review-rcg.61727/#post-674496",
+    "tester": "rcg530",
+    "date": "2026-11-14",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_t340_parking_mode_time_estimates_1-0_261030_20261114-webp.95808/",
+      "https://dashcamtalk.com/forum/attachments/viofo_t340_bitrates_1-0_261030_20261114-webp.95807/"
+    ],
+    "status": "extracted",
+    "notes": "Post #2 updated 14-Nov-2026 with unreleased FW v1.0_261030 4CH preliminary results. Average power column verified twice; 32 rows. Runtime estimates excluded. Distinct from the owner-confirmed 1.0_261023T2 chart. Release-candidate boot-time chart in post 677145 is not parking data.",
+    "measurement_count": 32
+  },
+  {
+    "id": "rcg530-677657",
+    "post_id": "677657",
+    "title": "VIOFO A229 Ultra 3CH [4K Front, 4K Rear, 1080p Interior] - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a229-ultra-3ch-4k-front-4k-rear-1080p-interior-testing-review-rcg.54127/page-4#post-677657",
+    "tester": "rcg530",
+    "date": "2026-11-19",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_ultra_power_consumption_limited_20261119-webp.96030/",
+      "https://dashcamtalk.com/forum/attachments/viofo_a229_ultra_parking_mode_time_estimates_limited_20261119-webp.96028/",
+      "https://dashcamtalk.com/forum/attachments/1795122003001-webp.96027/"
+    ],
+    "status": "extracted",
+    "notes": "Limited 3CH suite on production FW V1.2_260813 (F) / 4K_V1.1_260126 (R): LBR and 10 fps time-lapse, 3CH and ICOff, day/night. Power chart cross-checked against time-estimate chart. Normal driving, Wi-Fi, power-off and HK6-F-only rows excluded. Bitrate chart retained in the video evidence dossier.",
+    "measurement_count": 8
+  },
+  {
+    "id": "rcg530-677699",
+    "post_id": "677699",
+    "title": "VIOFO A229 Ultra 3CH [4K Front, 4K Rear, 1080p Interior] - Testing / Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a229-ultra-3ch-4k-front-4k-rear-1080p-interior-testing-review-rcg.54127/page-4#post-677699",
+    "tester": "rcg530",
+    "date": "2026-11-20",
+    "images": [
+      "https://dashcamtalk.com/forum/attachments/1795186475824-webp.96038/",
+      "https://dashcamtalk.com/forum/attachments/1795186575343-webp.96039/",
+      "https://dashcamtalk.com/forum/attachments/1795187215284-webp.96040/"
+    ],
+    "status": "no-parking-measurements",
+    "notes": "2CH time-lapse notes only: rear 1 fps time-lapse file starts about 30 s after the front (reported bug). Video bitrates and transition timings retained in the video evidence dossier; no current or watts.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-676290",
+    "post_id": "676290",
+    "title": "VANTRUE E1 Pro S - 4K UHD 1-Channel - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/vantrue-e1-pro-s-4k-uhd-1-channel-testing-review-rcg.61842/page-3#post-676290",
+    "tester": "rcg530",
+    "date": "2026-10-21",
+    "images": [],
+    "status": "duplicate",
+    "notes": "Prose repeats chart values: AOV CD 1 spf 69 mA / 0.87 W, 2 spf 45 mA / 0.57 W, 30 fps event 205 mA / 2.58 W, LFR 5 fps 137 mA / 1.73 W.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-676269",
+    "post_id": "676269",
+    "title": "VIOFO A149 Pro 2CH - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/viofo-a149-pro-2ch-testing-review-rcg.61730/page-2#post-676269",
+    "tester": "rcg530",
+    "date": "2026-10-20",
+    "images": [],
+    "status": "no-parking-measurements",
+    "notes": "Clarifies the published 7 mA / 0.09 W LPID total: HK6 alone draws about 6 mA with ACC off, camera about 1 mA. Approximate split retained here only; existing total row unchanged.",
+    "measurement_count": 0
+  },
+  {
+    "id": "rcg530-677979",
+    "post_id": "677979",
+    "title": "70mai A900 Ultra 2-Channel 4K UHD Front / 4K UHD Rear - Testing/Review - RCG",
+    "url": "https://dashcamtalk.com/forum/threads/70mai-a900-ultra-2-channel-4k-uhd-front-4k-uhd-rear-testing-review-rcg.61787/#post-677979",
+    "tester": "rcg530",
+    "date": "2026-11-24",
+    "images": [],
+    "status": "no-parking-measurements",
+    "notes": "Daytime rear-camera frame-grab comparison against other 4K and 2K rear cameras; no power or bitrate values.",
+    "measurement_count": 0
   }
 ]

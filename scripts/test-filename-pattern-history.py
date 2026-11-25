@@ -7,6 +7,7 @@ from pathlib import Path
 import subprocess
 import unittest
 from filename_pattern_history import CORRECTIONS, corrected_baseline
+from rcg530_20261124 import TOUCHED as LATER_TOUCHED, restore_loaded as restore_later
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '32081d49092a67613de7fc7332e20186fb767ff9'
@@ -45,7 +46,13 @@ class FilenamePatternHistory(unittest.TestCase):
     def test_exact_pinned_profiles_and_index(self):
         for path in ['docs/data/cameras.json'] + [f'profiles/{key}.json' for key in CORRECTIONS]:
             with self.subTest(path=path):
-                self.assertEqual(corrected_baseline(path, before(path)), (ROOT/path).read_bytes())
+                current = (ROOT/path).read_bytes()
+                if path in LATER_TOUCHED:
+                    restored = restore_later(path, json.loads(current))
+                    # cameras.json uses build-index.py serialization; profiles use encoded().
+                    current = ((json.dumps(restored, indent=2, sort_keys=True) + '\n').encode()
+                               if path == 'docs/data/cameras.json' else encoded(restored))
+                self.assertEqual(corrected_baseline(path, before(path)), current)
 
     def test_every_profile_leaf_still_participates_in_equality(self):
         for key in CORRECTIONS:

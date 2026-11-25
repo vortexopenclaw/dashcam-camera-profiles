@@ -71,7 +71,8 @@ def verify():
     profile = json.loads((R/'profiles/ddpai-z100-master.json').read_text())
     assert prior_power_profile(profile) == old('profiles/ddpai-z100-master.json'), 'Only explicit fact/source/pending-note allowlist'
     assert profile['video_samples'] == old('profiles/ddpai-z100-master.json')['video_samples']
-    index = json.loads((R/'docs/data/cameras.json').read_text())
+    from rcg530_20261124 import restore_loaded as later
+    index = later('docs/data/cameras.json', json.loads((R/'docs/data/cameras.json').read_text()))
     assert next(c for c in index['cameras'] if c['id']==profile['id']) == profile
     restored = deepcopy(index)
     restored['cameras'] = [prior_power_profile(c) if c['id']==profile['id'] else c for c in restored['cameras']]
